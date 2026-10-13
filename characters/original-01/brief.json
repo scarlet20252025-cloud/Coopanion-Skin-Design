@@ -32,7 +32,7 @@
     "art": "pending-user-acceptance",
     "assets": "r04 arm rest reassembly identical; original v005 locked; editable masks and ORA retained",
     "animation": "0.6.6: 96 sampled left/right interaction frames and six joint crops reviewed; full-rate intermediate frames and user naturalness acceptance pending",
-    "desktop": "0.6.6: real import passed; 18 words each received 120 official figure-frame tick acknowledgements with no errors; desktop-window input and restart not tested"
+    "desktop": "0.6.6: real import; 27 installed file hashes match; 18 words x 120 acknowledged ticks; 13 host-protocol interaction/reload checks passed. Native desktop-window mouse routing, cross-monitor behavior and application restart remain untested."
   },
   "candidate_master": "gpt-dragon-master-v005.png",
   "active_source_lock": "production-lock.json",

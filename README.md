@@ -4,12 +4,14 @@
 
 当前阶段：**v005-r06 / 0.6.6 开发版**。招手使用掌心朝外独立差分并在结束后恢复；走跑以脚底落点补偿旋转，手脚参数分开调。继承头发/翼尖/尾部的小范围柔性动态。待机弹性仍为此前降低 30% 的设置，跳跃保留 Q 弹。
 
-**想复用方法，先读 [实做工作流与失败案例](docs/REUSABLE_WORKFLOW.md)**。运行 `npm run preview` 后打开 `/preview/dragon-r06.html`。0.6.6 回看了左右朝向的 96 张交互采样帧及放大关节图，新增思考、工作、倾听轻量姿态并修正静止时的手发层序；已通过本机 Coopanion 导入。完整桌面窗口输入与重启验收仍待完成。
+**想复用方法，先读 [实做工作流与失败案例](docs/REUSABLE_WORKFLOW.md)**。运行 `npm run preview` 后打开 `/preview/dragon-r06.html`。0.6.6 回看了左右朝向的 96 张交互采样帧及放大关节图，新增思考、工作、倾听轻量姿态并修正静止时的手发层序；已通过本机 Coopanion 导入。新增 13 项宿主输入协议/重载检查通过；真实桌面窗口输入、多屏行为与应用进程重启验收仍待完成。
 
 官方鲸鱼娘已按固定版本采样为本地逐帧参考库，见 [采样规格与使用方式](docs/OFFICIAL_FRAME_REFERENCE.md)。新素材的唯一基准见 [production-lock.json](characters/original-01/production-lock.json)，问题原因见 [失败复盘](docs/RIG_FAILURE_REVIEW.md)。
 
 推荐生产线：角色设定 → 单张母版 → See-Through 分层试验 → 局部补画与分层精修 → 统一 PNG 部件 → Coopanion kit / rig → 桌面验收。
 若自动分层质量不达标，直接采用官方「局部编辑 + 配准 + 遮罩拆件」路线；不反复重跑整张图。
+
+直接使用：先看 [安装与交付说明](docs/INSTALL_AND_VERIFY.md)。预览仅需 Node；打包仅需标准 Python，无需图像生成环境。
 
 ## 从这里开始
 

@@ -1,0 +1,142 @@
+{
+  "source": "running Coopanion /figure-frame; installed pack served by same application",
+  "pack": "gpt-dragon-v005-r06",
+  "tested_version": "0.6.6-preview",
+  "ready": true,
+  "words": [
+    "neutral",
+    "happy",
+    "wink",
+    "sleepy",
+    "stand",
+    "sit",
+    "sleep",
+    "nod",
+    "shake",
+    "jump",
+    "hop",
+    "turn",
+    "walk",
+    "run",
+    "wave",
+    "thinking",
+    "working",
+    "listening"
+  ],
+  "frames": 20267,
+  "errors": [],
+  "checks": [],
+  "desktop_window_visual": "not-tested",
+  "restart": "not-tested",
+  "lastMode": "idle",
+  "interactions": [
+    {
+      "name": "outside-hit",
+      "result": "passed",
+      "facing": 1
+    },
+    {
+      "name": "drag-up",
+      "result": "passed",
+      "facing": 1,
+      "modes": [
+        "air",
+        "land",
+        "idle"
+      ]
+    },
+    {
+      "name": "drag-cancel",
+      "result": "passed",
+      "facing": 1,
+      "modes": [
+        "air",
+        "land",
+        "idle"
+      ]
+    },
+    {
+      "name": "drag-drop",
+      "result": "passed",
+      "facing": 1,
+      "modes": [
+        "air",
+        "land",
+        "idle"
+      ]
+    },
+    {
+      "name": "click-wake",
+      "result": "passed",
+      "facing": 1,
+      "modes": [
+        "wake",
+        "idle"
+      ]
+    },
+    {
+      "name": "host-attention-flags",
+      "result": "passed",
+      "facing": 1,
+      "mode": "idle"
+    },
+    {
+      "name": "outside-hit",
+      "result": "passed",
+      "facing": -1
+    },
+    {
+      "name": "drag-up",
+      "result": "passed",
+      "facing": -1,
+      "modes": [
+        "air",
+        "land",
+        "idle"
+      ]
+    },
+    {
+      "name": "drag-cancel",
+      "result": "passed",
+      "facing": -1,
+      "modes": [
+        "air",
+        "land",
+        "idle"
+      ]
+    },
+    {
+      "name": "drag-drop",
+      "result": "passed",
+      "facing": -1,
+      "modes": [
+        "air",
+        "land",
+        "idle"
+      ]
+    },
+    {
+      "name": "click-wake",
+      "result": "passed",
+      "facing": -1,
+      "modes": [
+        "wake",
+        "idle"
+      ]
+    },
+    {
+      "name": "host-attention-flags",
+      "result": "passed",
+      "facing": -1,
+      "mode": "idle"
+    },
+    {
+      "name": "fresh-iframe-reload",
+      "result": "passed",
+      "vocab": 18,
+      "mode": "idle"
+    }
+  ],
+  "sandbox_interactions": "passed",
+  "iframe_reload": "passed"
+}

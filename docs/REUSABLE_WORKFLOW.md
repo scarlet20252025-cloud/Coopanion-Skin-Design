@@ -10,17 +10,24 @@ cd Coopanion-Skin-Design
 npm run preview
 ```
 
-浏览器打开 `http://127.0.0.1:4319/preview/dragon-r06.html`。预览只需 Node，不需配置图像 API、安装训练环境或重新生成图片。Python 只用于素材构建、接触表和打包：
+浏览器打开 `http://127.0.0.1:4319/preview/dragon-r06.html`。预览只需 Node，不需配置图像 API、安装训练环境或重新生成图片。直接打包只需标准 Python，无需安装图像依赖：
+
+```powershell
+npm run check
+python scripts/package-pet.py gpt-dragon-v005-r06
+```
+
+`dist` 会生成 ZIP 与 `.zip.sha256`。ZIP 根目录为 figure.json。安装和验证见 [安装与交付说明](INSTALL_AND_VERIFY.md)。不要为了预览或打包去运行素材生成脚本。
+
+只有修改/检查美术素材时，再建独立环境：
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python -m pip install -r requirements-art.txt
 .\.venv\Scripts\python scripts/doctor.py
-npm run check
-.\.venv\Scripts\python scripts/package-pet.py gpt-dragon-v005-r06
 ```
 
-`dist` 的 ZIP 根目录为 figure.json。开发包通过浏览器测试不等于已通过桌面导入、重启和交互验收。各版本状态见角色 brief.json 与对应 QA 报告。
+开发包通过浏览器测试不等于通过完整桌面窗口验收。各版本状态见角色 brief.json 与对应 QA 报告。
 
 ## 一次锁定的四件事
 
@@ -146,3 +153,12 @@ r06 第一次 ZIP 导入被拒绝：`vocab.neutral.seconds 应为正数`。浏�
 本轮回看了八张接触表和六张放大关节裁图，见该目录的 `report.json` 与 `joint-details.png`。记录显示掌心差分、层序和拖拽按压均正确恢复；这不代表所有 60 fps 中间帧都已检查。新版已通过真实导入；沙箱验收记录与桌面窗口输入、重启测试分开记录。
 
 宿主验证器也必须防止假通过：后台标签页会节流 requestAnimationFrame，等待两秒曾只收到两帧。现改为每词 120 次固定 1/60 秒 tick，每次等待 figure-frame 回执后再推进；18 个词均收到回执且无宿主错误，跳跃记录了 crouch→air→land→idle。完整报告为 `installed-sandbox-v066.json`。这是运行协议检查，不能替代视觉与桌面窗口验收。
+
+
+### 把宿主输入、重载和素材版本分开验证
+
+`python scripts/verify-installed.py` 从本机 7797 端口读取已安装包全部文件，与工作区逐字节比较 SHA-256。0.6.6 的 27 项一致。只看预览标题或 manifest 版本不够，代码和贴图都可能混用旧文件。
+
+`preview/installed-r06.html` 的“检查宿主交互与重新加载”通过真实 figure-frame 的公开消息协议测试 13 项：左右朝向的空白点击、拖拽松手、pointer cancel、drop、睡眠点击唤醒、倾听中断跑步，以及全新 iframe 重载。释放后必须经历 air/land、最后 idle 且 pressing=false；重载后核对词表与待机。报告 `installed-interactions-v066.json` 全部通过。
+
+这里的 drop 检查只是跨窗口放下所用的协议，不代表真实多显示器窗口路由已经通过；iframe 重载也不能写成 Coopanion 进程重启通过。明确区分才能让后来的人复现实测结果。

@@ -1,0 +1,114 @@
+{
+  "version": "0.6.6-preview",
+  "all_files_match": true,
+  "files": [
+    {
+      "path": "figure.js",
+      "sha256": "37b1d278fdc5d57b362231cfd2ed8543775d042d96b51dfc156aa056e070d7e4"
+    },
+    {
+      "path": "figure.json",
+      "sha256": "d515b115ba2d6007eaaaafff54e34fbf94ceaf92ade76a4fc5529588d1a723ba"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "91ee4c808e247ab101f84bdfc71cff9b3844305f4b8c8f4d4afba6f1b45f1ed5"
+    },
+    {
+      "path": "model.json",
+      "sha256": "ed1e09e3e9769524d9a1cd68b1249fcd37a25131d5a5af1f36e641d100277d0b"
+    },
+    {
+      "path": "README.md",
+      "sha256": "05f4df584ca1fb673e56871320ee3c68e6461008999bb0dbf83392aaa079dc8c"
+    },
+    {
+      "path": "secondary.js",
+      "sha256": "81a59a131ae2e58dd1a71d4c2e0111b8bb51bea15d33cb8a0dabdab0552b9607"
+    },
+    {
+      "path": "tex/arm-hole-fill.png",
+      "sha256": "204a8502913b3054b2a7b6f12d50c03534f0f1b013338a2b516cf1276f4aba27"
+    },
+    {
+      "path": "tex/arm-left.png",
+      "sha256": "f9230b903416c4d8ac12e2db788e786258aed77c8d2f37c3b7a98de7bd1f3fa1"
+    },
+    {
+      "path": "tex/arm-right.png",
+      "sha256": "6bea7f95a26e677576e3f4ea2623e2977e68d6908086d609ff2cad34581098dd"
+    },
+    {
+      "path": "tex/arm-wave.png",
+      "sha256": "87921582297f002003ec151110acf77ab81861bba84b62de3be0050f7c7df06b"
+    },
+    {
+      "path": "tex/body-covered-underpaint.png",
+      "sha256": "4df062844af552eb150a5c87b9fd4ceed8ed85fcc75540b44ac7a8f27a552ee3"
+    },
+    {
+      "path": "tex/body-without-arms.png",
+      "sha256": "d83c7a08bb6870a3cc3f4e36eeff586baba44292826509a06acb6b65d4c74155"
+    },
+    {
+      "path": "tex/body-without-legs.png",
+      "sha256": "9821a3bdf1ac7d34df9465efcce6efa4bb18a6207d3833a7449ba0f59b7b2f24"
+    },
+    {
+      "path": "tex/body-without-limbs.png",
+      "sha256": "f4617ce7559c9c24ed766e457321cf1c401388930a419e3d80e36a461e72d260"
+    },
+    {
+      "path": "tex/hair-covered-underpaint.png",
+      "sha256": "1270b333564981e96e02c98e4fa698ac7940df15a65fde53eec845c3d28e1bce"
+    },
+    {
+      "path": "tex/head-closed.png",
+      "sha256": "c8f8626738787390a8e705791aaa01d992faacf514a621d522c02410275fe849"
+    },
+    {
+      "path": "tex/head-half.png",
+      "sha256": "5719ca3d8af02957351e559e6f0548eef175cdbd89847c8e5bafce2b8868f38f"
+    },
+    {
+      "path": "tex/head-open.png",
+      "sha256": "9f87509cdab0768574de98e135fed0a2f63041f9ca81d510bae93362d672345c"
+    },
+    {
+      "path": "tex/head-wink.png",
+      "sha256": "ea57bd32de29b54f58438de2db9e5ff3e7743ffba68d29d384e8af34bccb4522"
+    },
+    {
+      "path": "tex/leg-left.png",
+      "sha256": "814a5c7240a045013f2d0bc68bd655c8f92e995e1ff3f1070325584c8df8e1e8"
+    },
+    {
+      "path": "tex/leg-right.png",
+      "sha256": "d35dec595c298cce77a3a2a98f43a525b6d6a030ac00943d934877cdfbf617db"
+    },
+    {
+      "path": "tex/sitting-closed.png",
+      "sha256": "684cff06f51db0f6bb84d5200e75143fffb1678b9042c2f7c56daaf0f715dae1"
+    },
+    {
+      "path": "tex/sitting-half.png",
+      "sha256": "1de4c287e7f2de62f8df336c606e4c539b6398ff07750c86a7808e5e58cdb688"
+    },
+    {
+      "path": "tex/sitting-open.png",
+      "sha256": "d8e63296003e64f5f01bd75e11bc34601b3897af9d4dc8c623eac6d9190424c4"
+    },
+    {
+      "path": "tex/sitting-wink.png",
+      "sha256": "048e3c08d7b21ab9d0d97cc6c450708d785fe6ed92dc17b123205b9195bc7308"
+    },
+    {
+      "path": "tex/skirt-hole-fill.png",
+      "sha256": "246c3c9d5535eb3ac778292c456d2f8efb147948c3513c3aec80d363cbdbc592"
+    },
+    {
+      "path": "thumb.png",
+      "sha256": "66cb51fa6a54904909102a16f62e559b0b7a96f836e5b1683bbc103a2f3268a5"
+    }
+  ]
+}

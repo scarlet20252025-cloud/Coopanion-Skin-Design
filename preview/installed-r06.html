@@ -1,18 +1,18 @@
 <!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>已安装龙娘 · 原生沙箱检查</title>
 <style>body{font:14px system-ui;background:#f4f0fa;color:#514463}iframe{width:960px;height:440px;border:0;background:#e8e2f0}button{padding:8px;margin:5px}pre{white-space:pre-wrap}</style>
-<h1>已安装 r06 · Coopanion 原生沙箱</h1><p>从本机正在运行的 Coopanion 加载已导入包；此页不切换正在使用的桌宠。</p><iframe id="frame" src="http://127.0.0.1:7797/figure-frame"></iframe><div id="controls"></div><button id="check">检查全部已声明词</button><button id="save">保存检查报告</button><pre id="status">等待宿主沙箱…</pre>
+<h1>已安装 r06 · Coopanion 原生沙箱</h1><p>从本机正在运行的 Coopanion 加载已导入包；此页不切换正在使用的桌宠。</p><iframe id="frame" src="http://127.0.0.1:7797/figure-frame"></iframe><div id="controls"></div><button id="check">检查全部已声明词</button><button id="interactions">检查宿主交互与重新加载</button><button id="save">保存检查报告</button><pre id="status">等待宿主沙箱…</pre>
 <script type="module">
 const frame=document.querySelector('#frame'),status=document.querySelector('#status');
 const manifest=await(await fetch('/packs/gpt-dragon-v005-r06/figure.json')).json();
 const model=await(await fetch('/packs/gpt-dragon-v005-r06/model.json')).json();
 const send=m=>frame.contentWindow.postMessage(m,'*');let ready=false,ticking=false,frames=0,last=performance.now(),words=[],errors=[];
 const report={source:'running Coopanion /figure-frame; installed pack served by same application',pack:'gpt-dragon-v005-r06',tested_version:manifest.version,ready:false,words:[],frames:0,errors,checks:[],desktop_window_visual:'not-tested',restart:'not-tested'};
-let frameAck=null;let initialized=false;function init(){if(initialized)return;initialized=true;send({t:'init',entry:'http://127.0.0.1:7797/packs/gpt-dragon-v005-r06/figure.js',export:'createDragonBody',base:'http://127.0.0.1:7797/packs/gpt-dragon-v005-r06/',model,bounds:{W:960,H:440,floorY:418,S:1.25},start:{x:480,facing:1,enter:'stand'},theme:'light',language:'zh'});}
+let frameAck=null,lastFrame=null,readyAck=null;let initialized=false;function init(){if(initialized)return;initialized=true;send({t:'init',entry:'http://127.0.0.1:7797/packs/gpt-dragon-v005-r06/figure.js',export:'createDragonBody',base:'http://127.0.0.1:7797/packs/gpt-dragon-v005-r06/',model,bounds:{W:960,H:440,floorY:418,S:1.25},start:{x:480,facing:1,enter:'stand'},theme:'light',language:'zh'});}
 addEventListener('message',e=>{if(e.source!==frame.contentWindow)return;const m=e.data;
  if(m.t==='loaded')init();
- if(m.t==='ready'){ready=true;ticking=true;words=m.words;report.ready=true;report.words=words;send({t:'set',state:{roam:'off',hold:999}});status.textContent='原生沙箱加载成功 · '+words.length+' 个词';for(const word of words){const b=document.createElement('button');b.textContent=word;b.onclick=()=>send({t:'do',word});document.querySelector('#controls').append(b);}}
+ if(m.t==='ready'){ready=true;ticking=true;words=m.words;document.querySelector('#controls').replaceChildren();if(readyAck){const ack=readyAck;readyAck=null;ack();}report.ready=true;report.words=words;send({t:'set',state:{roam:'off',hold:999}});status.textContent='原生沙箱加载成功 · '+words.length+' 个词';for(const word of words){const b=document.createElement('button');b.textContent=word;b.onclick=()=>send({t:'do',word});document.querySelector('#controls').append(b);}}
  if(m.t==='error'){errors.push(m.message);status.textContent='加载失败：'+m.message;}
- if(m.t==='frame'){frames++;report.frames=frames;report.lastMode=m.layout?.mode;if(frameAck){const ack=frameAck;frameAck=null;ack(m.layout?.mode);}}
+ if(m.t==='frame'){lastFrame=m;frames++;report.frames=frames;report.lastMode=m.layout?.mode;if(frameAck){const ack=frameAck;frameAck=null;ack(m.layout?.mode);}}
 });
 // iframe may load before model fetch resolves. A load listener plus handshake fallback avoids losing it.
 frame.addEventListener('load',()=>{if(!ready)init();});
@@ -22,6 +22,38 @@ async function tickFrames(count){const modes=new Set();for(let i=0;i<count;i++){
 document.querySelector('#check').onclick=async()=>{if(!ready)return;document.querySelector('#check').disabled=true;ticking=false;report.checks=[];report.method='120 acknowledged simulation ticks per word at 60fps; 120 settling ticks before each';
  try{for(const word of words){send({t:'do',word:'stand'});await tickFrames(120);send({t:'do',word});status.textContent='原生沙箱逐帧检查：'+word;const modes=await tickFrames(120);report.checks.push({word,acknowledged_ticks:120,modes,errors:errors.length});}}
  catch(e){errors.push(String(e));}finally{status.textContent=JSON.stringify(report,null,2);document.querySelector('#check').disabled=false;ticking=true;}
+};
+function assert(value,message){if(!value)throw Error(message);}
+async function reloadFigure(){
+ ticking=false;ready=false;initialized=false;
+ await new Promise((resolve,reject)=>{const timer=setTimeout(()=>{readyAck=null;reject(Error('Reload readiness timeout'));},15000);readyAck=()=>{clearTimeout(timer);resolve();};frame.src='http://127.0.0.1:7797/figure-frame?reload='+Date.now();});
+ ticking=false;await tickFrames(60);
+}
+document.querySelector('#interactions').onclick=async()=>{
+ if(!ready)return;const controls=[...document.querySelectorAll('button')];controls.forEach(b=>b.disabled=true);ticking=false;report.interactions=[];
+ const record=(name,detail)=>report.interactions.push({name,result:'passed',...detail});
+ try{
+  for(const facing of [1,-1]){
+   await reloadFigure();send({t:'place',x:480,facing});await tickFrames(2);
+   // A miss must not grab the character.
+   send({t:'pointer',type:'down',p:{x:5,y:5,t:0}});await tickFrames(1);assert(!lastFrame.layout.pressing,'Outside click grabbed pet');send({t:'pointer',type:'up',p:{x:5,y:5,t:100}});record('outside-hit',{facing});
+   for(const release of ['up','cancel','drop']){
+    send({t:'do',word:'stand'});await tickFrames(90);const hit=lastFrame.layout.hit[0];
+    send({t:'pointer',type:'down',p:{x:hit.x,y:hit.y,t:0}});await tickFrames(1);assert(lastFrame.layout.pressing,'Head hit did not press');
+    for(let i=1;i<=20;i++){send({t:'pointer',type:'move',p:{x:hit.x+facing*Math.min(i*4,50),y:hit.y-Math.min(i*4,60),t:i*20}});await tickFrames(1);}
+    assert(lastFrame.layout.mode==='drag','Drag mode not entered');
+    send(release==='drop'?{t:'drop',p:{x:480,y:65}}:{t:'pointer',type:release,p:{x:hit.x+facing*50,y:hit.y-60,t:500}});
+    const modes=await tickFrames(150);assert(modes.includes('air')&&modes.includes('land'),'Release missed air/land');assert(lastFrame.layout.mode==='idle'&&!lastFrame.layout.pressing,'Release did not recover');record('drag-'+release,{facing,modes});
+   }
+   send({t:'do',word:'sleep'});await tickFrames(120);assert(lastFrame.layout.mode==='sleep','Sleep not entered');
+   const hit=lastFrame.layout.hit[0];send({t:'pointer',type:'down',p:{x:hit.x,y:hit.y,t:1000}});send({t:'pointer',type:'up',p:{x:hit.x,y:hit.y,t:1100}});
+   const modes=await tickFrames(180);assert(modes.includes('wake')&&lastFrame.layout.mode==='idle','Click did not wake');record('click-wake',{facing,modes});
+   send({t:'walk',x:facing===1?830:130,run:true,id:'listen-test'});await tickFrames(10);assert(lastFrame.layout.mode==='run','Run did not start');send({t:'set',state:{listening:true}});await tickFrames(60);assert(lastFrame.layout.mode==='idle','Listening did not stop run');send({t:'set',state:{listening:false,thinking:true}});await tickFrames(120);send({t:'set',state:{thinking:false}});await tickFrames(60);record('host-attention-flags',{facing,mode:lastFrame.layout.mode});
+  }
+  await reloadFigure();assert(words.length===manifest.vocab.length,'Vocabulary changed on reload');assert(lastFrame.layout.mode==='idle'&&!lastFrame.layout.pressing,'Reload did not reset');record('fresh-iframe-reload',{vocab:words.length,mode:lastFrame.layout.mode});
+  report.sandbox_interactions='passed';report.iframe_reload='passed';
+ }catch(e){report.sandbox_interactions='failed';errors.push(String(e));}
+ finally{ticking=true;document.querySelectorAll('button').forEach(b=>b.disabled=false);status.textContent=JSON.stringify(report,null,2);}
 };
 document.querySelector('#save').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(report,null,2)],{type:'application/json'}));a.download='dragon-r06-installed-sandbox.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),10000);};
 </script></html>
