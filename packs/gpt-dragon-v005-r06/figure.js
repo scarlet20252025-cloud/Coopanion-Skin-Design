@@ -42,7 +42,9 @@ export async function createDragonBody(base,opts){
   runArmMaskId='run-torso-'+Math.random().toString(36).slice(2);
   const defs=node('defs'),mask=node('mask',{id:runArmMaskId,maskUnits:'userSpaceOnUse',x:0,y:0,width:1254,height:1254});
   mask.append(node('rect',{x:0,y:0,width:1254,height:1254,fill:'white'}));
-  mask.append(node('path',{d:motion.gait.run_torso_occluder,fill:'black'}));defs.append(mask);root.prepend(defs);
+  mask.append(node('path',{d:motion.gait.run_torso_occluder,fill:'black'}));
+  // The near shoulder is the joint joining sleeve to torso, not an occluded crossing.
+  mask.append(node('ellipse',{...motion.gait.run_shoulder_keep,fill:'white'}));defs.append(mask);root.prepend(defs);
   secondary=createSecondary(root,model.secondary_rig,model.canvas);
   secondary.wrap(head,['hair']);secondary.wrap(back,['hair']);
   for(const n of [body,front])secondary.wrap(n,['wings','tail']);
