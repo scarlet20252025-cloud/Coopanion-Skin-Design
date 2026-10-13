@@ -21,7 +21,7 @@ export async function createDragonBody(base,opts){
  }));
  const S=.2,X=128-650*S,Y=256-model.standing_feet_y*S;
  let secondary,secondaryEnabled=true,waveTexture=false;
- let mounted=null,root,back,body,head,sitting,headGroup,backGroup,prevEye='',prevSit=false;
+ let mounted=null,root,back,body,head,sitting,headGroup,lowerHairGroup,lowerHair,backGroup,prevEye='',prevSit=false;
  let articulation,fill,front,legNodes=[],lastT=0,airK=0,groundK=0,jumpWord='jump';
  const cfg=model.leg_rig;
  const motion=model.motion_rig;let armNodes=[],armSlots=[],armFill,gaitK=0,armAngles=[0,0],armActivePrev=false,armLayers=[],runLayerK=0,armFillLayer,runArmMaskId,sitBlend=0;
@@ -37,7 +37,12 @@ export async function createDragonBody(base,opts){
   body=picture('body-covered-underpaint');root.append(body);
   armSlots=[];armLayers=[];
   armNodes=motion.arms.map(a=>{const slot=node('g',{'data-arm-slot':a.id}),n=node('g');n.append(picture('arm-'+a.id));slot.append(n);root.append(slot);armSlots.push(slot);return n;});
-  headGroup=node('g');head=picture('head-open');headGroup.append(head);root.append(headGroup);
+  const hairSplitY=model.secondary_rig.hair.split_y;
+  const hairSplitId='hair-split-'+Math.random().toString(36).slice(2),hairDefs=node('defs');
+  const upperClip=node('clipPath',{id:hairSplitId+'-upper',clipPathUnits:'userSpaceOnUse'}),lowerClip=node('clipPath',{id:hairSplitId+'-lower',clipPathUnits:'userSpaceOnUse'});
+  upperClip.append(node('rect',{x:0,y:0,width:1254,height:hairSplitY}));lowerClip.append(node('rect',{x:0,y:hairSplitY,width:1254,height:1254-hairSplitY}));hairDefs.append(upperClip,lowerClip);root.append(hairDefs);
+  lowerHairGroup=node('g');lowerHair=picture('head-open');lowerHair.setAttribute('clip-path',`url(#${hairSplitId}-lower)`);lowerHairGroup.append(lowerHair);root.insertBefore(lowerHairGroup,armSlots[0]);
+  headGroup=node('g');head=picture('head-open');head.setAttribute('clip-path',`url(#${hairSplitId}-upper)`);headGroup.append(head);root.append(headGroup);
   sitting=picture('sitting-open');sitting.setAttribute('visibility','hidden');root.append(sitting);
   runArmMaskId='run-torso-'+Math.random().toString(36).slice(2);
   const defs=node('defs'),mask=node('mask',{id:runArmMaskId,maskUnits:'userSpaceOnUse',x:0,y:0,width:1254,height:1254});
@@ -46,7 +51,7 @@ export async function createDragonBody(base,opts){
   // The near shoulder is the joint joining sleeve to torso, not an occluded crossing.
   mask.append(node('ellipse',{...motion.gait.run_shoulder_keep,fill:'white'}));defs.append(mask);root.prepend(defs);
   secondary=createSecondary(root,model.secondary_rig,model.canvas);
-  secondary.wrap(head,['hair']);secondary.wrap(back,['hair']);
+  secondary.wrap(lowerHair,['hair']);secondary.wrap(back,['hair']);
   for(const n of [body,front])secondary.wrap(n,['wings','tail']);
   armFillLayer=secondary.wrap(armFill,['wings','tail']);
   mounted=g;prevEye='';
@@ -121,8 +126,8 @@ export async function createDragonBody(base,opts){
    const shut=['sleep','bowing','happy'].includes(o.face)||o.drowse>.75;
    const closure=shut?1:Math.max(o.blink||0,o.eyeClose||0,o.face==='sleepy'?.5:0);
    const eye=closure>.75?'closed':closure>.25?'half':o.face==='wink'?'wink':'open';
-   if(eye!==prevEye||seated!==prevSit){head.setAttribute('href',textures['head-'+eye]);sitting.setAttribute('href',textures['sitting-'+eye]);prevEye=eye;prevSit=seated;}
-   backGroup.setAttribute('visibility',seated?'hidden':'visible');body.setAttribute('visibility',seated?'hidden':'visible');headGroup.setAttribute('visibility',seated?'hidden':'visible');sitting.setAttribute('visibility',seated?'visible':'hidden');
+   if(eye!==prevEye||seated!==prevSit){head.setAttribute('href',textures['head-'+eye]);lowerHair.setAttribute('href',textures['head-'+eye]);sitting.setAttribute('href',textures['sitting-'+eye]);prevEye=eye;prevSit=seated;}
+   backGroup.setAttribute('visibility',seated?'hidden':'visible');body.setAttribute('visibility',seated?'hidden':'visible');headGroup.setAttribute('visibility',seated?'hidden':'visible');lowerHairGroup.setAttribute('visibility',seated?'hidden':'visible');sitting.setAttribute('visibility',seated?'visible':'hidden');
    articulation.setAttribute('visibility',!seated&&active?'visible':'hidden');
    body.setAttribute('visibility',seated||active?'hidden':'visible');
    // Seated art has its own shorter silhouette. Align feet, never squash the face.
@@ -134,7 +139,7 @@ export async function createDragonBody(base,opts){
    if(gesture?.kind==='bow')dy+=3*Math.sin(gesture.k*Math.PI);
    angle=clamp(angle,-model.rotation_limit_degrees,model.rotation_limit_degrees);dy=clamp(dy,-3,3);
    const [px,py]=model.head_pivot,t=`translate(0 ${dy}) rotate(${angle} ${px} ${py})`;
-   headGroup.setAttribute('transform',t);backGroup.setAttribute('transform',t);
+   headGroup.setAttribute('transform',t);lowerHairGroup.setAttribute('transform',t);backGroup.setAttribute('transform',t);
   },
   dispose(){mounted=null;},
  };

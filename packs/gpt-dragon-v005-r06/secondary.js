@@ -10,7 +10,7 @@ export function createSecondary(root,config,canvas){
   const ctx=cv.getContext('2d'),im=ctx.createImageData(size,size);
   for(let y=0;y<size;y++)for(let x=0;x<size;x++){
    const px=(x+.5)*canvas[0]/size,py=(y+.5)*canvas[1]/size;let dx=0,dy=0;
-   for(const[cx,cy,rx,ry,vx,vy]of c.regions){const r2=((px-cx)/rx)**2+((py-cy)/ry)**2;if(r2<1){const w=(1-r2)**3;dx+=vx*w;dy+=vy*w;}}
+   for(const[cx,cy,rx,ry,vx,vy]of c.regions){const r2=((px-cx)/rx)**2+((py-cy)/ry)**2;if(r2<1){const rootWeight=name==='hair'?Math.max(0,Math.min(1,(py-(c.split_y??0))/(c.root_blend_px??1))):1;const w=(1-r2)**3*rootWeight;dx+=vx*w;dy+=vy*w;}}
    const i=(y*size+x)*4;im.data[i]=128+Math.round(127*Math.max(-1,Math.min(1,dx)));im.data[i+1]=128+Math.round(127*Math.max(-1,Math.min(1,dy)));im.data[i+2]=128;im.data[i+3]=255;
   }
   ctx.putImageData(im,0,0);
