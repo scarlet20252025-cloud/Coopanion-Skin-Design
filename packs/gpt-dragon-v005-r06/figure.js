@@ -24,7 +24,7 @@ export async function createDragonBody(base,opts){
  let mounted=null,root,back,body,head,sitting,headGroup,backGroup,prevEye='',prevSit=false;
  let articulation,fill,front,legNodes=[],lastT=0,airK=0,groundK=0,jumpWord='jump';
  const cfg=model.leg_rig;
- const motion=model.motion_rig;let armNodes=[],armFill,gaitK=0,armAngles=[0,0],armActivePrev=false,armLayers=[],runLayerK=0,armFillLayer,sitBlend=0;
+ const motion=model.motion_rig;let armNodes=[],armFill,gaitK=0,armAngles=[0,0],armActivePrev=false,armLayers=[],runLayerK=0,armFillLayer,runArmMaskId,sitBlend=0;
  function node(tag,attrs={}){const n=document.createElementNS(NS,tag);for(const [k,v]of Object.entries(attrs))n.setAttribute(k,v);return n;}
  function picture(name){return node('image',{href:textures[name],x:0,y:0,width:model.canvas[0],height:model.canvas[1]});}
  function mount(g){
@@ -38,6 +38,10 @@ export async function createDragonBody(base,opts){
   armNodes=motion.arms.map(a=>{const n=node('g');n.append(picture('arm-'+a.id));root.append(n);return n;});
   headGroup=node('g');head=picture('head-open');headGroup.append(head);root.append(headGroup);
   sitting=picture('sitting-open');sitting.setAttribute('visibility','hidden');root.append(sitting);
+  runArmMaskId='run-torso-'+Math.random().toString(36).slice(2);
+  const defs=node('defs'),mask=node('mask',{id:runArmMaskId,maskUnits:'userSpaceOnUse',x:0,y:0,width:1254,height:1254});
+  mask.append(node('rect',{x:0,y:0,width:1254,height:1254,fill:'white'}));
+  mask.append(node('path',{d:motion.gait.run_torso_occluder,fill:'black'}));defs.append(mask);root.prepend(defs);
   secondary=createSecondary(root,model.secondary_rig,model.canvas);
   secondary.wrap(head,['hair']);secondary.wrap(back,['hair']);
   for(const n of [body,front])secondary.wrap(n,['wings','tail']);
@@ -93,7 +97,7 @@ export async function createDragonBody(base,opts){
    const wave=gest?.kind==='wave'?smooth(gest.k/.18)*(1-smooth((gest.k-.78)/.22)):0;
    armAngles=armAngles.map((a,i)=>{
     let target=clamp(-gaitAngles[i]*motion.gait.arm_gain,-motion.gait.max_arm_angle,motion.gait.max_arm_angle)*gaitK+motion.air_arms[i]*airK;
-    if(running)target=gait.run_arm_sweep*gaitK;
+    if(running)target=gait.run_arm_angles[i]*gaitK;
     if(i===motion.wave.arm)target=target*(1-wave)+wave*(motion.wave.raise_degrees+motion.wave.oscillation_degrees*Math.sin((gest?.k||0)*Math.PI*2*motion.wave.cycles));
     if(o.mode==='drag')target=(i?-1:1)*(25+8*Math.sin(o.t*10+i));
     return a+(target-a)*(1-Math.exp(-dt*14));
@@ -105,8 +109,8 @@ export async function createDragonBody(base,opts){
    if(useWave!==waveTexture){armNodes[motion.wave.arm].firstElementChild.setAttribute('href',textures[useWave?'arm-wave':'arm-'+motion.arms[motion.wave.arm].id]);waveTexture=useWave;}
    runLayerK+=((running?1:0)-runLayerK)*(1-Math.exp(-dt*14));
    armNodes.forEach((n,i)=>{
-    const layer=raised&&i===motion.wave.arm?'wave':runLayerK>.15?'behind-body':'normal';
-    if(armLayers[i]!==layer){root.insertBefore(n,layer==='wave'?sitting:layer==='behind-body'?armFillLayer:headGroup);armLayers[i]=layer;}
+    const layer=raised&&i===motion.wave.arm?'wave':runLayerK>.15?(i===motion.gait.run_near_arm?'run-near':'behind-body'):'normal';
+    if(armLayers[i]!==layer){root.insertBefore(n,['wave','run-near'].includes(layer)?sitting:layer==='behind-body'?armFillLayer:headGroup);if(layer==='run-near')n.setAttribute('mask',`url(#${runArmMaskId})`);else n.removeAttribute('mask');armLayers[i]=layer;}
    });
    if(armActive!==armActivePrev){body.setAttribute('href',textures[armActive?'body-without-arms':'body-covered-underpaint']);front.setAttribute('href',textures[armActive?'body-without-limbs':'body-without-legs']);armActivePrev=armActive;}
    armFill.setAttribute('visibility',armActive?'visible':'hidden');

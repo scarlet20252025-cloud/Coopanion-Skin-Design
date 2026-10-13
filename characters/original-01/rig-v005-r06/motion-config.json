@@ -229,7 +229,13 @@
     "walk_lift_gain": 2.2,
     "run_lift_gain": 2.6,
     "run_arm_sweep": 22,
-    "foot_anchor_mode": "native foot displacement mapped to own sole; rotation compensated"
+    "foot_anchor_mode": "native foot displacement mapped to own sole; rotation compensated",
+    "run_near_arm": 0,
+    "run_arm_angles": [
+      38,
+      35
+    ],
+    "run_torso_occluder": "M 610 610 L 725 610 L 773 705 L 782 770 L 803 851 L 858 950 L 932 1060 L 854 1102 L 690 1040 L 540 1110 L 398 1051 L 469 940 L 553 801 L 579 701 Z"
   },
   "wave": {
     "arm": 0,
