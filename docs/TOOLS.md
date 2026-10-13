@@ -1,17 +1,17 @@
 # 工具与 Skill 选型
 
-核对日期：2026-10-13。本轮是资料核验与工程搭建，未做图像质量基准测试，也未运行下载的桌面软件。
+核对日期：2026-10-13。以下状态更新到 r06：内置图像编辑、Python 原位素材流水线、官方 kit 预览和运行中 Coopanion 导入已使用；未使用 See-Through 或 PSD2Live 制作本角色。
 
 ## 主线路
 
 | 工具 | 用途与选择理由 | 当前状态 |
 | --- | --- | --- |
-| 当前会话 imagegen | 母版、遮罩局部补画、表情差分；复用现成入口 | 工具已提供；本轮未生成图像 |
+| 当前会话 imagegen | 母版、遮罩局部补画、表情差分；复用现成入口 | 已用于母版、局部补画和招手掌心差分；提示词/遮罩随版本保存 |
 | [Krita](https://docs.krita.org/en/user_manual/animation.html) | 可编辑图层、遮罩、补缝与 PSD 交换 | PATH 未发现；尚未确认 GUI 安装位置 |
 | [See-Through 官方](https://github.com/shitagaki-lab/see-through) / [用户提供的魔搭入口](https://modelscope.cn/studios/ljsabc/See-Through) | 单母版自动分层候选，减少手动初拆 | 官方说明已读；魔搭页面内容未能由文本抓取读取，服务可用性未验证 |
-| [OpenCV](https://docs.opencv.org/4.x/dc/d6b/group__video__track.html) + NumPy | ECC 配准、遮罩和漂移检查 | 当前系统 Python 未安装 |
-| [Pillow](https://pillow.readthedocs.io/en/stable/handbook/image-file-formats.html) | RGBA 合成、裁剪元数据、接触表、导出检查 | 当前系统 Python 未安装 |
-| Coopanion kit / rig | 行为复用和分件变形，目标平台一致 | 源文档核验；未复制运行时代码，尚未集成 |
+| [OpenCV](https://docs.opencv.org/4.x/dc/d6b/group__video__track.html) + NumPy | ECC 配准、遮罩和漂移检查 | 项目 .venv 已验证；用 .venv/Scripts/python.exe，勿混用系统解释器 |
+| [Pillow](https://pillow.readthedocs.io/en/stable/handbook/image-file-formats.html) | RGBA 合成、裁剪元数据、接触表、导出检查 | 项目 .venv 已验证；用 .venv/Scripts/python.exe，勿混用系统解释器 |
+| Coopanion kit / rig | 行为复用和分件变形，目标平台一致 | 已按固定版本复制 kit 至 preview/vendor；开发包使用实际宿主 kit |
 | Git + Python + Node | 版本记录、图像处理、轻量预览 | 已在 PATH 检出 |
 
 默认不装完整模型训练环境。先用自动分层服务试验；只有质量通过且确有批量需求时，再评估本地 See-Through 的 GPU 与依赖开销。外部服务的上传和本地图像生成是不同步骤，实际使用前明确选用哪一个。

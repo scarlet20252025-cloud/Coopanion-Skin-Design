@@ -1,0 +1,200 @@
+{
+  "manifest": 2,
+  "api": 2,
+  "id": "gpt-dragon-v005-r05",
+  "version": "0.5.0-preview",
+  "name": {
+    "zh": "GPT 龙娘 v005 r05"
+  },
+  "about": {
+    "zh": "开发版：基础表情、手脚走跑、招手、Q弹跳跃与站坐过渡。"
+  },
+  "author": "Coopanion-Skin-Design",
+  "entry": "figure.js",
+  "export": "createDragonBody",
+  "model": "model.json",
+  "vocab": [
+    {
+      "id": "neutral",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "平静"
+        ]
+      },
+      "about": {
+        "zh": "开发版：浏览器检查记录见源仓库，客户端待验收"
+      }
+    },
+    {
+      "id": "stand",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "站起"
+        ]
+      },
+      "about": {
+        "zh": "开发版：浏览器检查记录见源仓库，客户端待验收"
+      }
+    },
+    {
+      "id": "sit",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "坐下"
+        ]
+      },
+      "about": {
+        "zh": "开发版：浏览器检查记录见源仓库，客户端待验收"
+      }
+    },
+    {
+      "id": "sleep",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "睡眠"
+        ]
+      },
+      "about": {
+        "zh": "开发版：浏览器检查记录见源仓库，客户端待验收"
+      }
+    },
+    {
+      "id": "nod",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "轻点头"
+        ]
+      },
+      "about": {
+        "zh": "开发版：浏览器检查记录见源仓库，客户端待验收"
+      }
+    },
+    {
+      "id": "shake",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "轻摇头"
+        ]
+      },
+      "about": {
+        "zh": "开发版：浏览器检查记录见源仓库，客户端待验收"
+      }
+    },
+    {
+      "id": "jump",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "跳跃"
+        ]
+      },
+      "about": {
+        "zh": "开发版：浏览器检查记录见源仓库，客户端待验收"
+      }
+    },
+    {
+      "id": "hop",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "小跳"
+        ]
+      },
+      "about": {
+        "zh": "开发版：浏览器检查记录见源仓库，客户端待验收"
+      }
+    },
+    {
+      "id": "turn",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "转身"
+        ]
+      },
+      "about": {
+        "zh": "开发版：浏览器检查记录见源仓库，客户端待验收"
+      }
+    },
+    {
+      "id": "happy",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "笑眼"
+        ]
+      },
+      "about": {
+        "zh": "开发版：浏览器检查记录见源仓库，客户端待验收"
+      }
+    },
+    {
+      "id": "wink",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "单眼眨眼"
+        ]
+      },
+      "about": {
+        "zh": "开发版：浏览器检查记录见源仓库，客户端待验收"
+      }
+    },
+    {
+      "id": "sleepy",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "困倦"
+        ]
+      },
+      "about": {
+        "zh": "开发版：浏览器检查记录见源仓库，客户端待验收"
+      }
+    },
+    {
+      "id": "walk",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "走路"
+        ]
+      },
+      "about": {
+        "zh": "开发版：浏览器检查记录见源仓库，客户端待验收"
+      }
+    },
+    {
+      "id": "run",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "跑步"
+        ]
+      },
+      "about": {
+        "zh": "开发版：浏览器检查记录见源仓库，客户端待验收"
+      }
+    },
+    {
+      "id": "wave",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "招手"
+        ]
+      },
+      "about": {
+        "zh": "开发版：浏览器检查记录见源仓库，客户端待验收"
+      }
+    }
+  ],
+  "thumb": "thumb.png",
+  "license": "AGPL-3.0-or-later"
+}

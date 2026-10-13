@@ -1,0 +1,20 @@
+{
+  "master_sha256": "14e64e72f9ff192f4d49fff321579e05d8a2b78c23feba968ba07fed2eb93f81",
+  "registration_correlation": 0.9825292934513316,
+  "translation": [
+    [
+      1.0,
+      0.0,
+      0.38679295778274536
+    ],
+    [
+      0.0,
+      1.0,
+      -0.1383090615272522
+    ]
+  ],
+  "outside_hand_mask_changes": 0,
+  "rest_arm": "unchanged r04 arm-left.png",
+  "review": "contact-sheets-reviewed",
+  "visual_review": "reviewed wave palm and return to rest; fixed runway walk/run; jump regression"
+}

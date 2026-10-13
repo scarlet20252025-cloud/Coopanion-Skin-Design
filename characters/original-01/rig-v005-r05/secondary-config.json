@@ -1,0 +1,72 @@
+{
+  "method": "bounded-local-displacement-on-existing-textures",
+  "map_size": 418,
+  "hair": {
+    "k": 55,
+    "damping": 9,
+    "limit": 14,
+    "idle": 1.8,
+    "motion": 8,
+    "regions": [
+      [
+        369,
+        669,
+        120,
+        191,
+        1,
+        0.22
+      ],
+      [
+        944,
+        683,
+        79,
+        184,
+        1,
+        -0.18
+      ]
+    ]
+  },
+  "wings": {
+    "k": 85,
+    "damping": 11,
+    "limit": 16,
+    "idle": 2.2,
+    "motion": 10,
+    "regions": [
+      [
+        377,
+        710,
+        109,
+        89,
+        -0.35,
+        1
+      ],
+      [
+        924,
+        754,
+        75,
+        75,
+        0.35,
+        1
+      ]
+    ]
+  },
+  "tail": {
+    "k": 40,
+    "damping": 8,
+    "limit": 18,
+    "idle": 3,
+    "motion": 11,
+    "regions": [
+      [
+        351,
+        962,
+        142,
+        129,
+        0.3,
+        1
+      ]
+    ]
+  },
+  "notes": "All regions in locked 1254px master coordinates; face and attachment roots have zero weight. These are small local deformations, not separately repainted full hidden appendages."
+}

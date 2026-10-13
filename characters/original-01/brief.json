@@ -1,6 +1,6 @@
 {
   "id": "original-01",
-  "status": "v005-r04-native-prototype",
+  "status": "v005-r06-native-prototype",
   "confirmed": {
     "character_type": "参考用户形象的 GPT 龙娘，Q 版人物",
     "target": "Coopanion",
@@ -31,10 +31,10 @@
   "checks": {
     "art": "pending-user-acceptance",
     "assets": "r04 arm rest reassembly identical; original v005 locked; editable masks and ORA retained",
-    "animation": "r04: 160 targeted browser snapshots reviewed; walking/running arms and legs, wave, basic faces, stand/sit height transition; full secondary physics and desktop acceptance pending",
-    "desktop": "not-tested"
+    "animation": "r06 80 snapshots: fixed-route walk/run, palm-out wave and restoration, jump; user naturalness acceptance pending",
+    "desktop": "real Coopanion importer passed; actual opaque-origin figure-frame loaded 15 words and rendered without reported errors; desktop window interactions and restart not tested"
   },
   "candidate_master": "gpt-dragon-master-v005.png",
   "active_source_lock": "production-lock.json",
-  "active_prototype": "rig-v005-r04"
+  "active_prototype": "rig-v005-r06"
 }

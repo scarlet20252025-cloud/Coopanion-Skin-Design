@@ -1,0 +1,110 @@
+{
+  "source": "running Coopanion /figure-frame; installed pack served by same application",
+  "pack": "gpt-dragon-v005-r06",
+  "ready": true,
+  "words": [
+    "neutral",
+    "happy",
+    "wink",
+    "sleepy",
+    "stand",
+    "sit",
+    "sleep",
+    "nod",
+    "shake",
+    "jump",
+    "hop",
+    "turn",
+    "walk",
+    "run",
+    "wave"
+  ],
+  "frames": 29500,
+  "errors": [],
+  "checks": [
+    {
+      "word": "neutral",
+      "frames": 361,
+      "errors": 0
+    },
+    {
+      "word": "happy",
+      "frames": 356,
+      "errors": 0
+    },
+    {
+      "word": "wink",
+      "frames": 358,
+      "errors": 0
+    },
+    {
+      "word": "sleepy",
+      "frames": 351,
+      "errors": 0
+    },
+    {
+      "word": "stand",
+      "frames": 359,
+      "errors": 0
+    },
+    {
+      "word": "sit",
+      "frames": 336,
+      "errors": 0
+    },
+    {
+      "word": "sleep",
+      "frames": 359,
+      "errors": 0
+    },
+    {
+      "word": "nod",
+      "frames": 360,
+      "errors": 0
+    },
+    {
+      "word": "shake",
+      "frames": 360,
+      "errors": 0
+    },
+    {
+      "word": "jump",
+      "frames": 333,
+      "errors": 0
+    },
+    {
+      "word": "hop",
+      "frames": 344,
+      "errors": 0
+    },
+    {
+      "word": "turn",
+      "frames": 357,
+      "errors": 0
+    },
+    {
+      "word": "walk",
+      "frames": 355,
+      "errors": 0
+    },
+    {
+      "word": "run",
+      "frames": 358,
+      "errors": 0
+    },
+    {
+      "word": "wave",
+      "frames": 360,
+      "errors": 0
+    }
+  ],
+  "desktop_window_visual": "not-tested",
+  "restart": "not-tested",
+  "lastMode": "idle",
+  "limits": "15-word dispatch and rendering smoke check, not per-action visual acceptance or desktop restart test",
+  "import": {
+    "installed": true,
+    "problems": [],
+    "initial_failure": "missing vocab.seconds; fixed before install"
+  }
+}

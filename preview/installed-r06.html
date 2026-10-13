@@ -1,0 +1,25 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>已安装龙娘 · 原生沙箱检查</title>
+<style>body{font:14px system-ui;background:#f4f0fa;color:#514463}iframe{width:960px;height:440px;border:0;background:#e8e2f0}button{padding:8px;margin:5px}pre{white-space:pre-wrap}</style>
+<h1>已安装 r06 · Coopanion 原生沙箱</h1><p>从本机正在运行的 Coopanion 加载已导入包；此页不切换正在使用的桌宠。</p><iframe id="frame" src="http://127.0.0.1:7797/figure-frame"></iframe><div id="controls"></div><button id="check">检查全部已声明词</button><button id="save">保存检查报告</button><pre id="status">等待宿主沙箱…</pre>
+<script type="module">
+const frame=document.querySelector('#frame'),status=document.querySelector('#status');
+const model=await(await fetch('/packs/gpt-dragon-v005-r06/model.json')).json();
+const send=m=>frame.contentWindow.postMessage(m,'*');let ready=false,ticking=false,frames=0,last=performance.now(),words=[],errors=[];
+const report={source:'running Coopanion /figure-frame; installed pack served by same application',pack:'gpt-dragon-v005-r06',ready:false,words:[],frames:0,errors,checks:[],desktop_window_visual:'not-tested',restart:'not-tested'};
+let initialized=false;function init(){if(initialized)return;initialized=true;send({t:'init',entry:'http://127.0.0.1:7797/packs/gpt-dragon-v005-r06/figure.js',export:'createDragonBody',base:'http://127.0.0.1:7797/packs/gpt-dragon-v005-r06/',model,bounds:{W:960,H:440,floorY:418,S:1.25},start:{x:480,facing:1,enter:'stand'},theme:'light',language:'zh'});}
+addEventListener('message',e=>{if(e.source!==frame.contentWindow)return;const m=e.data;
+ if(m.t==='loaded')init();
+ if(m.t==='ready'){ready=true;ticking=true;words=m.words;report.ready=true;report.words=words;send({t:'set',state:{roam:'off',hold:999}});status.textContent='原生沙箱加载成功 · '+words.length+' 个词';for(const word of words){const b=document.createElement('button');b.textContent=word;b.onclick=()=>send({t:'do',word});document.querySelector('#controls').append(b);}}
+ if(m.t==='error'){errors.push(m.message);status.textContent='加载失败：'+m.message;}
+ if(m.t==='frame'){frames++;report.frames=frames;report.lastMode=m.layout?.mode;}
+});
+// iframe may load before model fetch resolves. A load listener plus handshake fallback avoids losing it.
+frame.addEventListener('load',()=>{if(!ready)init();});
+setTimeout(()=>{if(!ready)init();},800);
+function raf(now){if(ticking)send({t:'tick',dt:Math.min(.03,(now-last)/1000)});last=now;requestAnimationFrame(raf);}requestAnimationFrame(raf);
+document.querySelector('#check').onclick=async()=>{if(!ready)return;document.querySelector('#check').disabled=true;report.checks=[];
+ for(const word of words){send({t:'do',word:'stand'});await new Promise(r=>setTimeout(r,1500));const n=frames;send({t:'do',word});status.textContent='原生沙箱检查：'+word;await new Promise(r=>setTimeout(r,2000));report.checks.push({word,frames:frames-n,errors:errors.length});}
+ status.textContent=JSON.stringify(report,null,2);document.querySelector('#check').disabled=false;
+};
+document.querySelector('#save').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(report,null,2)],{type:'application/json'}));a.download='dragon-r06-installed-sandbox.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),10000);};
+</script></html>

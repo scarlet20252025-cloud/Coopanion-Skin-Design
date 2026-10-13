@@ -25,3 +25,12 @@ if(r04.master_sha256!==hash||r04.arm_checks.rest_mismatches)throw Error('r04 sou
 if(JSON.stringify(r04.leg_rig.elasticity)!==JSON.stringify(r03.leg_rig.elasticity))throw Error('Accepted spring settings drifted');
 if(JSON.stringify(r04.motion_rig)!==JSON.stringify(await json('characters/original-01/rig-v005-r04/motion-config.json')))throw Error('Rebuild r04 motion parameters');
 console.log('PASS: r04 arm rest contract, motion config and inherited elasticity.');
+const latest=await json('packs/gpt-dragon-v005-r06/model.json');
+const manifest=await json('packs/gpt-dragon-v005-r06/figure.json');
+const wave=await json('characters/original-01/rig-v005-r06/wave-validation.json');
+if(latest.master_sha256!==hash||wave.master_sha256!==hash||wave.outside_hand_mask_changes!==0)throw Error('r06 palm source contract failed');
+if(JSON.stringify(latest.leg_rig.elasticity)!==JSON.stringify(r03.leg_rig.elasticity))throw Error('r06 spring settings drifted');
+if(JSON.stringify(latest.motion_rig)!==JSON.stringify(await json('characters/original-01/rig-v005-r06/motion-config.json')))throw Error('Sync r06 motion config');
+if(JSON.stringify(latest.secondary_rig)!==JSON.stringify(await json('characters/original-01/rig-v005-r05/secondary-config.json')))throw Error('Sync secondary config');
+for(const word of manifest.vocab)if(!Number.isFinite(word.seconds)||word.seconds<=0)throw Error(`Missing host duration: ${word.id}`);
+console.log('PASS: r06 master, local palm edit, spring preservation, config and required vocab durations.');

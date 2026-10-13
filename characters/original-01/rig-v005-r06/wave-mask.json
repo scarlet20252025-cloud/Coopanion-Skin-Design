@@ -1,0 +1,29 @@
+{
+  "polygon": [
+    [
+      429,
+      826
+    ],
+    [
+      480,
+      807
+    ],
+    [
+      537,
+      827
+    ],
+    [
+      539,
+      861
+    ],
+    [
+      513,
+      916
+    ],
+    [
+      440,
+      912
+    ]
+  ],
+  "scope": "hand plus cuff join only; shoulder and sleeve above mask remain pixel-identical"
+}

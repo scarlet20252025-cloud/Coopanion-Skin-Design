@@ -1,11 +1,12 @@
 """Build a reproducible standalone preview ZIP."""
 from pathlib import Path
 import sys,json,hashlib,zipfile
-R=Path(__file__).resolve().parents[1];name=sys.argv[1] if len(sys.argv)>1 else 'gpt-dragon-v005-r04';P=(R/'packs'/name).resolve();assert P.parent==R/'packs'
+R=Path(__file__).resolve().parents[1];name=sys.argv[1] if len(sys.argv)>1 else 'gpt-dragon-v005-r06';P=(R/'packs'/name).resolve();assert P.parent==R/'packs'
 m=json.loads((P/'figure.json').read_text(encoding="utf-8"));model=json.loads((P/'model.json').read_text(encoding="utf-8"));lock=json.loads((R/'characters/original-01/production-lock.json').read_text(encoding="utf-8"))
 assert m['id']==name and model['master_sha256']==lock['sha256']
 for key in ['entry','model','thumb']:assert (P/m[key]).is_file()
 assert len({v['id'] for v in m['vocab']})==len(m['vocab'])
+for v in m['vocab']:assert isinstance(v.get('seconds'),(int,float)) and v['seconds']>0, 'Each vocab word requires positive seconds (host API 2)'
 D=R/'dist';D.mkdir(exist_ok=True);out=D/(name+'-'+m['version']+'.zip')
 with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED) as z:
  for f in sorted(P.rglob('*')):

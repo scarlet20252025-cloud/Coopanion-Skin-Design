@@ -1,0 +1,10 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GPT 龙娘 v005-r05 · 动作小样</title>
+<style>body{font:14px/1.7 system-ui;color:#494152;background:#f5f2fa;margin:0}main{max-width:960px;margin:auto;padding:20px}h1{font-size:22px}#stage{height:440px;position:relative;background:#e9e4f1;overflow:hidden;border-radius:12px;touch-action:none}#stage.dark{background:#24242c}#root{position:absolute;inset:0}button{padding:8px 13px;border-radius:8px;border:1px solid #d6cbe2;background:white;color:#655174;cursor:pointer;margin:4px}button:disabled{opacity:.5}.note{background:#fff4dd;padding:10px 14px;border-radius:8px}a{color:#7b589f}#status{white-space:pre-wrap}</style>
+<main><h1>GPT 龙娘 v005-r05 · 动作小样</h1><p>使用锁定 v005 原画：原位头部、局部三档眨眼、独立坐姿。行为由官方 kit 驱动。</p><p class="note">开发小样：目前检查待机、轻微头动、坐下/睡眠和跳跃。坐姿切换采用差分替换；已补左右腿跳跃收放；已接入手脚走跑、招手和连续站坐位移；裙腿中段仍采用差分切换。本版测试头发／翅膀／尾巴局部柔性动态；坐姿暂不启用这些局部形变。客户端验收待完成。</p>
+<div id="stage"><div id="root"></div></div><div id="controls"></div>
+<button id="blink">慢放眨眼</button><button id="background">深浅背景</button><button id="reset">复位</button><button id="capture">下载当前帧</button><button id="qa">导出动作检查帧</button><button id="jumpqa">检查跳跃修正</button><p id="status">加载中…</p>
+<a href="/tools-local/whale-reference-91293b3/index.html">官方逐帧参考库</a> · <a href="/characters/original-01/rig-v005-r02/gpt-dragon-v005-r02.ora" download>头部与坐姿分层源文件</a></main>
+<p><label>检查动作 <select id="inspect-motion"><option value="wave">招手</option><option value="walk">走路</option><option value="run">跑步</option><option value="jump">跳跃</option><option value="hop">小跳</option><option value="sit">坐下</option><option value="sleep">睡眠</option></select></label><label>检查帧（60 fps） <input id="frame" type="number" min="0" max="180" value="30" style="width:70px"></label><button id="seek">定位动作帧</button><button id="resume">恢复播放</button><button id="limbqa">检查手脚动作</button></p>
+<button id="poseqa">检查招手与站坐</button>
+<button id="secondary">关闭附属动态（对比）</button><button id="secondaryqa">检查附属动态</button><div id="faces"></div><button id="faceqa">检查表情</button>
+<script type="module" src="/preview/dragon-r05.js"></script></html>
