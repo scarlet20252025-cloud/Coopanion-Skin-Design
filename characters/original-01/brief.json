@@ -1,20 +1,38 @@
 {
   "id": "original-01",
-  "status": "planning",
+  "status": "master-candidate",
   "confirmed": {
-    "character_type": "原创 Q 版人物",
+    "character_type": "参考用户形象的 GPT 龙娘，Q 版人物",
     "target": "Coopanion",
     "animation": "官方分件动画方式"
   },
-  "undecided": ["名字", "性格", "发型", "服装", "配色", "标志性配件"],
+  "undecided": [
+    "名字",
+    "性格",
+    "母版最终验收"
+  ],
   "proposed": {
-    "master_canvas": [1024, 1024],
+    "master_canvas": [
+      1024,
+      1024
+    ],
     "facing": "slightly-right-both-eyes-visible",
     "body_ratio": "about-two-heads",
     "first_release_outfits": 1,
     "first_release_palettes": 1
   },
-  "runtime_coordinates": {"width": 256, "height": 256, "center_x": 128, "floor_y": 256},
+  "runtime_coordinates": {
+    "width": 256,
+    "height": 256,
+    "center_x": 128,
+    "floor_y": 256
+  },
   "approved_master": null,
-  "checks": {"art": "pending", "assets": "pending", "animation": "pending", "desktop": "pending"}
+  "checks": {
+    "art": "pending",
+    "assets": "pending",
+    "animation": "pending",
+    "desktop": "pending"
+  },
+  "candidate_master": "gpt-dragon-master-v002.png"
 }
