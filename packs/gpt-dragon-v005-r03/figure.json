@@ -2,12 +2,12 @@
   "manifest": 2,
   "api": 2,
   "id": "gpt-dragon-v005-r03",
-  "version": "0.3.0-preview",
+  "version": "0.3.2-preview",
   "name": {
     "zh": "GPT 龙娘 v005 动作小样"
   },
   "about": {
-    "zh": "开发小样：三档眨眼、轻微头动、坐姿与睡眠、独立双腿跳跃。手臂、步态和连续坐下过渡未完成。"
+    "zh": "开发小样：三档眨眼、轻微头动、坐姿与睡眠、双腿收放与Q弹跳跃。手臂、步态和连续坐下过渡未完成。"
   },
   "author": "Coopanion-Skin-Design",
   "entry": "figure.js",

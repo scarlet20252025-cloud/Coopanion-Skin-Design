@@ -1,0 +1,14 @@
+{
+  "master_sha256": "14e64e72f9ff192f4d49fff321579e05d8a2b78c23feba968ba07fed2eb93f81",
+  "samples": 48,
+  "groups": {
+    "jump": 24,
+    "hop": 24
+  },
+  "finite_layouts": true,
+  "nonempty_frames": true,
+  "source": "native kit preview export",
+  "visual_review": "jump and hop contact sheets reviewed: restored anticipation squash, airborne stretch and landing rebound; native timing and leg tuck retained",
+  "limits": "48 snapshots; see timeline for sampling intervals; not an exhaustive 60 fps motion validation",
+  "revision": "0.3.1-preview (jump/hop unchanged in 0.3.2; idle amplitude later reduced 30%)"
+}

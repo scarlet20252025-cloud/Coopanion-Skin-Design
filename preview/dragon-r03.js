@@ -34,7 +34,7 @@ async function exportQA(words,filename,stride=10,count=120){
   await reset();for(let i=0;i<60;i++)body.step(1/60);body.do(word);
   for(let i=0;i<count;i++){body.step(1/60);if(i%stride===0){status.textContent='检查帧导出：'+word+' '+i+'/'+count;samples.push({word,frame:i,t:(i+1)/60,layout:body.layout(),png:await capture()});}}
  }
- download(JSON.stringify({master:model.master_sha256,samples,events}),filename,'application/json');status.textContent=`已导出 ${samples.length} 张动作检查帧`;
+ download(JSON.stringify({prototype:'v005-r03',master:model.master_sha256,motionParameters:model.leg_rig,samples,events}),filename,'application/json');status.textContent=`已导出 ${samples.length} 张动作检查帧`;
  }catch(e){status.textContent=String(e.stack);}finally{await reset();paused=false;buttons.forEach(b=>b.disabled=false);}
 }
 document.querySelector('#qa').onclick=()=>exportQA(['neutral','nod','shake','sit','sleep','jump','hop','turn'],'dragon-v005-r03-qa.json');

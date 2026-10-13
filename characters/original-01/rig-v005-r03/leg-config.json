@@ -174,5 +174,18 @@
   },
   "crouch_body_drop_px": 14,
   "landing_body_drop_px": 18,
-  "notes": "Rigid boot/visible leg articulation under skirt. No knee mesh or walking claim. Host remains responsible for trajectory."
+  "notes": "Rigid boot/visible leg articulation under skirt. No knee mesh or walking claim. Host remains responsible for trajectory.",
+  "elasticity": {
+    "strength": 0.65,
+    "x": [
+      0.1,
+      0.12
+    ],
+    "y": [
+      0.16,
+      0.12
+    ],
+    "mapping": "soft tanh bounds; preserve native spring timing and rebound",
+    "idle_strength": 0.7
+  }
 }

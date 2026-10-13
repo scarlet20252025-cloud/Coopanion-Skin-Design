@@ -72,16 +72,6 @@
     "motion": "browser-prototype-sampled-review; limited head range, discrete sit transition",
     "desktop": "not-tested"
   },
-  "jump_squash_limits": {
-    "x": [
-      0.97,
-      1.03
-    ],
-    "y": [
-      0.98,
-      1.02
-    ]
-  },
   "leg_rig": {
     "coordinate_space": "v005 original 1254x1254; left/right are screen sides",
     "legs": [
@@ -258,7 +248,20 @@
     },
     "crouch_body_drop_px": 14,
     "landing_body_drop_px": 18,
-    "notes": "Rigid boot/visible leg articulation under skirt. No knee mesh or walking claim. Host remains responsible for trajectory."
+    "notes": "Rigid boot/visible leg articulation under skirt. No knee mesh or walking claim. Host remains responsible for trajectory.",
+    "elasticity": {
+      "strength": 0.65,
+      "x": [
+        0.1,
+        0.12
+      ],
+      "y": [
+        0.16,
+        0.12
+      ],
+      "mapping": "soft tanh bounds; preserve native spring timing and rebound",
+      "idle_strength": 0.7
+    }
   },
   "leg_checks": {
     "master": "14e64e72f9ff192f4d49fff321579e05d8a2b78c23feba968ba07fed2eb93f81",
@@ -277,6 +280,6 @@
         0.040302474051713943
       ]
     ],
-    "motion": "48 jump/hop browser snapshots reviewed; rigid visible legs only; full knees and desktop not tested"
+    "motion": "48 elastic jump/hop snapshots reviewed; idle scale deviation reduced to 70% in 0.3.2; desktop not tested"
   }
 }

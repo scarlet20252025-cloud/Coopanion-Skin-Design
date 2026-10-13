@@ -1,4 +1,4 @@
-// GPT Dragon v005-r02: original-coordinate layered prototype.
+// GPT Dragon v005-r03: original-coordinate layered prototype.
 // Behaviour comes from host kit; no whale facial geometry is used.
 const NS='http://www.w3.org/2000/svg';
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
@@ -39,13 +39,15 @@ export async function createDragonBody(base,opts){
   anchors:{gaze:[143,116],bubble:[130,20],z:[199,55],tear:[160,129],hearts:[100,176,70]},
   draw(g,fc,o){
    if(mounted!==g)mount(g);
-   // Keep native trajectory/landing timing, limit whole-face squash for this art.
+   // Preserve the native spring waveform with tunable amplitude and soft limits.
    // Apply about the foot anchor so the character never slides vertically.
    const scales=g.getAttribute('transform')?.match(/scale\(([-\d.]+)\s+([-\d.]+)\)/);
    let cx=1,cy=1;
-   if(scales&&['crouch','air','land'].includes(o.mode)&&Math.abs(o.facing)>.1){
+   if(scales&&['idle','crouch','air','land'].includes(o.mode)&&Math.abs(o.facing)>.1){
     const hostScale=opts.host.bounds().S,sx=Number(scales[1])/(hostScale*o.facing),sy=Number(scales[2])/hostScale;
-    if(sx>0&&sy>0){cx=clamp(sx,.97,1.03)/sx;cy=clamp(sy,.98,1.02)/sy;}
+    const spring=cfg.elasticity;
+    const elastic=(s,axis)=>{if(o.mode==='idle')return 1+(s-1)*spring.idle_strength;const d=(s-1)*spring.strength,limit=spring[axis][d<0?0:1];return 1+limit*Math.tanh(d/limit);};
+    if(sx>0&&sy>0){cx=elastic(sx,'x')/sx;cy=elastic(sy,'y')/sy;}
    }
    root.setAttribute('transform',`translate(128 256) scale(${cx} ${cy}) translate(-128 -256) translate(${X} ${Y}) scale(${S})`);
    const dt=Math.max(0,Math.min(.05,o.t-lastT));lastT=o.t;

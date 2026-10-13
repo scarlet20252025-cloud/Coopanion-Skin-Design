@@ -1,11 +1,18 @@
 """Incremental leg extraction: v005 pixels, editable polygons, local underpaint only."""
 from pathlib import Path
-import json,hashlib,shutil,zipfile,io
+import json,hashlib,shutil,zipfile,io,sys
 import xml.etree.ElementTree as ET
 import cv2,numpy as np
 from PIL import Image,ImageDraw
 R=Path(__file__).resolve().parents[1];A=R/'characters/original-01';O=A/'rig-v005-r03';P=R/'packs/gpt-dragon-v005-r03'
 lock=json.loads((A/'production-lock.json').read_text());src=R/lock['active_master'];assert hashlib.sha256(src.read_bytes()).hexdigest()==lock['sha256']
+if '--motion-only' in sys.argv:
+ cfg=json.loads((O/'leg-config.json').read_text());meta=json.loads((P/'model.json').read_text())
+ assert meta['master_sha256']==lock['sha256']
+ for old,new in zip(meta['leg_rig']['legs'],cfg['legs'],strict=True):
+  assert all(old[k]==new[k] for k in ['id','polygon','boot_bounds']), 'Mask changed; use full build'
+ meta['leg_rig']=cfg;meta.pop('jump_squash_limits',None);meta['leg_checks']['motion']='elasticity update; pending sampled review'
+ (P/'model.json').write_text(json.dumps(meta,indent=2)+'\n');print('Updated motion parameters only; no art regenerated');sys.exit(0)
 m=np.array(Image.open(src).convert('RGBA'));e=np.array(Image.open(O/'skirt-underpaint-edit.png').convert('RGBA'));assert e.shape==m.shape
 mask=np.zeros(m.shape[:2],np.uint8);mask[200:900,350:920]=255;mask[m[:,:,3]<250]=0
 gray=lambda x:cv2.cvtColor(x[:,:,:3],cv2.COLOR_RGB2GRAY).astype('float32')/255
