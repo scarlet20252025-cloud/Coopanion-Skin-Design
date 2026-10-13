@@ -7,7 +7,7 @@
   "finite_layouts": true,
   "nonempty_frames": true,
   "source": "native kit preview export",
-  "visual_review": "reviewed enlarged running frame and sequence: near cuff and palm visible behind shoulder, torso overlap masked; far arm occluded; stop and wave restore",
+  "visual_review": "rejected: torso mask rotated with arm, clipping sleeve; previous visual review missed the coordinate-space bug",
   "limits": "40 snapshots; see timeline for sampling intervals; not an exhaustive 60 fps motion validation",
   "version": "0.6.2-preview"
 }

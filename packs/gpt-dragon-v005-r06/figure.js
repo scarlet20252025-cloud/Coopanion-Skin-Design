@@ -24,7 +24,7 @@ export async function createDragonBody(base,opts){
  let mounted=null,root,back,body,head,sitting,headGroup,backGroup,prevEye='',prevSit=false;
  let articulation,fill,front,legNodes=[],lastT=0,airK=0,groundK=0,jumpWord='jump';
  const cfg=model.leg_rig;
- const motion=model.motion_rig;let armNodes=[],armFill,gaitK=0,armAngles=[0,0],armActivePrev=false,armLayers=[],runLayerK=0,armFillLayer,runArmMaskId,sitBlend=0;
+ const motion=model.motion_rig;let armNodes=[],armSlots=[],armFill,gaitK=0,armAngles=[0,0],armActivePrev=false,armLayers=[],runLayerK=0,armFillLayer,runArmMaskId,sitBlend=0;
  function node(tag,attrs={}){const n=document.createElementNS(NS,tag);for(const [k,v]of Object.entries(attrs))n.setAttribute(k,v);return n;}
  function picture(name){return node('image',{href:textures[name],x:0,y:0,width:model.canvas[0],height:model.canvas[1]});}
  function mount(g){
@@ -35,7 +35,8 @@ export async function createDragonBody(base,opts){
   legNodes=cfg.legs.map(l=>{const group=node('g');group.append(picture('leg-'+l.id));articulation.append(group);return group;});
   front=picture('body-without-legs');articulation.append(front);root.append(articulation);
   body=picture('body-covered-underpaint');root.append(body);
-  armNodes=motion.arms.map(a=>{const n=node('g');n.append(picture('arm-'+a.id));root.append(n);return n;});
+  armSlots=[];armLayers=[];
+  armNodes=motion.arms.map(a=>{const slot=node('g',{'data-arm-slot':a.id}),n=node('g');n.append(picture('arm-'+a.id));slot.append(n);root.append(slot);armSlots.push(slot);return n;});
   headGroup=node('g');head=picture('head-open');headGroup.append(head);root.append(headGroup);
   sitting=picture('sitting-open');sitting.setAttribute('visibility','hidden');root.append(sitting);
   runArmMaskId='run-torso-'+Math.random().toString(36).slice(2);
@@ -110,7 +111,7 @@ export async function createDragonBody(base,opts){
    runLayerK+=((running?1:0)-runLayerK)*(1-Math.exp(-dt*14));
    armNodes.forEach((n,i)=>{
     const layer=raised&&i===motion.wave.arm?'wave':runLayerK>.15?(i===motion.gait.run_near_arm?'run-near':'behind-body'):'normal';
-    if(armLayers[i]!==layer){root.insertBefore(n,['wave','run-near'].includes(layer)?sitting:layer==='behind-body'?armFillLayer:headGroup);if(layer==='run-near')n.setAttribute('mask',`url(#${runArmMaskId})`);else n.removeAttribute('mask');armLayers[i]=layer;}
+    if(armLayers[i]!==layer){const slot=armSlots[i];root.insertBefore(slot,['wave','run-near'].includes(layer)?sitting:layer==='behind-body'?armFillLayer:headGroup);if(layer==='run-near')slot.setAttribute('mask',`url(#${runArmMaskId})`);else slot.removeAttribute('mask');armLayers[i]=layer;}
    });
    if(armActive!==armActivePrev){body.setAttribute('href',textures[armActive?'body-without-arms':'body-covered-underpaint']);front.setAttribute('href',textures[armActive?'body-without-limbs':'body-without-legs']);armActivePrev=armActive;}
    armFill.setAttribute('visibility',armActive?'visible':'hidden');
@@ -138,5 +139,5 @@ export async function createDragonBody(base,opts){
  const native=opts.kit.createBody(opts.host,{figure});
  // Do not expose unsupported expressions/limb motions just because kit knows them.
  const supported=['neutral','happy','wink','sleepy','stand','sit','sleep','nod','shake','jump','hop','turn','walk','run','wave'];
- return {...native,secondaryState:()=>secondary?.values(),armLayerState:()=>({layers:[...armLayers],waveTexture}),setSecondary:enabled=>{secondaryEnabled=!!enabled;},words:supported,do(word){const ok=supported.includes(word)?native.do(word):false;if(ok&&['jump','hop'].includes(word))jumpWord=word;return ok;}};
+ return {...native,secondaryState:()=>secondary?.values(),armLayerState:()=>({layers:[...armLayers],waveTexture,maskSpace:'body',maskTransforms:armSlots.map(n=>n.getAttribute('transform'))}),setSecondary:enabled=>{secondaryEnabled=!!enabled;},words:supported,do(word){const ok=supported.includes(word)?native.do(word):false;if(ok&&['jump','hop'].includes(word))jumpWord=word;return ok;}};
 }
