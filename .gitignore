@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+tools-local/
+scratch/
+dist/
+characters/*/raw/
+characters/*/source/
+characters/*/exports/
+*.zip
+.env

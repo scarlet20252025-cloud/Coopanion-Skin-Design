@@ -1,0 +1,1 @@
+job_id,date,stage,master_version,input_sha256,part_id,tool_version,prompt_file,mask_file,output_file,result,defect,next_action,elapsed_minutes

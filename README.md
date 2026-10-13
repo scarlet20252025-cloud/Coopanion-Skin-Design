@@ -1,0 +1,46 @@
+# Coopanion Skin Design
+
+原创 Q 版人物桌宠绘制工程。目标平台为 **Coopanion**，采用官方分件动画方式；Cortico 是其 Agent 框架。
+
+当前阶段：**工程方案已建立，角色具体设定、母版与运行时适配尚未制作**。用户已确认原创 Q 版人物方向。
+
+推荐生产线：角色设定 → 单张母版 → See-Through 分层试验 → 局部补画与分层精修 → 统一 PNG 部件 → Coopanion kit / rig → 桌面验收。
+若自动分层质量不达标，直接采用官方「局部编辑 + 配准 + 遮罩拆件」路线；不反复重跑整张图。
+
+## 从这里开始
+
+- [绘制工程与阶段验收](docs/PRODUCTION_PLAN.md)
+- [工具与 Skill 选型、实测状态](docs/TOOLS.md)
+- [官方依据与版本记录](docs/SOURCES.md)
+- [母版、拆件、局部修补提示词](prompts/production.md)
+- [首个角色设定单](characters/original-01/brief.json)
+- [分件映射表](characters/original-01/parts.csv)
+- [制作与返工记录](characters/original-01/jobs.csv)
+
+```mermaid
+flowchart LR
+  A[锁定角色设定] --> B[母版验收]
+  B --> C[自动分层小样]
+  B --> D[局部编辑拆件]
+  C --> E[PSD/KRA与透明PNG]
+  D --> E
+  E --> F[Coopanion kit分件动画]
+  E -.按需验证.-> G[PSD2Live自动绑定]
+  F --> H[真实桌面验收]
+```
+
+本仓库交付的是生产工程与模板，不是已完成的角色或可导入皮肤。`packs/` 在首个角色接入时建立；PSD2Live 的 `.moc3` 不能当成 Coopanion 的 `figure.json` 包直接导入。
+
+## 本机检查
+
+在仓库根目录执行 `python scripts/doctor.py`，查看命令与当前 Python 的图像依赖。找不到 GUI 程序只表示 PATH 未发现，不代表机器上一定没安装。
+
+图像处理依赖待进入拆件阶段后装入独立环境：
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python -m pip install -r requirements-art.txt
+.\.venv\Scripts\python scripts/doctor.py
+```
+
+依赖范围是选型约束，尚非经过安装验证的锁文件。首轮工具实测通过后再冻结精确版本。

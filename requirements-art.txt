@@ -1,0 +1,5 @@
+# Install when the first approved master is ready; then freeze tested versions.
+Pillow>=11,<13
+numpy>=2,<3
+opencv-python-headless>=4.10,<5
+psd-tools>=1.10,<2
