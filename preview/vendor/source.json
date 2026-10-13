@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/Pal-AI-Lab/Coopanion",
+  "commit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+  "license": "AGPL-3.0-or-later",
+  "files": {
+    "body.js": "03520bb81c40465ccf919a540d5a0117081a41a25b965a9762fd888fd9d6751a",
+    "rig.js": "a23b1869d1439d8bb234678e71ed61ade882d786653f20ac406559e5724fc0ba"
+  },
+  "changes": "None to vendored kit. r02 figure uses own v005 geometry and limits jump squash. No official whale textures used in dragon pack."
+}

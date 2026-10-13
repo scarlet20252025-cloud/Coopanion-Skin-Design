@@ -1,0 +1,19 @@
+{
+  "master": "14e64e72f9ff192f4d49fff321579e05d8a2b78c23feba968ba07fed2eb93f81",
+  "rest_mismatch": 0,
+  "underpaint_region": "union of explicit leg polygons only",
+  "registration_correlation": 0.9954849307023462,
+  "translation": [
+    [
+      1.0,
+      0.0,
+      0.17743021249771118
+    ],
+    [
+      0.0,
+      1.0,
+      0.040302474051713943
+    ]
+  ],
+  "motion": "48 jump/hop browser snapshots reviewed; rigid visible legs only; full knees and desktop not tested"
+}

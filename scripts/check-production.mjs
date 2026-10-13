@@ -11,4 +11,12 @@ for(const name of ['validation','blink-validation']){
  if(report.master_sha256!==hash)throw Error('Report uses an older master');
  if(report.visible_pixel_mismatches||report.alpha_mismatches||report.changed_pixels_outside_eye_roi)throw Error('Visual contract failed');
 }
-console.log('PASS: active v005 hash, layer source version and local-expression mask reports. Animation is NOT certified by this check.');
+const r02=await json('characters/original-01/rig-v005-r02/geometry.json');
+if(r02.master_sha256!==hash||r02.rest_pixel_mismatches||r02.outside_eye_changes||r02.independent_scaling)throw Error('r02 geometry/source contract failed');
+const pack=await json('packs/gpt-dragon-v005-r02/model.json');
+if(pack.master_sha256!==hash)throw Error('Pack uses another master');
+const r03=await json('packs/gpt-dragon-v005-r03/model.json');
+if(r03.master_sha256!==hash||r03.leg_checks.master!==hash||r03.leg_checks.rest_mismatch)throw Error('r03 source/rest contract failed');
+const cfg=await json('characters/original-01/rig-v005-r03/leg-config.json');
+if(JSON.stringify(cfg)!==JSON.stringify(r03.leg_rig))throw Error('Rebuild r03 after editing leg config');
+console.log('PASS: active v005 hash, r01/r02/r03 source versions, rest geometry, eye masks and leg config. This is not desktop-client certification.');

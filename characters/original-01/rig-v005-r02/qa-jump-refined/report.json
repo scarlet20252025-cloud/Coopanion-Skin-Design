@@ -1,0 +1,13 @@
+{
+  "master_sha256": "14e64e72f9ff192f4d49fff321579e05d8a2b78c23feba968ba07fed2eb93f81",
+  "samples": 24,
+  "groups": {
+    "jump": 12,
+    "hop": 12
+  },
+  "finite_layouts": true,
+  "nonempty_frames": true,
+  "source": "native kit preview export",
+  "visual_review": "Reviewed corrected jump contact sheet; no previous extreme face squash at sampled times.",
+  "limits": "24 snapshots at 6 fps; not exhaustive 60 fps verification"
+}

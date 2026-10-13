@@ -10,3 +10,6 @@ characters/*/source/
 characters/*/exports/
 *.zip
 .env
+characters/original-01/rig-v005-r02/qa*/*-[0-9][0-9][0-9].png
+characters/original-01/rig-v005-r03/qa*/*-[0-9][0-9][0-9].png
+characters/original-01/rig-v005-r03/qa-initial/

@@ -1,0 +1,85 @@
+{
+  "master_sha256": "14e64e72f9ff192f4d49fff321579e05d8a2b78c23feba968ba07fed2eb93f81",
+  "canvas": [
+    1254,
+    1254
+  ],
+  "registrations": [
+    {
+      "edit": "blink-half",
+      "correlation": 0.9955867890752257,
+      "translation": [
+        [
+          1.0,
+          0.0,
+          0.24299053847789764
+        ],
+        [
+          0.0,
+          1.0,
+          0.10535243898630142
+        ]
+      ],
+      "unchanged_region": [
+        400,
+        200,
+        920,
+        420
+      ]
+    },
+    {
+      "edit": "sit",
+      "correlation": 0.9945403773401289,
+      "translation": [
+        [
+          1.0,
+          0.0,
+          0.12425362318754196
+        ],
+        [
+          0.0,
+          1.0,
+          -0.05690453201532364
+        ]
+      ],
+      "unchanged_region": [
+        380,
+        80,
+        925,
+        575
+      ]
+    }
+  ],
+  "rest_pixel_mismatches": 0,
+  "outside_eye_changes": 0,
+  "sitting_preserved_head_rows": [
+    0,
+    579
+  ],
+  "standing_feet_y": 1198,
+  "sitting_feet_y": 1105,
+  "head_pivot": [
+    670,
+    615
+  ],
+  "rotation_limit_degrees": 2.5,
+  "head_translation_limit_px": 3,
+  "independent_scaling": false,
+  "checks": {
+    "rest": "passed",
+    "blink_roi": "passed",
+    "sitting_head_identity": "passed",
+    "motion": "browser-prototype-sampled-review; limited head range, discrete sit transition",
+    "desktop": "not-tested"
+  },
+  "jump_squash_limits": {
+    "x": [
+      0.97,
+      1.03
+    ],
+    "y": [
+      0.98,
+      1.02
+    ]
+  }
+}

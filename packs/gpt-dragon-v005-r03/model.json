@@ -1,0 +1,282 @@
+{
+  "master_sha256": "14e64e72f9ff192f4d49fff321579e05d8a2b78c23feba968ba07fed2eb93f81",
+  "canvas": [
+    1254,
+    1254
+  ],
+  "registrations": [
+    {
+      "edit": "blink-half",
+      "correlation": 0.9955867890752257,
+      "translation": [
+        [
+          1.0,
+          0.0,
+          0.24299053847789764
+        ],
+        [
+          0.0,
+          1.0,
+          0.10535243898630142
+        ]
+      ],
+      "unchanged_region": [
+        400,
+        200,
+        920,
+        420
+      ]
+    },
+    {
+      "edit": "sit",
+      "correlation": 0.9945403773401289,
+      "translation": [
+        [
+          1.0,
+          0.0,
+          0.12425362318754196
+        ],
+        [
+          0.0,
+          1.0,
+          -0.05690453201532364
+        ]
+      ],
+      "unchanged_region": [
+        380,
+        80,
+        925,
+        575
+      ]
+    }
+  ],
+  "rest_pixel_mismatches": 0,
+  "outside_eye_changes": 0,
+  "sitting_preserved_head_rows": [
+    0,
+    579
+  ],
+  "standing_feet_y": 1198,
+  "sitting_feet_y": 1105,
+  "head_pivot": [
+    670,
+    615
+  ],
+  "rotation_limit_degrees": 2.5,
+  "head_translation_limit_px": 3,
+  "independent_scaling": false,
+  "checks": {
+    "rest": "passed",
+    "blink_roi": "passed",
+    "sitting_head_identity": "passed",
+    "motion": "browser-prototype-sampled-review; limited head range, discrete sit transition",
+    "desktop": "not-tested"
+  },
+  "jump_squash_limits": {
+    "x": [
+      0.97,
+      1.03
+    ],
+    "y": [
+      0.98,
+      1.02
+    ]
+  },
+  "leg_rig": {
+    "coordinate_space": "v005 original 1254x1254; left/right are screen sides",
+    "legs": [
+      {
+        "id": "left",
+        "pivot": [
+          616,
+          1002
+        ],
+        "polygon": [
+          [
+            569,
+            1005
+          ],
+          [
+            596,
+            997
+          ],
+          [
+            618,
+            989
+          ],
+          [
+            630,
+            981
+          ],
+          [
+            661,
+            992
+          ],
+          [
+            645,
+            1034
+          ],
+          [
+            632,
+            1060
+          ],
+          [
+            634,
+            1068
+          ],
+          [
+            623,
+            1105
+          ],
+          [
+            627,
+            1139
+          ],
+          [
+            650,
+            1170
+          ],
+          [
+            653,
+            1210
+          ],
+          [
+            531,
+            1210
+          ],
+          [
+            534,
+            1154
+          ],
+          [
+            549,
+            1100
+          ],
+          [
+            549,
+            1049
+          ],
+          [
+            556,
+            1048
+          ]
+        ],
+        "crouch_angle": -12,
+        "air_angle": 18,
+        "air_lift": 45,
+        "boot_bounds": [
+          510,
+          1098,
+          669,
+          1220
+        ]
+      },
+      {
+        "id": "right",
+        "pivot": [
+          739,
+          1035
+        ],
+        "polygon": [
+          [
+            704,
+            1017
+          ],
+          [
+            777,
+            1033
+          ],
+          [
+            773,
+            1052
+          ],
+          [
+            781,
+            1058
+          ],
+          [
+            774,
+            1103
+          ],
+          [
+            792,
+            1141
+          ],
+          [
+            800,
+            1181
+          ],
+          [
+            791,
+            1203
+          ],
+          [
+            680,
+            1203
+          ],
+          [
+            680,
+            1141
+          ],
+          [
+            696,
+            1100
+          ],
+          [
+            696,
+            1049
+          ],
+          [
+            704,
+            1049
+          ]
+        ],
+        "crouch_angle": 12,
+        "air_angle": -17,
+        "air_lift": 37,
+        "boot_bounds": [
+          670,
+          1098,
+          825,
+          1220
+        ]
+      }
+    ],
+    "timing": {
+      "crouch_seconds": 0.16,
+      "air_blend_seconds": 0.1,
+      "extend_before_landing_seconds": 0.14,
+      "land_seconds": 0.3
+    },
+    "jump": {
+      "velocity": 720,
+      "gravity": 2300
+    },
+    "hop": {
+      "velocity": 480,
+      "gravity": 2300
+    },
+    "crouch_body_drop_px": 14,
+    "landing_body_drop_px": 18,
+    "notes": "Rigid boot/visible leg articulation under skirt. No knee mesh or walking claim. Host remains responsible for trajectory."
+  },
+  "leg_checks": {
+    "master": "14e64e72f9ff192f4d49fff321579e05d8a2b78c23feba968ba07fed2eb93f81",
+    "rest_mismatch": 0,
+    "underpaint_region": "union of explicit leg polygons only",
+    "registration_correlation": 0.9954849307023462,
+    "translation": [
+      [
+        1.0,
+        0.0,
+        0.17743021249771118
+      ],
+      [
+        0.0,
+        1.0,
+        0.040302474051713943
+      ]
+    ],
+    "motion": "48 jump/hop browser snapshots reviewed; rigid visible legs only; full knees and desktop not tested"
+  }
+}

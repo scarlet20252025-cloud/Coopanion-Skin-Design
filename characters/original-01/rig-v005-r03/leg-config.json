@@ -1,0 +1,178 @@
+{
+  "coordinate_space": "v005 original 1254x1254; left/right are screen sides",
+  "legs": [
+    {
+      "id": "left",
+      "pivot": [
+        616,
+        1002
+      ],
+      "polygon": [
+        [
+          569,
+          1005
+        ],
+        [
+          596,
+          997
+        ],
+        [
+          618,
+          989
+        ],
+        [
+          630,
+          981
+        ],
+        [
+          661,
+          992
+        ],
+        [
+          645,
+          1034
+        ],
+        [
+          632,
+          1060
+        ],
+        [
+          634,
+          1068
+        ],
+        [
+          623,
+          1105
+        ],
+        [
+          627,
+          1139
+        ],
+        [
+          650,
+          1170
+        ],
+        [
+          653,
+          1210
+        ],
+        [
+          531,
+          1210
+        ],
+        [
+          534,
+          1154
+        ],
+        [
+          549,
+          1100
+        ],
+        [
+          549,
+          1049
+        ],
+        [
+          556,
+          1048
+        ]
+      ],
+      "crouch_angle": -12,
+      "air_angle": 18,
+      "air_lift": 45,
+      "boot_bounds": [
+        510,
+        1098,
+        669,
+        1220
+      ]
+    },
+    {
+      "id": "right",
+      "pivot": [
+        739,
+        1035
+      ],
+      "polygon": [
+        [
+          704,
+          1017
+        ],
+        [
+          777,
+          1033
+        ],
+        [
+          773,
+          1052
+        ],
+        [
+          781,
+          1058
+        ],
+        [
+          774,
+          1103
+        ],
+        [
+          792,
+          1141
+        ],
+        [
+          800,
+          1181
+        ],
+        [
+          791,
+          1203
+        ],
+        [
+          680,
+          1203
+        ],
+        [
+          680,
+          1141
+        ],
+        [
+          696,
+          1100
+        ],
+        [
+          696,
+          1049
+        ],
+        [
+          704,
+          1049
+        ]
+      ],
+      "crouch_angle": 12,
+      "air_angle": -17,
+      "air_lift": 37,
+      "boot_bounds": [
+        670,
+        1098,
+        825,
+        1220
+      ]
+    }
+  ],
+  "timing": {
+    "crouch_seconds": 0.16,
+    "air_blend_seconds": 0.1,
+    "extend_before_landing_seconds": 0.14,
+    "land_seconds": 0.3
+  },
+  "jump": {
+    "velocity": 720,
+    "gravity": 2300
+  },
+  "hop": {
+    "velocity": 480,
+    "gravity": 2300
+  },
+  "crouch_body_drop_px": 14,
+  "landing_body_drop_px": 18,
+  "notes": "Rigid boot/visible leg articulation under skirt. No knee mesh or walking claim. Host remains responsible for trajectory."
+}

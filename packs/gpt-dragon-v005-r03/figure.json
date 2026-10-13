@@ -1,0 +1,128 @@
+{
+  "manifest": 2,
+  "api": 2,
+  "id": "gpt-dragon-v005-r03",
+  "version": "0.3.0-preview",
+  "name": {
+    "zh": "GPT 龙娘 v005 动作小样"
+  },
+  "about": {
+    "zh": "开发小样：三档眨眼、轻微头动、坐姿与睡眠、独立双腿跳跃。手臂、步态和连续坐下过渡未完成。"
+  },
+  "author": "Coopanion-Skin-Design",
+  "entry": "figure.js",
+  "export": "createDragonBody",
+  "model": "model.json",
+  "vocab": [
+    {
+      "id": "neutral",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "平静"
+        ]
+      },
+      "about": {
+        "zh": "开发小样，待视觉验收"
+      }
+    },
+    {
+      "id": "stand",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "站起"
+        ]
+      },
+      "about": {
+        "zh": "开发小样，待视觉验收"
+      }
+    },
+    {
+      "id": "sit",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "坐下"
+        ]
+      },
+      "about": {
+        "zh": "开发小样，待视觉验收"
+      }
+    },
+    {
+      "id": "sleep",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "睡眠"
+        ]
+      },
+      "about": {
+        "zh": "开发小样，待视觉验收"
+      }
+    },
+    {
+      "id": "nod",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "轻点头"
+        ]
+      },
+      "about": {
+        "zh": "开发小样，待视觉验收"
+      }
+    },
+    {
+      "id": "shake",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "轻摇头"
+        ]
+      },
+      "about": {
+        "zh": "开发小样，待视觉验收"
+      }
+    },
+    {
+      "id": "jump",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "跳跃"
+        ]
+      },
+      "about": {
+        "zh": "开发小样，待视觉验收"
+      }
+    },
+    {
+      "id": "hop",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "小跳"
+        ]
+      },
+      "about": {
+        "zh": "开发小样，待视觉验收"
+      }
+    },
+    {
+      "id": "turn",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "转身"
+        ]
+      },
+      "about": {
+        "zh": "开发小样，待视觉验收"
+      }
+    }
+  ],
+  "thumb": "thumb.png",
+  "license": "AGPL-3.0-or-later"
+}
