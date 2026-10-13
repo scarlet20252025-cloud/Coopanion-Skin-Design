@@ -644,5 +644,37 @@
       ]
     },
     "notes": "All regions in locked 1254px master coordinates; face and attachment roots have zero weight. These are small local deformations, not separately repainted full hidden appendages."
+  },
+  "behavior_rig": {
+    "drag": {
+      "leg_degrees": 6,
+      "rate": 5
+    },
+    "thinking": {
+      "arms": [
+        6,
+        -3
+      ],
+      "head_degrees": -1.8,
+      "head_y": -1
+    },
+    "working": {
+      "arms": [
+        10,
+        -8
+      ],
+      "head_degrees": 0.5,
+      "head_y": 2,
+      "pulse_degrees": 2,
+      "rate": 5
+    },
+    "listening": {
+      "arms": [
+        2,
+        -2
+      ],
+      "head_degrees": -2,
+      "head_y": -1
+    }
   }
 }

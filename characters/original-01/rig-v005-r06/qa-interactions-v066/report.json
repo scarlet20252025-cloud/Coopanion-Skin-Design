@@ -1,0 +1,25 @@
+{
+  "master_sha256": "14e64e72f9ff192f4d49fff321579e05d8a2b78c23feba968ba07fed2eb93f81",
+  "samples": 96,
+  "groups": {
+    "rest-wave-right": 12,
+    "run-stop-right": 12,
+    "drag-release-right": 12,
+    "attention-right": 12,
+    "rest-wave-left": 12,
+    "run-stop-left": 12,
+    "drag-release-left": 12,
+    "attention-left": 12
+  },
+  "finite_layouts": true,
+  "nonempty_frames": true,
+  "source": "native kit preview export",
+  "visual_review": "8 contact sheets (96 sampled frames) reviewed; six enlarged joint crops reviewed in joint-details.png",
+  "limits": "96 snapshots; see timeline for sampling intervals; not an exhaustive 60 fps motion validation",
+  "transition_checks": "both facings: wave texture restored; normal layers restored; drag/land/idle reached; press released; no rejected word calls",
+  "limitations": [
+    "Every twentieth frame, not full 60 fps review",
+    "Thinking/working are subtle head/arm poses with existing half eyes, not new facial art",
+    "Desktop-window input and restart remain untested"
+  ]
+}

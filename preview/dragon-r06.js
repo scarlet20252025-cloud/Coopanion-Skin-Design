@@ -43,7 +43,7 @@ document.querySelector('#limbqa').onclick=()=>exportQA(['walk','run','wave','jum
 document.querySelector('#poseqa').onclick=()=>exportQA(['wave','sit','stand-from-sit'],'dragon-v005-r06-pose-qa.json',6,120);
 document.querySelector('#seek').onclick=async()=>{paused=true;await reset();for(let i=0;i<60;i++)body.step(1/60);const word=document.querySelector('#inspect-motion').value;body.do(word);const frame=Math.max(0,Math.min(180,Number(document.querySelector('#frame').value)||0));for(let i=0;i<=frame;i++)body.step(1/60);status.textContent=`${word} 第 ${frame} 帧 · ${body.layout().mode} · 已暂停，可下载核验`;};
 document.querySelector('#resume').onclick=()=>{paused=false;};
-for(const [word,label]of [['neutral','平静'],['happy','笑眼'],['wink','单眼眨眼'],['sleepy','困倦']]){const b=document.createElement('button');b.textContent=label;b.onclick=()=>{paused=false;body.do(word);status.textContent=label+' · v005-r06';};document.querySelector('#faces').append(b);}
+for(const [word,label]of [['neutral','平静'],['happy','笑眼'],['wink','单眼眨眼'],['sleepy','困倦'],['thinking','思考'],['working','工作'],['listening','倾听']]){const b=document.createElement('button');b.textContent=label;b.onclick=()=>{paused=false;body.do(word);status.textContent=label+' · v005-r06';};document.querySelector('#faces').append(b);}
 document.querySelector('#faceqa').onclick=()=>exportQA(['happy','wink','sleepy','wave'],'dragon-v005-r06-faces-qa.json',10,100);
 status.textContent='v005-r06 已加载：等待视觉验收';
 
@@ -51,3 +51,29 @@ let secondaryEnabled=true;document.querySelector("#secondary").onclick=e=>{secon
 document.querySelector("#secondaryqa").onclick=()=>exportQA(["neutral","walk","run","jump","wave","sit"],"dragon-v005-r06-secondary-qa.json",10,100);
 
 document.querySelector("#layerqa").onclick=()=>exportQA(["run-stop-wave"],"dragon-v005-r06-layer-qa.json",6,240);
+
+// Repeatable transitions use the public kit API and timestamps, never internal state writes.
+async function interactionQA(){
+ paused=true;const oldWidth=stage.style.width;stage.style.width='960px';const samples=[],checks=[];
+ const buttons=[...document.querySelectorAll('button')];buttons.forEach(b=>b.disabled=true);
+ try{for(const facing of [1,-1])for(const scenario of ['rest-wave','run-stop','drag-release','attention']){
+  await reset();body.place(480,facing);for(let n=0;n<60;n++)body.step(1/60);
+  const word=scenario+(facing===1?'-right':'-left');let point=body.layout().hit[0];
+  for(let i=0;i<240;i++){
+   const at=(frame,fn)=>{if(i===frame)checks.push({word,frame,result:fn()??null});};
+   if(scenario==='rest-wave'){at(30,()=>body.do('wave'));}
+   if(scenario==='run-stop'){at(0,()=>body.walk(facing===1?830:130,true,'transition'));at(60,()=>body.stopWalk('transition'));at(100,()=>body.do('wave'));}
+   if(scenario==='drag-release'){
+    at(20,()=>body.pointer('down',{x:point.x,y:point.y,t:0}));
+    if(i>20&&i<=60)body.pointer('move',{x:point.x+facing*Math.min(60,(i-20)*3),y:point.y-Math.min(65,(i-20)*3),t:(i-20)*1000/60});
+    at(61,()=>body.pointer('up',{x:point.x+facing*60,y:point.y-65,t:700}));
+   }
+   if(scenario==='attention'){at(0,()=>body.do('thinking'));at(60,()=>body.do('working'));at(120,()=>body.do('listening'));at(180,()=>body.do('neutral'));}
+   body.step(1/60);
+   if(i%20===0){status.textContent=word+' '+i+'/240';samples.push({word,frame:i,t:(i+1)/60,layout:body.layout(),armLayers:body.armLayerState(),png:await capture()});}
+  }
+ }
+ download(JSON.stringify({prototype:'0.6.6-preview',master:model.master_sha256,samples,checks,events}),'dragon-r06-interactions-066.json','application/json');status.textContent='已导出左右朝向 8 组交互检查';
+ }finally{stage.style.width=oldWidth;await reset();paused=false;buttons.forEach(b=>b.disabled=false);}
+}
+document.querySelector('#interactionqa').onclick=interactionQA;

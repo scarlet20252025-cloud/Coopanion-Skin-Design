@@ -3,23 +3,25 @@
 <h1>已安装 r06 · Coopanion 原生沙箱</h1><p>从本机正在运行的 Coopanion 加载已导入包；此页不切换正在使用的桌宠。</p><iframe id="frame" src="http://127.0.0.1:7797/figure-frame"></iframe><div id="controls"></div><button id="check">检查全部已声明词</button><button id="save">保存检查报告</button><pre id="status">等待宿主沙箱…</pre>
 <script type="module">
 const frame=document.querySelector('#frame'),status=document.querySelector('#status');
+const manifest=await(await fetch('/packs/gpt-dragon-v005-r06/figure.json')).json();
 const model=await(await fetch('/packs/gpt-dragon-v005-r06/model.json')).json();
 const send=m=>frame.contentWindow.postMessage(m,'*');let ready=false,ticking=false,frames=0,last=performance.now(),words=[],errors=[];
-const report={source:'running Coopanion /figure-frame; installed pack served by same application',pack:'gpt-dragon-v005-r06',ready:false,words:[],frames:0,errors,checks:[],desktop_window_visual:'not-tested',restart:'not-tested'};
-let initialized=false;function init(){if(initialized)return;initialized=true;send({t:'init',entry:'http://127.0.0.1:7797/packs/gpt-dragon-v005-r06/figure.js',export:'createDragonBody',base:'http://127.0.0.1:7797/packs/gpt-dragon-v005-r06/',model,bounds:{W:960,H:440,floorY:418,S:1.25},start:{x:480,facing:1,enter:'stand'},theme:'light',language:'zh'});}
+const report={source:'running Coopanion /figure-frame; installed pack served by same application',pack:'gpt-dragon-v005-r06',tested_version:manifest.version,ready:false,words:[],frames:0,errors,checks:[],desktop_window_visual:'not-tested',restart:'not-tested'};
+let frameAck=null;let initialized=false;function init(){if(initialized)return;initialized=true;send({t:'init',entry:'http://127.0.0.1:7797/packs/gpt-dragon-v005-r06/figure.js',export:'createDragonBody',base:'http://127.0.0.1:7797/packs/gpt-dragon-v005-r06/',model,bounds:{W:960,H:440,floorY:418,S:1.25},start:{x:480,facing:1,enter:'stand'},theme:'light',language:'zh'});}
 addEventListener('message',e=>{if(e.source!==frame.contentWindow)return;const m=e.data;
  if(m.t==='loaded')init();
  if(m.t==='ready'){ready=true;ticking=true;words=m.words;report.ready=true;report.words=words;send({t:'set',state:{roam:'off',hold:999}});status.textContent='原生沙箱加载成功 · '+words.length+' 个词';for(const word of words){const b=document.createElement('button');b.textContent=word;b.onclick=()=>send({t:'do',word});document.querySelector('#controls').append(b);}}
  if(m.t==='error'){errors.push(m.message);status.textContent='加载失败：'+m.message;}
- if(m.t==='frame'){frames++;report.frames=frames;report.lastMode=m.layout?.mode;}
+ if(m.t==='frame'){frames++;report.frames=frames;report.lastMode=m.layout?.mode;if(frameAck){const ack=frameAck;frameAck=null;ack(m.layout?.mode);}}
 });
 // iframe may load before model fetch resolves. A load listener plus handshake fallback avoids losing it.
 frame.addEventListener('load',()=>{if(!ready)init();});
 setTimeout(()=>{if(!ready)init();},800);
 function raf(now){if(ticking)send({t:'tick',dt:Math.min(.03,(now-last)/1000)});last=now;requestAnimationFrame(raf);}requestAnimationFrame(raf);
-document.querySelector('#check').onclick=async()=>{if(!ready)return;document.querySelector('#check').disabled=true;report.checks=[];
- for(const word of words){send({t:'do',word:'stand'});await new Promise(r=>setTimeout(r,1500));const n=frames;send({t:'do',word});status.textContent='原生沙箱检查：'+word;await new Promise(r=>setTimeout(r,2000));report.checks.push({word,frames:frames-n,errors:errors.length});}
- status.textContent=JSON.stringify(report,null,2);document.querySelector('#check').disabled=false;
+async function tickFrames(count){const modes=new Set();for(let i=0;i<count;i++){modes.add(await new Promise((resolve,reject)=>{const timeout=setTimeout(()=>{frameAck=null;reject(Error('Host frame timeout'));},5000);frameAck=mode=>{clearTimeout(timeout);resolve(mode);};send({t:'tick',dt:1/60});}));}return [...modes];}
+document.querySelector('#check').onclick=async()=>{if(!ready)return;document.querySelector('#check').disabled=true;ticking=false;report.checks=[];report.method='120 acknowledged simulation ticks per word at 60fps; 120 settling ticks before each';
+ try{for(const word of words){send({t:'do',word:'stand'});await tickFrames(120);send({t:'do',word});status.textContent='原生沙箱逐帧检查：'+word;const modes=await tickFrames(120);report.checks.push({word,acknowledged_ticks:120,modes,errors:errors.length});}}
+ catch(e){errors.push(String(e));}finally{status.textContent=JSON.stringify(report,null,2);document.querySelector('#check').disabled=false;ticking=true;}
 };
 document.querySelector('#save').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(report,null,2)],{type:'application/json'}));a.download='dragon-r06-installed-sandbox.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),10000);};
 </script></html>

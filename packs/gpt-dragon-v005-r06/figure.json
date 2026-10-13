@@ -2,7 +2,7 @@
   "manifest": 2,
   "api": 2,
   "id": "gpt-dragon-v005-r06",
-  "version": "0.6.5-preview",
+  "version": "0.6.6-preview",
   "name": {
     "zh": "GPT 龙娘 v005 r06"
   },
@@ -210,6 +210,45 @@
         "zh": "开发版：浏览器检查记录见源仓库，客户端待验收"
       },
       "seconds": 1.7
+    },
+    {
+      "id": "thinking",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "思考"
+        ]
+      },
+      "about": {
+        "zh": "轻微头手姿态与原画眼睑差分；不含独立嘴型"
+      },
+      "seconds": 4
+    },
+    {
+      "id": "working",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "工作"
+        ]
+      },
+      "about": {
+        "zh": "轻微头手姿态与原画眼睑差分；不含独立嘴型"
+      },
+      "seconds": 4
+    },
+    {
+      "id": "listening",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "倾听"
+        ]
+      },
+      "about": {
+        "zh": "轻微头手姿态与原画眼睑差分；不含独立嘴型"
+      },
+      "seconds": 4
     }
   ],
   "thumb": "thumb.png",

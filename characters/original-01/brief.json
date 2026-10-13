@@ -31,8 +31,8 @@
   "checks": {
     "art": "pending-user-acceptance",
     "assets": "r04 arm rest reassembly identical; original v005 locked; editable masks and ORA retained",
-    "animation": "r06 80 snapshots: fixed-route walk/run, palm-out wave and restoration, jump; user naturalness acceptance pending",
-    "desktop": "real Coopanion importer passed; actual opaque-origin figure-frame loaded 15 words and rendered without reported errors; desktop window interactions and restart not tested"
+    "animation": "0.6.6: 96 sampled left/right interaction frames and six joint crops reviewed; full-rate intermediate frames and user naturalness acceptance pending",
+    "desktop": "0.6.6: real import passed; 18 words each received 120 official figure-frame tick acknowledgements with no errors; desktop-window input and restart not tested"
   },
   "candidate_master": "gpt-dragon-master-v005.png",
   "active_source_lock": "production-lock.json",

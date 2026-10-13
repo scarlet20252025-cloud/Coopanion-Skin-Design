@@ -14,6 +14,6 @@
 - 只向 vocab 声明已经实现且检查过的动作；保留发布后的词和装扮 ID。
 - 不把官方大肥鱼贴图复制为原创项目资产。采用上游代码时记录版本与对应许可。
 - 大型原始素材和外部软件放忽略目录；需要版本化大文件时先设 Git LFS 或 Release 交付方式。
-- 最新动作入口为 preview/dragon-r06.html；双臂/步态参数为 rig-v005-r04/motion-config.json，腿部源为 rig-v005-r03/leg-config.json（均在 characters/original-01）。r02 保留头脸/坐姿基线。r04 继承待机 idle_strength=0.7、跳跃 strength=0.65；禁止调步态时覆盖已接受弹性。只调动作运行 build-v005-r04.py --motion-only；只检查受影响动作，不重新生成整人或采集官方帧。
+- 最新动作入口为 preview/dragon-r06.html；当前手臂/步态参数在 characters/original-01/rig-v005-r06/motion-config.json，交互姿态在同目录 behavior-config.json。腿部继承 r03，头脸/坐姿继承 r02。只调动作运行 scripts/sync-r06-config.py；禁止调用旧 r04 构建覆盖当前包。待机 idle_strength=0.7、跳跃 strength=0.65 不变。
 - r06 修正招手掌心与脚底落点。调动作使用 scripts/sync-r06-config.py，手部差分使用 build-v005-r06.py。原袖子和肩不改，招手结束恢复原手臂。r05 附属配置为微动而非完整拆层物理。
 - 对外经验入口 docs/REUSABLE_WORKFLOW.md；同步最新已验证事实、失败原因与边界。宿主 vocab 每项必须有正数 seconds；纯预览通过不可替代实际导入。

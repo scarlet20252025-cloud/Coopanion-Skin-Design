@@ -22,8 +22,9 @@ export async function createDragonBody(base,opts){
  const S=.2,X=128-650*S,Y=256-model.standing_feet_y*S;
  let secondary,secondaryEnabled=true,waveTexture=false;
  let mounted=null,root,back,body,head,sitting,headGroup,lowerHairGroup,lowerHair,backGroup,prevEye='',prevSit=false;
- let articulation,fill,front,legNodes=[],lastT=0,airK=0,groundK=0,jumpWord='jump';
+ let articulation,fill,front,legNodes=[],lastT=0,airK=0,groundK=0,jumpWord='jump',dragK=0,attentionK=0;
  const cfg=model.leg_rig;
+ const behavior=model.behavior_rig;
  const motion=model.motion_rig;let armNodes=[],armSlots=[],armFill,gaitK=0,armAngles=[0,0],armActivePrev=false,armLayers=[],runLayerK=0,armFillLayer,runArmMaskId,sitBlend=0;
  function node(tag,attrs={}){const n=document.createElementNS(NS,tag);for(const [k,v]of Object.entries(attrs))n.setAttribute(k,v);return n;}
  function picture(name){return node('image',{href:textures[name],x:0,y:0,width:model.canvas[0],height:model.canvas[1]});}
@@ -80,6 +81,9 @@ export async function createDragonBody(base,opts){
    const airTarget=o.mode==='air'?1-smooth((o.modeT-(duration-cfg.timing.extend_before_landing_seconds))/cfg.timing.extend_before_landing_seconds):0;
    const groundTarget=o.mode==='crouch'?smooth(o.modeT/cfg.timing.crouch_seconds):o.mode==='land'?1-smooth(o.modeT/cfg.timing.land_seconds):0;
    airK+=(airTarget-airK)*(1-Math.exp(-dt*30));groundK+=(groundTarget-groundK)*(1-Math.exp(-dt*35));
+   dragK+=((o.mode==='drag'?1:0)-dragK)*(1-Math.exp(-dt*12));
+   const attentive=['thinking','working','listening'].includes(o.face)&&['idle','look'].includes(o.mode);
+   attentionK+=((attentive?1:0)-attentionK)*(1-Math.exp(-dt*8));
    const walking=['walk','run'].includes(o.mode);
    gaitK+=((walking?1:0)-gaitK)*(1-Math.exp(-dt*motion.gait.blend_rate));
    const running=o.mode==='run',gait=motion.gait;
@@ -87,12 +91,12 @@ export async function createDragonBody(base,opts){
    if(['sit','sleep','wake'].includes(o.mode)||sitBlend>.001)sitBlend=o.sit;
    const seated=sitBlend>.5;
    const poseDrop=(model.standing_feet_y-model.sitting_feet_y)*sitBlend;
-   const active=airK>.002||groundK>.002||gaitK>.002||sitBlend>.001;
+   const active=airK>.002||groundK>.002||gaitK>.002||sitBlend>.001||dragK>.002;
    const drop=groundK*(o.mode==='land'?cfg.landing_body_drop_px:cfg.crouch_body_drop_px);
    // Translate the torso; plant each sole during compression. Never scale the legs.
    root.setAttribute('transform',root.getAttribute('transform')+` translate(0 ${drop+poseDrop})`);
    cfg.legs.forEach((leg,i)=>{
-    const angle=leg.air_angle*airK+leg.crouch_angle*groundK+gaitAngles[i]*gaitK,rad=angle*Math.PI/180,[px,py]=leg.pivot;
+    const angle=leg.air_angle*airK+leg.crouch_angle*groundK+gaitAngles[i]*gaitK+dragK*behavior.drag.leg_degrees*Math.sin(o.t*behavior.drag.rate+i*2.2),rad=angle*Math.PI/180,[px,py]=leg.pivot;
     const sole=i?[742,1188]:[597,1198],dx=sole[0]-px,dy=sole[1]-py;
     const rotationX=(Math.cos(rad)-1)*dx-Math.sin(rad)*dy,rotationY=Math.sin(rad)*dx+(Math.cos(rad)-1)*dy;
     const stride=(o.legs[i][2]-o.legs[i][0])*(running?gait.run_stride_gain:gait.walk_stride_gain);
@@ -107,10 +111,12 @@ export async function createDragonBody(base,opts){
     let target=clamp(-gaitAngles[i]*motion.gait.arm_gain,-motion.gait.max_arm_angle,motion.gait.max_arm_angle)*gaitK+motion.air_arms[i]*airK;
     if(running)target=gait.run_arm_angles[i]*gaitK;
     if(i===motion.wave.arm)target=target*(1-wave)+wave*(motion.wave.raise_degrees+motion.wave.oscillation_degrees*Math.sin((gest?.k||0)*Math.PI*2*motion.wave.cycles));
+    if(attentive)target+=attentionK*(behavior[o.face].arms[i]+(o.face==='working'?behavior.working.pulse_degrees*Math.sin(o.t*behavior.working.rate+i*Math.PI):0));
     if(o.mode==='drag')target=(i?-1:1)*(25+8*Math.sin(o.t*10+i));
     return a+(target-a)*(1-Math.exp(-dt*14));
    });
-   const armActive=!seated&&armAngles.some(a=>Math.abs(a)>.08);
+   // Keep separate arms even at rest: the baked body hands sit behind lower hair.
+   const armActive=!seated;
    // A raised hand must pass in front of side hair, not disappear behind the head layer.
    const raised=wave>.08||Math.abs(armAngles[motion.wave.arm])>45;
    const useWave=wave>.04||waveTexture&&Math.abs(armAngles[motion.wave.arm])>28;
@@ -124,7 +130,7 @@ export async function createDragonBody(base,opts){
    armFill.setAttribute('visibility',armActive?'visible':'hidden');
    armNodes.forEach((n,i)=>{n.setAttribute('visibility',armActive?'visible':'hidden');n.setAttribute('transform',`rotate(${armAngles[i]} ${motion.arms[i].pivot.join(' ')})`);});
    const shut=['sleep','bowing','happy'].includes(o.face)||o.drowse>.75;
-   const closure=shut?1:Math.max(o.blink||0,o.eyeClose||0,o.face==='sleepy'?.5:0);
+   const closure=shut?1:Math.max(o.blink||0,o.eyeClose||0,['sleepy','thinking','working'].includes(o.face)?.5:0);
    const eye=closure>.75?'closed':closure>.25?'half':o.face==='wink'?'wink':'open';
    if(eye!==prevEye||seated!==prevSit){head.setAttribute('href',textures['head-'+eye]);lowerHair.setAttribute('href',textures['head-'+eye]);sitting.setAttribute('href',textures['sitting-'+eye]);prevEye=eye;prevSit=seated;}
    backGroup.setAttribute('visibility',seated?'hidden':'visible');body.setAttribute('visibility',seated?'hidden':'visible');headGroup.setAttribute('visibility',seated?'hidden':'visible');lowerHairGroup.setAttribute('visibility',seated?'hidden':'visible');sitting.setAttribute('visibility',seated?'visible':'hidden');
@@ -137,14 +143,15 @@ export async function createDragonBody(base,opts){
    if(gesture?.kind==='nod')dy+=3*Math.sin(gesture.k*Math.PI*2);
    if(gesture?.kind==='shake')angle+=2.3*Math.sin(gesture.k*Math.PI*4);
    if(gesture?.kind==='bow')dy+=3*Math.sin(gesture.k*Math.PI);
+   if(attentive){angle+=behavior[o.face].head_degrees*attentionK;dy+=behavior[o.face].head_y*attentionK;}
    angle=clamp(angle,-model.rotation_limit_degrees,model.rotation_limit_degrees);dy=clamp(dy,-3,3);
    const [px,py]=model.head_pivot,t=`translate(0 ${dy}) rotate(${angle} ${px} ${py})`;
    headGroup.setAttribute('transform',t);lowerHairGroup.setAttribute('transform',t);backGroup.setAttribute('transform',t);
   },
   dispose(){mounted=null;},
  };
- const native=opts.kit.createBody(opts.host,{figure});
+ const native=opts.kit.createBody(opts.host,{figure,words:{listening:{expression:{like:'listening',seconds:4}},working:{expression:{like:'thinking',seconds:4}}}});
  // Do not expose unsupported expressions/limb motions just because kit knows them.
- const supported=['neutral','happy','wink','sleepy','stand','sit','sleep','nod','shake','jump','hop','turn','walk','run','wave'];
- return {...native,secondaryState:()=>secondary?.values(),armLayerState:()=>({layers:[...armLayers],waveTexture,maskSpace:'body',maskTransforms:armSlots.map(n=>n.getAttribute('transform'))}),setSecondary:enabled=>{secondaryEnabled=!!enabled;},words:supported,do(word){const ok=supported.includes(word)?native.do(word):false;if(ok&&['jump','hop'].includes(word))jumpWord=word;return ok;}};
+ const supported=['neutral','happy','wink','sleepy','stand','sit','sleep','nod','shake','jump','hop','turn','walk','run','wave','thinking','working','listening'];
+ return {...native,secondaryState:()=>secondary?.values(),armLayerState:()=>({layers:[...armLayers],separateArms:armActivePrev,angles:[...armAngles],dragK,attentionK,waveTexture,maskSpace:'body',maskTransforms:armSlots.map(n=>n.getAttribute('transform'))}),setSecondary:enabled=>{secondaryEnabled=!!enabled;},words:supported,do(word){const ok=supported.includes(word)?native.do(word):false;if(ok&&['jump','hop'].includes(word))jumpWord=word;return ok;}};
 }

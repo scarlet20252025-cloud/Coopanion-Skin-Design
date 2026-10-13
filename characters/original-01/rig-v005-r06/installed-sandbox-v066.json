@@ -1,0 +1,184 @@
+{
+  "source": "running Coopanion /figure-frame; installed pack served by same application",
+  "pack": "gpt-dragon-v005-r06",
+  "tested_version": "0.6.6-preview",
+  "ready": true,
+  "words": [
+    "neutral",
+    "happy",
+    "wink",
+    "sleepy",
+    "stand",
+    "sit",
+    "sleep",
+    "nod",
+    "shake",
+    "jump",
+    "hop",
+    "turn",
+    "walk",
+    "run",
+    "wave",
+    "thinking",
+    "working",
+    "listening"
+  ],
+  "frames": 10545,
+  "errors": [],
+  "checks": [
+    {
+      "word": "neutral",
+      "acknowledged_ticks": 120,
+      "modes": [
+        "idle"
+      ],
+      "errors": 0
+    },
+    {
+      "word": "happy",
+      "acknowledged_ticks": 120,
+      "modes": [
+        "idle"
+      ],
+      "errors": 0
+    },
+    {
+      "word": "wink",
+      "acknowledged_ticks": 120,
+      "modes": [
+        "idle"
+      ],
+      "errors": 0
+    },
+    {
+      "word": "sleepy",
+      "acknowledged_ticks": 120,
+      "modes": [
+        "idle"
+      ],
+      "errors": 0
+    },
+    {
+      "word": "stand",
+      "acknowledged_ticks": 120,
+      "modes": [
+        "idle"
+      ],
+      "errors": 0
+    },
+    {
+      "word": "sit",
+      "acknowledged_ticks": 120,
+      "modes": [
+        "sit"
+      ],
+      "errors": 0
+    },
+    {
+      "word": "sleep",
+      "acknowledged_ticks": 120,
+      "modes": [
+        "sleep"
+      ],
+      "errors": 0
+    },
+    {
+      "word": "nod",
+      "acknowledged_ticks": 120,
+      "modes": [
+        "idle"
+      ],
+      "errors": 0
+    },
+    {
+      "word": "shake",
+      "acknowledged_ticks": 120,
+      "modes": [
+        "idle"
+      ],
+      "errors": 0
+    },
+    {
+      "word": "jump",
+      "acknowledged_ticks": 120,
+      "modes": [
+        "crouch",
+        "air",
+        "land",
+        "idle"
+      ],
+      "errors": 0
+    },
+    {
+      "word": "hop",
+      "acknowledged_ticks": 120,
+      "modes": [
+        "crouch",
+        "air",
+        "land",
+        "idle"
+      ],
+      "errors": 0
+    },
+    {
+      "word": "turn",
+      "acknowledged_ticks": 120,
+      "modes": [
+        "idle"
+      ],
+      "errors": 0
+    },
+    {
+      "word": "walk",
+      "acknowledged_ticks": 120,
+      "modes": [
+        "walk"
+      ],
+      "errors": 0
+    },
+    {
+      "word": "run",
+      "acknowledged_ticks": 120,
+      "modes": [
+        "run"
+      ],
+      "errors": 0
+    },
+    {
+      "word": "wave",
+      "acknowledged_ticks": 120,
+      "modes": [
+        "idle"
+      ],
+      "errors": 0
+    },
+    {
+      "word": "thinking",
+      "acknowledged_ticks": 120,
+      "modes": [
+        "idle"
+      ],
+      "errors": 0
+    },
+    {
+      "word": "working",
+      "acknowledged_ticks": 120,
+      "modes": [
+        "idle"
+      ],
+      "errors": 0
+    },
+    {
+      "word": "listening",
+      "acknowledged_ticks": 120,
+      "modes": [
+        "idle"
+      ],
+      "errors": 0
+    }
+  ],
+  "desktop_window_visual": "not-tested",
+  "restart": "not-tested",
+  "lastMode": "idle",
+  "method": "120 acknowledged simulation ticks per word at 60fps; 120 settling ticks before each"
+}

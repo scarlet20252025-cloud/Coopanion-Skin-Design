@@ -2,9 +2,9 @@
 
 原创 Q 版人物桌宠绘制工程。目标平台为 **Coopanion**，采用官方分件动画方式；Cortico 是其 Agent 框架。
 
-当前阶段：**v005-r06 开发版**。招手使用掌心朝外独立差分并在结束后恢复；走跑以脚底落点补偿旋转，手脚参数分开调。继承头发/翼尖/尾部的小范围柔性动态。待机弹性仍为此前降低 30% 的设置，跳跃保留 Q 弹。
+当前阶段：**v005-r06 / 0.6.6 开发版**。招手使用掌心朝外独立差分并在结束后恢复；走跑以脚底落点补偿旋转，手脚参数分开调。继承头发/翼尖/尾部的小范围柔性动态。待机弹性仍为此前降低 30% 的设置，跳跃保留 Q 弹。
 
-**想复用方法，先读 [实做工作流与失败案例](docs/REUSABLE_WORKFLOW.md)**。运行 `npm run preview` 后打开 `/preview/dragon-r06.html`。本版回看 80 张定向检查帧，已通过本机 Coopanion 导入；完整桌面交互与重启验收仍待完成。
+**想复用方法，先读 [实做工作流与失败案例](docs/REUSABLE_WORKFLOW.md)**。运行 `npm run preview` 后打开 `/preview/dragon-r06.html`。0.6.6 回看了左右朝向的 96 张交互采样帧及放大关节图，新增思考、工作、倾听轻量姿态并修正静止时的手发层序；已通过本机 Coopanion 导入。完整桌面窗口输入与重启验收仍待完成。
 
 官方鲸鱼娘已按固定版本采样为本地逐帧参考库，见 [采样规格与使用方式](docs/OFFICIAL_FRAME_REFERENCE.md)。新素材的唯一基准见 [production-lock.json](characters/original-01/production-lock.json)，问题原因见 [失败复盘](docs/RIG_FAILURE_REVIEW.md)。
 

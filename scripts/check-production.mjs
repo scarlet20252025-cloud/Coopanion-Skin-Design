@@ -34,3 +34,5 @@ if(JSON.stringify(latest.motion_rig)!==JSON.stringify(await json('characters/ori
 if(JSON.stringify(latest.secondary_rig)!==JSON.stringify(await json('characters/original-01/rig-v005-r05/secondary-config.json')))throw Error('Sync secondary config');
 for(const word of manifest.vocab)if(!Number.isFinite(word.seconds)||word.seconds<=0)throw Error(`Missing host duration: ${word.id}`);
 console.log('PASS: r06 master, local palm edit, spring preservation, config and required vocab durations.');
+
+if(JSON.stringify(latest.behavior_rig)!==JSON.stringify(await json('characters/original-01/rig-v005-r06/behavior-config.json')))throw Error('Sync behavior config');
