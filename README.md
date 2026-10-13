@@ -2,7 +2,7 @@
 
 原创 Q 版人物桌宠绘制工程。目标平台为 **Coopanion**，采用官方分件动画方式；Cortico 是其 Agent 框架。
 
-当前阶段：**锁定 v005，r03 原生行为小样已补左右腿跳跃收放，继承三档眨眼、轻微头动和独立坐姿/睡眠；全动作绑定尚未完成**。`npm run preview` 后打开 `/preview/dragon-r03.html` 查看最新动作小样；可暂停定位跳跃帧。静态原位合成差异为 0，跳跃/小跳已回看 48 张抽样帧；完整步态和实际客户端导入尚未测试。
+当前阶段：**v005-r04 动作开发包**。新增手脚走跑配合、招手、笑眼/单眼眨眼/困倦及站坐高度过渡；待机弹性保持降低 30%，跳跃保留 Q 弹形变。运行 `npm run preview` 后打开 `/preview/dragon-r04.html`。双臂原位重组差异为 0，已回看 160 张定向抽样帧；独立头发/翅膀/尾巴物理、完整动作覆盖和真实客户端导入尚待完成。
 
 官方鲸鱼娘已按固定版本采样为本地逐帧参考库，见 [采样规格与使用方式](docs/OFFICIAL_FRAME_REFERENCE.md)。新素材的唯一基准见 [production-lock.json](characters/original-01/production-lock.json)，问题原因见 [失败复盘](docs/RIG_FAILURE_REVIEW.md)。
 
@@ -31,7 +31,7 @@ flowchart LR
   F --> H[真实桌面验收]
 ```
 
-本仓库目前交付生产工程、v005 原位分层源文件和 r03 动作开发包。失败的 `packs/gpt-dragon` 仅留本机排查，不是可交付皮肤。PSD2Live 的 `.moc3` 不能当成 Coopanion 的 `figure.json` 包直接导入。
+本仓库目前交付生产工程、v005 原位分层源文件和 r04 动作开发包。失败的 `packs/gpt-dragon` 仅留本机排查，不是可交付皮肤。PSD2Live 的 `.moc3` 不能当成 Coopanion 的 `figure.json` 包直接导入。
 
 ## 本机检查
 
@@ -47,4 +47,4 @@ python -m venv .venv
 
 依赖范围是选型约束，尚非经过安装验证的锁文件。首轮工具实测通过后再冻结精确版本。
 
-最新腿部修正、参数入口和限制见 [r03 记录](characters/original-01/rig-v005-r03/README.md)。
+最新参数、可编辑分层和检查记录见 [r04 记录](characters/original-01/rig-v005-r04/README.md)。开发包通过 `python scripts/package-pet.py` 导出至 dist。

@@ -14,4 +14,4 @@
 - 只向 vocab 声明已经实现且检查过的动作；保留发布后的词和装扮 ID。
 - 不把官方大肥鱼贴图复制为原创项目资产。采用上游代码时记录版本与对应许可。
 - 大型原始素材和外部软件放忽略目录；需要版本化大文件时先设 Git LFS 或 Release 交付方式。
-- 最新动作入口为 preview/dragon-r03.html；腿部参数源为 characters/original-01/rig-v005-r03/leg-config.json。r02 仅作为头部/眼睛/坐姿基线。改腿只增量构建 r03，并检查 jump/hop；不重生成整张人物或重采官方帧。
+- 最新动作入口为 preview/dragon-r04.html；双臂/步态参数为 rig-v005-r04/motion-config.json，腿部源为 rig-v005-r03/leg-config.json（均在 characters/original-01）。r02 保留头脸/坐姿基线。r04 继承待机 idle_strength=0.7、跳跃 strength=0.65；禁止调步态时覆盖已接受弹性。只调动作运行 build-v005-r04.py --motion-only；只检查受影响动作，不重新生成整人或采集官方帧。

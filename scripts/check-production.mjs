@@ -20,3 +20,8 @@ if(r03.master_sha256!==hash||r03.leg_checks.master!==hash||r03.leg_checks.rest_m
 const cfg=await json('characters/original-01/rig-v005-r03/leg-config.json');
 if(JSON.stringify(cfg)!==JSON.stringify(r03.leg_rig))throw Error('Rebuild r03 after editing leg config');
 console.log('PASS: active v005 hash, r01/r02/r03 source versions, rest geometry, eye masks and leg config. This is not desktop-client certification.');
+const r04=await json('packs/gpt-dragon-v005-r04/model.json');
+if(r04.master_sha256!==hash||r04.arm_checks.rest_mismatches)throw Error('r04 source/rest contract failed');
+if(JSON.stringify(r04.leg_rig.elasticity)!==JSON.stringify(r03.leg_rig.elasticity))throw Error('Accepted spring settings drifted');
+if(JSON.stringify(r04.motion_rig)!==JSON.stringify(await json('characters/original-01/rig-v005-r04/motion-config.json')))throw Error('Rebuild r04 motion parameters');
+console.log('PASS: r04 arm rest contract, motion config and inherited elasticity.');

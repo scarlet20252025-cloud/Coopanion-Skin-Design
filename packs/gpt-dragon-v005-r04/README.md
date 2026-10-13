@@ -1,0 +1,27 @@
+# v005-r04：手脚配合与基础表情
+
+唯一母版为 v005（production-lock.json 校验）。继承 r03 腿部素材及弹性参数：待机 0.7、跳跃 0.65。没有旧 atlas 或旧配色输入。
+
+## 新增内容
+
+- 双臂、袖子和手的原位拆层。内置 imagegen 仅补双臂移开后的遮挡区；完整提示见 prompt.txt。
+- 走跑读取官方 kit 的左右脚段，驱动自己的腿和反向手臂摆动；停止后回到中立。
+- 招手包含抬臂、摆动、落臂，抬手进入侧发前方；跳跃时双臂张开。
+- 站坐头身连续升降，裙腿在中段替换差分，不宣称逐像素连续变形。
+- 笑眼、困倦复用已有闭眼/半闭眼，单眼眨眼只替换已有左眼；没有重新生成脸部图集。
+- 坐姿命中区域、视线和气泡锚点随高度移动。
+
+## 修改与核验
+
+motion-config.json 为双臂遮罩、锚点和动作幅度的权威源。只调参数运行 `.venv/Scripts/python.exe scripts/build-v005-r04.py --motion-only`；改变遮罩后去掉 --motion-only。校验运行 `npm run check`。
+
+gpt-dragon-v005-r04-arms.ora 保留原位手臂层和补画层；头脸、眨眼、坐姿基线在 r02，双腿基线在 r03。调参无需生成图片。
+
+预览 `/preview/dragon-r04.html` 支持选择动作、按 60 fps 时间步定位、下载 PNG 和按修改范围导出。qa-locomotion 为走/跑/跳；qa-poses 为站坐及招手层序；qa-faces 为基础表情及笑眼招手。逐张 PNG 留本地，Git 保存接触表、时间轴和报告。
+
+双臂静态重组像素差异为 0，配准相关系数约 0.9955。当前为开发包：独立头发/翅膀/尾巴物理、细分膝肘、完整官方表情动作覆盖与真实桌面导入/重启验收仍待完成，不能称为官方全动作 1:1 成品。
+
+
+源文件与 QA：https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design/tree/main/characters/original-01/rig-v005-r04
+
+上文源文件路径相对角色工程目录；本包运行入口为 figure.json / figure.js，贴图均随包提供。使用宿主官方 kit，保留包内许可。ZIP 为开发包，尚未通过真实桌面导入验收。

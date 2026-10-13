@@ -1,0 +1,32 @@
+{
+  "master_sha256": "14e64e72f9ff192f4d49fff321579e05d8a2b78c23feba968ba07fed2eb93f81",
+  "rest_mismatches": 0,
+  "registration_correlation": 0.9955320171560073,
+  "translation": [
+    [
+      1.0,
+      0.0,
+      0.22040122747421265
+    ],
+    [
+      0.0,
+      1.0,
+      0.039627328515052795
+    ]
+  ],
+  "motion": "160 targeted browser snapshots reviewed across locomotion, pose and face contact sheets; not exhaustive",
+  "inherited_elasticity": {
+    "strength": 0.65,
+    "x": [
+      0.1,
+      0.12
+    ],
+    "y": [
+      0.16,
+      0.12
+    ],
+    "mapping": "soft tanh bounds; preserve native spring timing and rebound",
+    "idle_strength": 0.7
+  },
+  "desktop": "not-tested"
+}
