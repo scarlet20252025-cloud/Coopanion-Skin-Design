@@ -1,0 +1,13 @@
+{
+  "master_sha256": "14e64e72f9ff192f4d49fff321579e05d8a2b78c23feba968ba07fed2eb93f81",
+  "samples": 40,
+  "groups": {
+    "run-stop-wave": 40
+  },
+  "finite_layouts": true,
+  "nonempty_frames": true,
+  "source": "native kit preview export",
+  "visual_review": "contact sheet reviewed: arms behind body while running, normal after stop, wave in front, texture restored",
+  "limits": "40 snapshots; see timeline for sampling intervals; not an exhaustive 60 fps motion validation",
+  "version": "0.6.1-preview"
+}

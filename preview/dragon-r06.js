@@ -31,8 +31,8 @@ document.querySelector('#capture').onclick=async()=>download(await capture(),'dr
 async function exportQA(words,filename,stride=10,count=120){
  paused=true;const oldWidth=stage.style.width;stage.style.width='960px';const buttons=[...document.querySelectorAll('button')];buttons.forEach(b=>b.disabled=true);const samples=[];
  try{for(const word of words){
-  await reset();for(let i=0;i<60;i++)body.step(1/60);if(word==='stand-from-sit'){body.do('sit');for(let i=0;i<120;i++)body.step(1/60);}if(['walk','run'].includes(word)){body.place(130,1);body.walk(830,word==='run','qa-gait');}else body.do(word==='stand-from-sit'?'stand':word);
-  for(let i=0;i<count;i++){body.step(1/60);if(i%stride===0){status.textContent='检查帧导出：'+word+' '+i+'/'+count;samples.push({word,frame:i,t:(i+1)/60,layout:body.layout(),secondary:body.secondaryState(),png:await capture()});}}
+  await reset();for(let i=0;i<60;i++)body.step(1/60);if(word==='stand-from-sit'){body.do('sit');for(let i=0;i<120;i++)body.step(1/60);}if(['walk','run','run-stop-wave'].includes(word)){body.place(130,1);body.walk(830,word!=='walk','qa-gait');}else body.do(word==='stand-from-sit'?'stand':word);
+  for(let i=0;i<count;i++){if(word==='run-stop-wave'){if(i===60)body.stopWalk('qa-gait');if(i===100)body.do('wave');}body.step(1/60);if(i%stride===0){status.textContent='检查帧导出：'+word+' '+i+'/'+count;samples.push({word,frame:i,t:(i+1)/60,layout:body.layout(),secondary:body.secondaryState(),armLayers:body.armLayerState(),png:await capture()});}}
  }
  download(JSON.stringify({prototype:'v005-r06',master:model.master_sha256,motionParameters:{legs:model.leg_rig,arms:model.motion_rig},samples,events}),filename,'application/json');status.textContent=`已导出 ${samples.length} 张动作检查帧`;
  }catch(e){status.textContent=String(e.stack);}finally{stage.style.width=oldWidth;await reset();paused=false;buttons.forEach(b=>b.disabled=false);}
@@ -49,3 +49,5 @@ status.textContent='v005-r06 已加载：等待视觉验收';
 
 let secondaryEnabled=true;document.querySelector("#secondary").onclick=e=>{secondaryEnabled=!secondaryEnabled;body.setSecondary(secondaryEnabled);e.target.textContent=secondaryEnabled?"关闭附属动态（对比）":"开启附属动态（对比）";};
 document.querySelector("#secondaryqa").onclick=()=>exportQA(["neutral","walk","run","jump","wave","sit"],"dragon-v005-r06-secondary-qa.json",10,100);
+
+document.querySelector("#layerqa").onclick=()=>exportQA(["run-stop-wave"],"dragon-v005-r06-layer-qa.json",6,240);

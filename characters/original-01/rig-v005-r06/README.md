@@ -13,3 +13,7 @@
 完整方法、失败与迁移步骤见 docs/REUSABLE_WORKFLOW.md。内置 imagegen edit 模式生成 wave-arm-edit.png，提示词见 prompt.txt，遮罩和配准见 wave-validation.json。
 
 实际宿主结果：已成功导入正在运行的 Coopanion，原生隔离沙箱加载 15 个词并逐项派发，无上报运行错误。见 installed-sandbox-report.json；不替代逐动作视觉验收和完整桌面交互/重启检查。旧包缺 seconds 的拒绝原因已补进通用教程。
+
+### 0.6.1 跑步层序修正
+
+跑步双臂置于身体与补画层后方；停跑回到普通层序，招手臂仍置于侧发前。新增连续 run-stop-wave 检查，覆盖跑、停、招手与素材恢复。素材、步态数值和弹性参数不变。

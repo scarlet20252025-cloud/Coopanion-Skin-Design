@@ -24,7 +24,7 @@ export async function createDragonBody(base,opts){
  let mounted=null,root,back,body,head,sitting,headGroup,backGroup,prevEye='',prevSit=false;
  let articulation,fill,front,legNodes=[],lastT=0,airK=0,groundK=0,jumpWord='jump';
  const cfg=model.leg_rig;
- const motion=model.motion_rig;let armNodes=[],armFill,gaitK=0,armAngles=[0,0],armActivePrev=false,waveFront=false,sitBlend=0;
+ const motion=model.motion_rig;let armNodes=[],armFill,gaitK=0,armAngles=[0,0],armActivePrev=false,armLayers=[],runLayerK=0,armFillLayer,sitBlend=0;
  function node(tag,attrs={}){const n=document.createElementNS(NS,tag);for(const [k,v]of Object.entries(attrs))n.setAttribute(k,v);return n;}
  function picture(name){return node('image',{href:textures[name],x:0,y:0,width:model.canvas[0],height:model.canvas[1]});}
  function mount(g){
@@ -40,7 +40,8 @@ export async function createDragonBody(base,opts){
   sitting=picture('sitting-open');sitting.setAttribute('visibility','hidden');root.append(sitting);
   secondary=createSecondary(root,model.secondary_rig,model.canvas);
   secondary.wrap(head,['hair']);secondary.wrap(back,['hair']);
-  for(const n of [body,front,armFill])secondary.wrap(n,['wings','tail']);
+  for(const n of [body,front])secondary.wrap(n,['wings','tail']);
+  armFillLayer=secondary.wrap(armFill,['wings','tail']);
   mounted=g;prevEye='';
  }
  const figure={
@@ -102,7 +103,11 @@ export async function createDragonBody(base,opts){
    const raised=wave>.08||Math.abs(armAngles[motion.wave.arm])>45;
    const useWave=wave>.04||waveTexture&&Math.abs(armAngles[motion.wave.arm])>28;
    if(useWave!==waveTexture){armNodes[motion.wave.arm].firstElementChild.setAttribute('href',textures[useWave?'arm-wave':'arm-'+motion.arms[motion.wave.arm].id]);waveTexture=useWave;}
-   if(raised!==waveFront){root.insertBefore(armNodes[motion.wave.arm],raised?sitting:headGroup);waveFront=raised;}
+   runLayerK+=((running?1:0)-runLayerK)*(1-Math.exp(-dt*14));
+   armNodes.forEach((n,i)=>{
+    const layer=raised&&i===motion.wave.arm?'wave':runLayerK>.15?'behind-body':'normal';
+    if(armLayers[i]!==layer){root.insertBefore(n,layer==='wave'?sitting:layer==='behind-body'?armFillLayer:headGroup);armLayers[i]=layer;}
+   });
    if(armActive!==armActivePrev){body.setAttribute('href',textures[armActive?'body-without-arms':'body-covered-underpaint']);front.setAttribute('href',textures[armActive?'body-without-limbs':'body-without-legs']);armActivePrev=armActive;}
    armFill.setAttribute('visibility',armActive?'visible':'hidden');
    armNodes.forEach((n,i)=>{n.setAttribute('visibility',armActive?'visible':'hidden');n.setAttribute('transform',`rotate(${armAngles[i]} ${motion.arms[i].pivot.join(' ')})`);});
@@ -129,5 +134,5 @@ export async function createDragonBody(base,opts){
  const native=opts.kit.createBody(opts.host,{figure});
  // Do not expose unsupported expressions/limb motions just because kit knows them.
  const supported=['neutral','happy','wink','sleepy','stand','sit','sleep','nod','shake','jump','hop','turn','walk','run','wave'];
- return {...native,secondaryState:()=>secondary?.values(),setSecondary:enabled=>{secondaryEnabled=!!enabled;},words:supported,do(word){const ok=supported.includes(word)?native.do(word):false;if(ok&&['jump','hop'].includes(word))jumpWord=word;return ok;}};
+ return {...native,secondaryState:()=>secondary?.values(),armLayerState:()=>({layers:[...armLayers],waveTexture}),setSecondary:enabled=>{secondaryEnabled=!!enabled;},words:supported,do(word){const ok=supported.includes(word)?native.do(word):false;if(ok&&['jump','hop'].includes(word))jumpWord=word;return ok;}};
 }

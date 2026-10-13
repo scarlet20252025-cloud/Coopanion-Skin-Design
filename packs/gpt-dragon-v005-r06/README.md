@@ -14,3 +14,4 @@
 
 源记录：https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design/tree/main/characters/original-01/rig-v005-r06
 本包入口 figure.json，按宿主 API 2 加载。
+0.6.1：修正跑步手臂被身体遮挡的层序；连续跑停招手 40 张抽样回看通过。

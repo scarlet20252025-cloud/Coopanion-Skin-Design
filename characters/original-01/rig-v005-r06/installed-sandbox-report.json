@@ -106,5 +106,6 @@
     "installed": true,
     "problems": [],
     "initial_failure": "missing vocab.seconds; fixed before install"
-  }
+  },
+  "tested_version": "0.6.0-preview"
 }
