@@ -162,3 +162,8 @@ r06 第一次 ZIP 导入被拒绝：`vocab.neutral.seconds 应为正数`。浏�
 `preview/installed-r06.html` 的“检查宿主交互与重新加载”通过真实 figure-frame 的公开消息协议测试 13 项：左右朝向的空白点击、拖拽松手、pointer cancel、drop、睡眠点击唤醒、倾听中断跑步，以及全新 iframe 重载。释放后必须经历 air/land、最后 idle 且 pressing=false；重载后核对词表与待机。报告 `installed-interactions-v066.json` 全部通过。
 
 这里的 drop 检查只是跨窗口放下所用的协议，不代表真实多显示器窗口路由已经通过；iframe 重载也不能写成 Coopanion 进程重启通过。明确区分才能让后来的人复现实测结果。
+
+
+### 2026-10-13：先检查部件归属，再修接缝
+
+后发旧翅膀挖空与独立无翼补画使用不同来源及变换，移动时露出残边；扩补片和调层序没有消除根因。后续分件工作必须执行 [图层归属与遮挡检查](LAYER_OWNERSHIP_AND_OCCLUSION.md)。表情修正与图层修复分开验收，不能用无脚本错误替代视觉通过。

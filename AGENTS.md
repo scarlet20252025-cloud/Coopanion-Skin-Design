@@ -17,3 +17,5 @@
 - 最新动作入口为 preview/dragon-r06.html；当前手臂/步态参数在 characters/original-01/rig-v005-r06/motion-config.json，交互姿态在同目录 behavior-config.json。腿部继承 r03，头脸/坐姿继承 r02。只调动作运行 scripts/sync-r06-config.py；禁止调用旧 r04 构建覆盖当前包。待机 idle_strength=0.7、跳跃 strength=0.65 不变。
 - r06 修正招手掌心与脚底落点。调动作使用 scripts/sync-r06-config.py，手部差分使用 build-v005-r06.py。原袖子和肩不改，招手结束恢复原手臂。r05 附属配置为微动而非完整拆层物理。
 - 对外经验入口 docs/REUSABLE_WORKFLOW.md；同步最新已验证事实、失败原因与边界。宿主 vocab 每项必须有正数 seconds；纯预览通过不可替代实际导入。
+
+- 涉及分件、遮罩、补画、头发/翅膀/尾巴交叠时，先读 docs/LAYER_OWNERSHIP_AND_OCCLUSION.md。检查像素归属和变换父节点，禁止把扩补片或调整层序当作通用修复。先提供完整角色视觉证据，再声明完成。未验收候选不得自动替换当前安装版。
