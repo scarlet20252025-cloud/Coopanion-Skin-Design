@@ -1,0 +1,1101 @@
+{
+  "source_commit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+  "items": 48,
+  "frames": 14880,
+  "kinds": {
+    "expression": 19,
+    "motion": 18,
+    "interaction": 11
+  },
+  "all_official_vocab_covered": true,
+  "empty_frames": 0,
+  "all_samples_have_animation": true,
+  "sampling": "60 fps finite windows; 30 fps WebP browsing copies",
+  "source_hashes": {
+    "whale/figure.js": "f021ab49296fd18e1e1f9c70b2e172dd262ce573724c4a1364ba41cd19e8d464",
+    "whale/model.json": "395498501a30f0992ca981113bbc19f246e918a8bdcc93785607eed10730dcfb",
+    "whale/figure.json": "212996ac75dc473e1523474e40389b7c2ee66fa74edb62a3fe50a7e9bd381725",
+    "kit/body.js": "03520bb81c40465ccf919a540d5a0117081a41a25b965a9762fd888fd9d6751a",
+    "kit/rig.js": "a23b1869d1439d8bb234678e71ed61ade882d786653f20ac406559e5724fc0ba"
+  },
+  "size_bytes": 904854348,
+  "samples": [
+    {
+      "id": "angry",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "生气"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "bow",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "鞠躬"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "confused",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "疑惑",
+          "问号"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "cry",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "大哭",
+          "哭"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "cursor_gaze",
+      "kind": "interaction",
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 360,
+      "seconds": 6,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 360,
+        "actual_frames": 360,
+        "nonempty": true,
+        "unique_png_hashes": 360
+      }
+    },
+    {
+      "id": "dance",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "跳舞",
+          "摇摆"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "determined",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "认真",
+          "坚定"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "dizzy",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "晕",
+          "转晕"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "drag_release",
+      "kind": "interaction",
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 360,
+      "seconds": 6,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 360,
+        "actual_frames": 360,
+        "nonempty": true,
+        "unique_png_hashes": 360
+      }
+    },
+    {
+      "id": "excited",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "期待",
+          "星星眼"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "flap",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "扑腾",
+          "激动"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "flustered",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "慌张",
+          "窘"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "happy",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "开心",
+          "高兴"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "hop",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "小跳",
+          "蹦"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "idle_blink",
+      "kind": "interaction",
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 360,
+      "seconds": 6,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 360,
+        "actual_frames": 360,
+        "nonempty": true,
+        "unique_png_hashes": 360
+      }
+    },
+    {
+      "id": "jump",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "跳",
+          "跳起来"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "listening",
+      "kind": "interaction",
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 360,
+      "seconds": 6,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 360,
+        "actual_frames": 360,
+        "nonempty": true,
+        "unique_png_hashes": 360
+      }
+    },
+    {
+      "id": "look",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "张望",
+          "看看"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "love",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "喜欢",
+          "爱心"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "neutral",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "平静"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "nod",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "点头"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "pout",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "嘟嘴",
+          "哼"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "run",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "跑",
+          "跑起来"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "run_left",
+      "kind": "interaction",
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 360,
+      "seconds": 6,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 360,
+        "actual_frames": 360,
+        "nonempty": true,
+        "unique_png_hashes": 360
+      }
+    },
+    {
+      "id": "run_right",
+      "kind": "interaction",
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 360,
+      "seconds": 6,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 360,
+        "actual_frames": 360,
+        "nonempty": true,
+        "unique_png_hashes": 360
+      }
+    },
+    {
+      "id": "sad",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "难过",
+          "伤心"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "scared",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "害怕",
+          "吓到"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "shake",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "摇头"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "shiver",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "发抖",
+          "哆嗦"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "shy",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "害羞"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "sit",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "坐下",
+          "坐"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "sleep",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "睡觉",
+          "睡"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 480,
+      "seconds": 8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 480,
+        "actual_frames": 480,
+        "nonempty": true,
+        "unique_png_hashes": 480
+      }
+    },
+    {
+      "id": "sleep_wake",
+      "kind": "interaction",
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 360,
+      "seconds": 6,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 360,
+        "actual_frames": 360,
+        "nonempty": true,
+        "unique_png_hashes": 360
+      }
+    },
+    {
+      "id": "sleepy",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "犯困",
+          "困"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 360,
+      "seconds": 6,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 360,
+        "actual_frames": 360,
+        "nonempty": true,
+        "unique_png_hashes": 360
+      }
+    },
+    {
+      "id": "smug",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "得意",
+          "嘚瑟"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "spin",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "转圈"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "stand",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "站起",
+          "站"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "surprised",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "惊讶",
+          "吃惊"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "talk",
+      "kind": "interaction",
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 360,
+      "seconds": 6,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 360,
+        "actual_frames": 360,
+        "nonempty": true,
+        "unique_png_hashes": 360
+      }
+    },
+    {
+      "id": "thinking",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "思考",
+          "想想"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "turn",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "转身"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "walk",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "走走",
+          "散步"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "walk_left",
+      "kind": "interaction",
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 360,
+      "seconds": 6,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 360,
+        "actual_frames": 360,
+        "nonempty": true,
+        "unique_png_hashes": 360
+      }
+    },
+    {
+      "id": "walk_right",
+      "kind": "interaction",
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 360,
+      "seconds": 6,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 360,
+        "actual_frames": 360,
+        "nonempty": true,
+        "unique_png_hashes": 360
+      }
+    },
+    {
+      "id": "wave",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "招手",
+          "打招呼"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "wink",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "眨眼"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    },
+    {
+      "id": "working",
+      "kind": "interaction",
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 360,
+      "seconds": 6,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 360,
+        "actual_frames": 360,
+        "nonempty": true,
+        "unique_png_hashes": 360
+      }
+    },
+    {
+      "id": "worried",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "担心",
+          "着急"
+        ]
+      },
+      "sourceCommit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+      "fps": 60,
+      "count": 288,
+      "seconds": 4.8,
+      "seed": 20261013,
+      "width": 448,
+      "height": 448,
+      "scale": 0.8,
+      "checks": {
+        "expected_frames": 288,
+        "actual_frames": 288,
+        "nonempty": true,
+        "unique_png_hashes": 288
+      }
+    }
+  ]
+}

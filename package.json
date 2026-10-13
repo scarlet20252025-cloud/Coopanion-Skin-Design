@@ -1,0 +1,10 @@
+{
+  "name": "coopanion-gpt-dragon",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "preview": "node scripts/serve.mjs",
+    "reference": "node scripts/reference-server.mjs",
+    "check": "node scripts/check-production.mjs"
+  }
+}

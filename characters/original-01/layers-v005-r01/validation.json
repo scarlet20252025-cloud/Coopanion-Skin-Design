@@ -1,0 +1,66 @@
+{
+  "master": "characters/original-01/gpt-dragon-master-v005.png",
+  "master_sha256": "14e64e72f9ff192f4d49fff321579e05d8a2b78c23feba968ba07fed2eb93f81",
+  "canvas": [
+    1254,
+    1254
+  ],
+  "offset": [
+    0,
+    0
+  ],
+  "independent_resizing": false,
+  "registrations": [
+    {
+      "file": "head-isolation-edit.png",
+      "transform": "translation only",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.3251725435256958
+        ],
+        [
+          0.0,
+          1.0,
+          -0.0010881423950195312
+        ]
+      ],
+      "correlation": 0.9951789359193208,
+      "unchanged_region": [
+        380,
+        80,
+        925,
+        575
+      ]
+    },
+    {
+      "file": "body-underpaint-edit.png",
+      "transform": "translation only",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.25050804018974304
+        ],
+        [
+          0.0,
+          1.0,
+          0.16204585134983063
+        ]
+      ],
+      "correlation": 0.9934550428894109,
+      "unchanged_region": [
+        420,
+        885,
+        905,
+        1190
+      ]
+    }
+  ],
+  "visible_pixel_mismatches": 0,
+  "alpha_mismatches": 0,
+  "layer_scope": "head+hair and body visible ownership study; not final rig parts",
+  "underpaint": "hidden candidates; seams and articulation not accepted",
+  "animation_ready": false
+}

@@ -1,0 +1,19 @@
+{
+  "master_sha256": "14e64e72f9ff192f4d49fff321579e05d8a2b78c23feba968ba07fed2eb93f81",
+  "translation": [
+    [
+      1.0,
+      0.0,
+      0.18409503996372223
+    ],
+    [
+      0.0,
+      1.0,
+      0.06836500763893127
+    ]
+  ],
+  "registration_correlation": 0.9944806311547612,
+  "changed_pixels_outside_eye_roi": 0,
+  "alpha_changed": false,
+  "scope": "closed-eye local expression candidate; not a finished blink curve"
+}

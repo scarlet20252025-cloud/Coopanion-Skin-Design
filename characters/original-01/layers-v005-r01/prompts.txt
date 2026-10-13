@@ -1,0 +1,6 @@
+Tool: built-in imagegen. Both edits reference ONLY gpt-dragon-master-v005.png.
+Head isolation: same canvas, exact scale/position; keep complete face, original eyes/mouth, all hair, horns, ahoge and ornament. Remove body, clothing, wings and tail. Complete only hair hidden by body. No recenter, resizing, redesign or recoloring.
+Body underpaint: same canvas, exact scale/position; remove head and all hair; retain original torso, arms, hands, skirt, legs, wings and tail. Complete only occluded collar/shoulder/wing roots. No recenter, resizing, redesign or recoloring.
+Generated results are candidate masks/occlusion fills. Registered visible layers always use locked master pixels. Underpaint candidates remain hidden in ORA until inspected.
+
+Blink edit: change only two eyes to naturally closed eyelids for neutral blink; preserve original mouth, entire pose, face outline, all hair/clothes/accessories/color/canvas. Input is locked v005, not head extraction. Locally mask only eye regions after translation registration.

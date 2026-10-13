@@ -2,7 +2,9 @@
 
 原创 Q 版人物桌宠绘制工程。目标平台为 **Coopanion**，采用官方分件动画方式；Cortico 是其 Agent 框架。
 
-当前阶段：**工程方案已建立，角色具体设定、母版与运行时适配尚未制作**。用户已确认原创 Q 版人物方向。
+当前阶段：**锁定 v005，已完成原位分层小样和局部闭眼候选；旧绑定停用，全动作新绑定尚未完成**。`npm run preview` 可比较原画、原位合成和闭眼候选。可见像素与透明度的静态合成差异均为 0；这不代表动作验收通过。
+
+官方鲸鱼娘已按固定版本采样为本地逐帧参考库，见 [采样规格与使用方式](docs/OFFICIAL_FRAME_REFERENCE.md)。新素材的唯一基准见 [production-lock.json](characters/original-01/production-lock.json)，问题原因见 [失败复盘](docs/RIG_FAILURE_REVIEW.md)。
 
 推荐生产线：角色设定 → 单张母版 → See-Through 分层试验 → 局部补画与分层精修 → 统一 PNG 部件 → Coopanion kit / rig → 桌面验收。
 若自动分层质量不达标，直接采用官方「局部编辑 + 配准 + 遮罩拆件」路线；不反复重跑整张图。
@@ -29,7 +31,7 @@ flowchart LR
   F --> H[真实桌面验收]
 ```
 
-本仓库交付的是生产工程与模板，不是已完成的角色或可导入皮肤。`packs/` 在首个角色接入时建立；PSD2Live 的 `.moc3` 不能当成 Coopanion 的 `figure.json` 包直接导入。
+本仓库目前交付生产工程、v005 原位分层小样与闭眼候选。失败的 `packs/gpt-dragon` 仅留本机排查，不是可交付皮肤。PSD2Live 的 `.moc3` 不能当成 Coopanion 的 `figure.json` 包直接导入。
 
 ## 本机检查
 

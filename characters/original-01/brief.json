@@ -1,6 +1,6 @@
 {
   "id": "original-01",
-  "status": "master-candidate",
+  "status": "v005-registered-layer-study",
   "confirmed": {
     "character_type": "参考用户形象的 GPT 龙娘，Q 版人物",
     "target": "Coopanion",
@@ -29,10 +29,11 @@
   },
   "approved_master": null,
   "checks": {
-    "art": "pending",
-    "assets": "pending",
-    "animation": "pending",
-    "desktop": "pending"
+    "art": "pending-user-acceptance",
+    "assets": "two-group-rest-composite-pixel-identical; masks-and-underpaint-not-animation-ready",
+    "animation": "old-rig-rejected; new-local-blink-candidate-only",
+    "desktop": "not-tested"
   },
-  "candidate_master": "gpt-dragon-master-v002.png"
+  "candidate_master": "gpt-dragon-master-v005.png",
+  "active_source_lock": "production-lock.json"
 }

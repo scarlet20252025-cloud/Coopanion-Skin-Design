@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "active_master": "characters/original-01/gpt-dragon-master-v005.png",
+  "sha256": "14e64e72f9ff192f4d49fff321579e05d8a2b78c23feba968ba07fed2eb93f81",
+  "canvas": [
+    1254,
+    1254
+  ],
+  "official_commit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+  "rejected_inputs": [
+    "gpt-dragon-master-v002.png",
+    "gpt-dragon-master-v003.png",
+    "gpt-dragon-master-v004.png",
+    "rig-atlas-v001.png",
+    "rig-atlas-v002.png",
+    "rig-atlas-v003.png",
+    "face-atlas-v001.png",
+    "face-atlas-v002.png",
+    "gpt-dragon-layers.ora"
+  ],
+  "rule": "All new layers and edits derive directly from active_master. Keep source coordinates; visible pixels come from master. New versions never overwrite master."
+}
