@@ -1,0 +1,5683 @@
+{
+  "prototype": "1.0.2",
+  "master": "14e64e72f9ff192f4d49fff321579e05d8a2b78c23feba968ba07fed2eb93f81",
+  "checks": [
+    {
+      "word": "rest-wave-right",
+      "frame": 30,
+      "result": true
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 30,
+      "result": true
+    }
+  ],
+  "events": [],
+  "samples": [
+    {
+      "word": "rest-wave-right",
+      "frame": 0,
+      "t": 0.016666666666666666,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 232.44641983126732,
+          "y": 77.84341673846836,
+          "w": 536.8631859080949,
+          "h": 703.1875641414517
+        },
+        "hit": [
+          {
+            "x": 491.9302930201799,
+            "y": 323.3528680119925,
+            "r": 207
+          },
+          {
+            "x": 488.94771976513493,
+            "y": 599.1721280847171,
+            "r": 135
+          },
+          {
+            "x": 494.91286627522487,
+            "y": 738.5972485610394,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 485.96514651008994,
+          "y": 62.68851233886812
+        },
+        "side": {
+          "x": 480,
+          "y": 390.0344473702336,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          0,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": -10,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -0.002795182481643579,
+          "fold": 0.9999888192700734
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 0.002795182481643579,
+          "fold": 0.9999888192700734
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.2381602689022148,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": 2.907382140726596,
+        "emotion": -2.6150399528228285,
+        "flutter": 0,
+        "spring": 0,
+        "tail": 0.2923421879037673,
+        "rotation": 0.2923421879037673,
+        "bend": -0.14617109395188366,
+        "wingPhase": 4.20784584115027,
+        "wingAngle": -0.002795182481643579,
+        "dragBlend": 0,
+        "dragPhase": 25.55162024919704,
+        "wingFlutter": 0,
+        "energy": 0,
+        "wingRate": 1.1,
+        "accent": 0,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 10,
+      "t": 0.18333333333333332,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 231.66566966827858,
+          "y": 81.70640549670986,
+          "w": 538.5563790326488,
+          "h": 699.3078524881529
+        },
+        "hit": [
+          {
+            "x": 491.96791953405886,
+            "y": 325.8613022705908,
+            "r": 207
+          },
+          {
+            "x": 488.97593965054415,
+            "y": 600.158778893099,
+            "r": 135
+          },
+          {
+            "x": 494.9598994175736,
+            "y": 738.8146461967846,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 485.98395976702943,
+          "y": 66.63511557239622
+        },
+        "side": {
+          "x": 480,
+          "y": 392.1749779375708,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          0,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": -10,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -0.08811639047595145,
+          "fold": 0.9996475344380962
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 0.08811639047595145,
+          "fold": 0.9996475344380962
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.24281884008644017,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": 2.9984193699023045,
+        "emotion": -0.3564874772311601,
+        "flutter": 0,
+        "spring": 0,
+        "tail": 2.6419318926711446,
+        "rotation": 2.6419318926711446,
+        "bend": -1.3209659463355723,
+        "wingPhase": 4.9451598148338185,
+        "wingAngle": -0.08811639047595145,
+        "dragBlend": 0,
+        "dragPhase": 29.74041045398342,
+        "wingFlutter": 0,
+        "energy": 0,
+        "wingRate": 1.1,
+        "accent": 0,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 20,
+      "t": 0.35,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 230.77982490141721,
+          "y": 86.08938040744579,
+          "w": 540.4774881656012,
+          "h": 694.9059036600545
+        },
+        "hit": [
+          {
+            "x": 492.0106108481245,
+            "y": 328.7073898749648,
+            "r": 207
+          },
+          {
+            "x": 489.00795813609335,
+            "y": 601.2782400174862,
+            "r": 135
+          },
+          {
+            "x": 495.01326356015556,
+            "y": 739.0613071224969,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 486.0053054240622,
+          "y": 71.11296006994462
+        },
+        "side": {
+          "x": 480,
+          "y": 394.60363935997,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          0,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": -10,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": 0.6005796835182443,
+          "fold": 0.9975976812659271
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": -0.6005796835182443,
+          "fold": 0.9975976812659271
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.24564440634012663,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": 2.9492472615312986,
+        "emotion": 2.2342622030322485,
+        "flutter": 0,
+        "spring": 0,
+        "tail": 5.1835094645635476,
+        "rotation": 5.1835094645635476,
+        "bend": -2.5917547322817738,
+        "wingPhase": 5.685006167546172,
+        "wingAngle": 0.6005796835182443,
+        "dragBlend": 0,
+        "dragPhase": 33.92920065876978,
+        "wingFlutter": 0,
+        "energy": 0,
+        "wingRate": 1.1,
+        "accent": 0,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 30,
+      "t": 0.5166666666666667,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 229.92874094141067,
+          "y": 90.30036610514867,
+          "w": 542.3232124162179,
+          "h": 690.6766885870368
+        },
+        "hit": [
+          {
+            "x": 492.05162694258263,
+            "y": 331.44179617217446,
+            "r": 207
+          },
+          {
+            "x": 489.03872020693694,
+            "y": 602.3537731610553,
+            "r": 135
+          },
+          {
+            "x": 495.06453367822826,
+            "y": 739.2982890015885,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 486.0258134712913,
+          "y": 75.4150926442212
+        },
+        "side": {
+          "x": 480,
+          "y": 396.93699940025556,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          0.19449916421838276,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": -10,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -0.7552542773547393,
+          "fold": 0.9969789828905811
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 0.7552542773547393,
+          "fold": 0.9969789828905811
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.2839361305285012,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": 2.7621651566629595,
+        "emotion": 3.4468652297425657,
+        "flutter": 0,
+        "spring": 0,
+        "tail": 6.209030386405525,
+        "rotation": 6.209030386405525,
+        "bend": -3.1045151932027624,
+        "wingPhase": 6.428979422604907,
+        "wingAngle": -0.7552542773547393,
+        "dragBlend": 0,
+        "dragPhase": 38.11799086355612,
+        "wingFlutter": 0,
+        "energy": 0.15351827510938543,
+        "wingRate": 1.1726546280207164,
+        "accent": 0.9639974142710155,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 40,
+      "t": 0.6833333333333333,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 229.24678523190502,
+          "y": 93.67454053932909,
+          "w": 543.8021525091216,
+          "h": 687.287907337124
+        },
+        "hit": [
+          {
+            "x": 492.0844922779805,
+            "y": 333.6328185320319,
+            "r": 207
+          },
+          {
+            "x": 489.06336920848537,
+            "y": 603.2155752892659,
+            "r": 135
+          },
+          {
+            "x": 495.1056153474756,
+            "y": 739.4881776061094,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 486.04224613899027,
+          "y": 78.86230115706348
+        },
+        "side": {
+          "x": 480,
+          "y": 398.80667181400054,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "wave",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          44.31701244377241,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": true,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -5.122247953316538,
+          "fold": 0.9795110081867339
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 5.122247953316538,
+          "fold": 0.9795110081867339
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.5656853088530702,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": 2.4459212171634115,
+        "emotion": -6.457382757570954,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -4.011461540407543,
+        "rotation": -4.011461540407543,
+        "bend": 2.0057307702037717,
+        "wingPhase": 7.314730218369246,
+        "wingAngle": -5.122247953316538,
+        "dragBlend": 0,
+        "dragPhase": 42.30678106834247,
+        "wingFlutter": 0,
+        "energy": 0.840120253920305,
+        "wingRate": 2.2853061523576264,
+        "accent": 0.668089365748112,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 50,
+      "t": 0.85,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 228.84162358458522,
+          "y": 95.6791957581969,
+          "w": 544.6808163225862,
+          "h": 685.2745739571355
+        },
+        "hit": [
+          {
+            "x": 492.1040181405019,
+            "y": 334.93454270012785,
+            "r": 207
+          },
+          {
+            "x": 489.07801360537644,
+            "y": 603.7275867953836,
+            "r": 135
+          },
+          {
+            "x": 495.1300226756274,
+            "y": 739.6009937006777,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 486.05200907025096,
+          "y": 80.91034718153446
+        },
+        "side": {
+          "x": 480,
+          "y": 399.9174764374424,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "wave",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          85.09290328136026,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": true,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": 2.8859295654021557,
+          "fold": 0.9884562817383914
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": -2.8859295654021557,
+          "fold": 0.9884562817383914
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.7365748238557638,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": 2.0153033521908883,
+        "emotion": 9.547722759635295,
+        "flutter": 0,
+        "spring": 0,
+        "tail": 11.563026111826183,
+        "rotation": 11.563026111826183,
+        "bend": -5.781513055913091,
+        "wingPhase": 8.353638641731571,
+        "wingAngle": 2.8859295654021557,
+        "dragBlend": 0,
+        "dragPhase": 46.49557127312881,
+        "wingFlutter": 0,
+        "energy": 0.9698026165776811,
+        "wingRate": 2.954620023495322,
+        "accent": 0.46301306831122974,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 60,
+      "t": 1.0166666666666666,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 228.77722211486622,
+          "y": 95.99784078106347,
+          "w": 544.8204821605311,
+          "h": 684.9545495185856
+        },
+        "hit": [
+          {
+            "x": 492.1071218257896,
+            "y": 335.1414550526386,
+            "r": 207
+          },
+          {
+            "x": 489.0803413693422,
+            "y": 603.8089723207045,
+            "r": 135
+          },
+          {
+            "x": 495.133902282237,
+            "y": 739.618926104562,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 486.0535609128948,
+          "y": 81.235889282818
+        },
+        "side": {
+          "x": 480,
+          "y": 400.09404164491826,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "wave",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          89.33007857405337,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": true,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -10.894752488439428,
+          "fold": 0.9564209900462423
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 10.894752488439428,
+          "fold": 0.9564209900462423
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.8402245541283195,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": 1.490447719545604,
+        "emotion": -8.067494132381643,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -6.577046412836039,
+        "rotation": -6.577046412836039,
+        "bend": 3.2885232064180197,
+        "wingPhase": 9.485441862000924,
+        "wingAngle": -10.894752488439428,
+        "dragBlend": 0,
+        "dragPhase": 50.684361477915154,
+        "wingFlutter": 0,
+        "energy": 0.9942964510019925,
+        "wingRate": 3.1954800508682975,
+        "accent": 0.3208868639705411,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 70,
+      "t": 1.1833333333333333,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 229.06374839875699,
+          "y": 94.58016856518657,
+          "w": 544.1990998581174,
+          "h": 686.3783588436221
+        },
+        "hit": [
+          {
+            "x": 492.09331333018037,
+            "y": 334.2208886786926,
+            "r": 207
+          },
+          {
+            "x": 489.0699849976353,
+            "y": 603.4468828802858,
+            "r": 135
+          },
+          {
+            "x": 495.1166416627255,
+            "y": 739.5391436854867,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 486.0466566650902,
+          "y": 79.78753152114291
+        },
+        "side": {
+          "x": 480,
+          "y": 399.3084916724843,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "wave",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          101.25956292056851,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": true,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -2.274284243165357,
+          "fold": 0.9909028630273385
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 2.274284243165357,
+          "fold": 0.9909028630273385
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.9030912934095694,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": 0.8958971371200599,
+        "emotion": -2.9895274728277434,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -2.0936303357076835,
+        "rotation": -2.0936303357076835,
+        "bend": 1.0468151678538418,
+        "wingPhase": 10.673588624722168,
+        "wingAngle": -2.274284243165357,
+        "dragBlend": 0,
+        "dragPhase": 54.8731516827015,
+        "wingFlutter": 0,
+        "energy": 0.9989227387446878,
+        "wingRate": 3.2568302663745485,
+        "accent": 0.2223876311837378,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 80,
+      "t": 1.35,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 229.65596623617253,
+          "y": 91.64999838166841,
+          "w": 542.9147720179391,
+          "h": 689.3212137465495
+        },
+        "hit": [
+          {
+            "x": 492.06477271150976,
+            "y": 332.31818076731713,
+            "r": 207
+          },
+          {
+            "x": 489.04857953363233,
+            "y": 602.6984844351448,
+            "r": 135
+          },
+          {
+            "x": 495.0809658893872,
+            "y": 739.3742423331674,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 486.03238635575485,
+          "y": 76.79393774057894
+        },
+        "side": {
+          "x": 480,
+          "y": 397.68484758811064,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "wave",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          95.10453420746406,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": true,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -1.1324822783092314,
+          "fold": 0.9954700708867631
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 1.1324822783092314,
+          "fold": 0.9954700708867631
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.941221898259808,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": 0.25945343415024236,
+        "emotion": 12.226578054108879,
+        "flutter": 0,
+        "spring": 0,
+        "tail": 12.48603148825912,
+        "rotation": 12.48603148825912,
+        "bend": -6.24301574412956,
+        "wingPhase": 11.895909473417303,
+        "wingAngle": -1.1324822783092314,
+        "dragBlend": 0,
+        "dragPhase": 59.06194188748784,
+        "wingFlutter": 0,
+        "energy": 0.9997965316309894,
+        "wingRate": 3.2596474084408325,
+        "accent": 0.1541236618151328,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 90,
+      "t": 1.5166666666666666,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 230.46037745227432,
+          "y": 87.6699396738876,
+          "w": 541.1702657661522,
+          "h": 693.3185021457059
+        },
+        "hit": [
+          {
+            "x": 492.0260059059145,
+            "y": 329.733727060966,
+            "r": 207
+          },
+          {
+            "x": 489.01950442943587,
+            "y": 601.68193264398,
+            "r": 135
+          },
+          {
+            "x": 495.03250738239313,
+            "y": 739.1502563452838,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 486.01300295295727,
+          "y": 72.72773057591985
+        },
+        "side": {
+          "x": 480,
+          "y": 395.4794470920243,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "wave",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          88.58532283077787,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": true,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -5.764169725517732,
+          "fold": 0.976943321097929
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 5.764169725517732,
+          "fold": 0.976943321097929
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.964349279174865,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -0.38912259243367014,
+        "emotion": -2.6163885510789893,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -3.0055111435126594,
+        "rotation": -3.0055111435126594,
+        "bend": 1.5027555717563297,
+        "wingPhase": 13.138957953023263,
+        "wingAngle": -5.764169725517732,
+        "dragBlend": 0,
+        "dragPhase": 63.250732092274184,
+        "wingFlutter": 0,
+        "energy": 0.9999615697891447,
+        "wingRate": 3.247947790300808,
+        "accent": 0.10681395815435281,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 100,
+      "t": 1.6833333333333333,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 231.34998320343834,
+          "y": 83.26835619824897,
+          "w": 539.2410002817,
+          "h": 697.7391400952652
+        },
+        "hit": [
+          {
+            "x": 491.98313333959334,
+            "y": 326.87555597288895,
+            "r": 207
+          },
+          {
+            "x": 488.987350004695,
+            "y": 600.5577186826697,
+            "r": 135
+          },
+          {
+            "x": 494.97891667449164,
+            "y": 738.9025481843171,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 485.99156666979667,
+          "y": 68.23087473067858
+        },
+        "side": {
+          "x": 480,
+          "y": 393.04047443019857,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "wave",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          99.79776384990284,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": true,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": 9.033196492007736,
+          "fold": 0.9638672140319691
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": -9.033196492007736,
+          "fold": 0.9638672140319691
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.9783767447786998,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -1.019502825107886,
+        "emotion": -12.158532635113291,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -13.178035460221176,
+        "rotation": -13.178035460221176,
+        "bend": 6.589017730110588,
+        "wingPhase": 14.394578376279844,
+        "wingAngle": 9.033196492007736,
+        "dragBlend": 0,
+        "dragPhase": 67.43952229706059,
+        "wingFlutter": 0,
+        "energy": 0.9999927414707576,
+        "wingRate": 3.23534474277397,
+        "accent": 0.07402641179318002,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 110,
+      "t": 1.85,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 232.18433430221208,
+          "y": 79.14016120351289,
+          "w": 537.4315641638774,
+          "h": 701.8852060640044
+        },
+        "hit": [
+          {
+            "x": 491.94292364808615,
+            "y": 324.194909872411,
+            "r": 207
+          },
+          {
+            "x": 488.9571927360646,
+            "y": 599.5033312164817,
+            "r": 135
+          },
+          {
+            "x": 494.9286545601077,
+            "y": 738.6702255222756,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 485.9714618240431,
+          "y": 64.01332486592662
+        },
+        "side": {
+          "x": 480,
+          "y": 390.7529897577907,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "wave",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          89.34448569522226,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": true,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -11.012608251206734,
+          "fold": 0.9559495669951731
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 11.012608251206734,
+          "fold": 0.9559495669951731
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.9868848327454902,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -1.6022100013810427,
+        "emotion": 4.161772781624761,
+        "flutter": 0,
+        "spring": 0,
+        "tail": 2.5595627802437186,
+        "rotation": 2.5595627802437186,
+        "bend": -1.2797813901218593,
+        "wingPhase": 15.657824068812705,
+        "wingAngle": -11.012608251206734,
+        "dragBlend": 0,
+        "dragPhase": 71.628312501847,
+        "wingFlutter": 0,
+        "energy": 0.9999986290409136,
+        "wingRate": 3.2251646603680464,
+        "accent": 0.05130331033191983,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 120,
+      "t": 2.0166666666666666,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 232.83170505581603,
+          "y": 75.9371059085729,
+          "w": 536.0276275897966,
+          "h": 705.1021273991822
+        },
+        "hit": [
+          {
+            "x": 491.91172505755105,
+            "y": 322.1150038367357,
+            "r": 207
+          },
+          {
+            "x": 488.93379379316326,
+            "y": 598.6852348424494,
+            "r": 135
+          },
+          {
+            "x": 494.8896563219388,
+            "y": 738.4899669991837,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 485.9558625287755,
+          "y": 60.7409393697975
+        },
+        "side": {
+          "x": 480,
+          "y": 388.9781366073478,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "wave",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          33.34040381656341,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": true,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": 10.966461689879381,
+          "fold": 0.9561341532404825
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": -10.966461689879381,
+          "fold": 0.9561341532404825
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.9920452489528807,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -2.1099961025173095,
+        "emotion": 12.215360298958212,
+        "flutter": 0,
+        "spring": 0,
+        "tail": 10.105364196440902,
+        "rotation": 10.105364196440902,
+        "bend": -5.052682098220451,
+        "wingPhase": 16.92569472095019,
+        "wingAngle": 10.966461689879381,
+        "dragBlend": 0,
+        "dragPhase": 75.81710270663342,
+        "wingFlutter": 0,
+        "energy": 0.9999997410592762,
+        "wingRate": 3.2176505819565455,
+        "accent": 0.03555527800492093,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 130,
+      "t": 2.183333333333333,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 233.18988985664797,
+          "y": 74.16488231570156,
+          "w": 535.2508412747394,
+          "h": 706.8820229556591
+        },
+        "hit": [
+          {
+            "x": 491.89446313943864,
+            "y": 320.96420929591005,
+            "r": 207
+          },
+          {
+            "x": 488.920847354579,
+            "y": 598.2325889897246,
+            "r": 135
+          },
+          {
+            "x": 494.8680789242983,
+            "y": 738.3902314723122,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 485.94723156971935,
+          "y": 58.93035595889853
+        },
+        "side": {
+          "x": 480,
+          "y": 387.99612526584326,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          3.729131039945911,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -16.01255950719069,
+          "fold": 0.945
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 16.01255950719069,
+          "fold": 0.945
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.9951751995995411,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -2.5191165004068212,
+        "emotion": -3.8092753652632245,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -6.328391865670046,
+        "rotation": -6.328391865670046,
+        "bend": 3.164195932835023,
+        "wingPhase": 18.19637055288782,
+        "wingAngle": -16.01255950719069,
+        "dragBlend": 0,
+        "dragPhase": 80.00589291141983,
+        "wingFlutter": 0,
+        "energy": 0.9999999510924147,
+        "wingRate": 3.212298487090169,
+        "accent": 0.024641251915876253,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 140,
+      "t": 2.35,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 233.20233920042602,
+          "y": 74.10328556255092,
+          "w": 535.2238426978713,
+          "h": 706.9438863614207
+        },
+        "hit": [
+          {
+            "x": 491.8938631710638,
+            "y": 320.92421140425387,
+            "r": 207
+          },
+          {
+            "x": 488.9203973782979,
+            "y": 598.2168564856731,
+            "r": 135
+          },
+          {
+            "x": 494.8673289638298,
+            "y": 738.3867649883687,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 485.9469315855319,
+          "y": 58.86742594269276
+        },
+        "side": {
+          "x": 480,
+          "y": 387.96199373162995,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          0.36162117536779337,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": 9.78645444178792,
+          "fold": 0.9608541822328484
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": -9.78645444178792,
+          "fold": 0.9608541822328484
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.8926045929489215,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -2.810440282095663,
+        "emotion": -0.8902202079384076,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -3.7006604900340707,
+        "rotation": -3.7006604900340707,
+        "bend": 1.8503302450170354,
+        "wingPhase": 19.45370147463758,
+        "wingAngle": 9.78645444178792,
+        "dragBlend": 0,
+        "dragPhase": 84.19468311620625,
+        "wingFlutter": 0,
+        "energy": 0.798516206597992,
+        "wingRate": 3.120055315524017,
+        "accent": 0.01707738850748512,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 150,
+      "t": 2.5166666666666666,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 232.8670876095038,
+          "y": 75.76204042205336,
+          "w": 535.950894340835,
+          "h": 705.2779507449508
+        },
+        "hit": [
+          {
+            "x": 491.9100198742408,
+            "y": 322.00132494938526,
+            "r": 207
+          },
+          {
+            "x": 488.9325149056806,
+            "y": 598.6405211467581,
+            "r": 135
+          },
+          {
+            "x": 494.887524842801,
+            "y": 738.4801148289467,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 485.9550099371204,
+          "y": 60.562084587032814
+        },
+        "side": {
+          "x": 480,
+          "y": 388.8811306234754,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          0.03506711699685434,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -3.578824175819631,
+          "fold": 0.9856847032967215
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 3.578824175819631,
+          "fold": 0.9856847032967215
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.6397593876956782,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -2.9703448319977013,
+        "emotion": 1.5137358463875437,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -1.4566089856101576,
+        "rotation": -1.4566089856101576,
+        "bend": 0.7283044928050788,
+        "wingPhase": 20.54676853573739,
+        "wingAngle": -3.578824175819631,
+        "dragBlend": 0,
+        "dragPhase": 88.38347332099266,
+        "wingFlutter": 0,
+        "energy": 0.3771923478185267,
+        "wingRate": 2.4606297803328276,
+        "accent": 0.011835323920684577,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 160,
+      "t": 2.683333333333333,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 232.23706393857412,
+          "y": 78.87926597460512,
+          "w": 537.3172107356223,
+          "h": 702.1472307094875
+        },
+        "hit": [
+          {
+            "x": 491.9403824607916,
+            "y": 324.02549738610725,
+            "r": 207
+          },
+          {
+            "x": 488.9552868455937,
+            "y": 599.4366956385355,
+            "r": 135
+          },
+          {
+            "x": 494.92547807598953,
+            "y": 738.6555431067959,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 485.9701912303958,
+          "y": 63.7467825541421
+        },
+        "side": {
+          "x": 480,
+          "y": 390.60842443614484,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          0.003400527342516319,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": 0.9544775530705555,
+          "fold": 0.9961820897877178
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": -0.9544775530705555,
+          "fold": 0.9961820897877178
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.48640101854825196,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -2.991352840155055,
+        "emotion": -6.270450865782799,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -9.261803705937854,
+        "rotation": -9.261803705937854,
+        "bend": 4.630901852968927,
+        "wingPhase": 21.502390043255136,
+        "wingAngle": 0.9544775530705555,
+        "dragBlend": 0,
+        "dragPhase": 92.57226352577908,
+        "wingFlutter": 0,
+        "energy": 0.17817304905932785,
+        "wingRate": 1.8699984677551917,
+        "accent": 0.008202360228915146,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 170,
+      "t": 2.85,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 231.41173507231258,
+          "y": 82.96282084703171,
+          "w": 539.1070805660692,
+          "h": 698.0459981103404
+        },
+        "hit": [
+          {
+            "x": 491.98015734591263,
+            "y": 326.6771563941764,
+            "r": 207
+          },
+          {
+            "x": 488.9851180094345,
+            "y": 600.4796815150428,
+            "r": 135
+          },
+          {
+            "x": 494.9751966823908,
+            "y": 738.885353554162,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 485.9900786729563,
+          "y": 67.91872606017091
+        },
+        "side": {
+          "x": 480,
+          "y": 392.87117345636386,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          0.00032975582818052594,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -1.5771700986429424,
+          "fold": 0.9936913196054282
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 1.5771700986429424,
+          "fold": 0.9936913196054282
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.3933844657368099,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -2.8724819493509575,
+        "emotion": -4.251436869504843,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -7.123918818855801,
+        "rotation": -7.123918818855801,
+        "bend": 3.5619594094279003,
+        "wingPhase": 22.374646608484188,
+        "wingAngle": -1.5771700986429424,
+        "dragBlend": 0,
+        "dragPhase": 96.7610537305655,
+        "wingFlutter": 0,
+        "energy": 0.08416298897551067,
+        "wingRate": 1.503857354175223,
+        "accent": 0.005684568819219728,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 180,
+      "t": 3.0166666666666666,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 230.521402291366,
+          "y": 87.36800151420516,
+          "w": 541.0379227416158,
+          "h": 693.6217473969888
+        },
+        "hit": [
+          {
+            "x": 492.0230649498137,
+            "y": 329.53766332091243,
+            "r": 207
+          },
+          {
+            "x": 489.0172987123603,
+            "y": 601.6048142395589,
+            "r": 135
+          },
+          {
+            "x": 495.0288311872671,
+            "y": 739.1332641544791,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 486.01153247490686,
+          "y": 72.41925695823556
+        },
+        "side": {
+          "x": 480,
+          "y": 395.3121393671786,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          3.197707157342231e-05,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -3.591940482269302,
+          "fold": 0.9856322380709228
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 3.591940482269302,
+          "fold": 0.9856322380709228
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.3369670745958907,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -2.619290691197272,
+        "emotion": -3.27054534776932,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -5.8898360389665925,
+        "rotation": -5.8898360389665925,
+        "bend": 2.9449180194832962,
+        "wingPhase": 23.196339780269973,
+        "wingAngle": -3.591940482269302,
+        "dragBlend": 0,
+        "dragPhase": 100.94984393535192,
+        "wingFlutter": 0,
+        "energy": 0.03975578097074204,
+        "wingRate": 1.3036134192817177,
+        "accent": 0.003939637099396092,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 190,
+      "t": 3.183333333333333,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 229.70662956520357,
+          "y": 91.39932680991626,
+          "w": 542.8048997381128,
+          "h": 689.5729704766209
+        },
+        "hit": [
+          {
+            "x": 492.0623311052914,
+            "y": 332.15540701942615,
+            "r": 207
+          },
+          {
+            "x": 489.04674832896853,
+            "y": 602.6344600943077,
+            "r": 135
+          },
+          {
+            "x": 495.0779138816142,
+            "y": 739.3601352750169,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 486.0311655526457,
+          "y": 76.53784037723051
+        },
+        "side": {
+          "x": 480,
+          "y": 397.54594732324364,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          3.100879557015714e-06,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -3.5347116802362386,
+          "fold": 0.985861153279055
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 3.5347116802362386,
+          "fold": 0.985861153279055
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.3027481971279234,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -2.2436185631754713,
+        "emotion": -3.4612042855917227,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -5.7048228487671935,
+        "rotation": -5.7048228487671935,
+        "bend": 2.8524114243835967,
+        "wingPhase": 23.987364703673297,
+        "wingAngle": -3.5347116802362386,
+        "dragBlend": 0,
+        "dragPhase": 105.13863414013834,
+        "wingFlutter": 0,
+        "energy": 0.01877930120867631,
+        "wingRate": 1.2004200439449972,
+        "accent": 0.002730328538281022,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 200,
+      "t": 3.35,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 229.09605159205893,
+          "y": 94.42033911077658,
+          "w": 544.1290447401132,
+          "h": 686.5388802004322
+        },
+        "hit": [
+          {
+            "x": 492.0917565497803,
+            "y": 334.11710331868613,
+            "r": 207
+          },
+          {
+            "x": 489.0688174123352,
+            "y": 603.4060606386832,
+            "r": 135
+          },
+          {
+            "x": 495.1146956872254,
+            "y": 739.5301489542861,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 486.04587827489013,
+          "y": 79.62424255473286
+        },
+        "side": {
+          "x": 480,
+          "y": 399.2199281652788,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          3.006983927543209e-07,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -2.2082079831156807,
+          "fold": 0.9911671680675372
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 2.2082079831156807,
+          "fold": 0.9911671680675372
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.2819933988026515,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -1.7630324009101561,
+        "emotion": -3.6644162086662675,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -5.427448609576423,
+        "rotation": -5.427448609576423,
+        "bend": 2.7137243047882116,
+        "wingPhase": 24.75978839415298,
+        "wingAngle": -2.2082079831156807,
+        "dragBlend": 0,
+        "dragPhase": 109.32742434492475,
+        "wingFlutter": 0,
+        "energy": 0.008870713774827628,
+        "wingRate": 1.1489217034875714,
+        "accent": 0.0018922285832099896,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 210,
+      "t": 3.5166666666666666,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 228.7860652084996,
+          "y": 95.9540870005161,
+          "w": 544.8013043671093,
+          "h": 684.9984927094383
+        },
+        "hit": [
+          {
+            "x": 492.1066956526024,
+            "y": 335.11304350682866,
+            "r": 207
+          },
+          {
+            "x": 489.0800217394518,
+            "y": 603.7977971126859,
+            "r": 135
+          },
+          {
+            "x": 495.133369565753,
+            "y": 739.6164637705918,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 486.0533478263012,
+          "y": 81.19118845074377
+        },
+        "side": {
+          "x": 480,
+          "y": 400.0697971258271,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          2.91593148790505e-08,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -0.7350555930189381,
+          "fold": 0.9970597776279242
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 0.7350555930189381,
+          "fold": 0.9970597776279242
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.26940497728222157,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -1.200004933907319,
+        "emotion": -2.9125411371242564,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -4.112546071031575,
+        "rotation": -4.112546071031575,
+        "bend": 2.0562730355157877,
+        "wingPhase": 25.520929866556013,
+        "wingAngle": -0.7350555930189381,
+        "dragBlend": 0,
+        "dragPhase": 113.51621454971117,
+        "wingFlutter": 0,
+        "energy": 0.004190228486167574,
+        "wingRate": 1.1236871873272518,
+        "accent": 0.0013113912706531417,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 220,
+      "t": 3.683333333333333,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 228.82561044850718,
+          "y": 95.7584254114023,
+          "w": 544.7155436056471,
+          "h": 685.1950013184185
+        },
+        "hit": [
+          {
+            "x": 492.10478985790326,
+            "y": 334.98599052688456,
+            "r": 207
+          },
+          {
+            "x": 489.07859239342747,
+            "y": 603.7478229405746,
+            "r": 135
+          },
+          {
+            "x": 495.1309873223791,
+            "y": 739.60545251233,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 486.0523949289516,
+          "y": 80.99129176229837
+        },
+        "side": {
+          "x": 480,
+          "y": 399.9613785829415,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          2.827636145399376e-09,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": 0.2190472679078733,
+          "fold": 0.9991238109283685
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": -0.2190472679078733,
+          "fold": 0.9991238109283685
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.2617697136726945,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -0.5808639363807591,
+        "emotion": -0.9064875511812003,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -1.4873514875619593,
+        "rotation": -1.4873514875619593,
+        "bend": 0.7436757437809797,
+        "wingPhase": 26.275228327786,
+        "wingAngle": 0.2190472679078733,
+        "dragBlend": 0,
+        "dragPhase": 117.70500475449758,
+        "wingFlutter": 0,
+        "energy": 0.0019793237852081843,
+        "wingRate": 1.1114489774640681,
+        "accent": 0.0009088474193894012,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-right",
+      "frame": 230,
+      "t": 3.85,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 229.20844398820543,
+          "y": 93.86424500614794,
+          "w": 543.8853021942533,
+          "h": 687.0973816388471
+        },
+        "hit": [
+          {
+            "x": 492.0863400487612,
+            "y": 333.75600325074544,
+            "r": 207
+          },
+          {
+            "x": 489.0647550365709,
+            "y": 603.2640279452933,
+            "r": 135
+          },
+          {
+            "x": 495.10792506095146,
+            "y": 739.4988536150646,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 486.0431700243806,
+          "y": 79.05611178117283
+        },
+        "side": {
+          "x": 480,
+          "y": 398.9117894406361,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          2.742014414239008e-10,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "neutral",
+        "lastBlinkAt": 4.816666666666655,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": 0.3872058132044446,
+          "fold": 0.9984511767471822
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": -0.3872058132044446,
+          "fold": 0.9984511767471822
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.2571386921985282,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": 0.06543888798771352,
+        "emotion": 1.611043932061835,
+        "flutter": 0,
+        "spring": 0,
+        "tail": 1.6764828200495485,
+        "rotation": 1.6764828200495485,
+        "bend": -0.8382414100247743,
+        "wingPhase": 27.025376292934773,
+        "wingAngle": 0.3872058132044446,
+        "dragBlend": 0,
+        "dragPhase": 121.893794959284,
+        "wingFlutter": 0,
+        "energy": 0.0009349663531770894,
+        "wingRate": 1.1055444249700632,
+        "accent": 0.0006298681790975939,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 0,
+      "t": 0.016666666666666666,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 190.69039426063767,
+          "y": 77.84341673846836,
+          "w": 536.8631859080949,
+          "h": 703.1875641414517
+        },
+        "hit": [
+          {
+            "x": 468.0697069798201,
+            "y": 323.3528680119925,
+            "r": 207
+          },
+          {
+            "x": 471.05228023486507,
+            "y": 599.1721280847171,
+            "r": 135
+          },
+          {
+            "x": 465.08713372477513,
+            "y": 738.5972485610394,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 474.03485348991006,
+          "y": 62.68851233886812
+        },
+        "side": {
+          "x": 480,
+          "y": 390.0344473702336,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          0,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": -10,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -0.002795182481643579,
+          "fold": 0.9999888192700734
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 0.002795182481643579,
+          "fold": 0.9999888192700734
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.2381602689022148,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": 2.907382140726596,
+        "emotion": -2.6150399528228285,
+        "flutter": 0,
+        "spring": 0,
+        "tail": 0.2923421879037673,
+        "rotation": 0.2923421879037673,
+        "bend": -0.14617109395188366,
+        "wingPhase": 4.20784584115027,
+        "wingAngle": -0.002795182481643579,
+        "dragBlend": 0,
+        "dragPhase": 25.55162024919704,
+        "wingFlutter": 0,
+        "energy": 0,
+        "wingRate": 1.1,
+        "accent": 0,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 10,
+      "t": 0.18333333333333332,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 189.77795129907258,
+          "y": 81.70640549670986,
+          "w": 538.5563790326488,
+          "h": 699.3078524881529
+        },
+        "hit": [
+          {
+            "x": 468.03208046594114,
+            "y": 325.8613022705908,
+            "r": 207
+          },
+          {
+            "x": 471.02406034945585,
+            "y": 600.158778893099,
+            "r": 135
+          },
+          {
+            "x": 465.0401005824264,
+            "y": 738.8146461967846,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 474.01604023297057,
+          "y": 66.63511557239622
+        },
+        "side": {
+          "x": 480,
+          "y": 392.1749779375708,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          0,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": -10,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -0.08811639047595145,
+          "fold": 0.9996475344380962
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 0.08811639047595145,
+          "fold": 0.9996475344380962
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.24281884008644017,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": 2.9984193699023045,
+        "emotion": -0.3564874772311601,
+        "flutter": 0,
+        "spring": 0,
+        "tail": 2.6419318926711446,
+        "rotation": 2.6419318926711446,
+        "bend": -1.3209659463355723,
+        "wingPhase": 4.9451598148338185,
+        "wingAngle": -0.08811639047595145,
+        "dragBlend": 0,
+        "dragPhase": 29.74041045398342,
+        "wingFlutter": 0,
+        "energy": 0,
+        "wingRate": 1.1,
+        "accent": 0,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 20,
+      "t": 0.35,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 188.74268693298154,
+          "y": 86.08938040744579,
+          "w": 540.4774881656012,
+          "h": 694.9059036600545
+        },
+        "hit": [
+          {
+            "x": 467.9893891518755,
+            "y": 328.7073898749648,
+            "r": 207
+          },
+          {
+            "x": 470.99204186390665,
+            "y": 601.2782400174862,
+            "r": 135
+          },
+          {
+            "x": 464.98673643984444,
+            "y": 739.0613071224969,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 473.9946945759378,
+          "y": 71.11296006994462
+        },
+        "side": {
+          "x": 480,
+          "y": 394.60363935997,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          0,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": -10,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": 0.6005796835182443,
+          "fold": 0.9975976812659271
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": -0.6005796835182443,
+          "fold": 0.9975976812659271
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.24564440634012663,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": 2.9492472615312986,
+        "emotion": 2.2342622030322485,
+        "flutter": 0,
+        "spring": 0,
+        "tail": 5.1835094645635476,
+        "rotation": 5.1835094645635476,
+        "bend": -2.5917547322817738,
+        "wingPhase": 5.685006167546172,
+        "wingAngle": 0.6005796835182443,
+        "dragBlend": 0,
+        "dragPhase": 33.92920065876978,
+        "wingFlutter": 0,
+        "energy": 0,
+        "wingRate": 1.1,
+        "accent": 0,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 30,
+      "t": 0.5166666666666667,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 187.7480466423715,
+          "y": 90.30036610514867,
+          "w": 542.3232124162179,
+          "h": 690.6766885870368
+        },
+        "hit": [
+          {
+            "x": 467.94837305741737,
+            "y": 331.44179617217446,
+            "r": 207
+          },
+          {
+            "x": 470.96127979306306,
+            "y": 602.3537731610553,
+            "r": 135
+          },
+          {
+            "x": 464.93546632177174,
+            "y": 739.2982890015885,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 473.9741865287087,
+          "y": 75.4150926442212
+        },
+        "side": {
+          "x": 480,
+          "y": 396.93699940025556,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          0.19449916421838276,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": -10,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -0.7552542773547393,
+          "fold": 0.9969789828905811
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 0.7552542773547393,
+          "fold": 0.9969789828905811
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.2839361305285012,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": 2.7621651566629595,
+        "emotion": 3.4468652297425657,
+        "flutter": 0,
+        "spring": 0,
+        "tail": 6.209030386405525,
+        "rotation": 6.209030386405525,
+        "bend": -3.1045151932027624,
+        "wingPhase": 6.428979422604907,
+        "wingAngle": -0.7552542773547393,
+        "dragBlend": 0,
+        "dragPhase": 38.11799086355612,
+        "wingFlutter": 0,
+        "energy": 0.15351827510938543,
+        "wingRate": 1.1726546280207164,
+        "accent": 0.9639974142710155,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 40,
+      "t": 0.6833333333333333,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 186.95106225897337,
+          "y": 93.67454053932909,
+          "w": 543.8021525091216,
+          "h": 687.287907337124
+        },
+        "hit": [
+          {
+            "x": 467.9155077220195,
+            "y": 333.6328185320319,
+            "r": 207
+          },
+          {
+            "x": 470.93663079151463,
+            "y": 603.2155752892659,
+            "r": 135
+          },
+          {
+            "x": 464.8943846525244,
+            "y": 739.4881776061094,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 473.95775386100973,
+          "y": 78.86230115706348
+        },
+        "side": {
+          "x": 480,
+          "y": 398.80667181400054,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "wave",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          44.31701244377241,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": true,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -5.122247953316538,
+          "fold": 0.9795110081867339
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 5.122247953316538,
+          "fold": 0.9795110081867339
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.5656853088530702,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": 2.4459212171634115,
+        "emotion": -6.457382757570954,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -4.011461540407543,
+        "rotation": -4.011461540407543,
+        "bend": 2.0057307702037717,
+        "wingPhase": 7.314730218369246,
+        "wingAngle": -5.122247953316538,
+        "dragBlend": 0,
+        "dragPhase": 42.30678106834247,
+        "wingFlutter": 0,
+        "energy": 0.840120253920305,
+        "wingRate": 2.2853061523576264,
+        "accent": 0.668089365748112,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 50,
+      "t": 0.85,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 186.47756009282853,
+          "y": 95.6791957581969,
+          "w": 544.6808163225862,
+          "h": 685.2745739571355
+        },
+        "hit": [
+          {
+            "x": 467.8959818594981,
+            "y": 334.93454270012785,
+            "r": 207
+          },
+          {
+            "x": 470.92198639462356,
+            "y": 603.7275867953836,
+            "r": 135
+          },
+          {
+            "x": 464.8699773243726,
+            "y": 739.6009937006777,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 473.94799092974904,
+          "y": 80.91034718153446
+        },
+        "side": {
+          "x": 480,
+          "y": 399.9174764374424,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "wave",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          85.09290328136026,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": true,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": 2.8859295654021557,
+          "fold": 0.9884562817383914
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": -2.8859295654021557,
+          "fold": 0.9884562817383914
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.7365748238557638,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": 2.0153033521908883,
+        "emotion": 9.547722759635295,
+        "flutter": 0,
+        "spring": 0,
+        "tail": 11.563026111826183,
+        "rotation": 11.563026111826183,
+        "bend": -5.781513055913091,
+        "wingPhase": 8.353638641731571,
+        "wingAngle": 2.8859295654021557,
+        "dragBlend": 0,
+        "dragPhase": 46.49557127312881,
+        "wingFlutter": 0,
+        "energy": 0.9698026165776811,
+        "wingRate": 2.954620023495322,
+        "accent": 0.46301306831122974,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 60,
+      "t": 1.0166666666666666,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 186.4022957246027,
+          "y": 95.99784078106347,
+          "w": 544.8204821605311,
+          "h": 684.9545495185856
+        },
+        "hit": [
+          {
+            "x": 467.8928781742104,
+            "y": 335.1414550526386,
+            "r": 207
+          },
+          {
+            "x": 470.9196586306578,
+            "y": 603.8089723207045,
+            "r": 135
+          },
+          {
+            "x": 464.866097717763,
+            "y": 739.618926104562,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 473.9464390871052,
+          "y": 81.235889282818
+        },
+        "side": {
+          "x": 480,
+          "y": 400.09404164491826,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "wave",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          89.33007857405337,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": true,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -10.894752488439428,
+          "fold": 0.9564209900462423
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 10.894752488439428,
+          "fold": 0.9564209900462423
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.8402245541283195,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": 1.490447719545604,
+        "emotion": -8.067494132381643,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -6.577046412836039,
+        "rotation": -6.577046412836039,
+        "bend": 3.2885232064180197,
+        "wingPhase": 9.485441862000924,
+        "wingAngle": -10.894752488439428,
+        "dragBlend": 0,
+        "dragPhase": 50.684361477915154,
+        "wingFlutter": 0,
+        "energy": 0.9942964510019925,
+        "wingRate": 3.1954800508682975,
+        "accent": 0.3208868639705411,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 70,
+      "t": 1.1833333333333333,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 186.73715174312565,
+          "y": 94.58016856518657,
+          "w": 544.1990998581174,
+          "h": 686.3783588436221
+        },
+        "hit": [
+          {
+            "x": 467.90668666981963,
+            "y": 334.2208886786926,
+            "r": 207
+          },
+          {
+            "x": 470.9300150023647,
+            "y": 603.4468828802858,
+            "r": 135
+          },
+          {
+            "x": 464.8833583372745,
+            "y": 739.5391436854867,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 473.9533433349098,
+          "y": 79.78753152114291
+        },
+        "side": {
+          "x": 480,
+          "y": 399.3084916724843,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "wave",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          101.25956292056851,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": true,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -2.274284243165357,
+          "fold": 0.9909028630273385
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 2.274284243165357,
+          "fold": 0.9909028630273385
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.9030912934095694,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": 0.8958971371200599,
+        "emotion": -2.9895274728277434,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -2.0936303357076835,
+        "rotation": -2.0936303357076835,
+        "bend": 1.0468151678538418,
+        "wingPhase": 10.673588624722168,
+        "wingAngle": -2.274284243165357,
+        "dragBlend": 0,
+        "dragPhase": 54.8731516827015,
+        "wingFlutter": 0,
+        "energy": 0.9989227387446878,
+        "wingRate": 3.2568302663745485,
+        "accent": 0.2223876311837378,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 80,
+      "t": 1.35,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 187.42926174588837,
+          "y": 91.64999838166841,
+          "w": 542.9147720179392,
+          "h": 689.3212137465495
+        },
+        "hit": [
+          {
+            "x": 467.93522728849024,
+            "y": 332.31818076731713,
+            "r": 207
+          },
+          {
+            "x": 470.95142046636767,
+            "y": 602.6984844351448,
+            "r": 135
+          },
+          {
+            "x": 464.9190341106128,
+            "y": 739.3742423331674,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 473.96761364424515,
+          "y": 76.79393774057894
+        },
+        "side": {
+          "x": 480,
+          "y": 397.68484758811064,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "wave",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          95.10453420746406,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": true,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -1.1324822783092314,
+          "fold": 0.9954700708867631
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 1.1324822783092314,
+          "fold": 0.9954700708867631
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.941221898259808,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": 0.25945343415024236,
+        "emotion": 12.226578054108879,
+        "flutter": 0,
+        "spring": 0,
+        "tail": 12.48603148825912,
+        "rotation": 12.48603148825912,
+        "bend": -6.24301574412956,
+        "wingPhase": 11.895909473417303,
+        "wingAngle": -1.1324822783092314,
+        "dragBlend": 0,
+        "dragPhase": 59.06194188748784,
+        "wingFlutter": 0,
+        "energy": 0.9997965316309894,
+        "wingRate": 3.2596474084408325,
+        "accent": 0.1541236618151328,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 90,
+      "t": 1.5166666666666666,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 188.36935678157357,
+          "y": 87.6699396738876,
+          "w": 541.1702657661522,
+          "h": 693.3185021457059
+        },
+        "hit": [
+          {
+            "x": 467.9739940940855,
+            "y": 329.733727060966,
+            "r": 207
+          },
+          {
+            "x": 470.98049557056413,
+            "y": 601.68193264398,
+            "r": 135
+          },
+          {
+            "x": 464.96749261760687,
+            "y": 739.1502563452838,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 473.98699704704273,
+          "y": 72.72773057591985
+        },
+        "side": {
+          "x": 480,
+          "y": 395.4794470920243,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "wave",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          88.58532283077787,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": true,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -5.764169725517732,
+          "fold": 0.976943321097929
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 5.764169725517732,
+          "fold": 0.976943321097929
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.964349279174865,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -0.38912259243367014,
+        "emotion": -2.6163885510789893,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -3.0055111435126594,
+        "rotation": -3.0055111435126594,
+        "bend": 1.5027555717563297,
+        "wingPhase": 13.138957953023263,
+        "wingAngle": -5.764169725517732,
+        "dragBlend": 0,
+        "dragPhase": 63.250732092274184,
+        "wingFlutter": 0,
+        "energy": 0.9999615697891447,
+        "wingRate": 3.247947790300808,
+        "accent": 0.10681395815435281,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 100,
+      "t": 1.6833333333333333,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 189.40901651486166,
+          "y": 83.26835619824897,
+          "w": 539.2410002817,
+          "h": 697.7391400952652
+        },
+        "hit": [
+          {
+            "x": 468.01686666040666,
+            "y": 326.87555597288895,
+            "r": 207
+          },
+          {
+            "x": 471.012649995305,
+            "y": 600.5577186826697,
+            "r": 135
+          },
+          {
+            "x": 465.02108332550836,
+            "y": 738.9025481843171,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 474.00843333020333,
+          "y": 68.23087473067858
+        },
+        "side": {
+          "x": 480,
+          "y": 393.04047443019857,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "wave",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          99.79776384990284,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": true,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": 9.033196492007736,
+          "fold": 0.9638672140319691
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": -9.033196492007736,
+          "fold": 0.9638672140319691
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.9783767447786998,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -1.019502825107886,
+        "emotion": -12.158532635113291,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -13.178035460221176,
+        "rotation": -13.178035460221176,
+        "bend": 6.589017730110588,
+        "wingPhase": 14.394578376279844,
+        "wingAngle": 9.033196492007736,
+        "dragBlend": 0,
+        "dragPhase": 67.43952229706059,
+        "wingFlutter": 0,
+        "energy": 0.9999927414707576,
+        "wingRate": 3.23534474277397,
+        "accent": 0.07402641179318002,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 110,
+      "t": 1.85,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 190.3841015339105,
+          "y": 79.14016120351289,
+          "w": 537.4315641638775,
+          "h": 701.8852060640044
+        },
+        "hit": [
+          {
+            "x": 468.05707635191385,
+            "y": 324.194909872411,
+            "r": 207
+          },
+          {
+            "x": 471.0428072639354,
+            "y": 599.5033312164817,
+            "r": 135
+          },
+          {
+            "x": 465.0713454398923,
+            "y": 738.6702255222756,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 474.0285381759569,
+          "y": 64.01332486592662
+        },
+        "side": {
+          "x": 480,
+          "y": 390.7529897577907,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "wave",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          89.34448569522226,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": true,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -11.012608251206734,
+          "fold": 0.9559495669951731
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 11.012608251206734,
+          "fold": 0.9559495669951731
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.9868848327454902,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -1.6022100013810427,
+        "emotion": 4.161772781624761,
+        "flutter": 0,
+        "spring": 0,
+        "tail": 2.5595627802437186,
+        "rotation": 2.5595627802437186,
+        "bend": -1.2797813901218593,
+        "wingPhase": 15.657824068812705,
+        "wingAngle": -11.012608251206734,
+        "dragBlend": 0,
+        "dragPhase": 71.628312501847,
+        "wingFlutter": 0,
+        "energy": 0.9999986290409136,
+        "wingRate": 3.2251646603680464,
+        "accent": 0.05130331033191983,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 120,
+      "t": 2.0166666666666666,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 191.1406673543874,
+          "y": 75.9371059085729,
+          "w": 536.0276275897966,
+          "h": 705.1021273991822
+        },
+        "hit": [
+          {
+            "x": 468.08827494244895,
+            "y": 322.1150038367357,
+            "r": 207
+          },
+          {
+            "x": 471.06620620683674,
+            "y": 598.6852348424494,
+            "r": 135
+          },
+          {
+            "x": 465.1103436780612,
+            "y": 738.4899669991837,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 474.0441374712245,
+          "y": 60.7409393697975
+        },
+        "side": {
+          "x": 480,
+          "y": 388.9781366073478,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "wave",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          33.34040381656341,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": true,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": 10.966461689879381,
+          "fold": 0.9561341532404825
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": -10.966461689879381,
+          "fold": 0.9561341532404825
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.9920452489528807,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -2.1099961025173095,
+        "emotion": 12.215360298958212,
+        "flutter": 0,
+        "spring": 0,
+        "tail": 10.105364196440902,
+        "rotation": 10.105364196440902,
+        "bend": -5.052682098220451,
+        "wingPhase": 16.92569472095019,
+        "wingAngle": 10.966461689879381,
+        "dragBlend": 0,
+        "dragPhase": 75.81710270663342,
+        "wingFlutter": 0,
+        "energy": 0.9999997410592762,
+        "wingRate": 3.2176505819565455,
+        "accent": 0.03555527800492093,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 130,
+      "t": 2.183333333333333,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 191.55926886861266,
+          "y": 74.16488231570156,
+          "w": 535.2508412747394,
+          "h": 706.8820229556591
+        },
+        "hit": [
+          {
+            "x": 468.10553686056136,
+            "y": 320.96420929591005,
+            "r": 207
+          },
+          {
+            "x": 471.079152645421,
+            "y": 598.2325889897246,
+            "r": 135
+          },
+          {
+            "x": 465.1319210757017,
+            "y": 738.3902314723122,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 474.05276843028065,
+          "y": 58.93035595889853
+        },
+        "side": {
+          "x": 480,
+          "y": 387.99612526584326,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          3.729131039945911,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "closed",
+        "face": "happy",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -16.01255950719069,
+          "fold": 0.945
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 16.01255950719069,
+          "fold": 0.945
+        }
+      ],
+      "wingSignal": {
+        "face": "happy",
+        "mode": "idle",
+        "wag": 0.9951751995995411,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -2.5191165004068212,
+        "emotion": -3.8092753652632245,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -6.328391865670046,
+        "rotation": -6.328391865670046,
+        "bend": 3.164195932835023,
+        "wingPhase": 18.19637055288782,
+        "wingAngle": -16.01255950719069,
+        "dragBlend": 0,
+        "dragPhase": 80.00589291141983,
+        "wingFlutter": 0,
+        "energy": 0.9999999510924147,
+        "wingRate": 3.212298487090169,
+        "accent": 0.024641251915876253,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 140,
+      "t": 2.35,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 191.57381810170267,
+          "y": 74.10328556255092,
+          "w": 535.2238426978713,
+          "h": 706.9438863614207
+        },
+        "hit": [
+          {
+            "x": 468.1061368289362,
+            "y": 320.92421140425387,
+            "r": 207
+          },
+          {
+            "x": 471.0796026217021,
+            "y": 598.2168564856731,
+            "r": 135
+          },
+          {
+            "x": 465.1326710361702,
+            "y": 738.3867649883687,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 474.0530684144681,
+          "y": 58.86742594269276
+        },
+        "side": {
+          "x": 480,
+          "y": 387.96199373162995,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          0.36162117536779337,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": 9.78645444178792,
+          "fold": 0.9608541822328484
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": -9.78645444178792,
+          "fold": 0.9608541822328484
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.8926045929489215,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -2.810440282095663,
+        "emotion": -0.8902202079384076,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -3.7006604900340707,
+        "rotation": -3.7006604900340707,
+        "bend": 1.8503302450170354,
+        "wingPhase": 19.45370147463758,
+        "wingAngle": 9.78645444178792,
+        "dragBlend": 0,
+        "dragPhase": 84.19468311620625,
+        "wingFlutter": 0,
+        "energy": 0.798516206597992,
+        "wingRate": 3.120055315524017,
+        "accent": 0.01707738850748512,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 150,
+      "t": 2.5166666666666666,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 191.1820180496611,
+          "y": 75.76204042205336,
+          "w": 535.950894340835,
+          "h": 705.2779507449508
+        },
+        "hit": [
+          {
+            "x": 468.0899801257592,
+            "y": 322.00132494938526,
+            "r": 207
+          },
+          {
+            "x": 471.0674850943194,
+            "y": 598.6405211467581,
+            "r": 135
+          },
+          {
+            "x": 465.112475157199,
+            "y": 738.4801148289467,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 474.0449900628796,
+          "y": 60.562084587032814
+        },
+        "side": {
+          "x": 480,
+          "y": 388.8811306234754,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          0.03506711699685434,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -3.578824175819631,
+          "fold": 0.9856847032967215
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 3.578824175819631,
+          "fold": 0.9856847032967215
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.6397593876956782,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -2.9703448319977013,
+        "emotion": 1.5137358463875437,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -1.4566089856101576,
+        "rotation": -1.4566089856101576,
+        "bend": 0.7283044928050788,
+        "wingPhase": 20.54676853573739,
+        "wingAngle": -3.578824175819631,
+        "dragBlend": 0,
+        "dragPhase": 88.38347332099266,
+        "wingFlutter": 0,
+        "energy": 0.3771923478185267,
+        "wingRate": 2.4606297803328276,
+        "accent": 0.011835323920684577,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 160,
+      "t": 2.683333333333333,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 190.4457253258035,
+          "y": 78.87926597460512,
+          "w": 537.3172107356224,
+          "h": 702.1472307094875
+        },
+        "hit": [
+          {
+            "x": 468.0596175392084,
+            "y": 324.02549738610725,
+            "r": 207
+          },
+          {
+            "x": 471.0447131544063,
+            "y": 599.4366956385355,
+            "r": 135
+          },
+          {
+            "x": 465.07452192401047,
+            "y": 738.6555431067959,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 474.0298087696042,
+          "y": 63.7467825541421
+        },
+        "side": {
+          "x": 480,
+          "y": 390.60842443614484,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          0.003400527342516319,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": 0.9544775530705555,
+          "fold": 0.9961820897877178
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": -0.9544775530705555,
+          "fold": 0.9961820897877178
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.48640101854825196,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -2.991352840155055,
+        "emotion": -6.270450865782799,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -9.261803705937854,
+        "rotation": -9.261803705937854,
+        "bend": 4.630901852968927,
+        "wingPhase": 21.502390043255136,
+        "wingAngle": 0.9544775530705555,
+        "dragBlend": 0,
+        "dragPhase": 92.57226352577908,
+        "wingFlutter": 0,
+        "energy": 0.17817304905932785,
+        "wingRate": 1.8699984677551917,
+        "accent": 0.008202360228915146,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 170,
+      "t": 2.85,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 189.48118436161832,
+          "y": 82.96282084703171,
+          "w": 539.107080566069,
+          "h": 698.0459981103404
+        },
+        "hit": [
+          {
+            "x": 468.01984265408737,
+            "y": 326.6771563941764,
+            "r": 207
+          },
+          {
+            "x": 471.0148819905655,
+            "y": 600.4796815150428,
+            "r": 135
+          },
+          {
+            "x": 465.0248033176092,
+            "y": 738.885353554162,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 474.0099213270437,
+          "y": 67.91872606017091
+        },
+        "side": {
+          "x": 480,
+          "y": 392.87117345636386,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          0.00032975582818052594,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -1.5771700986429424,
+          "fold": 0.9936913196054282
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 1.5771700986429424,
+          "fold": 0.9936913196054282
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.3933844657368099,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -2.8724819493509575,
+        "emotion": -4.251436869504843,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -7.123918818855801,
+        "rotation": -7.123918818855801,
+        "bend": 3.5619594094279003,
+        "wingPhase": 22.374646608484188,
+        "wingAngle": -1.5771700986429424,
+        "dragBlend": 0,
+        "dragPhase": 96.7610537305655,
+        "wingFlutter": 0,
+        "energy": 0.08416298897551067,
+        "wingRate": 1.503857354175223,
+        "accent": 0.005684568819219728,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 180,
+      "t": 3.0166666666666666,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 188.44067496701808,
+          "y": 87.36800151420516,
+          "w": 541.0379227416158,
+          "h": 693.6217473969888
+        },
+        "hit": [
+          {
+            "x": 467.9769350501863,
+            "y": 329.53766332091243,
+            "r": 207
+          },
+          {
+            "x": 470.9827012876397,
+            "y": 601.6048142395589,
+            "r": 135
+          },
+          {
+            "x": 464.9711688127329,
+            "y": 739.1332641544791,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 473.98846752509314,
+          "y": 72.41925695823556
+        },
+        "side": {
+          "x": 480,
+          "y": 395.3121393671786,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          3.197707157342231e-05,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -3.591940482269302,
+          "fold": 0.9856322380709228
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 3.591940482269302,
+          "fold": 0.9856322380709228
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.3369670745958907,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -2.619290691197272,
+        "emotion": -3.27054534776932,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -5.8898360389665925,
+        "rotation": -5.8898360389665925,
+        "bend": 2.9449180194832962,
+        "wingPhase": 23.196339780269973,
+        "wingAngle": -3.591940482269302,
+        "dragBlend": 0,
+        "dragPhase": 100.94984393535192,
+        "wingFlutter": 0,
+        "energy": 0.03975578097074204,
+        "wingRate": 1.3036134192817177,
+        "accent": 0.003939637099396092,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 190,
+      "t": 3.183333333333333,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 187.4884706966837,
+          "y": 91.39932680991626,
+          "w": 542.8048997381127,
+          "h": 689.5729704766209
+        },
+        "hit": [
+          {
+            "x": 467.9376688947086,
+            "y": 332.15540701942615,
+            "r": 207
+          },
+          {
+            "x": 470.95325167103147,
+            "y": 602.6344600943077,
+            "r": 135
+          },
+          {
+            "x": 464.9220861183858,
+            "y": 739.3601352750169,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 473.9688344473543,
+          "y": 76.53784037723051
+        },
+        "side": {
+          "x": 480,
+          "y": 397.54594732324364,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          3.100879557015714e-06,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -3.5347116802362386,
+          "fold": 0.985861153279055
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 3.5347116802362386,
+          "fold": 0.985861153279055
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.3027481971279234,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -2.2436185631754713,
+        "emotion": -3.4612042855917227,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -5.7048228487671935,
+        "rotation": -5.7048228487671935,
+        "bend": 2.8524114243835967,
+        "wingPhase": 23.987364703673297,
+        "wingAngle": -3.5347116802362386,
+        "dragBlend": 0,
+        "dragPhase": 105.13863414013834,
+        "wingFlutter": 0,
+        "energy": 0.01877930120867631,
+        "wingRate": 1.2004200439449972,
+        "accent": 0.002730328538281022,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 200,
+      "t": 3.35,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 186.7749036678279,
+          "y": 94.42033911077658,
+          "w": 544.1290447401132,
+          "h": 686.5388802004322
+        },
+        "hit": [
+          {
+            "x": 467.9082434502197,
+            "y": 334.11710331868613,
+            "r": 207
+          },
+          {
+            "x": 470.9311825876648,
+            "y": 603.4060606386832,
+            "r": 135
+          },
+          {
+            "x": 464.8853043127746,
+            "y": 739.5301489542861,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 473.95412172510987,
+          "y": 79.62424255473286
+        },
+        "side": {
+          "x": 480,
+          "y": 399.2199281652788,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          3.006983927543209e-07,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -2.2082079831156807,
+          "fold": 0.9911671680675372
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 2.2082079831156807,
+          "fold": 0.9911671680675372
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.2819933988026515,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -1.7630324009101561,
+        "emotion": -3.6644162086662675,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -5.427448609576423,
+        "rotation": -5.427448609576423,
+        "bend": 2.7137243047882116,
+        "wingPhase": 24.75978839415298,
+        "wingAngle": -2.2082079831156807,
+        "dragBlend": 0,
+        "dragPhase": 109.32742434492475,
+        "wingFlutter": 0,
+        "energy": 0.008870713774827628,
+        "wingRate": 1.1489217034875714,
+        "accent": 0.0018922285832099896,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 210,
+      "t": 3.5166666666666666,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 186.41263042439107,
+          "y": 95.9540870005161,
+          "w": 544.8013043671093,
+          "h": 684.9984927094383
+        },
+        "hit": [
+          {
+            "x": 467.8933043473976,
+            "y": 335.11304350682866,
+            "r": 207
+          },
+          {
+            "x": 470.9199782605482,
+            "y": 603.7977971126859,
+            "r": 135
+          },
+          {
+            "x": 464.866630434247,
+            "y": 739.6164637705918,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 473.9466521736988,
+          "y": 81.19118845074377
+        },
+        "side": {
+          "x": 480,
+          "y": 400.0697971258271,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          2.91593148790505e-08,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": -0.7350555930189381,
+          "fold": 0.9970597776279242
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": 0.7350555930189381,
+          "fold": 0.9970597776279242
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.26940497728222157,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -1.200004933907319,
+        "emotion": -2.9125411371242564,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -4.112546071031575,
+        "rotation": -4.112546071031575,
+        "bend": 2.0562730355157877,
+        "wingPhase": 25.520929866556013,
+        "wingAngle": -0.7350555930189381,
+        "dragBlend": 0,
+        "dragPhase": 113.51621454971117,
+        "wingFlutter": 0,
+        "energy": 0.004190228486167574,
+        "wingRate": 1.1236871873272518,
+        "accent": 0.0013113912706531417,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 220,
+      "t": 3.683333333333333,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 186.45884594584572,
+          "y": 95.7584254114023,
+          "w": 544.7155436056471,
+          "h": 685.1950013184185
+        },
+        "hit": [
+          {
+            "x": 467.89521014209674,
+            "y": 334.98599052688456,
+            "r": 207
+          },
+          {
+            "x": 470.92140760657253,
+            "y": 603.7478229405746,
+            "r": 135
+          },
+          {
+            "x": 464.8690126776209,
+            "y": 739.60545251233,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 473.9476050710484,
+          "y": 80.99129176229837
+        },
+        "side": {
+          "x": 480,
+          "y": 399.9613785829415,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          2.827636145399376e-09,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": 0.2190472679078733,
+          "fold": 0.9991238109283685
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": -0.2190472679078733,
+          "fold": 0.9991238109283685
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.2617697136726945,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": -0.5808639363807591,
+        "emotion": -0.9064875511812003,
+        "flutter": 0,
+        "spring": 0,
+        "tail": -1.4873514875619593,
+        "rotation": -1.4873514875619593,
+        "bend": 0.7436757437809797,
+        "wingPhase": 26.275228327786,
+        "wingAngle": 0.2190472679078733,
+        "dragBlend": 0,
+        "dragPhase": 117.70500475449758,
+        "wingFlutter": 0,
+        "energy": 0.0019793237852081843,
+        "wingRate": 1.1114489774640681,
+        "accent": 0.0009088474193894012,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    },
+    {
+      "word": "rest-wave-left",
+      "frame": 230,
+      "t": 3.85,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 186.9062538175413,
+          "y": 93.86424500614794,
+          "w": 543.8853021942532,
+          "h": 687.0973816388471
+        },
+        "hit": [
+          {
+            "x": 467.9136599512388,
+            "y": 333.75600325074544,
+            "r": 207
+          },
+          {
+            "x": 470.9352449634291,
+            "y": 603.2640279452933,
+            "r": 135
+          },
+          {
+            "x": 464.89207493904854,
+            "y": 739.4988536150646,
+            "r": 75
+          }
+        ],
+        "bubble": {
+          "x": 473.9568299756194,
+          "y": 79.05611178117283
+        },
+        "side": {
+          "x": 480,
+          "y": 398.9117894406361,
+          "reach": 312
+        }
+      },
+      "armLayers": {
+        "layers": [
+          "normal",
+          "normal"
+        ],
+        "separateArms": true,
+        "angles": [
+          2.742014414239008e-10,
+          0
+        ],
+        "dragK": 0,
+        "attentionK": 0,
+        "waveTexture": false,
+        "maskSpace": "body",
+        "maskTransforms": [
+          null,
+          null
+        ]
+      },
+      "visual": {
+        "eye": "open",
+        "face": "neutral",
+        "lastBlinkAt": 1.5333333333333328,
+        "manualWinkUntil": -10
+      },
+      "wings": [
+        {
+          "id": "left",
+          "pose": "stand",
+          "root": [
+            628,
+            740
+          ],
+          "angle": 0.3872058132044446,
+          "fold": 0.9984511767471822
+        },
+        {
+          "id": "right",
+          "pose": "stand",
+          "root": [
+            766,
+            751
+          ],
+          "angle": -0.3872058132044446,
+          "fold": 0.9984511767471822
+        }
+      ],
+      "wingSignal": {
+        "face": "neutral",
+        "mode": "idle",
+        "wag": 0.2571386921985282,
+        "mood": 0,
+        "sway": 0,
+        "sit": 0,
+        "idle": 0.06543888798771352,
+        "emotion": 1.611043932061835,
+        "flutter": 0,
+        "spring": 0,
+        "tail": 1.6764828200495485,
+        "rotation": 1.6764828200495485,
+        "bend": -0.8382414100247743,
+        "wingPhase": 27.025376292934773,
+        "wingAngle": 0.3872058132044446,
+        "dragBlend": 0,
+        "dragPhase": 121.893794959284,
+        "wingFlutter": 0,
+        "energy": 0.0009349663531770894,
+        "wingRate": 1.1055444249700632,
+        "accent": 0.0006298681790975939,
+        "rateScale": 0.85,
+        "amplitudeScale": 1.2
+      }
+    }
+  ]
+}

@@ -2,6 +2,7 @@
 const NS='http://www.w3.org/2000/svg';let serial=0;
 export const headParts=[
  {id:'ahoge',root:[675,195],path:'M570 0H800V232H570Z'},
+ {id:'rear-temple-hair',root:[457,470],path:'M340 350H484C472 389 466 427 467 463C463 495 472 536 496 560Q472 552 457 533H340Z'},
  {id:'ear-left',root:[457,515],path:'M393 506L457 479Q456 508 481 542Q420 538 393 512Z',clip:'M391 504L459 477Q458 510 484 544Q418 540 391 514Z'},
  {id:'bangs',root:[704,242],path:'M678 210Q718 197 751 229C783 271 797 341 784 412Q780 440 770 466Q769 489 783 502Q754 501 741 485Q727 500 698 502Q711 490 710 477Q689 460 671 435L683 465Q651 434 646 387Q639 341 646 301Q648 246 678 210Z'}
 ];
@@ -34,13 +35,19 @@ export function createSecondary(root,config,canvas,picture,earBefore){
    const clip=make('clipPath',{id:id+'-'+p.id,clipPathUnits:'userSpaceOnUse'});clip.append(make('path',{d:p.clip||p.path}));defs.append(clip);
    // Ears have their own depth. Old underpaint here would put ear pixels back
    // above the waving palm; the original continuous hair remains in the base.
-   if(p.id!=='ear-left'&&p.id!=='ahoge'){const under=picture('head-underpaint');under.setAttribute('clip-path',`url(#${id}-${p.id})`);outer.append(under);}
-   const joint=make('g',{'data-part':p.id}),im=p.id==='ahoge'?picture('ahoge-clean'):element.cloneNode(false);im.removeAttribute('visibility');im.removeAttribute('clip-path');if(p.id!=='ahoge')im.setAttribute('clip-path',`url(#${id}-${p.id})`);joint.append(im);
-   const external=p.id==='ear-left'&&!seated;
-   if(external){const earLayer=make('g',{'data-part':'rear-ear-layer'});earLayer.append(joint);root.insertBefore(earLayer,earBefore||root.querySelector('[data-arm-slot]'));rearEars.push(earLayer);}
+   if(!['ear-left','ahoge','rear-temple-hair'].includes(p.id)){const under=picture('head-underpaint');under.setAttribute('clip-path',`url(#${id}-${p.id})`);outer.append(under);}
+   const joint=make('g',{'data-part':p.id}),im=p.id==='ahoge'?picture('ahoge-clean'):element.cloneNode(false);im.removeAttribute('visibility');im.removeAttribute('clip-path');if(p.id!=='ahoge')im.setAttribute('clip-path',`url(#${id}-${p.id})`);
+   if(p.id==='rear-temple-hair'){
+    // Same source pixels, complementary ownership. A 2px overlap only covers
+    // antialias samples on this shared boundary; no generated fill is introduced.
+    const rearMask=make('mask',{id:id+'-temple-owner',maskUnits:'userSpaceOnUse',x:0,y:0,width:1254,height:1254});
+    rearMask.append(make('rect',{width:1254,height:1254,fill:'black'}),make('path',{d:p.path,fill:'white',stroke:'white','stroke-width':2}));rearMask.append(make('path',{d:headParts.find(part=>part.id==='ear-left').path,fill:'black'}));defs.append(rearMask);im.removeAttribute('clip-path');im.setAttribute('mask',`url(#${id}-temple-owner)`);
+   }joint.append(im);
+   const external=['ear-left','rear-temple-hair'].includes(p.id)&&!seated;
+   if(external){const earLayer=make('g',{'data-part':p.id==='ear-left'?'rear-ear-layer':'rear-temple-layer'});earLayer.append(joint);root.insertBefore(earLayer,earBefore||root.querySelector('[data-arm-slot]'));rearEars.push(earLayer);}
    parts.push({joint,p,im,external});
   }
-  defs.append(mask);parts.filter(p=>p.p.id==='ear-left'&&!p.external).forEach(({joint})=>outer.append(joint));outer.append(base,tipLayer);parts.filter(p=>p.p.id!=='ear-left'&&!p.external).forEach(({joint})=>outer.append(joint));joints.push({outer,seated,parts,element,tendrils});return outer;
+  defs.append(mask);parts.filter(p=>['ear-left','rear-temple-hair'].includes(p.p.id)&&!p.external).forEach(({joint})=>outer.append(joint));outer.append(base,tipLayer);parts.filter(p=>!['ear-left','rear-temple-hair'].includes(p.p.id)&&!p.external).forEach(({joint})=>outer.append(joint));joints.push({outer,seated,parts,element,tendrils});return outer;
  }
  let previousAngle=0,ahogeAngle=0;
  return {wrap,impulse(direction=1){channels.ahoge.v=Math.max(-380,Math.min(380,channels.ahoge.v+direction*260));},syncHeadTransform(transform,visible){for(const ears of rearEars){ears.setAttribute('transform',transform);ears.setAttribute('visibility',visible?'visible':'hidden');}},step(o,dt,enabled=true){
@@ -61,7 +68,7 @@ export function createSecondary(root,config,canvas,picture,earBefore){
    }
    if(entry.seated)entry.outer.setAttribute('visibility',o.sit>.5?'visible':'hidden');for(const {joint,p,im}of entry.parts){
    if(p.id!=='ahoge')im.setAttribute("href",entry.element.getAttribute("href"));
-   const angle=!enabled?0:p.id==='ahoge'?ahogeAngle:p.id==='ear-left'?Math.max(-1.6,Math.min(1.6,channels.ears.x*.18)):Math.max(-.6,Math.min(.6,channels.bangs.x*.08));joint.setAttribute('transform',`rotate(${angle} ${p.root.join(' ')})`);
+   const angle=!enabled||p.id==='rear-temple-hair'?0:p.id==='ahoge'?ahogeAngle:p.id==='ear-left'?Math.max(-1.6,Math.min(1.6,channels.ears.x*.18)):Math.max(-.6,Math.min(.6,channels.bangs.x*.08));joint.setAttribute('transform',`rotate(${angle} ${p.root.join(' ')})`);
   }}
  },values(){return Object.fromEntries(Object.entries(channels).map(([k,s])=>[k,k==='ahoge'?ahogeAngle:s.x]));}};
 }

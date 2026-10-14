@@ -3,9 +3,13 @@
   "author": "Asryto",
   "version": "1.0.2",
   "repository": "https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design",
-  "zip_sha256": "e590cd243e739119d37bae225a4bf4cdaa8d76bc6f77b5ebf086f4e754dfca19",
+  "zip_sha256": "e5c769e2c61f9ee8ce8c94e121ed1e23f63c1767495e814a3a3c5fd694aa794c",
   "installed_matches_zip": true,
   "art_qa_version": "1.0.1",
   "art_qa_frames": 64,
-  "qa_report": "characters/original-01/rig-v005-r25/qa/release-101/report.json"
+  "qa_report": "characters/original-01/rig-v005-r25/qa/release-101/report.json",
+  "previous_zip_sha256": "e590cd243e739119d37bae225a4bf4cdaa8d76bc6f77b5ebf086f4e754dfca19",
+  "hotfix": "2026-10-14 near rear-temple hair behind waving hand; version kept 1.0.2",
+  "hotfix_qa_frames": 48,
+  "hotfix_qa_report": "characters/original-01/rig-v005-r25/qa/wave-rear-hair/report.json"
 }
