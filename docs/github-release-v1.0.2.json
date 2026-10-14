@@ -1,0 +1,22 @@
+{
+  "release_url": "https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design/releases/tag/v1.0.2",
+  "tag": "v1.0.2",
+  "commit": "6f91a2e16bb98a6b6cc50ebe06a39a53e4753341",
+  "assets": [
+    {
+      "name": "GPT-Dragon-1.0.2.zip",
+      "bytes": 21615940,
+      "url": "https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design/releases/download/v1.0.2/GPT-Dragon-1.0.2.zip"
+    },
+    {
+      "name": "SHA256.txt",
+      "bytes": 87,
+      "url": "https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design/releases/download/v1.0.2/SHA256.txt"
+    }
+  ],
+  "sha256": "e5c769e2c61f9ee8ce8c94e121ed1e23f63c1767495e814a3a3c5fd694aa794c",
+  "previous_sha256": "e590cd243e739119d37bae225a4bf4cdaa8d76bc6f77b5ebf086f4e754dfca19",
+  "hotfix": "same-version waving rear-temple hair occlusion",
+  "public_download_verified": true,
+  "downloaded_bytes": 21615940
+}
