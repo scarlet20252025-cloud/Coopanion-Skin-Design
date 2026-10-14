@@ -1,3 +1,5 @@
+> 历史制作记录：其中阶段状态和旧命令不代表当前发布版。接手请先读 [工程库](../engineering/README.md)、[当前事实](../engineering/current-project.json) 与 [Release 回执](github-release-v1.0.2.json)。
+
 > 当前发布版为 GPT 龙娘 1.0.2，作者 Asryto。仓库：https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design 。下文 r02–r06 的具体过程为历史案例；当前状态以 RELEASE_NOTES.md 和 r25 包为准。
 
 # 从一张母版到可修改桌宠：实做工作流

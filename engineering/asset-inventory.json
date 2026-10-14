@@ -1,0 +1,406 @@
+{
+  "schema": 1,
+  "baseline_version": "1.0.2",
+  "textures": [
+    {
+      "path": "tex/ahoge-clean.png",
+      "sha256": "d3621b5e7d3a46df0e84b10cbd53511a018aea4d85b1848dd8ddcc3b7eb6e5b1",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/arm-hole-fill.png",
+      "sha256": "1537bb5b25cdf63e1ed81fe5d45340c4a9b20606eb31935b5b9b7eb5a003ce2e",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/arm-left.png",
+      "sha256": "f9230b903416c4d8ac12e2db788e786258aed77c8d2f37c3b7a98de7bd1f3fa1",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/arm-right.png",
+      "sha256": "6bea7f95a26e677576e3f4ea2623e2977e68d6908086d609ff2cad34581098dd",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/arm-wave-raised.png",
+      "sha256": "9147f03fc7aeb91164fe01bce408dda5f618269b6636d28f5daed465dadb8100",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "retained legacy/unselected source; verify callers"
+    },
+    {
+      "path": "tex/arm-wave.png",
+      "sha256": "87921582297f002003ec151110acf77ab81861bba84b62de3be0050f7c7df06b",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/arms-clean.png",
+      "sha256": "7c5e9b4416b582b6d4c374bde7796b4db47fa086e4ec4e20de168bfbbc382418",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/arms-master.png",
+      "sha256": "4d58a6047539fbc928959266d0a513ff66823f428c53336160ce1d6048216150",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/arms-wave-master.png",
+      "sha256": "613862276838bc50ca1ce135a40a3c452b4280ac6b43dd5a7ed761cc4a41132d",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/body-clean.png",
+      "sha256": "9f84bc4a592d567f19f8a0827fe6f06c683583a0de6d73056b8a63cb20801566",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/body-covered-underpaint.png",
+      "sha256": "89a1435d9ab3b247ecfbec6baa915ec9debb5fe88c8f3a50dd4a5cb5ea802be1",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/body-without-arms.png",
+      "sha256": "55bb61a0585d9c0abebf420f9bf8497968deb2dfed7ee614e28af3414a03893f",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/body-without-legs.png",
+      "sha256": "9dd8f4da8c726e3601b07ebaa4e3c143b25fc39d059c907f56eb3746a9330fac",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/body-without-limbs.png",
+      "sha256": "e94f8b499d325769abe5995c2d9fb2465f96bdd8273b5b0c24a0e8a9f04ef081",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/brow-underpaint.png",
+      "sha256": "3557d1a69129e9113749bb25e95c2aa0c7ffdc34e062811baa8823ce6243bf8e",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/dizzy-body-duck.png",
+      "sha256": "983bc7ca2e93309daafba049e350b43abdc63607a0ddf7f2818f0787b6bf39b4",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/dizzy-body-three-quarter.png",
+      "sha256": "be27d403e96be1d3b89990608df1218ae339e1fef0da5112dee617d27af10dd5",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/dress-clean.png",
+      "sha256": "917f71b3f59ccef51d8bed5ddf64e92bc40a8cdbc26e8bf028d108c36bd463f1",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/dress-fold-clean.png",
+      "sha256": "89674e3bd62149a0f6331a40061b5dec46c25eb6e4b033032e1c88d2479f6a24",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/dress-front.png",
+      "sha256": "91aa15085374d1f16d67b68a3e6343d83450c5ac04e4866e7c73300df2893435",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/hair-covered-underpaint.png",
+      "sha256": "1270b333564981e96e02c98e4fa698ac7940df15a65fde53eec845c3d28e1bce",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/head-closed.png",
+      "sha256": "c8f8626738787390a8e705791aaa01d992faacf514a621d522c02410275fe849",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/head-flustered.png",
+      "sha256": "8ee0a32388054856786eff2a917218f2a4c6bdd270752be36b8057d201f04afa",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/head-front.png",
+      "sha256": "e9acedbece1bd8188957001ded3b3ed9d5bd1b4682e4eeb711827af294dbd1d3",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/head-half.png",
+      "sha256": "5719ca3d8af02957351e559e6f0548eef175cdbd89847c8e5bafce2b8868f38f",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/head-open.png",
+      "sha256": "9f87509cdab0768574de98e135fed0a2f63041f9ca81d510bae93362d672345c",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/head-side-clean.png",
+      "sha256": "5b075fa757a18dafb624033c57e83c3dd47126bed3c01e7c352b2b2172f9b22c",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/head-underpaint.png",
+      "sha256": "fcef049636c9f23d65e07ea95242bc75216dc0c33146cbf56bbd805bd683cef2",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/head-wink.png",
+      "sha256": "ea57bd32de29b54f58438de2db9e5ff3e7743ffba68d29d384e8af34bccb4522",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/leg-left.png",
+      "sha256": "814a5c7240a045013f2d0bc68bd655c8f92e995e1ff3f1070325584c8df8e1e8",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/leg-right.png",
+      "sha256": "d35dec595c298cce77a3a2a98f43a525b6d6a030ac00943d934877cdfbf617db",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/legs-clean.png",
+      "sha256": "9bd35e59ee89aaf74d22db101b31569c9210a0164c6b239672cbe6fd589282de",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/master-reference.png",
+      "sha256": "14e64e72f9ff192f4d49fff321579e05d8a2b78c23feba968ba07fed2eb93f81",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/rear-hair.png",
+      "sha256": "937cd96f295eb6d347a2715708f4634ea45abda81ff4516844363e383e7074b3",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/seated-body-open-arms.png",
+      "sha256": "9702c301efc7addc1bfaa49ca5dbdb95d4c04f03141d2b6b5f7f8e1a79886f4a",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/seated-body-rebuilt.png",
+      "sha256": "c8c1c55f8b29a6ce556255668dc566d032c94830296b703b0e3738fb020c87e8",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/seated-body.png",
+      "sha256": "2eb6bb26878cafbadd642309f715f75c40882988cf905c0ac682a014ce3fb1ea",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "retained legacy/unselected source; verify callers"
+    },
+    {
+      "path": "tex/sitting-closed.png",
+      "sha256": "684cff06f51db0f6bb84d5200e75143fffb1678b9042c2f7c56daaf0f715dae1",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "retained legacy/unselected source; verify callers"
+    },
+    {
+      "path": "tex/sitting-flustered.png",
+      "sha256": "8ee0a32388054856786eff2a917218f2a4c6bdd270752be36b8057d201f04afa",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "retained legacy/unselected source; verify callers"
+    },
+    {
+      "path": "tex/sitting-half.png",
+      "sha256": "1de4c287e7f2de62f8df336c606e4c539b6398ff07750c86a7808e5e58cdb688",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "retained legacy/unselected source; verify callers"
+    },
+    {
+      "path": "tex/sitting-open.png",
+      "sha256": "d8e63296003e64f5f01bd75e11bc34601b3897af9d4dc8c623eac6d9190424c4",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "retained legacy/unselected source; verify callers"
+    },
+    {
+      "path": "tex/sitting-wink.png",
+      "sha256": "048e3c08d7b21ab9d0d97cc6c450708d785fe6ed92dc17b123205b9195bc7308",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "retained legacy/unselected source; verify callers"
+    },
+    {
+      "path": "tex/skirt-hole-fill.png",
+      "sha256": "246c3c9d5535eb3ac778292c456d2f8efb147948c3513c3aec80d363cbdbc592",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/tail-clean.png",
+      "sha256": "60cfb1ce5ed873c63beecd60dbd6b9ecd3844ee5332c9db7bcde313fcfd48c3a",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/torso-clean.png",
+      "sha256": "51c8a4908439b968f91eb6b77ee275b203d0fe9b2b9e3001606ce79f53700e42",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "retained legacy/unselected source; verify callers"
+    },
+    {
+      "path": "tex/wing-hair-fill.png",
+      "sha256": "e54777dc26d0df07ecbba7f818643775db7015870211a212e3f031972b30d1a7",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/wing-left.png",
+      "sha256": "c24dc54236294e49536073af351019e42db2c4f112860badbb5432aabd07692d",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/wing-right.png",
+      "sha256": "749e7872690d1f19a1d2b8ead70347fda2bce9227a29243800e6ea0603797f4d",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/wing-underpaint.png",
+      "sha256": "77eea175f19ec53441b49f6f8814f380d52d5dd2b797587a0dcc0b197e1940f7",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    },
+    {
+      "path": "tex/wings-clean.png",
+      "sha256": "aba830127035f34f6190ced3a226ed71c2d44e03927c3c58088b4cb4da473d3d",
+      "width": 1254,
+      "height": 1254,
+      "color_type": 6,
+      "role": "release runtime/source resource"
+    }
+  ]
+}

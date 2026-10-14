@@ -1,0 +1,8 @@
+{
+  "samples": 84,
+  "nonfinite_samples": [],
+  "rejected_actions": [],
+  "machine_passed": true,
+  "visual_review": "Selected full-character frames in both directions/light-dark backgrounds reviewed; sampling is not exhaustive",
+  "input": "preview/engineering.html?pack=scratch/candidates/engineering-smoke"
+}

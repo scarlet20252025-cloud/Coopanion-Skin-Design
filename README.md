@@ -6,7 +6,13 @@
 
 银白浅紫 Q 版龙娘桌宠，支持 39 个动作与表情标签，包含独立眉毛、点击呆毛晃动、情绪振翅、提起挣扎、招手、原坐姿及圈圈眼晕乎。封面采用上半身近景。采用 Coopanion 官方 kit 驱动行为，源素材与配准围绕锁定 v005 母版维护。
 
+## AI 与制作者快速上手
+
+进入 [工程库](engineering/README.md)：可运行的检查工具、部件索引、制作指南、失败案例和 [复用技能](.agents/skills/coopanion-image-pack/SKILL.md)。先读短入口，再按任务读取对应指南。
+
 ## 安装与打包
+
+[形象包下载](https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design/releases/tag/v1.0.2)；[Coopanion 官方主程序](https://github.com/Pal-AI-Lab/Coopanion)。
 
 在 Coopanion「装扮 → 导入」中选择形象 ZIP，再选用「GPT 龙娘」。安装包根目录包含 `figure.json`、作者与仓库说明。
 
@@ -25,9 +31,9 @@ npm run preview
 npm run check
 ```
 
-预览只需 Node.js，无需 npm install。打开 `http://127.0.0.1:4319/preview/dragon-r25.html`，检查动作、表情、深浅背景及采样帧。`npm run check` 校验母版、历史参数约定与当前发布元数据；不替代视觉检查。
+预览只需 Node.js，无需 npm install。打开 `http://127.0.0.1:4319/preview/dragon-r25.html`，检查动作、表情、深浅背景及采样帧。`npm run check` 校验当前母版、资源、配准、词表与工程索引；历史检查使用 `npm run check:history`；不替代视觉检查。
 
-已验证本机 Coopanion 的安装文件一致性、装扮页渲染和当前形象选择。呆毛清理与音符检查覆盖 64 张动态采样。多屏、不同 DPI 和应用进程重启尚未完整验收。
+已验证本机 Coopanion 的安装文件一致性、装扮页渲染和当前形象选择。呆毛清理与音符检查覆盖 64 张动态采样。同版本招手修复另覆盖 48 张双朝向采样，耳后头发不再挡住手掌；Release 已替换并校验公开下载。多屏、不同 DPI 和应用进程重启尚未完整验收。
 
 ## 说明与来源
 

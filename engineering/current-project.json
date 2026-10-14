@@ -1,0 +1,195 @@
+{
+  "schema": 1,
+  "updated": "2026-10-14",
+  "product": "Coopanion API 2 image pack",
+  "id": "gpt-dragon-v005-r25",
+  "name": "GPT 龙娘",
+  "author": "Asryto",
+  "version": "1.0.2",
+  "pack": "packs/gpt-dragon-v005-r25",
+  "source_lock": "characters/original-01/production-lock.json",
+  "canvas": [
+    1254,
+    1254
+  ],
+  "declared_words": 39,
+  "elasticity": {
+    "idle_strength": 0.7,
+    "strength": 0.65
+  },
+  "sitting_feet_y": 1120,
+  "parts": {
+    "arm": {
+      "purpose": "肩袖对接、原招手掌心、保持宽袖与等比双臂",
+      "pack_files": [
+        "figure.js",
+        "clean-sources.js",
+        "model.json",
+        "part-registration.json",
+        "tex/arms-master.png",
+        "tex/arms-wave-master.png"
+      ],
+      "parent": "body arm slots; action-specific rear/front depth",
+      "pitfalls": [
+        "arm-stretch",
+        "sleeve-hole",
+        "wave-ear-depth",
+        "wave-rear-hair"
+      ],
+      "guide": "engineering/guides/parts-and-registration.md"
+    },
+    "hair": {
+      "purpose": "连续前发、下段发尾、独立后发及位于臂后的耳后侧发片",
+      "pack_files": [
+        "hair-motion.js",
+        "secondary.js",
+        "clean-sources.js",
+        "tex/head-front.png",
+        "tex/rear-hair.png"
+      ],
+      "parent": "same head transform; hair owns hidden fill",
+      "pitfalls": [
+        "hair-wing-fill",
+        "bangs-cut",
+        "head-neck-cut",
+        "wave-rear-hair"
+      ],
+      "guide": "engineering/guides/parts-and-registration.md"
+    },
+    "ahoge": {
+      "purpose": "独立呆毛与连续头顶补底、短点击冲量",
+      "pack_files": [
+        "secondary.js",
+        "clean-sources.js",
+        "tex/ahoge-clean.png",
+        "tex/head-underpaint.png"
+      ],
+      "parent": "head group; scalp fixed to head, tuft around its own root",
+      "pitfalls": [
+        "ahoge-seam",
+        "alpha-dark-band"
+      ],
+      "guide": "engineering/guides/parts-and-registration.md"
+    },
+    "expression": {
+      "purpose": "眼部差分、独立眉毛、慌张挤眼和晕乎圈圈眼",
+      "pack_files": [
+        "expressions.js",
+        "brows.js",
+        "effect-policy.js",
+        "tex/head-flustered.png",
+        "tex/brow-underpaint.png"
+      ],
+      "parent": "current standing or seated head/face; visible forehead clip",
+      "pitfalls": [
+        "duplicate-eyes",
+        "brow-static",
+        "face-color-patch"
+      ],
+      "guide": "engineering/guides/animation-and-expression.md"
+    },
+    "seated": {
+      "purpose": "原坐姿与仅双臂自然下垂的晕乎坐姿",
+      "pack_files": [
+        "figure.js",
+        "model.json",
+        "tex/seated-body-rebuilt.png",
+        "tex/seated-body-open-arms.png"
+      ],
+      "parent": "seated body own alpha; same registration and foot baseline",
+      "pitfalls": [
+        "seated-proportion",
+        "old-silhouette"
+      ],
+      "guide": "engineering/guides/animation-and-expression.md"
+    },
+    "skirt": {
+      "purpose": "前裙覆盖腿，后内衬限定下半身",
+      "pack_files": [
+        "clean-sources.js",
+        "figure.js",
+        "tex/dress-front.png",
+        "tex/dress-fold-clean.png",
+        "tex/legs-clean.png"
+      ],
+      "parent": "body space; skirt front before visible legs",
+      "pitfalls": [
+        "skirt-leg",
+        "head-neck-cut"
+      ],
+      "guide": "engineering/guides/parts-and-registration.md"
+    },
+    "wing": {
+      "purpose": "独立翼、背后翼根、情绪与拖拽振翅",
+      "pack_files": [
+        "wings.js",
+        "whale-tail-driver.js",
+        "tex/wings-clean.png"
+      ],
+      "parent": "wing roots separate from hair fill",
+      "pitfalls": [
+        "hair-wing-fill",
+        "wing-energy"
+      ],
+      "guide": "engineering/guides/animation-and-expression.md"
+    },
+    "host": {
+      "purpose": "API 2、CSP、manifest和安装一致性",
+      "pack_files": [
+        "figure.js",
+        "figure.json",
+        "model.json",
+        "SOURCE.json"
+      ],
+      "parent": "host kit/loadImage/model; never extra registration fetch",
+      "pitfalls": [
+        "csp-fetch",
+        "vocab-seconds",
+        "duplicate-install"
+      ],
+      "guide": "engineering/guides/validation-and-release.md"
+    },
+    "promo": {
+      "purpose": "SVG场景与真实kit动作逐帧渲染",
+      "pack_files": [
+        "figure.js"
+      ],
+      "parent": "isolated movie stage; scripted dialogue labeled",
+      "pitfalls": [
+        "frozen-video",
+        "sample-not-live"
+      ],
+      "guide": "engineering/guides/promo.md"
+    }
+  },
+  "required_pack_files": [
+    "LICENSE",
+    "UPSTREAM.json",
+    "README.md",
+    "SOURCE.json",
+    "tex/ahoge-clean.png",
+    "tex/seated-body-open-arms.png"
+  ],
+  "evidence": {
+    "source": "user selected v005 and requested final release",
+    "visual": "1.0.1: 64 sampled frames, not exhaustive",
+    "native": "1.0.2 installed files matched ZIP and dress rendered in local session",
+    "release": "v1.0.2 same-version hotfix overwritten and public SHA256 verified 2026-10-14",
+    "promo": "30 seconds/900 frames, soft cheerful replacement BGM, encoded key frames and full decode verified; dialogue scripted",
+    "bilibili": "assistant did not upload or submit; user chose to handle it",
+    "not_tested": [
+      "full frame-by-frame art acceptance",
+      "multi-monitor and different DPI",
+      "application process restart"
+    ],
+    "hotfix": "same 1.0.2: 48 two-facing wave/recovery samples, installed matches new ZIP, actual host rear-temple layer rendered",
+    "engineering": "84 preview samples both directions; 7 contract rejection tests; fresh checkout without art dependencies passes strict check and recreates exact Release ZIP"
+  },
+  "historical_reports": [
+    "model.rest_pixel_mismatches",
+    "model.outside_eye_changes",
+    "model.arm_checks",
+    "model.leg_checks"
+  ],
+  "note": "historical fields describe earlier source/rest contracts, not current repainted whole-character identity"
+}

@@ -1,0 +1,5 @@
+[project]
+name = "coopanion-promo-render"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = ["playwright>=1.50,<2", "numpy>=2,<3"]

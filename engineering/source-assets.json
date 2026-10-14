@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "assets": [
+    {
+      "path": "characters/original-01/rig-v005-r25/ahoge-clean/isolated-edit.png",
+      "sha256": "e97a6284355107a99b87c20c552a10e4b1a329037a2e64f5fdc109395caac5cc",
+      "purpose": "ahoge-clean",
+      "provenance": "local imagegen input/output or mask; prompt and registration in same folder"
+    },
+    {
+      "path": "characters/original-01/rig-v005-r25/ahoge-clean/top-input.png",
+      "sha256": "34d0ccd6e0b6e0cf3179997e1959d07a4aa6d957e752319f7d661110df4f2435",
+      "purpose": "ahoge-clean",
+      "provenance": "local imagegen input/output or mask; prompt and registration in same folder"
+    },
+    {
+      "path": "characters/original-01/rig-v005-r25/drag-expression/eye-edit-input.png",
+      "sha256": "27864eff1e17ae29899c82b1802d82d32187955d29e0075c7334de6f35b84131",
+      "purpose": "drag-expression",
+      "provenance": "local imagegen input/output or mask; prompt and registration in same folder"
+    },
+    {
+      "path": "characters/original-01/rig-v005-r25/drag-expression/squeezed-edit.png",
+      "sha256": "7d0b6e1eeec6bb93431cbd89f1ea2f48164a21ed9e80d747afef1f7cb610fb97",
+      "purpose": "drag-expression",
+      "provenance": "local imagegen input/output or mask; prompt and registration in same folder"
+    },
+    {
+      "path": "characters/original-01/rig-v005-r25/drag-expression/brow-clean-edit.png",
+      "sha256": "bd5872efa30d9fae42e47ab7dd7a4a856be12afce5a9bb61f0340bea9fa6cfa8",
+      "purpose": "drag-expression",
+      "provenance": "local imagegen input/output or mask; prompt and registration in same folder"
+    },
+    {
+      "path": "characters/original-01/rig-v005-r25/drag-expression/brow-underpaint.png-mask.png",
+      "sha256": "3d29fa21e9b9bbbe53586104e10611edf20d9954376715c0b1a24de4834f580b",
+      "purpose": "drag-expression",
+      "provenance": "local imagegen input/output or mask; prompt and registration in same folder"
+    },
+    {
+      "path": "characters/original-01/rig-v005-r25/seated-rebuild/current-standing-reference.png",
+      "sha256": "932fecb7ba0dc9b63c6e9dc2f67fcc99ceeffb91132a7cf540acfb83f3e6a650",
+      "purpose": "seated-rebuild",
+      "provenance": "local imagegen input/output or mask; prompt and registration in same folder"
+    },
+    {
+      "path": "characters/original-01/rig-v005-r25/seated-rebuild/seated-body-source.png",
+      "sha256": "408cd0cdbe98bf87bbaf8cd4e68eb086b0fa296f2881ccefe64b19e7c07cc4e0",
+      "purpose": "seated-rebuild",
+      "provenance": "local imagegen input/output or mask; prompt and registration in same folder"
+    },
+    {
+      "path": "characters/original-01/rig-v005-r25/seated-open-arms/body-relaxed.png",
+      "sha256": "8e4f79293bebc290cac158f29243d5798f840693e2471b274371d3858cb902c9",
+      "purpose": "seated-open-arms",
+      "provenance": "local imagegen input/output or mask; prompt and registration in same folder"
+    }
+  ],
+  "note": "Release runtime is self-contained. These production inputs are included for repeatable local edit examples; historical sources not in this list may be archival."
+}

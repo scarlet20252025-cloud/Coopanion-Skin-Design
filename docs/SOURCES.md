@@ -1,3 +1,5 @@
+> 历史制作记录：其中阶段状态和旧命令不代表当前发布版。接手请先读 [工程库](../engineering/README.md)、[当前事实](../engineering/current-project.json) 与 [Release 回执](github-release-v1.0.2.json)。
+
 # 来源与版本
 
 核对日期：2026-10-13。以下为公开文档/源码核验，不代表软件已经本机实测。

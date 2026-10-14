@@ -28,14 +28,14 @@
     "center_x": 128,
     "floor_y": 256
   },
-  "approved_master": null,
+  "approved_master": "gpt-dragon-master-v005.png",
   "checks": {
-    "art": "pending-user-acceptance",
-    "assets": "r04 arm rest reassembly identical; original v005 locked; editable masks and ORA retained",
-    "animation": "0.6.6: 96 sampled left/right interaction frames and six joint crops reviewed; full-rate intermediate frames and user naturalness acceptance pending",
-    "desktop": "0.6.6: real import; 27 installed file hashes match; 18 words x 120 acknowledged ticks; 13 host-protocol interaction/reload checks passed. Native desktop-window mouse routing, cross-monitor behavior and application restart remain untested."
+    "art": "User selected current baseline; later wave rear-hair correction visually sampled, not a claim of exhaustive user acceptance",
+    "assets": "v005 locked; current source/texture hashes and registration checked by engineering/tools/project.py",
+    "animation": "64 ahoge/music-note samples plus 48 wave/recovery samples both directions; full-rate exhaustive frames not tested",
+    "desktop": "1.0.2 installed pack files matched; selected figure and native dress page verified. Cross-monitor/DPI/restart not fully tested"
   },
   "candidate_master": "gpt-dragon-master-v005.png",
   "active_source_lock": "production-lock.json",
-  "active_prototype": "rig-v005-r06"
+  "active_prototype": "rig-v005-r25"
 }

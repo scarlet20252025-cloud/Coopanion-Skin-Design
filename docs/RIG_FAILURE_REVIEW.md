@@ -1,3 +1,5 @@
+> 历史制作记录：其中阶段状态和旧命令不代表当前发布版。接手请先读 [工程库](../engineering/README.md)、[当前事实](../engineering/current-project.json) 与 [Release 回执](github-release-v1.0.2.json)。
+
 # 分件绑定失败复盘（2026-10-13）
 
 结论：当前动画试验失败，不能交付。用户截图里的失真来自制作方法和未执行的视觉验收，不是配色问题，也没有证据说明官方 kit 本身有缺陷。

@@ -21,3 +21,10 @@ characters/original-01/rig-v005-r06/qa*/*-[0-9][0-9][0-9].png
 # Local installation backups and diagnostics
 backups/
 qa-root-*.jpg
+
+# Rendered deliverables are distributed separately; sources and selected QA stay tracked
+promo/.venv/
+promo/assets/*.mp4
+promo/assets/*.wav
+promo/assets/src/**/.frames-*/
+promo/assets/.render-*/

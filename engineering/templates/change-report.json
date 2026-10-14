@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "version": "candidate-version",
+  "master_sha256": "record-source-lock",
+  "problem": "observable-defect",
+  "cause": "source-mask-transform-or-occlusion",
+  "files_changed": [],
+  "source_contracts": [],
+  "actions_affected": [],
+  "evidence": [],
+  "checks": {"machine": "not-tested", "visual_samples": "not-tested", "user_acceptance": "not-requested", "native_host": "not-tested", "multi_monitor_dpi_restart": "not-tested"},
+  "supersedes": [],
+  "remaining": [],
+  "release_ready": false
+}

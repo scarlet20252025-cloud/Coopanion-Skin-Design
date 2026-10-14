@@ -1,0 +1,3 @@
+# Release files are byte-sensitive. Preserve the current ZIP payload on checkout.
+packs/gpt-dragon-v005-r25/** -text whitespace=cr-at-eol
+packs/gpt-dragon-v005-r25/*.md whitespace=cr-at-eol,-blank-at-eol

@@ -5,6 +5,9 @@
   "scripts": {
     "preview": "node scripts/serve.mjs",
     "reference": "node scripts/reference-server.mjs",
-    "check": "node scripts/check-production.mjs"
+    "check": "python engineering/tools/project.py check",
+    "check:history": "node scripts/check-production.mjs",
+    "check:strict": "python engineering/tools/project.py check --strict-assets",
+    "test:contracts": "python -m unittest discover -s engineering/tests"
   }
 }

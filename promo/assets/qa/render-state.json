@@ -1,0 +1,196 @@
+{
+  "time": 29.966666666666665,
+  "layout": {
+    "x": 410,
+    "facing": 1,
+    "mode": "idle",
+    "busy": false,
+    "pressing": false,
+    "cursor": "",
+    "moving": false,
+    "box": {
+      "x": 161.74022268381302,
+      "y": 123.38868467278394,
+      "w": 538.3946977941405,
+      "h": 699.6271701638171
+    },
+    "hit": [
+      {
+        "x": 421.9643266176476,
+        "y": 367.67292643747163,
+        "r": 207
+      },
+      {
+        "x": 418.9732449632357,
+        "y": 642.0901406043531,
+        "r": 135
+      },
+      {
+        "x": 424.95540827205946,
+        "y": 780.793887124186,
+        "r": 75
+      }
+    ],
+    "bubble": {
+      "x": 415.98216330882383,
+      "y": 108.30941048978059
+    },
+    "side": {
+      "x": 410.00000000000006,
+      "y": 433.9705809150636,
+      "reach": 312
+    }
+  },
+  "visual": {
+    "eye": "open",
+    "face": "neutral",
+    "lastBlinkAt": 29.449999999999235,
+    "manualWinkUntil": -10
+  },
+  "secondary": {
+    "hair": 12.460107110050982,
+    "seatedHair": 12.460107110050982,
+    "wings": 10.018024502348803,
+    "tail": 4.011367275391682,
+    "ears": 7.610437933378591,
+    "ahoge": 0.1955844740567004,
+    "bangs": 8.963344453834203
+  },
+  "checks": [
+    {
+      "time": 0,
+      "word": "wave",
+      "accepted": true
+    },
+    {
+      "time": 3.9833333333333227,
+      "word": "neutral",
+      "accepted": true
+    },
+    {
+      "time": 13.983333333333334,
+      "word": "stand",
+      "accepted": true
+    },
+    {
+      "time": 13.983333333333334,
+      "word": "wave",
+      "accepted": true
+    },
+    {
+      "time": 15.983333333333334,
+      "word": "flap",
+      "accepted": true
+    },
+    {
+      "time": 17.783333333333232,
+      "word": "dance",
+      "accepted": true
+    },
+    {
+      "time": 19.983333333333107,
+      "word": "sit",
+      "accepted": true
+    },
+    {
+      "time": 22.133333333332985,
+      "word": "dizzy",
+      "accepted": true
+    },
+    {
+      "time": 24.983333333332823,
+      "word": "stand",
+      "accepted": true
+    },
+    {
+      "time": 24.983333333332823,
+      "word": "happy",
+      "accepted": true
+    },
+    {
+      "time": 25.983333333332766,
+      "word": "wave",
+      "accepted": true
+    }
+  ],
+  "events": [
+    {
+      "kind": "touch",
+      "detail": {
+        "kind": "poke"
+      },
+      "time": 9.766666666666667
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "drag"
+      },
+      "time": 11.016666666666667
+    },
+    {
+      "kind": "touch",
+      "detail": {
+        "kind": "grab"
+      },
+      "time": 11.016666666666667
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "air"
+      },
+      "time": 12.983333333333334
+    },
+    {
+      "kind": "touch",
+      "detail": {
+        "kind": "drop",
+        "x": 410
+      },
+      "time": 12.983333333333334
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "land"
+      },
+      "time": 13.1
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "idle"
+      },
+      "time": 13.5
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "dance"
+      },
+      "time": 17.783333333333232
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "sit"
+      },
+      "time": 19.983333333333107
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "dizzy"
+      },
+      "time": 22.133333333332985
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "idle"
+      },
+      "time": 24.983333333332823
+    }
+  ]
+}

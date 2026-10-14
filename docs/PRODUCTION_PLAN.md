@@ -1,3 +1,5 @@
+> 历史制作记录：其中阶段状态和旧命令不代表当前发布版。接手请先读 [工程库](../engineering/README.md)、[当前事实](../engineering/current-project.json) 与 [Release 回执](github-release-v1.0.2.json)。
+
 > 当前发布版为 GPT 龙娘 1.0.2，作者 Asryto，预览与打包入口为 r25。最新状态见 RELEASE_NOTES.md；下文保留早期生产规划。
 
 # 绘制工程

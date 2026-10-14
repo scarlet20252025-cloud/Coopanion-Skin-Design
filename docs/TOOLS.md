@@ -1,3 +1,5 @@
+> 历史制作记录：其中阶段状态和旧命令不代表当前发布版。接手请先读 [工程库](../engineering/README.md)、[当前事实](../engineering/current-project.json) 与 [Release 回执](github-release-v1.0.2.json)。
+
 # 工具与 Skill 选型
 
 核对日期：2026-10-13。以下状态更新到 r06：内置图像编辑、Python 原位素材流水线、官方 kit 预览和运行中 Coopanion 导入已使用；未使用 See-Through 或 PSD2Live 制作本角色。

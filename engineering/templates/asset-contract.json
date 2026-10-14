@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "character_id": "new-character-id",
+  "author": "author-name",
+  "master": {"path": "characters/new-character/master.png", "sha256": "record-after-selection", "canvas": [0, 0]},
+  "coordinate_space": "source pixels; define side naming before binding",
+  "part": "part-name",
+  "source": "source-edit.png",
+  "source_sha256": "record-after-generation",
+  "prompt": "prompt.txt",
+  "alpha_owner": "new independent source alpha",
+  "registration": [1, 0, 0, 1, 0, 0],
+  "pivot": [0, 0],
+  "occluded_by": [],
+  "reveals_when_moved": [],
+  "transform_parent": "define-actual-parent",
+  "allowed_changes": [],
+  "must_preserve": [],
+  "status": "draft"
+}

@@ -1,0 +1,54 @@
+{
+  "duration_seconds": 30,
+  "frames": 900,
+  "fps": 30,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "bytes": 8408536,
+  "sha256": "159d5b77f8c73e5c5e0bbe81d87df4334f75c9f214464ff5f74035e073377953",
+  "full_decode": "passed",
+  "page_errors": [],
+  "visual_review": "encoded frames reviewed: full scene, wave palm, dragging, notes, seated dizzy, ending; not exhaustive every-frame art acceptance",
+  "music": true,
+  "actions_accepted": 11,
+  "audio": {
+    "new_source": {
+      "seconds": 30.0,
+      "sample_rate": 48000,
+      "channels": 2,
+      "peak_dbfs": -21.604856634379406,
+      "rms_dbfs": -34.958522614568004,
+      "energy_above_2500_hz_percent": 1.3210506139612127e-05,
+      "clipped_samples": 0
+    },
+    "encoded": {
+      "seconds": 30.016,
+      "sample_rate": 48000,
+      "channels": 2,
+      "peak_dbfs": -12.467106645384751,
+      "rms_dbfs": -25.740668658065324,
+      "energy_above_2500_hz_percent": 1.2305682578628895e-05,
+      "clipped_samples": 0
+    },
+    "previous_source": {
+      "seconds": 30.0,
+      "sample_rate": 48000,
+      "channels": 2,
+      "peak_dbfs": -17.718768015185294,
+      "rms_dbfs": -31.717408422355632,
+      "energy_above_2500_hz_percent": 0.0420797533390338,
+      "clipped_samples": 0
+    }
+  },
+  "review_frames": [
+    0.7,
+    6,
+    12,
+    14.7,
+    19,
+    23,
+    28
+  ]
+}

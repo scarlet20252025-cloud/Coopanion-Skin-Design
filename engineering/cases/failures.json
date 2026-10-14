@@ -1,0 +1,246 @@
+{
+  "schema": 1,
+  "cases": [
+    {
+      "id": "atlas-drift",
+      "symptom": "独立 atlas 拼件导致比例漂移",
+      "cause": "部件各自居中和缩放，失去母版坐标",
+      "repair": "完整母版共同坐标，保存原位和注册",
+      "avoid": "按旧骨架拉伸新原画",
+      "evidence": [
+        "docs/RIG_FAILURE_REVIEW.md"
+      ]
+    },
+    {
+      "id": "duplicate-eyes",
+      "symptom": "虹膜残留、闭眼重影",
+      "cause": "HSV漏高光，继承另一角色眼曲线",
+      "repair": "本角色连续头脸差分，再独立必要眉层",
+      "avoid": "复制上游眼坐标",
+      "evidence": [
+        "docs/RIG_FAILURE_REVIEW.md",
+        "packs/gpt-dragon-v005-r25/expressions.js"
+      ]
+    },
+    {
+      "id": "arm-stretch",
+      "symptom": "肩袖错位、手臂拉伸",
+      "cause": "非等比变换和错误肩点",
+      "repair": "同源双臂，等比注册，实际肩点",
+      "avoid": "将位置调整变成剪切拉伸",
+      "evidence": [
+        "characters/original-01/rig-v005-r25/arm-similarity-registration.json",
+        "packs/gpt-dragon-v005-r25/part-registration.json"
+      ]
+    },
+    {
+      "id": "sleeve-hole",
+      "symptom": "抬手露透明袖口、旧线",
+      "cause": "后景欠缺或补底夹带发线",
+      "repair": "完整宽袖和语义独立后景，共享身体遮挡空间",
+      "avoid": "用跨部件补片堵洞",
+      "evidence": [
+        "docs/LAYER_OWNERSHIP_AND_OCCLUSION.md",
+        "packs/gpt-dragon-v005-r25/clean-sources.js"
+      ]
+    },
+    {
+      "id": "wave-ear-depth",
+      "symptom": "招手耳朵压手掌，发尾穿袖",
+      "cause": "耳与前发合在同一前景图",
+      "repair": "耳后、臂中、前发前；耳同步头变换",
+      "avoid": "整张头图统一前置",
+      "evidence": [
+        "characters/original-01/rig-v005-r25/qa/ear-depth/review.jpg",
+        "packs/gpt-dragon-v005-r25/secondary.js"
+      ]
+    },
+    {
+      "id": "hair-wing-fill",
+      "symptom": "上扇被头发遮掉，后发残翼线",
+      "cause": "补发含翼/袖且变换不一致",
+      "repair": "补发归属同头变形，独立翼隐藏根部",
+      "avoid": "整张无翼全身图塞入后发",
+      "evidence": [
+        "docs/LAYER_OWNERSHIP_AND_OCCLUSION.md",
+        "packs/gpt-dragon-v005-r25/wings.js"
+      ]
+    },
+    {
+      "id": "head-neck-cut",
+      "symptom": "头颈横缝、双领线",
+      "cause": "横向硬切和完整内衬重复领口",
+      "repair": "连续头轮廓，母版颈领同取；内衬仅下裙",
+      "avoid": "额外脖子路径覆盖旧线",
+      "evidence": [
+        "packs/gpt-dragon-v005-r25/clean-sources.js",
+        "docs/LAYER_OWNERSHIP_AND_OCCLUSION.md"
+      ]
+    },
+    {
+      "id": "bangs-cut",
+      "symptom": "刘海拼缝、旧眼睑露出",
+      "cause": "旧多边形穿过新发尖/眼边",
+      "repair": "当前刘海保持连续 head-front",
+      "avoid": "为增加分层而伪造独立素材",
+      "evidence": [
+        "packs/gpt-dragon-v005-r25/secondary.js"
+      ]
+    },
+    {
+      "id": "alpha-dark-band",
+      "symptom": "深底暗带、半透明虚影",
+      "cause": "扣旧图后 source-over 同遮罩重复衰减",
+      "repair": "预乘 old*(1-mask)+new*mask 交叉混合",
+      "avoid": "羽化代替真实隐藏结构",
+      "evidence": [
+        "packs/gpt-dragon-v005-r25/clean-sources.js",
+        "docs/LAYER_OWNERSHIP_AND_OCCLUSION.md"
+      ]
+    },
+    {
+      "id": "ahoge-seam",
+      "symptom": "呆毛根部三角缝、残线",
+      "cause": "旧硬切移除与新 scalp 轮廓不匹配",
+      "repair": "注册后清旧源并连续混合 scalp，独立 tuft own alpha",
+      "avoid": "扩旧 polygon 或恢复条带弯曲",
+      "evidence": [
+        "characters/original-01/rig-v005-r25/qa/release-101/roots-final.jpg",
+        "packs/gpt-dragon-v005-r25/clean-sources.js"
+      ]
+    },
+    {
+      "id": "skirt-leg",
+      "symptom": "腿在裙外，折边光影不连续",
+      "cause": "前裙/后衬/腿深度或来源不一致",
+      "repair": "原画前裙覆盖腿，同源连续裙折光影",
+      "avoid": "加粗边线掩盖接合",
+      "evidence": [
+        "packs/gpt-dragon-v005-r25/tex/dress-fold-clean.png",
+        "packs/gpt-dragon-v005-r25/figure.js"
+      ]
+    },
+    {
+      "id": "old-silhouette",
+      "symptom": "新坐姿被切断",
+      "cause": "旧坐姿 alpha 强裁新身体",
+      "repair": "新源自己的 alpha，统一等比注册",
+      "avoid": "沿用旧 silhouette",
+      "evidence": [
+        "characters/original-01/rig-v005-r25/seated-rebuild/registration.json"
+      ]
+    },
+    {
+      "id": "seated-proportion",
+      "symptom": "正坐鸭子坐、长臂长腿被否定",
+      "cause": "孤立重画身体，没有完整人物形体",
+      "repair": "采用用户最终原坐姿，只让双臂自然下垂",
+      "avoid": "推定撑地必须拉长手触地，恢复失败鸭子坐",
+      "evidence": [
+        "characters/original-01/rig-v005-r25/seated-open-arms/qa/review.jpg",
+        "characters/original-01/rig-v005-r25/seated-open-arms/registration.json"
+      ]
+    },
+    {
+      "id": "brow-static",
+      "symptom": "眉毛不随情绪、晕乎高度不齐",
+      "cause": "源固定眉和眼层可见性混用",
+      "repair": "清旧眉、独立眉、额头 clip，仅对齐 dizzy",
+      "avoid": "所有情绪强制左右对称",
+      "evidence": [
+        "packs/gpt-dragon-v005-r25/brows.js",
+        "packs/gpt-dragon-v005-r25/tex/brow-underpaint.png"
+      ]
+    },
+    {
+      "id": "face-color-patch",
+      "symptom": "挤眼补画肤色硬边",
+      "cause": "生成肤色漂移且硬替换",
+      "repair": "未改区配准、眼区梯度域合成、保持区域外像素",
+      "avoid": "用高 ECC 相关系数宣称美术通过",
+      "evidence": [
+        "scripts/build-r25-expression-patches.py",
+        "characters/original-01/rig-v005-r25/drag-expression/registration.json"
+      ]
+    },
+    {
+      "id": "wing-energy",
+      "symptom": "振翅切换突兀、误以为漏音符",
+      "cause": "切相位或未追踪 kit emitter",
+      "repair": "连续相位和能量/频率平滑；先查 dance emitter",
+      "avoid": "重复实现现有官方音符",
+      "evidence": [
+        "packs/gpt-dragon-v005-r25/wings.js",
+        "preview/vendor/kit/body.js"
+      ]
+    },
+    {
+      "id": "csp-fetch",
+      "symptom": "预览正常，宿主回退 Coo",
+      "cause": "connect-src none 禁止额外注册 fetch",
+      "repair": "part_registration 嵌入 model，读取 opts.model",
+      "avoid": "预览 fetch 成功代表宿主支持",
+      "evidence": [
+        "packs/gpt-dragon-v005-r25/figure.js",
+        "docs/release-1.0.2.json"
+      ]
+    },
+    {
+      "id": "vocab-seconds",
+      "symptom": "ZIP 导入拒绝",
+      "cause": "缺少正数 seconds 或词表未实现",
+      "repair": "每个已实现词有有限正数时长并检查回执",
+      "avoid": "复制词表即宣称实现",
+      "evidence": [
+        "scripts/check-production.mjs",
+        "packs/gpt-dragon-v005-r25/figure.json"
+      ]
+    },
+    {
+      "id": "duplicate-install",
+      "symptom": "旧形象列表堆积",
+      "cause": "升级每次换 id",
+      "repair": "同一形象 stable id，明确旧包备份/清理范围",
+      "avoid": "删除 coo/whale、源码或个人配置",
+      "evidence": [
+        "docs/RELEASE_NOTES.md",
+        "engineering/guides/validation-and-release.md"
+      ]
+    },
+    {
+      "id": "frozen-video",
+      "symptom": "成片冻结首帧",
+      "cause": "animations=disabled 覆盖 seek 或 kit 未推进",
+      "repair": "暂停 CSS、逐帧 renderAt、60Hz step后截图",
+      "avoid": "元数据或帧数量替代成片看图",
+      "evidence": [
+        "promo/render.py",
+        "promo/assets/qa/video-validation.json"
+      ]
+    },
+    {
+      "id": "sample-not-live",
+      "symptom": "示例对话被称真实聊天，未提交被称完成",
+      "cause": "模拟展示和账户操作没有分开记录",
+      "repair": "气泡注明示例；上传和提交各自记录",
+      "avoid": "打开页面/登录证明投稿成功",
+      "evidence": [
+        "promo/BRIEF.md",
+        "engineering/guides/validation-and-release.md"
+      ]
+    },
+    {
+      "id": "wave-rear-hair",
+      "symptom": "耳朵已在手臂后，招手手指仍被耳后头发遮住",
+      "cause": "耳后侧发片仍归整张前景 head，光把耳朵移后不够",
+      "repair": "同源 rear-temple-hair 独立置于臂后，跟随同一 head transform；脸侧前发仍在臂前",
+      "avoid": "整张头移后或把手臂完全提到前发前；rear hair 源不能重复带耳朵",
+      "evidence": [
+        "packs/gpt-dragon-v005-r25/secondary.js",
+        "characters/original-01/rig-v005-r25/qa/wave-rear-hair/comparison.jpg",
+        "characters/original-01/rig-v005-r25/qa/wave-rear-hair/report.json",
+        "characters/original-01/rig-v005-r25/qa/wave-rear-hair/installed-dress.png"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-14",
+  "baseline": "GPT 龙娘 1.0.2",
+  "machine_contract": "strict check passed in working tree and fresh staged checkout",
+  "contract_negative_tests": {
+    "passed": 7,
+    "coverage": [
+      "missing action duration",
+      "arm shear despite matching registration",
+      "embedded registration drift",
+      "CSP extra fetch",
+      "missing module",
+      "candidate path escape",
+      "valid baseline"
+    ]
+  },
+  "source_assets": 9,
+  "texture_assets": 50,
+  "failure_cases": 22,
+  "skill_validator": "passed",
+  "preview": {
+    "frames": 84,
+    "two_directions": true,
+    "page_errors": [],
+    "rejected_actions": [],
+    "fresh_checkout_http_errors": [],
+    "evidence": "engineering/evidence/preview-qa.json"
+  },
+  "release_zip": {
+    "bytes": 21615940,
+    "sha256": "e5c769e2c61f9ee8ce8c94e121ed1e23f63c1767495e814a3a3c5fd694aa794c",
+    "fresh_checkout_byte_identical": true
+  },
+  "installed_pack": "read-only compare matches",
+  "promo": "promo/assets/qa/video-validation.json",
+  "boundaries": [
+    "not exhaustive art acceptance of every frame",
+    "different DPI/multimonitor/process restart not fully tested",
+    "Bilibili submission not performed"
+  ]
+}
