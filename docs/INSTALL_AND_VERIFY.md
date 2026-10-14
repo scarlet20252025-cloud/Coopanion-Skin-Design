@@ -5,7 +5,7 @@
 
 ## 导入与更新
 
-1. 获取交付文件 `GPT 龙娘.zip`，或从仓库运行 `python scripts/package-pet.py` 生成 `dist/gpt-dragon-v005-r25-1.0.2.zip`。
+1. 获取交付文件 `GPT 龙娘 1.0.2.zip`，或从仓库运行 `python scripts/package-pet.py` 生成 `dist/gpt-dragon-v005-r25-1.0.2.zip`。
 2. 打开 Coopanion「装扮 → 导入」，选择 ZIP；选用「GPT 龙娘」。ZIP 根目录直接包含 `figure.json`，无需解压后再压缩外层文件夹。
 3. 当前 ID 固定为 `gpt-dragon-v005-r25`。升级替换同 ID 包；如果应用提示重名，按应用提示更新或先移除同 ID 旧条目再导入。旧 r06–r18 条目可从装扮列表移除。
 

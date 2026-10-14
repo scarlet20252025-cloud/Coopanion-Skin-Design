@@ -16,7 +16,7 @@
 python scripts/package-pet.py
 ```
 
-输出为 `dist/gpt-dragon-v005-r25-1.0.2.zip` 与校验文件；与交付文件 `GPT 龙娘.zip` 内容相同。ZIP 不随 Git 提交。当前源码在 [`packs/gpt-dragon-v005-r25`](packs/gpt-dragon-v005-r25)。
+输出为 `dist/gpt-dragon-v005-r25-1.0.2.zip` 与校验文件；与交付文件 `GPT 龙娘 1.0.2.zip` 内容相同。ZIP 不随 Git 提交。当前源码在 [`packs/gpt-dragon-v005-r25`](packs/gpt-dragon-v005-r25)。
 
 ## 本地预览与检查
 
