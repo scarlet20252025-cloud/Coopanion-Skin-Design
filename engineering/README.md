@@ -5,7 +5,11 @@
 - [形象包 Release](https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design/releases/tag/v1.0.2)
 - [Coopanion 官方主程序](https://github.com/Pal-AI-Lab/Coopanion)
 
+本轮可执行流程与验证边界见 [完整性复查](guides/completeness-audit.md)。
+
 ## 5 分钟起步
+
+首次制作建议直接进入 [逐步引导](guides/guided-workflow.md)：工具会输出下一步命令，并检测旧证据是否失效。新角色使用 [独立素材与运行骨架](guides/new-character.md)。下面的五分钟路线用于先查看已有形象。
 
 ```sh
 git clone https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design.git
@@ -33,6 +37,19 @@ npm run preview
 | 做宣传片 | [宣传片流程](guides/promo.md) | `python promo/render.py --samples 1.5,6,12,19,23,28` |
 
 只读取任务需要的一行。历史 `docs/REUSABLE_WORKFLOW.md`、`docs/LAYER_OWNERSHIP_AND_OCCLUSION.md` 保留上下文，但最后的“未安装”等旧段落不是当前状态。
+
+## 减少模型自行判断操作步骤
+
+| 辅助工具 | 解决的问题 |
+|---|---|
+| `flow.py start/next` | 隔离候选、固定任务范围、中断后继续、给出下一步 |
+| `flow.py registration` | 等比调整与两份配准同步，避免漏改 model |
+| `asset.py inspect/register` | alpha/画布检查、对应点等比解算、叠图与误差报告 |
+| `collect_qa.py` | 自动打开隔离预览，检查动作、恢复、双朝向和真实 pointer 流程 |
+| `flow.py review/package/installed` | 绑定当前文件指纹，拒绝过期证据，打包和安装文件比对 |
+| `layered.py` | 使用新角色自己的素材/锚点生成基础适配器和独立检查 profile |
+
+详细命令均在 [逐步引导](guides/guided-workflow.md)，无需先读脚本实现。图层语义、补画形体和自然度仍要看图判断；检查通过不等于审美通过。基础新角色模板的能力边界见 [新角色入口](guides/new-character.md)。
 
 ## 给其他 AI 的接手提示
 

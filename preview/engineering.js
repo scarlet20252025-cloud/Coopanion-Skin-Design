@@ -24,3 +24,34 @@ async function capture(){
 $('capture').onclick=async()=>{const blob=await(await fetch(await capture())).blob();download(blob,manifest.id+'-frame.png','image/png');};
 $('qa').onclick=async()=>{paused=true;const samples=[],checks=[];try{for(const direction of [1,-1])for(const word of ['neutral','wave','flap','dance','sit','dizzy','turn']){facing=direction;await reset();const ok=body.do(word);checks.push({word,facing,accepted:ok});for(let i=0;i<180;i++){body.step(1/60);if(i%30===0){samples.push({word,frame:i,facing,layout:body.layout(),visual:body.visualState?.(),secondary:body.secondaryState?.(),png:await capture()});$('status').textContent=`采样 ${samples.length}/84`;}}}download(JSON.stringify({version:manifest.version,master:model.master_sha256,checks,samples,events}),manifest.id+'-qa.json','application/json');$('status').textContent='已导出 84 张左右动作采样；需人工视觉复核';}finally{facing=1;await reset();paused=false;}};
 window.engineeringReady=true;window.engineeringState=()=>({manifest,layout:body.layout()});
+
+// Tool-facing sampler: each case resets independently, each phase preserves its predecessor.
+window.runEngineeringQA=async plan=>{
+ paused=true;const samples=[],checks=[],random=Math.random;let seed=13841;
+ Math.random=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};
+ const advance=seconds=>{for(let t=0;t<seconds-1e-8;t+=1/60)body.step(Math.min(1/60,seconds-t));};
+ const shot=async(key,phase)=>samples.push({key,phase,facing,layout:body.layout(),visual:body.visualState?.(),secondary:body.secondaryState?.(),arms:body.armLayerState?.(),png:await capture()});
+ try{
+  for(const direction of [1,-1])for(const test of plan.cases){
+   facing=direction;await reset();
+   if(test.pointer){
+    let hit=body.layout().hit[0],point={x:hit.x,y:hit.y,t:1000};
+    body.pointer('down',point);checks.push({key:`${direction}:pointer:press`,accepted:body.layout().pressing===true});
+    body.pointer('up',{...point,t:1120});advance(.2);await shot(`${direction}:pointer:click`,'click');
+    hit=body.layout().hit[0];point={x:hit.x,y:hit.y,t:2000};body.pointer('down',point);
+    point={x:point.x+15,y:point.y-80,t:2120};body.pointer('move',point);advance(.4);
+    checks.push({key:`${direction}:pointer:drag`,accepted:body.layout().mode==='drag'});await shot(`${direction}:pointer:held`,'held');
+    body.pointer('up',{...point,t:2700});advance(.15);
+    checks.push({key:`${direction}:pointer:release`,accepted:body.layout().mode!=='drag'});await shot(`${direction}:pointer:released`,'released');
+    advance(3);await shot(`${direction}:pointer:recovery`,'recovery');
+   }else for(const step of test.steps){
+    checks.push({key:`${direction}:${test.id}:${step.phase}`,word:step.word,accepted:body.do(step.word)});
+    let previous=0;
+    for(const time of step.samples){advance(time-previous);previous=time;await shot(`${direction}:${test.id}:${step.phase}:${time}`,step.phase);}
+    advance(step.seconds-previous);
+   }
+   $('status').textContent=`QA ${samples.length}/${plan.expected.length}`;
+  }
+  return {version:manifest.version,master:model.master_sha256,viewport:[$('stage').clientWidth,800],checks,samples,events};
+ }finally{Math.random=random;facing=1;await reset();paused=false;}
+};

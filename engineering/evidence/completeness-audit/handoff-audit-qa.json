@@ -1,0 +1,11 @@
+{
+  "schema": 2,
+  "machine_passed": true,
+  "errors": [],
+  "samples": 116,
+  "pack_fingerprint": "10ca784e6b7876ff8b8b194a3e4602967adce973ba52f43987b0d8bccf09608a",
+  "input_sha256": "ba02fc5a4ff9950db540bd40303a723bbe17cabf418c1ebab36ed86e02765498",
+  "input_file": "scratch/jobs/handoff-audit/qa-frames.json",
+  "contact_sheets": 10,
+  "visual_review": "required; machine checks do not establish seamless art"
+}

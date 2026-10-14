@@ -7,6 +7,10 @@ description: Create, modify, debug, validate, package or document Coopanion API 
 
 Start at repository `AGENTS.md`, then [engineering quick start](../../../engineering/README.md) and [current-project.json](../../../engineering/current-project.json). Run `python engineering/tools/project.py doctor` and `check`. Read only the guide for the task; do not load all history.
 
+For a first handoff, use the [guided workflow](../../../engineering/guides/guided-workflow.md): `flow.py start` creates an isolated repair; `next` provides the current command. `collect_qa.py` runs actual pointer/actions and records full/light-dark views; changed pack files invalidate old evidence. Read images before recording a review. `package` builds the reviewed candidate, `installed` only compares installed files.
+
+For genuinely new art, use the [new-character compiler](../../../engineering/guides/new-character.md) with its own master, layers, pivots and profile. It supplies a rigid-layer starter; further art-specific deformations need explicit implementation and review. [Asset tools](../../../engineering/guides/asset-tools.md) solve matching-point similarity registration and produce overlay evidence; they do not infer pixel ownership.
+
 - New character / source edit: [pipeline](../../../engineering/guides/pipeline.md), [parts and registration](../../../engineering/guides/parts-and-registration.md).
 - Expression / motion / pose: [animation](../../../engineering/guides/animation-and-expression.md).
 - Visible seam / wrong proportions: `project.py inspect <part>` and `case <id>`; inspect complete character and source ownership before changing masks.

@@ -1,0 +1,26 @@
+{
+  "reviewer": "Codex",
+  "qa_sha256": "ba02fc5a4ff9950db540bd40303a723bbe17cabf418c1ebab36ed86e02765498",
+  "pack_fingerprint": "10ca784e6b7876ff8b8b194a3e4602967adce973ba52f43987b0d8bccf09608a",
+  "checks": {
+    "full_character": true,
+    "light_dark": true,
+    "both_directions": true,
+    "defect_closeup": true,
+    "transitions_and_recovery": true
+  },
+  "evidence": [
+    "scratch/jobs/handoff-audit/qa/contact.jpg",
+    "scratch/jobs/handoff-audit/qa/contact-10.jpg",
+    "scratch/jobs/handoff-audit/qa/008-dark-upper.png",
+    "scratch/jobs/handoff-audit/qa/066-dark-upper.png"
+  ],
+  "notes": "Reviewed all 10 contact sheets and both-facing wave upper-body crops. Existing baseline preserved; palms visible in front of rear hair, front locks cover arm naturally. Sampled pose transitions and pointer recovery remain connected. This is sampled browser review, not exhaustive animation or native-host certification.",
+  "decision": "pass",
+  "evidence_hashes": {
+    "scratch/jobs/handoff-audit/qa/contact.jpg": "9672d590e6c8098c32c17862dbfcdf5e3c9e86a0660cec94ab58f4f7b41923d8",
+    "scratch/jobs/handoff-audit/qa/contact-10.jpg": "b0d45f268f95610953c62742d131da48da7c937f37c07cc73b933cc96559efac",
+    "scratch/jobs/handoff-audit/qa/008-dark-upper.png": "abffa5076b4e15853996b63c53e48844fda5dfaebde55116333f1286282e78ee",
+    "scratch/jobs/handoff-audit/qa/066-dark-upper.png": "d00fba87153fffb779c3fe24fe8e3b65afab7a6871afc00bf0dbd2d005efdfb7"
+  }
+}

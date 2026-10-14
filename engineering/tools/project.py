@@ -44,9 +44,13 @@ def pack_path(args, cfg):
 def doctor(args):
     tools = {name: shutil.which(name) for name in ['python', 'node', 'ffmpeg', 'uv', 'git']}
     tools['running_python'] = sys.executable
-    modules = {name: importlib.util.find_spec(name) is not None for name in ['PIL', 'numpy', 'cv2']}
-    print(json.dumps({'tools': tools, 'art_modules': modules, 'basic_requirements': 'Python + Node; ffmpeg/uv only for video'}, ensure_ascii=False, indent=2))
-    return 1 if not tools['node'] or (args.art and not all(modules.values())) else 0
+    modules = {name: importlib.util.find_spec(name) is not None for name in ['PIL', 'numpy', 'cv2', 'playwright']}
+    required=['PIL','numpy','playwright'] if getattr(args,'workflow',False) else ['PIL','numpy','cv2'] if args.art else []
+    missing=[name for name in required if not modules[name]]
+    print(json.dumps({'tools': tools, 'modules': modules, 'missing_for_selected_route':missing,
+                     'basic_requirements': 'Python 3.10+ and Node; ffmpeg only for video',
+                     'repair': 'uv sync --project engineering; uv run --project engineering playwright install chromium' if getattr(args,'workflow',False) else 'Use requirements-art.txt only for historical OpenCV art scripts'}, ensure_ascii=False, indent=2))
+    return int(not tools['node'] or sys.version_info<(3,10) or bool(missing))
 
 def check(args):
     cfg = contract(args.contract)
@@ -57,6 +61,13 @@ def check(args):
             errors.append(message)
     try:
         m, model = read(p / 'figure.json'), read(p / 'model.json')
+        require(cfg.get('profile','dragon-r25') in ['dragon-r25','layered-v1'], 'Unknown adapter profile')
+        def finite_tree(value):
+            if isinstance(value,float): return math.isfinite(value)
+            if isinstance(value,dict): return all(finite_tree(v) for v in value.values())
+            if isinstance(value,list): return all(finite_tree(v) for v in value)
+            return True
+        require(finite_tree(model), 'Model contains nonfinite values')
         lock = read(rooted(cfg['source_lock']))
         require(sha(rooted(lock['active_master'])) == lock['sha256'] == model['master_sha256'], 'Master hash mismatch')
         require(model['canvas'] == lock['canvas'], 'Master canvas mismatch')
@@ -71,16 +82,18 @@ def check(args):
         ids = [v['id'] for v in m['vocab']]
         require(len(ids) == len(set(ids)) == cfg['declared_words'], 'Duplicate or unexpected vocab count')
         for v in m['vocab']:
-            require(isinstance(v.get('seconds'), (int, float)) and math.isfinite(v['seconds']) and v['seconds'] > 0, 'Invalid duration: ' + v['id'])
+            require(type(v.get('seconds')) in (int, float) and math.isfinite(v['seconds']) and v['seconds'] > 0, 'Invalid duration: ' + v['id'])
         reg = read(p / 'part-registration.json')
         require(reg == model['part_registration'], 'Embedded registration does not match editable registration')
-        for name in ['arm-left', 'arm-right']:
+        dragon = cfg.get('profile', 'dragon-r25') == 'dragon-r25'
+        for name in cfg.get('uniform_registration', ['arm-left', 'arm-right'] if dragon else []):
             a,b,c,d,e,f = reg[name]
             require(all(math.isfinite(x) for x in reg[name]), 'Nonfinite registration: ' + name)
             require(abs(a*c+b*d) < 1e-6 and abs(math.hypot(a,b)-math.hypot(c,d)) < 1e-6 and a*d-b*c > 0, 'Arm shear/nonuniform scale/reflection: ' + name)
-        for key, value in cfg['elasticity'].items():
-            require(model['leg_rig']['elasticity'][key] == value, 'Accepted elasticity changed: ' + key)
-        require(model['sitting_feet_y'] == cfg['sitting_feet_y'], 'Seated feet baseline changed')
+        if dragon:
+            for key, value in cfg['elasticity'].items():
+                require(model['leg_rig']['elasticity'][key] == value, 'Accepted elasticity changed: ' + key)
+            require(model['sitting_feet_y'] == cfg['sitting_feet_y'], 'Seated feet baseline changed')
         entry = (p / m['entry']).read_text(encoding='utf-8')
         require('model.part_registration' in entry, 'Missing CSP-safe embedded registration load')
         require(not re.search(r'fetch\s*\([^\n;]*part-registration', entry), 'Extra registration fetch is blocked by host CSP')
@@ -93,7 +106,7 @@ def check(args):
         for part in cfg['parts'].values():
             for file in part['pack_files']:
                 require((p / file).is_file(), 'Missing part file: ' + file)
-        inventory = read(rooted('engineering/asset-inventory.json'))
+        inventory = read(rooted(cfg.get('asset_inventory','engineering/asset-inventory.json')))
         changes = []
         for asset in inventory['textures']:
             f = p / asset['path']
@@ -101,17 +114,18 @@ def check(args):
             if f.is_file():
                 info = png_info(f)
                 require(info['color_type'] == 6, 'Texture must be RGBA: ' + asset['path'])
+                require(info['width'] == asset['width'] and info['height'] == asset['height'], 'Texture canvas changed: ' + asset['path'])
                 if sha(f) != asset['sha256']:
                     changes.append(asset['path'])
         if changes:
             (errors if args.strict_assets else notices).append('Changed baseline textures (require visual evidence): ' + ', '.join(changes))
         if p == rooted(cfg['pack']):
             require(m['id'] == cfg['id'] and m['version'] == cfg['version'] and m['author'] == cfg['author'], 'Current-project identity drift')
-        failures = read(rooted('engineering/cases/failures.json'))
+        failures = read(rooted('engineering/cases/failures.json')) if dragon else {'cases':[]}
         for case in failures['cases']:
             for file in case['evidence']:
                 require(rooted(file).is_file(), 'Missing case evidence: ' + file)
-        for asset in read(rooted('engineering/source-assets.json'))['assets']:
+        for asset in read(rooted(cfg.get('source_assets','engineering/source-assets.json')))['assets']:
             require(rooted(asset['path']).is_file(), 'Missing production source: ' + asset['path'])
             if rooted(asset['path']).is_file():
                 require(sha(rooted(asset['path'])) == asset['sha256'], 'Production source hash mismatch: ' + asset['path'])
@@ -172,8 +186,9 @@ def compare(args):
             rel = source.relative_to(p);target = installed / rel
             if not target.is_file() or sha(source) != sha(target):
                 mismatches.append(str(rel))
-    print(json.dumps({'read_only': True, 'installed': str(installed), 'match': not mismatches, 'mismatches': mismatches}, ensure_ascii=False, indent=2))
-    return int(bool(mismatches))
+    extras=[f.relative_to(installed).as_posix() for f in installed.rglob('*') if f.is_file() and not (p/f.relative_to(installed)).is_file()]
+    print(json.dumps({'read_only': True, 'installed': str(installed), 'match': not mismatches and not extras, 'mismatches': mismatches,'extra_files':extras}, ensure_ascii=False, indent=2))
+    return int(bool(mismatches or extras))
 
 def qa(args):
     from PIL import Image, ImageDraw
@@ -207,7 +222,7 @@ def qa(args):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__);sub=parser.add_subparsers(dest='command',required=True)
-    d=sub.add_parser('doctor');d.add_argument('--art',action='store_true');d.set_defaults(run=doctor)
+    d=sub.add_parser('doctor');d.add_argument('--art',action='store_true');d.add_argument('--workflow',action='store_true');d.set_defaults(run=doctor)
     c=sub.add_parser('check');c.add_argument('--pack');c.add_argument('--contract',default='engineering/current-project.json');c.add_argument('--strict-assets',action='store_true');c.set_defaults(run=check)
     i=sub.add_parser('inspect');i.add_argument('part');i.set_defaults(run=inspect)
     f=sub.add_parser('case');f.add_argument('id');f.set_defaults(run=case)

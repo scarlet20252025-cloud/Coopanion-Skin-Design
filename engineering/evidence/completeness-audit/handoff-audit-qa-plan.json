@@ -1,0 +1,365 @@
+{
+  "cases": [
+    {
+      "id": "neutral",
+      "steps": [
+        {
+          "word": "neutral",
+          "phase": "action",
+          "seconds": 3.2,
+          "samples": [
+            0,
+            0.3,
+            0.8,
+            3.2
+          ]
+        },
+        {
+          "word": "stand",
+          "phase": "recovery",
+          "seconds": 1.2,
+          "samples": [
+            0.4,
+            1.2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wave",
+      "steps": [
+        {
+          "word": "wave",
+          "phase": "action",
+          "seconds": 3.2,
+          "samples": [
+            0,
+            0.3,
+            0.8,
+            3.2
+          ]
+        },
+        {
+          "word": "stand",
+          "phase": "recovery",
+          "seconds": 1.2,
+          "samples": [
+            0.4,
+            1.2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flap",
+      "steps": [
+        {
+          "word": "flap",
+          "phase": "action",
+          "seconds": 3.2,
+          "samples": [
+            0,
+            0.3,
+            0.8,
+            3.2
+          ]
+        },
+        {
+          "word": "stand",
+          "phase": "recovery",
+          "seconds": 1.2,
+          "samples": [
+            0.4,
+            1.2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dance",
+      "steps": [
+        {
+          "word": "dance",
+          "phase": "action",
+          "seconds": 3.8,
+          "samples": [
+            0,
+            0.3,
+            0.8,
+            3.8
+          ]
+        },
+        {
+          "word": "stand",
+          "phase": "recovery",
+          "seconds": 1.2,
+          "samples": [
+            0.4,
+            1.2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sit",
+      "steps": [
+        {
+          "word": "sit",
+          "phase": "action",
+          "seconds": 3.2,
+          "samples": [
+            0,
+            0.3,
+            0.8,
+            3.2
+          ]
+        },
+        {
+          "word": "stand",
+          "phase": "recovery",
+          "seconds": 1.2,
+          "samples": [
+            0.4,
+            1.2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dizzy",
+      "steps": [
+        {
+          "word": "dizzy",
+          "phase": "action",
+          "seconds": 3.6,
+          "samples": [
+            0,
+            0.3,
+            0.8,
+            3.6
+          ]
+        },
+        {
+          "word": "stand",
+          "phase": "recovery",
+          "seconds": 1.2,
+          "samples": [
+            0.4,
+            1.2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "turn",
+      "steps": [
+        {
+          "word": "turn",
+          "phase": "action",
+          "seconds": 3.2,
+          "samples": [
+            0,
+            0.3,
+            0.8,
+            3.2
+          ]
+        },
+        {
+          "word": "stand",
+          "phase": "recovery",
+          "seconds": 1.2,
+          "samples": [
+            0.4,
+            1.2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sit-happy-stand",
+      "steps": [
+        {
+          "word": "sit",
+          "phase": "0",
+          "seconds": 1.5,
+          "samples": [
+            0.4,
+            1.5
+          ]
+        },
+        {
+          "word": "happy",
+          "phase": "1",
+          "seconds": 1.5,
+          "samples": [
+            0.4,
+            1.5
+          ]
+        },
+        {
+          "word": "stand",
+          "phase": "recovery",
+          "seconds": 1.5,
+          "samples": [
+            0.4,
+            1.5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "run-wave-neutral",
+      "steps": [
+        {
+          "word": "run",
+          "phase": "0",
+          "seconds": 1.5,
+          "samples": [
+            0.4,
+            1.5
+          ]
+        },
+        {
+          "word": "wave",
+          "phase": "1",
+          "seconds": 3.2,
+          "samples": [
+            0.4,
+            3.2
+          ]
+        },
+        {
+          "word": "neutral",
+          "phase": "recovery",
+          "seconds": 1.5,
+          "samples": [
+            0.4,
+            1.5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pointer",
+      "pointer": true
+    }
+  ],
+  "expected": [
+    "1:neutral:action:0",
+    "1:neutral:action:0.3",
+    "1:neutral:action:0.8",
+    "1:neutral:action:3.2",
+    "1:neutral:recovery:0.4",
+    "1:neutral:recovery:1.2",
+    "1:wave:action:0",
+    "1:wave:action:0.3",
+    "1:wave:action:0.8",
+    "1:wave:action:3.2",
+    "1:wave:recovery:0.4",
+    "1:wave:recovery:1.2",
+    "1:flap:action:0",
+    "1:flap:action:0.3",
+    "1:flap:action:0.8",
+    "1:flap:action:3.2",
+    "1:flap:recovery:0.4",
+    "1:flap:recovery:1.2",
+    "1:dance:action:0",
+    "1:dance:action:0.3",
+    "1:dance:action:0.8",
+    "1:dance:action:3.8",
+    "1:dance:recovery:0.4",
+    "1:dance:recovery:1.2",
+    "1:sit:action:0",
+    "1:sit:action:0.3",
+    "1:sit:action:0.8",
+    "1:sit:action:3.2",
+    "1:sit:recovery:0.4",
+    "1:sit:recovery:1.2",
+    "1:dizzy:action:0",
+    "1:dizzy:action:0.3",
+    "1:dizzy:action:0.8",
+    "1:dizzy:action:3.6",
+    "1:dizzy:recovery:0.4",
+    "1:dizzy:recovery:1.2",
+    "1:turn:action:0",
+    "1:turn:action:0.3",
+    "1:turn:action:0.8",
+    "1:turn:action:3.2",
+    "1:turn:recovery:0.4",
+    "1:turn:recovery:1.2",
+    "1:sit-happy-stand:0:0.4",
+    "1:sit-happy-stand:0:1.5",
+    "1:sit-happy-stand:1:0.4",
+    "1:sit-happy-stand:1:1.5",
+    "1:sit-happy-stand:recovery:0.4",
+    "1:sit-happy-stand:recovery:1.5",
+    "1:run-wave-neutral:0:0.4",
+    "1:run-wave-neutral:0:1.5",
+    "1:run-wave-neutral:1:0.4",
+    "1:run-wave-neutral:1:3.2",
+    "1:run-wave-neutral:recovery:0.4",
+    "1:run-wave-neutral:recovery:1.5",
+    "1:pointer:click",
+    "1:pointer:held",
+    "1:pointer:released",
+    "1:pointer:recovery",
+    "-1:neutral:action:0",
+    "-1:neutral:action:0.3",
+    "-1:neutral:action:0.8",
+    "-1:neutral:action:3.2",
+    "-1:neutral:recovery:0.4",
+    "-1:neutral:recovery:1.2",
+    "-1:wave:action:0",
+    "-1:wave:action:0.3",
+    "-1:wave:action:0.8",
+    "-1:wave:action:3.2",
+    "-1:wave:recovery:0.4",
+    "-1:wave:recovery:1.2",
+    "-1:flap:action:0",
+    "-1:flap:action:0.3",
+    "-1:flap:action:0.8",
+    "-1:flap:action:3.2",
+    "-1:flap:recovery:0.4",
+    "-1:flap:recovery:1.2",
+    "-1:dance:action:0",
+    "-1:dance:action:0.3",
+    "-1:dance:action:0.8",
+    "-1:dance:action:3.8",
+    "-1:dance:recovery:0.4",
+    "-1:dance:recovery:1.2",
+    "-1:sit:action:0",
+    "-1:sit:action:0.3",
+    "-1:sit:action:0.8",
+    "-1:sit:action:3.2",
+    "-1:sit:recovery:0.4",
+    "-1:sit:recovery:1.2",
+    "-1:dizzy:action:0",
+    "-1:dizzy:action:0.3",
+    "-1:dizzy:action:0.8",
+    "-1:dizzy:action:3.6",
+    "-1:dizzy:recovery:0.4",
+    "-1:dizzy:recovery:1.2",
+    "-1:turn:action:0",
+    "-1:turn:action:0.3",
+    "-1:turn:action:0.8",
+    "-1:turn:action:3.2",
+    "-1:turn:recovery:0.4",
+    "-1:turn:recovery:1.2",
+    "-1:sit-happy-stand:0:0.4",
+    "-1:sit-happy-stand:0:1.5",
+    "-1:sit-happy-stand:1:0.4",
+    "-1:sit-happy-stand:1:1.5",
+    "-1:sit-happy-stand:recovery:0.4",
+    "-1:sit-happy-stand:recovery:1.5",
+    "-1:run-wave-neutral:0:0.4",
+    "-1:run-wave-neutral:0:1.5",
+    "-1:run-wave-neutral:1:0.4",
+    "-1:run-wave-neutral:1:3.2",
+    "-1:run-wave-neutral:recovery:0.4",
+    "-1:run-wave-neutral:recovery:1.5",
+    "-1:pointer:click",
+    "-1:pointer:held",
+    "-1:pointer:released",
+    "-1:pointer:recovery"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "schema": 2,
+  "machine_passed": true,
+  "errors": [],
+  "samples": 104,
+  "pack_fingerprint": "e6564c58264925cb60dc3055691243ff5e012533890353a46aec26183f2aa563",
+  "input_sha256": "4ad30919183ccc7f07be6c368edc562022b0a02810a6f43dc6c38c733a3a1219",
+  "input_file": "scratch/jobs/layered-audit/qa-frames.json",
+  "contact_sheets": 9,
+  "visual_review": "required; machine checks do not establish seamless art"
+}

@@ -3,6 +3,7 @@
 - 默认简体中文。先读 `engineering/README.md`、`engineering/current-project.json`，按任务读取对应指南；事实以当前文件和实测为准。
 - 目标为 Coopanion API 2 桌宠形象包，不套用 ChatGPT Pets、Cubism 或 Minecraft 规格。作者 Asryto，当前 GPT 龙娘 1.0.2，生产入口 `packs/gpt-dragon-v005-r25`。
 - 起步运行 `python engineering/tools/project.py doctor` 和 `check`；`inspect <part>` 定位部件，`case <id>` 查失败经验。可复用技能为 `.agents/skills/coopanion-image-pack/SKILL.md`。
+- 首次接手优先 `engineering/guides/guided-workflow.md` 与 `flow.py start/next`。新角色用独立 spec/profile 和 `layered.py`，不继承龙娘坐标。自动采样使用 `collect_qa.py`，审阅绑定当前文件指纹；`next` 提示过期证据时重新采样和看图。
 - 用 `preview/engineering.html` 预览生产包或隔离候选。默认打包 `python scripts/package-pet.py`。旧 r04/r06 构建和同步命令只供历史研究，禁止覆盖 r25。
 - 当前唯一母版以 `characters/original-01/production-lock.json` 的哈希为准；旧 atlas、失败 ORA 和旧身体不能作为新流程输入。新角色另锁母版、画布、坐标、锚点和归属，不照搬龙娘坐标。
 - 图像生成/编辑用于新绘像素；程序用于配准、遮罩、合成、检查及导出。保留实际输入、原始输出、遮罩和变换；相同问题连续两次没有改善，先诊断方法，不盲目堆补片。

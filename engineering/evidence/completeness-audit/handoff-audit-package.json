@@ -1,0 +1,8 @@
+{
+  "pack_fingerprint": "10ca784e6b7876ff8b8b194a3e4602967adce973ba52f43987b0d8bccf09608a",
+  "zip": "scratch/jobs/handoff-audit/artifacts/gpt-dragon-v005-r25-1.0.2.zip",
+  "sha256": "e5c769e2c61f9ee8ce8c94e121ed1e23f63c1767495e814a3a3c5fd694aa794c",
+  "bytes": 21615940,
+  "native_host": "not-tested",
+  "published": false
+}

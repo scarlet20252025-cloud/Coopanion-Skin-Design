@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-14",
+  "unit_tests": 17,
+  "dragon_samples": 116,
+  "generic_fixture_samples": 104,
+  "browser": "Microsoft Edge headless / Playwright",
+  "weaker_model_blind_trial": "not-run",
+  "native_host_runtime": "not-retested",
+  "installed_files_match": true,
+  "clean_checkout": {
+    "strict_assets": "passed",
+    "unit_tests": 17,
+    "source": "git checkout-index staged files only",
+    "python_dependencies": "reused engineering venv; source and assets isolated"
+  },
+  "production_pack_changed": false,
+  "generic_fixture_scope": "Synthetic geometry validates protocol and coordinate independence, not finished character art"
+}

@@ -28,3 +28,4 @@ promo/assets/*.mp4
 promo/assets/*.wav
 promo/assets/src/**/.frames-*/
 promo/assets/.render-*/
+engineering/.venv/

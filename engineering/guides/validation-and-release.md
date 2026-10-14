@@ -13,6 +13,8 @@
 
 ## 当前包检查
 
+首次接手建议使用 [引导流程](guided-workflow.md)，它会绑定候选文件指纹并拒绝过期 QA。下面的独立命令仍可用于只读诊断和当前正式包。
+
 ```sh
 python engineering/tools/project.py check
 python engineering/tools/project.py check --strict-assets
@@ -52,6 +54,8 @@ python engineering/tools/project.py compare --installed /absolute/path/to/compan
 公开交付应同时给出名称、版本、作者、主程序/形象包区别、安装步骤、ZIP、SHA-256 与源码。用明确的 tag/commit，上传完成后经公开地址下载校验；未知结果先查是否已存在，不重复创建或覆盖冲突资产。
 
 GPT 龙娘 v1.0.2 已发布并公开下载校验：`docs/github-release-v1.0.2.json`。这是一次验证记录，不保证所有未来下载或 API 状态不变。
+
+发布前将已验收候选及必要源素材纳入目标分支，提交中记录原因和验证；核对 tag 指向的代码能够重建交付 ZIP。GitHub 网页 Release 页面上传 `artifacts` 中的 ZIP 与 SHA256.txt。若环境已有 GitHub CLI，可使用 `gh release create <tag> <ZIP> <SHA256.txt> --title <名称版本> --notes-file <说明文件>`；已存在的 tag 先读现有 Release，同版本覆盖仅在用户明确授权时使用 `gh release upload <tag> <ZIP> <SHA256.txt> --clobber`。下载公开资产后重新计算 hash，与打包回执比较。主程序地址和形象包地址分开列出。
 
 简介范例：
 

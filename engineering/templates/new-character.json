@@ -1,0 +1,26 @@
+{
+  "id": "my-original-character",
+  "name": "填写形象名称",
+  "author": "填写作者",
+  "repository": "填写实际仓库地址",
+  "version": "0.1.0",
+  "provenance": "填写原画、图像编辑来源与许可；保留输入和提示词",
+  "master": "characters/my-character/master.png",
+  "thumbnail": "characters/my-character/thumbnail-upper.png",
+  "center_x": null,
+  "feet_y": null,
+  "logo_scale": null,
+  "bounds": [null, null, null, null],
+  "hits": [[null, null, null]],
+  "anchors": {"gaze": [null, null], "bubble": [null, null]},
+  "accent": "#a18acb",
+  "parts": [
+    {"id":"leg-left","file":"characters/my-character/leg-left.png","role":"leg","poses":["standing"],"pivot":[null,null],"z":0,"owner":"左腿","reveals_when_moved":"填写裙下隐藏区","motion":{"degrees":null,"hz":null}},
+    {"id":"leg-right","file":"characters/my-character/leg-right.png","role":"leg","poses":["standing"],"pivot":[null,null],"z":1,"owner":"右腿","reveals_when_moved":"填写裙下隐藏区","motion":{"degrees":null,"hz":null,"phase":3.141592653589793}},
+    {"id":"body","file":"characters/my-character/body.png","role":"fixed","poses":["standing"],"pivot":[null,null],"z":2,"owner":"躯干与衣裙","reveals_when_moved":"填写身体补底范围"},
+    {"id":"seated","file":"characters/my-character/seated.png","role":"fixed","poses":["seated"],"pivot":[null,null],"z":2,"owner":"坐姿躯干四肢","reveals_when_moved":"none"},
+    {"id":"dizzy-body","file":"characters/my-character/dizzy-body.png","role":"fixed","poses":["dizzy"],"pivot":[null,null],"z":2,"owner":"晕坐躯干四肢","reveals_when_moved":"none"},
+    {"id":"wave-arm","file":"characters/my-character/wave-arm.png","role":"wave-arm","poses":["standing"],"pivot":[null,null],"z":3,"wave_z":3,"owner":"完整肩袖手","reveals_when_moved":"填写肩袖和发后补底","motion":{"degrees":null,"swing":null}},
+    {"id":"head","file":"characters/my-character/head.png","role":"head","poses":["standing","seated","dizzy"],"pivot":[null,null],"z":4,"owner":"头部","reveals_when_moved":"填写连续颈领关系","variants":{"happy":"characters/my-character/head-happy.png","dizzy":"characters/my-character/head-dizzy.png","flustered":"characters/my-character/head-flustered.png","blink":"characters/my-character/head-blink.png"}}
+  ]
+}
