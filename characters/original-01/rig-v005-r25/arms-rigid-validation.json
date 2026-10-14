@@ -1,0 +1,39 @@
+{
+  "status": "unaccepted local candidate; not installed or published",
+  "source_sha256": "4d58a6047539fbc928959266d0a513ff66823f428c53336160ce1d6048216150",
+  "registration": {
+    "arm-left": {
+      "matrix": [
+        0.67,
+        0,
+        0,
+        0.67,
+        227,
+        253
+      ],
+      "singular_values": [
+        0.67,
+        0.67
+      ],
+      "scale_ratio": 1.0
+    },
+    "arm-right": {
+      "matrix": [
+        0.67,
+        0,
+        0,
+        0.67,
+        243,
+        251
+      ],
+      "singular_values": [
+        0.67,
+        0.67
+      ],
+      "scale_ratio": 1.0
+    }
+  },
+  "method": "manual master landmark grid; uniform scale + translation only; automatic SIFT rejected (2 inliers each)",
+  "evidence": "qa/arms-rigid/current.png, current-shoulders.png, review.jpg, drag-final.jpg",
+  "limits": "sampled preview, not native-host acceptance; review.jpg precedes last 1/4 pixel translation adjustment; current and drag-final use final translation"
+}

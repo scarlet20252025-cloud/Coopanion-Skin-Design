@@ -1,0 +1,10 @@
+{
+  "scale": 0.8,
+  "translation": [
+    136,
+    158
+  ],
+  "source": "body-relaxed.png",
+  "ground_y": 1120,
+  "same_as_normal_seated": true
+}

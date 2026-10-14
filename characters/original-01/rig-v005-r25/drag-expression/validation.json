@@ -1,0 +1,18 @@
+{
+  "status": "local_review_not_installed",
+  "reference": "whale-reference-91293b3/drag_release/0033.png; expression concept only, no pixels copied",
+  "brow_samples": 44,
+  "drag_samples": 48,
+  "drag_face_assertions": "passed",
+  "release_face_assertions": "passed",
+  "browser_errors": [],
+  "limits": "sampled browser QA, not exhaustive or native host acceptance",
+  "sha256": {
+    "packs/gpt-dragon-v005-r25/brows.js": "d31e8fd3cd68d42807aef61bb3e95839e79e64580a98807b277c8cf643d55569",
+    "packs/gpt-dragon-v005-r25/expressions.js": "ace2d7187405a26af1d7904b86ab0e3e7878ffdf54a3f59ec0b7dfa68374d3af",
+    "packs/gpt-dragon-v005-r25/clean-sources.js": "ec0ccb55f34a1810f28135a6ebedae0d78d94c8ae6f6505e2968fb3e98e144d4",
+    "packs/gpt-dragon-v005-r25/figure.js": "623c845be6d762626aa9f8bee64cec455f63eda6edc71d161b1086147fb98059",
+    "packs/gpt-dragon-v005-r25/tex/head-flustered.png": "8ee0a32388054856786eff2a917218f2a4c6bdd270752be36b8057d201f04afa",
+    "packs/gpt-dragon-v005-r25/tex/brow-underpaint.png": "3557d1a69129e9113749bb25e95c2aa0c7ffdc34e062811baa8823ce6243bf8e"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "uniform_scale": 0.8,
+  "translation": [
+    136,
+    158
+  ],
+  "neck_target": [
+    670,
+    590
+  ],
+  "feet_target": 1120,
+  "mask": "own alpha, no old seated silhouette"
+}

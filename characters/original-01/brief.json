@@ -1,15 +1,16 @@
 {
   "id": "original-01",
-  "status": "v005-r06-native-prototype",
+  "status": "released-1.0.2",
   "confirmed": {
     "character_type": "参考用户形象的 GPT 龙娘，Q 版人物",
     "target": "Coopanion",
-    "animation": "官方分件动画方式"
+    "animation": "官方分件动画方式",
+    "name": "GPT 龙娘",
+    "author": "Asryto",
+    "repository": "https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design"
   },
   "undecided": [
-    "名字",
-    "性格",
-    "母版最终验收"
+    "性格"
   ],
   "proposed": {
     "master_canvas": [

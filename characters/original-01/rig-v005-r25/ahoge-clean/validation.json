@@ -1,0 +1,14 @@
+{
+  "status": "local_review_not_installed",
+  "sample_count": 60,
+  "ahoge_method": "independent image and rigid pivot; strip bending removed per user",
+  "dizzy_only": true,
+  "happy_hz": 3.2,
+  "drag_hz": 4,
+  "code_hashes": {
+    "secondary.js": "bc7327d7a5f2f84c9600615ce519e38991fdcc7bc9a1cb760c6c243e15d60a67",
+    "wings.js": "d4143715fb41517c005cf77cc0ee76d7bfb8fea2bd5651e1627651f3195a0305",
+    "brows.js": "b66a7a3f8c8b98e957a222fec8bee18e2ff66b9d98edcd59c01e5de3928c922b",
+    "figure.js": "ffa870f7856790e9f6e28c9608425f9b7ea8e78a43f639ced863ed45690b3dd3"
+  }
+}

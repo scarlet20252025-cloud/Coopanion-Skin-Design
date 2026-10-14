@@ -1,0 +1,16 @@
+{
+  "status": "local_review_not_installed",
+  "source_sha256": "408cd0cdbe98bf87bbaf8cd4e68eb086b0fa296f2881ccefe64b19e7c07cc4e0",
+  "sample_count": 50,
+  "cases": [
+    "sit",
+    "stand-from-sit",
+    "sit-happy",
+    "sit-flap",
+    "dizzy"
+  ],
+  "old_seated_body_loaded": false,
+  "old_seated_mask_applied": false,
+  "standing_head_expressions_shared": true,
+  "browser_errors": []
+}

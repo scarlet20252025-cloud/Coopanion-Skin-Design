@@ -1,7 +1,7 @@
 """Build a reproducible standalone preview ZIP."""
 from pathlib import Path
 import sys,json,hashlib,zipfile
-R=Path(__file__).resolve().parents[1];name=sys.argv[1] if len(sys.argv)>1 else 'gpt-dragon-v005-r06';P=(R/'packs'/name).resolve();assert P.parent==R/'packs'
+R=Path(__file__).resolve().parents[1];name=sys.argv[1] if len(sys.argv)>1 else 'gpt-dragon-v005-r25';P=(R/'packs'/name).resolve();assert P.parent==R/'packs'
 m=json.loads((P/'figure.json').read_text(encoding="utf-8"));model=json.loads((P/'model.json').read_text(encoding="utf-8"));lock=json.loads((R/'characters/original-01/production-lock.json').read_text(encoding="utf-8"))
 assert m['id']==name and model['master_sha256']==lock['sha256']
 assert hashlib.sha256((R/lock['active_master']).read_bytes()).hexdigest()==lock['sha256'], 'Locked master changed'

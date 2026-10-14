@@ -1,0 +1,16 @@
+{
+  "status": "local uninstalled candidate; sampled visual QA only",
+  "samples": 54,
+  "evidence": "qa/seams-wave/details.json",
+  "wave": "current shoulder/sleeve with hand-only difference; shoulder behind bodice, whole sleeve behind front hair, palm-only foreground; 10px pose tuck during wave, no scale/shear",
+  "dress": "continuous image-edited lower dress in master coordinates, removes raw master fold splice",
+  "tendrils": "same-source half-pixel overlap and root overlap; unchanged motion",
+  "sha256": {
+    "packs/gpt-dragon-v005-r25/clean-sources.js": "093bbe444d497054cabbf5b1bc50797e3f8d9171ba7b7d32b70e21e458c53990",
+    "packs/gpt-dragon-v005-r25/figure.js": "bb3f8ba573041527fb9f2054c1ca54aba72ea3eefc1470f55fed3a743afac24d",
+    "packs/gpt-dragon-v005-r25/secondary.js": "29280a30622d0aad24d9bfe4ddd8197ddd5fa77bd0d29d1e3c02301f10bbbd90",
+    "packs/gpt-dragon-v005-r25/tex/arms-wave-master.png": "613862276838bc50ca1ce135a40a3c452b4280ac6b43dd5a7ed761cc4a41132d",
+    "packs/gpt-dragon-v005-r25/tex/dress-fold-clean.png": "89674e3bd62149a0f6331a40061b5dec46c25eb6e4b033032e1c88d2479f6a24"
+  },
+  "bangs": "old mismatched polygon/underpaint removed; continuous head, no independent bangs rotation"
+}

@@ -36,3 +36,15 @@ for(const word of manifest.vocab)if(!Number.isFinite(word.seconds)||word.seconds
 console.log('PASS: r06 master, local palm edit, spring preservation, config and required vocab durations.');
 
 if(JSON.stringify(latest.behavior_rig)!==JSON.stringify(await json('characters/original-01/rig-v005-r06/behavior-config.json')))throw Error('Sync behavior config');
+
+const release=await json('packs/gpt-dragon-v005-r25/figure.json');
+const releaseModel=await json('packs/gpt-dragon-v005-r25/model.json');
+const source=await json('packs/gpt-dragon-v005-r25/SOURCE.json');
+if(releaseModel.master_sha256!==hash)throw Error('Release master changed');
+if(release.id!=='gpt-dragon-v005-r25'||release.author!=='Asryto'||release.version!==source.version||release.homepage!==source.repository||source.author!==release.author)throw Error('Release attribution or version mismatch');
+if(JSON.stringify(releaseModel.part_registration)!==JSON.stringify(await json('packs/gpt-dragon-v005-r25/part-registration.json')))throw Error('Embedded registration mismatch');
+if(release.vocab.length!==39||new Set(release.vocab.map(v=>v.id)).size!==39)throw Error('Release vocab mismatch');
+for(const word of release.vocab)if(!Number.isFinite(word.seconds)||word.seconds<=0)throw Error(`Missing release duration: ${word.id}`);
+for(const field of ['entry','model','thumb'])await read(`packs/gpt-dragon-v005-r25/${release[field]}`);
+for(const file of ['README.md','SOURCE.json','LICENSE','UPSTREAM.json'])await read(`packs/gpt-dragon-v005-r25/${file}`);
+console.log('PASS: current release master, attribution, repository, embedded registration, 39 words and package entry files.');

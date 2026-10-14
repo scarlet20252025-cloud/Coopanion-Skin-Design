@@ -1,0 +1,18 @@
+{
+  "status": "local_review_not_installed",
+  "restored_source": "arms-wave-master",
+  "depth_back_to_front": [
+    "rear-ear-layer",
+    "whole-wave-arm",
+    "bodice",
+    "front-hair"
+  ],
+  "wave_samples": 48,
+  "detail_samples": 54,
+  "evidence": "qa/ear-depth",
+  "sha256": {
+    "packs/gpt-dragon-v005-r25/figure.js": "75d1e49d723e57e79e15317bf43bc103dd0201353d5d2595e502b571052e463c",
+    "packs/gpt-dragon-v005-r25/secondary.js": "94c2de43ac143f38393daa4e43eb9263898453d15ad29009e27406a5176fdf41",
+    "packs/gpt-dragon-v005-r25/clean-sources.js": "6e0b06b7567afb201dd401b96b823cff7208a1f07e2f0ae3eda6e84dce496cbd"
+  }
+}

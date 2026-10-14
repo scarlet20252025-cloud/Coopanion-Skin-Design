@@ -1,0 +1,7 @@
+Built-in image_gen; input eye-edit-input.png. Only generated local edits used; no whale pixels copied.
+
+Squeezed eyes:
+Edit this exact cropped anime face, keeping canvas framing and ALL hair, face outline, skin shading, eyebrows and mouth unchanged. Only change the two smiling curved closed eyelids into tightly squeezed anxious eyes, like > < . The left larger eye has two tapered dark purple lash strokes converging sharply at its inner/right corner, the right smaller eye two strokes converging sharply at its inner/left corner. The angle is clearly visibly tense, NOT curved smiling crescents, NOT X eyes, no eyeballs. Keep restrained elegant purple tapered lash line art matching character, thick outer lashes, not huge black symbols. This is a frightened embarrassed little dragon girl being picked up and struggling, cute tense squeeze not happy. Preserve exact eye positions and perspective sizes. No extra sweat or decorations. Preserve existing transparency.
+
+Brow underpaint:
+Edit target exact cropped anime face. Remove ONLY the two pale purple eyebrows visible high on the forehead just under the bangs, including the bits drawn across hair. Restore the underlying smooth peach skin / white lavender hair color where the brow strokes were. This is a clean underpaint for separately animated eyebrows. Keep everything else pixel-aligned and unchanged: curved closed smiling eyelids, mouth, hair strands and their dark outlines, head shape, shading and exact framing. Do not add any new eyebrows or facial marks. Preserve existing alpha.

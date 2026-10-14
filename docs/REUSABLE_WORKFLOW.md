@@ -1,3 +1,5 @@
+> 当前发布版为 GPT 龙娘 1.0.2，作者 Asryto。仓库：https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design 。下文 r02–r06 的具体过程为历史案例；当前状态以 RELEASE_NOTES.md 和 r25 包为准。
+
 # 从一张母版到可修改桌宠：实做工作流
 
 本记录来自 GPT 龙娘 v005 的制作和返工。目标是 Coopanion API 2 形象包；不是 ChatGPT Pets，也不是可直接导入 Cubism 的 Live2D 模型。官方方法、我们的实现、视觉通过和用户验收是不同层次。
@@ -10,11 +12,11 @@ cd Coopanion-Skin-Design
 npm run preview
 ```
 
-浏览器打开 `http://127.0.0.1:4319/preview/dragon-r06.html`。预览只需 Node，不需配置图像 API、安装训练环境或重新生成图片。直接打包只需标准 Python，无需安装图像依赖：
+浏览器打开 `http://127.0.0.1:4319/preview/dragon-r25.html`。预览只需 Node，不需配置图像 API、安装训练环境或重新生成图片。直接打包只需标准 Python，无需安装图像依赖：
 
 ```powershell
 npm run check
-python scripts/package-pet.py gpt-dragon-v005-r06
+python scripts/package-pet.py gpt-dragon-v005-r25
 ```
 
 `dist` 会生成 ZIP 与 `.zip.sha256`。ZIP 根目录为 figure.json。安装和验证见 [安装与交付说明](INSTALL_AND_VERIFY.md)。不要为了预览或打包去运行素材生成脚本。

@@ -1,54 +1,41 @@
-# Coopanion Skin Design
+# GPT 龙娘 · Coopanion 形象包
 
-原创 Q 版人物桌宠绘制工程。目标平台为 **Coopanion**，采用官方分件动画方式；Cortico 是其 Agent 框架。
+作者：**Asryto**  
+仓库：[Coopanion-Skin-Design](https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design)  
+当前发布版：**1.0.2**，形象名称：**GPT 龙娘**。
 
-当前阶段：**v005-r06 / 0.6.6 开发版**。招手使用掌心朝外独立差分并在结束后恢复；走跑以脚底落点补偿旋转，手脚参数分开调。继承头发/翼尖/尾部的小范围柔性动态。待机弹性仍为此前降低 30% 的设置，跳跃保留 Q 弹。
+银白浅紫 Q 版龙娘桌宠，支持 39 个动作与表情标签，包含独立眉毛、点击呆毛晃动、情绪振翅、提起挣扎、招手、原坐姿及圈圈眼晕乎。封面采用上半身近景。采用 Coopanion 官方 kit 驱动行为，源素材与配准围绕锁定 v005 母版维护。
 
-**想复用方法，先读 [实做工作流与失败案例](docs/REUSABLE_WORKFLOW.md)**。运行 `npm run preview` 后打开 `/preview/dragon-r06.html`。0.6.6 回看了左右朝向的 96 张交互采样帧及放大关节图，新增思考、工作、倾听轻量姿态并修正静止时的手发层序；已通过本机 Coopanion 导入。新增 13 项宿主输入协议/重载检查通过；真实桌面窗口输入、多屏行为与应用进程重启验收仍待完成。
+## 安装与打包
 
-官方鲸鱼娘已按固定版本采样为本地逐帧参考库，见 [采样规格与使用方式](docs/OFFICIAL_FRAME_REFERENCE.md)。新素材的唯一基准见 [production-lock.json](characters/original-01/production-lock.json)，问题原因见 [失败复盘](docs/RIG_FAILURE_REVIEW.md)。
+在 Coopanion「装扮 → 导入」中选择形象 ZIP，再选用「GPT 龙娘」。安装包根目录包含 `figure.json`、作者与仓库说明。
 
-推荐生产线：角色设定 → 单张母版 → See-Through 分层试验 → 局部补画与分层精修 → 统一 PNG 部件 → Coopanion kit / rig → 桌面验收。
-若自动分层质量不达标，直接采用官方「局部编辑 + 配准 + 遮罩拆件」路线；不反复重跑整张图。
+从仓库生成安装包，仅需 Python 标准库：
 
-直接使用：先看 [安装与交付说明](docs/INSTALL_AND_VERIFY.md)。预览仅需 Node；打包仅需标准 Python，无需图像生成环境。
-
-## 从这里开始
-
-- [绘制工程与阶段验收](docs/PRODUCTION_PLAN.md)
-- [工具与 Skill 选型、实测状态](docs/TOOLS.md)
-- [官方依据与版本记录](docs/SOURCES.md)
-- [母版、拆件、局部修补提示词](prompts/production.md)
-- [首个角色设定单](characters/original-01/brief.json)
-- [分件映射表](characters/original-01/parts.csv)
-- [制作与返工记录](characters/original-01/jobs.csv)
-
-```mermaid
-flowchart LR
-  A[锁定角色设定] --> B[母版验收]
-  B --> C[自动分层小样]
-  B --> D[局部编辑拆件]
-  C --> E[PSD/KRA与透明PNG]
-  D --> E
-  E --> F[Coopanion kit分件动画]
-  E -.按需验证.-> G[PSD2Live自动绑定]
-  F --> H[真实桌面验收]
+```sh
+python scripts/package-pet.py
 ```
 
-本仓库目前交付生产工程、v005 原位分层源文件和 r06 动作开发包。失败的 `packs/gpt-dragon` 仅留本机排查，不是可交付皮肤。PSD2Live 的 `.moc3` 不能当成 Coopanion 的 `figure.json` 包直接导入。
+输出为 `dist/gpt-dragon-v005-r25-1.0.2.zip` 与校验文件；与交付文件 `GPT 龙娘.zip` 内容相同。ZIP 不随 Git 提交。当前源码在 [`packs/gpt-dragon-v005-r25`](packs/gpt-dragon-v005-r25)。
 
-## 本机检查
+## 本地预览与检查
 
-在仓库根目录执行 `python scripts/doctor.py`，查看命令与当前 Python 的图像依赖。找不到 GUI 程序只表示 PATH 未发现，不代表机器上一定没安装。
-
-图像处理依赖待进入拆件阶段后装入独立环境：
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\python -m pip install -r requirements-art.txt
-.\.venv\Scripts\python scripts/doctor.py
+```sh
+npm run preview
+npm run check
 ```
 
-依赖范围是选型约束，尚非经过安装验证的锁文件。首轮工具实测通过后再冻结精确版本。
+预览只需 Node.js，无需 npm install。打开 `http://127.0.0.1:4319/preview/dragon-r25.html`，检查动作、表情、深浅背景及采样帧。`npm run check` 校验母版、历史参数约定与当前发布元数据；不替代视觉检查。
 
-最新参数、可编辑分层和检查记录见 [r06 记录](characters/original-01/rig-v005-r06/README.md)。开发包通过 `python scripts/package-pet.py gpt-dragon-v005-r06` 导出至 dist。
+已验证本机 Coopanion 的安装文件一致性、装扮页渲染和当前形象选择。呆毛清理与音符检查覆盖 64 张动态采样。多屏、不同 DPI 和应用进程重启尚未完整验收。
+
+## 说明与来源
+
+- [安装、更新与复核](docs/INSTALL_AND_VERIFY.md)
+- [当前版本记录](docs/RELEASE_NOTES.md)
+- [制作方法与失败复盘](docs/REUSABLE_WORKFLOW.md)
+- [分件归属与遮挡要求](docs/LAYER_OWNERSHIP_AND_OCCLUSION.md)
+- [母版锁定](characters/original-01/production-lock.json)
+- [上游来源及许可](packs/gpt-dragon-v005-r25/UPSTREAM.json)
+
+角色制作署名为 Asryto；上游代码署名与 AGPL 许可保留在包内。历史版本和失败案例用于制作记录，当前预览、打包和安装应使用 r25。

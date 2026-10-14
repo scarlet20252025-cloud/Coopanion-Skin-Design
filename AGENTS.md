@@ -19,3 +19,5 @@
 - 对外经验入口 docs/REUSABLE_WORKFLOW.md；同步最新已验证事实、失败原因与边界。宿主 vocab 每项必须有正数 seconds；纯预览通过不可替代实际导入。
 
 - 涉及分件、遮罩、补画、头发/翅膀/尾巴交叠时，先读 docs/LAYER_OWNERSHIP_AND_OCCLUSION.md。检查像素归属和变换父节点，禁止把扩补片或调整层序当作通用修复。先提供完整角色视觉证据，再声明完成。未验收候选不得自动替换当前安装版。
+
+- 当前发布入口更新：GPT 龙娘 1.0.2，作者 Asryto，pack 为 packs/gpt-dragon-v005-r25；默认打包目标与预览为 r25。上面的 r06 专用构建/同步命令仅适用于历史流程，不能覆盖当前 r25。当前配准配置在 r25 model.json 的 part_registration，原始坐姿与圈圈眼晕乎保持当前方案。
