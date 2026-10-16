@@ -266,3 +266,14 @@ qa/dizzy.json 有 42 张进入、摇晃、挤眼恢复、站起及普通坐姿�
 
 候选指纹 `9085706f6aeacfc7c50ddf6cb1ac9fd1813c3744fedf4631db40f286d52f2ab4`。注意：`qa/current` 帧为 960x800 浏览器视口尺寸，与本机离线合成的裁切尺度不同，逐像素比对不成立；同一视口下的比对应在预览页重采样后进行。
 
+
+### 第八轮：抬手图层修复（2026-10-16，已应用到候选）
+
+根因：pure-generation/renderer-template.js 的绘制顺序 = 挂载顺序（不按 z 排序），rm-left 原本挂在 head 组之前，因此 head-clean／	ail-left-front／蝴蝶结／呆毛都盖在手臂上，model.json 里的 z 对画面无效。
+
+改法（renderer-template.js）：按 后发 → 腿 → 远臂 → 衣身 → 头部头发组(head) → 近臂(armFront) → 五官组(faceHost) 的顺序挂载；aceHost 每帧同步 head 的 transform，五官仍在手臂之上并跟随点头/摇头。近臂因此位于**所有头发图层之上**。
+
+已验证：预览页刷新后五官、眨眼正常（截图核对）。未验证：真实抬手极值（预览页的「导出左右动作 QA」用真实指针驱动动作，本轮自动点击未能触发手势，需在页面里点该按钮或下一轮重跑采样）。
+
+候选指纹 `15e1c0919a76b7561f492da94adf49458616c7d9b69a3de79d44e3f0622fbf3f`。
+
