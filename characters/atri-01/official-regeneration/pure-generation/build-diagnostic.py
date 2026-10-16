@@ -83,7 +83,10 @@ FIT_LIBRARY=json.loads((ROOT/'scratch/asset-candidates-fit.json').read_text(enco
 near=np.array(FIT_LIBRARY['left-library']['matrix'],float)[:2]
 far=np.array(FIT_LIBRARY['right-current']['matrix'],float)[:2]
 NEAR_LOCK=ROOT/'characters/atri-01/official-regeneration/raw/pony-pair-left-01.png'
-NEAR_LOCK_FRONT_CLIP=(0,545)
+# 2026-10-16 user decision A: the lock's upper part covers the crown hair again (the front piece is no
+# longer restricted to the rows head-clean leaves open), and the split to the back layer is moved down
+# to the middle of the lock so the lower half sits under the hair ends.
+NEAR_LOCK_FRONT_CLIP=(0,640)
 rear=np.array([[.9,0,40],[0,.9,15]])
 # 2026-10-16 user review: next to the left bow the head showed two parallel outlines, because
 # rear-hair draws its own contour just outside the head's own contour (it is placed at 0.9 scale with
@@ -102,13 +105,7 @@ HEAD_ROWS=np.zeros((1374,1145),bool);HEAD_ROWS[150:521]=True
 # and only over the crown-to-bow rows (y 150-360), so face height is never touched.
 REAR_TRIM=(OUTSIDE_HEAD<=6)&(~HEAD_FILLED)&HEAD_ROWS
 add('tail-left',NEAR_LOCK,near,-2,[370,300])
-# 2026-10-16 user review round 9: the front piece is drawn above head-clean, so the lock's own outline
-# showed *inside* the crown hair just above the bow (the "residue" line). Trimming outside the head
-# contour could never remove it. The front piece may now only exist where the head hair does not cover
-# it, so the lock never paints a second line over the crown.
-FRONT_EXCLUDE=(HEAD_FILLED.astype('uint8')>0)
-FRONT_EXCLUDE[546:]=False
-add('tail-left-front',NEAR_LOCK,near,6.05,[370,300],role='lock-front',clip=NEAR_LOCK_FRONT_CLIP,exclude=FRONT_EXCLUDE)
+add('tail-left-front',NEAR_LOCK,near,6.05,[370,300],role='lock-front',clip=NEAR_LOCK_FRONT_CLIP)
 add('tail-right',P/'raw/ponytail-far-complete-06.png',far,-1,[803,300])
 add('rear-hair',P/'raw/rear-hair-complete-04.png',rear,0,exclude=REAR_TRIM)
 add('leg-left',P/'registered/leg-left-02.png',z=1,pivot=[551,1090],role='leg')
