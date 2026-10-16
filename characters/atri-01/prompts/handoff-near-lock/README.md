@@ -4,11 +4,16 @@
 
 ```
 characters/atri-01/prompts/handoff-near-lock/
+  00-一条消息-直接发送.md            <<< 这份整篇就是要发的那条消息，直接复制粘贴
   01-master-full-canvas.png          完整原图（1145×1374 透明底）
   02-near-lock-region-magenta.png    同一张图，近侧马尾所在区域用品红方带标出
   03-prompt-to-paste.txt             正文，整段粘贴
   LATEST-WORKING-NOTES.md            当前最新结论（优先于仓库里任何旧失败记录）
 ```
+
+**我们和网页版暂时不能直接沟通**，所以发出去的东西必须自洽：`00-一条消息-直接发送.md`
+已经写成一份独立可读的交接文件（含任务、附件说明、硬性要求、自检项、已失败做法、交付格式），
+整篇复制即可，不需要任何补充说明。`03-prompt-to-paste.txt` 是早期简版，发 `00` 就够。
 
 ## 发之前
 
