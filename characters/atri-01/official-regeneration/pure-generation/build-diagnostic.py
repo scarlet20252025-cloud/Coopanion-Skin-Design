@@ -148,21 +148,46 @@ model=json.loads((OLD/'model.json').read_text(encoding='utf8'))
 model['parts']=[{k:r[k] for k in ('id','file','z','pivot','role','poses')} for r in records]+lock['parts']
 model['part_registration']={p['id']:[1,0,0,1,0,0] for p in model['parts']}
 model['bounds']=[95,20,1045,1310]
+# 2026-10-16 user instruction: 大哭 looked wrong. The kit's tear particle is a whole logo-unit
+# teardrop (18.5 x 12 units, the same size the official whale uses); on this face - whose eyes are
+# less than half the whale's width - a drop centred on an eye covers the whole face. So only the
+# crying pair moves out to the sides of the head, where the drops fall past the eye onto the hair,
+# and the figure draws the official tear stream from each lower lid to its drop. The single-tear
+# faces (难过 / 担心 / 慌张 / 害怕) keep the anchor they were accepted with.
+model['anchors']['tear']=[719,509]
+model['anchors']['tears']=[455,600,845,580]
 model['words']=list(dict.fromkeys(model['words']))
 # 2026-10-16 user instruction: bring the vocabulary up to the whale pack's list 1:1. The renderer
-# forwards every word it knows to the official kit's native do(), and the kit draws the effects
-# (heart/note/star/sweat/tear/spiral/ring/bubble) and the pointer themselves, so a word missing here
-# simply never reaches them. Struggle already exists: mode==='drag' switches the face to flustered and
-# adds a 15Hz shake to the hair/tuft.
+# forwards every word it knows to the official kit's one word entry point (createBody() returns
+# `do: ctl.doWord`; there is no native setExpr), and the kit then plays the motion, sets the face and
+# paints its own particles (z/heart/dust/note/drop). The rest of the official effects are NOT the
+# kit's: it only declares the flags on its FACES table (sparkle / sweat / anger / orbit / bang /
+# question / listen / think / streams) and the figure draws them - see the "figure-side effects"
+# block in renderer-template.js.
 WHALE_VOCAB=['bubble','heart','note','pointer','ring','spiral','star','sweat','tear',
              'drag','dragged','tremble']
-model['words']=list(dict.fromkeys(list(model['words'])+WHALE_VOCAB))
+# 2026-10-16 user instruction: the expression list too, not only the effect words. These six are the
+# entries the official pack's vocabulary has and this manifest did not; kind, zh names, about and
+# seconds are copied from the whale pack's own figure.json so the two vocabularies match one to one.
+# Kept as literals because references/ is a local unpacked copy and is not tracked by git.
+WHALE_EXTRA_VOCAB=[
+ {"id":"sleepy","kind":"expression","names":{"zh":["犯困","困"]},"about":{"zh":"眯眼打哈欠","en":"squints and yawns"},"seconds":0.9},
+ {"id":"thinking","kind":"expression","names":{"zh":["思考","想想"]},"about":{"zh":"眼睛往上看,头顶冒圈","en":"looks up, rings rise overhead"},"seconds":0.9},
+ {"id":"pout","kind":"expression","names":{"zh":["嘟嘴","哼"]},"about":{"zh":"嘴嘟起来,脸红,扭头不看你","en":"pouts, blushes and turns away from you"},"seconds":0.9},
+ {"id":"determined","kind":"expression","names":{"zh":["认真","坚定"]},"about":{"zh":"眼神压低,一脸认真","en":"a lowered gaze, a serious face"},"seconds":0.9},
+ {"id":"cry","kind":"expression","names":{"zh":["大哭","哭"]},"about":{"zh":"闭眼大哭,眼泪直流","en":"eyes shut, wailing, tears streaming"},"seconds":0.9},
+ {"id":"flap","kind":"motion","names":{"zh":["扑腾","激动"]},"about":{"zh":"开心地蹦起来,呆毛和头发一起扑腾","en":"bounces happily, ahoge and hair flapping"},"seconds":1.5},
+]
+# the renderer's do() gates on model.words, so the added words have to be listed there as well
+model['words']=list(dict.fromkeys(list(model['words'])+WHALE_VOCAB+[w['id'] for w in WHALE_EXTRA_VOCAB]))
 model['pure_generation']={'provenance':'SOURCE.json','status':'diagnostic candidate; full art/motion acceptance pending'}
 (OUT/'model.json').write_text(json.dumps(model,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
 (OUT/'part-registration.json').write_text(json.dumps(model['part_registration'],indent=2)+'\n',encoding='utf8')
 manifest=json.loads((OLD/'figure.json').read_text(encoding='utf8'))
 manifest['name']['zh']='GPT 亚托莉 · 整件生成候选'
 manifest['thumb']='tex/head-clean.png'
+_have={w['id'] for w in manifest['vocab']}
+manifest['vocab']=list(manifest['vocab'])+[w for w in WHALE_EXTRA_VOCAB if w['id'] not in _have]
 (OUT/'figure.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
 source={'version':manifest['version'],'author':manifest['author'],'repository':manifest['homepage'],'method':'Only whole imagegen component drawings. Original approved expression art is the explicit exception. No mother pixel grafts, old cutout alphas, colour blending, outline restoration or mesh patches. Detached generated alpha islands removed mechanically; uniform similarity only.','status':'diagnostic; no installation or release','parts':records,'seated_registration':seat_report,'expression_files':{f:h for f,h in lock['files'].items() if f.startswith('tex/')},'hair_registration':'two anchor initial placements / rear initial uniform placement; no exact reconstruction claim','far_arm_correction':'Earlier visible-cuff-width assumption withdrawn. Full cuff is partly occluded by torso; assembly uses complete generated source50 behind complete generated torso.'}
 (OUT/'SOURCE.json').write_text(json.dumps(source,ensure_ascii=False,indent=2)+'\n',encoding='utf8')

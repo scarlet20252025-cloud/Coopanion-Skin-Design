@@ -71,10 +71,11 @@ python -m http.server 8765 --bind 127.0.0.1     # 仓库根目录
 ## 5. 已验证 / 未验证
 
 **已验证**：预览页可正常渲染；五官与眨眼正常；近臂位于头发之上；后发裁剪后脸侧不再出现空洞；
-词汇表与官方 kit 的透传路径打通（`do()` 可到官方特效实现）。
+词汇表与官方 kit 的透传路径打通（`do()` 走官方 `doWord`，动作与表情都生效）；
+图侧特效层已完成并逐项看过（见第 11 节）。
 
 **未验证**：真实动作采样（qа/current 的 104 帧属于改动前指纹，已标失效）；抬手极值时手是否压脸；
-特效逐词验收；坐姿与转向下的层序。
+特效在坐姿以外状态下的逐帧时长相较；坐姿与转向下的层序。
 
 ## 6. 待办（按优先级）
 
@@ -82,8 +83,8 @@ python -m http.server 8765 --bind 127.0.0.1     # 仓库根目录
    限制在头部头发未覆盖处。需要用户确认最终取向，再做数值级微调（例如只排除出现残留的那几行）。
 2. **残留线**：蝴蝶结右侧沿头部弧线仍有并行线（`head-clean` 自己的描边 vs 马尾/后发外缘）。
    方法论：**先量后削**——把该窄带内各层深色线像素数逐层列出，确定归属再动。
-3. **特效逐词验收**：`sweat / tear / heart / note / star / spiral / ring / bubble / pointer`
-   与鲸鱼娘并排比对时长与位置（特效由官方 kit 绘制，ATRI 已命名 `bubble/gaze/hearts/tear/tears/z` 挂点）。
+3. **特效时长并排比对**：官方 kit 只画自己的粒子（`z / heart / dust / note / drop`），
+   其余特效标记由 figure 自绘（见第 11 节，已实现）；待做的是与鲸鱼娘并排量时长与出现时机。
 4. **剩余动作曲线**：`bow / dizzy / jump / hop / spin / shiver` 的时长与恢复曲线对齐鲸鱼娘。
 5. **全词汇 1:1 并排验收**：两边同动作截图对照，存证。
 6. 重新跑一次真实渲染采样（装 playwright 或用浏览器手动触发页面的「导出左右动作 QA」）。
@@ -121,4 +122,38 @@ python -m http.server 8765 --bind 127.0.0.1     # 仓库根目录
 
 - **前景/后景关系（已定，方案 A）**：副马尾（近侧马尾）**上段覆盖到前景**——压住头顶头发（此前为消除残留线而把前景段限制在头部头发未覆盖处，已撤销）；**下段从发束中段 y=640 起走后层**，显示在发尾下面。实现：`build-diagnostic.py` 的 `NEAR_LOCK_FRONT_CLIP=(0,640)` 且前景段不再排除 head-clean 覆盖区，提交 `ee452de`，候选指纹 `0d2734280d41127b3f0d728c94b8b6ac2e8396896bfd12de01c28480ab2624b5`。
 - 用户对该版评价："可以的很完美"，此取向作为后续基线，不要再反复。
+
+## 11. 图侧特效层 + 大哭重做（2026-10-16，用户反馈"期待/拎起没特效""大哭太丑"）
+
+**根因**：`preview/vendor/kit/body.js`（与官方发布包**逐字节一致**，`03520bb8…`）只在 `FACES` 表里
+**声明**特效标记（`sparkle / sweat / anger / orbit / bang / question / listen / think / streams`），
+文件内**从不消费**它们——官方做法是**由 figure 自己画**。官方鲸鱼娘 figure 的三处实现即：
+`drawFx()`（汗滴／怒筋／问号／感叹号／晕乎星／倾听弧／思考泡）、`paintOpenEye()`（期待＝虹膜上的闪烁星，
+官方词条写"眼睛里闪着星星"）、`paintStreams()`（大哭泪流）。ATRI 渲染器此前**整层缺失**，
+所以"按了没反应"；而 kit 自己的粒子（难过泪滴、爱心、音符、睡 z、尘土）一直是好的。
+
+**实现**（`renderer-template.js` 的 "figure-side effects" 段）：
+- 位置用**官方数值**（kit logo 单位：x=128 在身体中线、脚底 y=256），再按 ATRI 自己的
+  `logo_scale / center_x / feet_y` 换算，不靠目测；`probes/check-fx-clearance.py` 验证六个挂点在本包
+  合成图上都是空白画布（alpha=0，PASS）。
+- 尺寸 = 官方数值 × 一个 logo 单位对应的 master 像素。坐姿偏移沿用 `anchors` 的既有约定
+  （dx −3 / dy +298，**单位是 master 像素**）；曾经误加成 logo 单位，导致坐姿特效落到 y≈1707（已修）。
+- 期待星：两枚白色四角星画在虹膜上逐帧闪烁，用该眼贴图自身 alpha 做 mask，只在"睁眼"贴图显示时出现
+  （闭眼自动消失）。虹膜中心**实测**（`probes/measure-iris-centre.py`，四张睁眼贴图）。
+- 腮红：官方 figure 会画径向渐变腮红，但 ATRI 的成品脸贴图**自带腮红**
+  （`tex/head-clean.png` 在 (556,544) 采样 rgb(252,206,195)），再叠一层会糊掉已验收的颜色 → 不画。
+- 词汇表 1:1：补上官方有而 ATRI 缺的 6 个词（`sleepy 犯困 / thinking 思考 / pout 嘟嘴 /
+  determined 认真 / cry 大哭 / flap 扑腾`），`figure.json.vocab` 37 项、`model.words` 49 项。
+  **坑**：渲染器 `do()` 以 `model.words` 为准，只加 `vocab` 不加 `words` 会 `accepted:false`。
+
+**大哭重做**：kit 的 `drop` 粒子是一整枚 logo 单位的泪滴（18.5×12 logo，与官方鲸鱼娘同尺寸）；
+ATRI 的眼宽只有鲸鱼娘的约 45%，泪滴挂到眼睛上会盖住整张脸（试过单滴在近眼角，同样盖脸）。
+改为：**细泪流**从每只眼下眼睑出发（官方 `paintStreams` 的锥形形状，方向指向挂点），
+**泪滴挂到头部两侧**（`anchors.tears=[455,600,845,580]`）落在头发/背景上，脸完全露出。
+单滴表情（难过/担心/慌张/害怕）保持原挂点 `tear=[719,509]` 不动 —— 见 `build-diagnostic.py` 注释。
+
+**并排佐证**：`scratch/fx-shots/` 下留有预览页截图（期待星、生气怒筋、慌张/被拎起汗滴、晕乎三颗星、
+疑惑问号、惊讶感叹号、大哭泪流＋两侧泪滴）；官方鲸鱼娘预览页
+（`references/whale-coopanion-repro-kit/assets/shipped/preview-pkg/examples/whale/index.html`，
+用同一个 8765 服务直接打开）截图证明官方泪滴尺寸一致、只是它脸大所以不盖脸。
 
