@@ -77,7 +77,12 @@ export async function createLayeredBody(base,opts){
   },dispose(){mounted=null;nodes.clear();faceNodes.clear()}
  };
  const native=opts.kit.createBody(opts.host,{figure});
- return {...native,words:model.words,visualState:()=>({face:lastFace,pose:poseSeated?'seated':'standing',seatMix,blink,eyeArt:(poseSeated?faceSeat:faceStand)?.currentEyeArt}),secondaryState:()=>({ahoge:tuft,waveAngle,tailLeft:hairL,tailRight:hairR,bodyScaleRatio}),do:word=>model.words.includes(word)?native.do(word):false,
+   // 2026-10-16: the official body exposes its word entry point as `doWord` (see kit/body.js: the
+   // returned object lists `... act, setExpr, doWord, walkTo ...`). This renderer was forwarding to
+   // `native.do(...)`, which does not exist, so every word other than the gestures handled locally
+   // (wave/nod/shake) was silently dropped - which is why no effect (sweat on pick-up, hearts, notes,
+   // stars, tears) ever appeared. Forward to `doWord` and keep `do` as a fallback for older kits.
+   return {...native,words:model.words,visualState:()=>({face:lastFace,pose:poseSeated?'seated':'standing',seatMix,blink,eyeArt:(poseSeated?faceSeat:faceStand)?.currentEyeArt}),secondaryState:()=>({ahoge:tuft,waveAngle,tailLeft:hairL,tailRight:hairR,bodyScaleRatio}),do:word=>model.words.includes(word)?((native.doWord||native.do)?(native.doWord||native.do).call(native,word):false):false,
   pointer(type,p){if(type==='down')pointerStart={...p};if(type==='up'&&pointerStart){if(Math.hypot((p.x??pointerStart.x)-pointerStart.x,(p.y??pointerStart.y)-pointerStart.y)<8)tuftV+=50;pointerStart=null}return native.pointer(type,p)}
  };
 }
