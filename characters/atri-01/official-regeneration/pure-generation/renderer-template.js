@@ -64,8 +64,12 @@ export async function createLayeredBody(base,opts){
     nodes.get(id).setAttribute('transform',`rotate(${angle} ${pivotX} ${pivotY}) ${registered(id)}`);
    waveAngle=kind==='wave'?111*e+6*Math.sin(k*Math.PI*6)*e:0;
    const gait=['walk','run','dance'].includes(o.mode)?Math.sin(o.t*(o.mode==='run'?14:8)):0;
-   for(const [id,angle] of [['arm-left',waveAngle+(kind==='wave'?0:1.2*gait)],['arm-right',-.8*gait],['leg-left',8*gait],['leg-right',-8*gait]]){const [x,y]=parts.get(id).pivot;nodes.get(id).setAttribute('transform',`rotate(${angle} ${x} ${y}) ${registered(id)}`)}
-   const target=2.8*Math.sin(o.t*2.3)+clamp(o.look?.[0]||0,-6,6)*.17+(o.mode==='drag'?2*Math.sin(o.t*15):0);
+    // Struggle while held, aligned with the whale pack: kit/body.js flaps every limb as
+    // tx = hx + 7*sin(T*11 + i*2.2) and jitters the eyes at 22Hz, so the limbs here flap at 11Hz with
+    // the same 2.2 rad phase offset and the hair/tuft shake moves from 15Hz to 21Hz.
+    const held=o.mode==='drag';
+    for(const [id,angle] of [['arm-left',waveAngle+(kind==='wave'?0:1.2*gait)+(held?3*Math.sin(o.t*11):0)],['arm-right',-.8*gait+(held?3*Math.sin(o.t*11+2.2):0)],['leg-left',8*gait+(held?2*Math.sin(o.t*11+4.4):0)],['leg-right',-8*gait+(held?2*Math.sin(o.t*11+6.6):0)]]){const [x,y]=parts.get(id).pivot;nodes.get(id).setAttribute('transform',`rotate(${angle} ${x} ${y}) ${registered(id)}`)}
+    const target=2.8*Math.sin(o.t*2.3)+clamp(o.look?.[0]||0,-6,6)*.17+(held?2.5*Math.sin(o.t*21):0);
    tuftV+=(target-tuft)*80*dt;tuftV*=Math.exp(-11*dt);tuft=clamp(tuft+tuftV*dt,-10,10);nodes.get('ahoge').setAttribute('transform',`rotate(${tuft} 565 169) ${registered('ahoge')}`);
    lastFace=o.mode==='drag'?'flustered':o.face;
    const transitionClose=poseAge<.14?Math.sin(Math.PI*poseAge/.14):0,frame={...o,eyeClose:Math.max(o.eyeClose||0,transitionClose)};
