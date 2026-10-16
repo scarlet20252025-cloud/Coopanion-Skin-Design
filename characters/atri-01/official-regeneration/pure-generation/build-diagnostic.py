@@ -98,7 +98,10 @@ from scipy.ndimage import binary_fill_holes
 HEAD_FILLED=binary_fill_holes(HEAD_ALPHA)
 OUTSIDE_HEAD=cv2.distanceTransform((~HEAD_FILLED).astype('uint8'),cv2.DIST_L2,5)
 HEAD_ROWS=np.zeros((1374,1145),bool);HEAD_ROWS[20:600]=True
-REAR_TRIM=(OUTSIDE_HEAD<=8)&(~HEAD_FILLED)&HEAD_ROWS
+# Withdrawn 2026-10-16 after user review: this band ran the whole way round the head contour and also
+# removed the hair framing the face, leaving an empty band at face height. The doubled outline next to
+# the bow is still a real defect, but it needs a 2-3px trim restricted to the crown/bow rows.
+REAR_TRIM=np.zeros((1374,1145),bool)
 add('tail-left',NEAR_LOCK,near,-2,[370,300])
 add('tail-left-front',NEAR_LOCK,near,6.05,[370,300],role='lock-front',clip=NEAR_LOCK_FRONT_CLIP)
 add('tail-right',P/'raw/ponytail-far-complete-06.png',far,-1,[803,300])
