@@ -191,10 +191,16 @@ manifest['vocab']=list(manifest['vocab'])+[w for w in WHALE_EXTRA_VOCAB if w['id
 (OUT/'figure.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
 source={'version':manifest['version'],'author':manifest['author'],'repository':manifest['homepage'],'method':'Only whole imagegen component drawings. Original approved expression art is the explicit exception. No mother pixel grafts, old cutout alphas, colour blending, outline restoration or mesh patches. Detached generated alpha islands removed mechanically; uniform similarity only.','status':'diagnostic; no installation or release','parts':records,'seated_registration':seat_report,'expression_files':{f:h for f,h in lock['files'].items() if f.startswith('tex/')},'hair_registration':'two anchor initial placements / rear initial uniform placement; no exact reconstruction claim','far_arm_correction':'Earlier visible-cuff-width assumption withdrawn. Full cuff is partly occluded by torso; assembly uses complete generated source50 behind complete generated torso.'}
 (OUT/'SOURCE.json').write_text(json.dumps(source,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
-renderer=(OLD/'figure.js').read_text(encoding='utf8')
-face=renderer[renderer.index(' function buildFace('):renderer.index('\n const figure=')]
+# 2026-10-16: the preserved buildFace/paintFace block now lives in a tracked file instead of being
+# sliced out of the untracked scratch renderer, so the face code the pack ships is reviewable in git.
+# It was extracted from scratch/candidates/atri-hair-junctions/figure.js verbatim (that file's hash is
+# still recorded below), and it is the only place the drawn face - eyes, brows, mouth - is defined.
+FACE_SOURCE=P/'pure-generation/expression-face.js'
+face=FACE_SOURCE.read_text(encoding='utf8')
+if not face.startswith(' function buildFace('):
+    raise SystemExit('expression-face.js must start with the buildFace block')
 (OUT/'figure.js').write_text((P/'pure-generation/renderer-template.js').read_text(encoding='utf8').replace('@@FACE@@',face),encoding='utf8')
-(OUT/'EXPRESSION-PRESERVATION.json').write_text(json.dumps({'method':'buildFace/paintFace copied verbatim;26 accepted textures unchanged','source_renderer_sha256':hashlib.sha256((OLD/'figure.js').read_bytes()).hexdigest(),'copied_function_sha256':hashlib.sha256(face.encode()).hexdigest()},indent=2),encoding='utf8')
+(OUT/'EXPRESSION-PRESERVATION.json').write_text(json.dumps({'method':'buildFace/paintFace from pure-generation/expression-face.js (tracked); 26 accepted textures unchanged','source_renderer_sha256':hashlib.sha256(FACE_SOURCE.read_bytes()).hexdigest(),'copied_function_sha256':hashlib.sha256(face.encode()).hexdigest(),'scratch_renderer_sha256':hashlib.sha256((OLD/'figure.js').read_bytes()).hexdigest()},indent=2),encoding='utf8')
 import runpy
 runpy.run_path(str(P/'pure-generation/export-edges.py'),run_name='__main__')
 print(json.dumps({'out':str(OUT),'whole_generated_parts':len(records),'preserved_expression_textures':len(source['expression_files']),'seated_fit':seat_report},indent=2))

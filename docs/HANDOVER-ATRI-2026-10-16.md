@@ -157,3 +157,28 @@ ATRI 的眼宽只有鲸鱼娘的约 45%，泪滴挂到眼睛上会盖住整张�
 （`references/whale-coopanion-repro-kit/assets/shipped/preview-pkg/examples/whale/index.html`，
 用同一个 8765 服务直接打开）截图证明官方泪滴尺寸一致、只是它脸大所以不盖脸。
 
+### 11.1 嘴型（2026-10-16，用户："大哭丑更重要的原因是嘴型"）
+
+官方鲸鱼娘的脸表把 cry 映到**它的惊讶嘴 ×0.8**（`MOUTH.cry = ['surprised_mouth', .8]`），所以大哭应该是
+"惊讶的张口"缩小一点，而不是原先那条波浪糊块。现在 `expression-face.js` 的 `key` 先把 `cry` 路由到
+`surprised` 嘴并加 `mouthScale=.8`（`styles.cry` 那条波浪已删，路由后不可达）。
+**DOM 验证**：大哭 → `data-mouth-style="surprised"` + `transform=… scale(0.8 0.8)`；平静 → `neutral`；
+惊讶 → `surprised`（同一形状，用户已验收过 惊讶，所以大哭的嘴就是它缩小版）。
+
+### 11.2 眉毛（2026-10-16，用户："负面表情的眉毛没有变化"→"没动画"→"已解决"）
+
+根因不是看不见，而是**可见段不位移**：`brow-mask`（刘海之间的额头皮肤）把眉线切成碎段，而 sad/angry 的
+外端/内端位移在可见的中段几乎互相抵消（实测中段只位移 2~3px）。现在眉线加粗到 5（master px），位移约翻倍
+（sad/worried/confused/**cry** 外端 +22、内端 −12；angry/determined 外端 −12、内端 +26；
+happy/excited/surprised 外端 −9、内端 −10）。`cry` 归入 sad 组是因为官方脸表给 cry 标了 `brows:'sad'`。
+
+### 11.3 面部代码搬进仓库 + 验证坑
+
+- `buildFace/paintFace` 以前是"从 scratch 的 figure.js 里切出来"，现在改读**仓库内**的
+  `pure-generation/expression-face.js`（与 scratch 版逐字节相同，scratch 版哈希仍记在
+  `EXPRESSION-PRESERVATION.json`）。这样随包发布的面部代码在 git 里可评审，改眉毛/嘴型有据可查。
+- **验证坑**：内置浏览器标签页在后台时 `requestAnimationFrame` 被节流，DOM 读到的嘴/眉状态可能整体落后
+  一步（我遇到过整批读值偏移一格的假象），并且 `tab.screenshot()` / `getScreenshot()` 会直接报
+  "Unable to capture screenshot"。要截图就把标签页切到前台，或改用页面内的确定性采样
+  （`setEngineeringFrame` / 「导出左右动作 QA」）。
+
