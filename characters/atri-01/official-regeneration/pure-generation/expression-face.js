@@ -13,9 +13,9 @@
    const source=n('image',{width:W,height:H,href:textures.get(parts.get(id).file)});g.append(source);
    const happyId=`closed-happy-${i}`;
    const happy=n('image',{width:W,height:H,href:textures.get(parts.get(happyId).file)});g.append(happy);
-   // 2026-10-16 user instruction: the accepted closed-happy pair has a stray thin stroke at each outer end
-   // and no double-lid line, so a generated pair (pure-generation/new-art/) is used for the smiling face.
-   // The old single arc stays for the wink's closed eye.
+   // 2026-10-17 user correction: the old crop destroyed the lash tips and the double-lid line, it was not a
+   // layer problem. happy-arc-* (pure-generation/new-art/, restored from art-source/closed-happy.png by
+   // restore-smiling-eyes.py) is used for the smiling face. The old single arc stays for the wink's closed eye.
    const arc=n('image',{width:W,height:H,href:textures.get(parts.get(`happy-arc-${i}`).file),'data-eye-arc':i});
    g.append(arc);eyes.push({source,happy,arc});}
   // Each redrawn pair uses one registered posed-face source. No separate eye

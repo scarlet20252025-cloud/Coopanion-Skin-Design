@@ -242,3 +242,35 @@ happy/excited/surprised 外端 −9、内端 −10）。`cry` 归入 sad 组是�
 （`M-12 -2Q0 6 12 -4Q0 12 -12 -2Z`，填充 #b8737d，无舌头）。另外两套候选嘴仍在
 `scratch/fx-probe/face-sheet.png` 里备选（细线／张嘴带舌）。
 
+### 11.7 笑眼恢复：旧工程裁切，不是图层问题（2026-10-17，用户："这不是图层问题是旧工程的裁切问题"）
+
+**根因（已实测）**：`characters/atri-01/prepare.py` 的 `closed_polys` 是**两只手绘多边形**，用它去提
+取 `art-source/closed-happy.png` 的笑眼。多边形的上边缘从弧线**中间**穿过，所以：
+- 睫毛尖（左端 Y 型分叉、右端尖角）整块落在多边形之外，从未进入图层 —— 这就是"被切掉的睫毛"；
+- 双眼皮线（实测为 y≈462–470、亮度 202–230 vs 皮肤 241 的一条约 2px 暖褐细线）整条也在多边形之外
+  —— 这就是"游离细线/双眼皮缺失"的由来；
+- 弧线本身被多边形的斜边裁成歪的：左眼约 +19°、右眼约 −9°/+9°，所以两只眼看起来不对称。
+- 反过来多边形还漏进了约 635 px 的刘海像素。
+
+对照图：`scratch/gen/left-in-vs-out.png`（蓝＝旧多边形保留、橙＝被切掉的睫毛本体、洋红＝被切掉的双眼皮线）、
+`scratch/gen/recovery-L.png`（暗＝旧贴图、蓝＝恢复后的源区）。
+
+**结论**：认证源 `characters/atri-01/art-source/closed-happy.png`（1145×1374，`expression-provenance.json`
+里的 "retain accepted happy"）里的笑眼本身是对的，问题只在提取。所以**不再生成新笑眼**，改为从认证源重新提取。
+这同时废除了 11.6 的两套生成素材与 v4 那套短双眼皮线方案。
+
+**做法**：新增 `characters/atri-01/official-regeneration/pure-generation/restore-smiling-eyes.py`，
+用 `prepare.py` 给其它重绘眼套的同一套 coverage/unmatte 方法从认证源提取：
+- `ink`：比空白脸 `face-clean-v2.png` 暗（lc<190）且确有变化（delta>35）的深褐墨迹 = 眼弧＋睫毛尖；
+- `fold`：弧线上方 22–6px 窄带里那条淡线（delta>7 且 lc<239）；
+- **排除**：源图与空白脸都暗的像素（发丝），以及眼上方的眉/刘海条带（y 365–475），所以不带进头皮和刘海；
+- 小连通块只在贴近主体 25px 内时才并入，因此左端 Y 型分叉被保留、而孤立的杂点被丢弃。
+
+产物：`pure-generation/new-art/happy-arc-0/1.png`（**进仓库跟踪**，保证新克隆能重建同样的包），
+左眼 1778 px（lid 1750 + fold 207）、右眼 1153 px（lid 1106 + fold 164）；比旧贴图多出的正是睫毛尖与双眼皮线。
+`build-diagnostic.py` 已把注释改成这一版结论，重建后包内 `tex/happy-arc-*.png` 哈希与 `new-art/` 一致
+（73011a88… / 690e4d07…），`node` 导入通过。
+
+**用户口径（仍然有效）**：这套笑眼的**尖角和两端少量分叉是造型**，不是缺陷，任何后续清理都不得磨圆或去掉。
+
+**坐姿**：沿用 11.5 的相似变换，恢复后的笑眼在坐姿下同样生效。
