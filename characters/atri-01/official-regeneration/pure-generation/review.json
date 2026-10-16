@@ -17,6 +17,10 @@
   ],
   "rejected": [
     {
+      "component": "near lock, fourth one-part request to gpt-image-2.5 (tight magenta marker on the part location)",
+      "reason": "raw/ponytail-near-complete-12.png with the marker taken from the accepted lock layer dilated 8px (near-lock-magenta-v7.png) and the prompt stating the marker is a location, not an outline. Still returned a large central hair mass: alpha>0 components 525, bbox x330-677 y30-1282, 122987px. Four one-part failures in a row on this route; the model returns the hair mass rather than the single tied lock. Blind retries stop here."
+    },
+    {
       "component": "near lock, one-part request to the image endpoint (work-mode phrasing, no coordinates)",
       "reason": "raw/ponytail-near-complete-09.png from characters/atri-01/prompts/near-lock-v4-workmode.txt: the answer contained the whole left side hair instead of the single tied lock. alpha>0 connected components 228 (checklist requires 1), 65 isolated dark specks, bbox x247-598 y7-1359. Rejected; the failure was written into a new prompt rather than asked again in the same request, per docs/07 rule 6."
     },

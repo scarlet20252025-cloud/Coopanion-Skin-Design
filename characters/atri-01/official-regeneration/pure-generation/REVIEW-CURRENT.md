@@ -17,7 +17,7 @@
 
 **第三轮收紧（同日，用户要求“再严格一点、发根也露在头顶头发之上、认真理解母版结构”）**：根部裁切行由蝴蝶结盒下缘改取盒上部 +80 行（y=305）——母版的发束就是从结扣下方开始、紧接一束有内外双轮廓的可见发束，原来按盒下缘裁会在结与发束之间留横向缺口；该行以上马尾只允许出现在蝴蝶结贴图实际覆盖处。前景带随之改为 y 305–981（原来 551–978 会把发根让给头顶头发）。配准新增落到母版形体外的像素比例惩罚，并加硬规则：马尾任何像素不得超出母版形体轮廓（母版 alpha 膨胀 7px 后取交）。结果 scale 0.835／-3.50°、轮廓平均误差 4.10px、发根到蝴蝶结盒 0.0px。素材中段内部线条比母版简单（母版中段有一条紫褐色窄发束），非变换可修。
 
-**证据状态**：候选已重建，指纹 `416b53be9d77b3a67d61e4638562c3a1fea8a97999e9e81032b6daa3eb381971`。机器检查：两片马尾层 alpha>0 连通块均为 1、无游离像素；前景带 305–981 行共 41882 px（全部落在母版形体之内），其中 16084 px 本来会被其他图层盖住（前景段确实在起作用）；前景带与近侧手臂重叠 0 px。本轮只做离线诊断合成（scratch/verify-near-board.png、scratch/verify-frontband-board.png、scratch/root-zoom-board.png），`qa/current/` 里 104 帧属于改动前的指纹、已失效（见 qa/current/STALE.md），尚未重新跑真实渲染器采样，未安装、未发布、未获用户美术验收。
+**证据状态**：候选已重建，指纹 `2ce51915465e7384a57c8874c940d87904bd97360cccc4cdb099d79a98a6569e`。机器检查：两片马尾层 alpha>0 连通块均为 1、无游离像素；前景带 305–981 行共 41882 px（全部落在母版形体之内），其中 16084 px 本来会被其他图层盖住（前景段确实在起作用）；前景带与近侧手臂重叠 0 px。本轮只做离线诊断合成（scratch/verify-near-board.png、scratch/verify-frontband-board.png、scratch/root-zoom-board.png），`qa/current/` 里 104 帧属于改动前的指纹、已失效（见 qa/current/STALE.md），尚未重新跑真实渲染器采样，未安装、未发布、未获用户美术验收。
 
 原有29个冻结文件不变；候选26张表情源图逐字节一致，buildFace/paintFace从原有renderer原样复制。新身体不再加载garment-rest、肩部覆盖补片、旧发丝遮罩、色彩融合或网格强裁。
 
@@ -37,4 +37,4 @@
 
 **第四轮（用户指出素材用错，要求复用之前成功那一版，覆盖上文近侧马尾素材与前景带数值）**：上一轮使用的近侧马尾素材是 P 图抠出来的成对马尾图（`complete-ponytails-reextract`，落地 `raw/ponytail-near-complete-06.png`），用户指出该切割本身有误、不得使用，已撤销。现在近侧马尾改回原始恢复图层 `characters/atri-01/art-source/v6-recovery-baseline/tail-left.png`（与旧候选 `characters/atri-01/render-layers/tail-left.png` 同哈希），并复用右侧马尾当时成功的那套处理：`characters/atri-01/live2d-recovery/register-left-tail-mother.py` 做连续横向配准（y 不变、不重绘、不删 alpha；584 行平移 -27.8～+12.3px，根部 y≤355 与下端发尖 y≥940 不动），输出 `characters/atri-01/live2d-recovery/tail-left-mother-registered.png`，候选内按单位矩阵使用，记录见 `lock-placement.json` 的 `tail-left` 与 `live2d-recovery/tail-left-registration.json`。
 
-分层规则不变：整根在后层（z=-2），母版自己把马尾画在头顶头发之上的行在前景重复一次（z=6.05），根部裁切行 305 以上只允许出现在蝴蝶结实际覆盖处。本轮到发尾遮挡处为止的前景带为 y 305–947，共 39146px，其中 14076px 本来会被其他图层盖住；与近侧手臂重叠 0px。候选指纹 `416b53be9d77b3a67d61e4638562c3a1fea8a97999e9e81032b6daa3eb381971`（上文第三轮所述 305–981／41882px 属被本段覆盖的中间状态）。
+分层规则不变：整根在后层（z=-2），母版自己把马尾画在头顶头发之上的行在前景重复一次（z=6.05），根部裁切行 305 以上只允许出现在蝴蝶结实际覆盖处。本轮到发尾遮挡处为止的前景带为 y 305–947，共 39146px，其中 14076px 本来会被其他图层盖住；与近侧手臂重叠 0px。候选指纹 `2ce51915465e7384a57c8874c940d87904bd97360cccc4cdb099d79a98a6569e`（上文第三轮所述 305–981／41882px 属被本段覆盖的中间状态）。
