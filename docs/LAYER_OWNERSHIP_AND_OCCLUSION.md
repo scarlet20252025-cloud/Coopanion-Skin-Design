@@ -259,3 +259,10 @@ qa/dizzy.json 有 42 张进入、摇晃、挤眼恢复、站起及普通坐姿�
 
 候选指纹 `2ce51915465e7384a57c8874c940d87904bd97360cccc4cdb099d79a98a6569e`。
 
+
+### 第七轮：还原到用户指定的那一版（2026-10-16）
+
+用户指出我恢复错了版本：他要的是 `scratch/preview-current.png` 与 `qa/current`（13:21 采样）所渲染的那一版。据记录还原：近侧马尾 = `raw/pony-pair-left-01.png` + 当时记录的库内拟合矩阵（外缘轮廓误差 3.0px；远侧 8.9px），前景段为 y<=545（`clip=(0,545)`），无遮罩、无代码删像素；远侧沿用 `ponytail-far-complete-06` 的 8.9px 矩阵。保留的唯一新改动是近侧手臂 z=9（排在所有头发之上）。拟合矩阵取自 `scratch/asset-candidates-fit.json` 的 `left-library` 与 `right-current`。
+
+候选指纹 `9085706f6aeacfc7c50ddf6cb1ac9fd1813c3744fedf4631db40f286d52f2ab4`。注意：`qa/current` 帧为 960x800 浏览器视口尺寸，与本机离线合成的裁切尺度不同，逐像素比对不成立；同一视口下的比对应在预览页重采样后进行。
+
