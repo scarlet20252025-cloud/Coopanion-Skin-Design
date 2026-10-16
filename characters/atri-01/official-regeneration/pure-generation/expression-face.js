@@ -90,11 +90,10 @@
   // Talking modulates only the chosen design, never replaces its emotion.
   const styles={
    neutral:['M-12 0 Q-2 7 10 -1','none',''],
-   // 2026-10-16 user feedback: "开心的笑脸不是很自然" then "这个笑脸也不好看,再换一套". The official whale's
-   // happy mouth (sprites.happy_mouth) is not an open arc at all - it is one small dark oval, and its whole
-   // mouth vocabulary is ovals (neutral 15x11, happy 14x9 inside a 57x43 box). A 2.8px stroke was a
-   // hairline scratch; a big open crescent was too heavy. This is the official style: one small soft oval.
-   happy:['M-6 0C-6 -4 -2 -6 2 -6C6 -6 8 -4 8 0C8 4 6 6 2 6C-2 6 -6 4 -6 0Z','#b8737d',''],
+   // 2026-10-16 user feedback: 开心 went through three mouths - a 2.8px stroke (read as a hairline
+   // scratch), a big open crescent (too heavy) and the official small oval ("别用这张嘴"). This is the
+   // fourth: a smile with real weight but no wide开口 - a filled lens, mid-width, no tongue.
+   happy:['M-12 -2Q0 6 12 -4Q0 12 -12 -2Z','#b8737d',''],
    wink:['M-15 -2 Q-2 11 15 -5','none',''],
    shy:['M-9 2 Q-1 6 7 0','none',''],
    love:['M-10 1 Q0 8 12 -3','none',''],
