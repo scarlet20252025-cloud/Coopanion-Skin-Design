@@ -97,10 +97,10 @@ from scipy.ndimage import binary_fill_holes
 # otherwise "outside the head" would include the whole face and wipe the hair behind it.
 HEAD_FILLED=binary_fill_holes(HEAD_ALPHA)
 OUTSIDE_HEAD=cv2.distanceTransform((~HEAD_FILLED).astype('uint8'),cv2.DIST_L2,5)
-HEAD_ROWS=np.zeros((1374,1145),bool);HEAD_ROWS[150:361]=True
+HEAD_ROWS=np.zeros((1374,1145),bool);HEAD_ROWS[150:521]=True
 # Narrowed 2026-10-16 after the contour-wide version emptied the band beside the face: now only 3px,
 # and only over the crown-to-bow rows (y 150-360), so face height is never touched.
-REAR_TRIM=(OUTSIDE_HEAD<=3)&(~HEAD_FILLED)&HEAD_ROWS
+REAR_TRIM=(OUTSIDE_HEAD<=6)&(~HEAD_FILLED)&HEAD_ROWS
 add('tail-left',NEAR_LOCK,near,-2,[370,300])
 add('tail-left-front',NEAR_LOCK,near,6.05,[370,300],role='lock-front',clip=NEAR_LOCK_FRONT_CLIP)
 add('tail-right',P/'raw/ponytail-far-complete-06.png',far,-1,[803,300])
