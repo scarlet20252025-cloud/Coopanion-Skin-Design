@@ -85,10 +85,24 @@ far=np.array(FIT_LIBRARY['right-current']['matrix'],float)[:2]
 NEAR_LOCK=ROOT/'characters/atri-01/official-regeneration/raw/pony-pair-left-01.png'
 NEAR_LOCK_FRONT_CLIP=(0,545)
 rear=np.array([[.9,0,40],[0,.9,15]])
+# 2026-10-16 user review: next to the left bow the head showed two parallel outlines, because
+# rear-hair draws its own contour just outside the head's own contour (it is placed at 0.9 scale with
+# a [40,15] shift, so the two never coincide). Ownership: the head's outline belongs to head-clean, so
+# the thin sliver of rear-hair that lies just outside the head contour - within 8px - is trimmed.
+# Rear hair that really hangs outside the head (the long side/back masses) is far outside that band
+# and is not touched.
+HEAD_ALPHA=np.array(Image.open(P/'registered/head-blank-01.png').convert('RGBA'))[:,:,3]>60
+from scipy.ndimage import binary_fill_holes
+# head-blank-01 keeps the face area transparent for the expression layers, so holes are filled first;
+# otherwise "outside the head" would include the whole face and wipe the hair behind it.
+HEAD_FILLED=binary_fill_holes(HEAD_ALPHA)
+OUTSIDE_HEAD=cv2.distanceTransform((~HEAD_FILLED).astype('uint8'),cv2.DIST_L2,5)
+HEAD_ROWS=np.zeros((1374,1145),bool);HEAD_ROWS[20:600]=True
+REAR_TRIM=(OUTSIDE_HEAD<=8)&(~HEAD_FILLED)&HEAD_ROWS
 add('tail-left',NEAR_LOCK,near,-2,[370,300])
 add('tail-left-front',NEAR_LOCK,near,6.05,[370,300],role='lock-front',clip=NEAR_LOCK_FRONT_CLIP)
 add('tail-right',P/'raw/ponytail-far-complete-06.png',far,-1,[803,300])
-add('rear-hair',P/'raw/rear-hair-complete-04.png',rear,0)
+add('rear-hair',P/'raw/rear-hair-complete-04.png',rear,0,exclude=REAR_TRIM)
 add('leg-left',P/'registered/leg-left-02.png',z=1,pivot=[551,1090],role='leg')
 add('leg-right',P/'registered/leg-right-01.png',z=2,pivot=[659,1090],role='leg')
 far_arm=np.array(json.loads((P/'pure-generation/far-arm-placement.json').read_text())['matrix'])
