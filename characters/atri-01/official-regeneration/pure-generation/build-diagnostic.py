@@ -146,6 +146,19 @@ for file,sha in lock['files'].items():
         shutil.copy2(OLD/file,OUT/file)
 model=json.loads((OLD/'model.json').read_text(encoding='utf8'))
 model['parts']=[{k:r[k] for k in ('id','file','z','pivot','role','poses')} for r in records]+lock['parts']
+# 2026-10-16 user instruction: "笑眼左边有个小线条双眼皮缺失…实在难修复就生成一套新的笑眼". The accepted
+# closed-happy pair (tex/source-012/013) carries a stray thin stroke at each outer end and no double-lid
+# line, so a new pair was generated with the project's image model (gpt-image-2.5-sunburst, prompt kept in
+# scratch/gen/prompt-happy-eyes-v2.txt) on a transparent background; only its dark strokes were kept and
+# each eye was scaled/centred onto the arc it replaces (scratch/ingest-happy-eyes-v2.py). The two files are
+# tracked under pure-generation/new-art/ so a fresh clone rebuilds the same pack.
+# User's correction on the pass: this eye style keeps its sharp corners and a few fork tips at the ends -
+# they are part of the look, not defects, so do not "clean" them away in a later pass.
+NEW_ART=P/'pure-generation/new-art'
+for _f in ('happy-arc-0.png','happy-arc-1.png'):
+    shutil.copy2(NEW_ART/_f,OUT/'tex'/_f)
+model['parts']+=[{'id':'happy-arc-0','file':'tex/happy-arc-0.png','role':'fixed','poses':['standing'],'z':7,'pivot':[548,483]},
+                 {'id':'happy-arc-1','file':'tex/happy-arc-1.png','role':'fixed','poses':['standing'],'z':7,'pivot':[730,459]}]
 model['part_registration']={p['id']:[1,0,0,1,0,0] for p in model['parts']}
 model['bounds']=[95,20,1045,1310]
 # 2026-10-16 user instruction: 大哭 looked wrong. The kit's tear particle is a whole logo-unit

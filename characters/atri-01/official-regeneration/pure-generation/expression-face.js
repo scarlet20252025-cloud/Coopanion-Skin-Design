@@ -12,7 +12,12 @@
   for(let i=0;i<2;i++){const id='eye-'+i;
    const source=n('image',{width:W,height:H,href:textures.get(parts.get(id).file)});g.append(source);
    const happyId=`closed-happy-${i}`;
-   const happy=n('image',{width:W,height:H,href:textures.get(parts.get(happyId).file)});g.append(happy);eyes.push({source,happy});}
+   const happy=n('image',{width:W,height:H,href:textures.get(parts.get(happyId).file)});g.append(happy);
+   // 2026-10-16 user instruction: the accepted closed-happy pair has a stray thin stroke at each outer end
+   // and no double-lid line, so a generated pair (pure-generation/new-art/) is used for the smiling face.
+   // The old single arc stays for the wink's closed eye.
+   const arc=n('image',{width:W,height:H,href:textures.get(parts.get(`happy-arc-${i}`).file),'data-eye-arc':i});
+   g.append(arc);eyes.push({source,happy,arc});}
   // Each redrawn pair uses one registered posed-face source. No separate eye
   // translations, vertical iris clipping or generic heart/spiral/chevron paths.
   const eyeArt={};
@@ -44,7 +49,8 @@
   if(happy||wink)selected=happy?'happy':'wink';
   for(let i=0;i<2;i++){
    eyes[i].source.setAttribute('display',selected==='open'||selected==='wink'&&i===0?'inline':'none');
-   eyes[i].happy.setAttribute('display',selected==='happy'||selected==='wink'&&i===1?'inline':'none');
+   eyes[i].happy.setAttribute('display',selected==='wink'&&i===1?'inline':'none');
+   if(eyes[i].arc)eyes[i].arc.setAttribute('display',selected==='happy'?'inline':'none');
    // 2026-10-16 user feedback: "害羞没有变化". The official face table shrinks the eyes and pulls them in
    // and down for shy (ring rx 13 / ry 12 with dx -3, dy 5 against the neutral 16/16), so the accepted
    // open-eye art is scaled and shifted the same way instead of sitting unchanged.

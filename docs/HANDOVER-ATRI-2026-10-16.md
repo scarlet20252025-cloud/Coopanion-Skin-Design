@@ -219,3 +219,19 @@ happy/excited/surprised 外端 −9、内端 −10）。`cry` 归入 sad 组是�
 **坐姿脸部仍是"不随点头旋转"**（站姿的 `faceHost` 会跟 `head` 一起转，坐姿没有对应节点）——这是既有差异，
 本次未动，列为待办。
 
+### 11.6 笑眼重做（2026-10-16，用户："笑眼左边有个小线条双眼皮缺失…实在难修复就生成一套新的笑眼"）
+
+- 原 `closed-happy-0/1`（`tex/source-012/013`）两端各带一条游离细线、且没有双眼皮线，所以走"生成新笑眼"。
+- 通道与命令：项目既定出图流程（完整图为输入 + 品红标区），脚本
+  `~/.codex/skills/.system/imagegen/scripts/image_gen.py edit`，模型 `gpt-image-2.5-sunburst`。
+  **环境坑**：仓库 art venv 需先 `pip install openai`；密钥存在 `OPENAI_BASE_URL` 里（不是 `OPENAI_API_KEY`），
+  运行时先把它搬到 `OPENAI_API_KEY`，再把 `OPENAI_BASE_URL` 设为 `https://edge.lingsuan.org/v1`。
+  提示词留在 `scratch/gen/prompt-happy-eyes-v2.txt`。
+- 机械入库（`scratch/ingest-happy-eyes-v2.py`）：只保留暗色线条（丢掉模型多画的浅色睫毛涂抹），
+  每只眼按宽度缩放到被替换弧线的宽度、并对齐其中心 → 整画布贴图 `pure-generation/new-art/happy-arc-0/1.png`
+  （**进仓库跟踪**，保证新克隆能重建同样的包）；`build-diagnostic.py` 把它们追加成零件，
+  `expression-face.js` 在 `selected==='happy'` 时显示新弧线（旧单弧线只留给 wink 的闭眼侧）。
+- **用户纠正（重要）**：这套眼睛本来就有**尖角**、两端有**少量分叉**，那是造型的一部分；我先前的提示词写
+  "严禁尖角/分叉"是错的，后续任何一次清理都不要把它们磨圆或去掉。
+- 坐姿沿用 11.5 的相似变换，所以新笑眼在坐姿下同样生效。
+
