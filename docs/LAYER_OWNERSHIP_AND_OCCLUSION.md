@@ -277,3 +277,15 @@ qa/dizzy.json 有 42 张进入、摇晃、挤眼恢复、站起及普通坐姿�
 
 候选指纹 `15e1c0919a76b7561f492da94adf49458616c7d9b69a3de79d44e3f0622fbf3f`。
 
+
+## 2026-10-16 特效对齐：用官方实现，不复制
+
+结论：动作/特效/表情全部走官方 kit 的原生实现，亚托莉只负责词汇表与挂点。
+
+- 鲸鱼娘 `model.json` 无 `anchors` 字段，用 kit 内置默认点；亚托莉自己命名了 `bubble / gaze / hearts / tear / tears / z`，比默认更精确，kit 优先使用它。
+- 官方 kit 自带 `sweat`（`dragged` 被拎起、`run` 冲刺两脸均带 `sweat:true`）、`tear/emit`（sad 等脸）、`sparkle`（excited）、`spiral`（dizzy）、`ring`（neutral 等）、`bubble`。
+- 之前唯一断掉的是词汇表：`sweat / tear / heart / note / star / spiral / ring / bubble / pointer / drag / dragged / tremble` 不在 `model.words` 里，`do()` 到不了官方实现。已补齐（43 项，提交 `f95a86a`）。
+- 挣扎参数已按官方实测对齐：四肢 `11Hz`、相位差 `2.2rad`、头发抖动 `21Hz`（提交 `4cf71cb`）。
+
+待办：在预览页逐词触发验收（`sweat / tear / heart / note / star / spiral / ring / bubble / pointer`），与鲸鱼娘同词并排比对时长与位置；差异只调数值，不改实现。
+
