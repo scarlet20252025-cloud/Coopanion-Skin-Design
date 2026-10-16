@@ -152,6 +152,14 @@ model['parts']=[{k:r[k] for k in ('id','file','z','pivot','role','poses')} for r
 model['part_registration']={p['id']:[1,0,0,1,0,0] for p in model['parts']}
 model['bounds']=[95,20,1045,1310]
 model['words']=list(dict.fromkeys(model['words']))
+# 2026-10-16 user instruction: bring the vocabulary up to the whale pack's list 1:1. The renderer
+# forwards every word it knows to the official kit's native do(), and the kit draws the effects
+# (heart/note/star/sweat/tear/spiral/ring/bubble) and the pointer themselves, so a word missing here
+# simply never reaches them. Struggle already exists: mode==='drag' switches the face to flustered and
+# adds a 15Hz shake to the hair/tuft.
+WHALE_VOCAB=['bubble','heart','note','pointer','ring','spiral','star','sweat','tear',
+             'drag','dragged','tremble']
+model['words']=list(dict.fromkeys(list(model['words'])+WHALE_VOCAB))
 model['pure_generation']={'provenance':'SOURCE.json','status':'diagnostic candidate; full art/motion acceptance pending'}
 (OUT/'model.json').write_text(json.dumps(model,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
 (OUT/'part-registration.json').write_text(json.dumps(model['part_registration'],indent=2)+'\n',encoding='utf8')
