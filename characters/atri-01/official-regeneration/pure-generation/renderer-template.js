@@ -62,6 +62,9 @@ export async function createLayeredBody(base,opts){
  // dx/dy are master-pixel offsets for the seated drawing, the same convention the anchors getter uses;
  // the mark table itself stays in logo units, so the pose offset is applied after the conversion.
  function fxFrame(seated){return{dx:seated?-3:0,dy:seated?298:0,rig:model.expression_rig[seated?'seated':'standing'],iris:FX_IRIS[seated?'seated':'standing']}}
+ // The cheek blush the accepted face art already paints, measured from tex/head-clean.png
+ // (scratch/probe-blush-and-arm.py): [cx, cy, rx, ry] in master pixels, standing pose.
+ const FX_CHEEKS=[[550,542,46,26],[733,515,38,24]];
  function buildFaceEffects(pose,parent,state){
   const defs=n('defs'),paths=n('g',{'data-tear-paths':pose}),streams=n('g',{'data-streams':pose});
   const gradId=`${clipPrefix}-tear-${pose}`,grad=n('linearGradient',{id:gradId,x1:'0',y1:'0',x2:'0',y2:'1'});
@@ -69,6 +72,20 @@ export async function createLayeredBody(base,opts){
   defs.append(grad);streams.append(defs,paths);
   // the streams run under the features, where the official figure paints them into the face texture
   state.g.insertBefore(streams,state.g.children[1]||null);
+  // 害羞 / 慌张: the official face table gives these a full flush (blush 1), and this pack's accepted
+  // face art only carries faint painted cheeks - so a soft radial wash is added on top of them, over
+  // the same two cheek centres. Faces below blush .35 (期待 .4, 开心 .45) keep the art untouched.
+  const blush=n('g',{'data-blush':pose}),blushEls=[];
+  for(let i=0;i<2;i++){
+   const gid=`${clipPrefix}-cheek-${pose}-${i}`,rg=n('radialGradient',{id:gid});
+   rg.append(n('stop',{offset:'0','stop-color':'#ff7889','stop-opacity':'.62'}),n('stop',{offset:'1','stop-color':'#ff7889','stop-opacity':'0'}));
+   defs.append(rg);
+   const [cx,cy,rx,ry]=FX_CHEEKS[i],p=fxFrame(pose==='seated');
+   const el=n('ellipse',{cx:cx+p.dx,cy:cy+p.dy,rx,ry,fill:`url(#${gid})`,opacity:'0'});
+   blush.append(el);blushEls.push(el);
+  }
+  state.g.insertBefore(blush,state.g.children[1]||null);
+  state.g.insertBefore(streams,blush.nextSibling);
   const sparkle=n('g',{'data-sparkle':pose});parent.append(sparkle);const holders=[];
   for(let i=0;i<2;i++){
    const mid=`${clipPrefix}-iris-${pose}-${i}`,mask=n('mask',{id:mid,maskUnits:'userSpaceOnUse',x:0,y:0,width:W,height:H,style:'mask-type:alpha'});
@@ -76,8 +93,10 @@ export async function createLayeredBody(base,opts){
    defs.append(mask);
    const holder=n('g',{mask:`url(#${mid})`,display:'none'});sparkle.append(holder);holders.push(holder);
   }
-  return{streams,paths,holders,grad:`url(#${gradId})`,tearPainted:'',starPainted:['','']};
+  return{streams,paths,holders,blushEls,grad:`url(#${gradId})`,tearPainted:'',starPainted:['','']};
  }
+ /** The strong flush of 害羞 / 慌张 / 喜欢, on top of the cheeks the art already paints. */
+ function paintBlush(state,face){const a=clamp(((face.blush||0)-.35)/.65)*.75;for(const el of state.blushEls)el.setAttribute('opacity',rd(a))}
  /** 期待: two white four-pointed stars on the iris, twinkling (whale paintOpenEye). */
  function paintSparkle(state,face,seated,t){
   const art=(seated?faceSeat:faceStand)?.currentEyeArt,iris=fxFrame(seated).iris;
@@ -181,7 +200,11 @@ export async function createLayeredBody(base,opts){
    hairRV+=(tr-hairR)*31*dt;hairRV*=Math.exp(-6.5*dt);hairR=clamp(hairR+hairRV*dt,-4,4);
    for(const [id,angle,pivotX,pivotY] of [['tail-left',hairL,370,300],['tail-left-front',hairL,370,300],['tail-right',hairR,803,300]])
     nodes.get(id).setAttribute('transform',`rotate(${angle} ${pivotX} ${pivotY}) ${registered(id)}`);
-   waveAngle=kind==='wave'?111*e+6*Math.sin(k*Math.PI*6)*e:0;
+   // 2026-10-16 user feedback: "招手不自然". At 111° the rigid sleeve swung past vertical and its cut
+   // shoulder edge landed across the chest, which read as a pasted-on arm. Compositing the pack's own
+   // parts (scratch/probe-blush-and-arm.py) shows the natural top of the swing is about 72°, with the
+   // same light wobble on top.
+   waveAngle=kind==='wave'?72*e+5*Math.sin(k*Math.PI*6)*e:0;
    const gait=['walk','run','dance'].includes(o.mode)?Math.sin(o.t*(o.mode==='run'?14:8)):0;
     // Struggle while held, aligned with the whale pack: kit/body.js flaps every limb as
     // tx = hx + 7*sin(T*11 + i*2.2) and jitters the eyes at 22Hz, so the limbs here flap at 11Hz with
@@ -198,6 +221,7 @@ export async function createLayeredBody(base,opts){
    // the head go above the whole figure.
    paintStreams(effectsStand,face,false,o.t);paintStreams(effectsSeat,face,true,o.t);
    paintSparkle(effectsStand,face,false,o.t);paintSparkle(effectsSeat,face,true,o.t);
+   paintBlush(effectsStand,face);paintBlush(effectsSeat,face);
    paintHeadMarks(fxStand,face,false,o.t);paintHeadMarks(fxSeat,face,true,o.t);
   },dispose(){mounted=null;nodes.clear();faceNodes.clear()}
  };

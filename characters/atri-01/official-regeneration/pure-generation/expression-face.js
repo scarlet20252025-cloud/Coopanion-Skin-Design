@@ -39,7 +39,13 @@
   for(let i=0;i<2;i++){
    eyes[i].source.setAttribute('display',selected==='open'||selected==='wink'&&i===0?'inline':'none');
    eyes[i].happy.setAttribute('display',selected==='happy'||selected==='wink'&&i===1?'inline':'none');
-   const [ex,ey]=rig.eyes[i];const sy=f==='scared'?1.10:f==='sad'?.90:f==='worried'?.96:1;const sx=f==='scared'?1.035:1;eyes[i].source.setAttribute('transform',selected==='open'&&sy!==1?`translate(${ex} ${ey}) scale(${sx} ${sy}) translate(${-ex} ${-ey})`:'');
+   // 2026-10-16 user feedback: "害羞没有变化". The official face table shrinks the eyes and pulls them in
+   // and down for shy (ring rx 13 / ry 12 with dx -3, dy 5 against the neutral 16/16), so the accepted
+   // open-eye art is scaled and shifted the same way instead of sitting unchanged.
+   const [ex,ey]=rig.eyes[i];
+   const shy=f==='shy',sy=shy?.82:f==='scared'?1.10:f==='sad'?.90:f==='worried'?.96:1,sx=shy?.90:f==='scared'?1.035:1;
+   const ox=shy?(i===0?5:-5):0,oy=shy?7:0;
+   eyes[i].source.setAttribute('transform',selected==='open'&&(sy!==1||ox||oy)?`translate(${ex+ox} ${ey+oy}) scale(${sx} ${sy}) translate(${-ex} ${-ey})`:'');
   }
   for(const [variant,image]of Object.entries(eyeArt))image.setAttribute('display',selected===variant?'inline':'none');
   state.currentEyeArt=selected;
@@ -48,6 +54,10 @@
   const pinchBrows=pose==='standing'?[[499,426,552,413,590,393],[688,390,720,405,747,397]]:[[517,729,559,720,596,692],[668,692,694,710,720,705]];
   for(let i=0;i<2;i++){
    const [x0,y0,x1,y1,x2,y2]=(pinch?pinchBrows:baseBrows)[i];
+   // 2026-10-16 user feedback: "开心的笑脸不是很自然". The smiling arcs ARE the eyes; the official face
+   // table draws brows only for sad/worried/scared/angry/determined, never for happy - so the two extra
+   // dark strokes above the arcs (four curves on one face) go away while the arcs are showing.
+   brows[i].setAttribute('display',['happy','wink'].includes(selected)?'none':'inline');
    let outer=0,inner=0,arch=0;
    // 2026-10-16: travels roughly doubled, and 大哭 joins the sad group because the official whale face
    // table gives cry `brows: 'sad'`. sad/worried/cry lift the inner ends, angry/determined drive them
@@ -67,7 +77,10 @@
   // Talking modulates only the chosen design, never replaces its emotion.
   const styles={
    neutral:['M-12 0 Q-2 7 10 -1','none',''],
-   happy:['M-17 -2 C-9 10 5 10 17 -4','none',''],
+   // 2026-10-16 user feedback: "开心的笑脸不是很自然". A 2.8px unfilled stroke left 开心 with a hairline
+   // scratch for a mouth. The official face table gives happy a solid open smiling mouth, so this is the
+   // filled crescent the other mouths use, with the tongue showing.
+   happy:['M-17 -3 Q0 5 17 -5 Q0 26 -17 -3Z','#c47c85','M-8 9 Q0 18 8 8 Q0 13 -8 9Z'],
    wink:['M-15 -2 Q-2 11 15 -5','none',''],
    shy:['M-9 2 Q-1 6 7 0','none',''],
    love:['M-10 1 Q0 8 12 -3','none',''],
