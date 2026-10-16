@@ -1,0 +1,31 @@
+Image 1 is the original drawing of this character at full size on its transparent canvas; treat it
+as the source image and do not redraw the character. Image 2 is the same drawing with a magenta band
+painted over the region where the part is. The band is only a marker: it is a rectangle, it is not
+the shape of the part, and the magenta is not part of the artwork.
+
+Deliver ONE part and nothing else:
+
+the single narrow lock of hair that is gathered and tied by the small black bow beside the face on
+the viewer's LEFT, hanging down on its own along the outer left edge of the hair.
+
+The magenta band covers more than this part; the other hair inside the band is not part of it. Only
+the lock that is tied at that bow belongs to this part.
+
+Rules for this part:
+
+- Keep it complete. This lock swings on its own and the character raises the near arm, so the parts
+  of it that are hidden behind other hair in image 1 will be seen later: draw the whole lock as one
+  continuous lock, following the same hair flow, the same line weight and the same shading as its
+  visible part.
+- Nothing else in the output: no head, no face, no body, no clothes, no bow, no other hair, no
+  background, no labels, no shadow, and no magenta left anywhere.
+- Keep it exactly where it is in image 1 and at the same size, so it lines up with the bow and the
+  hair it will be assembled with.
+- Output a single PNG with a transparent background, same canvas size as image 1.
+
+Quality: one solid lock, clean edges (no straight cut, no step, no jagged or semi-transparent cut),
+no stray specks anywhere else on the canvas, and no hairline wisps standing in for the body of the
+lock.
+
+Deliver your best version even if you are unsure it is perfect, and say honestly what you are unsure
+about.

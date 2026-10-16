@@ -1,0 +1,72 @@
+{
+  "method": "pure complete component generation",
+  "reference": "references/whale-coopanion-repro-kit",
+  "old_stitching_method": "abandoned",
+  "source_of_art": "built-in imagegen; full original mother only",
+  "accepted": [
+    {
+      "item": "near lock: one complete drawing, measured front band",
+      "date": "2026-10-16",
+      "reason": "Near lock is now the left half of the complete pair drawing recovered from the original model (raw/ponytail-near-complete-06.png from art-source/complete-ponytails-reextract.png), so the length the master hides has real content. Placed by curve registration onto the master silhouette (scale 0.880, rotation -4.00deg, profile error 4.09px, root 3.5px from its bow box). The front band is measured from master pixel agreement (rows 551-978 of the canvas) instead of the previous taste-based clip, and it sits below the raised hand; near lock and near arm have zero overlapping pixels at rest. User review of the result still pending."
+    },
+    {
+      "item": "standing ponytail registration and depth",
+      "date": "2026-10-16",
+      "reason": "Both narrow locks re-registered onto the master template outer silhouette by uniform similarity with the root required to sit inside its bow (fit-locks.py, lock-placement.json). Near lock: profile error 3.04px, assembled silhouette error sum 1567 (was 4402), stray-outside pixels 2345 (was 6379). Far lock: 9.02px / 5343 (was 14223). Depth taken from the master's own pixels: near lock art in front of the head hair (33.9 vs 48.6), far lock entirely in the back layer (32.0 vs 42.8). User review of the result still pending."
+    }
+  ],
+  "rejected": [
+    {
+      "component": "near lock, one-part request to the image endpoint (work-mode phrasing, no coordinates)",
+      "reason": "raw/ponytail-near-complete-09.png from characters/atri-01/prompts/near-lock-v4-workmode.txt: the answer contained the whole left side hair instead of the single tied lock. alpha>0 connected components 228 (checklist requires 1), 65 isolated dark specks, bbox x247-598 y7-1359. Rejected; the failure was written into a new prompt rather than asked again in the same request, per docs/07 rule 6."
+    },
+    {
+      "component": "near lock, second one-part request",
+      "reason": "raw/ponytail-near-complete-10.png from prompts/near-lock-v5-workmode.txt (states the previous answer took the whole side hair): still a large hair mass, alpha>0 components 158, 71 dark specks, bbox x295-552 y51-1231. Two failures of the single-shot edit call for this part; stopping this route instead of repeating it. Note: the whale kit work mode is an agentic image session (it runs Python, composes with masks and verifies pixels outside the mask) and is not reproduced by one edit call."
+    },
+    {
+      "component": "near lock asset pony-pair-left-01 (paired-lock generation crop)",
+      "reason": "Rejected by the user: the lower part of the lock is drawn as hair-thin tails, so the assembled character reads as a lock cut off along the hair ends. Not usable for the near lock."
+    },
+    {
+      "component": "near lock asset ponytail-left-01",
+      "reason": "Rejected by the user in the same review: its lower part splits into separate thin tips instead of one solid lock."
+    },
+    {
+      "component": "near lock regenerated with gpt-image-2.5 (raw/ponytail-near-complete-05.png)",
+      "reason": "Returned a hair-thin ribbon spanning the whole canvas instead of a filled tapered lock (prompt asked for a solid mass). Curve-registration profile error 20.4px versus 4.1px for the accepted drawing; rejected, no further blind retry of the same prompt (attempt/request record kept)."
+    },
+    {
+      "attempt": 46,
+      "component": "torso-complete-01",
+      "reason": "Visible hem width drifts from mother after global similarity fit. SIFT inlier RMS 1.46px measures matching interior features only, not contour acceptance. Raw alpha has 47 connected components. Reject; no mother-pixel graft to repair."
+    },
+    {
+      "attempt": 47,
+      "component": "arm-near-complete-01",
+      "reason": "Rejected by original-alpha QA: 114 connected components at alpha>0, including 299 pixels outside largest component. Cuff and sleeve shape require renewed mother comparison. Initial manual correspondence residual is withdrawn because a mother cuff corner was misread; no accepted registration or geometry score."
+    },
+    {
+      "attempt": 34,
+      "component": "far lock regenerated with gpt-image-2.5-sunburst",
+      "reason": "Form deviates from the master: far too long and thin, decorative chevron at the root, long wispy tips. Uniform-similarity fit degrades to scale 0.40, profile error 8.94px; assembled silhouette is worse than the kept far lock. See official-regeneration/attempt-34.json."
+    },
+    {
+      "attempt": 35,
+      "component": "far lock regenerated with gpt-image-2.5-sunburst from the hair-system image",
+      "reason": "Returned a thin wispy strand sitting inside the head hair; the near-zero-error fit needs an unphysical -19deg rotation and the assembled silhouette error sum is 11986 versus 5155 for the kept asset. Stopped generating after this second failure. See official-regeneration/attempt-35.json."
+    }
+  ],
+  "runtime_eligible": false,
+  "promotion_allowed": false,
+  "installed": false,
+  "adobe_generation_calls": 0,
+  "expressions": "29 locked files verified unchanged",
+  "next_method_diagnosis": "Full-mother inputs still yielded enlarged isolated components; uniform registration alone cannot repair changed cuff/hem proportions. No further blind same-prompt retries. Revisit official same-coordinate generation with whole-composition anchors before more generation.",
+  "open_limits": [
+    "The far lock drawing is narrower and less curved than the master lock, so 10-15px slivers remain at the outer boundary in the mid rows; closing them needs a non-uniform warp, which this pipeline does not allow, or a newly drawn far lock.",
+    "Seated long hair is still part of the whole seated drawing; no independent seated lock dynamics yet.",
+    "No native host or installation check; candidate only."
+  ],
+  "work_mode_note": "2026-10-16 reminder from the operator: the agreed mode is the kit documented one - art is made by the model (work mode), we only measure, annotate, upload/download, register, import, compose and package; no own pixel edits, no code-drawn lines or flat-colour hole filling, no code cutout filtering; only a small translation is allowed for position, never stretching to align, and proportions that are off mean the part is redone. Self-audit: the previous pure-generation rounds broke this by using a self-cut asset, by deleting alpha with masks (master-body clip, bow-mask root cut) and by per-row horizontal warping (stretching) of the lock; the single-part prompt also carried coordinates and a shape description, which rule 5 forbids."
+}
