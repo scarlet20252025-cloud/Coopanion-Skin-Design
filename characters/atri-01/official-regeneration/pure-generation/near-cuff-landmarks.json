@@ -1,0 +1,40 @@
+{
+  "source": [
+    [
+      251,
+      970
+    ],
+    [
+      581,
+      1134
+    ],
+    [
+      646,
+      1006
+    ],
+    [
+      338,
+      834
+    ]
+  ],
+  "target": [
+    [
+      344,
+      935
+    ],
+    [
+      492,
+      1008
+    ],
+    [
+      550,
+      938
+    ],
+    [
+      379,
+      869
+    ]
+  ],
+  "measurement": "All four corresponding cuff boundary corners; not target art guidance. Approximate human image measurements for diagnostic fit only.",
+  "status": "withdrawn: mother corner misidentified; diagnostic only"
+}

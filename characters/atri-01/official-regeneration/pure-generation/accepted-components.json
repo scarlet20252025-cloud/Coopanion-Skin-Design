@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "master_sha256": "4b3e09d6e782b042bf87eb9c7b3caf645b3ae43e4af919680afdf951f3c58e1c",
+  "method": "pure complete-component generation",
+  "parts": [],
+  "policy": "Only explicitly visually reviewed whole components enter this manifest. Registration fit does not imply acceptance. No legacy stitched components may be imported."
+}

@@ -1,0 +1,21 @@
+{
+  "source": "raw\\torso-complete-02.png",
+  "source_sha256": "2188bffc06792d799df70bb4a0f8284152336a2e143dd7208f9516cb15ddcf90",
+  "mechanical_cleanup": "Only disconnected alpha>0 islands outside the one/two whole generated components set to zero. Retained component RGBA pixels unchanged; no threshold erosion, no colour correction, no mother pixels. Pair separated only by existing transparent gap.",
+  "raw_components_alpha_gt0": 146,
+  "removed_disconnected_pixels": 330,
+  "parts": [
+    {
+      "id": "torso-complete-02",
+      "file": "pure-generation\\sources\\torso-complete-02.png",
+      "area": 541188,
+      "box": [
+        229,
+        170,
+        773,
+        1076
+      ],
+      "sha256": "403d0357c9c65918aa11618e8e8cb5b4681776e162ee33bb363254871ca62872"
+    }
+  ]
+}

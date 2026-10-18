@@ -146,23 +146,6 @@ for file,sha in lock['files'].items():
         shutil.copy2(OLD/file,OUT/file)
 model=json.loads((OLD/'model.json').read_text(encoding='utf8'))
 model['parts']=[{k:r[k] for k in ('id','file','z','pivot','role','poses')} for r in records]+lock['parts']
-# 2026-10-17 user correction (supersedes the 2026-10-16 note): "这不是图层问题是旧工程的裁切问题".
-# The shipped pair (tex/source-012/013) is NOT a layer-order problem. prepare.py's hand-drawn
-# closed_polys cut straight through the lid arcs, so the lash tips and the pale double-lid line were
-# never captured, and the surviving arc is rotated by the polygon shape (+19 deg left, -9/+9 deg right).
-# The certified source characters/atri-01/art-source/closed-happy.png already has the correct art, so the
-# fix is a re-extraction from that source, NOT a new drawing. restore-smiling-eyes.py re-extracts both
-# eyes with the same coverage/unmatte method prepare.py uses for the other redrawn eyes (dark ink arc +
-# lash tips + the pale fold line; hair that is dark in both the source and the blank face is never taken,
-# and the brow/fringe strip above the eyes is excluded). Its output is tracked under pure-generation/
-# new-art/ so a fresh clone rebuilds the same pack.
-# User's earlier correction still stands: this eye style keeps its sharp corners and a few fork tips at
-# the ends - they are part of the look, not defects, so do not "clean" them away in a later pass.
-NEW_ART=P/'pure-generation/new-art'
-for _f in ('happy-arc-0.png','happy-arc-1.png'):
-    shutil.copy2(NEW_ART/_f,OUT/'tex'/_f)
-model['parts']+=[{'id':'happy-arc-0','file':'tex/happy-arc-0.png','role':'fixed','poses':['standing'],'z':7,'pivot':[548,483]},
-                 {'id':'happy-arc-1','file':'tex/happy-arc-1.png','role':'fixed','poses':['standing'],'z':7,'pivot':[730,459]}]
 model['part_registration']={p['id']:[1,0,0,1,0,0] for p in model['parts']}
 model['bounds']=[95,20,1045,1310]
 # 2026-10-16 user instruction: 大哭 looked wrong. The kit's tear particle is a whole logo-unit

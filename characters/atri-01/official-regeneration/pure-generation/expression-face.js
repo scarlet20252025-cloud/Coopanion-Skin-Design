@@ -1,28 +1,17 @@
  function buildFace(pose,parent){
-  // 2026-10-16 user instruction: "绝大多数坐下的表情都有问题,复用跟站立时一样的表情". The seated set is a
-  // separate redraw - its eye art has the fringe baked across the pupil - so the seated face is built
-  // from the SAME art and the SAME rig as the standing one, and the group carries the similarity that
-  // fits the standing eye pair onto the seated eye pair (FX_POSE_FIT, derived from the two rigs).
-  const rig=model.expression_rig.standing,g=n('g',{'data-face':pose}),eyes=[];parent.append(g);
-  const fit=FX_POSE_FIT[pose];
-  if(fit)g.setAttribute('transform',`matrix(${fit.map(v=>Math.round(v*1e5)/1e5).join(' ')})`);
+  const rig=model.expression_rig[pose],g=n('g',{'data-face':pose}),eyes=[];parent.append(g);
   const defs=n('defs');g.append(defs);
   const foreheadId=`${clipPrefix}-${pose}-forehead`,forehead=n('mask',{id:foreheadId,maskUnits:'userSpaceOnUse',x:0,y:0,width:W,height:H,style:'mask-type:alpha'});
-  const foreheadPart=parts.get('brow-mask');forehead.append(n('image',{width:W,height:H,href:textures.get(foreheadPart.file)}));defs.append(forehead);
-  for(let i=0;i<2;i++){const id='eye-'+i;
+  const foreheadPart=parts.get((pose==='standing'?'':'seat-')+'brow-mask');forehead.append(n('image',{width:W,height:H,href:textures.get(foreheadPart.file)}));defs.append(forehead);
+  for(let i=0;i<2;i++){const id=(pose==='standing'?'eye-':'seat-eye-')+i;
    const source=n('image',{width:W,height:H,href:textures.get(parts.get(id).file)});g.append(source);
-   const happyId=`closed-happy-${i}`;
-   const happy=n('image',{width:W,height:H,href:textures.get(parts.get(happyId).file)});g.append(happy);
-   // 2026-10-17 user correction: the old crop destroyed the lash tips and the double-lid line, it was not a
-   // layer problem. happy-arc-* (pure-generation/new-art/, restored from art-source/closed-happy.png by
-   // restore-smiling-eyes.py) is used for the smiling face. The old single arc stays for the wink's closed eye.
-   const arc=n('image',{width:W,height:H,href:textures.get(parts.get(`happy-arc-${i}`).file),'data-eye-arc':i});
-   g.append(arc);eyes.push({source,happy,arc});}
+   const happyId=(pose==='standing'?'':'seat-')+`closed-happy-${i}`;
+   const happy=n('image',{width:W,height:H,href:textures.get(parts.get(happyId).file)});g.append(happy);eyes.push({source,happy});}
   // Each redrawn pair uses one registered posed-face source. No separate eye
   // translations, vertical iris clipping or generic heart/spiral/chevron paths.
   const eyeArt={};
   for(const variant of ['half','late','rest','love','dizzy','pinch']){
-   const part=parts.get('eye-pair-'+variant);
+   const part=parts.get((pose==='standing'?'':'seat-')+'eye-pair-'+variant);
    eyeArt[variant]=n('image',{width:W,height:H,href:textures.get(part.file),'data-eye-art':variant});g.append(eyeArt[variant]);
   }
   // Brows belong to exposed skin; a screen-space path across the bangs is not a brow.
@@ -30,7 +19,7 @@
   // the bangs, so a 3.2px stroke came through as two or three fragments and its travel was lost in the
   // gaps. The stroke is heavier now and the travels below are doubled, so the slant reads through them.
   const brows=rig.brows.map((_,i)=>n('path',{'data-brow':i,fill:'none',stroke:'#74564f','stroke-width':5,'stroke-linecap':'round',mask:`url(#${foreheadId})`}));brows.forEach(e=>g.append(e));
-  const pinchPart=parts.get('pinch-mouth');
+  const pinchPart=parts.get((pose==='standing'?'':'seat-')+'pinch-mouth');
   const pinchMouth=n('image',{width:W,height:H,href:textures.get(pinchPart.file),'data-pinch-mouth':pose});g.append(pinchMouth);
   const mouth=n('g',{'data-mouth-style':'neutral'}),lip=n('path',{fill:'none',stroke:'#a96165','stroke-width':2.8,'stroke-linecap':'round','stroke-linejoin':'round'}),tongue=n('path',{fill:'#eea0aa',stroke:'none'});
   mouth.append(lip,tongue);g.append(mouth);
@@ -49,28 +38,16 @@
   if(happy||wink)selected=happy?'happy':'wink';
   for(let i=0;i<2;i++){
    eyes[i].source.setAttribute('display',selected==='open'||selected==='wink'&&i===0?'inline':'none');
-   eyes[i].happy.setAttribute('display',selected==='wink'&&i===1?'inline':'none');
-   if(eyes[i].arc)eyes[i].arc.setAttribute('display',selected==='happy'?'inline':'none');
-   // 2026-10-16 user feedback: "害羞没有变化". The official face table shrinks the eyes and pulls them in
-   // and down for shy (ring rx 13 / ry 12 with dx -3, dy 5 against the neutral 16/16), so the accepted
-   // open-eye art is scaled and shifted the same way instead of sitting unchanged.
-   const [ex,ey]=rig.eyes[i];
-   const shy=f==='shy',sy=shy?.82:f==='scared'?1.10:f==='sad'?.90:f==='worried'?.96:1,sx=shy?.90:f==='scared'?1.035:1;
-   const ox=shy?(i===0?5:-5):0,oy=shy?7:0;
-   eyes[i].source.setAttribute('transform',selected==='open'&&(sy!==1||ox||oy)?`translate(${ex+ox} ${ey+oy}) scale(${sx} ${sy}) translate(${-ex} ${-ey})`:'');
+   eyes[i].happy.setAttribute('display',selected==='happy'||selected==='wink'&&i===1?'inline':'none');
+   const [ex,ey]=rig.eyes[i];const sy=f==='scared'?1.10:f==='sad'?.90:f==='worried'?.96:1;const sx=f==='scared'?1.035:1;eyes[i].source.setAttribute('transform',selected==='open'&&sy!==1?`translate(${ex} ${ey}) scale(${sx} ${sy}) translate(${-ex} ${-ey})`:'');
   }
   for(const [variant,image]of Object.entries(eyeArt))image.setAttribute('display',selected===variant?'inline':'none');
   state.currentEyeArt=selected;
   const pinch=selected==='pinch';
-  // the face is always drawn in the standing frame now, so both poses use the standing brow tables
-  const baseBrows=[[518,388,550,380,582,393],[680,386,711,357,738,349]];
-  const pinchBrows=[[499,426,552,413,590,393],[688,390,720,405,747,397]];
+  const baseBrows=pose==='standing'?[[518,388,550,380,582,393],[680,386,711,357,738,349]]:[[515,691,546,682,576,702],[679,685,698,665,718,657]];
+  const pinchBrows=pose==='standing'?[[499,426,552,413,590,393],[688,390,720,405,747,397]]:[[517,729,559,720,596,692],[668,692,694,710,720,705]];
   for(let i=0;i<2;i++){
    const [x0,y0,x1,y1,x2,y2]=(pinch?pinchBrows:baseBrows)[i];
-   // 2026-10-16 user feedback: "开心的笑脸不是很自然". The smiling arcs ARE the eyes; the official face
-   // table draws brows only for sad/worried/scared/angry/determined, never for happy - so the two extra
-   // dark strokes above the arcs (four curves on one face) go away while the arcs are showing.
-   brows[i].setAttribute('display',['happy','wink'].includes(selected)?'none':'inline');
    let outer=0,inner=0,arch=0;
    // 2026-10-16: travels roughly doubled, and 大哭 joins the sad group because the official whale face
    // table gives cry `brows: 'sad'`. sad/worried/cry lift the inner ends, angry/determined drive them
@@ -90,10 +67,7 @@
   // Talking modulates only the chosen design, never replaces its emotion.
   const styles={
    neutral:['M-12 0 Q-2 7 10 -1','none',''],
-   // 2026-10-16 user feedback: 开心 went through three mouths - a 2.8px stroke (read as a hairline
-   // scratch), a big open crescent (too heavy) and the official small oval ("别用这张嘴"). This is the
-   // fourth: a smile with real weight but no wide开口 - a filled lens, mid-width, no tongue.
-   happy:['M-12 -2Q0 6 12 -4Q0 12 -12 -2Z','#b8737d',''],
+   happy:['M-17 -2 C-9 10 5 10 17 -4','none',''],
    wink:['M-15 -2 Q-2 11 15 -5','none',''],
    shy:['M-9 2 Q-1 6 7 0','none',''],
    love:['M-10 1 Q0 8 12 -3','none',''],

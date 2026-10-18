@@ -1,0 +1,35 @@
+{
+  "profile": "layered-v1",
+  "pack": "scratch/candidates/atri-pure-components-01",
+  "id": "gpt-atri",
+  "version": "1.0.0",
+  "author": "Asryto",
+  "source_lock": "characters/atri-01/official-regeneration/pure-generation/source-lock.json",
+  "declared_words": 31,
+  "uniform_registration": [
+    "tail-left",
+    "tail-right",
+    "rear-hair",
+    "leg-left",
+    "leg-right",
+    "arm-right",
+    "body",
+    "arm-left",
+    "head-clean",
+    "bow-left",
+    "bow-right",
+    "ahoge",
+    "seated-clean"
+  ],
+  "required_pack_files": [
+    "LICENSE",
+    "README.md",
+    "SOURCE.json",
+    "UPSTREAM.json",
+    "EDGE-EXPORT.json",
+    "EXPRESSION-PRESERVATION.json"
+  ],
+  "parts": {},
+  "asset_inventory": "characters/atri-01/official-regeneration/pure-generation/asset-inventory.json",
+  "source_assets": "characters/atri-01/official-regeneration/pure-generation/source-assets.json"
+}

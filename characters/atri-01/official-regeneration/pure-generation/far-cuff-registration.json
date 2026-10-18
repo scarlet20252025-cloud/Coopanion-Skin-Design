@@ -1,0 +1,23 @@
+{
+  "name": "arm-far-complete-07",
+  "method": "symmetric contour distance of teal cuff; colour masks for measurement only",
+  "matrix": [
+    [
+      0.3708247463657277,
+      0.2559169633590259,
+      269.4592216616693
+    ],
+    [
+      -0.2559169633590259,
+      0.3708247463657277,
+      774.6384449659354
+    ]
+  ],
+  "scale": 0.45056018982163887,
+  "rotation_degrees": -34.61068790813052,
+  "contour_rms": 4.552128704456095,
+  "contour_p95": 8.237042604953864,
+  "status": "withdrawn invalid comparison: source full cuff versus mother partial cuff behind torso",
+  "alpha_policy": "generated alpha only; no RGB replacement or alpha carving from cuff mask",
+  "runtime_eligible": false
+}

@@ -1,0 +1,60 @@
+{
+  "assets": [
+    {
+      "path": "characters/atri-01/master.png",
+      "sha256": "4b3e09d6e782b042bf87eb9c7b3caf645b3ae43e4af919680afdf951f3c58e1c"
+    },
+    {
+      "path": "characters/atri-01/official-regeneration/raw/arm-far-complete-03.png",
+      "sha256": "be3251d6d4c8249fd54a06a2df5340a64d2da558f4b8cdbeefbbbc537f23c257"
+    },
+    {
+      "path": "characters/atri-01/official-regeneration/raw/ponytail-far-complete-06.png",
+      "sha256": "9360b2034e17604c10f6fd6f1d3f9f5e44bc50285804888d0d77b0875bc41e16"
+    },
+    {
+      "path": "characters/atri-01/official-regeneration/raw/ponytail-near-complete-04.png",
+      "sha256": "c8b58688ca40e29d327eb6053a080092361f5b3bc2664f711ab2a93b8270e121"
+    },
+    {
+      "path": "characters/atri-01/official-regeneration/raw/rear-hair-complete-04.png",
+      "sha256": "9853a9d3760a1305209854dadb20531e003cc6a0e6f4c48bd192bd48722359cf"
+    },
+    {
+      "path": "characters/atri-01/official-regeneration/raw/seated-whole-01.png",
+      "sha256": "d32e9441798571157e2e297e6d3ccc7501b5ecf8345816cea8fd88dd9d138fec"
+    },
+    {
+      "path": "characters/atri-01/official-regeneration/registered/ahoge-01.png",
+      "sha256": "ca271014b77fdd1dd1b4e84a934ae927110584d2d92be933b0f683c74f139b92"
+    },
+    {
+      "path": "characters/atri-01/official-regeneration/registered/arm-near-complete-02-clean.png",
+      "sha256": "1c5f4e84f3364ea2e8a25622f98c0d5b027a25262d779464c7a7f5de105ade48"
+    },
+    {
+      "path": "characters/atri-01/official-regeneration/registered/bow-left-01.png",
+      "sha256": "16262caf070d2e2d1a5c7c4c7a003aead1f2f76077105d8b90a91b965fb8b9bc"
+    },
+    {
+      "path": "characters/atri-01/official-regeneration/registered/bow-right-01.png",
+      "sha256": "bbe613bea92327d68cdb9adb5e1ed0358c7c6d3a74a680b08c6852116e54a61b"
+    },
+    {
+      "path": "characters/atri-01/official-regeneration/registered/head-blank-01.png",
+      "sha256": "9eb815bc4b8bf62f28c4da5a376caa60ae81d607b47f4d112a4bdce4d89a7fdb"
+    },
+    {
+      "path": "characters/atri-01/official-regeneration/registered/leg-left-02.png",
+      "sha256": "bd0828dab411884a6b5373e32f2fddf5341822d71e85637751fcaa8b385b0562"
+    },
+    {
+      "path": "characters/atri-01/official-regeneration/registered/leg-right-01.png",
+      "sha256": "3c1b3dd6f85a091bf6aa4545fae785e411b0afa8e693871c9b5f27fe0e4dd655"
+    },
+    {
+      "path": "characters/atri-01/official-regeneration/registered/torso-complete-03.png",
+      "sha256": "94cdd6fa1ddf902c1ca32d223e387357d8e406caf76a1d6e8eeffc6474a7e287"
+    }
+  ]
+}

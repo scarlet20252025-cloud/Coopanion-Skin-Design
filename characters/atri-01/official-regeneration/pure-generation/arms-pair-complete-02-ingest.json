@@ -1,0 +1,33 @@
+{
+  "source": "raw\\arms-pair-complete-02.png",
+  "source_sha256": "cadfa31d72d0f2c0ef3de450a94a7693e55f6ba19d059e741c139ea6034be9bc",
+  "mechanical_cleanup": "Only disconnected alpha>0 islands outside the one/two whole generated components set to zero. Retained component RGBA pixels unchanged; no threshold erosion, no colour correction, no mother pixels. Pair separated only by existing transparent gap.",
+  "raw_components_alpha_gt0": 223,
+  "removed_disconnected_pixels": 616,
+  "parts": [
+    {
+      "id": "arm-near-complete-02",
+      "file": "pure-generation\\sources\\arm-near-complete-02.png",
+      "area": 207425,
+      "box": [
+        60,
+        294,
+        504,
+        758
+      ],
+      "sha256": "5390a2648066d20d9b6f89116a05d2d5ee7babf2dc9c0c437519dbd189ffef7f"
+    },
+    {
+      "id": "arm-far-complete-02",
+      "file": "pure-generation\\sources\\arm-far-complete-02.png",
+      "area": 68986,
+      "box": [
+        776,
+        371,
+        310,
+        629
+      ],
+      "sha256": "22324be40b6980e5a99104877fced808ff106100feb040bc0a6533d178cae397"
+    }
+  ]
+}

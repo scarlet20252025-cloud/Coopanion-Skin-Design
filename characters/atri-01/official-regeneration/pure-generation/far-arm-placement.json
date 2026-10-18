@@ -1,0 +1,39 @@
+{
+  "source": "raw/arm-far-complete-03.png",
+  "matrix": [
+    [
+      0.3393935164183271,
+      -0.0014307150085494068,
+      515.6019122727432
+    ],
+    [
+      0.0014307150085494068,
+      0.3393935164183271,
+      574.5317374463482
+    ]
+  ],
+  "method": "two visible cuff corner measurements, similarity only",
+  "source_points": [
+    [
+      874.0,
+      861.0
+    ],
+    [
+      963.0,
+      1005.0
+    ]
+  ],
+  "mother_points": [
+    [
+      811.0,
+      868.0
+    ],
+    [
+      841.0,
+      917.0
+    ]
+  ],
+  "not_an_acceptance_score": "Two-point fit alone is not validation. Check whole-arm shoulder and fingertips, torso occlusion and motion. Previously equating visible cuff width to total cuff width was wrong.",
+  "removed_detached_pixels": 291,
+  "status": "diagnostic assembly only"
+}

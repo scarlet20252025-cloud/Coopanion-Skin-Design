@@ -1,0 +1,6418 @@
+{
+  "version": "1.0.0",
+  "master": "4b3e09d6e782b042bf87eb9c7b3caf645b3ae43e4af919680afdf951f3c58e1c",
+  "viewport": [
+    960,
+    800
+  ],
+  "checks": [
+    {
+      "key": "1:neutral:rest",
+      "word": "neutral",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "1:wave:action",
+      "word": "wave",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "1:wave:recovery",
+      "word": "stand",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "1:run:action",
+      "word": "run",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "1:run:recovery",
+      "word": "stand",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "1:walk:action",
+      "word": "walk",
+      "accepted": true,
+      "api": "walk"
+    },
+    {
+      "key": "1:walk:recovery",
+      "word": "stand",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "1:shake:action",
+      "word": "shake",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "1:shake:recovery",
+      "word": "stand",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "1:nod:action",
+      "word": "nod",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "1:nod:recovery",
+      "word": "stand",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "1:jump:action",
+      "word": "jump",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "1:jump:recovery",
+      "word": "stand",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "1:dance:action",
+      "word": "dance",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "1:dance:recovery",
+      "word": "stand",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "1:sit:action",
+      "word": "sit",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "1:sit:recovery",
+      "word": "stand",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "1:moods:happy",
+      "word": "happy",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "1:moods:scared",
+      "word": "scared",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "1:moods:flustered",
+      "word": "flustered",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "1:moods:recovery",
+      "word": "neutral",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "1:blink:blink",
+      "word": "neutral",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "1:pointer:rendered-head-hit",
+      "accepted": true,
+      "point": {
+        "x": 481.5651346940651,
+        "y": 305.450243126129,
+        "t": 1000
+      },
+      "alpha": 255
+    },
+    {
+      "key": "1:pointer:press",
+      "accepted": true
+    },
+    {
+      "key": "1:pointer:drag",
+      "accepted": true
+    },
+    {
+      "key": "1:pointer:release",
+      "accepted": true
+    },
+    {
+      "key": "-1:neutral:rest",
+      "word": "neutral",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "-1:wave:action",
+      "word": "wave",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "-1:wave:recovery",
+      "word": "stand",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "-1:run:action",
+      "word": "run",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "-1:run:recovery",
+      "word": "stand",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "-1:walk:action",
+      "word": "walk",
+      "accepted": true,
+      "api": "walk"
+    },
+    {
+      "key": "-1:walk:recovery",
+      "word": "stand",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "-1:shake:action",
+      "word": "shake",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "-1:shake:recovery",
+      "word": "stand",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "-1:nod:action",
+      "word": "nod",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "-1:nod:recovery",
+      "word": "stand",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "-1:jump:action",
+      "word": "jump",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "-1:jump:recovery",
+      "word": "stand",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "-1:dance:action",
+      "word": "dance",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "-1:dance:recovery",
+      "word": "stand",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "-1:sit:action",
+      "word": "sit",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "-1:sit:recovery",
+      "word": "stand",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "-1:moods:happy",
+      "word": "happy",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "-1:moods:scared",
+      "word": "scared",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "-1:moods:flustered",
+      "word": "flustered",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "-1:moods:recovery",
+      "word": "neutral",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "-1:blink:blink",
+      "word": "neutral",
+      "accepted": true,
+      "api": "do"
+    },
+    {
+      "key": "-1:pointer:rendered-head-hit",
+      "accepted": true,
+      "point": {
+        "x": 478.4348653059349,
+        "y": 305.450243126129,
+        "t": 1000
+      },
+      "alpha": 255
+    },
+    {
+      "key": "-1:pointer:press",
+      "accepted": true
+    },
+    {
+      "key": "-1:pointer:drag",
+      "accepted": true
+    },
+    {
+      "key": "-1:pointer:release",
+      "accepted": true
+    }
+  ],
+  "events": [
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "run"
+      }
+    },
+    {
+      "kind": "done",
+      "detail": {
+        "word": "run"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "idle"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "walk"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "idle"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "crouch"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "air"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "land"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "idle"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "dance"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "idle"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "sit"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "wake"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "idle"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "crouch"
+      }
+    },
+    {
+      "kind": "touch",
+      "detail": {
+        "kind": "poke"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "air"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "drag"
+      }
+    },
+    {
+      "kind": "touch",
+      "detail": {
+        "kind": "grab"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "air"
+      }
+    },
+    {
+      "kind": "touch",
+      "detail": {
+        "kind": "drop",
+        "x": 491
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "land"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "idle"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "run"
+      }
+    },
+    {
+      "kind": "done",
+      "detail": {
+        "word": "run"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "idle"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "walk"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "idle"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "crouch"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "air"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "land"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "idle"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "dance"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "idle"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "sit"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "wake"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "idle"
+      }
+    },
+    {
+      "kind": "touch",
+      "detail": {
+        "kind": "poke"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "drag"
+      }
+    },
+    {
+      "kind": "touch",
+      "detail": {
+        "kind": "grab"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "air"
+      }
+    },
+    {
+      "kind": "touch",
+      "detail": {
+        "kind": "drop",
+        "x": 488
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "land"
+      }
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "idle"
+      }
+    }
+  ],
+  "samples": [
+    {
+      "key": "1:neutral:rest:0.05",
+      "phase": "rest",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 231.01594961811392,
+          "y": 110.70038531799798,
+          "w": 493.8097032626133,
+          "h": 670.5371697494387
+        },
+        "hit": [
+          {
+            "x": 481.5593990629345,
+            "y": 307.18336994225206,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.7177965640935,
+            "y": 559.2845539178162,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.4798269975542,
+          "y": 115.3312265617958
+        },
+        "side": {
+          "x": 480,
+          "y": 395.68542635906056,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 3.1173659162634113,
+        "waveAngle": 0,
+        "tailLeft": 0.9374303457197791,
+        "tailRight": 0.4848152594826097,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "1:wave:action:0.3",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 230.6602040223953,
+          "y": 109.74256767760949,
+          "w": 494.51525298272327,
+          "h": 671.5039809826947
+        },
+        "hit": [
+          {
+            "x": 481.56162711468227,
+            "y": 306.50885047718975,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.72596608716844,
+            "y": 558.9735254978152,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.45784879595146,
+          "y": 112.16720202145882
+        },
+        "side": {
+          "x": 480,
+          "y": 390.86734504513885,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "happy",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "happy"
+      },
+      "secondary": {
+        "ahoge": 1.2837473820867369,
+        "waveAngle": 108.70389940580954,
+        "tailLeft": 0.5267249557938815,
+        "tailRight": -0.12394596865257956,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:wave:action:0.85",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 231.53535701263482,
+          "y": 112.0895987529916,
+          "w": 492.7795633361105,
+          "h": 669.1349120568394
+        },
+        "hit": [
+          {
+            "x": 481.55614598948245,
+            "y": 308.1616892626701,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.70586862810245,
+            "y": 559.7356678266756,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.41326884177414,
+          "y": 114.25311547346826
+        },
+        "side": {
+          "x": 480,
+          "y": 396.9174764374424,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "happy",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "happy"
+      },
+      "secondary": {
+        "ahoge": -1.5746339442245945,
+        "waveAngle": 107.66657860188256,
+        "tailLeft": -0.7312063425797423,
+        "tailRight": -1.3498339578017764,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:wave:action:1.5",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 230.9212518394062,
+          "y": 110.45576826648585,
+          "w": 493.9975172287351,
+          "h": 670.7840836746739
+        },
+        "hit": [
+          {
+            "x": 481.5599921596697,
+            "y": 307.01110441301824,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.71997125212226,
+            "y": 559.2051203682252,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.43440371512787,
+          "y": 112.21482330397725
+        },
+        "side": {
+          "x": 480,
+          "y": 392.7167288209343,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "happy",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "happy"
+      },
+      "secondary": {
+        "ahoge": -1.6535587962305933,
+        "waveAngle": 19.129307368545838,
+        "tailLeft": -0.7103519108008459,
+        "tailRight": -0.4636629263130664,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "1:wave:recovery:0.4",
+      "phase": "recovery",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 231.57259342869227,
+          "y": 112.16469021408227,
+          "w": 492.70571240656034,
+          "h": 669.0591155116069
+        },
+        "hit": [
+          {
+            "x": 481.55591277602065,
+            "y": 308.2145705732973,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.70501351207605,
+            "y": 559.760051986576,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.4100270241519,
+          "y": 114.23929212264534
+        },
+        "side": {
+          "x": 480,
+          "y": 397.1379379629847,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -2.097449655785061,
+        "waveAngle": 0,
+        "tailLeft": 0.7193009426357047,
+        "tailRight": -0.19185898929988926,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "1:wave:recovery:2.2",
+      "phase": "recovery",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 230.38186182595433,
+          "y": 109.00999077515041,
+          "w": 495.0672886541616,
+          "h": 672.2434365415147
+        },
+        "hit": [
+          {
+            "x": 481.56337038522366,
+            "y": 305.9929512501059,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.7323580791535,
+            "y": 558.7356386319932,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.47005407958096,
+          "y": 111.40343418139014
+        },
+        "side": {
+          "x": 480,
+          "y": 388.9049952437323,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 3.176751090594463,
+        "waveAngle": 0,
+        "tailLeft": 0.5390819220920862,
+        "tailRight": 0.8566893245025392,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:run:action:0.15",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 321.5578390311159,
+        "facing": 1,
+        "mode": "run",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 73.07409051617269,
+          "y": 83.04748830908432,
+          "w": 574.962252041553,
+          "h": 728.714781568946
+        },
+        "hit": [
+          {
+            "x": 381.49676063260034,
+            "y": 309.78854239576526,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 354.1694081630698,
+            "y": 561.109724045089,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 415.3870676850429,
+          "y": 119.24056684496873
+        },
+        "side": {
+          "x": 367.6143381964163,
+          "y": 407.88437735001264,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "run",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 1.9023949068376713,
+        "waveAngle": 0,
+        "tailLeft": 1.1691719110561436,
+        "tailRight": 0.4159299919437441,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:run:action:0.35",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 340.92145954519475,
+        "facing": 1,
+        "mode": "run",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 94.42209777454353,
+          "y": 76.72923672580521,
+          "w": 603.8630146910674,
+          "h": 747.1890229024109
+        },
+        "hit": [
+          {
+            "x": 424.185716986846,
+            "y": 314.16385721620543,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 384.2425128219271,
+            "y": 563.3765957998385,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 466.96538443532376,
+          "y": 129.47929150754157
+        },
+        "side": {
+          "x": 405.4756452336993,
+          "y": 410.7825606831352,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "run",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 1.4303930610916282,
+        "waveAngle": 0,
+        "tailLeft": 0.754049195304398,
+        "tailRight": -0.5145036857582012,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:run:action:0.6",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 391.99667496541787,
+        "facing": 1,
+        "mode": "run",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 146.51031097037617,
+          "y": 76.3767986922146,
+          "w": 610.4836110837631,
+          "h": 750.7234739653125
+        },
+        "hit": [
+          {
+            "x": 481.38794360255724,
+            "y": 316.23459722305233,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 438.12098172485685,
+            "y": 564.3969641004497,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 528.457834403306,
+          "y": 122.81586992975258
+        },
+        "side": {
+          "x": 463.0845543444746,
+          "y": 403.57881503151975,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "run",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0.9978589232386035,
+        "eyeArt": "rest"
+      },
+      "secondary": {
+        "ahoge": 0.09700549589751466,
+        "waveAngle": 0,
+        "tailLeft": -0.3695074324763263,
+        "tailRight": -1.8749647429394163,
+        "bodyScaleRatio": 0.9999999999999999
+      }
+    },
+    {
+      "key": "1:run:recovery:0.8",
+      "phase": "recovery",
+      "facing": 1,
+      "layout": {
+        "x": 391.99667496541787,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 143.11259894054217,
+          "y": 110.79436373281783,
+          "w": 494.07148964133717,
+          "h": 670.6118078643398
+        },
+        "hit": [
+          {
+            "x": 393.8824295015358,
+            "y": 307.3732052212782,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 397.8628629882144,
+            "y": 559.3755831937834,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 403.88578973087846,
+          "y": 112.77785470217145
+        },
+        "side": {
+          "x": 392.2630567342967,
+          "y": 394.06989809684313,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -2.901191203250617,
+        "waveAngle": 0,
+        "tailLeft": -0.5566950633498768,
+        "tailRight": -0.42599172338271685,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:walk:action:0.2",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 322.76533880318954,
+        "facing": 1,
+        "mode": "walk",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 73.23547802385824,
+          "y": 96.99801663730989,
+          "w": 529.5724405266902,
+          "h": 697.1453466200784
+        },
+        "hit": [
+          {
+            "x": 348.9763890712559,
+            "y": 306.85503067167105,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 339.85464506385455,
+            "y": 559.3965462788711,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 369.0583540128042,
+          "y": 113.78772355549268
+        },
+        "side": {
+          "x": 342.6996146389739,
+          "y": 396.3525913254925,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 1.9286797212947278,
+        "waveAngle": 0,
+        "tailLeft": 0.9154824761694631,
+        "tailRight": 0.18687515326585055,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "1:walk:action:0.8",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 365.28651492154404,
+        "facing": 1,
+        "mode": "walk",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 116.95599196728588,
+          "y": 96.32333988982748,
+          "w": 538.1665789419046,
+          "h": 701.86900481542
+        },
+        "hit": [
+          {
+            "x": 399.28872458495505,
+            "y": 309.329107619326,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 385.94224500439657,
+            "y": 560.6207073861177,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 422.62530835981215,
+          "y": 116.2194878790491
+        },
+        "side": {
+          "x": 390.99150617541636,
+          "y": 406.0326894417308,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -1.2555285888732488,
+        "waveAngle": 0,
+        "tailLeft": -0.922508040778864,
+        "tailRight": -1.909070792275843,
+        "bodyScaleRatio": 0.9999999999999999
+      }
+    },
+    {
+      "key": "1:walk:recovery:0.8",
+      "phase": "recovery",
+      "facing": 1,
+      "layout": {
+        "x": 365.28651492154404,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 116.00344021589981,
+          "y": 109.82458321329045,
+          "w": 494.5722482262378,
+          "h": 671.4836389067616
+        },
+        "hit": [
+          {
+            "x": 366.9682485041394,
+            "y": 306.6121618756977,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 371.0666924194578,
+            "y": 559.0224507681581,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 376.9008500700369,
+          "y": 111.65266598746791
+        },
+        "side": {
+          "x": 365.3852133898892,
+          "y": 391.26529223438916,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -1.7837387573207426,
+        "waveAngle": 0,
+        "tailLeft": -0.48273079582391565,
+        "tailRight": -0.019960174547017234,
+        "bodyScaleRatio": 0.9999999999999999
+      }
+    },
+    {
+      "key": "1:shake:action:0.2",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 230.45370540379898,
+          "y": 109.19670786182485,
+          "w": 494.9248013912129,
+          "h": 672.0549662427588
+        },
+        "hit": [
+          {
+            "x": 481.5629204254459,
+            "y": 306.1244421562146,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.73070822663516,
+            "y": 558.7962705498101,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.466946179613,
+          "y": 111.60066584559218
+        },
+        "side": {
+          "x": 480,
+          "y": 389.41104271568213,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 1.82466512160807,
+        "waveAngle": 0,
+        "tailLeft": 0.7557594078830823,
+        "tailRight": 0.16687725787097063,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "1:shake:action:0.5",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 231.0645105130877,
+          "y": 110.84529592339891,
+          "w": 493.7133925105777,
+          "h": 670.3908984810762
+        },
+        "hit": [
+          {
+            "x": 481.55909492371757,
+            "y": 307.2854196643654,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.7166813869647,
+            "y": 559.3316101785686,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.4383339152791,
+          "y": 113.21176800733554
+        },
+        "side": {
+          "x": 480,
+          "y": 393.7188456036036,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 0.031949790392326066,
+        "waveAngle": 0,
+        "tailLeft": 0.06756911100050753,
+        "tailRight": -0.6525890317838623,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:shake:action:0.8",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 231.50127493328085,
+          "y": 111.9905981004108,
+          "w": 492.8471582742864,
+          "h": 669.2348422930125
+        },
+        "hit": [
+          {
+            "x": 481.55635944718193,
+            "y": 308.091970493247,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.7066513063339,
+            "y": 559.7035197274416,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.4156019428748,
+          "y": 114.19887025641549
+        },
+        "side": {
+          "x": 480,
+          "y": 396.6770446871953,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -1.7752920069564166,
+        "waveAngle": 0,
+        "tailLeft": -0.6352041648887041,
+        "tailRight": -1.2846816985732887,
+        "bodyScaleRatio": 0.9999999999999999
+      }
+    },
+    {
+      "key": "1:shake:recovery:0.8",
+      "phase": "recovery",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 229.99895008939905,
+          "y": 107.97694913191162,
+          "w": 495.8267169416929,
+          "h": 673.2861781062863
+        },
+        "hit": [
+          {
+            "x": 481.5657685798159,
+            "y": 305.26545713514895,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.74115145932495,
+            "y": 558.4001830123187,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.478878956622,
+          "y": 109.86631886390967
+        },
+        "side": {
+          "x": 480,
+          "y": 386.1237046445109,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 0.827783645521594,
+        "waveAngle": 0,
+        "tailLeft": -0.30712070580555495,
+        "tailRight": 0.6834654540663244,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "1:nod:action:0.2",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 230.45370540379898,
+          "y": 109.19670786182485,
+          "w": 494.9248013912129,
+          "h": 672.0549662427588
+        },
+        "hit": [
+          {
+            "x": 481.5629204254459,
+            "y": 306.1244421562146,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.73070822663516,
+            "y": 558.7962705498101,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.466946179613,
+          "y": 111.60066584559218
+        },
+        "side": {
+          "x": 480,
+          "y": 389.41104271568213,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 1.82466512160807,
+        "waveAngle": 0,
+        "tailLeft": 1.107558063284675,
+        "tailRight": 0.4829786181927214,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "1:nod:action:0.5",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 231.0645105130877,
+          "y": 110.84529592339891,
+          "w": 493.7133925105777,
+          "h": 670.3908984810762
+        },
+        "hit": [
+          {
+            "x": 481.55909492371757,
+            "y": 307.2854196643654,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.7166813869647,
+            "y": 559.3316101785686,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.4383339152791,
+          "y": 113.21176800733554
+        },
+        "side": {
+          "x": 480,
+          "y": 393.7188456036036,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 0.031949790392326066,
+        "waveAngle": 0,
+        "tailLeft": 0.44344676022224105,
+        "tailRight": -0.24447205112416598,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:nod:action:0.8",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 231.50127493328085,
+          "y": 111.9905981004108,
+          "w": 492.8471582742864,
+          "h": 669.2348422930125
+        },
+        "hit": [
+          {
+            "x": 481.55635944718193,
+            "y": 308.091970493247,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.7066513063339,
+            "y": 559.7035197274416,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.4156019428748,
+          "y": 114.19887025641549
+        },
+        "side": {
+          "x": 480,
+          "y": 396.6770446871953,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -1.777797750689919,
+        "waveAngle": 0,
+        "tailLeft": -1.1819051121383461,
+        "tailRight": -1.7716518115269175,
+        "bodyScaleRatio": 0.9999999999999999
+      }
+    },
+    {
+      "key": "1:nod:recovery:0.8",
+      "phase": "recovery",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 229.99895008939905,
+          "y": 107.97694913191162,
+          "w": 495.8267169416929,
+          "h": 673.2861781062863
+        },
+        "hit": [
+          {
+            "x": 481.5657685798159,
+            "y": 305.26545713514895,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.74115145932495,
+            "y": 558.4001830123187,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.478878956622,
+          "y": 109.86631886390967
+        },
+        "side": {
+          "x": 480,
+          "y": 386.1237046445109,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 0.7126715010595118,
+        "waveAngle": 0,
+        "tailLeft": -0.28553042146897817,
+        "tailRight": 0.7109398646262686,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "1:jump:action:0.2",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 481.32007377870815,
+        "facing": 1,
+        "mode": "air",
+        "busy": true,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 239.27018303065626,
+          "y": 106.90123244902338,
+          "w": 480.66988780277376,
+          "h": 652.3070409619652
+        },
+        "hit": [
+          {
+            "x": 483.2715024500004,
+            "y": 298.14089814865065,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 487.07930898337065,
+            "y": 543.2191601127381,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 492.49516754636875,
+          "y": 71.59530855902517
+        },
+        "side": {
+          "x": 481.6239558749769,
+          "y": 435.5796803991866,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0.037836891532387916,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 2.10262470230527,
+        "waveAngle": 0,
+        "tailLeft": 0.705238220366003,
+        "tailRight": 0.11379718321905484,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:jump:action:0.5",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 485.80415638811183,
+        "facing": 1,
+        "mode": "land",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 237.76839903077794,
+          "y": 112.97911326756878,
+          "w": 492.6811714103188,
+          "h": 668.5141898243943
+        },
+        "hit": [
+          {
+            "x": 487.89223789257187,
+            "y": 308.99029109713337,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 491.7465527260878,
+            "y": 560.1234585078571,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 497.97577701860604,
+          "y": 115.15871146749453
+        },
+        "side": {
+          "x": 486.2108630284642,
+          "y": 420.5172697829174,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0.08714182921165546,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 0.14125787618325,
+        "waveAngle": 0,
+        "tailLeft": -0.023280947226950288,
+        "tailRight": -0.7369907265976614,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:jump:action:1.2",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 485.80415638811183,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 237.20662433709919,
+          "y": 111.78164727884337,
+          "w": 493.018925097716,
+          "h": 669.4549811548414
+        },
+        "hit": [
+          {
+            "x": 487.34348246838283,
+            "y": 307.95121195401816,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 491.5044383177946,
+            "y": 559.638427447451,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 497.19340258898217,
+          "y": 113.70582153262933
+        },
+        "side": {
+          "x": 485.78996643390315,
+          "y": 396.21768765370257,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -2.3926360172736016,
+        "waveAngle": 0,
+        "tailLeft": -0.8616380496597509,
+        "tailRight": -1.1216022377384447,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "1:jump:recovery:1",
+      "phase": "recovery",
+      "facing": 1,
+      "layout": {
+        "x": 485.80415638811183,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 236.22253592743004,
+          "y": 109.10029669618325,
+          "w": 494.99486261241645,
+          "h": 672.1522828736203
+        },
+        "hit": [
+          {
+            "x": 487.36729768602515,
+            "y": 306.05654710493246,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 491.5356756723228,
+            "y": 558.7649633833015,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 497.27253347751986,
+          "y": 111.49350586816433
+        },
+        "side": {
+          "x": 485.8041560821879,
+          "y": 389.1563033925973,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 2.4752961479960076,
+        "waveAngle": 0,
+        "tailLeft": 0.7340162993591591,
+        "tailRight": 0.6288243060107731,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "1:dance:action:0.3",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "dance",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 231.9417107798362,
+          "y": 83.11153937764959,
+          "w": 577.0995010990699,
+          "h": 729.7475237847625
+        },
+        "hit": [
+          {
+            "x": 542.0549828326185,
+            "y": 310.63422287372117,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 513.5781995199059,
+            "y": 561.5222988448772,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 577.0129201574731,
+          "y": 118.85250418923818
+        },
+        "side": {
+          "x": 528.6431800881076,
+          "y": 401.51841962897305,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "happy",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "happy"
+      },
+      "secondary": {
+        "ahoge": 1.7166403916702235,
+        "waveAngle": 0,
+        "tailLeft": 0.6293467340406521,
+        "tailRight": -0.25640489373221836,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:dance:action:0.8",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "dance",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 147.7058241248022,
+          "y": 85.9233345968903,
+          "w": 575.3900980617132,
+          "h": 727.4413603053392
+        },
+        "hit": [
+          {
+            "x": 421.0577468197085,
+            "y": 311.8247188562,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 457.7680293988216,
+            "y": 560.778432995012,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 405.6251254073569,
+          "y": 117.5920990890055
+        },
+        "side": {
+          "x": 431.77628833525296,
+          "y": 405.8816305112686,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "happy",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "happy"
+      },
+      "secondary": {
+        "ahoge": -1.2618307398712942,
+        "waveAngle": 0,
+        "tailLeft": -0.9163376371741787,
+        "tailRight": -1.9027240269630503,
+        "bodyScaleRatio": 0.9999999999999999
+      }
+    },
+    {
+      "key": "1:dance:action:1.6",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "dance",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 150.6703221088253,
+          "y": 84.75561435591453,
+          "w": 573.3496402096422,
+          "h": 727.155637363761
+        },
+        "hit": [
+          {
+            "x": 423.83983623433346,
+            "y": 309.9881387142754,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 459.07050408975243,
+            "y": 559.9612397146901,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 409.62530033636335,
+          "y": 115.28857845867174
+        },
+        "side": {
+          "x": 433.8264480748309,
+          "y": 403.0966537164323,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "happy",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "happy"
+      },
+      "secondary": {
+        "ahoge": -1.1400348971224217,
+        "waveAngle": 0,
+        "tailLeft": -0.9715806364372537,
+        "tailRight": -0.31944483106046934,
+        "bodyScaleRatio": 0.9999999999999999
+      }
+    },
+    {
+      "key": "1:dance:recovery:1",
+      "phase": "recovery",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 230.0712293004002,
+          "y": 108.1739910551438,
+          "w": 495.68759657574594,
+          "h": 673.0888447972586
+        },
+        "hit": [
+          {
+            "x": 481.5683229044484,
+            "y": 305.4053562129225,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.74087736471256,
+            "y": 558.4647241646887,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.487233370702,
+          "y": 110.49410739387201
+        },
+        "side": {
+          "x": 480.0024869239453,
+          "y": 386.6582327723179,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 2.804265267821,
+        "waveAngle": 0,
+        "tailLeft": 0.3909886298717064,
+        "tailRight": 0.7856481226533302,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:sit:action:0",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "sit",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 230.10016051428323,
+          "y": 108.23934523910327,
+          "w": 495.6259864539267,
+          "h": 673.0213181858816
+        },
+        "hit": [
+          {
+            "x": 481.5651346940651,
+            "y": 305.450243126129,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.73882721157185,
+            "y": 558.4853898859373,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.48184398220207,
+          "y": 110.56876290636649
+        },
+        "side": {
+          "x": 480,
+          "y": 386.84995421869377,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 2.5977394830394647,
+        "waveAngle": 0,
+        "tailLeft": 1.156416247206979,
+        "tailRight": 0.7637503983335272,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "1:sit:action:0.1",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "sit",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 230.2615596787239,
+          "y": 108.69173256785723,
+          "w": 495.30588372695684,
+          "h": 672.5646830887825
+        },
+        "hit": [
+          {
+            "x": 481.5641238433483,
+            "y": 305.76882575201216,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.73512075894376,
+            "y": 558.6322918745389,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.47500534743733,
+          "y": 116.1131421423429
+        },
+        "side": {
+          "x": 480,
+          "y": 427.60119617735756,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "content",
+        "pose": "standing",
+        "seatMix": 0.41896633332423117,
+        "blink": 0.6666666666666667,
+        "eyeArt": "half"
+      },
+      "secondary": {
+        "ahoge": 2.270363256483284,
+        "waveAngle": 0,
+        "tailLeft": 0.9949194346969181,
+        "tailRight": 0.4924565451006323,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:sit:action:0.3",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "sit",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 254.0846107426296,
+          "y": 272.6265064283226,
+          "w": 434.6528802532357,
+          "h": 503.8882585978671
+        },
+        "hit": [
+          {
+            "x": 480,
+            "y": 462.1051491242148,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 504.4654914633558,
+            "y": 667.7207091925593,
+            "r": 77.55520504731861
+          }
+        ],
+        "bubble": {
+          "x": 489.8954148692309,
+          "y": 269.32207893873857
+        },
+        "side": {
+          "x": 480,
+          "y": 463.5114284097894,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "content",
+        "pose": "seated",
+        "seatMix": 0.9549686936714675,
+        "blink": 0,
+        "eyeArt": "half"
+      },
+      "secondary": {
+        "ahoge": 1.2837473820867369,
+        "waveAngle": 0,
+        "tailLeft": 0.5267249557938815,
+        "tailRight": -0.12394596865257956,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:sit:action:0.7",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "sit",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 254.75033472110144,
+          "y": 273.63813392245015,
+          "w": 433.37205186147526,
+          "h": 502.4007251165199
+        },
+        "hit": [
+          {
+            "x": 480,
+            "y": 462.55741485469514,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 504.393396931125,
+            "y": 667.565975206994,
+            "r": 77.55520504731861
+          }
+        ],
+        "bubble": {
+          "x": 489.864134376898,
+          "y": 268.73695372558467
+        },
+        "side": {
+          "x": 480,
+          "y": 480.54526957007783,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "content",
+        "pose": "seated",
+        "seatMix": 1,
+        "blink": 0.28980910742659366,
+        "eyeArt": "half"
+      },
+      "secondary": {
+        "ahoge": -1.2266515565875349,
+        "waveAngle": 0,
+        "tailLeft": -0.4373696642856748,
+        "tailRight": -1.1292105909088235,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "1:sit:action:1.2",
+      "phase": "action",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "sit",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 254.78248579188505,
+          "y": 273.69920407878817,
+          "w": 433.31019438658063,
+          "h": 502.33868448192163
+        },
+        "hit": [
+          {
+            "x": 480,
+            "y": 462.59515568149436,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 504.38991513313687,
+            "y": 667.5783998657495,
+            "r": 77.55520504731861
+          }
+        ],
+        "bubble": {
+          "x": 489.85727179547985,
+          "y": 268.3890067934759
+        },
+        "side": {
+          "x": 480,
+          "y": 481.9427514646795,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "content",
+        "pose": "seated",
+        "seatMix": 1,
+        "blink": 0,
+        "eyeArt": "half"
+      },
+      "secondary": {
+        "ahoge": -2.8363366074282044,
+        "waveAngle": 0,
+        "tailLeft": -0.7683201211937604,
+        "tailRight": -1.0297960216257775,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "1:sit:recovery:0.1",
+      "phase": "recovery",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "wake",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 254.8299020726748,
+          "y": 264.01040573654154,
+          "w": 455.20463837487887,
+          "h": 521.1709272517313
+        },
+        "hit": [
+          {
+            "x": 493.727475575906,
+            "y": 462.7245068207696,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 509.1000861802811,
+            "y": 668.6946045049295,
+            "r": 77.55520504731861
+          }
+        ],
+        "bubble": {
+          "x": 512.1155152187193,
+          "y": 268.98660790199597
+        },
+        "side": {
+          "x": 492.90066911574104,
+          "y": 481.53287356555967,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "waking",
+        "pose": "seated",
+        "seatMix": 1,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -2.760831966634654,
+        "waveAngle": 0,
+        "tailLeft": -0.7247330403598006,
+        "tailRight": -0.8318317834320477,
+        "bodyScaleRatio": 0.9999999999999999
+      }
+    },
+    {
+      "key": "1:sit:recovery:0.3",
+      "phase": "recovery",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "wake",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 254.90299585690943,
+          "y": 256.8984676917275,
+          "w": 471.43405122647687,
+          "h": 535.0912634226399
+        },
+        "hit": [
+          {
+            "x": 503.94864909134327,
+            "y": 462.8848712522127,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 512.6030826570361,
+            "y": 669.54780049471,
+            "r": 77.55520504731861
+          }
+        ],
+        "bubble": {
+          "x": 528.6919918582506,
+          "y": 269.49096768398124
+        },
+        "side": {
+          "x": 502.62130777197734,
+          "y": 480.1836886179037,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "waking",
+        "pose": "seated",
+        "seatMix": 1,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -2.1517882947401272,
+        "waveAngle": 0,
+        "tailLeft": -0.6015835391064865,
+        "tailRight": -0.35358002474458045,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "1:sit:recovery:0.7",
+      "phase": "recovery",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "wake",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 228.01950474815328,
+          "y": 255.60240478607784,
+          "w": 463.6918504513035,
+          "h": 530.7407256374947
+        },
+        "hit": [
+          {
+            "x": 465.7303448800919,
+            "y": 457.2409879127003,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 499.9018171924571,
+            "y": 664.6232706914691,
+            "r": 77.55520504731861
+          }
+        ],
+        "bubble": {
+          "x": 466.8938636143788,
+          "y": 259.3750976741858
+        },
+        "side": {
+          "x": 464.9177278317924,
+          "y": 439.1454986872668,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "waking",
+        "pose": "seated",
+        "seatMix": 1,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 0.19069559108948,
+        "waveAngle": 0,
+        "tailLeft": -0.36468511814092414,
+        "tailRight": 0.5368949789779409,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "1:sit:recovery:1.4",
+      "phase": "recovery",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "wake",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 217.51791330999458,
+          "y": 103.37194803716955,
+          "w": 508.3404242005066,
+          "h": 682.3975046742767
+        },
+        "hit": [
+          {
+            "x": 472.71629804010786,
+            "y": 305.1939393302295,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 481.65687626679124,
+            "y": 558.1653653243451,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 479.1918377382491,
+          "y": 115.72315566899601
+        },
+        "side": {
+          "x": 472.9276218049138,
+          "y": 399.5388306580736,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "waking",
+        "pose": "standing",
+        "seatMix": 0.03400994224389368,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 2.7646870043167504,
+        "waveAngle": 0,
+        "tailLeft": 0.3899871009775644,
+        "tailRight": 0.7959332754571321,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "1:sit:recovery:2.2",
+      "phase": "recovery",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 231.44048757097286,
+          "y": 111.9318788181688,
+          "w": 492.9227433678251,
+          "h": 669.3112632512649
+        },
+        "hit": [
+          {
+            "x": 481.5239303309123,
+            "y": 308.0624963143571,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.6919911607915,
+            "y": 559.6895824435147,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.37062979220576,
+          "y": 114.16749517857295
+        },
+        "side": {
+          "x": 479.97365147217477,
+          "y": 396.68256073604897,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -1.1525752826184734,
+        "waveAngle": 0,
+        "tailLeft": 1.1399775926995324,
+        "tailRight": 0.08911410562259849,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:moods:happy:0.5",
+      "phase": "happy",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 231.09835491169832,
+          "y": 110.91639804188208,
+          "w": 493.6462689642727,
+          "h": 670.3191287370673
+        },
+        "hit": [
+          {
+            "x": 481.558882954624,
+            "y": 307.3354915787902,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.71590416695483,
+            "y": 559.3546988946644,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.4358225381413,
+          "y": 113.22728410041339
+        },
+        "side": {
+          "x": 480,
+          "y": 394.0270999432156,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "happy",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "happy"
+      },
+      "secondary": {
+        "ahoge": -0.445297496479676,
+        "waveAngle": 0,
+        "tailLeft": 0.10167882282380428,
+        "tailRight": -0.6093759972446107,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:moods:scared:0.5",
+      "phase": "scared",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 232.4103480184305,
+          "y": 112.24444885023297,
+          "w": 492.6563303914265,
+          "h": 668.9786079680746
+        },
+        "hit": [
+          {
+            "x": 482.3686124907121,
+            "y": 308.2707386269246,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 486.5172973782189,
+            "y": 559.785951700193,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 492.2202071700515,
+          "y": 114.23007620295971
+        },
+        "side": {
+          "x": 480.8128556578971,
+          "y": 397.4239931219422,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "scared",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -3.0453398740771247,
+        "waveAngle": 0,
+        "tailLeft": -0.664439369077975,
+        "tailRight": -1.1685519251184848,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:moods:flustered:0.5",
+      "phase": "flustered",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 230.95176469336164,
+          "y": 110.53477255005919,
+          "w": 493.93700113007617,
+          "h": 670.7043375668416
+        },
+        "hit": [
+          {
+            "x": 481.55980105620023,
+            "y": 307.066741232436,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.71927053940095,
+            "y": 559.2307751238455,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.4318549010025,
+          "y": 112.22706483081356
+        },
+        "side": {
+          "x": 480,
+          "y": 393.0237299927418,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "flustered",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "pinch"
+      },
+      "secondary": {
+        "ahoge": -2.59521781752239,
+        "waveAngle": 0,
+        "tailLeft": -0.5066491250360646,
+        "tailRight": -0.25829094965374183,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:moods:recovery:0.5",
+      "phase": "recovery",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 230.02436268453062,
+          "y": 108.07015789819286,
+          "w": 495.77631617890586,
+          "h": 673.1920941403217
+        },
+        "hit": [
+          {
+            "x": 481.5656094195123,
+            "y": 305.3310971114035,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.74056787154524,
+            "y": 558.4304503347026,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.4761844695292,
+          "y": 109.87073629289853
+        },
+        "side": {
+          "x": 480,
+          "y": 386.43600179459736,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 1.656351301375231,
+        "waveAngle": 0,
+        "tailLeft": -0.45649400185611966,
+        "tailRight": 0.5448283037233793,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:blink:blink:0.45",
+      "phase": "blink",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 231.00600055318344,
+          "y": 110.6750980119109,
+          "w": 493.82943522855066,
+          "h": 670.5626944950195
+        },
+        "hit": [
+          {
+            "x": 481.5594613744059,
+            "y": 307.16556198021885,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.7180250394885,
+            "y": 559.2763424686565,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.4425494804264,
+          "y": 113.13051963300904
+        },
+        "side": {
+          "x": 480,
+          "y": 393.41691469729903,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 0.4472395594894436,
+        "waveAngle": 0,
+        "tailLeft": 0.11020158962891274,
+        "tailRight": -0.5934363512311422,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "1:blink:blink:0.53",
+      "phase": "blink",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 231.14147014398927,
+          "y": 111.04394687108629,
+          "w": 493.56075858707766,
+          "h": 670.1903822662745
+        },
+        "hit": [
+          {
+            "x": 481.5586129218539,
+            "y": 307.4253146979481,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.71491404679784,
+            "y": 559.3961173329427,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.432315772582,
+          "y": 113.2660816336047
+        },
+        "side": {
+          "x": 480,
+          "y": 394.3042247020832,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0.2588190451025211,
+        "eyeArt": "half"
+      },
+      "secondary": {
+        "ahoge": -0.07190734017119732,
+        "waveAngle": 0,
+        "tailLeft": -0.09215194148596681,
+        "tailRight": -0.8054200839326183,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:blink:blink:0.59",
+      "phase": "blink",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 231.2283860458169,
+          "y": 111.27175944133921,
+          "w": 493.3883784059999,
+          "h": 669.9604306108548
+        },
+        "hit": [
+          {
+            "x": 481.55806856338734,
+            "y": 307.5857460854502,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.71291806575374,
+            "y": 559.4700940282909,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.42775070556576,
+          "y": 113.46000729585921
+        },
+        "side": {
+          "x": 480,
+          "y": 394.82963366133265,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0.9914448613738103,
+        "eyeArt": "rest"
+      },
+      "secondary": {
+        "ahoge": -0.4586274583118417,
+        "waveAngle": 0,
+        "tailLeft": -0.2329282259418293,
+        "tailRight": -0.9452310265138426,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:blink:blink:0.66",
+      "phase": "blink",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 231.33272853527387,
+          "y": 111.5394478943515,
+          "w": 493.18143609914364,
+          "h": 669.6902286512415
+        },
+        "hit": [
+          {
+            "x": 481.5574150613657,
+            "y": 307.7742590805292,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.7105218916744,
+            "y": 559.5570194649107,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.4218107239968,
+          "y": 113.66041671261644
+        },
+        "side": {
+          "x": 480,
+          "y": 395.5045302658749,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0.3214394653031609,
+        "eyeArt": "half"
+      },
+      "secondary": {
+        "ahoge": -0.9011609638266243,
+        "waveAngle": 0,
+        "tailLeft": -0.38271858971320255,
+        "tailRight": -1.0847303485871,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:blink:blink:0.8",
+      "phase": "blink",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 231.50174194507565,
+          "y": 111.99351503770583,
+          "w": 492.84623205047626,
+          "h": 669.231897966635
+        },
+        "hit": [
+          {
+            "x": 481.55635652226465,
+            "y": 308.09402467444073,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.7066405816372,
+            "y": 559.7044669332142,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 491.4142377217484,
+          "y": 114.12404137885619
+        },
+        "side": {
+          "x": 480,
+          "y": 396.6849624308476,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -1.686640757382653,
+        "waveAngle": 0,
+        "tailLeft": -0.6148446073693471,
+        "tailRight": -1.266447108425461,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:pointer:click",
+      "phase": "click",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "air",
+        "busy": true,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 238.6204527506565,
+          "y": 116.90706407242112,
+          "w": 478.7277033128942,
+          "h": 650.0566411162572
+        },
+        "hit": [
+          {
+            "x": 481.5117716946723,
+            "y": 307.38877751578946,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 485.5431628804651,
+            "y": 551.7899177804288,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 490.6143095305854,
+          "y": 89.17095828040271
+        },
+        "side": {
+          "x": 480,
+          "y": 447.32346077975956,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "surprised",
+        "pose": "standing",
+        "seatMix": 0.037836891532387916,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 4.155101126071138,
+        "waveAngle": 0,
+        "tailLeft": 0.7563146691589896,
+        "tailRight": 0.1670828256136574,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:pointer:held",
+      "phase": "held",
+      "facing": 1,
+      "layout": {
+        "x": 480,
+        "facing": 1,
+        "mode": "drag",
+        "busy": true,
+        "pressing": true,
+        "cursor": "grabbing",
+        "moving": true,
+        "box": {
+          "x": 238.45748521182688,
+          "y": 69.46743275143714,
+          "w": 506.35633622685907,
+          "h": 684.4364772435981
+        },
+        "hit": [
+          {
+            "x": 496.37751595637013,
+            "y": 270.8225893132516,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 498.69501929228727,
+            "y": 526.7787953735273,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 507.8560440028724,
+          "y": 71.71964345364186
+        },
+        "side": {
+          "x": 494.30631052668684,
+          "y": 336.4320198166677,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "flustered",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0.9978589232386035,
+        "eyeArt": "pinch"
+      },
+      "secondary": {
+        "ahoge": -0.6916318643595002,
+        "waveAngle": 0,
+        "tailLeft": -0.2801509173252768,
+        "tailRight": -1.2932151030314638,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "1:pointer:released",
+      "phase": "released",
+      "facing": 1,
+      "layout": {
+        "x": 503.47396768941366,
+        "facing": 1,
+        "mode": "land",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 252.872940868267,
+          "y": 102.2849155657342,
+          "w": 508.6723902202362,
+          "h": 683.3260612004983
+        },
+        "hit": [
+          {
+            "x": 513.3275616278703,
+            "y": 304.3898464149342,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 513.046555249018,
+            "y": 558.0849557318408,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 526.6353792601576,
+          "y": 118.20775785627836
+        },
+        "side": {
+          "x": 510.1035343539902,
+          "y": 398.38985607806814,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "surprised",
+        "pose": "standing",
+        "seatMix": 0.07760731185122874,
+        "blink": 0.11111111111111116,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -2.1245907492167104,
+        "waveAngle": 0,
+        "tailLeft": -0.6038996501524464,
+        "tailRight": -1.550273647552825,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "1:pointer:recovery",
+      "phase": "recovery",
+      "facing": 1,
+      "layout": {
+        "x": 503.47396768941366,
+        "facing": 1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 254.96888161396222,
+          "y": 111.98492660896545,
+          "w": 492.85977403087065,
+          "h": 669.2405670465688
+        },
+        "hit": [
+          {
+            "x": 505.0303669593104,
+            "y": 308.0879764911919,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 509.1807650650745,
+            "y": 559.7016780485404,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 514.8854563966559,
+          "y": 113.93811204651195
+        },
+        "side": {
+          "x": 503.4739676760901,
+          "y": 396.6483545701415,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -2.905611845279874,
+        "waveAngle": 0,
+        "tailLeft": 0.32981573427100436,
+        "tailRight": -0.3454288520110366,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:neutral:rest:0.05",
+      "phase": "rest",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 235.17434711927277,
+          "y": 110.70038531799798,
+          "w": 493.8097032626133,
+          "h": 670.5371697494387
+        },
+        "hit": [
+          {
+            "x": 478.4406009370655,
+            "y": 307.18336994225206,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.2822034359065,
+            "y": 559.2845539178162,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.5201730024458,
+          "y": 115.3312265617958
+        },
+        "side": {
+          "x": 480,
+          "y": 395.68542635906056,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 2.954487830241589,
+        "waveAngle": 0,
+        "tailLeft": 0.9731418935450226,
+        "tailRight": 0.5210373793614181,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "-1:wave:action:0.3",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 234.8245429948814,
+          "y": 109.74256767760949,
+          "w": 494.51525298272327,
+          "h": 671.5039809826947
+        },
+        "hit": [
+          {
+            "x": 478.43837288531773,
+            "y": 306.50885047718975,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.27403391283156,
+            "y": 558.9735254978152,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.54215120404854,
+          "y": 112.16720202145882
+        },
+        "side": {
+          "x": 480,
+          "y": 390.86734504513885,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "happy",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "happy"
+      },
+      "secondary": {
+        "ahoge": 1.2837473820867369,
+        "waveAngle": 108.70389940580954,
+        "tailLeft": 0.5267249557938815,
+        "tailRight": -0.12394596865257956,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:wave:action:0.85",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 235.68507965125465,
+          "y": 112.0895987529916,
+          "w": 492.7795633361105,
+          "h": 669.1349120568394
+        },
+        "hit": [
+          {
+            "x": 478.44385401051755,
+            "y": 308.1616892626701,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.29413137189755,
+            "y": 559.7356678266756,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.58673115822586,
+          "y": 114.25311547346826
+        },
+        "side": {
+          "x": 480,
+          "y": 396.9174764374424,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "happy",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "happy"
+      },
+      "secondary": {
+        "ahoge": -2.2341395720871384,
+        "waveAngle": 107.66657860188256,
+        "tailLeft": -0.6168410377212044,
+        "tailRight": -1.2425398585994047,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:wave:action:1.5",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 235.08123093185878,
+          "y": 110.45576826648585,
+          "w": 493.99751722873503,
+          "h": 670.7840836746739
+        },
+        "hit": [
+          {
+            "x": 478.4400078403303,
+            "y": 307.01110441301824,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.28002874787774,
+            "y": 559.2051203682252,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.56559628487213,
+          "y": 112.21482330397725
+        },
+        "side": {
+          "x": 480,
+          "y": 392.7167288209343,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "happy",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "happy"
+      },
+      "secondary": {
+        "ahoge": -2.3604887616542913,
+        "waveAngle": 19.129307368545838,
+        "tailLeft": -0.5564118261110997,
+        "tailRight": -0.30754763937600466,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "-1:wave:recovery:0.4",
+      "phase": "recovery",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 235.72169416474745,
+          "y": 112.16469021408227,
+          "w": 492.70571240656034,
+          "h": 669.0591155116069
+        },
+        "hit": [
+          {
+            "x": 478.44408722397935,
+            "y": 308.2145705732973,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.29498648792395,
+            "y": 559.760051986576,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.5899729758481,
+          "y": 114.23929212264534
+        },
+        "side": {
+          "x": 480,
+          "y": 397.1379379629847,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -1.8872397745779153,
+        "waveAngle": 0,
+        "tailLeft": 0.6739842418402936,
+        "tailRight": -0.2382647692749854,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "-1:wave:recovery:2.2",
+      "phase": "recovery",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 234.5508495198841,
+          "y": 109.00999077515041,
+          "w": 495.06728865416164,
+          "h": 672.2434365415147
+        },
+        "hit": [
+          {
+            "x": 478.43662961477634,
+            "y": 305.9929512501059,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.2676419208465,
+            "y": 558.7356386319932,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.52994592041904,
+          "y": 111.40343418139014
+        },
+        "side": {
+          "x": 480,
+          "y": 388.9049952437323,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 2.7795128753648997,
+        "waveAngle": 0,
+        "tailLeft": 0.628848689707061,
+        "tailRight": 0.9471751895321837,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:run:action:0.15",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 638.4421609688843,
+        "facing": -1,
+        "mode": "run",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 311.9636574422746,
+          "y": 83.04748830908432,
+          "w": 574.962252041553,
+          "h": 728.714781568946
+        },
+        "hit": [
+          {
+            "x": 578.5032393673998,
+            "y": 309.78854239576526,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 605.8305918369304,
+            "y": 561.109724045089,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 544.6129323149573,
+          "y": 119.24056684496873
+        },
+        "side": {
+          "x": 592.3856618035838,
+          "y": 407.88437735001264,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "run",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 1.812036230463401,
+        "waveAngle": 0,
+        "tailLeft": 1.1910052058928575,
+        "tailRight": 0.43841565536961863,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:run:action:0.35",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 619.0785404548055,
+        "facing": -1,
+        "mode": "run",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 261.7148875343893,
+          "y": 76.72923672580521,
+          "w": 603.8630146910674,
+          "h": 747.1890229024109
+        },
+        "hit": [
+          {
+            "x": 535.8142830131542,
+            "y": 314.16385721620543,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 575.7574871780732,
+            "y": 563.3765957998385,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 493.0346155646765,
+          "y": 129.47929150754157
+        },
+        "side": {
+          "x": 554.524354766301,
+          "y": 410.7825606831352,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "run",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 1.4049797944774023,
+        "waveAngle": 0,
+        "tailLeft": 0.7644221951249989,
+        "tailRight": -0.5029016239320911,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:run:action:0.6",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 568.0033250345824,
+        "facing": -1,
+        "mode": "run",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 203.00607794586097,
+          "y": 76.3767986922146,
+          "w": 610.4836110837632,
+          "h": 750.7234739653125
+        },
+        "hit": [
+          {
+            "x": 478.6120563974431,
+            "y": 316.23459722305233,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 521.8790182751435,
+            "y": 564.3969641004497,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 431.54216559669425,
+          "y": 122.81586992975258
+        },
+        "side": {
+          "x": 496.9154456555257,
+          "y": 403.57881503151975,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "run",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0.9978589232386035,
+        "eyeArt": "rest"
+      },
+      "secondary": {
+        "ahoge": 0.10028189606138281,
+        "waveAngle": 0,
+        "tailLeft": -0.3693827926580223,
+        "tailRight": -1.874129819301944,
+        "bodyScaleRatio": 0.9999999999999999
+      }
+    },
+    {
+      "key": "-1:run:recovery:0.8",
+      "phase": "recovery",
+      "facing": -1,
+      "layout": {
+        "x": 568.0033250345824,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 322.81591141812106,
+          "y": 110.79436373281783,
+          "w": 494.0714896413371,
+          "h": 670.6118078643398
+        },
+        "hit": [
+          {
+            "x": 566.1175704984645,
+            "y": 307.3732052212782,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 562.137137011786,
+            "y": 559.3755831937834,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 556.1142102691219,
+          "y": 112.77785470217145
+        },
+        "side": {
+          "x": 567.7369432657036,
+          "y": 394.06989809684313,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -2.746687684004605,
+        "waveAngle": 0,
+        "tailLeft": -0.5910065035626648,
+        "tailRight": -0.46037296974661934,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:walk:action:0.2",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 637.2346611968104,
+        "facing": -1,
+        "mode": "walk",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 357.1920814494515,
+          "y": 96.99801663730989,
+          "w": 529.5724405266902,
+          "h": 697.1453466200784
+        },
+        "hit": [
+          {
+            "x": 611.023610928744,
+            "y": 306.85503067167105,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 620.1453549361454,
+            "y": 559.3965462788711,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 590.9416459871958,
+          "y": 113.78772355549268
+        },
+        "side": {
+          "x": 617.300385361026,
+          "y": 396.3525913254925,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 2.0078883809221746,
+        "waveAngle": 0,
+        "tailLeft": 0.8946668196832062,
+        "tailRight": 0.16515916372571915,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "-1:walk:action:0.8",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 594.7134850784556,
+        "facing": -1,
+        "mode": "walk",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 304.87742909080913,
+          "y": 96.32333988982748,
+          "w": 538.1665789419046,
+          "h": 701.86900481542
+        },
+        "hit": [
+          {
+            "x": 560.7112754150446,
+            "y": 309.329107619326,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 574.0577549956031,
+            "y": 560.6207073861177,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 537.3746916401876,
+          "y": 116.2194878790491
+        },
+        "side": {
+          "x": 569.0084938245833,
+          "y": 406.0326894417308,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -1.2574325673341853,
+        "waveAngle": 0,
+        "tailLeft": -0.9206438652676379,
+        "tailRight": -1.9071533351320964,
+        "bodyScaleRatio": 0.9999999999999999
+      }
+    },
+    {
+      "key": "-1:walk:recovery:0.8",
+      "phase": "recovery",
+      "facing": -1,
+      "layout": {
+        "x": 594.7134850784556,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 349.4243115578621,
+          "y": 109.82458321329045,
+          "w": 494.5722482262378,
+          "h": 671.4836389067616
+        },
+        "hit": [
+          {
+            "x": 593.0317514958602,
+            "y": 306.6121618756977,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 588.9333075805419,
+            "y": 559.0224507681581,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 583.0991499299628,
+          "y": 111.65266598746791
+        },
+        "side": {
+          "x": 594.6147866101105,
+          "y": 391.26529223438916,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -1.6578441680272067,
+        "waveAngle": 0,
+        "tailLeft": -0.5109504489768492,
+        "tailRight": -0.04821912303674062,
+        "bodyScaleRatio": 0.9999999999999999
+      }
+    },
+    {
+      "key": "-1:shake:action:0.2",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 234.62149320498813,
+          "y": 109.19670786182485,
+          "w": 494.9248013912129,
+          "h": 672.0549662427588
+        },
+        "hit": [
+          {
+            "x": 478.4370795745541,
+            "y": 306.1244421562146,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.26929177336484,
+            "y": 558.7962705498101,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.533053820387,
+          "y": 111.60066584559218
+        },
+        "side": {
+          "x": 480,
+          "y": 389.41104271568213,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 1.7221187086795033,
+        "waveAngle": 0,
+        "tailLeft": 0.777701027680494,
+        "tailRight": 0.18906889089942583,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "-1:shake:action:0.5",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 235.22209697633463,
+          "y": 110.84529592339891,
+          "w": 493.71339251057765,
+          "h": 670.3908984810762
+        },
+        "hit": [
+          {
+            "x": 478.44090507628243,
+            "y": 307.2854196643654,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.2833186130353,
+            "y": 559.3316101785686,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.5616660847209,
+          "y": 113.21176800733554
+        },
+        "side": {
+          "x": 480,
+          "y": 393.7188456036036,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -0.07081155829167578,
+        "waveAngle": 0,
+        "tailLeft": 0.08918552105260061,
+        "tailRight": -0.6309640998280047,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:shake:action:0.8",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 235.65156679243273,
+          "y": 111.9905981004108,
+          "w": 492.84715827428636,
+          "h": 669.2348422930125
+        },
+        "hit": [
+          {
+            "x": 478.44364055281807,
+            "y": 308.091970493247,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.2933486936661,
+            "y": 559.7035197274416,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.5843980571252,
+          "y": 114.19887025641549
+        },
+        "side": {
+          "x": 480,
+          "y": 396.6770446871953,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -1.833518498647282,
+        "waveAngle": 0,
+        "tailLeft": -0.6183750213549932,
+        "tailRight": -1.267298942185888,
+        "bodyScaleRatio": 0.9999999999999999
+      }
+    },
+    {
+      "key": "-1:shake:recovery:0.8",
+      "phase": "recovery",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 234.17433296890803,
+          "y": 107.97694913191162,
+          "w": 495.8267169416929,
+          "h": 673.2861781062863
+        },
+        "hit": [
+          {
+            "x": 478.4342314201841,
+            "y": 305.26545713514895,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.25884854067505,
+            "y": 558.4001830123187,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.521121043378,
+          "y": 109.86631886390967
+        },
+        "side": {
+          "x": 480,
+          "y": 386.1237046445109,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 1.4196886903372181,
+        "waveAngle": 0,
+        "tailLeft": -0.4326368446485439,
+        "tailRight": 0.556752925220465,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "-1:nod:action:0.2",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 234.62149320498813,
+          "y": 109.19670786182485,
+          "w": 494.9248013912129,
+          "h": 672.0549662427588
+        },
+        "hit": [
+          {
+            "x": 478.4370795745541,
+            "y": 306.1244421562146,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.26929177336484,
+            "y": 558.7962705498101,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.533053820387,
+          "y": 111.60066584559218
+        },
+        "side": {
+          "x": 480,
+          "y": 389.41104271568213,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 1.853374589287332,
+        "waveAngle": 0,
+        "tailLeft": 1.101415164606754,
+        "tailRight": 0.47676572441140214,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "-1:nod:action:0.5",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 235.22209697633463,
+          "y": 110.84529592339891,
+          "w": 493.71339251057765,
+          "h": 670.3908984810762
+        },
+        "hit": [
+          {
+            "x": 478.44090507628243,
+            "y": 307.2854196643654,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.2833186130353,
+            "y": 559.3316101785686,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.5616660847209,
+          "y": 113.21176800733554
+        },
+        "side": {
+          "x": 480,
+          "y": 393.7188456036036,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 0.060719432688599057,
+        "waveAngle": 0,
+        "tailLeft": 0.43739490908470247,
+        "tailRight": -0.25052628810157673,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:nod:action:0.8",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 235.65156679243273,
+          "y": 111.9905981004108,
+          "w": 492.84715827428636,
+          "h": 669.2348422930125
+        },
+        "hit": [
+          {
+            "x": 478.44364055281807,
+            "y": 308.091970493247,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.2933486936661,
+            "y": 559.7035197274416,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.5843980571252,
+          "y": 114.19887025641549
+        },
+        "side": {
+          "x": 480,
+          "y": 396.6770446871953,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -1.7465237642152767,
+        "waveAngle": 0,
+        "tailLeft": -1.1882505641057466,
+        "tailRight": -1.777949763881848,
+        "bodyScaleRatio": 0.9999999999999999
+      }
+    },
+    {
+      "key": "-1:nod:recovery:0.8",
+      "phase": "recovery",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 234.17433296890803,
+          "y": 107.97694913191162,
+          "w": 495.8267169416929,
+          "h": 673.2861781062863
+        },
+        "hit": [
+          {
+            "x": 478.4342314201841,
+            "y": 305.26545713514895,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.25884854067505,
+            "y": 558.4001830123187,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.521121043378,
+          "y": 109.86631886390967
+        },
+        "side": {
+          "x": 480,
+          "y": 386.1237046445109,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 0.8278565470067607,
+        "waveAngle": 0,
+        "tailLeft": -0.30988705263840055,
+        "tailRight": 0.6864364910299444,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "-1:jump:action:0.2",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 478.67992622129185,
+        "facing": -1,
+        "mode": "air",
+        "busy": true,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 240.05992916656996,
+          "y": 106.90123244902338,
+          "w": 480.6698878027738,
+          "h": 652.3070409619652
+        },
+        "hit": [
+          {
+            "x": 476.7284975499996,
+            "y": 298.14089814865065,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 472.92069101662935,
+            "y": 543.2191601127381,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 467.50483245363125,
+          "y": 71.59530855902517
+        },
+        "side": {
+          "x": 478.3760441250231,
+          "y": 435.5796803991866,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0.037836891532387916,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 1.789990238307135,
+        "waveAngle": 0,
+        "tailLeft": 0.7873970605604805,
+        "tailRight": 0.19950961393055255,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:jump:action:0.5",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 474.19584361188817,
+        "facing": -1,
+        "mode": "land",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 229.55042955890323,
+          "y": 112.97911326756878,
+          "w": 492.6811714103187,
+          "h": 668.5141898243943
+        },
+        "hit": [
+          {
+            "x": 472.10776210742813,
+            "y": 308.99029109713337,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 468.2534472739122,
+            "y": 560.1234585078571,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 462.02422298139396,
+          "y": 115.15871146749453
+        },
+        "side": {
+          "x": 473.7891369715358,
+          "y": 420.5172697829174,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0.08714182921165546,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 0.13633415629799084,
+        "waveAngle": 0,
+        "tailLeft": -0.010331494865947984,
+        "tailRight": -0.7195082930065414,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:jump:action:1.2",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 474.19584361188817,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 229.7744505651848,
+          "y": 111.78164727884337,
+          "w": 493.0189250977161,
+          "h": 669.4549811548414
+        },
+        "hit": [
+          {
+            "x": 472.65651753161717,
+            "y": 307.95121195401816,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 468.4955616822054,
+            "y": 559.638427447451,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 462.80659741101783,
+          "y": 113.70582153262933
+        },
+        "side": {
+          "x": 474.21003356609685,
+          "y": 396.21768765370257,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -2.240909511351247,
+        "waveAngle": 0,
+        "tailLeft": -0.8897941258118964,
+        "tailRight": -1.149414631656305,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "-1:jump:recovery:1",
+      "phase": "recovery",
+      "facing": -1,
+      "layout": {
+        "x": 474.19584361188817,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 228.7826014601534,
+          "y": 109.10029669618325,
+          "w": 494.99486261241657,
+          "h": 672.1522828736203
+        },
+        "hit": [
+          {
+            "x": 472.63270231397485,
+            "y": 306.05654710493246,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 468.4643243276772,
+            "y": 558.7649633833015,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 462.72746652248014,
+          "y": 111.49350586816433
+        },
+        "side": {
+          "x": 474.1958439178121,
+          "y": 389.1563033925973,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 2.980644889602152,
+        "waveAngle": 0,
+        "tailLeft": 0.6227629388780486,
+        "tailRight": 0.5169755556179285,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "-1:dance:action:0.3",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "dance",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 236.07117277163613,
+          "y": 83.6493708903431,
+          "w": 577.0995010990698,
+          "h": 729.7475237847625
+        },
+        "hit": [
+          {
+            "x": 538.9578863387686,
+            "y": 310.23084923920095,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 502.22217904245593,
+            "y": 560.04326218497,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 554.2891450645798,
+          "y": 115.89290258578774
+        },
+        "side": {
+          "x": 528.6431800881076,
+          "y": 401.51841962897305,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "happy",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "happy"
+      },
+      "secondary": {
+        "ahoge": 1.7653281297310994,
+        "waveAngle": 0,
+        "tailLeft": 0.6128390754682492,
+        "tailRight": -0.2743315031390065,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:dance:action:0.8",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "dance",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 151.82114385098163,
+          "y": 85.38568595003915,
+          "w": 575.3900980617132,
+          "h": 727.4413603053392
+        },
+        "hit": [
+          {
+            "x": 417.97125702507395,
+            "y": 312.22795534133843,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 446.4509001518281,
+            "y": 562.2569667738528,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 382.98630700323395,
+          "y": 120.54976237913968
+        },
+        "side": {
+          "x": 431.77628833525296,
+          "y": 405.8816305112686,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "happy",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "happy"
+      },
+      "secondary": {
+        "ahoge": -1.2640122037210157,
+        "waveAngle": 0,
+        "tailLeft": -0.9142017771470248,
+        "tailRight": -1.900527120050344,
+        "bodyScaleRatio": 0.9999999999999999
+      }
+    },
+    {
+      "key": "-1:dance:action:1.6",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "dance",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 154.80196545350807,
+          "y": 84.2426513766394,
+          "w": 573.3496402096423,
+          "h": 727.155637363761
+        },
+        "hit": [
+          {
+            "x": 420.7411037258214,
+            "y": 310.3728609487318,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 447.70848489187455,
+            "y": 561.3718879076965,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 386.91224774811894,
+          "y": 118.1085109049443
+        },
+        "side": {
+          "x": 433.8264480748309,
+          "y": 403.0966537164323,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "happy",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "happy"
+      },
+      "secondary": {
+        "ahoge": -1.1400597804671686,
+        "waveAngle": 0,
+        "tailLeft": -0.9717447712532041,
+        "tailRight": -0.3196606719205637,
+        "bodyScaleRatio": 0.9999999999999999
+      }
+    },
+    {
+      "key": "-1:dance:recovery:1",
+      "phase": "recovery",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 234.24540434178223,
+          "y": 108.17401778638089,
+          "w": 495.68759657574606,
+          "h": 673.0888447972586
+        },
+        "hit": [
+          {
+            "x": 478.4376916234119,
+            "y": 305.4053361644947,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.26189600091186,
+            "y": 558.4646506537867,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.5212775644508,
+          "y": 110.49396032088055
+        },
+        "side": {
+          "x": 480.0024869239453,
+          "y": 386.6582327723179,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 2.8127759050027055,
+        "waveAngle": 0,
+        "tailLeft": 0.3942439674157893,
+        "tailRight": 0.7916332114660896,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:sit:action:0",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "sit",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 234.27385303179003,
+          "y": 108.23934523910327,
+          "w": 495.62598645392666,
+          "h": 673.0213181858816
+        },
+        "hit": [
+          {
+            "x": 478.4348653059349,
+            "y": 305.450243126129,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.26117278842815,
+            "y": 558.4853898859373,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.51815601779793,
+          "y": 110.56876290636649
+        },
+        "side": {
+          "x": 480,
+          "y": 386.84995421869377,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 2.5977394830394647,
+        "waveAngle": 0,
+        "tailLeft": 1.156416247206979,
+        "tailRight": 0.7637503983335272,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "-1:sit:action:0.1",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "sit",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 234.43255659431927,
+          "y": 108.69173256785723,
+          "w": 495.30588372695684,
+          "h": 672.5646830887825
+        },
+        "hit": [
+          {
+            "x": 478.4358761566517,
+            "y": 305.76882575201216,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.26487924105624,
+            "y": 558.6322918745389,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.52499465256267,
+          "y": 116.1131421423429
+        },
+        "side": {
+          "x": 480,
+          "y": 427.60119617735756,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "content",
+        "pose": "standing",
+        "seatMix": 0.41896633332423117,
+        "blink": 0.6666666666666667,
+        "eyeArt": "half"
+      },
+      "secondary": {
+        "ahoge": 2.270363256483284,
+        "waveAngle": 0,
+        "tailLeft": 0.9949194346969181,
+        "tailRight": 0.4924565451006323,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:sit:action:0.3",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "sit",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 271.2625090041347,
+          "y": 272.6265064283226,
+          "w": 434.6528802532357,
+          "h": 503.8882585978671
+        },
+        "hit": [
+          {
+            "x": 480,
+            "y": 462.1051491242148,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 455.5345085366442,
+            "y": 667.7207091925593,
+            "r": 77.55520504731861
+          }
+        ],
+        "bubble": {
+          "x": 470.1045851307691,
+          "y": 269.32207893873857
+        },
+        "side": {
+          "x": 480,
+          "y": 463.5114284097894,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "content",
+        "pose": "seated",
+        "seatMix": 0.9549686936714675,
+        "blink": 0,
+        "eyeArt": "half"
+      },
+      "secondary": {
+        "ahoge": 1.2837473820867369,
+        "waveAngle": 0,
+        "tailLeft": 0.5267249557938815,
+        "tailRight": -0.12394596865257956,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:sit:action:0.7",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "sit",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 271.8776134174233,
+          "y": 273.63813392245015,
+          "w": 433.37205186147526,
+          "h": 502.4007251165199
+        },
+        "hit": [
+          {
+            "x": 480,
+            "y": 462.55741485469514,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 455.606603068875,
+            "y": 667.565975206994,
+            "r": 77.55520504731861
+          }
+        ],
+        "bubble": {
+          "x": 470.135865623102,
+          "y": 268.73695372558467
+        },
+        "side": {
+          "x": 480,
+          "y": 480.54526957007783,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "content",
+        "pose": "seated",
+        "seatMix": 1,
+        "blink": 0.28980910742659366,
+        "eyeArt": "half"
+      },
+      "secondary": {
+        "ahoge": -1.2266515565875349,
+        "waveAngle": 0,
+        "tailLeft": -0.4373696642856748,
+        "tailRight": -1.1292105909088235,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "-1:sit:action:1.2",
+      "phase": "action",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "sit",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 271.9073198215343,
+          "y": 273.69920407878817,
+          "w": 433.31019438658063,
+          "h": 502.33868448192163
+        },
+        "hit": [
+          {
+            "x": 480,
+            "y": 462.59515568149436,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 455.61008486686313,
+            "y": 667.5783998657495,
+            "r": 77.55520504731861
+          }
+        ],
+        "bubble": {
+          "x": 470.14272820452015,
+          "y": 268.3890067934759
+        },
+        "side": {
+          "x": 480,
+          "y": 481.9427514646795,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "content",
+        "pose": "seated",
+        "seatMix": 1,
+        "blink": 0,
+        "eyeArt": "half"
+      },
+      "secondary": {
+        "ahoge": -2.82708256358455,
+        "waveAngle": 0,
+        "tailLeft": -0.7693568595282356,
+        "tailRight": -1.0307073957033872,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "-1:sit:recovery:0.1",
+      "phase": "recovery",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "wake",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 249.96545955244633,
+          "y": 264.01040573654154,
+          "w": 455.20463837487887,
+          "h": 521.1709272517313
+        },
+        "hit": [
+          {
+            "x": 466.272524424094,
+            "y": 462.7245068207696,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 450.8999138197189,
+            "y": 668.6946045049295,
+            "r": 77.55520504731861
+          }
+        ],
+        "bubble": {
+          "x": 447.88448478128066,
+          "y": 268.98660790199597
+        },
+        "side": {
+          "x": 467.09933088425896,
+          "y": 481.53287356555967,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "waking",
+        "pose": "seated",
+        "seatMix": 1,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -2.734689889005397,
+        "waveAngle": 0,
+        "tailLeft": -0.7281971075765848,
+        "tailRight": -0.8349456136429814,
+        "bodyScaleRatio": 0.9999999999999999
+      }
+    },
+    {
+      "key": "-1:sit:recovery:0.3",
+      "phase": "recovery",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "wake",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 233.66295291661373,
+          "y": 256.8984676917275,
+          "w": 471.4340512264769,
+          "h": 535.0912634226399
+        },
+        "hit": [
+          {
+            "x": 456.05135090865673,
+            "y": 462.8848712522127,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 447.3969173429639,
+            "y": 669.54780049471,
+            "r": 77.55520504731861
+          }
+        ],
+        "bubble": {
+          "x": 431.30800814174944,
+          "y": 269.49096768398124
+        },
+        "side": {
+          "x": 457.37869222802266,
+          "y": 480.1836886179037,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "waking",
+        "pose": "seated",
+        "seatMix": 1,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -2.130268426449858,
+        "waveAngle": 0,
+        "tailLeft": -0.6064458672028141,
+        "tailRight": -0.35828224881290843,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "-1:sit:recovery:0.7",
+      "phase": "recovery",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "wake",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 268.28864480054324,
+          "y": 255.60240478607784,
+          "w": 463.6918504513035,
+          "h": 530.7407256374947
+        },
+        "hit": [
+          {
+            "x": 494.2696551199081,
+            "y": 457.2409879127003,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 460.0981828075429,
+            "y": 664.6232706914691,
+            "r": 77.55520504731861
+          }
+        ],
+        "bubble": {
+          "x": 493.1061363856212,
+          "y": 259.3750976741858
+        },
+        "side": {
+          "x": 495.0822721682076,
+          "y": 439.1454986872668,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "waking",
+        "pose": "seated",
+        "seatMix": 1,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 0.1894607058792302,
+        "waveAngle": 0,
+        "tailLeft": -0.36506248097891303,
+        "tailRight": 0.5362169945812738,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "-1:sit:recovery:1.4",
+      "phase": "recovery",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "wake",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 234.14166248949883,
+          "y": 103.37194803716955,
+          "w": 508.3404242005066,
+          "h": 682.3975046742767
+        },
+        "hit": [
+          {
+            "x": 487.28370195989214,
+            "y": 305.1939393302295,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 478.34312373320876,
+            "y": 558.1653653243451,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 480.8081622617509,
+          "y": 115.72315566899601
+        },
+        "side": {
+          "x": 487.0723781950862,
+          "y": 399.5388306580736,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "waking",
+        "pose": "standing",
+        "seatMix": 0.03400994224389368,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 2.878048630796603,
+        "waveAngle": 0,
+        "tailLeft": 0.3752754802183165,
+        "tailRight": 0.7828013895615336,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "-1:sit:recovery:2.2",
+      "phase": "recovery",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 235.63676906120202,
+          "y": 111.9318788181688,
+          "w": 492.9227433678251,
+          "h": 669.3112632512649
+        },
+        "hit": [
+          {
+            "x": 478.4760696690877,
+            "y": 308.0624963143571,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.3080088392085,
+            "y": 559.6895824435147,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.62937020779424,
+          "y": 114.16749517857295
+        },
+        "side": {
+          "x": 480.02634852782523,
+          "y": 396.68256073604897,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -0.8770252416295458,
+        "waveAngle": 0,
+        "tailLeft": 1.0792153270851734,
+        "tailRight": 0.027496071344987938,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:moods:happy:0.5",
+      "phase": "happy",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 235.25537612402903,
+          "y": 110.91639804188208,
+          "w": 493.6462689642726,
+          "h": 670.3191287370673
+        },
+        "hit": [
+          {
+            "x": 478.441117045376,
+            "y": 307.3354915787902,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.28409583304517,
+            "y": 559.3546988946644,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.5641774618587,
+          "y": 113.22728410041339
+        },
+        "side": {
+          "x": 480,
+          "y": 394.0270999432156,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "happy",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "happy"
+      },
+      "secondary": {
+        "ahoge": 0.39883958816413095,
+        "waveAngle": 0,
+        "tailLeft": -0.07589001600051236,
+        "tailRight": -0.7870148395779456,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:moods:scared:0.5",
+      "phase": "scared",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 236.55903290593722,
+          "y": 112.24444885023297,
+          "w": 492.6563303914264,
+          "h": 668.9786079680746
+        },
+        "hit": [
+          {
+            "x": 479.2570988250821,
+            "y": 308.2707386269246,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 475.1084139375753,
+            "y": 559.785951700193,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 469.4055041457427,
+          "y": 114.23007620295971
+        },
+        "side": {
+          "x": 480.8128556578971,
+          "y": 397.4239931219422,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "scared",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -2.2012999177694454,
+        "waveAngle": 0,
+        "tailLeft": -0.8432260050028962,
+        "tailRight": -1.347137426777517,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:moods:flustered:0.5",
+      "phase": "flustered",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 235.11123417656222,
+          "y": 110.53477255005919,
+          "w": 493.93700113007617,
+          "h": 670.7043375668416
+        },
+        "hit": [
+          {
+            "x": 478.44019894379977,
+            "y": 307.066741232436,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.28072946059905,
+            "y": 559.2307751238455,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.5681450989975,
+          "y": 112.22706483081356
+        },
+        "side": {
+          "x": 480,
+          "y": 393.0237299927418,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "flustered",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "pinch"
+      },
+      "secondary": {
+        "ahoge": -1.7634169684998526,
+        "waveAngle": 0,
+        "tailLeft": -0.6841424711404052,
+        "tailRight": -0.4360017705659698,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:moods:recovery:0.5",
+      "phase": "recovery",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 234.1993211365635,
+          "y": 108.07015789819286,
+          "w": 495.77631617890586,
+          "h": 673.1920941403217
+        },
+        "hit": [
+          {
+            "x": 478.4343905804877,
+            "y": 305.3310971114035,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.25943212845476,
+            "y": 558.4304503347026,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.5238155304708,
+          "y": 109.87073629289853
+        },
+        "side": {
+          "x": 480,
+          "y": 386.43600179459736,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 1.0581964589617812,
+        "waveAngle": 0,
+        "tailLeft": -0.36080308793654603,
+        "tailRight": 0.6281387225225508,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:blink:blink:0.45",
+      "phase": "blink",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 235.1645642182659,
+          "y": 110.6750980119109,
+          "w": 493.82943522855066,
+          "h": 670.5626944950195
+        },
+        "hit": [
+          {
+            "x": 478.4405386255941,
+            "y": 307.16556198021885,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.2819749605115,
+            "y": 559.2763424686565,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.5574505195736,
+          "y": 113.13051963300904
+        },
+        "side": {
+          "x": 480,
+          "y": 393.41691469729903,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": 0.3561354817761916,
+        "waveAngle": 0,
+        "tailLeft": 0.12937009535901378,
+        "tailRight": -0.5742334577216115,
+        "bodyScaleRatio": 1.0000000000000002
+      }
+    },
+    {
+      "key": "-1:blink:blink:0.53",
+      "phase": "blink",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 235.2977712689331,
+          "y": 111.04394687108629,
+          "w": 493.5607585870776,
+          "h": 670.1903822662745
+        },
+        "hit": [
+          {
+            "x": 478.4413870781461,
+            "y": 307.4253146979481,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.28508595320216,
+            "y": 559.3961173329427,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.567684227418,
+          "y": 113.2660816336047
+        },
+        "side": {
+          "x": 480,
+          "y": 394.3042247020832,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0.2588190451025211,
+        "eyeArt": "half"
+      },
+      "secondary": {
+        "ahoge": -0.16302702424729648,
+        "waveAngle": 0,
+        "tailLeft": -0.0729815936721818,
+        "tailRight": -0.7862555372302227,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:blink:blink:0.59",
+      "phase": "blink",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 235.38323554818322,
+          "y": 111.27175944133921,
+          "w": 493.38837840599984,
+          "h": 669.9604306108548
+        },
+        "hit": [
+          {
+            "x": 478.44193143661266,
+            "y": 307.5857460854502,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.28708193424626,
+            "y": 559.4700940282909,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.57224929443424,
+          "y": 113.46000729585921
+        },
+        "side": {
+          "x": 480,
+          "y": 394.82963366133265,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0.9914448613738103,
+        "eyeArt": "rest"
+      },
+      "secondary": {
+        "ahoge": -0.5497497820669961,
+        "waveAngle": 0,
+        "tailLeft": -0.21374314586834844,
+        "tailRight": -0.9260721518763176,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:blink:blink:0.66",
+      "phase": "blink",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 235.4858353655825,
+          "y": 111.5394478943515,
+          "w": 493.18143609914364,
+          "h": 669.6902286512415
+        },
+        "hit": [
+          {
+            "x": 478.4425849386343,
+            "y": 307.7742590805292,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.2894781083256,
+            "y": 559.5570194649107,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.5781892760032,
+          "y": 113.66041671261644
+        },
+        "side": {
+          "x": 480,
+          "y": 395.5045302658749,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0.3214394653031609,
+        "eyeArt": "half"
+      },
+      "secondary": {
+        "ahoge": -0.99006331458413,
+        "waveAngle": 0,
+        "tailLeft": -0.36373515624614033,
+        "tailRight": -1.0657574030932044,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:blink:blink:0.8",
+      "phase": "blink",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 235.65202600444806,
+          "y": 111.99351503770583,
+          "w": 492.84623205047626,
+          "h": 669.231897966635
+        },
+        "hit": [
+          {
+            "x": 478.44364347773535,
+            "y": 308.09402467444073,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.2933594183628,
+            "y": 559.7044669332142,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.5857622782516,
+          "y": 114.12404137885619
+        },
+        "side": {
+          "x": 480,
+          "y": 396.6849624308476,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -1.6215586166875406,
+        "waveAngle": 0,
+        "tailLeft": -0.614418026104057,
+        "tailRight": -1.2639506228722355,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:pointer:click",
+      "phase": "click",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 234.5969241601248,
+          "y": 109.14021080247869,
+          "w": 494.9743567895572,
+          "h": 672.1119937909252
+        },
+        "hit": [
+          {
+            "x": 478.4369230838224,
+            "y": 306.0846554947033,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 474.2687179740156,
+            "y": 558.7779244781132,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 468.5576424865584,
+          "y": 110.05208964472672
+        },
+        "side": {
+          "x": 480,
+          "y": 389.1729311971794,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "love",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "love"
+      },
+      "secondary": {
+        "ahoge": 3.806824962274108,
+        "waveAngle": 0,
+        "tailLeft": 0.8358095480192498,
+        "tailRight": 0.24833639810673064,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:pointer:held",
+      "phase": "held",
+      "facing": -1,
+      "layout": {
+        "x": 480,
+        "facing": -1,
+        "mode": "drag",
+        "busy": true,
+        "pressing": true,
+        "cursor": "grabbing",
+        "moving": true,
+        "box": {
+          "x": 239.34874282447007,
+          "y": 73.07883954538497,
+          "w": 506.81302359945573,
+          "h": 685.044969039217
+        },
+        "hit": [
+          {
+            "x": 490.1072510640232,
+            "y": 274.55801212226106,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 483.9764356615597,
+            "y": 530.6788903542415,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 481.5542865027927,
+          "y": 76.45133976371828
+        },
+        "side": {
+          "x": 491.2282401300236,
+          "y": 336.869510759909,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "flustered",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0.9978589232386035,
+        "eyeArt": "pinch"
+      },
+      "secondary": {
+        "ahoge": -0.7180548878144702,
+        "waveAngle": 0,
+        "tailLeft": -0.26369923760413627,
+        "tailRight": -1.2733780037084037,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:pointer:released",
+      "phase": "released",
+      "facing": -1,
+      "layout": {
+        "x": 500.3680468837142,
+        "facing": -1,
+        "mode": "land",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": true,
+        "box": {
+          "x": 254.02947221625513,
+          "y": 102.57270269728804,
+          "w": 508.50955341862164,
+          "h": 683.1085088987222
+        },
+        "hit": [
+          {
+            "x": 507.0818368054442,
+            "y": 304.4844493014021,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 498.4364742019267,
+            "y": 557.9515534136647,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 500.3393276284178,
+          "y": 117.99400113530578
+        },
+        "side": {
+          "x": 506.98753048017323,
+          "y": 398.9626515452611,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "surprised",
+        "pose": "standing",
+        "seatMix": 0.0746632325749304,
+        "blink": 0.11111111111111116,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -2.1170441031450205,
+        "waveAngle": 0,
+        "tailLeft": -0.6030151176814132,
+        "tailRight": -1.5473809889565031,
+        "bodyScaleRatio": 1
+      }
+    },
+    {
+      "key": "-1:pointer:recovery",
+      "phase": "recovery",
+      "facing": -1,
+      "layout": {
+        "x": 500.3680468837142,
+        "facing": -1,
+        "mode": "idle",
+        "busy": false,
+        "pressing": false,
+        "cursor": "",
+        "moving": false,
+        "box": {
+          "x": 256.01335890517527,
+          "y": 111.98492660878446,
+          "w": 492.85977403085275,
+          "h": 669.2405670466039
+        },
+        "hit": [
+          {
+            "x": 498.81164758093325,
+            "y": 308.087976491277,
+            "r": 124.40063091482651
+          },
+          {
+            "x": 494.6612494928902,
+            "y": 559.7016780489312,
+            "r": 78.59621451104101
+          }
+        ],
+        "bubble": {
+          "x": 488.95655812991436,
+          "y": 113.93811204728638
+        },
+        "side": {
+          "x": 500.3680468703907,
+          "y": 396.64835457007126,
+          "reach": 312
+        }
+      },
+      "visual": {
+        "face": "neutral",
+        "pose": "standing",
+        "seatMix": 0,
+        "blink": 0,
+        "eyeArt": "open"
+      },
+      "secondary": {
+        "ahoge": -2.816863155521513,
+        "waveAngle": 0,
+        "tailLeft": 0.31101715386218776,
+        "tailRight": -0.3642338657737388,
+        "bodyScaleRatio": 1
+      }
+    }
+  ],
+  "expected": [
+    "1:neutral:rest:0.05",
+    "1:wave:action:0.3",
+    "1:wave:action:0.85",
+    "1:wave:action:1.5",
+    "1:wave:recovery:0.4",
+    "1:wave:recovery:2.2",
+    "1:run:action:0.15",
+    "1:run:action:0.35",
+    "1:run:action:0.6",
+    "1:run:recovery:0.8",
+    "1:walk:action:0.2",
+    "1:walk:action:0.8",
+    "1:walk:recovery:0.8",
+    "1:shake:action:0.2",
+    "1:shake:action:0.5",
+    "1:shake:action:0.8",
+    "1:shake:recovery:0.8",
+    "1:nod:action:0.2",
+    "1:nod:action:0.5",
+    "1:nod:action:0.8",
+    "1:nod:recovery:0.8",
+    "1:jump:action:0.2",
+    "1:jump:action:0.5",
+    "1:jump:action:1.2",
+    "1:jump:recovery:1",
+    "1:dance:action:0.3",
+    "1:dance:action:0.8",
+    "1:dance:action:1.6",
+    "1:dance:recovery:1",
+    "1:sit:action:0",
+    "1:sit:action:0.1",
+    "1:sit:action:0.3",
+    "1:sit:action:0.7",
+    "1:sit:action:1.2",
+    "1:sit:recovery:0.1",
+    "1:sit:recovery:0.3",
+    "1:sit:recovery:0.7",
+    "1:sit:recovery:1.4",
+    "1:sit:recovery:2.2",
+    "1:moods:happy:0.5",
+    "1:moods:scared:0.5",
+    "1:moods:flustered:0.5",
+    "1:moods:recovery:0.5",
+    "1:blink:blink:0.45",
+    "1:blink:blink:0.53",
+    "1:blink:blink:0.59",
+    "1:blink:blink:0.66",
+    "1:blink:blink:0.8",
+    "1:pointer:click",
+    "1:pointer:held",
+    "1:pointer:released",
+    "1:pointer:recovery",
+    "-1:neutral:rest:0.05",
+    "-1:wave:action:0.3",
+    "-1:wave:action:0.85",
+    "-1:wave:action:1.5",
+    "-1:wave:recovery:0.4",
+    "-1:wave:recovery:2.2",
+    "-1:run:action:0.15",
+    "-1:run:action:0.35",
+    "-1:run:action:0.6",
+    "-1:run:recovery:0.8",
+    "-1:walk:action:0.2",
+    "-1:walk:action:0.8",
+    "-1:walk:recovery:0.8",
+    "-1:shake:action:0.2",
+    "-1:shake:action:0.5",
+    "-1:shake:action:0.8",
+    "-1:shake:recovery:0.8",
+    "-1:nod:action:0.2",
+    "-1:nod:action:0.5",
+    "-1:nod:action:0.8",
+    "-1:nod:recovery:0.8",
+    "-1:jump:action:0.2",
+    "-1:jump:action:0.5",
+    "-1:jump:action:1.2",
+    "-1:jump:recovery:1",
+    "-1:dance:action:0.3",
+    "-1:dance:action:0.8",
+    "-1:dance:action:1.6",
+    "-1:dance:recovery:1",
+    "-1:sit:action:0",
+    "-1:sit:action:0.1",
+    "-1:sit:action:0.3",
+    "-1:sit:action:0.7",
+    "-1:sit:action:1.2",
+    "-1:sit:recovery:0.1",
+    "-1:sit:recovery:0.3",
+    "-1:sit:recovery:0.7",
+    "-1:sit:recovery:1.4",
+    "-1:sit:recovery:2.2",
+    "-1:moods:happy:0.5",
+    "-1:moods:scared:0.5",
+    "-1:moods:flustered:0.5",
+    "-1:moods:recovery:0.5",
+    "-1:blink:blink:0.45",
+    "-1:blink:blink:0.53",
+    "-1:blink:blink:0.59",
+    "-1:blink:blink:0.66",
+    "-1:blink:blink:0.8",
+    "-1:pointer:click",
+    "-1:pointer:held",
+    "-1:pointer:released",
+    "-1:pointer:recovery"
+  ],
+  "kind": "actual renderer PNG exports, not browser screenshots",
+  "schema": 3,
+  "pack_fingerprint": "1fef49be289d650f54fb58250726e47b628e3efa8cd30052dc58d7efeedfd0d3",
+  "review_page": "characters/atri-01/official-regeneration/pure-generation/review.html"
+}

@@ -1,0 +1,70 @@
+{
+  "master": "characters/atri-01/master.png",
+  "method": "Curve registration per lock: the lock outer profile is matched to the master outer silhouette over the rows where that lock is outermost, translation solved directly, uniform similarity only. The front band is measured from master pixel agreement (fit-locks.py master_front_rows), not chosen by taste.",
+  "tail-left": {
+    "source": "characters/atri-01/official-regeneration/raw/ponytail-near-accepted.png",
+    "source_sha256": "ead37c4c77849ad8684f07b2663f184bc5930393e4cb6e32522fc9953c3435c7",
+    "restored_from": "scratch/candidates/atri-hair-junctions/tex/source-002.png",
+    "complete_lock": true,
+    "matrix": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "scale": 1.0,
+    "rotation_deg": 0.0,
+    "placement": "restored to the accepted handling: this is the exact layer the accepted pack drew (identity registration, back layer). No warping, no stretching and no code-side alpha deletion are applied to the artwork any more.",
+    "root_cover_row": 305
+  },
+  "tail-right": {
+    "profile_error_px": 8.78644765191336,
+    "outside_master_px": 0.6529384851455688,
+    "scale": 0.7163589123659682,
+    "rotation_deg": 9.426891429324433,
+    "top_anchor_min_y": 240.0,
+    "matrix": [
+      [
+        0.7066847695696805,
+        -0.1173316998274566,
+        365.9428929361303
+      ],
+      [
+        0.1173316998274566,
+        0.7066847695696805,
+        88.27678447067467
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "status": "preserved: user accepted the far lock in the current candidate"
+  },
+  "front_overlay": {
+    "tail-left": {
+      "rows": [
+        305,
+        1012
+      ],
+      "front_mask": "characters/atri-01/official-regeneration/raw/ponytail-near-accepted-front.png",
+      "reason": "the master itself draws this lock above the head hair from just under the bow down to row 1012 (measured by comparing the master pixels with the registered lock art); the same pixels stay in the back layer outside the band"
+    },
+    "tail-right": {
+      "rows": null,
+      "reason": "far lock belongs entirely to the back layer (kept as accepted)"
+    }
+  }
+}

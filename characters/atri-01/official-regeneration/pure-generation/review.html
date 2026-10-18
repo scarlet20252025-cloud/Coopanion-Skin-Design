@@ -1,0 +1,9 @@
+<!doctype html><meta charset="utf-8"><title>ATRI 整件生成 · 组装复核</title>
+<style>body{font:15px system-ui;background:#f5f0f7;color:#332a3b;margin:18px}h1{font-size:22px}button,select{font:inherit;padding:7px;margin:3px;border:1px solid #b9a2cc;border-radius:7px;background:white}iframe{width:100%;height:1120px;border:0}#controls{position:sticky;top:0;background:#f5f0f7ef;z-index:3;padding:8px}#status{white-space:pre-wrap}#shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px}#shots figure{margin:0;background:#e8e2ef}#shots img{width:100%}#one img{max-width:100%;background:#e8e2ef}input{vertical-align:middle}</style>
+<h1>ATRI 整件生成 · 组装复核</h1>
+<p>13 张整件生成组件的站姿部分＋完整坐姿＋近侧马尾上段前景段，保留原表情。马尾位置按母版外轮廓重新配准；近侧马尾上段在头发之前、远侧马尾整根在后层，依据母版自身像素判定。这里是隔离候选，尚未完成美术验收，未安装。坐姿使用独立成稿，不压缩站姿身体。</p>
+<div id="controls"><button id="rest">原位</button><button id="wave">招手问题帧</button><button id="sit">坐姿</button><button id="happy">开心</button><button id="scared">害怕</button><button id="flip">切换朝向</button><button id="dark">深浅背景</button><label>母版叠图 <input id="reference" type="range" min="0" max="100" value="0"></label><button id="frame">取当前渲染帧</button><button id="qa">采集动作和恢复 QA</button></div>
+<p id="status">正在载入真实 Coopanion API 2 渲染器……</p>
+<iframe id="preview" src="/preview/engineering.html?pack=scratch/candidates/atri-pure-components-01"></iframe>
+<div id="one"></div><details><summary>动作采样详情</summary><div id="shots"></div></details><details><summary>采样数据</summary><pre id="results"></pre></details>
+<script type="module" src="review.js"></script>
