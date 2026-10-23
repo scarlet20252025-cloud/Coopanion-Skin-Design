@@ -61,7 +61,13 @@
   for(let i=0;i<2;i++){
    eyes[i].source.setAttribute('display',selected==='open'||selected==='wink'&&i===0?'inline':'none');
    eyes[i].happy.setAttribute('display',selected==='happy'||selected==='wink'&&i===1?'inline':'none');
-   const [ex,ey]=rig.eyes[i];const sy=f==='scared'?1.10:f==='sad'?.90:f==='worried'?.96:1;const sx=f==='scared'?1.035:1;eyes[i].source.setAttribute('transform',selected==='open'&&sy!==1?`translate(${ex} ${ey}) scale(${sx} ${sy}) translate(${-ex} ${-ey})`:'');
+   // 2026-10-24: this transform OVERWRITES the pose translate set in buildFace, so the pose offset has
+   // to be folded in here or sad/scared/worried would snap the eyes back to the standing position.
+   const [ex,ey]=rig.eyes[i],[eox,eoy]=OFF.eyes[i];
+   const sy=f==='scared'?1.10:f==='sad'?.90:f==='worried'?.96:1;const sx=f==='scared'?1.035:1;
+   eyes[i].source.setAttribute('transform',selected==='open'&&sy!==1
+     ?`translate(${eox} ${eoy}) translate(${ex} ${ey}) scale(${sx} ${sy}) translate(${-ex} ${-ey})`
+     :(eox||eoy?`translate(${eox} ${eoy})`:''));
   }
   for(const [variant,image]of Object.entries(eyeArt))image.setAttribute('display',selected===variant?'inline':'none');
   state.currentEyeArt=selected;
@@ -87,7 +93,10 @@
   }
   pinchMouth.setAttribute('display',pinch?'inline':'none');
   mouth.setAttribute('display',pinch?'none':'inline');
-  const [mx,my]=OFF.mouth;
+  // 2026-10-24: OFF.mouth is an OFFSET, not the position - the mouth still sits at rig.mouth and only
+  // moves by the pose offset. (Replacing the rig lookup with the offset put the mouth at the canvas
+  // origin and made every mouth disappear.)
+  const [x,y]=rig.mouth,[mx,my]=OFF.mouth;
   // Native vector mouth designs: no universal dark talking bowl or double dash.
   // Talking modulates only the chosen design, never replaces its emotion.
   const styles={
@@ -123,7 +132,7 @@
   const key=pinch?'neutral':f==='bowing'?'happy':f==='squeeze'?'sleep':styles[f]?f:'neutral',mouthScale=1;
   const [outline,fill,inner]=styles[key];
   mouth.setAttribute('data-mouth-style',pinch?'source-pinch':key);
-  mouth.setAttribute('transform',`translate(${mx} ${my}) rotate(-7) scale(${mouthScale} ${mouthScale*(1+Math.min(.18,(o.talk||0)*.18))})`);
+  mouth.setAttribute('transform',`translate(${x+mx} ${y+my}) rotate(-7) scale(${mouthScale} ${mouthScale*(1+Math.min(.18,(o.talk||0)*.18))})`);
   lip.setAttribute('d',outline);lip.setAttribute('fill',fill);
   tongue.setAttribute('d',inner);tongue.setAttribute('display',inner?'inline':'none');
 
