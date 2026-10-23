@@ -168,12 +168,22 @@ Start-Process -FilePath ".\.venv\Scripts\python.exe" -ArgumentList "-m","http.se
 用 `Invoke-WebRequest http://127.0.0.1:8765/preview/engineering.html` 验证最可靠。
 另：`figure.js` 是 ES module，浏览器会缓存，改动后用 `?cb=<时间戳>` 强制刷新。
 
-### 5.4 版本快照
+### 5.4 版本备份与回退（用户要求「确保能按版本回退补救」）
 
 ```powershell
 cd D:\Codex\Coopanion-Skin-Design
-.\.venv\Scripts\python.exe scripts\snapshot-candidate.py atri-pure-components-01 "<note>"
+.\.venv\Scripts\python.exe scripts\version-candidate.py list                 # 看所有版本
+.\.venv\Scripts\python.exe scripts\version-candidate.py snapshot "<note>"    # 给当前预览态存一个版本
+.\.venv\Scripts\python.exe scripts\version-candidate.py rollback atri-pure-components-003
 ```
+
+- 版本号单调（`atri-pure-components-002 / 003 / …`），取自 registry，不随目录增删复用。
+- 每个版本同时打 git tag `atri-pack-vNNN`（贴图在 gitignore 的 `scratch/`，代码不在，所以两侧都要锚）。
+- `rollback` 会**先把当前态存成一个新版本**再覆盖实时候选，所以回退本身可撤销。
+- 回退后必须重建 + 验导入才信预览：见 §5.2。
+- **当前基线版本：`atri-pure-components-003`**（tag `atri-pack-v003`，提交 `4d6339d`）= 用户认可过的预览态：22:21 脸部基线、40 贴图、`arm-left` 挂在所有头发之后。
+
+旧的 `scripts/snapshot-candidate.py` 仍可用（只复制不编号），新工作一律走 `version-candidate.py`。
 
 ### 5.5 出图通道（imagegen 技能 CLI 回退）
 
