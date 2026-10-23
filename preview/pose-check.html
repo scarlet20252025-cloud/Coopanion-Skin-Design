@@ -1,0 +1,100 @@
+<!doctype html><meta charset="utf-8"><title>表情姿态对照（含 DOM 诊断）</title>
+<style>
+body{margin:0;background:#e9e4f1;font:14px/1.6 system-ui,'Microsoft YaHei'}
+main{max-width:1000px;padding:16px;margin:auto}
+#stage{width:960px;height:800px;background:#e9e4f1;position:relative;overflow:hidden;border-radius:12px}
+#root{position:absolute;inset:0}
+button{padding:8px;margin:4px;border:1px solid #c7b5dc;border-radius:6px;background:#fcfaff}
+#hint{color:#6b5f7d;font-size:13px}
+#diag{font:12px/1.5 ui-monospace,Consolas,monospace;background:#1f1b28;color:#d7f0d0;padding:10px;border-radius:8px;white-space:pre-wrap;max-width:960px}
+</style>
+<h3>表情姿态对照</h3>
+<div id="hint">
+  <code>?pose=sit&amp;word=大哭</code> 打开即坐下并锁定表情；<code>?pose=stand&amp;word=大哭</code> 站立同一表情。
+  加 <code>diag=1</code> 显示坐姿/站立 face group 的 DOM 数值。
+</div>
+<main>
+  <div id="stage"><div id="root"></div></div>
+  <div id="actions"></div>
+  <div id="status"></div>
+  <pre id="diag" style="display:none"></pre>
+</main>
+<script type="module">
+import * as kit from './vendor/kit/body.js';
+const $=id=>document.getElementById(id);
+const q=new URLSearchParams(location.search);
+const requested=q.get('pack')||'scratch/candidates/atri-pure-components-01';
+const pose=q.get('pose')==='sit'?'sit':'stand';
+const word=q.get('word')||'';
+const wantDiag=q.get('diag')==='1';
+if(q.get('faceonly')==='1'){ $('hint').style.display='none'; $('actions').style.display='none'; }
+
+const base=new URL('../'+requested+'/',import.meta.url);
+const manifest=await(await fetch(new URL('figure.json',base))).json();
+const model=await(await fetch(new URL(manifest.model,base))).json();
+const module=await import(new URL(manifest.entry,base)),factory=module[manifest.export];
+
+let body;
+body=await factory(base,{kit,model,host:{root:$('root'),bounds:()=>({W:$('stage').clientWidth,H:800,floorY:775,S:3}),start:{x:$('stage').clientWidth/2,facing:1,enter:'stand'},emit:()=>{},sound:()=>{}}});
+body.set({roam:'off',hold:999});
+for(let i=0;i<240;i++)body.step(1/60);
+if(pose==='sit'){
+  body.do('sit');
+  for(let i=0;i<600;i++)body.step(1/60);
+}
+if(word){
+  const v=manifest.vocab.find(x=>(x.names?.zh||[]).includes(word)||x.id===word);
+  if(v){ body.do(v.id); for(let i=0;i<150;i++)body.step(1/60); }
+}
+
+for(const v of manifest.vocab){
+  const b=document.createElement('button');
+  b.textContent=v.names?.zh?.[0]||v.id;
+  b.onclick=()=>{body.do(v.id);for(let i=0;i<90;i++)body.step(1/60);};
+  $('actions').append(b);
+}
+$('status').textContent=`pose=${pose} word=${word||'(none)'}`;
+
+// ---- 调试：按名字隐藏部件，用来定位某个视觉瑕疵到底来自哪一层 ----
+const hide=(q.get('hide')||'').split(',').filter(Boolean);
+if(hide.length){
+  const map={brow:'[data-brow]',mouth:'[data-mouth-style]',pinch:'[data-pinch-mouth]',
+             sparkle:'[data-sparkle]',streams:'[data-streams]'};
+  for(const name of hide){
+    const sel=map[name]; if(!sel) continue;
+    document.querySelectorAll(sel).forEach(e=>e.setAttribute('display','none'));
+  }
+  $('status').textContent += ' hide=' + hide.join(',');
+}
+
+// ---- DOM 诊断：把关键元素的几何数值摊开，截图即可读 ----
+if(wantDiag){
+  const lines=[];
+  const svg=$('root').querySelector('svg');
+  lines.push('svg viewBox=' + svg.getAttribute('viewBox') + ' w=' + svg.getAttribute('width'));
+  for(const p of ['standing','seated']){
+    const g=document.querySelector(`[data-face="${p}"]`);
+    if(!g){ lines.push(`face[${p}] MISSING`); continue; }
+    lines.push(`--- face[${p}] ---`);
+    lines.push('  transform=' + (g.getAttribute('transform')||'(none)'));
+    lines.push('  children=' + g.children.length);
+    const imgs=[...g.querySelectorAll(':scope > image')];
+    lines.push('  direct images=' + imgs.length);
+    imgs.slice(0,8).forEach((im,i)=>{
+      const href=(im.getAttribute('href')||'').split('/').pop();
+      lines.push(`    img${i} ${href} display=${im.getAttribute('display')||'inline'} transform=${im.getAttribute('transform')||'-'}`);
+    });
+    const brows=[...g.querySelectorAll('[data-brow]')];
+    lines.push('  brows=' + brows.length);
+    brows.forEach((b,i)=>lines.push(`    brow${i} d=${b.getAttribute('d')} sw=${b.getAttribute('stroke-width')} mask=${b.getAttribute('mask')||'-'}`));
+    const masks=[...g.querySelectorAll('mask')];
+    lines.push('  masks=' + masks.map(m=>m.id).join(','));
+    const mouth=g.querySelector('[data-mouth-style]');
+    if(mouth) lines.push('  mouth style=' + mouth.getAttribute('data-mouth-style') + ' transform=' + mouth.getAttribute('transform'));
+    const pm=g.querySelector('[data-pinch-mouth]');
+    if(pm) lines.push('  pinchMouth display=' + pm.getAttribute('display'));
+  }
+  $('diag').style.display='block';
+  $('diag').textContent=lines.join('\n');
+}
+</script>

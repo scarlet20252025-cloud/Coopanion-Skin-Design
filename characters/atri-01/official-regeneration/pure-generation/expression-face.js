@@ -9,21 +9,32 @@
   // NOTE: this restores the seated-reuse half of 4eec957 only. That commit also changed the mouth table
   // and added the blush layer; the user rejected the mouth ("别用这张嘴"), so those stay withdrawn.
   const rig=model.expression_rig.standing,g=n('g',{'data-face':pose}),eyes=[];parent.append(g);
-  const fit=FX_POSE_FIT[pose];
-  if(fit)g.setAttribute('transform',`matrix(${fit.map(v=>Math.round(v*1e5)/1e5).join(' ')})`);
+  // 2026-10-24: the seated face is positioned with INTEGER translations only, never a rotation or a
+  // scale. The eye textures ship with a hard 1-bit alpha (0 or 255) whose transparent pixels are pure
+  // white; any fractional transform makes the renderer interpolate along that edge and the white bleeds
+  // in as a dotted halo - which is what read as "a corner of the eye is missing". Integer translate is
+  // a pixel copy, so the art stays byte-identical to the standing render.
+  // The two poses' eye pairs are not exactly similar (eye distance 182 vs 170), so one transform cannot
+  // place both eyes; each eye and each feature therefore gets its own integer offset from the rigs.
+  const OFF=POSE_OFFSET[pose];
+  if(OFF.group[0]||OFF.group[1])g.setAttribute('transform',`translate(${OFF.group[0]} ${OFF.group[1]})`);
   const defs=n('defs');g.append(defs);
   const foreheadId=`${clipPrefix}-${pose}-forehead`,forehead=n('mask',{id:foreheadId,maskUnits:'userSpaceOnUse',x:0,y:0,width:W,height:H,style:'mask-type:alpha'});
   const foreheadPart=parts.get('brow-mask');forehead.append(n('image',{width:W,height:H,href:textures.get(foreheadPart.file)}));defs.append(forehead);
   for(let i=0;i<2;i++){const id='eye-'+i;
-   const source=n('image',{width:W,height:H,href:textures.get(parts.get(id).file)});g.append(source);
+   const [ox,oy]=OFF.eyes[i];
+   const tr=ox||oy?`translate(${ox} ${oy})`:'';
+   const source=n('image',{width:W,height:H,href:textures.get(parts.get(id).file),transform:tr});g.append(source);
    const happyId=`closed-happy-${i}`;
-   const happy=n('image',{width:W,height:H,href:textures.get(parts.get(happyId).file)});g.append(happy);eyes.push({source,happy});}
+   const happy=n('image',{width:W,height:H,href:textures.get(parts.get(happyId).file),transform:tr});g.append(happy);eyes.push({source,happy});}
   // Each redrawn pair uses one registered posed-face source. No separate eye
   // translations, vertical iris clipping or generic heart/spiral/chevron paths.
   const eyeArt={};
   for(const variant of ['half','late','rest','love','dizzy','pinch']){
    const part=parts.get('eye-pair-'+variant);
-   eyeArt[variant]=n('image',{width:W,height:H,href:textures.get(part.file),'data-eye-art':variant});g.append(eyeArt[variant]);
+   const [ax,ay]=OFF.eyeArt;
+   eyeArt[variant]=n('image',{width:W,height:H,href:textures.get(part.file),'data-eye-art':variant,
+     transform:ax||ay?`translate(${ax} ${ay})`:''});g.append(eyeArt[variant]);
   }
   // Brows belong to exposed skin; a screen-space path across the bangs is not a brow.
   // 2026-10-16 user feedback: "负面表情的眉毛你都没有变化". The forehead mask keeps only the skin between
@@ -34,10 +45,10 @@
   const pinchMouth=n('image',{width:W,height:H,href:textures.get(pinchPart.file),'data-pinch-mouth':pose});g.append(pinchMouth);
   const mouth=n('g',{'data-mouth-style':'neutral'}),lip=n('path',{fill:'none',stroke:'#a96165','stroke-width':2.8,'stroke-linecap':'round','stroke-linejoin':'round'}),tongue=n('path',{fill:'#eea0aa',stroke:'none'});
   mouth.append(lip,tongue);g.append(mouth);
-  const state={g,eyes,eyeArt,brows,mouth,lip,tongue,pinchMouth,pose,rig,currentEyeArt:'open'};faceNodes.set(pose,state);return state;
+  const state={g,eyes,eyeArt,brows,mouth,lip,tongue,pinchMouth,pose,rig,off:OFF,currentEyeArt:'open'};faceNodes.set(pose,state);return state;
  }
  function paintFace(state,f,o){
-  const {rig,eyes,eyeArt,brows,mouth,lip,tongue,pinchMouth,pose}=state;
+  const {rig,eyes,eyeArt,brows,mouth,lip,tongue,pinchMouth,pose,off:OFF}=state;
   const happy=['happy','bowing'].includes(f),wink=f==='wink';
   const forcedRest=['sleep','sleepy','squeeze','cry'].includes(f)||o.eyes?.every(e=>e.shape==='down');
   const closure=clamp(Math.max(o.blink||0,o.eyeClose||0,forcedRest?1:0));
@@ -70,12 +81,13 @@
    else if(['angry','determined'].includes(f)){outer=-12;inner=26;arch=0;}
    else if(['happy','excited','surprised'].includes(f)){outer=-9;inner=-10;arch=-14;}
    const dy0=i===0?outer:inner,dy2=i===0?inner:outer;
-   brows[i].setAttribute('d',`M${x0} ${y0+dy0}Q${x1} ${y1+arch} ${x2} ${y2+dy2}`);
+   const [bx,by]=OFF.brows[i];
+   brows[i].setAttribute('d',`M${x0+bx} ${y0+dy0+by}Q${x1+bx} ${y1+arch+by} ${x2+bx} ${y2+dy2+by}`);
 
   }
   pinchMouth.setAttribute('display',pinch?'inline':'none');
   mouth.setAttribute('display',pinch?'none':'inline');
-  const [x,y]=rig.mouth;
+  const [mx,my]=OFF.mouth;
   // Native vector mouth designs: no universal dark talking bowl or double dash.
   // Talking modulates only the chosen design, never replaces its emotion.
   const styles={
@@ -111,7 +123,7 @@
   const key=pinch?'neutral':f==='bowing'?'happy':f==='squeeze'?'sleep':styles[f]?f:'neutral',mouthScale=1;
   const [outline,fill,inner]=styles[key];
   mouth.setAttribute('data-mouth-style',pinch?'source-pinch':key);
-  mouth.setAttribute('transform',`translate(${x} ${y}) rotate(-7) scale(${mouthScale} ${mouthScale*(1+Math.min(.18,(o.talk||0)*.18))})`);
+  mouth.setAttribute('transform',`translate(${mx} ${my}) rotate(-7) scale(${mouthScale} ${mouthScale*(1+Math.min(.18,(o.talk||0)*.18))})`);
   lip.setAttribute('d',outline);lip.setAttribute('fill',fill);
   tongue.setAttribute('d',inner);tongue.setAttribute('display',inner?'inline':'none');
 

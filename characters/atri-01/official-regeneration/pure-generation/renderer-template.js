@@ -39,6 +39,13 @@ export async function createLayeredBody(base,opts){
   place('seated-clean',seat);faceSeat=buildFace('seated',seat);effectsSeat=buildFaceEffects('seated',seat,faceSeat);
   fxSeat=n('g',{'data-fx':'seated'});seat.append(fxSeat);mounted=g;
  }
+ // 2026-10-24: integer pixel offsets that carry the standing face onto the seated head.
+ // Derived once from the two rigs (see the comment in buildFace) and frozen here, so the runtime does
+ // no arithmetic and every number is a whole pixel - no interpolation, no halo.
+ const POSE_OFFSET={
+  standing:{group:[0,0],eyes:[[0,0],[0,0]],eyeArt:[0,0],mouth:[0,0],brows:[[0,0],[0,0]]},
+  seated:{group:[0,305],eyes:[[3,0],[-9,-11]],eyeArt:[-3,-5],mouth:[-8,-2],brows:[[-14,1],[-8,-11]]}
+ };
 @@FACE@@
  // ---- figure-side effects -----------------------------------------------------------------------
  // kit/body.js declares these flags on its FACES table and never consumes them, so in the official
