@@ -32,6 +32,11 @@ Design notes:
     into `scratch/candidates/atri-pure-components-01`. That keeps `build-diagnostic.py`
     working unchanged, because it always reads the live path.
   * After any rollback, run the build + node import check before trusting the preview.
+  * **IMPORTANT**: `rollback` restores the candidate pack, but `build-diagnostic.py` regenerates
+    `figure.js` from the repository sources. So to actually go back in time you ALSO need the
+    sources at that version. The git tag `atri-pack-vNNN` is the anchor:
+        git checkout atri-pack-vNNN -- characters/atri-01/official-regeneration/pure-generation
+    then rebuild. Without that step, rolling back the pack alone is undone by the next build.
 """
 from pathlib import Path
 import hashlib, json, shutil, subprocess, sys
@@ -74,6 +79,23 @@ def textures_of(pack: Path) -> dict:
         for p in sorted(tex.iterdir()):
             if p.is_file():
                 out[p.name] = sha(p)[:16]
+    return out
+
+
+def state_of(pack: Path) -> dict:
+    """Version identity = textures + the runtime that consumes them.
+
+    Textures alone are not enough: the seated-reuse fix (004) changed no texture at all, only
+    figure.js / renderer-template.js, and a texture-only fingerprint would have called it
+    "no change" and silently relabelled the previous version instead of making a new one.
+    """
+    out = textures_of(pack)
+    # VERSION.md is written BY the snapshot, so it must not take part in its own identity
+    for name in ("figure.js", "figure.json", "model.json", "part-registration.json",
+                 "SOURCE.json", "EXPRESSION-PRESERVATION.json"):
+        f = pack / name
+        if f.is_file():
+            out["@" + name] = sha(f)[:16]
     return out
 
 
@@ -133,7 +155,7 @@ def master_sha() -> str:
 
 def snapshot(note: str) -> Path:
     data = load_registry()
-    tex = textures_of(LIVE)
+    tex = state_of(LIVE)
     if data["versions"] and data["versions"][0].get("textures") == tex:
         v = data["versions"][0]
         say(f"no change since {v['name']} ({v.get('version')}); relabelling instead of stacking")
@@ -200,7 +222,7 @@ def listing() -> None:
     if not data["versions"]:
         say("no versions registered yet")
         return
-    live = textures_of(LIVE)
+    live = state_of(LIVE)
     say(f"live {LIVE.name}: {len(live)} textures, fingerprint "
         f"{hashlib.sha256(json.dumps(live, sort_keys=True).encode()).hexdigest()[:16]}")
     say("")

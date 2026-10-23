@@ -181,7 +181,10 @@ cd D:\Codex\Coopanion-Skin-Design
 - 每个版本同时打 git tag `atri-pack-vNNN`（贴图在 gitignore 的 `scratch/`，代码不在，所以两侧都要锚）。
 - `rollback` 会**先把当前态存成一个新版本**再覆盖实时候选，所以回退本身可撤销。
 - 回退后必须重建 + 验导入才信预览：见 §5.2。
-- **当前基线版本：`atri-pure-components-003`**（tag `atri-pack-v003`，提交 `4d6339d`）= 用户认可过的预览态：22:21 脸部基线、40 贴图、`arm-left` 挂在所有头发之后。
+- **当前基线版本：`atri-pure-components-004`**（tag `atri-pack-v004`，提交 `c397f55`）= 坐姿复用站姿表情后的状态。
+  上一个版本 `atri-pure-components-003`（tag `atri-pack-v003`，提交 `4d6339d`）= 修复前的预览态：22:21 脸部基线、40 贴图、`arm-left` 挂在所有头发之后、**坐姿仍用自己那 14 张 `seat-*` 贴图**（刘海糊在瞳孔上，眼角缺失/形状不对的来源）。
+  `atri-pure-components-002` = 22:21 回滚点（`e544428`）。
+  **三个版本的贴图完全相同（40 张，指纹 `8ffa30b84aba22bd`），差别全在 `figure.js` / `renderer-template.js`** —— 所以按贴图指纹去重会误判「无变化」，改代码后要用带代码指纹的方式建版本（`version-candidate.py snapshot` 目前只按贴图去重，这是个已知限制）。
 
 旧的 `scripts/snapshot-candidate.py` 仍可用（只复制不编号），新工作一律走 `version-candidate.py`。
 
