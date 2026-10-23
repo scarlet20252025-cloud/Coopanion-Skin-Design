@@ -58,10 +58,25 @@ export async function createLayeredBody(base,opts){
  const FX_ANGER_VEIN='M-11 -3Q-3 -3 -3 -11M3 -11Q3 -3 11 -3M11 3Q3 3 3 11M-3 11Q-3 3 -11 3';
  const FX_BANG='M0 -16V3',FX_ASK_MARK='M-8 -9Q-8 -19 0 -19Q9 -19 9 -11Q9 -4 0 -1V4',FX_ACCENT=model.accent||'#658faa';
  // the iris of each open eye, measured from the four accepted eye textures (probes/measure-iris-centre.py)
- const FX_IRIS={standing:[{cx:556.5,cy:480.9,w:53,h:69},{cx:711,cy:457.6,w:62,h:70}],seated:[{cx:551.9,cy:784.4,w:55,h:70},{cx:708.1,cy:757.5,w:40,h:68}]};
+ // The face is drawn in the standing frame for both poses (see expression-face.js), so one iris table
+ // serves both; the seated pose maps it with the fit below.
+ const FX_IRIS=[{cx:556.5,cy:480.9,w:53,h:69},{cx:711,cy:457.6,w:62,h:70}];
+ // 2026-10-23: similarity that fits the standing face onto the seated head, from the two rigs' eye boxes.
+ // Seated expressions reuse the standing art, so everything inside the face group is mapped by this.
+ const FX_POSE_FIT=(()=>{const a=model.expression_rig.standing,b=model.expression_rig.seated;
+  const c=e=>[e[0]+e[2]/2,e[1]+e[3]/2],A=a.eyes.map(c),B=b.eyes.map(c);
+  const vx=A[1][0]-A[0][0],vy=A[1][1]-A[0][1],wx=B[1][0]-B[0][0],wy=B[1][1]-B[0][1];
+  const s=Math.hypot(wx,wy)/Math.hypot(vx,vy),th=Math.atan2(wy,wx)-Math.atan2(vy,vx);
+  const co=Math.cos(th),si=Math.sin(th),m=[s*co,s*si,-s*si,s*co,0,0];
+  m[4]=B[0][0]-(m[0]*A[0][0]+m[2]*A[0][1]);m[5]=B[0][1]-(m[1]*A[0][0]+m[3]*A[0][1]);
+  return {standing:null,seated:m};})();
  // dx/dy are master-pixel offsets for the seated drawing, the same convention the anchors getter uses;
  // the mark table itself stays in logo units, so the pose offset is applied after the conversion.
- function fxFrame(seated){return{dx:seated?-3:0,dy:seated?298:0,rig:model.expression_rig[seated?'seated':'standing'],iris:FX_IRIS[seated?'seated':'standing']}}
+ // The face-side effects live inside the face group, which the seated pose already maps onto the seated
+ // head, so they are all placed in the standing frame. Only the marks around the head (drawn outside the
+ // face) need the pose offset, which is why fxFrame carries it and fxFace does not.
+ function fxFace(){return{rig:model.expression_rig.standing,iris:FX_IRIS}}
+ function fxFrame(seated){return{dx:seated?-3:0,dy:seated?298:0,rig:model.expression_rig.standing,iris:FX_IRIS}}
  function buildFaceEffects(pose,parent,state){
   const defs=n('defs'),paths=n('g',{'data-tear-paths':pose}),streams=n('g',{'data-streams':pose});
   const gradId=`${clipPrefix}-tear-${pose}`,grad=n('linearGradient',{id:gradId,x1:'0',y1:'0',x2:'0',y2:'1'});
@@ -69,10 +84,11 @@ export async function createLayeredBody(base,opts){
   defs.append(grad);streams.append(defs,paths);
   // the streams run under the features, where the official figure paints them into the face texture
   state.g.insertBefore(streams,state.g.children[1]||null);
-  const sparkle=n('g',{'data-sparkle':pose});parent.append(sparkle);const holders=[];
+  // inside the face group, so the seated fit carries the stars onto the seated eyes as well
+  const sparkle=n('g',{'data-sparkle':pose});state.g.append(sparkle);const holders=[];
   for(let i=0;i<2;i++){
    const mid=`${clipPrefix}-iris-${pose}-${i}`,mask=n('mask',{id:mid,maskUnits:'userSpaceOnUse',x:0,y:0,width:W,height:H,style:'mask-type:alpha'});
-   mask.append(n('image',{width:W,height:H,href:textures.get(parts.get((pose==='standing'?'eye-':'seat-eye-')+i).file)}));
+   mask.append(n('image',{width:W,height:H,href:textures.get(parts.get('eye-'+i).file)}));
    defs.append(mask);
    const holder=n('g',{mask:`url(#${mid})`,display:'none'});sparkle.append(holder);holders.push(holder);
   }
@@ -80,7 +96,7 @@ export async function createLayeredBody(base,opts){
  }
  /** 期待: two white four-pointed stars on the iris, twinkling (whale paintOpenEye). */
  function paintSparkle(state,face,seated,t){
-  const art=(seated?faceSeat:faceStand)?.currentEyeArt,iris=fxFrame(seated).iris;
+  const art=(seated?faceSeat:faceStand)?.currentEyeArt,iris=fxFace().iris;
   for(let i=0;i<2;i++){
    const holder=state.holders[i],shown=art==='open'||(art==='wink'&&i===0);
    if(!face.sparkle||!shown){if(holder.getAttribute('display')!=='none')holder.setAttribute('display','none');continue}
@@ -100,10 +116,10 @@ export async function createLayeredBody(base,opts){
  function paintStreams(state,face,seated,t){
   let s='';
   if(face.streams){
-   const p=fxFrame(seated),two=(model.anchors.tears||[]).length>=4?model.anchors.tears:null;
+   const p=fxFace(),two=(model.anchors.tears||[]).length>=4?model.anchors.tears:null;
    for(let i=0;i<2;i++){
     const iris=p.iris[i],x0=iris.cx,y0=iris.cy+iris.h/2+4;
-    const x1=(two?two[i*2]:iris.cx)+p.dx,y1=(two?two[i*2+1]:p.rig.mouth[1]+20)+p.dy-26;
+    const x1=(two?two[i*2]:iris.cx),y1=(two?two[i*2+1]:p.rig.mouth[1]+20)-26;
     const dx=x1-x0,dy=y1-y0,len=Math.hypot(dx,dy)||1,ux=dx/len,uy=dy/len,nx=-uy,ny=ux;
     const w=iris.w*.22,w0=w*.15,w1=w*.75,wb=3*Math.sin(t*6+i);
     s+=`<path fill="${state.grad}" d="M${rd(x0+nx*w0)} ${rd(y0+ny*w0)}L${rd(x1+nx*w1)} ${rd(y1+ny*w1)}Q${rd(x1+ux*w1*1.2+nx*wb)} ${rd(y1+uy*w1*1.2+ny*wb)} ${rd(x1-nx*w1)} ${rd(y1-ny*w1)}L${rd(x0-nx*w0)} ${rd(y0-ny*w0)}Z"/>`;

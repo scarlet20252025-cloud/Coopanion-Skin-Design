@@ -1,17 +1,28 @@
  function buildFace(pose,parent){
-  const rig=model.expression_rig[pose],g=n('g',{'data-face':pose}),eyes=[];parent.append(g);
+  // 2026-10-23 user instruction: "坐下的表情都有眼角缺失，形状不对，全都改成跟站立一样的表情状态".
+  // The seated set is a separate redraw whose eye art has the fringe baked across the pupil, which is
+  // why every seated expression looked wrong. So the seated face is built from the SAME art and the
+  // SAME rig as the standing one, and the group carries the similarity that fits the standing eye pair
+  // onto the seated eye pair (FX_POSE_FIT, derived from the two rigs at load). Brows, mouth, blush,
+  // tear streams and the 期待 stars all live in that group, so the whole expression is mapped with it;
+  // the 14 seat-* textures stay in the pack unreferenced.
+  // NOTE: this restores the seated-reuse half of 4eec957 only. That commit also changed the mouth table
+  // and added the blush layer; the user rejected the mouth ("别用这张嘴"), so those stay withdrawn.
+  const rig=model.expression_rig.standing,g=n('g',{'data-face':pose}),eyes=[];parent.append(g);
+  const fit=FX_POSE_FIT[pose];
+  if(fit)g.setAttribute('transform',`matrix(${fit.map(v=>Math.round(v*1e5)/1e5).join(' ')})`);
   const defs=n('defs');g.append(defs);
   const foreheadId=`${clipPrefix}-${pose}-forehead`,forehead=n('mask',{id:foreheadId,maskUnits:'userSpaceOnUse',x:0,y:0,width:W,height:H,style:'mask-type:alpha'});
-  const foreheadPart=parts.get((pose==='standing'?'':'seat-')+'brow-mask');forehead.append(n('image',{width:W,height:H,href:textures.get(foreheadPart.file)}));defs.append(forehead);
-  for(let i=0;i<2;i++){const id=(pose==='standing'?'eye-':'seat-eye-')+i;
+  const foreheadPart=parts.get('brow-mask');forehead.append(n('image',{width:W,height:H,href:textures.get(foreheadPart.file)}));defs.append(forehead);
+  for(let i=0;i<2;i++){const id='eye-'+i;
    const source=n('image',{width:W,height:H,href:textures.get(parts.get(id).file)});g.append(source);
-   const happyId=(pose==='standing'?'':'seat-')+`closed-happy-${i}`;
+   const happyId=`closed-happy-${i}`;
    const happy=n('image',{width:W,height:H,href:textures.get(parts.get(happyId).file)});g.append(happy);eyes.push({source,happy});}
   // Each redrawn pair uses one registered posed-face source. No separate eye
   // translations, vertical iris clipping or generic heart/spiral/chevron paths.
   const eyeArt={};
   for(const variant of ['half','late','rest','love','dizzy','pinch']){
-   const part=parts.get((pose==='standing'?'':'seat-')+'eye-pair-'+variant);
+   const part=parts.get('eye-pair-'+variant);
    eyeArt[variant]=n('image',{width:W,height:H,href:textures.get(part.file),'data-eye-art':variant});g.append(eyeArt[variant]);
   }
   // Brows belong to exposed skin; a screen-space path across the bangs is not a brow.
@@ -19,7 +30,7 @@
   // the bangs, so a 3.2px stroke came through as two or three fragments and its travel was lost in the
   // gaps. The stroke is heavier now and the travels below are doubled, so the slant reads through them.
   const brows=rig.brows.map((_,i)=>n('path',{'data-brow':i,fill:'none',stroke:'#74564f','stroke-width':5,'stroke-linecap':'round',mask:`url(#${foreheadId})`}));brows.forEach(e=>g.append(e));
-  const pinchPart=parts.get((pose==='standing'?'':'seat-')+'pinch-mouth');
+  const pinchPart=parts.get('pinch-mouth');
   const pinchMouth=n('image',{width:W,height:H,href:textures.get(pinchPart.file),'data-pinch-mouth':pose});g.append(pinchMouth);
   const mouth=n('g',{'data-mouth-style':'neutral'}),lip=n('path',{fill:'none',stroke:'#a96165','stroke-width':2.8,'stroke-linecap':'round','stroke-linejoin':'round'}),tongue=n('path',{fill:'#eea0aa',stroke:'none'});
   mouth.append(lip,tongue);g.append(mouth);
@@ -44,8 +55,9 @@
   for(const [variant,image]of Object.entries(eyeArt))image.setAttribute('display',selected===variant?'inline':'none');
   state.currentEyeArt=selected;
   const pinch=selected==='pinch';
-  const baseBrows=pose==='standing'?[[518,388,550,380,582,393],[680,386,711,357,738,349]]:[[515,691,546,682,576,702],[679,685,698,665,718,657]];
-  const pinchBrows=pose==='standing'?[[499,426,552,413,590,393],[688,390,720,405,747,397]]:[[517,729,559,720,596,692],[668,692,694,710,720,705]];
+  // the face is always drawn in the standing frame now, so both poses use the standing brow tables
+  const baseBrows=[[518,388,550,380,582,393],[680,386,711,357,738,349]];
+  const pinchBrows=[[499,426,552,413,590,393],[688,390,720,405,747,397]];
   for(let i=0;i<2;i++){
    const [x0,y0,x1,y1,x2,y2]=(pinch?pinchBrows:baseBrows)[i];
    let outer=0,inner=0,arch=0;
