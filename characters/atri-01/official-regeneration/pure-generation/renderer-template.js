@@ -115,7 +115,11 @@ export async function createLayeredBody(base,opts){
   *  side of the head, not on top of it, so the stream is what ties the eye to the drop. */
  function paintStreams(state,face,seated,t){
   let s='';
-  if(face.streams){
+  // 2026-10-23 user feedback: "不要这两条激光一样的眼泪" - the cone read as two hard
+  // laser beams across the face, so the streams are no longer drawn. The two side teardrops
+  // (anchors.tears) stay: they are the part that reads as crying. The code is kept behind this
+  // flag in case a softer version is wanted later.
+  if(false&&face.streams){
    const p=fxFace(),two=(model.anchors.tears||[]).length>=4?model.anchors.tears:null;
    for(let i=0;i<2;i++){
     const iris=p.iris[i],x0=iris.cx,y0=iris.cy+iris.h/2+4;
