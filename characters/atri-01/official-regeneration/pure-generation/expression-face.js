@@ -54,7 +54,8 @@
   }
   for(const [variant,image]of Object.entries(eyeArt))image.setAttribute('display',selected===variant?'inline':'none');
   state.currentEyeArt=selected;
-  const pinch=selected==='pinch';
+  // 大哭 keeps the rest eyes but borrows the 慌张 mouth and brows, so the mouth flag is its own
+  const pinch=selected==='pinch'||f==='cry';
   // the face is always drawn in the standing frame now, so both poses use the standing brow tables
   const baseBrows=[[518,388,550,380,582,393],[680,386,711,357,738,349]];
   const pinchBrows=[[499,426,552,413,590,393],[688,390,720,405,747,397]];
@@ -97,10 +98,17 @@
    sleep:['M-7 1 Q0 3 7 0','none',''],
    sleepy:['M-7 1 Q0 3 7 0','none',''],
   };
-  // 2026-10-16 user feedback: "大哭丑更重要的原因是嘴型". The official whale's face table maps cry to its
-  // surprised mouth at .8 scale (MOUTH.cry = ['surprised_mouth', .8]) - a wail is one small open oval,
-  // not the wavy blob this table used to draw for cry (entry removed, it is unreachable from here on).
-  const key=f==='bowing'?'happy':f==='squeeze'?'sleep':f==='cry'?'surprised':styles[f]?f:'neutral',mouthScale=f==='cry'?.8:1;
+  // 2026-10-23 user feedback: "大哭的表情明显有严重问题，嘴可以改成慌张那种，其余部分尽量重做".
+  // Scope agreed with the user: mouth + brows only. The wailing mouth becomes the 慌张 (pinch) mouth -
+  // the open squeezed oval this pack already ships and the user accepted on 慌张 - and the brows follow
+  // the pinch set, because a wail pulls the same > < shape. The eyes stay on `rest` (the closed pair
+  // the user already accepted for sleep/cry), and the tear streams and side drops stay where they are.
+  // This replaces the earlier official-derived routing (cry -> surprised mouth at .8 scale): on this
+  // face that came out as a tiny circle floating above the mouth position, which is what the user
+  // rejected. `mouthScale` is no longer applied to cry.
+  // 大哭 draws the 慌张 source mouth, so the vector table is not consulted for it (and `styles`
+  // has no 'source-pinch' entry on purpose - the texture is the design).
+  const key=pinch?'neutral':f==='bowing'?'happy':f==='squeeze'?'sleep':styles[f]?f:'neutral',mouthScale=1;
   const [outline,fill,inner]=styles[key];
   mouth.setAttribute('data-mouth-style',pinch?'source-pinch':key);
   mouth.setAttribute('transform',`translate(${x} ${y}) rotate(-7) scale(${mouthScale} ${mouthScale*(1+Math.min(.18,(o.talk||0)*.18))})`);
