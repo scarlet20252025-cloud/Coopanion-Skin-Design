@@ -273,3 +273,45 @@ cd D:\Codex\Coopanion-Skin-Design
 - `docs/LAYER_OWNERSHIP_AND_OCCLUSION.md` —— 图层归属与遮挡（分件前必读）
 - `AGENTS.md`（仓库根）—— 工程约定
 - `references/whale-coopanion-repro-kit/` —— 官方鲸鱼娘复现包（规则与参数来源）
+
+---
+
+## 10. 坐姿表情修复（2026-10-24）
+
+用户连续三轮反馈「坐姿眼睛缺角 / 形状不对」，前两轮我都改错了方向。真正的根因和修法：
+
+**根因**：眼睛贴图 `source-014/015` 的 alpha 是**硬边 1-bit**（只有 0/255），且**所有透明像素
+RGB 都是纯白 (255,255,255)**。旧实现用相似变换（scale .9543、rotate −4.25°）把站立脸贴到坐姿头上，
+**任何分数变换都会让渲染器沿硬边插值**，白像素被带进来，沿贴图轮廓形成一圈**点状白晕**——
+在深色刘海上读起来就是「眼睛被咬掉一个角」。站立姿势 1:1 绘制、无插值，所以一直正常。
+
+**附带事实**：两个姿势的眼睛**并不相似**（眼距 182 vs 170），单个相似变换本来就摆不好两只眼。
+
+**修法**：坐姿只用**整数平移**（像素拷贝，零插值）。表冻结在 `renderer-template.js` 的 `POSE_OFFSET`：
+
+```
+seated: {group:[0,305], eyes:[[3,0],[-9,-11]], eyeArt:[-3,-5], mouth:[-8,-2], brows:[[-14,1],[-8,-11]]}
+standing: 全 0
+```
+
+**踩过的坑（都在本轮）**：
+
+1. `POSE_OFFSET` 一开始插在 `FX_POSE_FIT` 后面，而 `buildFace` 在更早的 `@@FACE@@` 展开 →
+   `OFF is not defined`，整个渲染失败（坐姿完全不显示）。**必须放在 `@@FACE@@` 之前**。
+2. `OFF` 声明在 `buildFace` 内，`paintFace` 是另一个函数看不到 → 通过 `state.off` 传递。
+3. **偏移量不是绝对坐标**：嘴写成 `translate(OFF.mouth)` 导致所有嘴画到画布原点而消失；
+   正确是 `translate(rig.mouth + OFF.mouth)`。站立偏移为 0 所以看不出来，一坐下就暴露。
+4. `paintFace` 给眼睛设的 transform 会**覆盖** `buildFace` 里的坐姿平移，必须把偏移折进去，
+   否则 sad/scared/worried（唯一还走缩放的三个）在坐姿会弹回站姿位置。
+
+**验证工具**（都已进仓库）：
+
+- `preview/pose-check.html`：`?pose=sit&word=害羞` 直接看坐姿；`hide=brow` / `hide=brow,mouth`
+  分层隐藏定位瑕疵来自哪一层；`diag=1` 打印 face group 的 transform、每图 display、眉路径、mask。
+- `scripts/start-preview.ps1`：起 8765 预览服务。**不要用 git-bash 的 `nohup ... &`**，
+  进程会被回收、端口静默消失；用 PowerShell `Start-Process`。
+- 抓页面 JS 报错：`msedge --headless --enable-logging=stderr` 然后 grep `CONSOLE`。
+
+**回归**：站姿与坐姿各 6 个关键表情（平静/开心/难过/生气/大哭/期待）逐张截图核对，
+眼睛轮廓完整、嘴全部在位。对照图 `scratch/fx-probe/pose-check/regression.png`。
+
