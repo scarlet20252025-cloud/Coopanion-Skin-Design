@@ -9,7 +9,9 @@ reversible command. This script adds both:
     recorded in the registry as `version` and in the pack's `VERSION.md`;
   * a git tag `atri-pack-v<NNN>` on the commit the snapshot was taken from, so the *code*
     half of a version is recoverable too (textures live in gitignored scratch/, the
-    renderer does not);
+    renderer does not). The tag points at whatever HEAD is when you run `snapshot`, so
+    **commit your code changes BEFORE snapshotting** - otherwise the tag anchors the
+    previous commit (that is how v004/v006 ended up pointing one commit short);
   * `list`   – show every registered version with its fingerprint and note;
   * `rollback <version>` – restore a registered version into the live candidate path,
     after saving the current state as its own version so the rollback itself is undoable.
@@ -175,6 +177,12 @@ def snapshot(note: str) -> Path:
     if git("rev-parse", "-q", "--verify", f"refs/tags/{tag}") == "":
         git("tag", "-a", tag, "-m", f"ATRI candidate pack {version}: {note}")
         say(f"git tag {tag} -> {git('rev-parse', '--short', tag)}")
+    else:
+        # Never silently reuse a tag that already exists: it may point at the wrong commit.
+        say(f"git tag {tag} ALREADY EXISTS -> {git('rev-parse', '--short', tag)} "
+            f"(HEAD is {git('rev-parse', '--short', 'HEAD')}); "
+            f"if that is wrong, re-point it: git tag -d {tag} && "
+            f"git tag -a {tag} -m '...' && git push -f origin {tag}")
     say(f"version {version}  ->  {pack.relative_to(ROOT)}  ({len(tex)} textures)")
     return pack
 
