@@ -16,9 +16,11 @@
 | 读取并继承 Codex 会话提取文件（15590 行） | 完成 |
 | 核对素材库仓库状态、候选包、版本注册、回滚备份 | 完成（见 §1–§3） |
 | 把 Codex 会话「用户指示 / 已完成 / 下一步」写进仓库 | 本文 |
-| 启动 8765 预览静态服务 | 待办（§5 有命令） |
-| 验证 `build-diagnostic.py` 重建 + `node` 导入 | 待办（§5 有命令） |
-| 验证出图通道（imagegen CLI / openai / 密钥） | 待办（§5 有命令） |
+| 启动 8765 预览静态服务 | 完成（HTTP 200 已验证） |
+| 验证 `build-diagnostic.py` 重建 + `node` 导入 | 完成（40 贴图，IMPORT OK） |
+| 验证出图通道（imagegen CLI / openai / 密钥） | 完成（12 个模型可见，含 `gpt-image-2.5-sunburst`） |
+| 建立 DSH 接手基线版本快照 | 完成（`atri-pure-components-01-3`） |
+| 推送到 GitHub | 完成（走本机代理 `127.0.0.1:7897`，见 §6） |
 
 ---
 
@@ -204,7 +206,7 @@ cd D:\Codex\Coopanion-Skin-Design
 | 眼裁框猜坐标 | 曾用 `(605,363)-(1191,651)` 结果落在刘海上，测量无效。**必须重新定位眼睛**（站立眼在导出图中的相对位置需重测）。 |
 | clipPath 眼睑方案 | 会在眼角产生黑色撕裂（用户据此否掉了「生气」），已撤销，**不要再重演**。 |
 | DeepSeek / WorkBuddy 渠道 | 402 Insufficient Balance、限流、transport closed 多次中断会话；本机 DSH 侧模型由用户自行切换。 |
-| git push | 必须 `-c http.version=HTTP/1.1`，否则卡 TLS renegotiate。 |
+| git push 到 github.com:443 | **直连不通**（2026-10-23 实测 curl 超时），但本机有 HTTP 代理 `http://127.0.0.1:7897` 可用（也支持 socks5/socks5h）。已写入本仓库 `.git/config`：`http.proxy=http://127.0.0.1:7897` + `http.version=HTTP/1.1`，**此后 git push/fetch 免带参**。另：`api.github.com` 与 `raw.githubusercontent.com` 直连正常，git 不通时可临时用 GitHub REST API 逐文件落地。 |
 
 ---
 
