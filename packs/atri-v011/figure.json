@@ -3,15 +3,18 @@
   "api": 2,
   "id": "gpt-atri",
   "name": {
-    "zh": "GPT 亚托莉 · 整件生成候选"
+    "zh": "亚托莉 ATRI",
+    "zh-Hant": "亞托莉 ATRI",
+    "en": "ATRI",
+    "ja": "アトリ"
   },
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Asryto",
   "homepage": "https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design",
   "entry": "figure.js",
   "export": "createLayeredBody",
   "model": "model.json",
-  "thumb": "tex/head-clean.png",
+  "thumb": "tex/thumb.png",
   "vocab": [
     {
       "id": "neutral",
@@ -21,6 +24,10 @@
         "zh": [
           "平静"
         ]
+      },
+      "about": {
+        "zh": "默认的脸，没什么特别情绪",
+        "en": "the default face, no particular feeling"
       }
     },
     {
@@ -31,6 +38,10 @@
         "zh": [
           "开心"
         ]
+      },
+      "about": {
+        "zh": "眼睛弯成笑弧，鼻子形状的嘴张开，开心的样子",
+        "en": "eyes curve into smiling arcs, the mouth opens"
       }
     },
     {
@@ -41,6 +52,10 @@
         "zh": [
           "眨眼"
         ]
+      },
+      "about": {
+        "zh": "一只眼闭上、另一只睁开，俏皮地眨眼",
+        "en": "one eye shuts, the other stays open"
       }
     },
     {
@@ -51,6 +66,10 @@
         "zh": [
           "喜欢"
         ]
+      },
+      "about": {
+        "zh": "眼睛变成爱心，脸上发红，冒小心心",
+        "en": "heart-shaped eyes, blushing, little hearts float up"
       }
     },
     {
@@ -61,6 +80,10 @@
         "zh": [
           "害羞"
         ]
+      },
+      "about": {
+        "zh": "半垂着眼，视线躲开，脸红得明显",
+        "en": "lids lowered, gaze turned away, blushing hard"
       }
     },
     {
@@ -71,6 +94,10 @@
         "zh": [
           "惊讶"
         ]
+      },
+      "about": {
+        "zh": "眼睛睁大，头顶冒出感叹号",
+        "en": "eyes go wide, an exclamation mark overhead"
       }
     },
     {
@@ -81,6 +108,10 @@
         "zh": [
           "生气"
         ]
+      },
+      "about": {
+        "zh": "眉毛压低，头顶冒怒气符号，身子发抖",
+        "en": "brows lowered, an anger mark overhead, body shaking"
       }
     },
     {
@@ -91,6 +122,10 @@
         "zh": [
           "难过"
         ]
+      },
+      "about": {
+        "zh": "八字眉，眼睛半垂，掉眼泪",
+        "en": "brows slant down, lids lowered, tears fall"
       }
     },
     {
@@ -101,6 +136,10 @@
         "zh": [
           "得意"
         ]
+      },
+      "about": {
+        "zh": "半眯着眼斜看，嘴角带笑，得意的样子",
+        "en": "a narrowed sidelong look and a smirk"
       }
     },
     {
@@ -111,6 +150,10 @@
         "zh": [
           "担心"
         ]
+      },
+      "about": {
+        "zh": "八字眉，冒冷汗，替人着急",
+        "en": "brows slant down, a cold sweat"
       }
     },
     {
@@ -121,6 +164,10 @@
         "zh": [
           "慌张"
         ]
+      },
+      "about": {
+        "zh": "眼睛挤成 > <，满脸通红冒汗，手足无措",
+        "en": "eyes squeezed to > <, flushed and sweating"
       }
     },
     {
@@ -131,6 +178,10 @@
         "zh": [
           "害怕"
         ]
+      },
+      "about": {
+        "zh": "眼睛瞪大，冒汗，身子发抖",
+        "en": "eyes wide, sweating, shaking"
       }
     },
     {
@@ -141,6 +192,10 @@
         "zh": [
           "期待"
         ]
+      },
+      "about": {
+        "zh": "眼睛里闪着星星，期待的样子",
+        "en": "stars sparkle in the eyes"
       }
     },
     {
@@ -151,6 +206,10 @@
         "zh": [
           "疑惑"
         ]
+      },
+      "about": {
+        "zh": "一脸不解，头顶冒问号",
+        "en": "a puzzled face, a question mark overhead"
       }
     },
     {
@@ -161,6 +220,10 @@
         "zh": [
           "站起"
         ]
+      },
+      "about": {
+        "zh": "站起来",
+        "en": "stands up"
       }
     },
     {
@@ -171,6 +234,10 @@
         "zh": [
           "招手"
         ]
+      },
+      "about": {
+        "zh": "抬手挥一挥，笑着打招呼",
+        "en": "raises a hand and waves hello"
       }
     },
     {
@@ -181,6 +248,10 @@
         "zh": [
           "走路"
         ]
+      },
+      "about": {
+        "zh": "沿屏幕边缘走一段",
+        "en": "walks along the edge"
       }
     },
     {
@@ -191,6 +262,10 @@
         "zh": [
           "跑步"
         ]
+      },
+      "about": {
+        "zh": "跑起来，跑到屏幕另一边",
+        "en": "runs to the other side"
       }
     },
     {
@@ -201,6 +276,10 @@
         "zh": [
           "跳跃"
         ]
+      },
+      "about": {
+        "zh": "原地跳一下",
+        "en": "jumps on the spot"
       }
     },
     {
@@ -211,6 +290,10 @@
         "zh": [
           "小跳"
         ]
+      },
+      "about": {
+        "zh": "小小蹦一下",
+        "en": "a small hop"
       }
     },
     {
@@ -221,6 +304,10 @@
         "zh": [
           "张望"
         ]
+      },
+      "about": {
+        "zh": "左右张望",
+        "en": "looks left and right"
       }
     },
     {
@@ -231,6 +318,10 @@
         "zh": [
           "转身"
         ]
+      },
+      "about": {
+        "zh": "转身面向另一边",
+        "en": "turns to face the other way"
       }
     },
     {
@@ -241,6 +332,10 @@
         "zh": [
           "点头"
         ]
+      },
+      "about": {
+        "zh": "点头，表示同意",
+        "en": "nods in agreement"
       }
     },
     {
@@ -251,6 +346,10 @@
         "zh": [
           "摇头"
         ]
+      },
+      "about": {
+        "zh": "摇头，表示不同意",
+        "en": "shakes its head"
       }
     },
     {
@@ -261,6 +360,10 @@
         "zh": [
           "转圈"
         ]
+      },
+      "about": {
+        "zh": "原地转一圈",
+        "en": "spins around once"
       }
     },
     {
@@ -271,6 +374,10 @@
         "zh": [
           "坐下"
         ]
+      },
+      "about": {
+        "zh": "坐下，可以一直保持",
+        "en": "sits down and stays"
       }
     },
     {
@@ -281,6 +388,10 @@
         "zh": [
           "睡眠"
         ]
+      },
+      "about": {
+        "zh": "坐下打盹，可以一直保持",
+        "en": "dozes off sitting and stays"
       }
     },
     {
@@ -291,6 +402,10 @@
         "zh": [
           "晕乎"
         ]
+      },
+      "about": {
+        "zh": "圈圈眼，头顶转着三颗星，身体摇晃",
+        "en": "spiral eyes, three stars circling overhead, swaying"
       }
     },
     {
@@ -301,6 +416,10 @@
         "zh": [
           "鞠躬"
         ]
+      },
+      "about": {
+        "zh": "鞠一躬",
+        "en": "bows"
       }
     },
     {
@@ -311,6 +430,10 @@
         "zh": [
           "发抖"
         ]
+      },
+      "about": {
+        "zh": "缩起身子发抖",
+        "en": "huddles up and shivers"
       }
     },
     {
@@ -321,6 +444,10 @@
         "zh": [
           "跳舞"
         ]
+      },
+      "about": {
+        "zh": "踩着节拍摇摆，冒音符",
+        "en": "sways to a beat with music notes"
       }
     },
     {
@@ -412,6 +539,31 @@
         "en": "bounces happily, ahoge and hair flapping"
       },
       "seconds": 1.5
+    }
+  ],
+  "about": {
+    "zh": "仿生人少女亚托莉，浅蓝色长发、红色眼睛、水手服、胸前红色蝴蝶结。性格开朗认真、爱逞强、好奇心强，喜欢证明自己有用；说话干脆有精神，常把「我可是高性能的」挂在嘴边，被夸会得意，被小看会不服气地再强调一次。",
+    "zh-Hant": "仿生人少女亞托莉，淺藍色長髮、紅色眼睛、水手服、胸前紅色蝴蝶結。性格開朗認真、愛逞強、好奇心強，喜歡證明自己有用；說話乾脆有精神，常把「我可是高性能的」掛在嘴邊，被誇會得意，被小看會不服氣地再強調一次。",
+    "en": "ATRI, a synthetic girl: light-blue hair, red eyes, a sailor uniform and a red bow at the collar. Bright, earnest and a little proud, endlessly curious and eager to prove she is useful. She talks crisply and with energy, and her catchphrase is \"I'm high-performance, you know\" - pleased when praised, quick to insist on it again when underestimated.",
+    "ja": "アンドロイドの少女アトリ。水色の長い髪、赤い瞳、セーラー服、胸元に赤いリボン。明るく真面目で、ちょっと強がり、好奇心が強い。役に立てることを示したがる。話し方はきびきびとして元気で、口癖は「私は高性能ですから」。褒められると得意げになり、見くびられるとむきになって言い直す。"
+  },
+  "axes": [],
+  "presets": [],
+  "sounds": {},
+  "can": {
+    "walk": true
+  },
+  "license": "AGPL-3.0-or-later",
+  "credits": [
+    {
+      "role": "character",
+      "name": "ATRI (ATRI -My Dear Moments-)",
+      "url": "https://atri-lg.com/"
+    },
+    {
+      "role": "art, code",
+      "name": "Asryto",
+      "url": "https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design"
     }
   ]
 }

@@ -17,6 +17,8 @@ export async function createLayeredBody(base,opts){
  const convert=([x,y])=>[128+(tx+x*s-128)*rigidX,256+(ty+y*s-256)*rigidY],clipPrefix='atri-pure-'+Math.random().toString(36).slice(2,11);
  let mounted,root,stand,seat,head,back,armFront,faceHost,faceStand,faceSeat,fxStand,fxSeat,effectsStand,effectsSeat,lastT=0,poseAge=99,poseSeated=false,poseDy=0,seatMix=0,low=0;
  let hairL=0,hairR=0,hairLV=0,hairRV=0,tuft=0,tuftV=0,waveAngle=0,blink=0,lastFace='neutral',pointerStart;
+// stride phase, integrated from travel speed each frame (see the gait block in draw())
+let gaitPhase=0;
  const nodes=new Map();
  const registered=id=>`matrix(${registration[id].join(' ')})`;
  function place(id,parent){const p=parts.get(id),g=n('g',{'data-part':id,transform:registered(id)});g.append(n('image',{width:W,height:H,href:textures.get(p.file)}));parent.append(g);nodes.set(id,g);return g}
@@ -370,15 +372,61 @@ const POSE_OFFSET={
   get anchors(){const dx=poseSeated?-3:0,dy=(poseSeated?298:0)+poseDy,position=([x,y])=>{const p=convert([x+dx,y+dy]);return[p[0],p[1]-low]};return Object.fromEntries(Object.entries(model.anchors).map(([k,v])=>[k,k==='hearts'?[tx+(v[0]+dx)*s,tx+(v[1]+dx)*s,ty+(v[2]+dy)*s-low]:k==='tears'?[position(v),position(v.slice(2))]:position(v)]))},
   draw(g,face,o){
    if(mounted!==g)mount(g);
-   // Kit wake/landing/breathing applies an outer anisotropic scale even when a
-   // figure uses drawn poses. Cancel that scale about the same foot anchor.
-   // Reported hits/extents use the same compensation; kit gestures remain native.
+   // 2026-10-30 user feedback: "点击、跳跃之类的动效都太少了，不像官方鲸鱼娘那样Q弹".
+   // The squash-and-stretch the kit applies to the group was being cancelled out here.
+   // kit/body.js render():  sx = (1 + sq*.7)(1 - .05*stretch)(1 - .009*br)
+   //                       sy = (1 - sq)  (1 + .09*stretch)(1 + .016*br)
+   // The old compensation was rigid = uniform/k, so the final scale came out as
+   //   kx*uniform/kx = uniform  and  ky*uniform/ky = uniform
+   // i.e. both axes identical - the ratio ky/kx that IS the squash was divided away and every
+   // bounce landed as a flat breathing pulse.
+   //
+   // Now the compensation only normalises AREA (the figure is drawn at its own size and must not
+   // also be scaled by the kit's absolute amount), while the anisotropic RATIO survives:
+   //   rigidX = rigidY = 1/uniform   ->   final (kx/u, ky/u), ratio kx/ky intact, area 1
+   // SQ_KEEP scales how much of that ratio reaches the drawing: 1 = the kit's own amount, 0 = the
+   // old dead behaviour. Landing/jump/throw all go through pet.sq, so this is the one knob for Q弹.
+   // 2026-10-31 user feedback: "被提起来的形变程度低一点". Being picked up stretches the body hard
+   // (kit: pet.stretch -> 1 while mode==='drag', giving sx -5% and sy +9% on top of the squash), and
+   // because the figure is held by the head that stretch reads as the whole body elongating. Drag
+   // now keeps only DRAG_KEEP of the anisotropy, so the held pose stays rounder and closer to the
+   // artwork while landing/jump still feel springy.
+   const SQ_KEEP=.85, DRAG_KEEP=.45;
    const nativeScale=/scale\(\s*([-\d.e+]+)[ ,]+([-\d.e+]+)\s*\)/.exec(g.getAttribute('transform')||'');
-   if(nativeScale){const kx=Math.abs(Number(nativeScale[1])),ky=Math.abs(Number(nativeScale[2])),uniform=Math.sqrt(kx*ky);rigidX=uniform/Math.max(kx,1e-8);rigidY=uniform/Math.max(ky,1e-8);bodyScaleRatio=kx*rigidX/(ky*rigidY)}
+   if(nativeScale){
+    const kx=Math.abs(Number(nativeScale[1])),ky=Math.abs(Number(nativeScale[2])),uniform=Math.sqrt(Math.max(kx*ky,1e-8));
+    // final axis = k^SQ_KEEP * uniform^(1-SQ_KEEP), so the x:y RATIO keeps SQ_KEEP of the kit's own
+    // amount while the absolute size is normalised. rigid = final / k = (uniform/k)^(1-SQ_KEEP).
+    const keep=o.mode==='drag'?DRAG_KEEP:SQ_KEEP;
+    rigidX=Math.pow(uniform/Math.max(kx,1e-8),1-keep);
+    rigidY=Math.pow(uniform/Math.max(ky,1e-8),1-keep);
+    bodyScaleRatio=(ky*rigidY)/(kx*rigidX);
+   }
    root.setAttribute('transform',`translate(128 256) scale(${rigidX} ${rigidY}) translate(-128 -256) translate(${tx} ${ty}) scale(${s})`);
-   const dt=clamp(o.t-lastT,1/240,.04);lastT=o.t;low=o.low||0;seatMix=smooth((o.sit-.05)/.9);
-   const seated=seatMix>=.5;if(seated!==poseSeated){poseSeated=seated;poseAge=0}else poseAge+=dt;
-   // Exchange two drawn poses with a small rigid settle; never compress the torso.
+   const dt=clamp(o.t-lastT,1/240,.04);lastT=o.t;low=o.low||0;
+   // 2026-10-31 user feedback: "摔晕的动作延迟有点长，站了一会儿才播放坐下眩晕动画".
+   // o.sit is the kit's pet.sitK, which ramps in with lerp(sitK, sitT, ease(6,dt)) - about 0.5-0.8 s
+   // to reach half. The old mapping smooth((sit-.05)/.9) needed sit = .5 before the drawn pose
+   // flipped, so the figure visibly stood through the first half of the wobble; on this body the
+   // stand and seat are two separate drawings, so a late flip reads as "nothing happens, then it
+   // suddenly sits". The mix now reaches its half point at sit ~.14 and saturates early, so the pose
+   // change starts on the same frame the kit begins lowering the body. The settle animation
+   // (poseDy) still smooths the swap, so this does not pop.
+   // 2026-10-31 BUG (user: "每次点击都会高度挤压然后坐下来再站起来"). o.sit alone cannot decide the
+   // pose. kit/body.js sets a TRANSIENT sitT while landing - `case 'land': sitT = .35 * (1-smooth(mt/.35))`
+   // - and tapping the pet goes through 'land', so the low threshold I added for the dizzy latency made
+   // every click cross it: the drawing flipped to the seated art for the length of the landing dip and
+   // then flipped back. Seated states are MODES, not a value: sit/sleep/dizzy hold sitT = 1 for as long
+   // as they last, while idle/land/walk/air/drag only bump sitK briefly. So decide by mode, and keep a
+   // high value fallback for the frames right after a seated mode ends (sitK decays through ease(6)).
+   // Every mode that raises sitK transiently, so the .75 fallback below cannot see them:
+   //   crouch (jump/hop) sitT = .3     land sitT = .35     others 0
+   // Only sit / sleep / dizzy hold sitT = 1. A hop is crouch -> air -> land, all below .4.
+   const seatMode=o.mode==='sit'||o.mode==='sleep'||o.mode==='dizzy';
+   const seated=seatMode||o.sit>.75;
+   // seatMix is only reported through visualState(); keep it agreeing with the boolean.
+   seatMix=seated?Math.max(seatMix||0,.5):Math.min(seatMix||0,.49);
+   if(seated!==poseSeated){poseSeated=seated;poseAge=0}else poseAge+=dt;
    poseDy=(seated?-12:7)*Math.exp(-14*poseAge)*Math.cos(18*poseAge);
    stand.setAttribute('display',seated?'none':'inline');seat.setAttribute('display',seated?'inline':'none');
    stand.setAttribute('transform',`translate(0 ${poseDy})`);seat.setAttribute('transform',`translate(0 ${poseDy})`);
@@ -397,12 +445,52 @@ const POSE_OFFSET={
    for(const [id,angle,pivotX,pivotY] of [['tail-left',hairL,370,300],['tail-left-front',hairL,370,300],['tail-right',hairR,803,300]])
     nodes.get(id).setAttribute('transform',`rotate(${angle} ${pivotX} ${pivotY}) ${registered(id)}`);
    waveAngle=kind==='wave'?111*e+6*Math.sin(k*Math.PI*6)*e:0;
-   const gait=['walk','run','dance'].includes(o.mode)?Math.sin(o.t*(o.mode==='run'?14:8)):0;
+   // 2026-10-30 user feedback: "走路的脚步频率也有点慢，不够灵动，步幅度跟不上走路速度".
+   // The gait used a FIXED frequency (sin(t*8) walking, sin(t*14) running) with a fixed leg angle,
+   // so the feet kept one tempo whatever the travel speed was. The official kit drives both from
+   // speed instead (kit/body.js):
+   //     pet.phase += 2*PI * rate * dt * max(.35, k)      rate 2.1 walk / 4.4 run  (steps per second)
+   //     strideT = (run ? 17 : 10) * (.4 + .6*k)          amplitude grows with speed
+   // 2.1 steps/s is 13.2 rad/s and 4.4 is 27.6 - our 8/14 was roughly half the cadence, and the
+   // amplitude never moved. Phase is now integrated from speed, and the leg/arm swing scales with it.
+   const moving=['walk','run','dance'].includes(o.mode);
+   // Speed proxy: the kit hands the figure `swing`, which it computes as
+   // clamp(-(pet.velX*.06 + danceTilt), -28, 28) - i.e. travel speed already smoothed and capped.
+   // Reading it is more honest than guessing from the mode, and it is the only speed signal a
+   // figure-drawn body actually receives (custom.draw gets no raw velocity).
+   const kSpeed=clamp(Math.abs(o.swing??0)/28,0,1);
+   const kMin=o.mode==='run'?.85:o.mode==='dance'?.5:.45;
+   const kk=Math.max(kSpeed,kMin);
+   if(moving){
+    const rate=o.mode==='run'?4.4:o.mode==='dance'?1.1:2.1;
+    // dt is already clamped above; the .35 floor keeps a slow walk from freezing mid-step
+    gaitPhase+=Math.PI*2*rate*dt*Math.max(.35,kk);
+    if(gaitPhase>Math.PI*2e4)gaitPhase-=Math.PI*2e4;
+   }else{
+    // settle to the nearest foot-down phase so the legs do not stop mid-stride
+    gaitPhase+=((Math.round(gaitPhase/Math.PI)*Math.PI)-gaitPhase)*Math.min(1,8*dt);
+   }
+   const gait=moving?Math.sin(gaitPhase):0;
+   // amplitude follows speed: ±11° at a stroll up to ±16° at a sprint (was a flat ±8°)
+   const swingAmp=o.mode==='run'?16:o.mode==='dance'?10:11;
+   const swing=swingAmp*(.55+.45*kk);
     // Struggle while held, aligned with the whale pack: kit/body.js flaps every limb as
     // tx = hx + 7*sin(T*11 + i*2.2) and jitters the eyes at 22Hz, so the limbs here flap at 11Hz with
     // the same 2.2 rad phase offset and the hair/tuft shake moves from 15Hz to 21Hz.
     const held=o.mode==='drag';
-    for(const [id,angle] of [['arm-left',waveAngle+(kind==='wave'?0:1.2*gait)+(held?3*Math.sin(o.t*11):0)],['arm-right',-.8*gait+(held?3*Math.sin(o.t*11+2.2):0)],['leg-left',8*gait+(held?2*Math.sin(o.t*11+4.4):0)],['leg-right',-8*gait+(held?2*Math.sin(o.t*11+6.6):0)]]){const [x,y]=parts.get(id).pivot;nodes.get(id).setAttribute('transform',`rotate(${angle} ${x} ${y}) ${registered(id)}`)}
+    // 2026-10-31 user feedback: "走路姿势顺拐". Arm and leg on the SAME side were both +swing*gait,
+    // so the left arm came forward exactly when the left leg did. A natural walk is diagonal: each
+    // arm moves in anti-phase with the leg on its own side, i.e. the left arm pairs with the right
+    // leg. Signs are now arm-left -1.2, arm-right +0.8 against leg-left +1, leg-right -1:
+    //     left arm (-) / left leg (+)  opposite     -> 顺拐 gone
+    //     left arm (-) / right leg (-) together     -> the diagonal pairing
+    // Amplitudes stay asymmetric (1.2 near, 0.8 far) because the near arm is the one the viewer
+    // reads; that asymmetry was accepted and is not what caused the fault.
+    // The swing now comes from `swing` (speed-scaled) instead of a flat 8 degrees, and the two legs
+    // use opposite phases of the SAME integrated gaitPhase, which is what makes a stride read as a
+    // stride: at 8 deg the foot travelled 424*sin(8) = 59 px on a 1290 px figure, too short to match
+    // the new cadence.
+    for(const [id,angle] of [['arm-left',waveAngle+(kind==='wave'?0:-1.2*swing*gait)+(held?3*Math.sin(o.t*11):0)],['arm-right',.8*swing*gait+(held?3*Math.sin(o.t*11+2.2):0)],['leg-left',swing*gait+(held?2*Math.sin(o.t*11+4.4):0)],['leg-right',-swing*gait+(held?2*Math.sin(o.t*11+6.6):0)]]){const [x,y]=parts.get(id).pivot;nodes.get(id).setAttribute('transform',`rotate(${angle} ${x} ${y}) ${registered(id)}`)}
     const target=2.8*Math.sin(o.t*2.3)+clamp(o.look?.[0]||0,-6,6)*.17+(held?2.5*Math.sin(o.t*21):0);
    tuftV+=(target-tuft)*80*dt;tuftV*=Math.exp(-11*dt);tuft=clamp(tuft+tuftV*dt,-10,10);nodes.get('ahoge').setAttribute('transform',`rotate(${tuft} 565 169) ${registered('ahoge')}`);
    lastFace=o.mode==='drag'?'flustered':o.face;
