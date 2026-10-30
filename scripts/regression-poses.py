@@ -3,7 +3,7 @@
 
 用法（仓库根目录，先确保 8765 预览服务在跑，见 scripts/start-preview.ps1）:
 
-    .\.venv\Scripts\python.exe scriptsegression-poses.py
+    .venv/Scripts/python.exe scripts/regression-poses.py
 
 产物在 scratch/fx-probe/full-regression/:
     stand-*.png / sit-*.png   每个表情每姿态一张
@@ -16,7 +16,6 @@
 判据（report.txt）:
     iris > 200   虹膜在（眼睛至少有一张图片在显示）
     lip  > 0     有唇色像素（嘴没被画到画布外）
-"""
 
 每个表情在站立与坐姿各截一张，用虹膜定位裁出脸部，拼成对照表，并顺手做两项机器检查：
   * 嘴的位置是否落在脸内（防止再次出现「嘴画到画布原点」那类坐标 bug）；
