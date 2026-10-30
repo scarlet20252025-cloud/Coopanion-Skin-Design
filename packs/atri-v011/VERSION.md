@@ -1,0 +1,57 @@
+# atri-pure-components-004
+
+- **version**: `atri-pure-components-004`
+- **git tag**: `atri-pack-v004`
+- created from the live candidate while HEAD was `c397f55`
+- source pack: `scratch/candidates/atri-pure-components-01`
+- master sha256: `4b3e09d6e782b042bf87eb9c7b3caf645b3ae43e4af919680afdf951f3c58e1c`
+- note: auto-saved before rollback to atri-pure-components-003
+
+## textures (46)
+
+- `ahoge.png` `efe51bc53601f7b7`
+- `arm-left.png` `f52399f218a52411`
+- `arm-right.png` `f2b6ab6a27dfa3e2`
+- `body.png` `7da9fb064dea4c34`
+- `bow-left.png` `5af27c8a31798349`
+- `bow-right.png` `30977733297ab38d`
+- `head-clean.png` `1a0b2b34abf4264e`
+- `leg-left.png` `db84414219881350`
+- `leg-right.png` `e3030e10f26c1d14`
+- `rear-hair.png` `235bed55ae21257e`
+- `seated-clean.png` `c5edf96739463dce`
+- `source-012.png` `df2c81ff2b81b22d`
+- `source-013.png` `a9c593c1465140f0`
+- `source-014.png` `0400d6091dd89b44`
+- `source-015.png` `a0a72a49a15ed171`
+- `source-016.png` `b9a236fb7e2da248`
+- `source-017.png` `9ff4bd2a1a0cd851`
+- `source-018.png` `b0bd1ae26f0516cb`
+- `source-019.png` `2aff4142b92011db`
+- `source-020.png` `9db6ac0c6aec1a44`
+- `source-021.png` `7c48d1eded0796bc`
+- `source-022.png` `4ed0a08ea188517f`
+- `source-023.png` `e15a3217a50d4451`
+- `source-024.png` `ee3e5531ddf1503d`
+- `source-025.png` `2c214e304b3269e3`
+- `source-026.png` `c8bdfb4d681cb2b9`
+- `source-027.png` `41fd1977c50c3804`
+- `source-028.png` `8f530bb69106d78c`
+- `source-029.png` `0737dbc2ff464eb6`
+- `source-030.png` `d45d0815d07b49c8`
+- `source-031.png` `3aa1f2b151e0ae10`
+- `source-032.png` `8c844f5f52e00f8b`
+- `source-033.png` `99ae81cd56186063`
+- `source-036.png` `46177c3afb73b7fe`
+- `source-037.png` `2b4e0e8c5056d38f`
+- `source-038.png` `c15a4c74239a920f`
+- `source-039.png` `bf86a87b4db17f7b`
+- `tail-left-front.png` `20b04c7fb0b43537`
+- `tail-left.png` `6045f749c03459de`
+- `tail-right.png` `fb7c8833e63bea4d`
+- `@figure.js` `48d3a3435938645c`
+- `@figure.json` `e6f8392f6c26abf4`
+- `@model.json` `b0d478266bbf2d6a`
+- `@part-registration.json` `f44839fbe2e4cc30`
+- `@SOURCE.json` `87491f1bf846424f`
+- `@EXPRESSION-PRESERVATION.json` `64c507409bd910fa`

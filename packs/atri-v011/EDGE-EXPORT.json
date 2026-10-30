@@ -1,0 +1,117 @@
+{
+  "policy": "Reference kit outfit_assemble: bleed neighbouring opaque colours into transparent edge texels before filtering. Here only alpha<128, within6px; alpha byte-for-byte identical, all alpha>=128 RGBA unchanged. No masks from mother or shape edits. Approved expression textures excluded.",
+  "parts": [
+    {
+      "id": "tail-left",
+      "alpha_sha256": "6391ef133856f1152dca4e97633bee8e0d389da27ccbe5bffb990709a9be389e",
+      "alpha_changed_pixels": 0,
+      "opaque_art_changed_pixels": 0,
+      "rgb_changed_pixels": 9809,
+      "file_sha256": "6045f749c03459dee49f2854d64d477471dacc20a592a762c5b2bb4222ad1359"
+    },
+    {
+      "id": "tail-left-front",
+      "alpha_sha256": "72701eee8f225663f33fd8c92bc55291b7c1ecd4f332f606927e27e1cabdc51a",
+      "alpha_changed_pixels": 0,
+      "opaque_art_changed_pixels": 0,
+      "rgb_changed_pixels": 4513,
+      "file_sha256": "20b04c7fb0b435375ad6aae29f0897819ace75b6615fd4a26b2be4d83a7b6736"
+    },
+    {
+      "id": "tail-right",
+      "alpha_sha256": "9299dcca09620cb2b0952d57283a9aa766efe4c3ec1cb253cf202f7849137380",
+      "alpha_changed_pixels": 0,
+      "opaque_art_changed_pixels": 0,
+      "rgb_changed_pixels": 12287,
+      "file_sha256": "fb7c8833e63bea4dce264fbde8b5870e70cd3a11f2571ddd12c9e1c0fcbe9227"
+    },
+    {
+      "id": "rear-hair",
+      "alpha_sha256": "74217d7e3379f60d10e10e8ac3f50eb6eadf925d9d683a35421150e800c3c1f8",
+      "alpha_changed_pixels": 0,
+      "opaque_art_changed_pixels": 0,
+      "rgb_changed_pixels": 27346,
+      "file_sha256": "235bed55ae21257e1983f48db7023701e0de9e46b2b8d184d7f1034e2c506b0d"
+    },
+    {
+      "id": "leg-left",
+      "alpha_sha256": "f331cc0a4e55244d836337d7b9796aeae8da9833894118ee15bf4d78a980ec56",
+      "alpha_changed_pixels": 0,
+      "opaque_art_changed_pixels": 0,
+      "rgb_changed_pixels": 3165,
+      "file_sha256": "db84414219881350b331a231e05708826c10ae980ec464e21938a2a645c131b0"
+    },
+    {
+      "id": "leg-right",
+      "alpha_sha256": "169c95036384c6fcb73ee0e74bb7d7c60d7a79696260980332e11349c943d3a4",
+      "alpha_changed_pixels": 0,
+      "opaque_art_changed_pixels": 0,
+      "rgb_changed_pixels": 3134,
+      "file_sha256": "e3030e10f26c1d141a900b66344df88dce292becfe26b0aef2e791f31f3d2c83"
+    },
+    {
+      "id": "arm-right",
+      "alpha_sha256": "c885c687c57fe4b12dad686a78d0c4142c65b20a58fa3929eaf97aefaa8c5e09",
+      "alpha_changed_pixels": 0,
+      "opaque_art_changed_pixels": 0,
+      "rgb_changed_pixels": 4915,
+      "file_sha256": "f2b6ab6a27dfa3e282a59d7a0044d9f7d9fc428a0bd2747cbc907ba258a1a687"
+    },
+    {
+      "id": "body",
+      "alpha_sha256": "204832145ed2fc4ad95a795ef1a6a1e52f5309f51925907e845e8cf651a2ca4c",
+      "alpha_changed_pixels": 0,
+      "opaque_art_changed_pixels": 0,
+      "rgb_changed_pixels": 9403,
+      "file_sha256": "7da9fb064dea4c34de38ddc7f48764e6a18729f8d3f28f27113bee33fd4f136a"
+    },
+    {
+      "id": "arm-left",
+      "alpha_sha256": "c408e242493163971d7ab826f09a76056daeb2dac56886e2c70c8fca3879cc3b",
+      "alpha_changed_pixels": 0,
+      "opaque_art_changed_pixels": 0,
+      "rgb_changed_pixels": 5759,
+      "file_sha256": "f52399f218a52411e36753cbea590ae3529985ae5a9261a5259cd683be5aa4fa"
+    },
+    {
+      "id": "head-clean",
+      "alpha_sha256": "86ed4b39e6bca9862f05aac77601f210faca6a380c91b5254f4090fef1175e1a",
+      "alpha_changed_pixels": 0,
+      "opaque_art_changed_pixels": 0,
+      "rgb_changed_pixels": 14453,
+      "file_sha256": "1a0b2b34abf4264e00c89b40644f202fa9240a8e9343df285b8c71c799ddbbfb"
+    },
+    {
+      "id": "bow-left",
+      "alpha_sha256": "77f3614b3914a19c928737e1e93f255a09bc9d7d9f298b956f8c529b1aa44092",
+      "alpha_changed_pixels": 0,
+      "opaque_art_changed_pixels": 0,
+      "rgb_changed_pixels": 2399,
+      "file_sha256": "5af27c8a31798349049b8efa2061c8e5e8f070e2bbfae37bdb2a3657c5eaf117"
+    },
+    {
+      "id": "bow-right",
+      "alpha_sha256": "b5fd6ef308de757e2bb481bf66bb6fd7aee2f4755e0af8db140195e8e32569ed",
+      "alpha_changed_pixels": 0,
+      "opaque_art_changed_pixels": 0,
+      "rgb_changed_pixels": 1936,
+      "file_sha256": "30977733297ab38d798dc5a208d3eb6d46cd6a8393e13bce6bff68d9376eecce"
+    },
+    {
+      "id": "ahoge",
+      "alpha_sha256": "fa88dcbfef4dfcc95de055ec82b3401cf86bda2389bdf03fe3b324b3928a37a0",
+      "alpha_changed_pixels": 0,
+      "opaque_art_changed_pixels": 0,
+      "rgb_changed_pixels": 2850,
+      "file_sha256": "efe51bc53601f7b763c7d700017e287725dbf02971e2a298cca7d93e567f0123"
+    },
+    {
+      "id": "seated-clean",
+      "alpha_sha256": "dd6ce3a7a9575754d229225b0d4695a3e8a7c5c30db4c58719c5baa4e6d9afd1",
+      "alpha_changed_pixels": 0,
+      "opaque_art_changed_pixels": 0,
+      "rgb_changed_pixels": 28066,
+      "file_sha256": "c5edf96739463dced058e8ca4e1a4a8b060b88a8de7560b2cb6aee845ccba732"
+    }
+  ]
+}

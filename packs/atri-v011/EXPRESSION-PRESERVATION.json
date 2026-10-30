@@ -1,0 +1,6 @@
+{
+  "method": "buildFace/paintFace from pure-generation/expression-face.js (tracked); 26 accepted textures unchanged",
+  "source_renderer_sha256": "e1e7621bc339be97b57709db9e1d3801a1686014d8ecedd707149370e24aef6a",
+  "copied_function_sha256": "3a142f5e7358930d316e7ffddb513aa6199905fda788b0bda336b6dc2931f523",
+  "scratch_renderer_sha256": "3c9876792eec8dd667d9f6780f8698b36f9a17f5f2a7bdfd88be8b0425149ffb"
+}

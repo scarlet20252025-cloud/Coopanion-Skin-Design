@@ -1,0 +1,8 @@
+{
+  "product": "Coopanion API 2",
+  "repository": "https://github.com/Pal-AI-Lab/Coopanion",
+  "kit_reference_commit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+  "workflow_reference_archive_sha256": "181d384caa77b949671da781f32db4fa77d7026860e82326a5bd16b6c1c00334",
+  "whale_art_copied": false,
+  "preview_kit": "preview/vendor/kit/body.js"
+}
