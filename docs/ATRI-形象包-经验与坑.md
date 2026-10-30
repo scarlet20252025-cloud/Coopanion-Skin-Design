@@ -237,6 +237,27 @@ const seated   = seatMode || o.sit > .75;
 
 ---
 
+### 19. 版本快照必须抓 `packs/`，不是 `scratch/`
+
+`scripts/version-candidate.py` 原来 `LIVE = scratch/candidates/atri-pure-components-01`，
+所以 012 快照抓的是**构建输出**，与真正安装发布的 `packs/atri-v011` 差了 3 个文件：
+
+```
+tex/tail-left.png    手修马尾（scratch 里是重建产物）
+tex/thumb.png        半身缩略图（只有 publish 时才生成）
+figure.json          version 1.1.0 与 thumb 字段（只有 publish 时才写）
+```
+
+后果：快照标记为"已验收"，但里面的东西**不是**验收的那一版，回退时会拿到错的图。
+
+已改成 `LIVE = ROOT / "packs" / "atri-v011"`。核对方式：快照与 packs 逐文件 md5 对比，
+**52/52 一致、不一致 0** 才算数。
+
+**根本规律**：这个仓库里"被验收的东西"永远是 `packs/`（以及安装目录），
+`scratch/` 只是中间产物。任何"存档 / 快照 / 对比 / 回退"都应以 `packs/` 为准。
+
+---
+
 ## 六、这一轮之后的功能清单（v1.1.0）
 
 ```

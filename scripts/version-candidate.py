@@ -44,7 +44,11 @@ from pathlib import Path
 import hashlib, json, shutil, subprocess, sys
 
 ROOT = Path(r"D:\Codex\Coopanion-Skin-Design")
-LIVE = ROOT / "scratch/candidates/atri-pure-components-01"
+# A snapshot must capture what actually ships. build-diagnostic.py writes scratch/, but the installed
+# and published pack is packs/<name> (publish-atri-pack.py copies the build across, then re-authors the
+# manifest and the thumb). Snapshotting scratch/ produced a 012 whose figure.json, thumb and
+# hand-repaired tail all differed from the pack that was installed - so snapshots now read packs/.
+LIVE = ROOT / "packs" / "atri-v011"
 REG = ROOT / "scratch/versions"
 BASE = "atri-pure-components"
 
