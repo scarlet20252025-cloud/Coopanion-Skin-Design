@@ -47,11 +47,11 @@
   // skin showing BETWEEN THE BANGS, which is why the wash floated over the hair like a pink patch. The
   // wash is a soft radial bloom under those strokes, so it deepens the existing blush rather than
   // painting a new flat shape on top of it.
-  // The seated face is a separate redraw whose cheeks sit at different coordinates, so the wash rides the
-  // same pose offsets the eyes use (POSE_OFFSET) rather than hard-coding a second pair of centres.
-  const [seatDx,seatDy]=pose==='seated'?[-4,539]:[0,0];
-  for(const [bx,by] of [[552,545],[724,520]]){
-   const cx=bx+seatDx,cy=by+seatDy;
+  // The wash is drawn in the same standing frame as everything else in this group, so it needs no pose
+  // offset of its own - the group transform (POSE_OFFSET.group) carries it onto the seated face with the
+  // eyes, brows and mouth. An earlier version added a hand-computed (-4,+539) here, which double-counted
+  // and dropped the cheeks far below the face on the seated pose.
+  for(const [cx,cy] of [[552,545],[724,520]]){
    const gid=`${clipPrefix}-cheekwash-${cx}`,rg=n('radialGradient',{id:gid});
    rg.append(n('stop',{offset:'0','stop-color':'#ee8fa6','stop-opacity':'.62'}),
              n('stop',{offset:'.62','stop-color':'#ee8fa6','stop-opacity':'.34'}),

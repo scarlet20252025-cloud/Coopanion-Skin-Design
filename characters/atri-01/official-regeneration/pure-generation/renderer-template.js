@@ -42,9 +42,20 @@ export async function createLayeredBody(base,opts){
  // 2026-10-24: integer pixel offsets that carry the standing face onto the seated head.
  // Derived once from the two rigs (see the comment in buildFace) and frozen here, so the runtime does
  // no arithmetic and every number is a whole pixel - no interpolation, no halo.
- const POSE_OFFSET={
+ // 2026-10-30: the seated face is positioned by ONE uniform translate, not per-feature offsets.
+// The old table carried different offsets per eye (3,305) / (-9,294) and per brow, taken from
+// expression_rig.seated. Those rig numbers are leftovers from the early non-compliant cut-out pass and
+// no longer match this face: the far eye landed OUTSIDE the head outline and every seated expression
+// looked crooked ("眼睛这里都离开脸了，歪掉了").
+// Measured from the actual iris centres of the paired source art:
+//   standing irises (558,485) and (710,460); seated irises (553,788) and (706,762)
+//   -> offsets (-5,+304) and (-4,+302). Iris spacing is 152 vs 153 and the vertical offset -25 vs -26,
+// so the two poses are a PURE TRANSLATION of each other - no rotation, no scale. One uniform (-4,+303)
+// therefore fits both eyes and every other feature to within a pixel, which is why the table now has a
+// single number instead of per-part deltas. The mouth measures (0,+306) independently, agreeing.
+const POSE_OFFSET={
   standing:{group:[0,0],eyes:[[0,0],[0,0]],eyeArt:[0,0],mouth:[0,0],brows:[[0,0],[0,0]]},
-  seated:{group:[0,305],eyes:[[3,0],[-9,-11]],eyeArt:[-3,-5],mouth:[-8,-2],brows:[[-14,1],[-8,-11]]}
+  seated:{group:[-4,303],eyes:[[0,0],[0,0]],eyeArt:[0,0],mouth:[0,0],brows:[[0,0],[0,0]]}
  };
 @@FACE@@
  // ---- figure-side effects -----------------------------------------------------------------------
