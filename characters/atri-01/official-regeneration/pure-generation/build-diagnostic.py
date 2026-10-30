@@ -146,6 +146,16 @@ for file,sha in lock['files'].items():
         shutil.copy2(OLD/file,OUT/file)
 model=json.loads((OLD/'model.json').read_text(encoding='utf8'))
 model['parts']=[{k:r[k] for k in ('id','file','z','pivot','role','poses')} for r in records]+lock['parts']
+# 2026-10-30 user instruction: "把害羞的表情补上". 害羞 used to change only the mouth - the eyes stayed
+# the neutral open pair, so the face barely moved. It now has its own eye pair, generated from the same
+# 520x520 face crop the other six v2 faces came from (prompt: prompts/standing-eyes-shy-v2.txt) and cut
+# out with the iris-pair seed in scratch/extract-eye-pair.py. The seated pose gets it for free, because
+# the seated face reuses the standing art through POSE_OFFSET.
+SHY_EYE = Path(__file__).resolve().parent / 'new-art' / 'eye-pair-shy.png'
+if SHY_EYE.exists():
+    shutil.copy2(SHY_EYE, OUT / 'tex' / 'eye-pair-shy.png')
+    model['parts'].append({'id': 'eye-pair-shy', 'file': 'tex/eye-pair-shy.png', 'z': 6.06,
+                           'pivot': [0, 0], 'role': 'expression', 'poses': ['standing', 'seated']})
 model['part_registration']={p['id']:[1,0,0,1,0,0] for p in model['parts']}
 model['bounds']=[95,20,1045,1310]
 # 2026-10-16 user instruction: 大哭 looked wrong. The kit's tear particle is a whole logo-unit

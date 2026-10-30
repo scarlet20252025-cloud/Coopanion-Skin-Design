@@ -1,0 +1,5 @@
+Use case: precise-object-edit. Edit target: square face crop of ATRI. Change ONLY both eyes to a SHY expression: the upper eyelids come down a little so the eyes read slightly smaller and rounder than now, and the pupils/irises shift slightly inward and downward, as if she is looking away bashfully. The eye outline shape itself must not change and the eyes must NOT be shrunk as a whole. Keep both eyes open - this is a bashful, quiet look, not a smile-eyes, not a closed eye, not a blink, not a wink.
+
+Keep her own eye anatomy exactly: warm dark-brown tapered lashes, rich red iris with a soft pink lower gradient, glossy white highlight, clean white sclera, thin warm lower rim.
+
+Preserve EXACT crop dimensions, hair silhouette, bang tips, face outline, skin, blush, collar, eyebrows and mouth. Polished anime linework matching source. No extra symbols or text.

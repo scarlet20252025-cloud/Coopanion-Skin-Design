@@ -30,7 +30,9 @@
   // Each redrawn pair uses one registered posed-face source. No separate eye
   // translations, vertical iris clipping or generic heart/spiral/chevron paths.
   const eyeArt={};
-  for(const variant of ['half','late','rest','love','dizzy','pinch']){
+  // 2026-10-30: 害羞 gets its own eye pair (see prompts/standing-eyes-shy-v2.txt). Until now 害羞 only
+  // changed the mouth, so its "expression" was invisible.
+  for(const variant of ['half','late','rest','love','dizzy','pinch','shy']){
    const part=parts.get('eye-pair-'+variant);
    const [ax,ay]=OFF.eyeArt;
    eyeArt[variant]=n('image',{width:W,height:H,href:textures.get(part.file),'data-eye-art':variant,
@@ -55,7 +57,7 @@
   let selected=closure>.88?'rest':closure>.68?'late':closure>.24?'half':'open';
   if(['smug','angry','determined','content'].includes(f)&&selected==='open')selected='half';
   if(['flustered','dragged'].includes(f))selected='pinch';
-  else if(f==='dizzy'||f==='love')selected=f;
+  else if(f==='dizzy'||f==='love'||f==='shy')selected=f;
   // Preserve the user-accepted smiling lashes verbatim, including wave/wink.
   if(happy||wink)selected=happy?'happy':'wink';
   for(let i=0;i<2;i++){
