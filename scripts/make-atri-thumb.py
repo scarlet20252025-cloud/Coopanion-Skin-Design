@@ -15,7 +15,7 @@ Sources, in order of preference:
     3. characters/atri-01/official-regeneration/pure-generation/preview-current.png
 
 Usage:
-    .venv/Scripts/python.exe scripts/make-atri-thumb.py [pack-dir-name] [--size 512]
+    .venv/Scripts/python.exe scripts/make-atri-thumb.py [pack-dir-name] [--size 512] [--bust]
 """
 import json
 import sys
@@ -29,9 +29,12 @@ args = [a for a in sys.argv[1:] if not a.startswith("--")]
 PACK_NAME = args[0] if args else "atri-v011"
 PACK = ROOT / "packs" / PACK_NAME
 SIZE = 512
+BUST = False
 for a in sys.argv[1:]:
     if a.startswith("--size="):
         SIZE = int(a.split("=", 1)[1])
+    if a == "--bust":
+        BUST = True
 
 CANDIDATES = [
     PACK / "preview.png",
@@ -41,6 +44,12 @@ CANDIDATES = [
 
 # the card draws the thumb small; a little transparent margin keeps the hair edge off the border
 MARGIN = 0.04
+
+# 2026-10-31 user feedback: "预览界面不要用全身，截取上半身就好了". At 512 px in a card slot the full
+# body makes the face a thumbnail of a thumbnail. BUST keeps the top fraction of the figure's own
+# height (head, shoulders, both bows, the ponytail roots) and crops the rest, so the card reads as a
+# portrait. 0.62 covers down to about the waist on this master.
+BUST_FRACTION = 0.62
 
 
 def content_bbox(im: Image.Image):
@@ -59,8 +68,13 @@ def main():
     box = content_bbox(im)
     if box is None:
         sys.exit(f"{src} has no opaque pixels")
+    x0, y0, x1, y1 = box
+    if BUST:
+        cut = y0 + round((y1 - y0) * BUST_FRACTION)
+        box = (x0, y0, x1, cut)
     figure = im.crop(box)
-    print(f"source {src.relative_to(ROOT)} {im.size} -> figure {figure.size} at {box}")
+    print(f"source {src.relative_to(ROOT)} {im.size} -> "
+          f"{'bust' if BUST else 'full'} {figure.size} at {box}")
 
     # fit the figure inside (1-2*MARGIN) of the square, centred, keeping aspect
     inner = int(SIZE * (1 - 2 * MARGIN))

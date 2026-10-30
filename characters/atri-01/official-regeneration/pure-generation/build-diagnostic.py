@@ -41,7 +41,11 @@ def add(key, path, matrix=identity, z=0, pivot=None, role='fixed', clip=None, ma
         removed=0
     a=source.astype(np.float32)/255
     a[:,:,:3]*=a[:,:,3:4]
-    a=cv2.warpAffine(a,matrix,(W,H),flags=cv2.INTER_LINEAR)
+    # matrix=None means the texture is already in canvas coordinates (a hand-edited layer the person
+    # painted in place). It must NOT be passed through the registration matrix again, or it lands
+    # twice-displaced.
+    if matrix is not None:
+        a=cv2.warpAffine(a,matrix,(W,H),flags=cv2.INTER_LINEAR)
     if mask is not None:
         # The mask is given in canvas coordinates and is applied after the part's own transform, so a
         # measured row band stays the same band in the assembled character.
@@ -82,7 +86,14 @@ lock_fit=json.loads((P/'pure-generation/lock-placement.json').read_text(encoding
 FIT_LIBRARY=json.loads((ROOT/'scratch/asset-candidates-fit.json').read_text(encoding='utf8'))
 near=np.array(FIT_LIBRARY['left-library']['matrix'],float)[:2]
 far=np.array(FIT_LIBRARY['right-current']['matrix'],float)[:2]
-NEAR_LOCK=ROOT/'characters/atri-01/official-regeneration/raw/pony-pair-left-01.png'
+# 2026-10-31: the person repaired the left ponytail by hand and the next rebuild silently reverted
+# it, because the build regenerates tex/tail-left.png from the raw pair art every time. The hand
+# version is kept in official-regeneration/hand-edited/tail-left.png and takes priority; the raw pair
+# stays as the fallback so a fresh checkout without that folder still builds.
+NEAR_LOCK_HAND = ROOT/'characters/atri-01/official-regeneration/hand-edited/tail-left.png'
+NEAR_LOCK_RAW = ROOT/'characters/atri-01/official-regeneration/raw/pony-pair-left-01.png'
+NEAR_LOCK = NEAR_LOCK_HAND if NEAR_LOCK_HAND.exists() else NEAR_LOCK_RAW
+print('near lock source:', NEAR_LOCK.relative_to(ROOT), '| hand-edited' if NEAR_LOCK is NEAR_LOCK_HAND else '| raw art')
 # 2026-10-16 user decision A: the lock's upper part covers the crown hair again (the front piece is no
 # longer restricted to the rows head-clean leaves open), and the split to the back layer is moved down
 # to the middle of the lock so the lower half sits under the hair ends.
@@ -104,8 +115,12 @@ HEAD_ROWS=np.zeros((1374,1145),bool);HEAD_ROWS[150:521]=True
 # Narrowed 2026-10-16 after the contour-wide version emptied the band beside the face: now only 3px,
 # and only over the crown-to-bow rows (y 150-360), so face height is never touched.
 REAR_TRIM=(OUTSIDE_HEAD<=6)&(~HEAD_FILLED)&HEAD_ROWS
-add('tail-left',NEAR_LOCK,near,-2,[370,300])
-add('tail-left-front',NEAR_LOCK,near,6.05,[370,300],role='lock-front',clip=NEAR_LOCK_FRONT_CLIP)
+# 2026-10-31: matrix=None for the hand-edited lock - it was painted directly on the canvas
+# (content bbox 148..370 x 279..933, the same place the registered build produced), so applying
+# `near` again would move it a second time.
+NEAR_MATRIX=None if NEAR_LOCK is NEAR_LOCK_HAND else near
+add('tail-left',NEAR_LOCK,NEAR_MATRIX,-2,[370,300])
+add('tail-left-front',NEAR_LOCK,NEAR_MATRIX,6.05,[370,300],role='lock-front',clip=NEAR_LOCK_FRONT_CLIP)
 add('tail-right',P/'raw/ponytail-far-complete-06.png',far,-1,[803,300])
 add('rear-hair',P/'raw/rear-hair-complete-04.png',rear,0,exclude=REAR_TRIM)
 add('leg-left',P/'registered/leg-left-02.png',z=1,pivot=[551,1090],role='leg')

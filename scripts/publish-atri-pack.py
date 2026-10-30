@@ -63,9 +63,22 @@ def main():
         if src.is_file():
             shutil.copy2(src, PACK / name)
     (PACK / "tex").mkdir(exist_ok=True)
-    n = 0
+
+    # 2026-10-31: textures the person edited by hand must survive a publish. The first version of
+    # this script copied every scratch/tex/*.png over packs/tex/, which silently reverted the
+    # hand-repaired left ponytail (md5 6ab6bf6a...) back to the old build output (ef57a84d...). build
+    # output is authoritative only for textures nobody touched, so hand-edited names are listed here
+    # and skipped, with the reason printed.
+    HAND_EDITED = {
+        "tail-left.png": "hand-repaired left ponytail (2026-10-30)",
+    }
+    n, kept = 0, []
     for f in sorted((BUILT / "tex").glob("*.png")):
-        shutil.copy2(f, PACK / "tex" / f.name)
+        dst = PACK / "tex" / f.name
+        if f.name in HAND_EDITED and dst.exists():
+            kept.append(f.name)
+            continue
+        shutil.copy2(f, dst)
         n += 1
     # stale textures from an older build would still load by name and confuse a diff
     live = {f.name for f in (BUILT / "tex").glob("*.png")} | {"thumb.png"}
@@ -75,11 +88,14 @@ def main():
             f.unlink()
             removed.append(f.name)
     print(f"[publish] copied {n} textures" + (f", removed stale {removed}" if removed else ""))
+    if kept:
+        print("[publish] kept hand-edited: " + ", ".join(f"{k} ({HAND_EDITED[k]})" for k in kept))
 
     # 2-4. re-author the parts packs/ owns, in dependency order
     print("[publish] " + run("write-atri-manifest.py", PACK_NAME).splitlines()[-1])
     print("[publish] " + run("add-atri-vocab-about.py", PACK_NAME).splitlines()[-1])
-    print("[publish] " + run("make-atri-thumb.py", PACK_NAME, "--size=512").splitlines()[-1])
+    # --bust: the 装扮 card gets a portrait (head/bows/ponytail roots), not the whole body
+    print("[publish] " + run("make-atri-thumb.py", PACK_NAME, "--size=512", "--bust").splitlines()[-1])
 
     # 5. validate + zip (this step never writes the manifest)
     for line in run("package-atri-pack.py", PACK_NAME).splitlines():
