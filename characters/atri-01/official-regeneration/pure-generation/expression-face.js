@@ -30,13 +30,34 @@
   // Each redrawn pair uses one registered posed-face source. No separate eye
   // translations, vertical iris clipping or generic heart/spiral/chevron paths.
   const eyeArt={};
-  // 2026-10-30: 害羞 gets its own eye pair (see prompts/standing-eyes-shy-v2.txt). Until now 害羞 only
-  // changed the mouth, so its "expression" was invisible.
-  for(const variant of ['half','late','rest','love','dizzy','pinch','shy']){
+  for(const variant of ['half','late','rest','love','dizzy','pinch']){
    const part=parts.get('eye-pair-'+variant);
    const [ax,ay]=OFF.eyeArt;
    eyeArt[variant]=n('image',{width:W,height:H,href:textures.get(part.file),'data-eye-art':variant,
      transform:ax||ay?`translate(${ax} ${ay})`:''});g.append(eyeArt[variant]);
+  }
+  // 2026-10-30: an extra blush wash, drawn in code. 害羞's strongest sign in BOTH reference projects is
+  // blush - the official whale sets shy to blush:1 (its maximum, above 喜欢's .7) and saturates it with
+  // lookLock, while the dragon sets shy to blush:.9. Ours is baked into head-clean.png and therefore
+  // fixed, so 害羞 adds one more translucent wash over the cheeks. Vector, not new art: each cheek is a
+  // flat ellipse with three short slant strokes, so a code-drawn bloom matches without a redraw.
+  const blush=n('g',{'data-blush-wash':'1',opacity:0});g.append(blush);
+  // Cheek centres measured off head-clean.png, where the art already paints three short slant strokes on
+  // each cheek (near 552,545 and 724,520). An earlier version used (549,363)/(702,357) - that is the
+  // skin showing BETWEEN THE BANGS, which is why the wash floated over the hair like a pink patch. The
+  // wash is a soft radial bloom under those strokes, so it deepens the existing blush rather than
+  // painting a new flat shape on top of it.
+  // The seated face is a separate redraw whose cheeks sit at different coordinates, so the wash rides the
+  // same pose offsets the eyes use (POSE_OFFSET) rather than hard-coding a second pair of centres.
+  const [seatDx,seatDy]=pose==='seated'?[-4,539]:[0,0];
+  for(const [bx,by] of [[552,545],[724,520]]){
+   const cx=bx+seatDx,cy=by+seatDy;
+   const gid=`${clipPrefix}-cheekwash-${cx}`,rg=n('radialGradient',{id:gid});
+   rg.append(n('stop',{offset:'0','stop-color':'#ee8fa6','stop-opacity':'.62'}),
+             n('stop',{offset:'.62','stop-color':'#ee8fa6','stop-opacity':'.34'}),
+             n('stop',{offset:'1','stop-color':'#ee8fa6','stop-opacity':'0'}));
+   defs.append(rg);
+   blush.append(n('ellipse',{cx,cy,rx:30,ry:19,fill:`url(#${gid})`}));
   }
   // Brows belong to exposed skin; a screen-space path across the bangs is not a brow.
   // 2026-10-16 user feedback: "负面表情的眉毛你都没有变化". The forehead mask keeps only the skin between
@@ -47,7 +68,7 @@
   const pinchMouth=n('image',{width:W,height:H,href:textures.get(pinchPart.file),'data-pinch-mouth':pose});g.append(pinchMouth);
   const mouth=n('g',{'data-mouth-style':'neutral'}),lip=n('path',{fill:'none',stroke:'#a96165','stroke-width':2.8,'stroke-linecap':'round','stroke-linejoin':'round'}),tongue=n('path',{fill:'#eea0aa',stroke:'none'});
   mouth.append(lip,tongue);g.append(mouth);
-  const state={g,eyes,eyeArt,brows,mouth,lip,tongue,pinchMouth,pose,rig,off:OFF,currentEyeArt:'open'};faceNodes.set(pose,state);return state;
+  const state={g,eyes,eyeArt,brows,mouth,lip,tongue,pinchMouth,blush,pose,rig,off:OFF,currentEyeArt:'open'};faceNodes.set(pose,state);return state;
  }
  function paintFace(state,f,o){
   const {rig,eyes,eyeArt,brows,mouth,lip,tongue,pinchMouth,pose,off:OFF}=state;
@@ -55,9 +76,17 @@
   const forcedRest=['sleep','sleepy','squeeze','cry'].includes(f)||o.eyes?.every(e=>e.shape==='down');
   const closure=clamp(Math.max(o.blink||0,o.eyeClose||0,forcedRest?1:0));
   let selected=closure>.88?'rest':closure>.68?'late':closure>.24?'half':'open';
-  if(['smug','angry','determined','content'].includes(f)&&selected==='open')selected='half';
+  // 2026-10-30 user instruction: 害羞 = the existing HALF eyes + blush, "龙娘就是这样的，官方的不适合套用
+  // 这个角色". The GPT dragon project does exactly this: `shy:{eye:'half', blush:.9}`. The official
+  // whale instead parameterises a shrunken round eye (ring rx:13 ry:12 against the default 16/16), but
+  // that is only possible because its eyes are drawn as vector primitives in canvas - here the eye is a
+  // bitmapped whole (lid + lashes + sclera + iris), so shrinking it scales the lashes too and leaves a
+  // gap between lid and eye. Tried both and they were worse than half. Two other attempts were
+  // rejected first: a generated replacement pair (ugly, linework did not match) and the shrunken
+  // vector route (broken lashes).
+  if(['smug','angry','determined','content','shy'].includes(f)&&selected==='open')selected='half';
   if(['flustered','dragged'].includes(f))selected='pinch';
-  else if(f==='dizzy'||f==='love'||f==='shy')selected=f;
+  else if(f==='dizzy'||f==='love')selected=f;
   // Preserve the user-accepted smiling lashes verbatim, including wave/wink.
   if(happy||wink)selected=happy?'happy':'wink';
   for(let i=0;i<2;i++){
@@ -93,6 +122,8 @@
    brows[i].setAttribute('d',`M${x0+bx} ${y0+dy0+by}Q${x1+bx} ${y1+arch+by} ${x2+bx} ${y2+dy2+by}`);
 
   }
+  // 害羞 lights the extra blush wash; every other expression leaves it off.
+  if(state.blush)state.blush.setAttribute('opacity',f==='shy'?'1':'0');
   pinchMouth.setAttribute('display',pinch?'inline':'none');
   mouth.setAttribute('display',pinch?'none':'inline');
   // 2026-10-24: OFF.mouth is an OFFSET, not the position - the mouth still sits at rig.mouth and only

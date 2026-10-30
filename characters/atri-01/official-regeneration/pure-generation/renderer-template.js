@@ -200,7 +200,12 @@ export async function createLayeredBody(base,opts){
    stand.setAttribute('display',seated?'none':'inline');seat.setAttribute('display',seated?'inline':'none');
    stand.setAttribute('transform',`translate(0 ${poseDy})`);seat.setAttribute('transform',`translate(0 ${poseDy})`);
    const gesture=o.gesture,kind=gesture?.kind,k=gesture?.k||0,e=gesture?env(k):0;
-   const headAngle=(kind==='nod'?-3.6*Math.sin(k*Math.PI*2)*e:0)+(kind==='shake'?2.8*Math.sin(k*Math.PI*6)*e:0)+.38*Math.sin(o.t*1.6)+(o.look?.[0]||0)*.09;
+   // 2026-10-30: 害羞 tilts the head 2 degrees - the third ingredient of the GPT dragon's shy beside
+   // `eye:'half'` and `blush:.9` (it does `angle+=face.tilt` before building the head transform).
+   // Applied here because this one angle already drives head, back and faceHost together, so the
+   // face follows the tilt without a second transform.
+   const shyTilt=o.face==='shy'?2:0;
+   const headAngle=(kind==='nod'?-3.6*Math.sin(k*Math.PI*2)*e:0)+(kind==='shake'?2.8*Math.sin(k*Math.PI*6)*e:0)+.38*Math.sin(o.t*1.6)+(o.look?.[0]||0)*.09+shyTilt;
    const parent=`rotate(${headAngle} 592 581)`;head.setAttribute('transform',parent);back.setAttribute('transform',parent);faceHost.setAttribute('transform',parent);
    const energy=o.mode==='run'?2.1:['walk','dance','drag'].includes(o.mode)?1.5:1;
    const tl=energy*(1.05*Math.sin(o.t*2.05)+.4*Math.sin(o.t*3.3))-.4*headAngle,tr=energy*(.95*Math.sin(o.t*2.05+.85)+.35*Math.sin(o.t*3.1))-.4*headAngle;
