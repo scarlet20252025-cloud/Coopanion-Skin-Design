@@ -14,7 +14,7 @@
   "entry": "figure.js",
   "export": "createLayeredBody",
   "model": "model.json",
-  "thumb": "tex/head-clean.png",
+  "thumb": "tex/thumb.png",
   "vocab": [
     {
       "id": "neutral",

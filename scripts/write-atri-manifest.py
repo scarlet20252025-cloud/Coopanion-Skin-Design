@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Write the ATRI figure manifest to the shape Coopanion 0.2.16 actually validates.
+r"""Write the ATRI figure manifest to the shape Coopanion 0.2.16 actually validates.
 
 This replaces the hand-patched manifest. Read against the official contract rather than guessed:
 

@@ -148,6 +148,12 @@ model=json.loads((OLD/'model.json').read_text(encoding='utf8'))
 model['parts']=[{k:r[k] for k in ('id','file','z','pivot','role','poses')} for r in records]+lock['parts']
 model['part_registration']={p['id']:[1,0,0,1,0,0] for p in model['parts']}
 model['bounds']=[95,20,1045,1310]
+# 2026-10-30 user feedback: "默认尺寸有点小". The figure occupied 1290 px * 0.17350 = 223.8 of the
+# kit's 256 logo units - 87% of the stage height - while the official whale fills 244/256 = 95%
+# (its EXTENT is [20,12,236,256] in kit/body.js). 0.19052 puts ATRI at 245.8/256 = 96%, matching the
+# whale. Everything downstream converts through this one number (hits, anchors, extent, part
+# transforms), so raising it scales the figure and its touch targets together and they cannot desync.
+model['logo_scale']=round(245.8/1290,6)
 # 2026-10-16 user instruction: 大哭 looked wrong. The kit's tear particle is a whole logo-unit
 # teardrop (18.5 x 12 units, the same size the official whale uses); on this face - whose eyes are
 # less than half the whale's width - a drop centred on an eye covers the whole face. So only the
