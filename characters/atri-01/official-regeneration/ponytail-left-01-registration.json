@@ -1,0 +1,6 @@
+{
+  "name": "ponytail-left-01",
+  "matching_features": 3,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "unregistered"
+}

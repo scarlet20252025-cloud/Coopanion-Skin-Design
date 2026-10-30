@@ -1,0 +1,22 @@
+{
+  "name": "leg-right-01",
+  "matching_features": 2,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "method": "manual source landmarks, least-squares similarity, all residuals retained",
+  "matrix": [
+    [
+      0.5308387226653918,
+      0.00956239462492762,
+      313.98313998842445
+    ],
+    [
+      -0.009562394624927592,
+      0.5308387226653918,
+      635.8476559551069
+    ]
+  ],
+  "inliers": 4,
+  "rms": 2.8575215532015057,
+  "max_residual": 4.2160467018504555
+}

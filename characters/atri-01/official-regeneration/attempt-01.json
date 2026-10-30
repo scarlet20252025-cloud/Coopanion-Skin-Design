@@ -1,0 +1,11 @@
+{
+  "component": "body",
+  "prompt": "Use case: precise-object-edit. Asset type: a production transparent component for a Coopanion layered 2D chibi animation, generated from ONE locked master. Input image is the full authoritative mother character, not an invitation to redesign. Produce ONLY her complete central torso garment together with the small neck, teal sailor collar with its white piping, red necktie, three gold buttons and full white flared hem. Remove head, all hair, black bows, ahoge, both arms including sleeves/cuffs/fingers, both legs, feet, shadow and background. Fill ONLY the small garment regions originally concealed by hair or sleeves so the torso has a complete coherent shape and shoulder attachment surfaces. This is a clothing rigging asset, no mannequin or doll or person added. Preserve the mother's exact three-quarter right-facing view, scale, placement and perspective: same asymmetric collar, same tie shape, same button placement, same fabric folds, same thin dark brown/blue linework, flat cel shading, white cloth and muted teal colors. Crucially the torso must NOT become symmetric frontal, sleeveless dress with a new neckline, broad or adult-proportioned. The sleeve roots are short neutral attachment caps hidden under separate oversized sleeves; do not invent bare upper arms. Keep the original full portrait canvas framing and original torso location rather than centering or enlarging the torso. Neck extends naturally a little behind the jaw attachment; no face. Clean finished antialiased outline and genuinely transparent alpha, no white fringe, no checkerboard printed, no labels, no grid, no surrounding character thumbnail. Output one component only. Match the visible mother pixels faithfully; redraw only the hidden completion areas.",
+  "status": "rejected",
+  "reasons": [
+    "Both sleeves and cuffs retained although torso-only requested",
+    "Not suitable for independent arm motion"
+  ],
+  "output": "rejected/body-01-sleeves-retained.png",
+  "reference": "../master.png"
+}

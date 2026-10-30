@@ -1,0 +1,16 @@
+{
+  "component": "ponytail-near-complete-03",
+  "status": "superseded",
+  "method": "pure complete component generation",
+  "diagnosis": "Use user-owned structural annotation to disambiguate narrow outer pony from broad rear curtain; annotation is identification only, never target shape or generated lineart",
+  "inputs": [
+    "characters/atri-01/art-source/master-leg-v2.png",
+    "characters/atri-01/official-regeneration/pure-generation/references/user-ponytail-ownership.png"
+  ],
+  "prompt": "以图1完整母版为原图，为同一个 ATRI 桌宠画一个完整、独立的近侧马尾组件。只做画面左侧黑蝴蝶结系住的那束狭长外侧马尾。\n图2是用户提供的结构归属说明，不是描摹目标：红线圈住的狭长左侧外发束才是马尾，旁边右侧那大片宽长头发不是马尾，属于后发。不要把右侧大片后发混进本件。图2的红线、棋盘格、文字和旧裁边均不能出现在成品中；它只说明该认哪一束，画风、发色、原朝向和可见形状均以图1完整母版为准。\n将图1里不属于这个狭长外侧马尾的部分全部移除。把马尾原被另一片后发遮住的小范围自然画完整，使它成为从黑蝴蝶结下的发根到下面短尖尾的一整张连续完整画。保留母版的细长发流和原弯曲程度、末端分叉位置、左浅右深的光影方向，不要做成螺旋、麻花、卷发带，也不要新增一长串宽大的卷曲发尾。不要把后发大片及其长尾也带进来。根部在蝴蝶结下，要留出遮住的接入区。\n与图1原画的三分之四朝右姿态、比例和位置一致，同画布1145×1374。不要放大独立部件。深棕细描线连续均匀，柔和的浅褐粉色头发，整件清晰绘制，无拼补。真正透明alpha，无白边、红线、杂点、其他头发残影、背景、棋盘格或文字。只交付这一束完整狭长马尾的透明PNG。",
+  "tool": "built-in imagegen",
+  "output": "raw/ponytail-near-complete-03.png",
+  "output_sha256": "ac31de8c22403a8d0a142280772c7c7e7093d2fc3a9f43d61651e5b6751194ba",
+  "review": "Mixed broad rear curtain and narrow pony; imagegen semantic correction55, no code extraction.",
+  "candidate": null
+}

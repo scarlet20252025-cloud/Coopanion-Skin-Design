@@ -1,0 +1,22 @@
+{
+  "name": "far-pony-hidden-03",
+  "matching_features": 0,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "method": "manual source landmarks, least-squares similarity, all residuals retained",
+  "matrix": [
+    [
+      0.6212386795208885,
+      -0.03588830821277999,
+      500.89259475660276
+    ],
+    [
+      0.03588830821278027,
+      0.6212386795208885,
+      250.4500618546283
+    ]
+  ],
+  "inliers": 4,
+  "rms": 3.778312735767112,
+  "max_residual": 5.3012246838468515
+}

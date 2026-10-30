@@ -1,0 +1,22 @@
+{
+  "status": "FAIL motion art acceptance; diagnostic only",
+  "scope": "independent near/far ponytails with original visible mother pixels and generated hidden continuation",
+  "render_reference": "/preview/vendor/kit/rig.js",
+  "source_matte": "mother-source-matte.png",
+  "root_pins": {
+    "near": 430,
+    "far": 590
+  },
+  "diagnostic_tip_px": 6,
+  "stress_max_tip_px": 12,
+  "neutral_premultiplied_mae": 1.127489213104127e-07,
+  "neutral_alpha_outside_source": 0,
+  "expression_lock": "unchanged; checked separately",
+  "known_limits": [
+    "far hidden root ends inside opaque head, not a fully exposed tied root",
+    "far lower hidden fill reveals a diagonal cut and color discontinuity at 6px displacement",
+    "near lower contact needs further refinement at 12px stress",
+    "remaining mother is a diagnostic foreground, not a final body layer"
+  ],
+  "promotion_allowed": false
+}

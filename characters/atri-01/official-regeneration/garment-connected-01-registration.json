@@ -1,0 +1,21 @@
+{
+  "name": "garment-connected-01",
+  "matching_features": 57,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "matrix": [
+    [
+      0.6494228028662754,
+      -0.0007865592082832415,
+      207.7299718868947
+    ],
+    [
+      0.0007865592082832415,
+      0.6494228028662754,
+      352.2674582449157
+    ]
+  ],
+  "inliers": 32,
+  "rms": 1.248450137860685,
+  "max_residual": 2.8370619449071004
+}

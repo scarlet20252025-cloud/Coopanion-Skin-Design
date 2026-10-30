@@ -1,0 +1,22 @@
+{
+  "name": "bows-01",
+  "matching_features": 0,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "method": "manual source landmarks, least-squares similarity, all residuals retained",
+  "matrix": [
+    [
+      0.8966512788896742,
+      0.00747334706704962,
+      41.17913101664578
+    ],
+    [
+      -0.007473347067049612,
+      0.8966512788896744,
+      -52.104747154263805
+    ]
+  ],
+  "inliers": 4,
+  "rms": 11.517703170181422,
+  "max_residual": 16.603866658455576
+}

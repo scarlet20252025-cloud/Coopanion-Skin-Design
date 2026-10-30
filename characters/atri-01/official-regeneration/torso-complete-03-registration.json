@@ -1,0 +1,32 @@
+{
+  "name": "torso-complete-03",
+  "status": "registered-needs-whole-composition-review",
+  "reference": "torso-complete-02",
+  "relative_matrix": [
+    [
+      0.9997879921140973,
+      -4.199563646720195e-06,
+      0.14459152694310146
+    ],
+    [
+      4.199563646720195e-06,
+      0.9997879921140973,
+      0.34894452619742533
+    ]
+  ],
+  "matrix": [
+    [
+      0.5072510542712624,
+      0.0034674339022059556,
+      297.9055489822627
+    ],
+    [
+      -0.0034674339022059556,
+      0.5072510542712623,
+      497.0541625057927
+    ]
+  ],
+  "reference_fit_rms": 1.0408366356732421,
+  "inliers": 71,
+  "alpha_policy": "generated alpha; premultiplied uniform similarity only"
+}

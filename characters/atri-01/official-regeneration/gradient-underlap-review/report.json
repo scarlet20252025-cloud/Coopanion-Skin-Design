@@ -1,0 +1,87 @@
+{
+  "status": "UNREVIEWED; diagnostic only",
+  "donor": "../registered/mother-without-far-rear-03.png",
+  "donor_rigid_translation": [
+    -18,
+    0
+  ],
+  "reason": "Independent concealed source registration against occlusion clearance; full generated contour retained, no clipping to mother silhouette, all visible pixels from mother",
+  "boundary_yx": [
+    [
+      786.0,
+      874.0
+    ],
+    [
+      800.0,
+      876.0
+    ],
+    [
+      825.0,
+      891.0
+    ],
+    [
+      850.0,
+      905.0
+    ],
+    [
+      875.0,
+      915.0
+    ],
+    [
+      900.0,
+      924.0
+    ],
+    [
+      910.0,
+      926.0
+    ],
+    [
+      920.0,
+      928.0
+    ],
+    [
+      925.0,
+      929.0
+    ],
+    [
+      930.0,
+      930.0
+    ],
+    [
+      935.0,
+      932.0
+    ],
+    [
+      940.0,
+      934.0
+    ],
+    [
+      945.0,
+      936.0
+    ],
+    [
+      960.0,
+      940.0
+    ]
+  ],
+  "foreground_owns": "actual rear-curtain outline, not the adjacent pony interior",
+  "far_bend_window": [
+    800,
+    940
+  ],
+  "far_tie_root": [
+    805,
+    295
+  ],
+  "near_bend_window": [
+    430,
+    910
+  ],
+  "neutral_premultiplied_mae": 1.2743282695737435e-07,
+  "outside_alpha_pixels": 0,
+  "promotion_allowed": false,
+  "opaque_core": "5x5 erosion of generated alpha>.2 set to opaque; boundary alpha retained",
+  "color_registration": "OpenCV NORMAL_CLONE gradient-domain color registration; original visible pony is the right boundary and generated concealed hair is the left boundary; only concealed RGB consumed, source alpha/contour unchanged",
+  "removed_disconnected_speckle_pixels": 16,
+  "shared_internal_AA_pixels": 119
+}

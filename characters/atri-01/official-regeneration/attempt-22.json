@@ -1,0 +1,9 @@
+{
+  "component": "bow-left",
+  "prompt": "Image1 full ATRI mother is authoritative. Image2 is the original NEAR black bow at VIEWER LEFT. Produce ONLY this one complete small charcoal ribbon accessory on real transparent background. Preserve EXACT original angular shape: upper narrow triangular lobe points up-left; lower wider triangular lobe points down-left; very compact knot at the right where tied to the hair. Original asymmetric lobes, no symmetrical bow loops, no additional tails, no stylized redesign. Remove all beige hair, skin, head and background, completing only the tiny part hidden by hair into the same fold. Original muted slate highlights and thin dark outline. Entire accessory visible with transparent margin, one bow only, no text or shadow. Use mother for consistent style and reference2 for precise silhouette and proportions.",
+  "output": "raw/bow-left-01.png",
+  "status": "provisional",
+  "review": [
+    "Five mother landmarks RMS3.49px; visible contour close."
+  ]
+}

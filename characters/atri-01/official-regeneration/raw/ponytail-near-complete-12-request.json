@@ -1,0 +1,25 @@
+{
+  "model": "gpt-image-2.5-sunburst",
+  "endpoint": "https://edge.lingsuan.org/v1/images/edits",
+  "inputs": [
+    "characters\\atri-01\\master.png",
+    "characters\\atri-01\\official-regeneration\\raw\\near-lock-magenta-v7.png"
+  ],
+  "prompt_file": "characters\\atri-01\\prompts\\near-lock-v7-workmode.txt",
+  "output": "characters\\atri-01\\official-regeneration\\raw\\ponytail-near-complete-12.png",
+  "seconds": 36.1,
+  "usage": {
+    "input_tokens": 1139,
+    "input_tokens_details": {
+      "image_tokens": 646,
+      "text_tokens": 493
+    },
+    "output_tokens": 1716,
+    "output_tokens_details": {
+      "image_tokens": 1716,
+      "text_tokens": 0
+    },
+    "total_tokens": 2855
+  },
+  "marker": "the accepted lock layer dilated 8px, painted magenta; location only"
+}

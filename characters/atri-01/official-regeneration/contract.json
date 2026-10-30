@@ -1,0 +1,57 @@
+{
+  "request": "Stop old cutout repairs. Regenerate every component using the Coopanion official mother-edit workflow; compare each output with mother and reject large deviations.",
+  "master": "characters/atri-01/master.png",
+  "master_sha256": "4b3e09d6e782b042bf87eb9c7b3caf645b3ae43e4af919680afdf951f3c58e1c",
+  "official_method": "https://github.com/Pal-AI-Lab/Coopanion/blob/main/packages/cortico-world-desktop-pet/examples/whale/README.md#璐村浘鏉ユ簮",
+  "reference_checkout_commit": "91293b3e31b94397a8f2eb79dffec40f4c6d8817",
+  "generation": "Pure complete-component image generation/editing from the locked full mother. Each component is one continuous generated painting with generated alpha. No mother-pixel grafts, difference cutouts, contour reinsertion, hidden-pixel donors or programmed art repairs.",
+  "supersedes": [
+    "legacy-layer-repair",
+    "old derivative component masks",
+    "old two-tip-only far hand rule",
+    "official-visible pilot",
+    "all mother-visible/generated-underlap/matting/Poisson pilots",
+    "registered-underlap-review runtime prototype"
+  ],
+  "constraints": [
+    "Same character, three-quarter view, age impression, proportions, palette, dark brown thin outlines, cel shading and highlight placement.",
+    "Keep both hands consistent with mother: only small fingertips exposed from oversized sailor cuffs.",
+    "Tied narrow outer locks are ponytails; broad neighboring hair is rear hair. Do not merge their identities.",
+    "Preserve original facial charm and flustered >< expression; no rejected generic mouth designs.",
+    "No seated torso squash, OpenArt, paid API fallback, or reuse of rejected cutouts.",
+    "Latest user reply forbids consuming Adobe credits. Earlier one-attempt approval is superseded; do not invoke Adobe generative operations that may consume credits.",
+    "Generated alpha owns new hidden contour; do not force it into previous masks.",
+    "Only registration, source comparison, compositing and export are programmatic; no improvised ink or shape patches."
+  ],
+  "review_each_output": [
+    "full mother comparison",
+    "silhouette and anchors",
+    "color and line quality",
+    "semantic ownership",
+    "hidden completeness",
+    "alpha on light and dark",
+    "assembled character"
+  ],
+  "rejection_policy": "Reject notable shape, face, direction, scale or color drift. Save outcome and reason; never silently use a rejected component as the next reference.",
+  "state": "13 whole-generated component diagnostic candidate exists; old stitched pilots excluded. User art acceptance and native host verification pending.",
+  "scope_exception": {
+    "expressions": "Preserve user-approved current expression dynamics and supporting textures/rig. Do not regenerate expression variants.",
+    "lock": "expression-lock.json"
+  },
+  "continuation_method_decision": {
+    "user_message": "你为什么还在纠结抠图拼接问题，我们不是改纯生成方案了吗，这是官方鲸鱼娘工程参考",
+    "decision": "Explicit correction: pure complete-component generation; supersedes prior interpretation of continue."
+  },
+  "official_reference_kit": "references/whale-coopanion-repro-kit/ARCHIVE-PROVENANCE.json",
+  "official_reference_sections": [
+    "docs/06_服装_冬装.md step 3: _redraw/_whole and final one-shot flow",
+    "docs/07_规矩_验收_失败案例.md: whole-component requirement and failure table",
+    "prompts/04_冬装_模板与成功提示词.md: final one-shot template"
+  ],
+  "generation_reference": {
+    "source": "characters/atri-01/art-source/master-leg-v2.png",
+    "sha256": "c980aa5eae8824f05009bd39e015be3b80b944d180fb8ed6f97831efccb78f4d",
+    "role": "Same mother before background extraction, used as generation reference to avoid feeding old dirty alpha back to imagegen. Locked transparent mother remains coordinate and design acceptance target."
+  },
+  "export_policy": "Official-style detached alpha island cleanup and transparent texel RGB bleed before filtering. Alpha and opaque RGBA invariant during RGB edge export. No silhouette carving, mother-pixel grafts or custom paint."
+}

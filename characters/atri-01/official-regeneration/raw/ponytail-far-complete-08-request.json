@@ -1,0 +1,22 @@
+{
+  "model": "gpt-image-2.5-sunburst",
+  "endpoint": "https://edge.lingsuan.org/v1/images/edits",
+  "input_hair": "characters\\atri-01\\official-regeneration\\raw\\hair-system-02.png",
+  "input_master": "characters\\atri-01\\master.png",
+  "prompt_file": "characters\\atri-01\\prompts\\image25-far-lock-v2.txt",
+  "output": "characters\\atri-01\\official-regeneration\\raw\\ponytail-far-complete-08.png",
+  "seconds": 24.2,
+  "usage": {
+    "input_tokens": 640,
+    "input_tokens_details": {
+      "image_tokens": 323,
+      "text_tokens": 317
+    },
+    "output_tokens": 1716,
+    "output_tokens_details": {
+      "image_tokens": 1716,
+      "text_tokens": 0
+    },
+    "total_tokens": 2356
+  }
+}

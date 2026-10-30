@@ -1,0 +1,5 @@
+{
+  "note": "Visible highlight turn, inner concavity and two tip endpoints; fit only establishes hidden-source placement, generated visible pixels are discarded.",
+  "source": [[834,736],[854,908],[959,1135],[936,1115]],
+  "target": [[850,675],[870,785],[949,946],[930,932]]
+}

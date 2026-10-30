@@ -1,0 +1,19 @@
+{
+  "method": "inverse recorded reference crop plus uniform output canvas scale; not a feature fit",
+  "matrix": [
+    [
+      0.3024396006852147,
+      0.0,
+      720.3703703703704
+    ],
+    [
+      0.0,
+      0.3024396006852147,
+      635.5555555555555
+    ]
+  ],
+  "status": "requires visual geometry review",
+  "automatic_feature_matches": 1,
+  "automatic_fit_rejected": true,
+  "no_affine_shape_correction": true
+}

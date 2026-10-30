@@ -1,0 +1,9 @@
+{
+  "component": "arm-left",
+  "prompt": "Precise component repair. Image 1 is the current isolated near sleeve to edit. Image 2 is the FULL authoritative mother. Preserve the entire lower sleeve, teal cuff, white stripe, tiny exposed fingertips, pose, palette and canvas exactly. Correct ONLY the upper shoulder attachment: extend the white sleeve upward and toward the RIGHT so it can tuck under the mother's sailor collar at the actual shoulder, rather than ending in a visible round detached cap. At original image1 scale the new shoulder top should be about 80 pixels ABOVE and 80 pixels RIGHT of its current top. Remove the internal semicircular seam arc across that upper cap. Make a smooth, complete continuous white shoulder extension with the same pale folds; its hidden terminal outline will be covered by the collar/body. Do not shift/rotate/enlarge the entire sleeve. Do not add collar, torso, neck, hair or skin shoulder. Keep the cuff/fingertips exactly unchanged. Transparent background, smooth dark thin edges, no colored fringe.",
+  "output": "raw/arm-left-02.png",
+  "status": "rejected-by-user",
+  "review": [
+    "Root extension altered connected-sleeve geometry; do not integrate or use as next generation reference."
+  ]
+}

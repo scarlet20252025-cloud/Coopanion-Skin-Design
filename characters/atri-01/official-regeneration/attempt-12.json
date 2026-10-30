@@ -1,0 +1,10 @@
+{
+  "component": "rear-hair",
+  "prompt": "Edit image1 exact ATRI mother into ONE complete BACK HAIR component on true transparency. Image2 is an ownership annotation only: the RED-OUTLINED NARROW OUTER ribbons are separate ponytails, so EXCLUDE those narrow outer ribbons from this output, do not copy red. Keep ONLY the BROAD long inner rear-hair curtains immediately behind shoulders and arms, on BOTH sides, plus their concealed continuous upper connection behind the head. In original image1 the left broad curtain flows from behind x400 y400 down to rounded pointed tips around x360 y1065; the right broad curtain flows behind x780 y450 down to original tips around x850 y1040. Preserve visible mother silhouette, highlight positions, taupe/pink beige tone, angular cel shading and thin dark ink. Fill obscured zones behind head and torso with simple continuous same-color hair, no face-shaped hole, no torso-shaped hole, no exaggerated new curled strands. REMOVE front bangs and ALL short cheek-framing locks, ahoge, black bows, both NARROW OUTER ponytails, face, neck, outfit, arms, hands, legs. NOT all the hair: only the broad inner rear layer. Full original 1145x1374 canvas original size/position, no enlargement. No extra hair tips beyond original broad rearhair shape. No white halo, background, labels or shadows.",
+  "status": "rejected",
+  "output": "rejected/rear-hair-02-wrong-ownership.png",
+  "review": [
+    "Both narrow outer ponytails still included; second whole-rear generation failure.",
+    "Stop whole-rear prompt. Split broad rear sides with local mother detail as supporting context."
+  ]
+}

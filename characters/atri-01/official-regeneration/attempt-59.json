@@ -1,0 +1,15 @@
+{
+  "component": "ponytail-far-complete-06",
+  "status": "provisional-in-candidate",
+  "method": "pure complete component generation",
+  "inputs": [
+    "characters/atri-01/art-source/master-leg-v2.png",
+    "characters/atri-01/official-regeneration/raw/ponytail-near-complete-04.png"
+  ],
+  "prompt": "为图1完整母版里的同一位 ATRI Q版桌宠，生成一张完整独立的远侧马尾图层：就是画面右侧黑色蝴蝶结系住、沿头发最外侧往右下垂的那束细长头发。图1控制原朝向、位置、长度、发色、分叉和光影。图2是已经明确结构归属的近侧马尾，只用来说明“窄外发束”这种组件范围，不是让你镜像复制、改变姿势或照搬它的发尾。\n只画远侧这束狭长外侧马尾，由右黑蝴蝶结下的发根一直到外侧短尖发尾。原被内侧大片宽后发挡住的小范围顺着原发流完整绘制，不能留裁切口。那片内侧宽长后发不是马尾，必须完全排除；不画头顶、刘海、侧脸短发、黑蝴蝶结、脸和身体。不要把内侧后发长尾一起带进来。保持母版原有自然弯曲和短小末端分束，不加螺旋、麻花、宽S形发带或新增长卷尾。\n整体一张连续的完整绘画，与原画细致均匀的深棕描线、浅褐粉发色及柔和高光阴影一致。真正透明alpha，抗锯齿清晰，无红线、白边、碎点、背景残留、文字或棋盘格。原母版1145×1374画布和原位比例，避免放大组件。输出只有这一束完整远侧窄马尾的PNG。",
+  "tool": "built-in imagegen",
+  "output": "raw/ponytail-far-complete-06.png",
+  "output_sha256": "9360b2034e17604c10f6fd6f1d3f9f5e44bc50285804888d0d77b0875bc41e16",
+  "review": "Whole generated far pony; uniform initial placement only, no template alpha used.",
+  "candidate": "scratch/candidates/atri-pure-components-01"
+}

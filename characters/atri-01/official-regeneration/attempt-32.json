@@ -1,0 +1,6 @@
+{
+  "component": "complete-long-hair-system",
+  "prompt": "Edit image 1, the complete long-hair animation underlayer. Image 2 is the full original mother and must remain the shape authority. Change ONLY the INTERIOR UPPER AREA of image1 that will sit behind the foreground head. Remove all dark outlines and pointed ends of the short cheek/bang locks that are currently drawn across that interior. Fill those internal short-lock outlines with simple continuous matching taupe hair shading. Also fill the central triangular opening with simple continuous matching hair, down to the level of the lower hair tips, because this underlayer must be complete behind the torso. Preserve ALL OUTER contours, both outer narrow tied locks, both triangular gaps BETWEEN narrow outer locks and broad inner curtains, all existing long-hair edges, highlights, curves and bottom tips EXACTLY. Do not create any new bottom tips or widen the hair. Do not change the canvas, framing or scale. No face, bangs, short cheek locks, body, accessories, background or text. Keep transparency OUTSIDE the original hair silhouette and inside the two original side gaps; only the central torso opening becomes concealed continuous hair. This is a surgical internal cleanup, not a new wig design.",
+  "output": "raw/hair-system-02.png",
+  "status": "needs-whole-composition-review"
+}

@@ -1,0 +1,16 @@
+{
+  "component": "arm-near-complete-01",
+  "status": "rejected",
+  "method": "pure whole-component generation; full mother input only",
+  "tool": "built-in imagegen",
+  "inputs": [
+    "D:/Codex/Coopanion-Skin-Design/characters/atri-01/master.png"
+  ],
+  "prompt": "以附件完整母版为原图做一次图像编辑，为同一个 ATRI Q版桌宠绘制一张完整独立的近侧手臂图层：就是画面左侧向左下自然垂着的那只宽大白衣袖，带蓝绿色袖口、白色细滚边和袖口里只露出的一小截母版指尖。不是创作新姿势，不是单独画一只手，不是成人手。\n保留母版原尺寸、原画布位置、原朝向、原袖长和宽度以及原有的白衣褶皱；不要重新居中、放大、拉长袖子。以完整母版为图像编辑输入，把不属于这一只衣袖与指尖的所有内容移除；肩部原来被头发和水手领挡住的很小一段要自然画完整，作为独立旋转接入区。肩根是衬衣袖山，不要画成人的裸上臂；肩根封口将藏于领口后面，不加黑色横线。袖身、蓝袖口、白色滚边到那几枚可爱的小指尖必须是一整幅连续完整的画。可见的外轮廓和袖口斜角、近大远小透视严格照母版。\n整张组件只画画面左侧的这一件：白衣袖＋蓝袖口＋从袖里露出的极小指尖。不包含躯干衣身、领口、领带、头发、脸、腿、另一只手臂。不是复制衣身或沿衣身残留轮廓切边，不要挖腋下缺口，不画任何完整手掌或额外外露手腕，指尖完全按母版姿势和露出大小。\n保持母版薄而清楚的深棕描线、干净的柔和阴影和颜色；被遮挡肩根不描封口，其余轮廓匀称连续，真实透明 alpha，无白边、黑晕、背景残影、游离噪点。完整独立组件的原始生成 PNG。原画布1145×1374；其余区域全透明，不要棋盘格、文字或标注。",
+  "output": "raw/arm-near-complete-01.png",
+  "output_sha256": "0b6976dd1312f1291e9d186ccb2c6b1e9e785cf1eb17c5441675277a4184bbfe",
+  "review": "Rejected by original-alpha QA: 114 connected components at alpha>0, including 299 pixels outside largest component. Cuff and sleeve shape require renewed mother comparison. Initial manual correspondence residual is withdrawn because a mother cuff corner was misread; no accepted registration or geometry score.",
+  "runtime_eligible": false,
+  "registration": "arm-near-complete-01-registration.json",
+  "alpha_report": "pure-generation/arm-near-complete-01-alpha.json"
+}

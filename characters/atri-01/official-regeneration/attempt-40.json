@@ -1,0 +1,12 @@
+{
+  "component": "far pony masked concealed fill",
+  "status": "not a visible replacement; hidden overlap registration under review",
+  "prompt": "INPAINT ONLY THE TWO SOLID MAGENTA REGIONS IN IMAGE 1. Magenta is an editing mask, not part of the character. Image 1 is the edit target on a fixed 1145x1374 transparent canvas. Image 2 is the authoritative full mother reference. Replace every magenta pixel with continuous taupe hair matching the existing adjacent shading and thin dark brown ink; absolutely preserve all existing non-magenta ponytail pixels and their original positions. The upper magenta region is the hidden root/stem behind the head. The lower magenta strip is the hidden back of the same thin ponytail, currently missing behind the broad rear curtain. Fill it smoothly with matching shadow on the inner left and light taupe on the right, with no internal straight seam at the old cut. Round the top-left junction of the lower strip into a natural smooth concave hair edge, not a rectangular bump. Keep lower original tips exactly unchanged. No pink remaining. Do not enlarge, recenter, stretch, curve the visible lock differently, or add any new hair outside this tiny completion. No broad rear curtain, body, face, bow or marks. True transparent background. This is an exact partial texture repair, NOT a newly composed isolated hair illustration.",
+  "inputs": [
+    "official-visible/far-hidden-magenta-guide.png",
+    "../master.png"
+  ],
+  "output": "raw/far-pony-hidden-02.png",
+  "original_output": "C:/Users/63526/.codex/generated_images/01a13400-0fec-79a2-9cdc-067895581192/exec-038a5fd8-71da-4c56-a9e6-5424aea80910.png",
+  "output_sha256": "0c8451e791409b5e3172377f52ebe08e4b409d270c77eeabd8bd30fdf0649523"
+}

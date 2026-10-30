@@ -1,0 +1,14 @@
+{
+  "component": "near pony concealed completion",
+  "status": "hidden fill diagnostic; visible generation not used",
+  "prompt": "Image 1 is the exact visible mother-pixel source of ONE narrow outer ponytail, incomplete only because its root and bottom-right tip were hidden in the full character. Image 2 is the full authoritative mother for context. Edit IMAGE 1 only: keep the entire existing narrow ribbon-shaped hair lock at exactly its original pixel position and scale on the 1145x1374 transparent canvas. Complete the small missing root behind the bow near x350-380 y290-340 into a simple rounded attachment. Complete ONLY the chopped lower-right side from x245 y795 down to x195 y920 into one smooth tapered hidden continuation ending around x238 y954, giving the lower tuft a natural complete pointed contour. It should be one slim asymmetrical long lock with a modest outward bow at the lower left, NOT a spiral, corkscrew or broad rear hair curtain. Keep the original visible outer left contour x150..370, original line thickness, highlight, and taupe colors exactly. Add no broad neighboring rear hair or long thin strand at right. The thin diagonal middle is intentional. Do not enlarge, recenter or mirror. All new pixels should be confined to the missing root and the lower-right hidden continuation. No bow, no face, no body, no other hair, no text, true transparent background, smooth dark-brown antialiased ink. This completed single ponytail will be placed behind the broad rear hair shown in image 2; preserve its visible silhouette exactly.",
+  "inputs": [
+    "official-visible/near-visible-mother.png",
+    "../master.png"
+  ],
+  "output": "raw/near-pony-hidden-01.png",
+  "original_output": "C:/Users/63526/.codex/generated_images/01a13400-0fec-79a2-9cdc-067895581192/exec-9b3f406a-f952-4c37-bff0-0d38dff8962b.png",
+  "input_preservation_note": "Working visible source later changed; pre-matte/pre-tail-extension image reconstructed from the exact script state, not claimed as a separately captured original tool-input hash.",
+  "reconstructed_input": "references/near-generation-v1/near-visible-mother.png",
+  "output_sha256": "db4cfbccce2fef082fedf0e7ae1e40a750d00416ca659ceac78a6c4d6c502cf4"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "arm-far-complete-03",
+  "matching_features": 4,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "unregistered"
+}

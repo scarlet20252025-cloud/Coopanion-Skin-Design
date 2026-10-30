@@ -1,0 +1,23 @@
+{
+  "name": "arm-near-complete-01",
+  "matching_features": 6,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "invalid-diagnostic-measurement-not-an-accepted-registration",
+  "method": "manual source landmarks, least-squares similarity, all residuals retained",
+  "matrix": [
+    [
+      0.4903666792762944,
+      0.020877630085702002,
+      198.03818434406014
+    ],
+    [
+      -0.02087763008570202,
+      0.49036667927629446,
+      463.47689829248236
+    ]
+  ],
+  "inliers": 4,
+  "rms": 10.830423484180498,
+  "max_residual": 15.139616387633298,
+  "review": "Initial manually read mother cuff corner was misidentified. Numerical residual withdrawn; no runtime use. Raw source already fails alpha QA independently."
+}

@@ -1,0 +1,10 @@
+{
+  "component": "arm-right",
+  "prompt": "Generate ONE complete transparent rig component by editing the supplied strict full-body master: ONLY the small FAR ARM at VIEWER RIGHT (the character's left arm). It is the slender foreshortened white sleeve descending slightly outward along the right side of her torso, ending in the SMALL teal cuff with a single white stripe and the tiny peach fingertips barely peeking below. Preserve that exact original far-side perspective, pose, narrow width, original fingertip peek size, cel shadows, blue cuff hue and thin dark ink. Complete a short rounded white shoulder attachment hidden behind the collar; do not add collar itself. Do not mirror the large near arm, do not make a wide foreground sleeve, do not draw a full hand or exposed wrist. Remove all other character parts to true transparency: no torso or buttons, no hair or hair wisps, no collar or tie, no head, no legs, no other arm. Return only the intact far shoulder-to-cuff-and-fingertips component with clean antialiased alpha. Same original pose, no pose variation, no redesign. Entire master remains the style and geometry authority. No text, no black/white/checkerboard background, no drop shadow.",
+  "status": "provisional",
+  "output": "raw/arm-right-01.png",
+  "review": [
+    "Earlier rejection used torso occlusion edge incorrectly as cuff landmark; withdrawn.",
+    "Correct visible landmarks RMS4.47px max5.90px; needs assembly and alpha inspection."
+  ]
+}

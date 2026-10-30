@@ -1,0 +1,40 @@
+{
+  "source": "characters/atri-01/art-source/complete-ponytails-reextract.png",
+  "source_sha256": "c71099633592c7812e394bb98eb1ec4401f13f5f5d5dc46d9c58a5621642d3f5",
+  "output": "characters/atri-01/official-regeneration/raw/ponytail-near-complete-06.png",
+  "output_sha256": "bc8fc8f86dfdcb2166b159923d794aee721bb11631c75f6a97df331597a9ccaa",
+  "component_bbox": [
+    54,
+    222,
+    308,
+    908,
+    65213
+  ],
+  "mask": "characters/atri-01/official-regeneration/raw/ponytail-near-complete-06-front.png",
+  "matrix": [
+    [
+      0.8778563642286454,
+      0.061385696894830276,
+      45.69589042739619
+    ],
+    [
+      -0.061385696894830276,
+      0.8778563642286454,
+      42.9714838510838
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "scale": 0.8800000000000001,
+  "rotation_deg": -4.0,
+  "profile_error_px": 4.093426347619434,
+  "root_bow_dist_px": 3.4630689623457442,
+  "front_rows": [
+    560,
+    970
+  ],
+  "method": "Left component of the complete pair drawing recovered from the original model (the user rejected the paired-lock crop and ponytail-left-01). Uniform similarity from scratch/curvefit.py: the lock outer edge is matched to the master outer silhouette; front rows come from master pixel agreement, not from taste."
+}

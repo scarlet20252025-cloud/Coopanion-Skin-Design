@@ -412,9 +412,21 @@ const POSE_OFFSET={
    // suddenly sits". The mix now reaches its half point at sit ~.14 and saturates early, so the pose
    // change starts on the same frame the kit begins lowering the body. The settle animation
    // (poseDy) still smooths the swap, so this does not pop.
-   seatMix=smooth(clamp(o.sit*3.2,0,1));
-   const seated=o.sit>.14;if(seated!==poseSeated){poseSeated=seated;poseAge=0}else poseAge+=dt;
-   // Exchange two drawn poses with a small rigid settle; never compress the torso.
+   // 2026-10-31 BUG (user: "每次点击都会高度挤压然后坐下来再站起来"). o.sit alone cannot decide the
+   // pose. kit/body.js sets a TRANSIENT sitT while landing - `case 'land': sitT = .35 * (1-smooth(mt/.35))`
+   // - and tapping the pet goes through 'land', so the low threshold I added for the dizzy latency made
+   // every click cross it: the drawing flipped to the seated art for the length of the landing dip and
+   // then flipped back. Seated states are MODES, not a value: sit/sleep/dizzy hold sitT = 1 for as long
+   // as they last, while idle/land/walk/air/drag only bump sitK briefly. So decide by mode, and keep a
+   // high value fallback for the frames right after a seated mode ends (sitK decays through ease(6)).
+   // Every mode that raises sitK transiently, so the .75 fallback below cannot see them:
+   //   crouch (jump/hop) sitT = .3     land sitT = .35     others 0
+   // Only sit / sleep / dizzy hold sitT = 1. A hop is crouch -> air -> land, all below .4.
+   const seatMode=o.mode==='sit'||o.mode==='sleep'||o.mode==='dizzy';
+   const seated=seatMode||o.sit>.75;
+   // seatMix is only reported through visualState(); keep it agreeing with the boolean.
+   seatMix=seated?Math.max(seatMix||0,.5):Math.min(seatMix||0,.49);
+   if(seated!==poseSeated){poseSeated=seated;poseAge=0}else poseAge+=dt;
    poseDy=(seated?-12:7)*Math.exp(-14*poseAge)*Math.cos(18*poseAge);
    stand.setAttribute('display',seated?'none':'inline');seat.setAttribute('display',seated?'inline':'none');
    stand.setAttribute('transform',`translate(0 ${poseDy})`);seat.setAttribute('transform',`translate(0 ${poseDy})`);

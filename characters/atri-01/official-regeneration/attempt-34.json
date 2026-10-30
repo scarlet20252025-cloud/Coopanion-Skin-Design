@@ -1,0 +1,27 @@
+{
+  "component": "far-narrow-outer-tied-lock",
+  "generator": "set OPENAI_BASE_URL=<image relay> + characters/atri-01/official-regeneration/pure-generation/generate-lock.py",
+  "model": "gpt-image-2.5-sunburst",
+  "cost": "two paid generations, 24.1s and 24.2s, 2353 and 2356 total tokens",
+  "attempt": 34,
+  "prompt_file": "characters/atri-01/prompts/image25-far-lock.txt",
+  "input": "characters/atri-01/master.png",
+  "output": "raw/ponytail-far-complete-07.png",
+  "status": "rejected",
+  "screening": {
+    "alpha_components": 1,
+    "bbox": [
+      714,
+      97,
+      946,
+      1279
+    ],
+    "uniform_similarity_fit_profile_error_px": 8.94,
+    "outside_master_px": 2.1
+  },
+  "review": [
+    "Form deviates from the master: the lock is drawn far longer and thinner than the master lock, with a decorative chevron at its root and long wispy tips that the master does not have.",
+    "Fit degrades to an unphysical scale 0.40 once the root is kept under the bow.",
+    "Reject; not used, no mother pixels involved."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "component": "ponytail-near-complete-04",
+  "status": "provisional-in-candidate",
+  "method": "pure whole component imagegen edit; no programmatic extraction or patching",
+  "diagnosis": "54 still merged broad rear curtain into narrow outer pony. Targeted semantic removal by imagegen; user ownership reference included.",
+  "inputs": [
+    "characters/atri-01/official-regeneration/raw/ponytail-near-complete-03.png",
+    "characters/atri-01/official-regeneration/pure-generation/references/user-ponytail-ownership.png",
+    "characters/atri-01/art-source/master-leg-v2.png"
+  ],
+  "prompt": "Edit IMAGE 1, the generated hair drawing. It wrongly contains TWO different hair structures. REMOVE THE ENTIRE BROAD RIGHT-HAND HAIR CURTAIN, including its THREE VERY LONG lower hanging tips. Also remove the black bow. KEEP ONLY THE NARROW LEFT-HAND OUTER LOCK: it descends diagonally from the root under the bow toward the LEFT, then ends in the short LEFTMOST pointed tips around the middle-lower area of image1. That narrow outer lock is the actual ponytail. The long broad right curtain and its big low tips are NOT ponytail and must be fully absent, not trimmed shorter. Do not keep the wide S-shaped inner branch.\nIMAGE 2 is the user's ownership explanation: the thin RED outline encloses ONLY that narrow LEFT outer lock; the broad unmarked RIGHT strand is a different rear-hair layer to exclude. Do not copy the red outline or checkerboard. IMAGE 3 is the complete mother for style and identity only.\nFinish the kept narrow outer lock into ONE complete natural, smooth hair component, including its small originally occluded inner back, preserving its thin profile and original short pointed ends. Do not introduce new long curls, wide bottom lobes or a rear curtain. Do not include the bow or scalp. One continuous light taupe-pink hair drawing with thin dark-brown antialiased outline, matching the mother, on genuine clean transparency. No red marks, noise, background or text. Keep the component's current position and scale within image1 canvas. Output only this one correctly identified complete narrow left ponytail.",
+  "tool": "built-in imagegen",
+  "output": "raw/ponytail-near-complete-04.png",
+  "output_sha256": "c8b58688ca40e29d327eb6053a080092361f5b3bc2664f711ab2a93b8270e121",
+  "review": "Complete narrow pony generated through imagegen; two-anchor similarity initial placement; not exact reconstruction claim.",
+  "candidate": "scratch/candidates/atri-pure-components-01"
+}

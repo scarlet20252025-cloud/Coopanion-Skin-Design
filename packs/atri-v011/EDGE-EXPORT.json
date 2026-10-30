@@ -3,19 +3,19 @@
   "parts": [
     {
       "id": "tail-left",
-      "alpha_sha256": "6391ef133856f1152dca4e97633bee8e0d389da27ccbe5bffb990709a9be389e",
+      "alpha_sha256": "5b8f0500c8b0e0e153737b522e9b25a3d8f4a3278e6ab6cf8e0c3502bc3c6be7",
       "alpha_changed_pixels": 0,
       "opaque_art_changed_pixels": 0,
-      "rgb_changed_pixels": 9809,
-      "file_sha256": "6045f749c03459dee49f2854d64d477471dacc20a592a762c5b2bb4222ad1359"
+      "rgb_changed_pixels": 4409,
+      "file_sha256": "afb08f0b78aef530c26331139f096b0d7e498308a09f57077f5735918e0babea"
     },
     {
       "id": "tail-left-front",
-      "alpha_sha256": "72701eee8f225663f33fd8c92bc55291b7c1ecd4f332f606927e27e1cabdc51a",
+      "alpha_sha256": "88267bc4300556daeb194f2d44240a5532aa63100b9e25edd39204e6252a9523",
       "alpha_changed_pixels": 0,
       "opaque_art_changed_pixels": 0,
-      "rgb_changed_pixels": 4513,
-      "file_sha256": "20b04c7fb0b435375ad6aae29f0897819ace75b6615fd4a26b2be4d83a7b6736"
+      "rgb_changed_pixels": 2393,
+      "file_sha256": "bcf2dc8fb78309a398637b7b92da25e38162bad172697c32d216857c67877915"
     },
     {
       "id": "tail-right",

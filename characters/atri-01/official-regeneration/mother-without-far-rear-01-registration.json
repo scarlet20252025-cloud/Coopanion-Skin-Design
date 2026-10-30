@@ -1,0 +1,21 @@
+{
+  "name": "mother-without-far-rear-01",
+  "matching_features": 275,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "matrix": [
+    [
+      0.9991954662129886,
+      0.0002628374804323498,
+      0.0333699500420089
+    ],
+    [
+      -0.0002628374804323498,
+      0.9991954662129886,
+      1.1866099284022933
+    ]
+  ],
+  "inliers": 249,
+  "rms": 1.0102714233492145,
+  "max_residual": 3.2495809862173153
+}

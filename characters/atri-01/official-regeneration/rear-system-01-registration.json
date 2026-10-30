@@ -1,0 +1,32 @@
+{
+  "name": "rear-system-01",
+  "status": "registered-needs-whole-composition-review",
+  "reference": "hair-system-02",
+  "relative_matrix": [
+    [
+      1.0013594367609664,
+      -0.00015225556690106316,
+      -1.0985079112618812
+    ],
+    [
+      0.00015225556690106316,
+      1.0013594367609664,
+      -0.31353872851771847
+    ]
+  ],
+  "matrix": [
+    [
+      0.8701266530335859,
+      -0.00520910412514291,
+      69.20498035249447
+    ],
+    [
+      0.005209104125142911,
+      0.8701266530335859,
+      77.00848488423546
+    ]
+  ],
+  "reference_fit_rms": 0.8608775296518769,
+  "inliers": 23,
+  "alpha_policy": "generated alpha; premultiplied uniform similarity only"
+}

@@ -1,0 +1,30 @@
+{
+  "method": "crop reference, uniform scale and padding only",
+  "mother_crop_box": [
+    700,
+    250,
+    1030,
+    990
+  ],
+  "scale": 1.2,
+  "padding_xy": [
+    314,
+    68
+  ],
+  "output_size": [
+    1024,
+    1024
+  ],
+  "inverse_to_mother": [
+    0.8333333333333334,
+    0,
+    0,
+    0.8333333333333334,
+    438.3333333333333,
+    193.33333333333331
+  ],
+  "sha256": {
+    "mother-context.png": "ed9f56868a2c2d821e332a5f625ad6fabd09afad8c2c6025fd688d10c6c827cb",
+    "target.png": "4858264a659853fb6fdad84588dc4b69c97476100b20f57db054c68f359145fc"
+  }
+}

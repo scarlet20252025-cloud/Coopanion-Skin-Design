@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-15",
+  "status": "eight static samples visually reviewed; no duplicate eyes or mouth seen",
+  "samples": [
+    "neutral-open",
+    "happy",
+    "scared",
+    "flustered",
+    "blink-.4",
+    "blink-.76",
+    "blink-1",
+    "neutral-open-recovery"
+  ],
+  "renderer": "original buildFace/paintFace copied verbatim",
+  "original_files_checked": 29,
+  "original_files_changed": [],
+  "limits": [
+    "Static integration only; real timing not retested",
+    "Standing only; seated integration pending",
+    "Not whole-character acceptance",
+    "New hairstyle is NOT accepted"
+  ]
+}

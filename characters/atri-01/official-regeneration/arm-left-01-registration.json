@@ -1,0 +1,20 @@
+{
+  "name": "arm-left-01",
+  "matching_features": 8,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "matrix": [
+    [
+      0.3879245859615134,
+      0.03718399103308341,
+      193.95131640159434
+    ],
+    [
+      -0.03718399103308341,
+      0.3879245859615134,
+      591.369741918778
+    ]
+  ],
+  "inliers": 4,
+  "rms": 0.46260909215264306
+}

@@ -1,0 +1,17 @@
+{
+  "component": "torso-complete-01",
+  "status": "rejected",
+  "method": "pure complete-component generation from whole mother; no mother pixel graft",
+  "tool": "built-in imagegen",
+  "inputs": [
+    "D:/Codex/Coopanion-Skin-Design/characters/atri-01/master.png"
+  ],
+  "prompt": "任务：给附件中的 ATRI Q版桌宠制作完整独立的衣身组件。这是一次完整组件图像编辑，不是自由设计。附件1是唯一权威完整母版，人物为三分之四朝画面右侧。以这张完整母版原尺寸为图像编辑输入，在原画布位置完成一整张衣身绘画，移除不属于衣身的其他内容。保留衣身原有设计、位置、大小、姿态、透视和长宽比例。不要将人物或组件重新居中、放大，不出分件平铺表。\n组件包含：短短的脖子底部、完整白色长水手衬衣的躯干部、完整蓝绿色水手服领口及白色细滚边、红色领带、沿衣襟的三颗金色扣子、原本不对称而柔和的长衣摆及淡灰色褶皱阴影。下方那颗金扣要保持贴近衣摆的原位置。衬衣是宽松长上衣，不是腰部收紧的裙子。\n组件不包含：头、脸、任何头发、蝴蝶结、呆毛、左右两只衣袖（包括所有蓝色袖口）、手指、腿、地面阴影。两只袖子归属独立手臂组件，衣身只完整画出被袖子遮挡的肩和腋下衣料，不能留袖子残段。头发遮住的衣身区域需自然补全；不要沿头发或袖子原遮挡边缘留下凹口或残线。\n整件作为连续统一绘画完成，线条细致、均匀、抗锯齿、与母版一致，白衣不是脏灰色；原阴影、折线和领口透视保持。肩根和脖子上端是将被其他组件遮盖的接入区，不要加粗黑封口线；其余可见衣摆轮廓要完整自然。不能拼接母版像素和另一块补画，不能残留皮肤/头发/指尖/蓝袖口碎片。输出真正透明背景的单独衣身 PNG，保持母版画布 1145×1374 和同一坐标。不要文字、标注、参考线、背景颜色或棋盘格。全组件必须完整自然，可直接作为 Live2D式独立衣身图层使用。",
+  "adobe_generation_calls": 0,
+  "output": "raw/torso-complete-01.png",
+  "output_sha256": "059b5bed8a9ab15cd6b74ae01f9a6a6098603a2ce55757d04383fc0a86453d52",
+  "review": "Visible hem width drifts from mother after global similarity fit. SIFT inlier RMS 1.46px measures matching interior features only, not contour acceptance. Raw alpha has 47 connected components. Reject; no mother-pixel graft to repair.",
+  "runtime_eligible": false,
+  "registration": "torso-complete-01-registration.json",
+  "alpha_report": "pure-generation/torso-complete-01-alpha.json"
+}

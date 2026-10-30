@@ -1,0 +1,9 @@
+{
+  "component": "arm-left",
+  "prompt": "Use the supplied full-body character as the strict master. Create one transparent animation component: ONLY THE NEAR ARM ON THE VIEWER'S LEFT, her right arm. Reproduce that exact downward and slightly outward sleeve pose and original foreshortening: a short loose white bell sleeve, its large muted teal cuff, one thin white stripe parallel to the cuff rim, dark teal lining, and just the same tiny rounded fingertips barely peeking from inside. Keep the SAME contour, folds, line weight, colors and proportions as this arm in the master. Finish the sleeve's shoulder root as a short smooth rounded cap that will tuck under the torso collar. Preserve the original narrow innocent chibi fingertip shapes; this is sleeve with fingertip peeks, NOT an isolated anatomically detailed hand, no palm or wrist visible. No torso, collar flap, necktie, hair, head, legs, other arm, mannequin, diagram, labels, or background. Return ONLY this one complete sleeve-and-fingertips component with true transparent alpha, clean antialiased brown/blue outline, no white halo. Do not redraw in a different style, do not rotate or change pose. Entire master image establishes character style and relative proportions.",
+  "status": "provisional",
+  "output": "raw/arm-left-01.png",
+  "review": [
+    "Near cuff, finger peeks and sleeve outline close to mother after similarity alignment; full assembly remains to review"
+  ]
+}

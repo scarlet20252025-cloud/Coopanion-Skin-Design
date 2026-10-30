@@ -1,0 +1,9 @@
+{
+  "method": "registered removal edit -> substantial difference component -> mother pixels",
+  "status": "pilot needs visual review, not runtime ready",
+  "threshold": 22,
+  "mother_sha256": "4b3e09d6e782b042bf87eb9c7b3caf645b3ae43e4af919680afdf951f3c58e1c",
+  "registration": "mother-without-near-pony-01-registration.json",
+  "mask": "near-difference-mask.png",
+  "visible_pixels": 36281
+}

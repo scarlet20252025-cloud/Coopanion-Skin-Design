@@ -1,0 +1,9 @@
+{
+  "component": "ahoge",
+  "prompt": "Edit this exact ATRI mother into ONE isolated AHOGE sprite on true transparency. Only the single curved pale-taupe antenna hair tuft at the very top of her head. Preserve the exact original curved crescent silhouette: starts at original crown root near (560,170), arcs left up to (495,105), then curls upward/right to the fine taper near (630,42). Preserve its original thin brown outline, pale pink-beige fill and darker inner shadow. Include a tiny smooth root extension to overlap behind the crown, not a detached flat cut. No scalp, no head, no bows, no other hair, no face. Do not reshape into a ring or straighten or add strands. Maintain its original size/location on transparent 1145x1374 canvas, or retain exact proportions if centered. Clean antialiased alpha, no text, no background or shadow.",
+  "status": "provisional",
+  "output": "raw/ahoge-01.png",
+  "review": [
+    "Crescent silhouette close; uniform manual fit RMS8.13/max9.70px. Root must be occluded by crown."
+  ]
+}

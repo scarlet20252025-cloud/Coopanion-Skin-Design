@@ -1,0 +1,9 @@
+{
+  "component": "leg-right",
+  "prompt": "Precise edit of image1 authoritative full-body ATRI mother; image2 is the original leg detail, not a new design. Return ONE isolated transparent sprite component: ONLY the FAR bare leg at VIEWER RIGHT, with the original small simple rounded foot and short hidden thigh extension. Preserve EXACT original chibi thickness, visible leg length, original nearly vertical stance and right-pointing round foot, peach shading and fine dark brown outline. No individual toe marks. On the full 1145x1374 canvas keep original approximate position x605..695 y1100..1295; do NOT enlarge or recenter. Add a small concealed upper extension above original hem so it can layer under body; all visible pixels must follow mother contour. Remove second leg, clothing, body, hair, shadows, everything else to true transparency. The reference is the entire character, so keep her innocent short rounded anatomy, not realistic adult anatomy. Clean antialiased alpha.",
+  "status": "provisional",
+  "output": "raw/leg-right-01.png",
+  "review": [
+    "Foot-based all-landmark similarity RMS2.86px max4.22px. Needs assembly."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "mother-without-near-pony-01",
+  "matching_features": 344,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "matrix": [
+    [
+      0.9996884006686214,
+      0.00023584687545624982,
+      0.1199668370498382
+    ],
+    [
+      -0.00023584687545624982,
+      0.9996884006686214,
+      0.7614286709123075
+    ]
+  ],
+  "inliers": 320,
+  "rms": 0.9066267493249027,
+  "max_residual": 2.876134853671346
+}

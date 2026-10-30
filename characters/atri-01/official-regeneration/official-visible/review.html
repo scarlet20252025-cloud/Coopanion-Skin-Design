@@ -1,0 +1,10 @@
+<div data-abandoned-pilot style="padding:12px;background:#632931;color:white;font:16px sans-serif">已废弃：此页为旧母版像素拼补试验，不再用于新方案。当前改为完整组件纯生成；已合格表情保留。</div><!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ATRI 母版保形分件复核</title><style>
+body{margin:20px;background:#f2edf5;color:#3a3242;font:15px/1.6 system-ui}main{max-width:1100px;margin:auto}h1{font-size:23px}button,select,input{font:inherit;margin:4px;padding:5px 9px}section{display:flex;gap:12px;flex-wrap:wrap}.frame{background:#e8e2ef;width:440px;max-width:100%;border-radius:10px}.frame img,.frame canvas{width:100%;height:auto;display:block}p{margin:8px}.dark .frame{background:#202128}.flip .frame img,.flip .frame canvas{transform:scaleX(-1)}.warning{background:#fff0d5;padding:12px;border-left:4px solid #bd6b24}.detail{width:100%;height:auto}a{color:#6d4593}
+</style><main><h1>母版保形分件复核 · 尚未通过动态验收</h1>
+<p class="warning">仅验证双马尾分层。右侧下段在摆动时仍有切口和混色，禁止替换正式版。身体和脸是诊断用母版余层；这里没有接入表情或全身动作。</p>
+<button id="rest">原位</button><button id="out">向外摆动问题帧</button><button id="in">向内摆动问题帧</button><button id="play">播放 / 暂停</button><button id="bg">深浅背景</button><button id="flip">切换朝向</button>
+<label>放大部位<select id="view"><option value="full">全身</option><option value="near">近侧交叠</option><option value="far">远侧交叠</option><option value="root">发根</option></select></label>
+<section><div class="frame"><p>母版原形</p><canvas id="reference" width="1145" height="1374"></canvas></div><div class="frame"><p>独立马尾 · Coopanion 官方网格渲染器</p><canvas id="rig" width="1145" height="1374"></canvas></div></section><p id="status">加载素材…</p>
+<p><a href="../expression-review.html">原表情兼容性复核</a> · <a href="pair-pilot-report.json">本轮检查记录</a> · <a href="mother-matte-review.png">原始像素与边缘恢复对照</a></p>
+<img class="detail" src="far-detail-review.png" alt="远侧原位和摆动时交叠位置的对照，摆动帧未通过"><script type="module" src="review.js"></script></main></html>

@@ -1,0 +1,9 @@
+{
+  "component": "ponytail-left",
+  "prompt": "Reference edit of exact ATRI mother image1. Image2 red outline identifies ONLY the narrow outer left ponytail; red is guidance, never artwork. Generate that ONE COMPLETE narrow ponytail alone on true transparency. It runs from the viewer-left black bow down-left in a long SLIM diagonal ribbon, bends outward gently at its lower end, and finishes with just TWO SHORT adjacent tapered tips. Both tips end together near the same height; NO extra long S-shaped extension below the fork, NO third trailing strand, NO broad inner rear-hair curtain. Preserve mother shape: root near (370,300), middle narrow diagonal ribbon near (260,600), small outward bend near (160,830), ends near (180..220,920). Root rounded and complete for hiding under bow. The big wide flowing hair immediately to its right is NOT this component. Same taupe/pink beige fill, angular cream highlight, thin dark contour; no hairstyle redesign. Remove all other character parts, bows, scalp, body, face, red marks. Preserve approximate original canvas position and proportions, with transparent margin around complete root and both short tips.",
+  "output": "raw/ponytail-left-02.png",
+  "status": "provisional",
+  "review": [
+    "Visible outer contour close after registered full-character assembly. Inner generated tips must remain behind broad rear hair; dynamic occlusion untested."
+  ]
+}

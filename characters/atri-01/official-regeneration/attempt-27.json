@@ -1,0 +1,10 @@
+{
+  "component": "ponytail-right",
+  "prompt": "Use case: precise-object-edit. Image 1 is the authoritative complete ATRI mother; image 2 is its unchanged far-side hair detail. Create ONE complete isolated FAR PONYTAIL component, viewer RIGHT. It is the OUTERMOST narrow ribbon that begins under the small black bow, follows closely behind the cheek hair down to the neck, then diagonally down-right around the narrow triangular transparent opening, ending in the two short pointed outer tips beside the cuff. The broad cascading lock on the LEFT of that opening is REAR HAIR, not this ponytail: omit that broad lock entirely. Carefully preserve the mother's entire visible contour, curvature, width profile, highlight shape and peach-taupe palette. Complete only the small root hidden by the bow/head; keep the root-to-tip length and the original lean. Do NOT widen the negative gap or swing the middle farther outward. Do NOT use an S-shaped generic long ponytail. Generate the complete ribbon with smooth original dark outlines and clean transparent alpha, no white matte. Output just this single hair component, no bow, face, clothes, broad rear hair, text, shadows or background. Preserve full mother geometry rather than inventing a more flowing silhouette.",
+  "output": "raw/ponytail-right-04.png",
+  "status": "needs-full-composition-review",
+  "references": [
+    "../master.png",
+    "references/far-hair-context.png"
+  ]
+}

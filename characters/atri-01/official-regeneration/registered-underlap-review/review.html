@@ -1,0 +1,12 @@
+<div data-abandoned-pilot style="padding:12px;background:#632931;color:white;font:16px sans-serif">已废弃：此页为旧母版像素拼补试验，不再用于新方案。当前改为完整组件纯生成；已合格表情保留。</div><!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ATRI 母版与马尾隐藏结构复核</title><style>
+body{margin:18px;background:#f3eef5;color:#352d3c;font:15px/1.6 system-ui}main{max-width:1080px;margin:auto}h1{font-size:23px}button,select{font:inherit;padding:5px 8px;margin:4px}.warning{padding:12px;border-left:4px solid #ad7930;background:#fff2dc}.pair{display:flex;gap:14px;flex-wrap:wrap}.frame{background:#e8e2ef;width:440px;max-width:100%;border-radius:8px}.frame p{margin:8px}.frame canvas{display:block;width:100%;height:auto}.dark .frame{background:#202128}.dark{background:#2b2830;color:#eee}.dark a{color:#d6c0f6}.dark .warning{color:#352d3c}.flip .frame canvas{transform:scaleX(-1)}a{color:#69448d}.source{display:flex;gap:12px}.source img{width:31%;background:#e8e2ef;object-fit:contain}.detail{width:100%;height:auto}
+</style><main><h1>母版与马尾隐藏结构复核</h1>
+<p class="warning">制作中：本页检查独立马尾的遮挡补全、边缘与摆动。其余衣身、手臂、坐姿和全身动作尚未完成；原表情文件保持冻结。这里没有安装或替换现用形象。</p>
+<div><button id="rest">原位</button><button id="out">向外 6px</button><button id="in">向内 6px</button><button id="stressOut">向外 12px 压力帧</button><button id="stressIn">向内 12px 压力帧</button><button id="play">播放 / 暂停</button><button id="bg">深浅背景</button><button id="flip">切换朝向</button>
+<label>查看部位 <select id="view"><option value="full">全身</option><option value="near">近侧交叠</option><option value="far">远侧交叠</option><option value="root">发根</option></select></label><button id="capture">导出当前检查图</button></div>
+<section class="pair"><div class="frame"><p>锁定母版 · 边缘恢复源</p><canvas id="reference" width="1145" height="1374"></canvas></div><div class="frame"><p>分层合成 · Coopanion 官方渲染器</p><canvas id="rig" width="1145" height="1374"></canvas></div></section><p id="status">加载素材…</p>
+<p><a href="report.json">当前诊断记录</a> · <a href="../expression-review.html">原表情兼容性复核</a> · <a href="../official-visible/review.html">上轮失败对照</a></p>
+<details><summary>完整人物上下文中的生成源（仅提取隐藏头发，不采用其中的脸和衣服）</summary><div class="source"><img src="../../master.png" alt="锁定母版"><img src="../raw/mother-without-far-rear-03.png" alt="移除远侧宽后发的生成源"><img src="generated-pony-semantic-source.png" alt="隐藏头发语义源"></div></details>
+<details><summary>离线原位、普通摆幅与压力帧对照</summary><img class="detail" src="lower.png" alt="深浅背景下的局部检查图"></details>
+<script type="module" src="review.js"></script></main></html>

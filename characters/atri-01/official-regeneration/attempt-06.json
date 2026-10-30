@@ -1,0 +1,10 @@
+{
+  "component": "body",
+  "prompt": "Edit the supplied ATRI mother illustration into ONE complete transparent body component for the same puppet. Image 1 is the authoritative full mother, image 2 is a rectangular detail of its torso. Precisely preserve the ORIGINAL long white shirt torso, neckline, teal sailor collar with white piping, red tie, thin dark center placket, THREE gold buttons with their ORIGINAL spacing, long asymmetric shirt hem and original pale gray fold shading. Preserve original width/length ratio, tilt and three-quarter perspective, NOT a redesigned dress. The lowest button is very near the hem. Remove BOTH sleeves including cuffs/fingers, remove all hair/head/legs/background. Complete only the small obscured areas of torso behind sleeves and hair, making a narrow rounded shoulder/armhole attachment on each side, not sleeve stumps. Include the short peach neck base above collar. Do not shorten the torso, move buttons upward or alter tie proportions. The whole component must match image 2 geometry; retain the EXACT relationship of collar to lowest button and hem. True transparent background, antialiased thin original dark outlines, no shadow or text. Output only this single intact sleeveless torso with collar and tie, in the original pose.",
+  "status": "provisional",
+  "output": "raw/body-03.png",
+  "review": [
+    "Collar, tie, button spacing and hem closer after full mother plus detail reference.",
+    "Needs full assembly and source alpha edge inspection."
+  ]
+}

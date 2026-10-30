@@ -1,0 +1,16 @@
+{
+  "component": "arms-pair-complete-02",
+  "status": "provisional-partial",
+  "diagnosis": "Pair generation to preserve relative near/far sleeve scale; original full context plus unsegmented garment detail; no old component reference",
+  "method": "pure complete component generation",
+  "inputs": [
+    "characters/atri-01/master.png",
+    "characters/atri-01/official-regeneration/pure-generation/references/mother-garment-detail.png"
+  ],
+  "tool": "built-in imagegen",
+  "prompt": "任务：根据这一个完整母版，为同一位 ATRI Q版桌宠整件重绘两只独立的衣袖组件。这次同时生成一对，以锁定原画中的近远比例和肩、袖口相对位置。\n附件1：完整母版，是角色设计、三分之四朝右透视、比例、颜色与原始位置的唯一标准。附件2：只是母版衣服区域的等比放大参考，方便看清褶皱和袖口里的指尖，不是新造型。以附件1为原图做图像编辑，原尺寸1145×1374、同坐标同姿势。只留下画面左侧近侧衣袖和画面右侧远侧衣袖，两者各是一张完整的画，中间透明，保留原图左右距离，不能改成平铺分件表、左右并排展示图，也不要重新居中或把各袖分别放大。\n保留每只完整宽白袖、蓝绿色宽袖口及其白色细滚边、袖口原有内侧深色布料、从袖里露出的一小点母版指尖。原画指尖极小，不要生成大手掌、外露手腕、成人手或更多手指。保持原袖口的宽度、高度、斜角和近大远小关系，白袖原有长宽比例和自然下垂姿势完全不变。不要拉细、拉长、改变布料轮廓。特别仔细照附件2保留两只袖口的原斜视透视与白边弧度。\n移除头、全部头发和蝴蝶结、领口、领带、躯干部白衣、金色纽扣、腿脚和地面。每只袖山原被领口和头发盖住的一小段自然画完整，肩根接入区不画横向黑色封口，也不画裸上臂。两只衣袖都必须由肩根连续到袖口及指尖，衣料阴影统一。不能留母版衣身、发丝、邻接线条或裁切凹口，不要把衣身侧缝复制进袖子。\n完整组件要和母版细致干净的二次元线条一致，深棕细描线连续匀称，抗锯齿平滑、颜色不脏。真正透明alpha，无白色杂边、暗色光晕、漂浮碎点、半透明脏像素。整件重绘，不作旧像素与补丁拼接。只交付上述同画布两只原位衣袖的透明PNG，没有文字、说明、棋盘格或背景颜色。",
+  "output": "raw/arms-pair-complete-02.png",
+  "output_sha256": "cadfa31d72d0f2c0ef3de450a94a7693e55f6ba19d059e741c139ea6034be9bc",
+  "review": "Near sleeve used after whole-source separation at existing alpha gap. Far needle-like sleeve not used.",
+  "candidate": "scratch/candidates/atri-pure-components-01"
+}

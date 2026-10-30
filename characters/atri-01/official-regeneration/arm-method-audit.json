@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-15",
+  "trigger": "User rejected distorted arm; compare actual Dragon implementation",
+  "status": "previous arm approach rejected; regeneration incomplete",
+  "verified_dragon_sources": [
+    "characters/original-01/rig-v005-r25/arms-master-prompt.txt",
+    "characters/original-01/rig-v005-r25/arms-master-extracted.png",
+    "packs/gpt-dragon-v005-r25/part-registration.json",
+    "packs/gpt-dragon-v005-r25/clean-sources.js"
+  ],
+  "dragon_current_registration": {
+    "arm-left": [0.67, 0, 0, 0.67, 222, 253],
+    "arm-right": [0.67, 0, 0, 0.67, 238, 251]
+  },
+  "finding": [
+    "Dragon generated paired complete arms from the whole mother. Its production code rejects nonuniform scale, shear and reflection.",
+    "Dragon retained original neckline and shoulder sockets from mother pixels, so it was not an independently regenerated assembly everywhere.",
+    "ATRI arm-left-01 matched only four cuff features. This did not constrain the shoulder or the whole sleeve contour.",
+    "ATRI arm-left-02 requested a separate upper-right root extension and produced a pointed shoulder incompatible with the connected shirt.",
+    "The registration matrices preserve proportions. The distortion is in generated source geometry and incompatible articulation/occlusion, not a nonuniform transform.",
+    "Dragon detached sleeves and ATRI connected sailor shirt have different structural boundaries. Copying a round terminal cap is incorrect."
+  ],
+  "rejected_for_integration": ["arm-left-01", "arm-left-02"],
+  "next_method": "First generate and verify a continuous neck/collar/shirt/both-sleeves source directly from mother. Only after its complete proportions pass, derive complete motion arms with small concealed shoulder allowance. No root-extension repair of the rejected isolated sleeve.",
+  "gate": [
+    "Compare mother and whole garment at the same scale before separating motion parts.",
+    "Check shoulder/collar attachment, both sleeve contours, cuff endpoints, fingertips, tie and all three buttons together.",
+    "A cuff-only SIFT fit cannot pass arm acceptance; registration must include spatially distributed shoulder and cuff evidence.",
+    "Use generated alpha; do not erode outlines or stretch the arm to close a seam.",
+    "Reject semantic contamination, visible terminal caps, double seams and contour drift before runtime integration.",
+    "Check actual wave/lower/recovery in both directions after static composition passes."
+  ],
+  "approved_expression_scope": "unchanged; expression-lock.json",
+  "current_browser_pack": "scratch/candidates/atri-hair-junctions (unchanged)"
+}

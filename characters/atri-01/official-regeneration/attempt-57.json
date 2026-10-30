@@ -1,0 +1,16 @@
+{
+  "component": "arm-far-complete-06",
+  "status": "rejected",
+  "diagnosis": "Full-mother redraw repeatedly reintroduced torso. Target the whole generated sleeve directly for the single ownership error; preserve cuff size instead of widening it.",
+  "inputs": [
+    "characters/atri-01/official-regeneration/raw/arm-far-complete-05.png",
+    "characters/atri-01/art-source/master-leg-v2.png"
+  ],
+  "prompt": "修正图1这一个完整的远侧衣袖组件。蓝袖口左边还连着一长块多余的白色衣身，必须把那块衣身彻底去掉。白色袖子的下端应自然收进现有蓝袖口里，蓝袖口要包住整个衣袖出口，不能再有白布从袖口旁边垂出去。保持蓝袖口自身的大小、位置、角度、白滚边和几枚小指尖原样，不要加宽蓝袖口来盖住错误，不要画更多手指。保留整条细长白袖的长度、肩根和姿势，重新连贯绘制下端衣料与袖口的自然接合。图2完整母版仅供核对同一角色的风格和远侧手臂透视。输出一条由肩到袖口和指尖的完整独立衣袖，真正透明背景，干净抗锯齿细线，无杂点、白边、残留衣身和文字。",
+  "tool": "built-in imagegen",
+  "method": "pure whole component imagegen edit, no code art",
+  "output": "raw/arm-far-complete-06.png",
+  "output_sha256": "87ab00bd9b7ddf6968a0ddb29aa66437c27b4169efde1e9d1dcfd0975c9c0eae",
+  "review": "Body flap persists; not used.",
+  "candidate": null
+}

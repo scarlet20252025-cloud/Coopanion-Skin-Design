@@ -1,0 +1,18 @@
+{
+  "expression_files_checked": 29,
+  "all_expression_hashes_unchanged": true,
+  "locked_master_unchanged": true,
+  "python_syntax": "pass",
+  "browser_module_syntax": "node --check passed",
+  "browser_manual_review": [
+    "neutral full figure",
+    "far outward 6px detail",
+    "dark background and mirrored far detail"
+  ],
+  "browser_console_errors": 0,
+  "visual_result": "FAIL: far lower cut and colour discontinuity; static reconstruction does not prove motion quality",
+  "runtime_candidate_created": false,
+  "installed": false,
+  "review_url": "http://127.0.0.1:4319/characters/atri-01/official-regeneration/official-visible/review.html",
+  "adobe_capabilities_check": "tool reports Photoshop 2024 and generative_fill support; app connection/credits not verified; no Adobe generation called"
+}

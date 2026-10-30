@@ -1,0 +1,11 @@
+{
+  "component": "far ponytail removal",
+  "status": "registration and ownership review pending",
+  "prompt": "Precise component-removal edit of this full-body ATRI mother, keep the exact 1145x1374 canvas, position, pose, all face, bangs, bows, clothes, fingertips, legs and the entire left-side hair unchanged. Remove ONLY the thin OUTERMOST tied ponytail on VIEWER RIGHT: it begins behind the right black bow around (805,290), follows the OUTSIDE/right edge of the long transparent slit beside the head and torso, passes around (820,590), (875,685), (940,790), then ends in the outer tips around (965,935). Keep the much BROADER INNER long curtain to its left, descending behind the right sleeve to (850,1040). Also keep the short face-side bangs around (790,500..630); they are not the ponytail. The removed ponytail is the narrow ribbon OUTSIDE the long triangular transparent gap. Preserve the broad rear hair's original flow, shading and tips exactly, completing only tiny hidden regions uncovered by the removal. Leave true transparency where the ponytail had no object behind it. No replacement thin strand, no new curls, no spiral, no white fringe, no text. All unaffected pixels and full character geometry must be unchanged. This is the official mother-removal step for difference-mask rigging, not a redesign.",
+  "inputs": [
+    "../master.png"
+  ],
+  "output": "raw/mother-without-far-pony-01.png",
+  "original_output": "C:/Users/63526/.codex/generated_images/01a13400-0fec-79a2-9cdc-067895581192/exec-051b9ca2-9707-4bb3-9e95-7c8408aba4fd.png",
+  "output_sha256": "33847b9f6b691f178de794c1bca3c5de1e2ce51ff84a430685ddc3162c7d4985"
+}

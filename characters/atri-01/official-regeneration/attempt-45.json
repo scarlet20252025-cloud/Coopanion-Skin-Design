@@ -1,0 +1,18 @@
+{
+  "component": "remove identified far rear-curtain branch residue",
+  "status": "abandoned-unaccepted",
+  "diagnosis": "Previous generic shortening language treated rear-curtain remnants as pony geometry. Explicit two-branch semantic guide provided; full mother remains authority.",
+  "prompt": "IMAGE 1 is the edit target. IMAGE 2 is a semantic annotation only: the TWO LEFT/INNER hanging branches of its viewer-right hair are RED at their ends. These two hanging branches are unwanted REMNANTS OF THE BROAD REAR CURTAIN. REMOVE BOTH of those inner hanging branches completely, including their roots within the lower lobe, not only the red painted ends. Keep ONLY the TWO SHORT RIGHTMOST OUTER pointed tips of that hair lock, unmarked and ending above the red region. After removing the two inner residual branches, finish one smooth continuous concave inner silhouette from the thin diagonal ponytail stem into the first retained rightmost tip. Complete natural solid shadowed taupe hair inside that silhouette; no polygon cut, elbow, fork stump, exposed diagonal seam or pale empty slit. The retained two SHORT outer tips and rightmost contour must remain unchanged from image1. The right ponytail should be a narrow outer lock with exactly TWO short bottom points, not four points, not a long inner strand beside the cuff. IMAGE 3 is the full original mother for identity and the intended thin outer lock. Keep the wide viewer-right rear curtain absent as in image1. Everything else in the whole character must stay unchanged: head/face, left hair, bows, ahoge, shirt/collar/tie/buttons, sleeves, tiny fingertip hands, bare legs, whole canvas and position. Genuine alpha transparency. No red paint, annotation, text, arrows or colored fringe. Output the COMPLETE character edit, not an isolated hair or zoom.",
+  "inputs": [
+    "D:/Codex/Coopanion-Skin-Design/characters/atri-01/official-regeneration/raw/mother-without-far-rear-02.png",
+    "D:/Codex/Coopanion-Skin-Design/characters/atri-01/official-regeneration/references/far-rear-residue-guide.png",
+    "D:/Codex/Coopanion-Skin-Design/characters/atri-01/master.png"
+  ],
+  "tool": "built-in imagegen",
+  "adobe_generation_calls": 0,
+  "output": "raw/mother-without-far-rear-03.png",
+  "output_sha256": "0145af36da207d94da0e4ac6594f0a1e2afe8a1e4e84219469afa4c69cf587db",
+  "original_generation_filename": "exec-5957f657-d7ce-451c-8caa-d2fc059ab70e.png",
+  "runtime_eligible": false,
+  "review": "Superseded by explicit user pure-generation correction. Stitching/hidden-fill diagnostic, not an accepted complete component; do not reuse as next generation reference."
+}

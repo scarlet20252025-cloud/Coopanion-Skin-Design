@@ -1,0 +1,22 @@
+{
+  "name": "ponytail-right-05",
+  "matching_features": 9,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "method": "manual source landmarks, least-squares similarity, all residuals retained",
+  "matrix": [
+    [
+      0.36366179008341837,
+      -0.01456911585415547,
+      750.1546445731358
+    ],
+    [
+      0.014569115854155516,
+      0.36366179008341837,
+      239.7004326775185
+    ]
+  ],
+  "inliers": 4,
+  "rms": 6.264375899139238,
+  "max_residual": 9.161854342138943
+}

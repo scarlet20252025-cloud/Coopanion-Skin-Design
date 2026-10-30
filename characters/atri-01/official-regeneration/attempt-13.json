@@ -1,0 +1,10 @@
+{
+  "component": "rear-left",
+  "prompt": "One isolated broad hair lock on real transparent alpha. Image1 is authoritative ATRI mother, image2 is its VIEWER LEFT broad rear-hair detail. Reproduce ONLY the thick central cascade in image2: the wide pink-beige vertical S-shaped section with angular cream highlight across its middle and several tapering tips at bottom, behind her white sleeve. Remove the white sleeve, teal cuff, fingertips and ALL other objects. Critically REMOVE the separate thin diagonal strip visible at the UPPER LEFT of image2: that is a different ponytail. The requested broad cascade has NO loop, NO open triangular gap, NO separate outer narrow strip. Reconstruct the hidden area behind the sleeve into a smooth continuation of the same broad lock. Complete its top smoothly into a short concealed root above the crop. Its original broad width, original length, original lower contours and shading in image2 must be preserved, not a new wavy or curly design. Only ONE broad connected curtain lock, not a pair or a full wig. Keep mother's thin dark brown outlines and exact soft taupe palette. No head/bangs, bows, body, additional long strands, text or background. Full original character is style/proportion context; component will sit behind shoulder and arm in exactly the mother pose.",
+  "status": "needs-root-and-shape-review",
+  "output": "raw/rear-left-01.png",
+  "review": [
+    "Broad curtain ownership correct but upper root clipped at output boundary; cannot integrate as complete component.",
+    "Manual fit RMS14.49/max22.19px; requires contour review; not accepted."
+  ]
+}

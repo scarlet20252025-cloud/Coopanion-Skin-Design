@@ -1,0 +1,6 @@
+{
+  "component": "bows",
+  "prompt": "Edit exact supplied ATRI mother to create ONE paired-hair-accessory layer: ONLY the two small charcoal-black ribbon bows at the sides of her head. Both original bows on a single transparent canvas in their exact relative positions and original scale (near viewer-left bow around x292..383 y220..343; far viewer-right around x786..849 y216..325). Preserve original asymmetric folded shapes, tied center, muted slate highlights and fine dark outline. NO hair, head, face, ponytails, other objects or background. Not large elegant ribbon bows, no extra tails. Copy the same tiny angular original design and original left/right perspective. Full transparent 1145x1374 canvas retaining spacing, no recentering or enlargement. Clean antialiased alpha, no text or shadow. These accessories remain attached to the same head as in the mother.",
+  "status": "awaiting-pair-registration",
+  "output": "raw/bows-01.png"
+}

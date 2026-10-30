@@ -1,0 +1,9 @@
+{
+  "component": "ponytail-left",
+  "prompt": "Generate one COMPLETE narrow ponytail component for rigging, based on image1 the authoritative original ATRI master. Images2 and3 are USER ANNOTATIONS specifying OWNERSHIP only; their red strokes are not artwork and MUST NOT appear. Output ONLY the narrow OUTERMOST hair ribbon at VIEWER LEFT, starting at the left black bow attachment x370 y300, curving outward/down-left in a long slender tapered arc to the outer tips near x175..245 y900. In image3 it is ONLY the red-outlined narrow left ribbon, NOT the big broad adjacent long lock to its right. Preserve image1's pale taupe/pink beige hair palette, angular cream highlight, darker underside, thin dark outline and original curvature. Generate the entire continuous ribbon with a short concealed rounded root and complete pointed taper, finishing any occluded small area naturally. NO big broad curtain of rear hair, no extra lower long S-shaped lock, no bow, no scalp, no bangs, no face, no clothing, no red marks. Keep its original geometry and placement on transparent 1145x1374 canvas, not enlarged or recentered. True clean alpha. This is a reference edit to reconstruct the same full character, not a new hairstyle.",
+  "status": "rejected",
+  "output": "raw/ponytail-left-01.png",
+  "review": [
+    "Narrow ribbon recognized but extra long lower S-shaped strands not part of user's annotated ponytail. Do not use."
+  ]
+}

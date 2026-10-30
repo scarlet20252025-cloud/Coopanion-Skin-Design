@@ -1,0 +1,22 @@
+{
+  "name": "pony-pair-left-01",
+  "matching_features": 1,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "method": "manual source landmarks, least-squares similarity, all residuals retained",
+  "matrix": [
+    [
+      0.9023306652388112,
+      0.0015515282342302783,
+      75.03344850338647
+    ],
+    [
+      -0.0015515282342303668,
+      0.9023306652388111,
+      52.63280006577122
+    ]
+  ],
+  "inliers": 3,
+  "rms": 1.9259221013193994,
+  "max_residual": 2.474100090120074
+}

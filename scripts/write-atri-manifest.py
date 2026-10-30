@@ -34,6 +34,10 @@ ROOT = Path(__file__).resolve().parent.parent
 PACK_NAME = sys.argv[1] if len(sys.argv) > 1 else "atri-v011"
 PACK = ROOT / "packs" / PACK_NAME
 
+# Owned here, not taken from whatever the build produced: build-diagnostic.py regenerates
+# figure.json from the previous manifest and would quietly reset the version on every rebuild.
+VERSION = "1.1.0"
+
 NAME = {
     "zh": "亚托莉 ATRI",
     "zh-Hant": "亞托莉 ATRI",
@@ -80,7 +84,7 @@ def main():
     d["manifest"] = 2
     d["api"] = 2
     d["id"] = "gpt-atri"
-    d["version"] = d.get("version", "1.0.0")
+    d["version"] = VERSION
     d["name"] = NAME
     d["about"] = ABOUT
     d["entry"] = "figure.js"

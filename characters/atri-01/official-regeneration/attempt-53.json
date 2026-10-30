@@ -1,0 +1,14 @@
+{
+  "component": "rear-hair-complete-03",
+  "status": "superseded",
+  "method": "pure complete component generation",
+  "inputs": [
+    "characters/atri-01/art-source/master-leg-v2.png"
+  ],
+  "prompt": "以这张完整 ATRI 母版为原图，为同一桌宠绘制一张完整独立的后发组件。只保留头后向两侧垂下的宽大内层长发帘和把它们连接起来的后脑发底。必须与母版的三分之四朝右姿态一致，不是背面假发设定图。\n移除整张脸和刘海、脸旁短发、呆毛、两只黑蝴蝶结、身体衣服四肢，以及从黑蝴蝶结系住的两束细长外侧马尾。注意：最外沿从蝴蝶结往下垂的狭长发束是马尾，不属于本件；本件是它们内侧的宽厚后发。宽大后发原被前发、脸、肩膀和身体挡住的部分要顺着原来的发流完整重绘，成为一整张可独立活动的后发。遮挡位置不能留轮廓凹口、脸/衣领的残线或空洞。\n保持母版原有长短、体积、发色、近远透视、分束和高光阴影方向。发流顺着母版自然下垂，不新增螺旋、麻花或扭转发带，不夸张卷曲发尾。不能把长发重新设计成新发型。完整组件一体绘制，不拼接旧母版像素，不用旧裁片边界当真实外形。\n原画布1145×1374、原位置与比例，清晰均匀的深棕细描线与母版一致，柔和发色、干净光影，真实透明alpha，无白边、碎点、背景残留、文字或棋盘格。只输出这一张完整后发PNG，其余全部透明。",
+  "tool": "built-in imagegen",
+  "output": "raw/rear-hair-complete-03.png",
+  "output_sha256": "3513d1d32ea74683d2b4b0ec61de197c8610e887a87a2077ef2d5e2484e15d1a",
+  "review": "Mixed outer pony locks; corrected entirely through imagegen in56.",
+  "candidate": null
+}

@@ -1,0 +1,16 @@
+{
+  "component": "arm-far-complete-07",
+  "status": "not-selected",
+  "diagnosis": "Repeated edits of malformed far source preserve its body flap. Discard malformed source; use full mother plus structurally valid complete near sleeve as construction reference.",
+  "inputs": [
+    "characters/atri-01/art-source/master-leg-v2.png",
+    "characters/atri-01/official-regeneration/pure-generation/sources/arm-near-complete-02.png"
+  ],
+  "prompt": "Draw the complete FAR SLEEVE layer for the character in IMAGE1, her arm at VIEWER RIGHT. IMAGE1 full mother controls original pose, far-side perspective, size and tiny fingertips. IMAGE2 shows the matching NEAR SLEEVE only as an example of correct COMPLETE SLEEVE CONSTRUCTION: its white cloth flows entirely into a closed teal cuff which wraps the entire sleeve opening. Make the corresponding far sleeve with equally complete construction, correctly angled the other way as in image1, without any extra white shirt flap. Do NOT copy the near cuff's broad size: the far cuff is less than half as wide in the mother's perspective. The far shoulder-to-cuff length is similar to the near one. Full concealed sleeve cap under the shoulder, no bare arm. Only a few tiny fingertips from the small cuff, no visible palm, no new hand pose. Clean mother-matching thin dark-brown outlines, pale grey cloth folds, teal cuff and thin white stripe, natural continuous painting. Remove all torso, collar, tie, buttons, hair, head, other limbs and background. ONE intact complete white sleeve+small teal cuff+tiny fingertips on true transparency, original canvas and placement. No white cloth can protrude beside or below the cuff; no fringe, dots or labels.",
+  "tool": "built-in imagegen",
+  "method": "pure complete generation",
+  "output": "raw/arm-far-complete-07.png",
+  "output_sha256": "317ec8fd241efd007c943fb8a5157f7631ef3c8ed25f56fa10ef3d35c2e655e4",
+  "review": "Complete construction improved, but not used. Automatic full-cuff colour-contour fit to partially occluded mother was invalid and retired.",
+  "candidate": null
+}

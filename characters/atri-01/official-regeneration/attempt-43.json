@@ -1,0 +1,17 @@
+{
+  "component": "mother without far rear curtain; reveal concealed pony",
+  "status": "abandoned-unaccepted",
+  "method_change": "Remove the occluding broad rear curtain in full mother context instead of isolated pony inpainting. Previous local attempts failed clearance/semantic boundary QA.",
+  "prompt": "Use case: precise-object-edit, occluder removal with faithful hidden reconstruction. Image 1 is the authoritative edit target: keep the full chibi character on exactly the same 1145x1374 transparent canvas, same scale and coordinates. Image 2 is ONLY an annotated semantic guide: the RED point identifies the BROAD INNER REAR HAIR CURTAIN at viewer right; the BLUE point identifies the NARROW OUTER PONYTAIL that MUST REMAIN. Remove ONLY the broad inner rear curtain on VIEWER RIGHT, the thick long section flowing from behind the right cheek/neck and shoulder to beside the right cuff and down near y1040. It is the wide hair in front of/inside the slender outer ponytail. It is NOT the thin outer ponytail attached to the black bow, and NOT the short cheek bang. Delete this single broad curtain to genuine transparency wherever it covers empty background. Where that curtain occludes the slender outer ponytail, reveal and naturally COMPLETE the ponytail's hidden inner edge and lower lobe. Its lower portion must have a fully continuous smooth outlined inner curve, solid taupe/mauve hair underneath the former diagonal overlap, and its existing two outer pointed tips unchanged. There must be no diagonal slice edge, angular kink, exposed blank slit through the hair or color seam at the old overlap. Revealing the ponytail must NOT change its existing right outside silhouette, size, direction, visible streaks or short two tips. Keep ALL OTHER PARTS identical to image1: entire left hair, full head and cheek bangs, eyes/eyebrows/mouth, bows, ahoge, sailor collar, long white shirt/tie/buttons, both sleeves and mother's tiny fingertips, bare legs. If removing the rear curtain reveals a tiny part of the white right shoulder or sleeve, finish only that concealed cloth in the mother's style. No other hairstyle changes, no spiral, no new long locks, no new pose or facial expression. Output the edited COMPLETE character with just that ONE broad far rear curtain removed, no arrows, labels, colors or checkerboard. This is to expose a hidden original component in the original whole-character context, not an isolated redesigned ponytail.",
+  "inputs": [
+    "D:/Codex/Coopanion-Skin-Design/characters/atri-01/master.png",
+    "D:/Codex/Coopanion-Skin-Design/characters/atri-01/official-regeneration/references/far-rear-removal-guide.png"
+  ],
+  "tool": "built-in imagegen",
+  "adobe_generation_calls": 0,
+  "output": "raw/mother-without-far-rear-01.png",
+  "output_sha256": "aa53b106bb14187b1c25ba55d5c3ec6ae4db9c8f0718da24212f63795683f62d",
+  "original_generation_filename": "exec-8dcf7a2b-cfc6-44de-9cc9-9a25109f2b75.png",
+  "runtime_eligible": false,
+  "review": "Superseded by explicit user pure-generation correction. Stitching/hidden-fill diagnostic, not an accepted complete component; do not reuse as next generation reference."
+}

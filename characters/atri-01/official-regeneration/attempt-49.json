@@ -1,0 +1,16 @@
+{
+  "component": "torso-complete-02",
+  "status": "superseded-by-61",
+  "method": "pure complete component generation",
+  "diagnosis": "Use original opaque mother rather than old extracted alpha; enlarged complete garment context to preserve hem width",
+  "inputs": [
+    "characters/atri-01/art-source/master-leg-v2.png",
+    "characters/atri-01/official-regeneration/pure-generation/references/mother-garment-opaque-detail.png"
+  ],
+  "prompt": "Precise image edit for a layered animated chibi character, using the attached FULL original illustration as the edit target. Image 2 is an enlarged unsegmented detail of that SAME illustration, only to clarify clothing geometry. Create the COMPLETE SLEEVELESS SHIRT TORSO component, drawn as one continuous finished painting on genuine alpha transparency. Do not make a new design.\nKeep EXACTLY the original three-quarter-facing-right sailor shirt torso: short peach neck base, teal sailor collar with thin white piping, red tie, three gold buttons, white long loose shirt, original asymmetric curved hem and original pale grey fold shading. Preserve the original visible left and right hem endpoints, total hem width, collar/tie/button spacing and relative proportions. The bottom button is very close to the hem. Do not flare or widen the hem when removing sleeves. This is a long loose shirt, without a cinched waist. The part should reconstruct the original mother, not a different dress.\nRemove the entire head, all hair, bows, ahoge, BOTH complete sleeves including their cuffs and fingers, both legs, the pale blue background and ground. Paint the small obscured shoulder/armhole regions as complete white cloth, smoothly joining the existing torso. No amputated sleeve stumps or bare upper arms. Do not retain the sleeve fold line as a false vertical torso border. The neckline and shoulder attachment caps will be occluded by head/sleeves; no dark crossbar across attachment caps. All visible outer edges retain the original delicate continuous dark-brown outlines. Preserve all subtle original fold and tie shading, clean smooth antialiasing, no fringe, no noise, no isolated specks, no residual hair marks. Use the original full 1145x1374 canvas and original position/scale. One complete transparent torso PNG only, no labels, grid, solid background, checkerboard, collage or master-pixel patchwork.",
+  "tool": "built-in imagegen",
+  "output": "raw/torso-complete-02.png",
+  "output_sha256": "2188bffc06792d799df70bb4a0f8284152336a2e143dd7208f9516cb15ddcf90",
+  "review": "Extreme-wave actual renderer review exposed a painted elliptical shoulder seal; whole torso corrected by imagegen61. Old torso49 no longer in runtime.",
+  "candidate": "scratch/candidates/atri-pure-components-01"
+}

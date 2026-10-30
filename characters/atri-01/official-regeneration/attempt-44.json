@@ -1,0 +1,16 @@
+{
+  "component": "shorten exposed concealed far pony lobe",
+  "status": "abandoned-unaccepted",
+  "prompt": "Precise correction to IMAGE 1, the recent complete-character removal edit. Image 2 is the authoritative original mother. Keep image1's complete character exactly as it is, with its BROAD far inner rear curtain removed and the narrow outer ponytail exposed. Only correct the revealed far ponytail at viewer right: the newly invented inner hanging lobe has grown too long, reaching y1040 beside the cuff. SHORTEN ONLY THAT NEW INNER LOBE. Its smooth inner edge must descend from the thin stem, remain broad enough behind the former curtain through y800..910, then finish as a short hidden rounded/pointed cap around (900,935), entirely LEFT of the mother's foreground curtain boundary. NO FAR PONYTAIL PIXELS BELOW y950 anywhere. Preserve the existing two original OUTER pointed tips at roughly (925,928) and (940,946) and the original RIGHT outer outline through (970,880); do not move or redesign those. The exposed lower body must remain fully solid and connected, with natural smooth concave outline, matching continuous mauve-shadow/taupe shading and thin dark ink. Do not recreate a diagonal cut, white slit or knee corner. Do not add a long third strand or curl. This is only shortening the extra hidden lobe, not shrinking or moving the whole ponytail. Leave the head, facial expression, eyes/brows, left hair, cheek bangs, bows, ahoge, sailor shirt/collar/tie/buttons, mother's tiny fingertips, cuffs and legs pixel-faithful to image1. Keep its 1145x1374 transparent full canvas and full-body position. All other areas unchanged. No colored marks, no red/blue fringe, no arrows or text. Genuine alpha transparency.",
+  "inputs": [
+    "D:/Codex/Coopanion-Skin-Design/characters/atri-01/official-regeneration/raw/mother-without-far-rear-01.png",
+    "D:/Codex/Coopanion-Skin-Design/characters/atri-01/master.png"
+  ],
+  "tool": "built-in imagegen",
+  "adobe_generation_calls": 0,
+  "output": "raw/mother-without-far-rear-02.png",
+  "output_sha256": "7197c2b31bd4d52331ea91c9668b293ba4de7ec4b1677e4d7fec7647d3d513aa",
+  "original_generation_filename": "exec-e453ffbb-7e78-4767-99d7-ea6e7d45cc2a.png",
+  "runtime_eligible": false,
+  "review": "Superseded by explicit user pure-generation correction. Stitching/hidden-fill diagnostic, not an accepted complete component; do not reuse as next generation reference."
+}

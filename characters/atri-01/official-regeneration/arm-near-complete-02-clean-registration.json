@@ -1,0 +1,21 @@
+{
+  "name": "arm-near-complete-02-clean",
+  "matching_features": 14,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "matrix": [
+    [
+      0.4831314618958133,
+      -0.0009070642806711988,
+      309.57514284726756
+    ],
+    [
+      0.0009070642806711988,
+      0.4831314618958133,
+      502.60934385365096
+    ]
+  ],
+  "inliers": 8,
+  "rms": 1.9825849166518683,
+  "max_residual": 3.138359374472293
+}

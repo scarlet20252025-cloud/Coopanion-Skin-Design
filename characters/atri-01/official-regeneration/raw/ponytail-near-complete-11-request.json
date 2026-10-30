@@ -1,0 +1,25 @@
+{
+  "model": "gpt-image-2.5-sunburst",
+  "endpoint": "https://edge.lingsuan.org/v1/images/edits",
+  "inputs": [
+    "characters\\atri-01\\master.png",
+    "characters\\atri-01\\official-regeneration\\raw\\near-lock-magenta-v6.png"
+  ],
+  "prompt_file": "characters\\atri-01\\prompts\\near-lock-v6-workmode.txt",
+  "output": "characters\\atri-01\\official-regeneration\\raw\\ponytail-near-complete-11.png",
+  "seconds": 25.3,
+  "usage": {
+    "input_tokens": 1095,
+    "input_tokens_details": {
+      "image_tokens": 646,
+      "text_tokens": 449
+    },
+    "output_tokens": 1716,
+    "output_tokens_details": {
+      "image_tokens": 1716,
+      "text_tokens": 0
+    },
+    "total_tokens": 2811
+  },
+  "work_mode": "complete drawing as source + magenta band as region marker; no contour, no coordinates, no shape description"
+}

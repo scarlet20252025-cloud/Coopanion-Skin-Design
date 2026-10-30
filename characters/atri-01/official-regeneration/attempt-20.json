@@ -1,0 +1,9 @@
+{
+  "component": "rear-complete",
+  "prompt": "Edit image1, the layout of TWO newly made BROAD back-hair curtains. Image2 is the authoritative full mother for hidden structure and color. Preserve image1's two lower cascades in exactly their current size, positions, curvature, highlights and pointed ends. COMPLETE the missing upper/middle rear-hair mass connecting these roots: make a smooth rounded back-of-head cap behind the mother's crown, and continuous taupe-shaded hair behind the head, neck and torso between the two cascades. This is an OCCLUSION-COMPLETE BACK HAIR UNDERLAYER, so the center behind the face and body must be filled with coherent simple hair, not hollow and not a face/body-shaped hole. Keep cap within original mother head silhouette; bottom central fill ends behind shirt above y1040, no extra visible tails below existing tips. Most important: ONLY the BROAD back-hair curtains already in image1. DO NOT add the mother's thin OUTERMOST diagonal ponytail ribbons or triangular side loops. NO bangs, short front cheek locks, bows, ahoge, eyes, skin, clothes or hands. Exact image1 original 1145x1374 canvas, don't enlarge/recenter. True transparent outside whole completed rear-hair contour, smooth thin dark outlines matching mother.",
+  "status": "awaiting-assembly",
+  "output": "raw/rear-complete-01.png",
+  "review": [
+    "Generated full continuous concealed upper hair; no narrow outer ponytail loops. Needs assembled comparison."
+  ]
+}

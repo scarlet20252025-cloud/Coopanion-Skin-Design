@@ -1,0 +1,22 @@
+{
+  "name": "rear-left-01",
+  "matching_features": 4,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "method": "manual source landmarks, least-squares similarity, all residuals retained",
+  "matrix": [
+    [
+      0.28690740030402456,
+      -0.00600591001434885,
+      190.72024748185098
+    ],
+    [
+      0.006005910014348786,
+      0.2869074003040247,
+      554.4863632811946
+    ]
+  ],
+  "inliers": 4,
+  "rms": 14.486127086051354,
+  "max_residual": 22.192980121223133
+}

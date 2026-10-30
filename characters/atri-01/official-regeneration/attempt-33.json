@@ -1,0 +1,10 @@
+{
+  "component": "paired-narrow-ponytails",
+  "prompt": "Image 1 is the edit target, an aligned complete long-hair system. Image 2 is the authoritative original full character. Produce ONLY the TWO NARROW OUTER TIED HAIR LOCKS from image1, retaining their same placement and EXACT existing shape. On the viewer LEFT this is the slender outer lock bordering the LEFT side of the long triangular gap, from beneath the bow down to its short lower outer tips. On the viewer RIGHT this is the slender outer lock bordering the RIGHT side of the smaller triangular gap, ending in the short far outer tips. The big broad curtains on the inner sides of those gaps must be removed entirely. Remove the upper cap and every front/cheek strand. Complete each narrow lock only where its root was hidden by the head, with a short simple extension ending under its corresponding bow. Preserve ORIGINAL visible contours, original smooth downward bend, original highlights and thin outlines. No twisting, spirals, corkscrews, changed S curves, added tips or exaggerated flaring. Both components must remain in their existing positions at the existing size on the same 1145x1374 canvas; do not enlarge or rearrange them. Transparent everywhere else. No bows, head, body, labels or shadows. Shape preservation from image1 is the main requirement.",
+  "output": "raw/ponytails-pair-01.png",
+  "status": "rejected-for-integration",
+  "review": [
+    "Far middle gap approximately 56px versus mother 8px at y600. Endpoint fit is insufficient.",
+    "Do not promote paired narrow locks; original correspondence fit has only 1 reliable feature."
+  ]
+}

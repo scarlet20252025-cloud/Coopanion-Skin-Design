@@ -1,0 +1,22 @@
+{
+  "name": "leg-left-02",
+  "matching_features": 3,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "method": "manual source landmarks, least-squares similarity, all residuals retained",
+  "matrix": [
+    [
+      0.7427949434727753,
+      0.04049674690151659,
+      77.30262474333904
+    ],
+    [
+      -0.040496746901516605,
+      0.7427949434727753,
+      342.9814462063679
+    ]
+  ],
+  "inliers": 4,
+  "rms": 4.134805411145864,
+  "max_residual": 6.010823541344886
+}

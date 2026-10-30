@@ -1,0 +1,21 @@
+{
+  "name": "head-blank-01",
+  "matching_features": 32,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "matrix": [
+    [
+      0.5063712417028399,
+      0.0028441807310359154,
+      257.7451004345493
+    ],
+    [
+      -0.0028441807310359154,
+      0.5063712417028399,
+      91.19001483295021
+    ]
+  ],
+  "inliers": 9,
+  "rms": 1.38554406474634,
+  "max_residual": 2.693038424298246
+}

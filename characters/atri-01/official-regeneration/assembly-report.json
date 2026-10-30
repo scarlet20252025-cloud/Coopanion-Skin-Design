@@ -1,0 +1,17 @@
+{
+  "used": [
+    "ponytail-left-02",
+    "ponytail-right-05",
+    "rear-complete-01",
+    "leg-left-02",
+    "leg-right-01",
+    "garment-connected-01",
+    "ahoge-01",
+    "bow-right-01",
+    "head-01",
+    "bow-left-01"
+  ],
+  "missing": [],
+  "state": "REJECTED long-hair silhouette; retain images only as failure evidence",
+  "rejection": "hair-shape-rejection.json"
+}

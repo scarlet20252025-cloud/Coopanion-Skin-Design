@@ -1,0 +1,17 @@
+{
+  "component": "torso-complete-03",
+  "status": "provisional-in-candidate",
+  "method": "pure complete component imagegen edit",
+  "diagnosis": "Raised-arm actual-frame review exposes ellipse seal drawn on torso shoulder in49. Remove painted fake seam as whole-component edit, no new sleeve or program patches.",
+  "inputs": [
+    "characters/atri-01/official-regeneration/raw/torso-complete-02.png",
+    "characters/atri-01/art-source/master-leg-v2.png"
+  ],
+  "prompt": "精确编辑图1这一整张独立白色水手服衣身图层。左肩白色区域里多画了一道完整椭圆状的深色封口线，看起来像一个圆洞或空袖口；这是错误的图层接头，招手时会露出来。请去掉这条椭圆状深色封口线及其内侧多余的暗灰边，改成完整连续、自然白色衣料和与周围一致的极淡褶皱阴影。肩和腋下不应该画圆孔、椭圆边框、袖洞、封口或新袖子；只需要作为衣身的一片完整布料，被独立衣袖覆盖连接。\n其余全部严格保持图1：原画布、原比例原位置、整个衣身外轮廓、白色长衬衣宽度和衣摆、短脖子、蓝色水手领与白滚边、红领带、三颗金扣及精确位置、原灰色折线和配色都不动。尤其不要新增袖子、手、头发、腿或身体其他内容，也不要加宽或缩短衣摆。图2完整母版仅用于同一角色服装画风参考。输出仍为一整张完整衣身绘画的真实透明PNG，不要裁成局部、重新居中、放大或加文字，边缘清晰干净、无碎点白边。",
+  "tool": "built-in imagegen",
+  "output": "raw/torso-complete-03.png",
+  "output_sha256": "da0a8cccc3a0cb5485583694f4865674c6d2a056421f5a44f5f525e0764c9acc",
+  "registration": "torso-complete-03-registration.json",
+  "review": "Closed shoulder oval removed by imagegen whole-component edit.71 source matches,RMS1.04px; final extreme-wave review required.",
+  "candidate": "scratch/candidates/atri-pure-components-01"
+}

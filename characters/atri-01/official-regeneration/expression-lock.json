@@ -1,0 +1,536 @@
+{
+  "user_instruction": "表情动态是合格的可以保留",
+  "baseline": "scratch/candidates/atri-hair-junctions",
+  "scope": "Preserve current expression assets, expression rig and blink/expression/recovery behavior. Other body and hair regeneration continues.",
+  "files": {
+    "figure.js": "3c9876792eec8dd667d9f6780f8698b36f9a17f5f2a7bdfd88be8b0425149ffb",
+    "model.json": "1dfb74acf536609faa3fdad40fa959797756f3bf382f8a15f36cb068d6b8380c",
+    "part-registration.json": "69ddf4402b214ba97fdb24620485de584141de3336094573a5f95de0b3ac9eda",
+    "tex/source-012.png": "df2c81ff2b81b22dd5341c028fc0e03279b52337eef6dfd73d0ddea44103faad",
+    "tex/source-013.png": "a9c593c1465140f077abeeed8300e9413f85fa4d7af5946b51d3ac8d7efd7e57",
+    "tex/source-014.png": "0400d6091dd89b444f042d8e4b58cd8fbdd3cdcc692ac40db9d23e2e6e311b7d",
+    "tex/source-015.png": "a0a72a49a15ed171a930934a72078f8cc25be59f4e635954b103be1d9238905b",
+    "tex/source-016.png": "b9a236fb7e2da248b90520209dc502694e85353766d751a709ab7abadbb33364",
+    "tex/source-017.png": "9ff4bd2a1a0cd851399185a6e01f3779177c567e8bda94167ec7197bf1cca3b4",
+    "tex/source-018.png": "b0bd1ae26f0516cbf3a79c37d8db41b994a1882f22fc08600bcc48f835a56ec9",
+    "tex/source-019.png": "2aff4142b92011dbf8d16916e999a6d80177e65bb6856e0f1f17466135b3bfc2",
+    "tex/source-020.png": "9db6ac0c6aec1a44c9f685e386d27345e241aa1e7bc933b7cdc3eac77f2921c7",
+    "tex/source-021.png": "7c48d1eded0796bcf50eab0c0c14c4dd68e5ccb85dde2437c613d378058bbbd5",
+    "tex/source-022.png": "4ed0a08ea188517fd8576dfb4238b436f832aa7468c4cb10d62ec89611c3b1c9",
+    "tex/source-023.png": "e15a3217a50d445164f0109e2332fc51e44a83903cc49e106dec201ea00c875c",
+    "tex/source-024.png": "ee3e5531ddf1503d06411746baa7da8781dc1781b9bd1ce13591ebf94bdc744b",
+    "tex/source-025.png": "2c214e304b3269e3e55280afcd68b5a61e353e07952f9b98f032d7c91dce8551",
+    "tex/source-026.png": "c8bdfb4d681cb2b91dbd2501c196b4e0781de9cc222911bf5da44437cd32ee3b",
+    "tex/source-027.png": "41fd1977c50c38048df31a9fb121e6c3ffa3662b3388b8b122b64bf1e9ba03bc",
+    "tex/source-028.png": "8f530bb69106d78c816aaa4077de030e9752879b5aa6e2336aed250545230eda",
+    "tex/source-029.png": "0737dbc2ff464eb6e93bb992e9b738e8cf68441786b8a28ed892b561486a0ea4",
+    "tex/source-030.png": "d45d0815d07b49c8ef17e76f29c4468ce5dbd37e2c25078f61728cac0aa43510",
+    "tex/source-031.png": "3aa1f2b151e0ae1073854ebf589f6e7a5922876efb95507812ebf8e4b1f5519a",
+    "tex/source-032.png": "8c844f5f52e00f8ba48541948b9ab8c03522fd224364b0e37e3c63c4e58b2546",
+    "tex/source-033.png": "99ae81cd5618606351a1c333dca7cba54742b3ce589b7d0e87d99e1326ac9764",
+    "tex/source-036.png": "46177c3afb73b7fe0012f022ff36b9225af99c977ed2f48fb3698a4d3ad74128",
+    "tex/source-037.png": "2b4e0e8c5056d38faaf2455ee3cdb5ee4a394dafe7b49a678ec9451a66a1dd2a",
+    "tex/source-038.png": "c15a4c74239a920fda1efbdbc83928450ca29056baa0aff36b7ef6a44c85894f",
+    "tex/source-039.png": "bf86a87b4db17f7b1ed2a6b301ef1bcc1510f2de9bd68a764c2f01360f821cdb"
+  },
+  "expression_rig": {
+    "renderer": "source-eyes-svg-v1",
+    "closed_variants": "paired-source-art-v2",
+    "standing": {
+      "eyes": [
+        [
+          548,
+          483,
+          53,
+          42
+        ],
+        [
+          730,
+          459,
+          33,
+          42
+        ]
+      ],
+      "mouth": [
+        648,
+        549
+      ],
+      "brows": [
+        [
+          545,
+          384,
+          26
+        ],
+        [
+          733,
+          368,
+          19
+        ]
+      ]
+    },
+    "seated": {
+      "eyes": [
+        [
+          551,
+          788,
+          51,
+          43
+        ],
+        [
+          721,
+          753,
+          35,
+          43
+        ]
+      ],
+      "mouth": [
+        640,
+        852
+      ],
+      "brows": [
+        [
+          531,
+          690,
+          25
+        ],
+        [
+          725,
+          662,
+          18
+        ]
+      ]
+    }
+  },
+  "parts": [
+    {
+      "id": "eye-0",
+      "file": "tex/source-014.png",
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "z": 7,
+      "pivot": [
+        548,
+        483
+      ],
+      "owner": "eye-0",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "eye-1",
+      "file": "tex/source-015.png",
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "z": 7,
+      "pivot": [
+        730,
+        459
+      ],
+      "owner": "eye-1",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "seat-eye-0",
+      "file": "tex/source-025.png",
+      "role": "fixed",
+      "poses": [
+        "seated",
+        "dizzy"
+      ],
+      "z": 1,
+      "pivot": [
+        551,
+        788
+      ],
+      "owner": "seat-eye-0",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "seat-eye-1",
+      "file": "tex/source-026.png",
+      "role": "fixed",
+      "poses": [
+        "seated",
+        "dizzy"
+      ],
+      "z": 1,
+      "pivot": [
+        721,
+        753
+      ],
+      "owner": "seat-eye-1",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "closed-happy-0",
+      "file": "tex/source-012.png",
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "z": 7,
+      "pivot": [
+        548,
+        483
+      ],
+      "owner": "closed-happy-0",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "closed-happy-1",
+      "file": "tex/source-013.png",
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "z": 7,
+      "pivot": [
+        730,
+        459
+      ],
+      "owner": "closed-happy-1",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "seat-closed-happy-0",
+      "file": "tex/source-023.png",
+      "role": "fixed",
+      "poses": [
+        "seated",
+        "dizzy"
+      ],
+      "z": 1,
+      "pivot": [
+        551,
+        788
+      ],
+      "owner": "seat-closed-happy-0",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "seat-closed-happy-1",
+      "file": "tex/source-024.png",
+      "role": "fixed",
+      "poses": [
+        "seated",
+        "dizzy"
+      ],
+      "z": 1,
+      "pivot": [
+        721,
+        753
+      ],
+      "owner": "seat-closed-happy-1",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "forehead-mask",
+      "file": "tex/source-022.png",
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "z": 7,
+      "pivot": [
+        545,
+        384
+      ],
+      "owner": "forehead-mask",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "seat-forehead-mask",
+      "file": "tex/source-033.png",
+      "role": "fixed",
+      "poses": [
+        "seated",
+        "dizzy"
+      ],
+      "z": 1,
+      "pivot": [
+        531,
+        690
+      ],
+      "owner": "seat-forehead-mask",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "brow-mask",
+      "file": "tex/source-036.png",
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "z": 7,
+      "pivot": [
+        545,
+        384
+      ],
+      "owner": "brow-mask",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "pinch-mouth",
+      "file": "tex/source-037.png",
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "z": 7,
+      "pivot": [
+        648,
+        549
+      ],
+      "owner": "pinch-mouth",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "seat-brow-mask",
+      "file": "tex/source-038.png",
+      "role": "fixed",
+      "poses": [
+        "seated",
+        "dizzy"
+      ],
+      "z": 7,
+      "pivot": [
+        531,
+        690
+      ],
+      "owner": "seat-brow-mask",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "seat-pinch-mouth",
+      "file": "tex/source-039.png",
+      "role": "fixed",
+      "poses": [
+        "seated",
+        "dizzy"
+      ],
+      "z": 7,
+      "pivot": [
+        640,
+        852
+      ],
+      "owner": "seat-pinch-mouth",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "eye-pair-half",
+      "file": "tex/source-017.png",
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "z": 7,
+      "pivot": [
+        640,
+        472
+      ],
+      "owner": "eye-pair-half",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "seat-eye-pair-half",
+      "file": "tex/source-028.png",
+      "role": "fixed",
+      "poses": [
+        "seated",
+        "dizzy"
+      ],
+      "z": 1,
+      "pivot": [
+        640,
+        774
+      ],
+      "owner": "seat-eye-pair-half",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "eye-pair-late",
+      "file": "tex/source-018.png",
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "z": 7,
+      "pivot": [
+        640,
+        472
+      ],
+      "owner": "eye-pair-late",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "seat-eye-pair-late",
+      "file": "tex/source-029.png",
+      "role": "fixed",
+      "poses": [
+        "seated",
+        "dizzy"
+      ],
+      "z": 1,
+      "pivot": [
+        640,
+        774
+      ],
+      "owner": "seat-eye-pair-late",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "eye-pair-rest",
+      "file": "tex/source-021.png",
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "z": 7,
+      "pivot": [
+        640,
+        472
+      ],
+      "owner": "eye-pair-rest",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "seat-eye-pair-rest",
+      "file": "tex/source-032.png",
+      "role": "fixed",
+      "poses": [
+        "seated",
+        "dizzy"
+      ],
+      "z": 1,
+      "pivot": [
+        640,
+        774
+      ],
+      "owner": "seat-eye-pair-rest",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "eye-pair-love",
+      "file": "tex/source-019.png",
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "z": 7,
+      "pivot": [
+        640,
+        472
+      ],
+      "owner": "eye-pair-love",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "seat-eye-pair-love",
+      "file": "tex/source-030.png",
+      "role": "fixed",
+      "poses": [
+        "seated",
+        "dizzy"
+      ],
+      "z": 1,
+      "pivot": [
+        640,
+        774
+      ],
+      "owner": "seat-eye-pair-love",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "eye-pair-dizzy",
+      "file": "tex/source-016.png",
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "z": 7,
+      "pivot": [
+        640,
+        472
+      ],
+      "owner": "eye-pair-dizzy",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "seat-eye-pair-dizzy",
+      "file": "tex/source-027.png",
+      "role": "fixed",
+      "poses": [
+        "seated",
+        "dizzy"
+      ],
+      "z": 1,
+      "pivot": [
+        640,
+        774
+      ],
+      "owner": "seat-eye-pair-dizzy",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "eye-pair-pinch",
+      "file": "tex/source-020.png",
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "z": 7,
+      "pivot": [
+        640,
+        472
+      ],
+      "owner": "eye-pair-pinch",
+      "reveals_when_moved": "none",
+      "variants": {}
+    },
+    {
+      "id": "seat-eye-pair-pinch",
+      "file": "tex/source-031.png",
+      "role": "fixed",
+      "poses": [
+        "seated",
+        "dizzy"
+      ],
+      "z": 1,
+      "pivot": [
+        640,
+        774
+      ],
+      "owner": "seat-eye-pair-pinch",
+      "reveals_when_moved": "none",
+      "variants": {}
+    }
+  ],
+  "status": "user approved expression dynamics; integration with new art not yet tested"
+}

@@ -1,0 +1,14 @@
+import {createRig} from '/preview/vendor/kit/rig.js';
+const W=1145,H=1374,box=[0,0,W,H],q=s=>document.querySelector(s);
+const files={fill:'pair-rear-fill.png',far:'far-pony-complete.png',near:'../official-visible/near-pony-complete.png',foreground:'pair-remainder.png',mother:'../official-visible/mother-source-matte.png'};
+const imgs=Object.fromEntries(await Promise.all(Object.entries(files).map(async([k,file])=>{const im=new Image();im.src=file;await im.decode();return[k,im]})));
+const model={view:box,deformers:{near:{kind:'warp',rect:[0,430,W,910]},far:{kind:'warp',rect:[0,800,W,940]}},parts:Object.keys(files).filter(k=>k!=='mother').map((id,z)=>({id,tex:id,z,box,parent:['near','far'].includes(id)?id:null,grid:['near','far'].includes(id)?[8,100]:[1,1]}))};
+const rig=createRig(q('#rig'),model);for(const[k,img]of Object.entries(imgs))rig.upload(k,img);
+const ctx=q('#reference').getContext('2d');let amount=0,playing=false,view=box;
+const ease=x=>x*x*(3-2*x);
+function draw(){rig.render({near:{fn:(_u,v)=>[-amount*ease(v),0]},far:{fn:(_u,v)=>[amount*ease(v),0]}});ctx.clearRect(0,0,W,H);ctx.drawImage(imgs.mother,view[0],view[1],view[2]-view[0],view[3]-view[1],0,0,W,H);q('#status').textContent=`端部位移 ${amount.toFixed(2)} px；当前仅为马尾分层复核。`;}
+for(const[id,value]of Object.entries({rest:0,out:6,in:-6,stressOut:12,stressIn:-12}))q('#'+id).onclick=()=>{playing=false;amount=value;draw()};
+q('#play').onclick=()=>{playing=!playing};q('#bg').onclick=()=>document.body.classList.toggle('dark');q('#flip').onclick=()=>document.body.classList.toggle('flip');
+q('#view').onchange=e=>{view={full:box,near:[120,690,350,980],far:[810,710,1020,980],root:[280,240,460,460]}[e.target.value];rig.setView(view);draw()};
+q('#capture').onclick=()=>{draw();const c=document.createElement('canvas');c.width=920;c.height=620;const g=c.getContext('2d'),dark=document.body.classList.contains('dark'),flip=document.body.classList.contains('flip');g.fillStyle=dark?'#202128':'#e8e2ef';g.fillRect(0,0,c.width,c.height);g.fillStyle=dark?'white':'#352d3c';g.font='18px sans-serif';g.fillText(`Mother / official rig | ${q('#view').value} | ${amount}px | ${flip?'flipped':'normal'} | ${dark?'dark':'light'}`,12,25);for(const[id,x]of [['reference',10],['rig',470]]){g.save();if(flip){g.translate(x+440,45);g.scale(-1,1)}else g.translate(x,45);g.drawImage(q('#'+id),0,0,440,528);g.restore()}g.font='14px sans-serif';g.fillText('Diagnostic only; expression/full-body animation not tested here.',12,605);const a=document.createElement('a');a.href=c.toDataURL('image/png');a.download=`atri-underlap-${q('#view').value}-${amount}-${flip?'flip':'normal'}-${dark?'dark':'light'}.png`;a.click()};
+function step(t){if(playing){amount=6*Math.sin(t/900);draw()}requestAnimationFrame(step)}draw();requestAnimationFrame(step);window.addEventListener('pagehide',()=>rig.dispose());document.body.dataset.ready='true';

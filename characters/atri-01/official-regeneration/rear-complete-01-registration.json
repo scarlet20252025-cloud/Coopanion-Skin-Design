@@ -1,0 +1,22 @@
+{
+  "name": "rear-complete-01",
+  "matching_features": 7,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "method": "manual source landmarks, least-squares similarity, all residuals retained",
+  "matrix": [
+    [
+      0.9972831729006435,
+      -0.013972001219258987,
+      6.804577522342015
+    ],
+    [
+      0.01397200121925899,
+      0.9972831729006434,
+      -16.946271320466167
+    ]
+  ],
+  "inliers": 4,
+  "rms": 9.225279566861731,
+  "max_residual": 11.808583452250211
+}

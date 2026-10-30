@@ -1,0 +1,10 @@
+{
+  "component": "leg-left",
+  "status": "provisional",
+  "output": "raw/leg-left-02.png",
+  "prompt": "Precise sprite edit, not a redraw/design. Image 1 is the complete authoritative mother. Image 2 shows the original legs at larger scale for accuracy. Produce ONE transparent 1145x1374 sprite canvas. Keep ONLY the near bare leg on VIEWER LEFT of image 1, with its original rounded small foot, at its ORIGINAL PIXEL SIZE AND POSITION in the full canvas (roughly x477 to588, y1100 to1295). Do NOT center, enlarge, elongate or restyle this leg. Preserve original pose, exact short thick chibi silhouette, simple foot with no toes, peach cel shading and dark thin outline. Add only about 35 pixels of matching concealed thigh above the hem, capped smoothly so the body can overlap it. Everything else fully transparent, leaving almost all canvas empty. Original leg and original small foot must remain faithful to image1 and image2. No second leg, no dress, no hair, no shadow, no text. This component is to reconstruct the mother exactly when layered under its shirt.",
+  "review": [
+    "Mother and original leg detail used; uniform fit against visible foot anchors.",
+    "RMS4.13 max6.01px; assembly required."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "head-01",
+  "matching_features": 107,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "matrix": [
+    [
+      0.5001745170210651,
+      0.009121605358675788,
+      258.3627236957654
+    ],
+    [
+      -0.009121605358675788,
+      0.5001745170210651,
+      98.7908675721584
+    ]
+  ],
+  "inliers": 69,
+  "rms": 1.3592927043548388,
+  "max_residual": 2.6384631358922412
+}

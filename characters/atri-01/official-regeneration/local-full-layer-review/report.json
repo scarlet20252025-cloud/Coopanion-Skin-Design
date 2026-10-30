@@ -1,0 +1,9 @@
+{
+  "status": "UNREVIEWED; source registration does not establish art acceptance",
+  "donor": "../registered/far-pony-hidden-03.png",
+  "new_pixels": "generated concealed pixels only",
+  "visible_source": "../official-visible/far-visible-mother.png",
+  "neutral_premultiplied_mae": 0.0040157088078558445,
+  "outside_alpha_pixels": 4011,
+  "promotion_allowed": false
+}

@@ -1,0 +1,16 @@
+{
+  "component": "arm-far-complete-04",
+  "status": "rejected",
+  "diagnosis": "50 complete sleeve has broad near-like cuff, making shoulder-to-cuff length too short at original far cuff scale. Explain original near/far relative perspective and equal shoulder/cuff heights instead of generic complete sleeve language. No stretch permitted.",
+  "inputs": [
+    "characters/atri-01/art-source/master-leg-v2.png",
+    "characters/atri-01/official-regeneration/pure-generation/references/mother-garment-opaque-detail.png"
+  ],
+  "prompt": "Edit the attached FULL original ATRI illustration into one complete FAR ARM sprite, the long white sleeve on the VIEWER RIGHT. Image2 is an enlarged view of the SAME original costume, to preserve exact visible cuff perspective. This is a precise component drawing for the existing puppet, not a newly designed arm.\nCritical proportion: in the original, the far arm extends from the SAME SHOULDER HEIGHT as the near arm and ends at almost the SAME CUFF HEIGHT. Yet its visible far cuff is LESS THAN HALF the width of the near cuff because of the strong three-quarter perspective. Preserve that slender far-arm proportion. Do NOT turn this into a near-side sleeve with a big broad cuff, and do NOT shrink the white upper sleeve together with the little cuff into a short stubby arm. The shoulder-to-cuff length must remain compatible with the full original character. The existing original upper sleeve and cuff positions directly determine the arm. The white sleeve is complete behind the shirt torso; do not use the skinny exposed side-strip as the complete outline or end it in a pointed shoulder. Paint a natural finished cloth sleeve cap that enters the actual far shoulder under the collar, with no outlined crossbar where it will be covered.\nKeep the original tiny far fingertips emerging from the original small teal cuff, original curved white piping, original grey-blue narrow lining, delicate thin dark-brown outlines, clean white cloth and subtle pale fold shading. Only small fingertips, most of the hand is concealed; do not invent an open palm, wrist or extra fingers. One continuous painting of sleeve+cuff+fingertips. No patches or old pixel grafting.\nREMOVE everything other than this single complete far sleeve: head, all hair, collar, tie, torso, gold buttons, near sleeve, legs, blue background. True transparent background, clean antialiasing, no fringe, stray specks or residual neighbouring linework. Use 1145x1374 original full canvas, original scale and position rather than enlarging or centering the isolated sprite. No texts or guides.",
+  "tool": "built-in imagegen",
+  "method": "pure complete component generation",
+  "output": "raw/arm-far-complete-04.png",
+  "output_sha256": "ae8a73a027360dc11e97452ca0bec7383edb24a36bb71ed62e7b1c9f004d101e",
+  "review": "Torso flap carried alongside cuff.",
+  "candidate": null
+}

@@ -1,0 +1,83 @@
+{
+  "status": "UNREVIEWED; diagnostic only",
+  "donor": "../registered/mother-without-far-rear-01.png",
+  "donor_rigid_translation": [
+    0,
+    0
+  ],
+  "reason": "Generated pony exposed by removing its foreground curtain from full mother. Connected source alpha retained; no donor translation or shape correction.",
+  "boundary_yx": [
+    [
+      786.0,
+      874.0
+    ],
+    [
+      800.0,
+      876.0
+    ],
+    [
+      825.0,
+      891.0
+    ],
+    [
+      850.0,
+      905.0
+    ],
+    [
+      875.0,
+      915.0
+    ],
+    [
+      900.0,
+      924.0
+    ],
+    [
+      910.0,
+      926.0
+    ],
+    [
+      920.0,
+      928.0
+    ],
+    [
+      925.0,
+      929.0
+    ],
+    [
+      930.0,
+      930.0
+    ],
+    [
+      935.0,
+      932.0
+    ],
+    [
+      940.0,
+      934.0
+    ],
+    [
+      945.0,
+      936.0
+    ],
+    [
+      960.0,
+      940.0
+    ]
+  ],
+  "foreground_owns": "actual rear-curtain outline, not the adjacent pony interior",
+  "far_bend_window": [
+    800,
+    940
+  ],
+  "far_tie_root": [
+    805,
+    295
+  ],
+  "near_bend_window": [
+    430,
+    910
+  ],
+  "neutral_premultiplied_mae": 0.0002686382213141769,
+  "outside_alpha_pixels": 644,
+  "promotion_allowed": false
+}

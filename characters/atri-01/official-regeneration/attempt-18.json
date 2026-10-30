@@ -1,0 +1,9 @@
+{
+  "component": "rear-left",
+  "prompt": "Image1 is an unfinished ONE broad rear-hair lock component. Image2 is the authoritative ATRI mother. Complete ONLY the clipped TOP of image1, leaving the lower 85 percent of its hair silhouette, pointed lower ends, highlight and shading unchanged. Extend upward into a fully visible short smooth tapered rounded root that will hide behind the side of the head. Add generous transparent margin around ALL sides, especially above root; no pixel of hair may touch canvas border. This is the broad INNER left rear curtain, not the narrow outer ponytail: do not add extra separate strip, loop or bow. Maintain exact original broad lock proportions, palette, line weight, no curls/new pointed strands. Output one complete continuous isolated lock on true transparency. Root completed, bottom unchanged, entire lock visible with margin.",
+  "status": "awaiting-registration",
+  "output": "raw/rear-left-02.png",
+  "review": [
+    "Top root completed; shape comparison and head occlusion still required."
+  ]
+}

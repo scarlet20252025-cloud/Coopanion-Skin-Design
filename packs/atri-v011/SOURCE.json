@@ -17,23 +17,23 @@
       "poses": [
         "standing"
       ],
-      "source": "characters\\atri-01\\official-regeneration\\raw\\pony-pair-left-01.png",
-      "source_sha256": "fbea4fe6c6fe6aedb0cb0d016c4dec97f1082b4e9c217ab90aa5d52c8f94eff1",
+      "source": "characters\\atri-01\\official-regeneration\\hand-edited\\tail-left.png",
+      "source_sha256": "d2b7834613c77907b789c7fe435c48e3e9f8a7ecbd093f987a46ede29ead0608",
       "matrix": [
         [
-          0.9117840746131664,
-          0.054370823037015806,
-          28.014578300170285
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.054370823037015806,
-          0.9117840746131664,
-          47.48829965532752
+          0.0,
+          1.0,
+          0.0
         ]
       ],
       "clip": null,
-      "removed_detached_pixels": 72,
-      "removed_detached_after_registration": 1,
+      "removed_detached_pixels": 0,
+      "removed_detached_after_registration": 0,
       "art_status": "provisional diagnostic; not user accepted"
     },
     {
@@ -48,26 +48,26 @@
       "poses": [
         "standing"
       ],
-      "source": "characters\\atri-01\\official-regeneration\\raw\\pony-pair-left-01.png",
-      "source_sha256": "fbea4fe6c6fe6aedb0cb0d016c4dec97f1082b4e9c217ab90aa5d52c8f94eff1",
+      "source": "characters\\atri-01\\official-regeneration\\hand-edited\\tail-left.png",
+      "source_sha256": "d2b7834613c77907b789c7fe435c48e3e9f8a7ecbd093f987a46ede29ead0608",
       "matrix": [
         [
-          0.9117840746131664,
-          0.054370823037015806,
-          28.014578300170285
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.054370823037015806,
-          0.9117840746131664,
-          47.48829965532752
+          0.0,
+          1.0,
+          0.0
         ]
       ],
       "clip": [
         0,
         640
       ],
-      "removed_detached_pixels": 25121,
-      "removed_detached_after_registration": 1,
+      "removed_detached_pixels": 25669,
+      "removed_detached_after_registration": 0,
       "art_status": "provisional diagnostic; not user accepted"
     },
     {

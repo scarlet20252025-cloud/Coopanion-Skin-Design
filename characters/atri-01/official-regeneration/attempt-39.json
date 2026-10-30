@@ -1,0 +1,12 @@
+{
+  "component": "far pony concealed completion",
+  "status": "source enlarged; registration and hidden geometry review required",
+  "prompt": "Image 1 is the exact visible pixels of the character's FAR, VIEWER-RIGHT narrow outer ponytail, on a 1145x1374 transparent canvas. Image 2 is the full mother. Edit IMAGE 1 to complete this single component, preserving its existing pixels, visible shape and position. Keep the existing right outer silhouette x820 y525 through x970 y900 and tips near x948 y946 absolutely unchanged. Add the concealed upper continuation behind the head: a slim taupe hair stem from a rounded root at (805,295), descending behind the head within x775..825 to connect seamlessly to the current top at (820,525). This entire upper stem will be hidden by the original head; do not add a bow or face or broad hair curtain. Complete the missing lower-left diagonal edge from (870,785) to (932,900) by extending hair only 15 to 25 pixels to the LEFT of that cut into a smooth concave inner contour; blend its original shadow and highlight into this tiny concealed area. Preserve the two original short thin tips at bottom. No extra tip, no extension below y955, no spiral, no loop, no S-shaped redesign, no rescaling, no recentering, no new highlights on visible portions. One complete slim right ponytail only, with clean antialiased thin dark-brown outline, true transparent background, no marks or text.",
+  "inputs": [
+    "official-visible/far-visible-mother.png",
+    "../master.png"
+  ],
+  "output": "raw/far-pony-hidden-01.png",
+  "original_output": "C:/Users/63526/.codex/generated_images/01a13400-0fec-79a2-9cdc-067895581192/exec-b9c8a3c8-f84d-4797-adb1-039bccaccae0.png",
+  "output_sha256": "7d1e3111fea538afa93fe07bef40645da700d60f7df9367f64a0e04c392cfcce"
+}

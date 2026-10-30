@@ -1,0 +1,14 @@
+{
+  "component": "near pony short concealed completion",
+  "status": "hidden fill integration pending",
+  "prompt": "Complete the tiny concealed parts of IMAGE 1, which is an exact mother-pixel extraction of the LEFT narrow outer ponytail of the character in IMAGE 2. Keep IMAGE 1's exact position, thin diagonal shape, size, colors and every visible edge. Output on the same 1145x1374 transparent canvas, most of it empty. There are ONLY TWO missing areas: (1) the small triangular root notch just above x340 y335, which needs a short rounded cap hidden behind the bow; (2) the bottom right diagonal cut from x245 y795 down to x195 y920, which needs a SHALLOW continuation. Extend this cut sideways to the RIGHT by only 10 to 25 pixels and close it into a SHORT sharp tip at approximately x225 y925. ABSOLUTELY NO long downward extension, no part below y940. The lowest original left tip near x180 y920 must stay unchanged. The completed lower tuft should be only slightly wider than the extracted tuft, NOT longer. This lower short hidden continuation goes behind the broad rear hair in image2. Add no new curls, loops, corkscrew, strands, broad curtains, bow, head or body. Preserve original thin dark brown ink and cel shading. Do not crop or enlarge or recenter. Return only one complete slender ponytail with true transparency.",
+  "inputs": [
+    "official-visible/near-visible-mother.png",
+    "../master.png"
+  ],
+  "output": "raw/near-pony-hidden-02.png",
+  "original_output": "C:/Users/63526/.codex/generated_images/01a13400-0fec-79a2-9cdc-067895581192/exec-29468fc1-c894-405b-9375-72c16c3cc90f.png",
+  "input_preservation_note": "Working visible source later changed; pre-matte/pre-tail-extension image reconstructed from the exact script state, not claimed as a separately captured original tool-input hash.",
+  "reconstructed_input": "references/near-generation-v1/near-visible-mother.png",
+  "output_sha256": "123699e68c71fadc4b5a8d5d75bb06867fed66ead863f97f1e3d40f8f75da0f9"
+}

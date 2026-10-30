@@ -1,0 +1,141 @@
+{
+  "phase": "Whole generated component candidate assembled; actual rig QA and user art review",
+  "rejected": [
+    "body-01",
+    "body-02",
+    "bows-01",
+    "leg-left-01",
+    "ponytail-right-01",
+    "ponytail-right-02",
+    "ponytail-right-03",
+    "rear-hair-01",
+    "rear-hair-02",
+    "arm-left-01",
+    "arm-left-02",
+    "ponytail-right-04",
+    "ponytail-left-02",
+    "ponytail-right-05",
+    "rear-complete-01",
+    "ponytails-pair-01",
+    "pony-pair-right-01"
+  ],
+  "pending": [
+    "final user visual review against mother",
+    "seated hair independent layers: currently whole seated drawing",
+    "native host verification; no install performed"
+  ],
+  "installed": false,
+  "attempt_corrections": [
+    {
+      "file": "attempt-05.json",
+      "component": "arm-right",
+      "status": "provisional",
+      "output": "raw/arm-right-01.png",
+      "review": [
+        "Earlier rejection used torso occlusion edge incorrectly as cuff landmark; withdrawn.",
+        "Correct visible landmarks RMS4.47px max5.90px; needs assembly and alpha inspection."
+      ]
+    },
+    {
+      "file": "attempt-06.json",
+      "component": "body",
+      "status": "provisional",
+      "output": "raw/body-03.png",
+      "prompt": "Edit the supplied ATRI mother illustration into ONE complete transparent body component for the same puppet. Image 1 is the authoritative full mother, image 2 is a rectangular detail of its torso. Precisely preserve the ORIGINAL long white shirt torso, neckline, teal sailor collar with white piping, red tie, thin dark center placket, THREE gold buttons with their ORIGINAL spacing, long asymmetric shirt hem and original pale gray fold shading. Preserve original width/length ratio, tilt and three-quarter perspective, NOT a redesigned dress. The lowest button is very near the hem. Remove BOTH sleeves including cuffs/fingers, remove all hair/head/legs/background. Complete only the small obscured areas of torso behind sleeves and hair, making a narrow rounded shoulder/armhole attachment on each side, not sleeve stumps. Include the short peach neck base above collar. Do not shorten the torso, move buttons upward or alter tie proportions. The whole component must match image 2 geometry; retain the EXACT relationship of collar to lowest button and hem. True transparent background, antialiased thin original dark outlines, no shadow or text. Output only this single intact sleeveless torso with collar and tie, in the original pose.",
+      "review": [
+        "Collar, tie, button spacing and hem closer after full mother plus detail reference.",
+        "Needs full assembly and source alpha edge inspection."
+      ]
+    },
+    {
+      "file": "attempt-07.json",
+      "component": "leg-left",
+      "status": "rejected",
+      "output": "raw/leg-left-01.png",
+      "prompt": "Edit this exact full-body ATRI mother into one isolated rig component on real transparency: ONLY the bare leg at VIEWER LEFT, her nearer right leg, including its small rounded bare foot and a short hidden upper-thigh extension. Preserve exactly the mother's chibi leg thickness, length, warm peach color, delicate reddish-brown outline, simple foot with NO individual toes and slight diagonal from upper right to lower left. The visible original starts below the left portion of white shirt hem and finishes in the leftmost foot. Do not mirror it, do not lengthen or make anatomically detailed. Complete just a short rounded thigh cap above the shirt hem, to be hidden by the body layer. No clothes, no second leg, no hands, no hair, no shadows or text or background. Maintain original pose and all visible contour details from the mother, antialiased clean alpha.",
+      "review": [
+        "Isolated enlarged generation lengthened calf relative to foot. Degenerate feature registration discarded."
+      ]
+    },
+    {
+      "file": "attempt-08.json",
+      "component": "leg-left",
+      "status": "provisional",
+      "output": "raw/leg-left-02.png",
+      "prompt": "Precise sprite edit, not a redraw/design. Image 1 is the complete authoritative mother. Image 2 shows the original legs at larger scale for accuracy. Produce ONE transparent 1145x1374 sprite canvas. Keep ONLY the near bare leg on VIEWER LEFT of image 1, with its original rounded small foot, at its ORIGINAL PIXEL SIZE AND POSITION in the full canvas (roughly x477 to588, y1100 to1295). Do NOT center, enlarge, elongate or restyle this leg. Preserve original pose, exact short thick chibi silhouette, simple foot with no toes, peach cel shading and dark thin outline. Add only about 35 pixels of matching concealed thigh above the hem, capped smoothly so the body can overlap it. Everything else fully transparent, leaving almost all canvas empty. Original leg and original small foot must remain faithful to image1 and image2. No second leg, no dress, no hair, no shadow, no text. This component is to reconstruct the mother exactly when layered under its shirt.",
+      "review": [
+        "Mother and original leg detail used; uniform fit against visible foot anchors.",
+        "RMS4.13 max6.01px; assembly required."
+      ]
+    }
+  ],
+  "preserved": "expression-lock.json",
+  "summary": "STATUS.md",
+  "method_audit": "arm-method-audit.json",
+  "diagnostic_sources": [
+    "garment-connected-01",
+    "hair-system-02",
+    "rear-system-01"
+  ],
+  "review": "garment-method-review.json",
+  "hair_review": "hair-shape-rejection.json",
+  "expression_review": "expression-compatibility-review.json",
+  "official_pilot": "official-visible/pair-pilot-report.json",
+  "pending_adobe_confirmation": {
+    "question": "Allow one Photoshop selection-based Generative Fill attempt using existing Adobe credits?",
+    "reason": "Built-in image generation did not preserve the exact masked completion; credits may be consumed.",
+    "answer": "不消耗 Adobe 额度",
+    "action_taken": false,
+    "status": "cancelled: latest user reply supersedes earlier one-attempt approval",
+    "adobe_generation_calls": 0
+  },
+  "promotion_allowed": false,
+  "pure_generation": {
+    "plan": "pure-generation/PLAN.md",
+    "accepted": [],
+    "reviewed": [
+      "attempt-46 rejected",
+      "attempt-47 rejected"
+    ],
+    "expression_files_verified": 29,
+    "old_stitching_pilots": "abandoned; never consume as new source",
+    "review": "pure-generation/REVIEW.md",
+    "runtime_import_manifest": "pure-generation/accepted-components.json",
+    "candidate": "scratch/candidates/atri-pure-components-01",
+    "review_page": "pure-generation/review.html",
+    "reviewed_attempts": [
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60
+    ],
+    "provisional_components": 13,
+    "approved_expression_textures": 26,
+    "approved_original_files_unchanged": 29,
+    "validation": "pure-generation/VALIDATION.json",
+    "frame_count": 104,
+    "checks": 52,
+    "final_torso": "attempt-61.json",
+    "status": "reviewable candidate; user art acceptance and seated independent hair dynamics pending"
+  },
+  "historical_provisional": [
+    "body-04",
+    "arm-right-01",
+    "leg-left-02",
+    "leg-right-01",
+    "head-blank-01",
+    "ahoge-01",
+    "bow-left-01",
+    "bow-right-01"
+  ],
+  "provisional": []
+}

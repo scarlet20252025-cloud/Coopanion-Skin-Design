@@ -1,0 +1,32 @@
+{
+  "name": "arm-left-02",
+  "status": "registered-needs-whole-composition-review",
+  "reference": "arm-left-01",
+  "relative_matrix": [
+    [
+      0.9782820625406323,
+      0.005696000772483685,
+      8.962542777055663
+    ],
+    [
+      -0.005696000772483685,
+      0.9782820625406323,
+      -2.425068150726956
+    ]
+  ],
+  "matrix": [
+    [
+      0.37928786402300174,
+      0.03858605018263941,
+      197.33793338517475
+    ],
+    [
+      -0.038586050182639414,
+      0.3792878640230017,
+      590.0957352502231
+    ]
+  ],
+  "reference_fit_rms": 1.2960268982025644,
+  "inliers": 22,
+  "alpha_policy": "generated alpha; premultiplied uniform similarity only"
+}

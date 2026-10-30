@@ -1,0 +1,21 @@
+{
+  "name": "body-03",
+  "matching_features": 38,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "matrix": [
+    [
+      0.37689961135070527,
+      0.011609558684891153,
+      401.96082043038774
+    ],
+    [
+      -0.011609558684891153,
+      0.37689961135070527,
+      574.136237990094
+    ]
+  ],
+  "inliers": 23,
+  "rms": 1.4490375144810015,
+  "max_residual": 3.261429053351136
+}

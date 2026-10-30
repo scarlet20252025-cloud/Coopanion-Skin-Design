@@ -1,0 +1,9 @@
+{
+  "component": "head-blank",
+  "prompt": "Edit image1 (the new front-head component) for rig integration. Image2 is authoritative full character mother for identity, not the edit target. Preserve EXACTLY ALL of image1 hair pixels, head silhouette, pointed cheek-lock tips, crown, color, shading, face shape and placement. Only erase the two eyes including lashes/eyelid lines, the two eyebrows, and the tiny mouth, replacing those features with seamlessly matching pale skin. Preserve the cheek blush and face lighting. This makes a blank facial UNDERLAYER for existing approved separate animated eyes/brows/mouth to be composited; do not invent replacement facial features. No new hair, bows, ahoge, neck or body. Original image1 canvas and framing, transparent outside head. Preserve alpha and clean up tiny stray colored alpha fringe only; never eat the dark hair outlines. Output the same head with smooth blank face, no symbols or labels.",
+  "status": "awaiting-approved-face-overlay",
+  "output": "raw/head-blank-01.png",
+  "review": [
+    "Blank underlayer only; approved expression textures and animation retained unmodified."
+  ]
+}

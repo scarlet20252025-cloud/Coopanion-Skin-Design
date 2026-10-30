@@ -1,0 +1,9 @@
+{
+  "component": "bow-right",
+  "prompt": "Image1 full mother is authoritative. Image2 is the exact small black bow at VIEWER RIGHT of mother. Generate ONLY this one tiny angular charcoal ribbon bow on real transparency, preserving the exact asymmetrical two triangular lobes and compact knot shown in image2. Fill the small portion hidden by hair into the same simple fold. Remove ALL beige hair, skin and background from the result. No new long tails, no loops, no decorative redesign, not a symmetrical butterfly. Thin original dark outline, muted slate highlights. Complete entire ribbon with clear transparent margin on all sides. It will be uniformly scaled to the original far-side bow size; preserve the original outline and original fold angles of image2 with image1 governing character style. One bow only, no text, no shadow.",
+  "output": "raw/bow-right-01.png",
+  "status": "provisional",
+  "review": [
+    "Outer contour matches mother within about 2.13px at sampled anchors; knot partly hidden by head."
+  ]
+}

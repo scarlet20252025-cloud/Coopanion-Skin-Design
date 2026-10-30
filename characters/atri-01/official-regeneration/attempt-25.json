@@ -1,0 +1,9 @@
+{
+  "component": "ponytail-right",
+  "prompt": "Precision contour correction. Image1 is authoritative full mother. Image2 is the isolated FAR outer ponytail EDIT TARGET already positioned on the 1145x1374 mother canvas. Keep its root at (794,280), lower outer bend around (970,885), and tip around (948,936) fixed. Its middle span currently bows too far outward and makes the triangular gap beside the shoulder too wide. Redraw ONLY the middle span to match the original narrow right ponytail in image1: move the arc inward/LEFT by roughly 25-35 pixels around y560..710, smoothly tapering this change to zero at root and lower bend. Preserve original strand width and delicate outline, colors, highlights and lower tips; avoid a pinched waist. Let the mother image determine the exact natural contour, not an arbitrary straight diagonal. Output only this complete one ponytail on true transparency, same original canvas/position, no other hair/body, no marks. This is a local generative contour edit, not a new hairstyle or mirrored strand.",
+  "output": "rejected/ponytail-right-02.png",
+  "status": "rejected",
+  "review": [
+    "Requested inward middle correction not achieved; lower endpoint also drifted."
+  ]
+}

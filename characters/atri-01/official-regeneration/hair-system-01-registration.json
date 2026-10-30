@@ -1,0 +1,21 @@
+{
+  "name": "hair-system-01",
+  "matching_features": 14,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "matrix": [
+    [
+      0.8698112278229335,
+      -0.004457956598922414,
+      69.75380414339729
+    ],
+    [
+      0.004457956598922414,
+      0.8698112278229335,
+      77.30220740379826
+    ]
+  ],
+  "inliers": 6,
+  "rms": 0.626229946702083,
+  "max_residual": 0.9607962150558116
+}

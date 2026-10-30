@@ -1,0 +1,22 @@
+{
+  "name": "bow-left-01",
+  "matching_features": 3,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "method": "manual source landmarks, least-squares similarity, all residuals retained",
+  "matrix": [
+    [
+      0.12243626162914557,
+      0.0008030070916229537,
+      249.22698443698198
+    ],
+    [
+      -0.0008030070916229528,
+      0.12243626162914559,
+      208.21267462741085
+    ]
+  ],
+  "inliers": 5,
+  "rms": 3.4880849307052473,
+  "max_residual": 4.424369513640188
+}

@@ -1,0 +1,16 @@
+{
+  "component": "arm-far-complete-03",
+  "status": "provisional-in-candidate",
+  "method": "pure whole component generation",
+  "diagnosis": "48 far sleeve lacks full concealed sleeve cap; reject needle strip; use original full opaque mother and garment detail only",
+  "inputs": [
+    "characters/atri-01/art-source/master-leg-v2.png",
+    "characters/atri-01/official-regeneration/pure-generation/references/mother-garment-opaque-detail.png"
+  ],
+  "prompt": "Use the FULL original character illustration in image 1 as the edit input. Image 2 is the same mother's complete clothing region enlarged, only to see the original cuff and tiny fingertips accurately. Make ONE complete independently painted FAR SLEEVE component for the same ATRI chibi puppet: the sleeve on VIEWER RIGHT of the mother. It will rotate about her far shoulder, so it must be an intact sleeve, including the portions currently hidden by the shirt torso and hair. It must not be only the skinny exposed strip from the mother, and its shoulder must not taper to a needle point. This is the same loose long sailor uniform sleeve as the near arm, seen foreshortened in the mother's three-quarter-facing-right perspective.\nStrictly preserve the mother's visible far cuff size, slant, teal color, white narrow piping, grey-blue lining and the tiny soft fingertips emerging from it, as well as the original lower white sleeve visible above it. The hand is ONLY a few tiny fingertips hidden mostly in the cuff, exactly as in image2, no visible palm or wrist, no extra fingers, no detailed adult hand. Continue the obscured sleeve naturally up to a complete cloth sleeve cap fitting under the original shoulder. No bare upper arm. The attachment cap will be covered by collar/torso: do not add a black crossbar at that joint.\nRemove every other object: head, all hair, bows, ahoge, collar, tie, buttons, main shirt torso, near sleeve, legs and background. No collar edge, torso hem, hair strand or crop notch left attached to this arm. Paint the whole far sleeve as one continuous clean illustration, with the mother's delicate dark brown line weight, original pale cloth fold shading, smooth antialiasing, solid clean edges, no white fringe, opaque crumbs or low-alpha specks. Original 1145x1374 canvas and original pose and placement; genuine transparency everywhere outside this one complete sleeve and its tiny fingertips. Do not redesign, elongate the limb, spread the fingers, or make a different gesture. One transparent PNG, no text or reference guide.",
+  "tool": "built-in imagegen",
+  "output": "raw/arm-far-complete-03.png",
+  "output_sha256": "be3251d6d4c8249fd54a06a2df5340a64d2da558f4b8cdbeefbbbc537f23c257",
+  "review": "Initial broad-cuff rejection withdrawn: original cuff is partly hidden by torso. Whole-source two-corner placement then actual layering and 64-frame review; no stretch.",
+  "candidate": "scratch/candidates/atri-pure-components-01"
+}

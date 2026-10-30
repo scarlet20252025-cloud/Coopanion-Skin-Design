@@ -1,0 +1,32 @@
+{
+  "name": "hair-system-02",
+  "status": "registered-needs-whole-composition-review",
+  "reference": "hair-system-01",
+  "relative_matrix": [
+    [
+      0.9990090709894885,
+      -0.0007086260957145235,
+      0.46451424935362473
+    ],
+    [
+      0.0007086260957145235,
+      0.9990090709894885,
+      -0.020436270333008946
+    ]
+  ],
+  "matrix": [
+    [
+      0.8689461476192356,
+      -0.005069910014781762,
+      70.157934956975
+    ],
+    [
+      0.005069910014781763,
+      0.8689461476192356,
+      77.28650249077099
+    ]
+  ],
+  "reference_fit_rms": 1.3103942182135564,
+  "inliers": 32,
+  "alpha_policy": "generated alpha; premultiplied uniform similarity only"
+}

@@ -1,0 +1,17 @@
+{
+  "component": "rear-hair-complete-04",
+  "status": "provisional-in-candidate",
+  "method": "pure whole component imagegen edit",
+  "diagnosis": "53 has outer pony locks outside long alpha slits; imagegen semantically separates whole rear hair, no programmatic cutting",
+  "inputs": [
+    "characters/atri-01/official-regeneration/raw/rear-hair-complete-03.png",
+    "characters/atri-01/official-regeneration/pure-generation/references/user-ponytail-ownership.png",
+    "characters/atri-01/art-source/master-leg-v2.png"
+  ],
+  "prompt": "Edit IMAGE1 into the complete BROAD REAR-HAIR component only. The drawing currently mixes broad rear curtains with narrow outer ponytails. Remove ONLY the TWO NARROW OUTER LOCKS that lie OUTSIDE THE LONG TRANSPARENT SLITS on the left and right. Those narrow outer locks are ponytails and belong to separate layers. Keep the large broad INNER curtains and their original lower tips intact. The long slits will open out to the background when the narrow outer locks are removed. Do not erase either broad curtain or shorten their hair. Keep their connected rear scalp, full concealed inner regions, existing perspective, hair shading and flow. No face, bangs, bows, arms, clothing or legs.\nIMAGE2 is the user's structural explanation: the red outline marks the narrow outer LEFT ponytail to EXCLUDE. The unmarked broad RIGHT curtain in that example is the rear hair to KEEP. The annotation is identification only, never a target cut line. IMAGE3 is the full mother for identity/style. Redraw the resulting rear component continuously with complete smooth edges, no crop traces, no residual pony strand or white/red fringe, no new curls. One complete independent rear hair painting on genuine transparency, current canvas and placement unchanged. No text or marks.",
+  "tool": "built-in imagegen",
+  "output": "raw/rear-hair-complete-04.png",
+  "output_sha256": "9853a9d3760a1305209854dadb20531e003cc6a0e6f4c48bd192bd48722359cf",
+  "review": "Broad rear curtains independent of narrow outer ponies; original generated alpha retained except detached specks.",
+  "candidate": "scratch/candidates/atri-pure-components-01"
+}

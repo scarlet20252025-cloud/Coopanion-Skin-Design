@@ -1,0 +1,16 @@
+{
+  "component": "seated-whole-01",
+  "status": "provisional-in-candidate",
+  "method": "pure whole pose generation; no standing-body squash",
+  "inputs": [
+    "characters/atri-01/art-source/seated-v4.png",
+    "characters/atri-01/art-source/master-leg-v2.png"
+  ],
+  "prompt": "以图1完整的原坐姿插画为原图，重新绘制一张同一角色、同一坐姿的完整透明桌宠组件。图2为同一角色站姿母版，只核对角色风格和白色长水手衫、蓝袖口、红领带、发色与短小四肢的设计。保持图1完整三分之四朝右坐姿、原头身比、坐下自然摊开的衣摆、弯曲并拢的小腿和小脚、放在膝上的宽袖与小指尖。不能压扁躯干、拉长腿或改变姿势。所有头发、身体、衣袖和腿完整连贯绘制，轮廓细致清楚、干净抗锯齿，颜色阴影与母版一致，真正透明alpha，没有背景或地面影子。\n唯一面部变化：去掉眼睛、睫毛、眉毛、嘴，保留完整自然的空白脸和脸颊淡淡红晕；这些五官将由已验收的独立表情动画覆盖。刘海、脸缘短发、黑色蝴蝶结、呆毛、长发都保持图1设计和位置，不破坏额头头发或下巴轮廓。完整头部和全身一起保留，不能只给身体。\n不要旧像素拼补，不留裁口、白边、红杂点或邻接残线。按图1原画布1254×1254、原位置原比例输出这一张完整空白脸坐姿PNG，其余真实透明；不重新居中、放大或增加文字、棋盘格。",
+  "tool": "built-in imagegen",
+  "preserved": "All approved seated expression art and renderer overlay reused unchanged after registration",
+  "output": "raw/seated-whole-01.png",
+  "output_sha256": "d32e9441798571157e2e297e6d3ccc7501b5ecf8345816cea8fd88dd9d138fec",
+  "review": "Independent complete drawn sitting pose, blank face under original expression sources.161SIFT inliers,RMS1.16px. Long seated hair remains with whole pose.",
+  "candidate": "scratch/candidates/atri-pure-components-01"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "torso-complete-01",
+  "matching_features": 48,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "matrix": [
+    [
+      0.689849140192249,
+      -0.0016755917707801996,
+      179.70271167079454
+    ],
+    [
+      0.0016755917707801996,
+      0.689849140192249,
+      295.8488699274138
+    ]
+  ],
+  "inliers": 29,
+  "rms": 1.4614578145375965,
+  "max_residual": 3.2327667549791212
+}

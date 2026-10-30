@@ -64,7 +64,7 @@ def add(key, path, matrix=identity, z=0, pivot=None, role='fixed', clip=None, ma
         post=int(((pixels[:,:,3]>0)&(lab!=main)).sum())
         pixels[lab!=main]=0
     Image.fromarray(pixels).save(OUT/file)
-    records.append(dict(id=key,file=file,z=z,pivot=pivot or [592,581],role=role,poses=['seated','dizzy'] if key=='seated-clean' else ['standing'],source=str(path.relative_to(ROOT)),source_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),matrix=matrix.tolist(),clip=clip,removed_detached_pixels=removed,removed_detached_after_registration=post,art_status='provisional diagnostic; not user accepted'))
+    records.append(dict(id=key,file=file,z=z,pivot=pivot or [592,581],role=role,poses=['seated','dizzy'] if key=='seated-clean' else ['standing'],source=str(path.relative_to(ROOT)),source_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),matrix=(identity if matrix is None else matrix).tolist(),clip=clip,removed_detached_pixels=removed,removed_detached_after_registration=post,art_status='provisional diagnostic; not user accepted'))
 
 # 2026-10-16 user review round 2: the near lock must be ONE COMPLETE lock (its occluded length must
 # have content) and must not end in hair-thin tails. The user rejected pony-pair-left-01 and

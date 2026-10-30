@@ -1,0 +1,17 @@
+{
+  "component": "arm-far-complete-05",
+  "status": "rejected",
+  "diagnosis": "51 long/narrow ratio improved but torso flap protrudes alongside cuff. Prior source attached only as failure diagnostic, not target shape. White sleeve must terminate entirely within cuff.",
+  "inputs": [
+    "characters/atri-01/art-source/master-leg-v2.png",
+    "characters/atri-01/official-regeneration/raw/arm-far-complete-04.png",
+    "characters/atri-01/official-regeneration/pure-generation/references/mother-garment-opaque-detail.png"
+  ],
+  "prompt": "Produce one COMPLETE far-arm layer for the exact chibi character in IMAGE 1. IMAGE 1 is the full authoritative mother and edit target. IMAGE 2 is a failed diagnostic example ONLY: it has a white shirt-body flap sticking out BELOW/BESIDE the teal cuff. That flap is NOT ARM, NOT SLEEVE, and must not exist in the new component. Do not copy that defect. IMAGE 3 shows the mother's costume at larger scale for precise sleeve and fingertip style.\nThe far arm is the long slender white uniform sleeve on the VIEWER RIGHT of image1, with its small teal cuff and tiny fingers. Maintain original slim three-quarter far-side perspective: far cuff less than half the near cuff width, but shoulder height and cuff height similar to the near side. Draw the FULL concealed sleeve and rounded cloth shoulder cap so it can move independently; no needle-point crop. The white sleeve must terminate ENTIRELY INSIDE the blue cuff. The blue cuff must encircle the WHOLE sleeve opening, with no white cloth hanging below, beside or behind the cuff. Nothing exits the cuff except the mother's few tiny fingertips. No second long white flap, no shirt-torso remnant or shirt hem. No bare arm or extra fingers. Short tiny exposed fingertips, not a palm.\nKeep mother pose, all relative proportions, colors, delicate smooth dark brown outlines, white piping around the small teal cuff, narrow blue-grey interior and subtle white cloth folds. One continuous complete painting, no stitching. Shoulder attachment cap is concealed and has no black transverse seal.\nRemove every other part of the mother. Genuine transparent PNG, original1145x1374canvas/position, no enlarging the cuff to fill the image. Clean alpha edge, no white fringe or floaters, no background/checkerboard/text. Only the intact single far sleeve with cuff and fingertips, naturally complete from shoulder to cuff, with no torso material at all.",
+  "tool": "built-in imagegen",
+  "method": "pure complete component generation",
+  "output": "raw/arm-far-complete-05.png",
+  "output_sha256": "c27e9659cf6fda10c8eaf97bb43ae1708552b5b0ff311d94b84258def4dbfc73",
+  "review": "Same torso flap remains; not used.",
+  "candidate": null
+}

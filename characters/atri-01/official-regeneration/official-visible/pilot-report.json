@@ -1,0 +1,28 @@
+{
+  "status": "diagnostic only; visual review pending",
+  "mother": "4b3e09d6e782b042bf87eb9c7b3caf645b3ae43e4af919680afdf951f3c58e1c",
+  "visible_source": "near-visible-mother.png",
+  "hidden_source": "../raw/near-pony-hidden-02.png",
+  "hidden_registration": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0
+    ]
+  ],
+  "hidden_registration_note": "same canvas edit; visible generated pixels discarded; identity only for concealed pixels",
+  "root_fixed_until_y": 430,
+  "test_tip_displacement_px": [
+    -12,
+    0,
+    12
+  ],
+  "neutral_outside_mother_pixels": 0,
+  "neutral_premultiplied_mae": 1.1225009899362703e-07,
+  "body_expression_status": "remaining mother used for part diagnostic; not a runtime or expression test"
+}

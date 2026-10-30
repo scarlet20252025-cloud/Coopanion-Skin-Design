@@ -1,0 +1,10 @@
+{
+  "component": "body",
+  "prompt": "Edit the provided mother character into ONE isolated TORSO component for a layered animation rig. Keep the central white buttoned shirt body, its original blue sailor collar, red necktie, and the little neck above it. Erase the entire head, every hair, the left sleeve and its blue cuff, the right sleeve and its blue cuff, all fingers and all legs to genuine transparency. BOTH SLEEVES MUST BE COMPLETELY ABSENT. The output should look like a sleeveless central shirt body, not a complete long-sleeved outfit. The torso sides behind the removed arms are reconstructed with smooth short shoulder attachment caps and natural white cloth, ready to be covered by separate sleeves. Do not draw bare arms. Preserve the mother's exact three-quarter camera orientation, collar asymmetry, cloth folds, hem shape, gold buttons, red tie, colors, and thin cel-shaded line art. No redesign, no mannequin, no extra parts, no labels. Render the isolated torso at its original size and original position inside the same portrait canvas as the reference. Transparent background. Produce a complete body component with no holes or hair remnants and clean antialiased alpha.",
+  "status": "rejected",
+  "output": "raw/body-02.png",
+  "reference": "../master.png",
+  "review": [
+    "Collar aligns but lower buttons and hem deviate progressively; nonuniform torso proportions"
+  ]
+}

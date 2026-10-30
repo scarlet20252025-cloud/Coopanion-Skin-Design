@@ -1,0 +1,9 @@
+{
+  "component": "body",
+  "prompt": "Minimal precise edit to image1 torso component; image2 original mother is context. Preserve image1 exact long shirt shape, three gold button positions, tie, collar, folds, hem, proportions, palette and all other contours. ONLY correct its viewer-left shoulder attachment: remove the dark outlined oval armhole and concentric gray ring just under the left teal collar. Replace that oval hole drawing with continuous plain white fabric and a very soft pale-gray fold, keeping the existing outer shoulder silhouette. This is a layered animation underpiece; separate sleeve covers this white shoulder cap, so it must NOT look like an exposed outlined hole. Do not add sleeves, hands, extra fabric bulk or change collar. Retain transparent alpha, original framing, no resize, no cropping of hem, no white fringe. Keep everything else exactly unchanged.",
+  "status": "provisional",
+  "output": "raw/body-04.png",
+  "review": [
+    "Removed generated oval shoulder hole; visible collar/tie/button/hem geometry retained."
+  ]
+}

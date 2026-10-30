@@ -1,0 +1,22 @@
+{
+  "name": "arm-right-01",
+  "matching_features": 7,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "method": "manual source landmarks, least-squares similarity, all residuals retained",
+  "matrix": [
+    [
+      0.6099353360287629,
+      0.051059514559270845,
+      250.98467029276583
+    ],
+    [
+      -0.05105951455927082,
+      0.6099353360287629,
+      412.6299271707207
+    ]
+  ],
+  "inliers": 4,
+  "rms": 4.472883889013927,
+  "max_residual": 5.895779795594103
+}

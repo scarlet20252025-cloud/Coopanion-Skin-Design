@@ -1,0 +1,9 @@
+{
+  "source": "../art-source/master-leg-v2.png",
+  "source_sha256": "c980aa5eae8824f05009bd39e015be3b80b944d180fb8ed6f97831efccb78f4d",
+  "locked_master_unchanged": true,
+  "method": "source RGB; narrow trimap color-line matting; nearest local background and dark outline foreground; no painted pixels",
+  "unknown_band_mae": 0.007199178449809551,
+  "changed_alpha_gt_0_1": 3476,
+  "status": "review required"
+}

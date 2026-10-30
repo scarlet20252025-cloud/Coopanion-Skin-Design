@@ -1,0 +1,9 @@
+{
+  "component": "ponytail-right",
+  "prompt": "EDIT THE FIRST IMAGE. It is a transparent hair strand positioned on a 1145x1374 canvas. The SECOND image is the reference mother. Keep the strand's root and lower tip stationary. Bend its MIDDLE inward to the LEFT to follow the mother's far-right outer hair ribbon. At y600 the strand center should be about x820, not x855. At y650 its center should be about x850, not x880. At y700 its center should be about x875, not x904. Blend the correction smoothly to zero above y450 and below y850. Do not simply shift the entire image. Preserve width, color, line weight, alpha and the fixed root and lower end. Return only the corrected single transparent strand on the exact same canvas. No new strands or background.",
+  "output": "rejected/ponytail-right-03.png",
+  "status": "rejected",
+  "review": [
+    "Target-first concise coordinate-guided edit still does not make required middle correction. Stop this repeated edit method."
+  ]
+}

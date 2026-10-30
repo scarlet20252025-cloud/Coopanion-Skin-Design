@@ -242,3 +242,40 @@ LLM API 402: Insufficient Balance
 **② 坐姿五官仍是旧抠图素材**
 
 位置已在 v011 修好，画风仍与站立不一致。彻底解决要按站立画法重画整套坐姿五官（约 14 张），还没做。
+---
+
+## 10. 验收版本（v1.1.0）
+
+用户验收通过。**踩过的坑单独整理在 [ATRI-形象包-经验与坑.md](ATRI-形象包-经验与坑.md)**，
+共 18 条，每条带实测数字或源码位置——尤其这三条代价最大：
+
+1. **形象包目录**是 `data\home\companion\dataigures\`，不是 `dataigures\`（放错时程序完全静默）
+2. **手修的美术会被构建吃掉**：构建会从原始素材重新生成，发布又会覆盖，已有三处防护
+3. **坐姿判定不能看 `o.sit` 的值**：kit 在点击落地时瞬时抬到 .35，按值判断会导致每次点击都坐下
+
+### 这一版的成品状态
+
+| 项 | 值 |
+|---|---|
+| 版本 | `1.1.0` |
+| 舞台占比 | 96.0%（官方鲸鱼娘 95%） |
+| 弹性 | 常态 85% / 被提起 45% |
+| 步频步幅 | walk 2.1 / run 4.4 步·秒⁻¹，步幅 11–16° 随速度 |
+| 四肢相位 | 对角配对，无顺拐 |
+| 坐姿 | mode 白名单判定，点击/小跳不再误触发 |
+| 缩略图 | 512×512 上半身 |
+| 手修马尾 | md5 `6ab6bf6a`，三处防护确保不被覆盖 |
+| 词表 | 37 项（19 表情 + 18 动作），`about` 全齐 |
+
+### 发布链路（唯一通路）
+
+```bash
+# 改完源码/贴图后
+.venv/Scripts/python.exe characters/atri-01/official-regeneration/pure-generation/build-diagnostic.py
+.venv/Scripts/python.exe scripts/publish-atri-pack.py atri-v011
+# 装进 Coopanion
+cp -r packs/atri-v011 "E:/MC/gpt/tools/coopanion/app/data/home/companion/data/figures/atri-v011"
+# 发预览站
+.venv/Scripts/python.exe scripts/deploy-preview.py atri-v011
+```
+

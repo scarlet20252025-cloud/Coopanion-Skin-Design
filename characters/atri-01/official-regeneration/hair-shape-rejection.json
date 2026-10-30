@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-15",
+  "user_feedback": "头发为什么变成这种螺旋了",
+  "status": "new long-hair assembly rejected; do not integrate",
+  "inspected": ["raw/ponytail-left-02.png", "raw/ponytail-right-05.png", "raw/rear-complete-01.png", "assembly-connected-review.png", "../master.png"],
+  "findings": [
+    "Generated narrow locks exaggerate the S-shaped bend and change the internal light/dark division, giving a twisted ribbon appearance.",
+    "Generated wide rear hair adds curved terminal strands and a new internal flow; this changes the combined hairstyle even when endpoint registration is close.",
+    "Static source and static assembly already show this drift. Dynamic deformation is not required to produce it.",
+    "The current browser still loads the legacy hair-junctions candidate; it is not evidence that the new diagnostic art was integrated."
+  ],
+  "withdrawn": ["ponytail-left-02", "ponytail-right-05", "rear-complete-01"],
+  "invalidated_evidence": ["assembly-review.png", "assembly-connected-review.png", "assembly.png", "assembly-connected.png"],
+  "next_constraints": [
+    "Use the full mother's front three-quarter hairstyle as the authority, not a generic wig/back-view design.",
+    "Preserve strand flow, bend direction, fork positions and highlight/shadow sides together.",
+    "Broad rear curtains and narrow ponytails must be reviewed as a whole before isolated-component acceptance.",
+    "Do not repair rejected shape through programmatic warping, hidden extra curls or further endpoint-only alignment."
+  ],
+  "expression_dynamics": "approved and unchanged",
+  "complete": false
+}

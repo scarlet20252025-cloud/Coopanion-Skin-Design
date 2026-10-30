@@ -1,0 +1,9 @@
+{
+  "component": "leg-left",
+  "prompt": "Edit this exact full-body ATRI mother into one isolated rig component on real transparency: ONLY the bare leg at VIEWER LEFT, her nearer right leg, including its small rounded bare foot and a short hidden upper-thigh extension. Preserve exactly the mother's chibi leg thickness, length, warm peach color, delicate reddish-brown outline, simple foot with NO individual toes and slight diagonal from upper right to lower left. The visible original starts below the left portion of white shirt hem and finishes in the leftmost foot. Do not mirror it, do not lengthen or make anatomically detailed. Complete just a short rounded thigh cap above the shirt hem, to be hidden by the body layer. No clothes, no second leg, no hands, no hair, no shadows or text or background. Maintain original pose and all visible contour details from the mother, antialiased clean alpha.",
+  "status": "rejected",
+  "output": "raw/leg-left-01.png",
+  "review": [
+    "Isolated enlarged generation lengthened calf relative to foot. Degenerate feature registration discarded."
+  ]
+}

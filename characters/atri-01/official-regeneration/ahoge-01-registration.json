@@ -1,0 +1,22 @@
+{
+  "name": "ahoge-01",
+  "matching_features": 4,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "method": "manual source landmarks, least-squares similarity, all residuals retained",
+  "matrix": [
+    [
+      0.4170794415715094,
+      0.03141111602007792,
+      284.515218986413
+    ],
+    [
+      -0.03141111602007794,
+      0.41707944157150945,
+      -113.26492850316947
+    ]
+  ],
+  "inliers": 4,
+  "rms": 8.12794972219831,
+  "max_residual": 9.70056906321924
+}

@@ -1,0 +1,30 @@
+{
+  "component": "far-narrow-outer-tied-lock",
+  "generator": "set OPENAI_BASE_URL=<image relay> + characters/atri-01/official-regeneration/pure-generation/generate-lock.py",
+  "model": "gpt-image-2.5-sunburst",
+  "cost": "two paid generations, 24.1s and 24.2s, 2353 and 2356 total tokens",
+  "attempt": 35,
+  "prompt_file": "characters/atri-01/prompts/image25-far-lock-v2.txt",
+  "inputs": [
+    "raw/hair-system-02.png",
+    "characters/atri-01/master.png"
+  ],
+  "output": "raw/ponytail-far-complete-08.png",
+  "status": "rejected",
+  "screening": {
+    "alpha_components": 1,
+    "bbox": [
+      646,
+      224,
+      855,
+      994
+    ],
+    "uniform_similarity_fit_profile_error_px": 6.34,
+    "outside_master_px": 1.65,
+    "rotation_deg": -19.22
+  },
+  "review": [
+    "Second generation returned a thin wispy strand placed inside the head hair; the near-zero-error rotation (-19 deg) is unphysical and the assembled silhouette is worse than every library far lock (profile error sum 11986 vs 5155 for the kept asset).",
+    "Rejected; stopped generating after this second failure and kept the best measured far lock instead of retrying blindly."
+  ]
+}

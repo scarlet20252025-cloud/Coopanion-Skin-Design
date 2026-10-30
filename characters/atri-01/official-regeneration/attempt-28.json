@@ -1,0 +1,6 @@
+{
+  "component": "ponytail-right",
+  "prompt": "Edit image 1, the isolated far ponytail. Image 2 is the full mother for style and scale relationships. Image 1 incorrectly includes a FRONT CHEEK HAIR lobe in its upper half: the long pointed blade that sticks downward near the middle, forming a split and a recessed notch. Remove that extraneous front-hair lobe entirely. Replace the upper half with ONE simple narrow continuous tapering ribbon connecting the same root smoothly to the diagonal lower half. The inner edge must have NO pointed protrusion or abrupt notch between root and lower fork. Keep the entire LOWER HALF diagonal ribbon and its terminal two tips unchanged. Maintain the same canvas and same positions, dark delicate outline, shading and transparent alpha. This is the narrow BACK ponytail behind the head, not bangs or cheek hair. No other parts or background.",
+  "output": "raw/ponytail-right-05.png",
+  "status": "needs-full-composition-review"
+}

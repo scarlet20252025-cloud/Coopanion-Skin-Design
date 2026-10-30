@@ -1,0 +1,10 @@
+{
+  "component": "rear-hair",
+  "prompt": "Production texture edit, not character redesign. Reference is the exact locked mother illustration. Generate ONLY the broad back-hair component of this same character on true transparent alpha. It is the two broad pinkish taupe cascades behind the head and body, ending in the same outward and inward pointed tips near the shirt hem. Remove the face, ALL forehead bangs and short cheek-side front locks, the two NARROW OUTER TIED PONYTAILS, both black ribbons, top cowlick, all clothes and all skin. The narrow arcing ribbons of hair hanging from the black bows at the far left and right are separate ponytails and must be absent here; keep the adjacent thick long back hair. Complete the unseen hair underneath the removed face/body/clothing as one coherent continuous back-hair mass with natural broad tapered strands. Match the mother's VISIBLE broad-hair outer silhouette, original length, root positions, thin dark brown ink, beige rosy base, broad cream cel highlights and muted lavender brown shadows exactly. Keep original view and asymmetry; do not make symmetric frontal wig, front bangs, extra small strands, extra curls, new dark outlines, body-shaped cutouts, dangling pixels, white edge, black background, checkerboard or text. Preserve overall original portrait composition and component scale and location. One clean complete back-hair component only, ready to put behind the original face and body. Pay special attention to the source-visible lower tips: do not extend hair below their original level.",
+  "status": "rejected",
+  "reasons": [
+    "Narrow outer ponytails retained",
+    "Extra foreground locks and central wavy strand redesign"
+  ],
+  "output": "rejected/rear-hair-01-wrong-ownership.png"
+}

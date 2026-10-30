@@ -1,0 +1,21 @@
+{
+  "name": "mother-without-far-pony-01",
+  "matching_features": 327,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "matrix": [
+    [
+      1.0001558017966001,
+      0.00017420318061457882,
+      -0.0276191394784269
+    ],
+    [
+      -0.00017420318061457882,
+      1.0001558017966001,
+      0.37932695083158335
+    ]
+  ],
+  "inliers": 301,
+  "rms": 0.8538901749178738,
+  "max_residual": 2.7831800396528834
+}

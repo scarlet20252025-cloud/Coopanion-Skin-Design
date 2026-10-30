@@ -1,0 +1,16 @@
+{
+  "component": "far pony lower lobe concealed completion",
+  "status": "abandoned-unaccepted",
+  "prompt": "Use case: precise-object-edit. Complete the LEFT side of the LOWER HAIR LOCK in image 1. Image 1 is the edit target: enlarged original lower far ponytail on a transparent 1024-square canvas. Its top is a deliberate crop through the thin middle, NOT a root. Image 2 is the authoritative full chibi mother for style and the identity of the narrow outer ponytail. Preserve the existing right outer contour, two bottom pointed tips, placement, thin brown ink, mauve shadows and taupe highlights. The left edge of image 1 has a sharp artificial corner at approximately (400,410), followed by a long un-inked DIAGONAL SCISSOR CUT to (560,700): that is a missing hidden portion, not the intended hair silhouette. RECONSTRUCT THE MISSING HAIR TO THE LEFT OF THIS CUT: extend solid hair 60-80 pixels left of that diagonal throughout y430..730. Make a graceful continuous concave INNER contour from the upper left edge near (350,120), through approximately (375,430),(435,590),(500,720), returning smoothly to the existing first pointed tip near (555,790). The point coordinates describe the continuous natural edge, not a polygon; draw a smooth curve. The old diagonal cut and sharp corner must be entirely inside the completed hair and no longer visible as any line or color seam. Match each adjacent pale or shadowed color continuously across it. Do not merely trace the cut in brown; the missing width must be opaque hair. Do not add a third tip, spiral, new streak, rectangle or separated shard. Keep BOTH current bottom tips and the entire RIGHT contour unchanged. Keep the deliberate cropped top edge y120 and current scale; no root, bow, head, face, broad hair curtain, body, text or marks. True transparent background. Output just this completed lower hair component, in exactly the same composition as image 1.",
+  "inputs": [
+    "D:/Codex/Coopanion-Skin-Design/characters/atri-01/official-regeneration/references/far-lobe/target.png",
+    "D:/Codex/Coopanion-Skin-Design/characters/atri-01/master.png"
+  ],
+  "tool": "built-in imagegen",
+  "adobe_generation_calls": 0,
+  "output": "raw/far-lobe-complete-01.png",
+  "output_sha256": "a3e624e3ce4f2325a6e351705c0ca4c7a4b8b0560f970ffd61df5d55d71e875a",
+  "original_generation_filename": "exec-ea974a95-44cd-4c23-a96a-f28b5376c857.png",
+  "runtime_eligible": false,
+  "review": "Superseded by explicit user pure-generation correction. Stitching/hidden-fill diagnostic, not an accepted complete component; do not reuse as next generation reference."
+}

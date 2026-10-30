@@ -1,0 +1,9 @@
+{
+  "component": "rear-right",
+  "prompt": "One isolated broad FAR rear-hair lock on true transparent alpha. Image1 is authoritative ATRI mother, image2 is its VIEWER RIGHT broad rear-hair detail. Reproduce ONLY the WIDE INNER cascade in image2 immediately behind the white shirt and small cuff, curving down-right then inward into rounded tapered lower tips. The thin outer diagonal strip separated by the BLACK triangular gap at upper-right of image2 is a different ponytail: EXCLUDE that strip. Requested component has NO separate outer ribbon, NO loop, NO triangular hole. Preserve visible broad lock shape and angular pale highlights exactly from mother. Remove white shirt, teal cuff, fingertips and short face-framing hair at the top; complete the hair concealed behind sleeve into the same broad continuous lock. Add a smooth complete upper root hidden behind short front hair, and generous transparent margin so no top or tip is clipped. Keep original thin dark brown line, taupe pink-beige tone and simple cel shading. ONE connected broad inward-curving lock, no full wig or extra curling tips, no text/background/shadow. Full mother governs proportions and pose.",
+  "status": "superseded-by-connected-rear-review",
+  "output": "raw/rear-right-01.png",
+  "review": [
+    "Close lower curtain; flat upper root exposed in assembly. Used only as layout input to complete full rear underlayer."
+  ]
+}

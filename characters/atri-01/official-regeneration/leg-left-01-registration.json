@@ -1,0 +1,21 @@
+{
+  "name": "leg-left-01",
+  "matching_features": 4,
+  "alpha_policy": "generated alpha only; similarity registration, no cutout",
+  "status": "registered-needs-visual-review",
+  "matrix": [
+    [
+      0.0,
+      -0.0,
+      512.4852905273438
+    ],
+    [
+      0.0,
+      0.0,
+      1255.42822265625
+    ]
+  ],
+  "inliers": 4,
+  "rms": 0.0,
+  "max_residual": 0.0
+}

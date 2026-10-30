@@ -1,0 +1,16 @@
+{
+  "component": "connected-garment",
+  "prompt": "Precise reference-preserving animation source edit. Use this full original ATRI mother as the ONLY artwork authority. Retain the COMPLETE CONNECTED GARMENT AND BOTH SLEEVES together as ONE transparent component: short neck, teal sailor collar with white trim, red tie, original long white shirt with three gold buttons, BOTH white bell sleeves with teal cuffs/white stripes, and the SAME tiny mother fingertips barely exposed at the two cuffs. Remove head, every hair strand, bows, legs and background. Reconstruct only small shirt/shoulder areas formerly hidden by hair. This is a continuous connected sailor shirt, not detached sleeves and not a redesigned outfit. Keep the exact original 1145x1374 full canvas layout, original visible positions, asymmetry, short chibi arm proportions, foreshortening, widths, sleeve opening angles, fold shading and hem. No enlargement or centering. Do not extend the shoulders into pointed tips. Keep both sleeves naturally connected to the original shoulders under the collar, and keep both cuffs at their original locations. Preserve all visible mother geometry faithfully; no new pose, no stretched fabric, no extra hand anatomy. Actual transparent background with original delicate outlines, no shadow or labels.",
+  "output": "raw/garment-connected-01.png",
+  "status": "needs-whole-garment-and-mother-review",
+  "tool": "built-in-imagegen",
+  "references": [
+    "../master.png"
+  ],
+  "review": [
+    "Connected shoulder no longer has the pointed isolated cap.",
+    "32 inliers span collar, far cuff and hem, but ZERO near-cuff inliers. This is NOT a full sleeve acceptance.",
+    "Near cuff position and fingertip outline still differ and need direct mother verification.",
+    "Not integrated; no dynamic acceptance."
+  ]
+}

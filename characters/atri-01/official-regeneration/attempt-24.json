@@ -1,0 +1,9 @@
+{
+  "component": "ponytail-right",
+  "prompt": "Edit authoritative ATRI mother image1 into ONE complete FAR narrow outer ponytail at VIEWER RIGHT. Image2 red marking is ownership guidance only, never copy red. The requested ponytail is the SLIM OUTERMOST ribbon from the right black bow behind the right side of head, slanting down-right outside the broad rear curtain, making the outer boundary of the narrow triangular air gap beside the right shoulder, then ending in a small curved tapered tip near the outside of right cuff height. It is NOT the wide inner long rear-hair curtain. Keep original pose, perspective, pale taupe/beige fill, angular pale highlight, darker underside and thin original brown outline. Make a complete small rounded hidden root and complete lower narrow tail. Inner lower portion will be occluded by the broad rear hair; keep it modest, do not add large new lobes. NO broad wig, no other lock, no bow, face, scalp, clothing, hands, red strokes or background. Entire single slender strand visible on true transparency with margins. Full mother is geometry and style authority, not a mirrored copy of left side. Original source position roughly root(794,280), passes(852,600), outward curve(952,850), outer tip(960,940).",
+  "output": "raw/ponytail-right-01.png",
+  "status": "rejected-after-assembly",
+  "review": [
+    "Endpoints align but middle span too far outward, enlarging triangular gap. Do not consume in candidate."
+  ]
+}

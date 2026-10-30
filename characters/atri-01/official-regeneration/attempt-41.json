@@ -1,0 +1,17 @@
+{
+  "component": "far ponytail concealed completion",
+  "status": "abandoned-unaccepted",
+  "method_change": "Local square edit target with reversible crop instead of mostly-empty full mother canvas or magenta pseudo-mask.",
+  "prompt": "Use case: precise-object-edit. Asset: one complete, anatomically consistent far ponytail layer for the supplied chibi character. Image 1 is the EDIT TARGET, a 1024x1024 transparent square with the original visible narrow outer ponytail in its correct location. Image 2 is the FULL authoritative mother for overall hair flow, proportions, palette and ink style. Complete the single ponytail in image 1, keeping all of its existing right outer contour, long diagonal direction, two pointed bottom tips, color divisions and exact pixel location. This is NOT the broad inner rear hair curtain. Critical missing areas: (A) continue the narrow stem upward behind the head to a short rounded attachment at approximately (440,120), joining the existing visible top near (460,400); no bow/head/cheek hair. (B) The lower LEFT side was sliced off by the overlapping rear curtain. Restore a continuous hidden inner side, about 35-45 pixels LEFTWARD from the current diagonal cut between y710 and y850. The current cut has an unnatural elbow around (520,700); remove that elbow by drawing a single smooth concave inner silhouette from the thin middle through the lower lobe to the existing pointed tips. The missing left strip must be real solid matching shadowed taupe hair, not transparency, not a line tracing the old cut, not a separate detached shard. Make the dark mauve shadow and pale taupe highlight continuous across the old diagonal cut so the cut is no longer visible. Thin brown outer outline, mother-like cel shading, no additional curls or spiral. Keep the lower tips near their original bottom y950 and retain the RIGHT outline exactly. Do not enlarge, recenter, rotate, mirror or lengthen the lock. Keep this same 1024x1024 composition with genuine alpha transparency and all other space empty. Output only one completed single ponytail component, no character/body/face/hand/bow, no diagram/text/magenta/checkerboard.",
+  "inputs": [
+    "D:/Codex/Coopanion-Skin-Design/characters/atri-01/official-regeneration/references/far-local-v3/target.png",
+    "D:/Codex/Coopanion-Skin-Design/characters/atri-01/master.png"
+  ],
+  "tool": "built-in imagegen",
+  "adobe_generation_calls": 0,
+  "output": "raw/far-pony-hidden-03.png",
+  "output_sha256": "94a391f1a6eec161d62a0889b9eced9a60e59ff508f80ba872b7c7b084ada125",
+  "original_generation_filename": "exec-c8e976d4-677b-4c09-b293-50441462f2a2.png",
+  "runtime_eligible": false,
+  "review": "Superseded by explicit user pure-generation correction. Stitching/hidden-fill diagnostic, not an accepted complete component; do not reuse as next generation reference."
+}
