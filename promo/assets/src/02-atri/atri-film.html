@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>亚托利 · Asryto · 30 秒宣传片</title>
+<style>
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#060d14}
+svg{font-family:'Microsoft YaHei','Segoe UI',sans-serif}
+text{fill:#eaf6fb}
+.muted{fill:#8fa8b8}
+.accent{fill:#7fc4e0}
+.title{font-size:120px;font-weight:700;letter-spacing:2px}
+.large{font-size:76px;font-weight:700}
+.sub{font-size:32px}
+.tag{font-size:21px;letter-spacing:4px}
+.small{font-size:24px}
+#petMount{position:absolute;inset:0;width:800px;height:880px}
+#petMount svg{overflow:visible}
+button,input{font:16px 'Microsoft YaHei';padding:8px}
+#reviewControls{position:fixed;bottom:12px;left:12px;z-index:10;display:none;background:#122430;padding:8px;border-radius:8px;color:#eaf6fb}
+</style></head><body>
+<svg id="film" xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<defs>
+ <linearGradient id="sea" x1="0" y1="0" x2="0.35" y2="1">
+  <stop offset="0" stop-color="#0d2433"/><stop offset="0.45" stop-color="#0a1a26"/><stop offset="1" stop-color="#050b11"/>
+ </linearGradient>
+ <linearGradient id="shaft" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#9fe3ff" stop-opacity=".30"/><stop offset="0.55" stop-color="#6fb6d8" stop-opacity=".10"/><stop offset="1" stop-color="#6fb6d8" stop-opacity="0"/>
+ </linearGradient>
+ <linearGradient id="shaft2" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#cfeeff" stop-opacity=".18"/><stop offset="1" stop-color="#8ecbe6" stop-opacity="0"/>
+ </linearGradient>
+ <radialGradient id="glow" cx="0.5" cy="0.5"><stop offset="0" stop-color="#9fdcf5" stop-opacity=".55"/><stop offset="1" stop-color="#9fdcf5" stop-opacity="0"/></radialGradient>
+ <radialGradient id="vig" cx="0.5" cy="0.46" r="0.72"><stop offset="0.55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".62"/></radialGradient>
+ <pattern id="grain" width="120" height="120" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.1" fill="#bfe4f5" opacity=".16"/></pattern>
+ <clipPath id="bustClip"><ellipse cx="1210" cy="470" rx="330" ry="360"/></clipPath>
+ <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14"/></filter>
+ <filter id="soft2" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="4"/></filter>
+</defs>
+
+<rect width="1920" height="1080" fill="url(#sea)"/>
+<rect width="1920" height="1080" fill="url(#grain)"/>
+
+<!-- 水下光柱 -->
+<g id="shafts">
+ <polygon id="sh0" points="300,-40 520,-40 760,1120 420,1120" fill="url(#shaft)"/>
+ <polygon id="sh1" points="880,-40 1010,-40 1180,1120 960,1120" fill="url(#shaft2)"/>
+ <polygon id="sh2" points="1480,-40 1670,-40 1880,1120 1580,1120" fill="url(#shaft)"/>
+</g>
+
+<!-- 上升气泡层（确定性，由 timeline 驱动） -->
+<g id="bubbles" opacity=".9"></g>
+
+<!-- 水波横线 -->
+<g id="waves" fill="none" stroke="#8fc7e0" stroke-width="1.6" opacity=".14"></g>
+
+<!-- 角色身后的光晕 -->
+<circle id="halo" cx="1220" cy="520" r="380" fill="url(#glow)" opacity="0"/>
+
+<!-- 台标 -->
+<text x="120" y="88" class="tag muted">ASRYTO / COOPANION</text>
+<text x="1800" y="88" text-anchor="end" class="tag muted">亚托利 · ATRI</text>
+<path id="topRule" d="M120 112H1800" stroke="#7fc4e0" stroke-width="1.5" opacity=".28"/>
+
+<!-- 场景 1：出场 -->
+<g id="intro">
+ <text x="120" y="300" class="tag accent">海中来的高性能少女</text>
+ <text x="112" y="452" class="title">亚托利</text>
+ <text x="120" y="536" class="sub muted">住进桌面，陪你潜一小会儿。</text>
+ <path id="introRule" d="M120 590H812" stroke="#7fc4e0" stroke-width="3"/>
+ <text x="120" y="672" font-size="25" class="muted">银白长发 · 深海蓝 · 原创形象包</text>
+ <text x="120" y="712" font-size="23" class="accent" id="introQuote">「我可是高性能的。」</text>
+</g>
+
+<!-- 场景 2：对话 -->
+<g id="talk" opacity="0">
+ <text x="120" y="300" class="tag accent">01 / 桌面陪伴</text>
+ <text x="112" y="430" class="large">她就在那儿。</text>
+ <text x="120" y="508" class="sub muted">一句气泡，接住你的一段话。</text>
+ <g id="bubbleGroup" opacity="0" transform="translate(120 596)">
+  <path d="M0 26Q0 0 26 0H700Q726 0 726 26V178Q726 204 700 204H196L172 232L148 204H26Q0 204 0 178Z" fill="#10222e" stroke="#8fc7e0" stroke-width="2.5"/>
+  <text x="34" y="60" font-size="27" class="accent">亚托利</text>
+  <text x="34" y="112" font-size="30">别担心，这点事情我一下就做完了。</text>
+  <text x="34" y="162" font-size="30" class="accent">毕竟——我可是高性能的。</text>
+ </g>
+</g>
+
+<!-- 场景 3：点击 -->
+<g id="touch" opacity="0">
+ <text x="120" y="300" class="tag accent">02 / 真实互动</text>
+ <text id="touchTitle" x="112" y="430" class="large">戳一下，她会回应。</text>
+ <text id="touchSub" x="120" y="508" class="sub muted">呆毛一晃，小情绪自己冒出来。</text>
+ <g id="touchChips" transform="translate(120 604)" opacity="0">
+  <g><rect width="146" height="58" rx="29" fill="#16303f" stroke="#3f7b94" stroke-width="1.5"/><text x="73" y="39" text-anchor="middle" font-size="26">点击</text></g>
+  <g transform="translate(166 0)"><rect width="146" height="58" rx="29" fill="#16303f" stroke="#3f7b94" stroke-width="1.5"/><text x="73" y="39" text-anchor="middle" font-size="26">提起</text></g>
+  <g transform="translate(332 0)"><rect width="146" height="58" rx="29" fill="#16303f" stroke="#3f7b94" stroke-width="1.5"/><text x="73" y="39" text-anchor="middle" font-size="26">松手</text></g>
+ </g>
+</g>
+
+<!-- 场景 4：动作 -->
+<g id="actions" opacity="0">
+ <text x="120" y="300" class="tag accent">03 / 表情与动作</text>
+ <text x="112" y="430" class="large">表情，跟着动作走。</text>
+ <text x="120" y="508" class="sub muted">48 个标签，让陪伴动起来。</text>
+ <g id="actionChips" transform="translate(120 604)">
+  <g id="chip0"><rect width="158" height="62" rx="31" fill="#16303f"/><text x="79" y="42" text-anchor="middle" font-size="27">招手</text></g>
+  <g id="chip1" transform="translate(178 0)"><rect width="158" height="62" rx="31" fill="#16303f"/><text x="79" y="42" text-anchor="middle" font-size="27">开心</text></g>
+  <g id="chip2" transform="translate(356 0)"><rect width="158" height="62" rx="31" fill="#16303f"/><text x="79" y="42" text-anchor="middle" font-size="27">跳舞</text></g>
+  <g id="chip3" transform="translate(534 0)"><rect width="158" height="62" rx="31" fill="#16303f"/><text x="79" y="42" text-anchor="middle" font-size="27">害羞</text></g>
+ </g>
+</g>
+
+<!-- 场景 5：坐下 -->
+<g id="seated" opacity="0">
+ <text x="120" y="300" class="tag accent">04 / 小小日常</text>
+ <text id="seatTitle" x="112" y="430" class="large">坐下，歇一会儿。</text>
+ <text id="seatSub" x="120" y="508" class="sub muted">原坐姿、圈圈眼，接住小情绪。</text>
+ <path id="seatRule" d="M120 556H770" stroke="#7fc4e0" stroke-width="2" opacity=".5"/>
+ <g id="seatCards" transform="translate(120 600)">
+  <g id="sc0"><rect width="216" height="132" rx="16" fill="#0f2430" stroke="#2f5d73" stroke-width="1.5"/>
+   <text x="22" y="44" font-size="24" class="accent">坐姿</text>
+   <text x="22" y="82" font-size="21" class="muted">重心下沉</text>
+   <text x="22" y="112" font-size="21" class="muted">尾巴轻摆</text></g>
+  <g id="sc1" transform="translate(238 0)"><rect width="216" height="132" rx="16" fill="#0f2430" stroke="#2f5d73" stroke-width="1.5"/>
+   <text x="22" y="44" font-size="24" class="accent">圈圈眼</text>
+   <text x="22" y="82" font-size="21" class="muted">螺旋瞳孔</text>
+   <text x="22" y="112" font-size="21" class="muted">星星环绕</text></g>
+  <g id="sc2" transform="translate(476 0)"><rect width="216" height="132" rx="16" fill="#0f2430" stroke="#2f5d73" stroke-width="1.5"/>
+   <text x="22" y="44" font-size="24" class="accent">60 fps</text>
+   <text x="22" y="82" font-size="21" class="muted">实时渲染</text>
+   <text x="22" y="112" font-size="21" class="muted">不占前台</text></g>
+ </g>
+ <text id="seatQuote" x="120" y="790" font-size="26" class="accent" opacity="0">「休息也是高性能的一部分。」</text>
+</g>
+
+<!-- 场景 6：片尾 -->
+<g id="outro" opacity="0">
+ <text x="120" y="256" class="tag accent">把亚托利带回桌面</text>
+ <text x="112" y="404" class="title">亚托利</text>
+ <text x="120" y="486" font-size="34">作者 Asryto</text>
+ <text x="120" y="548" class="sub muted">Coopanion 形象包 · v1.1.0</text>
+ <g transform="translate(120 618)"><rect width="626" height="74" rx="12" fill="#7fc4e0"/><text x="313" y="48" text-anchor="middle" font-size="29" style="fill:#06202c">下载 ZIP → 装扮 → 导入</text></g>
+ <text x="120" y="768" font-size="24" class="muted">github.com/scarlet20252025-cloud/</text>
+ <text x="120" y="808" font-size="28" class="accent">Coopanion-Skin-Design</text>
+</g>
+
+<!-- 角色 -->
+<foreignObject id="petFrame" x="960" y="96" width="800" height="880">
+ <div xmlns="http://www.w3.org/1999/xhtml" style="position:relative;width:800px;height:880px"><div id="petMount"></div></div>
+</foreignObject>
+
+<!-- 指针与点击波纹 -->
+<g id="cursor" opacity="0" fill="#eaf6fb" stroke="#0c1a24" stroke-width="3"><path d="M0 0L5 39L15 30L25 48L34 43L24 26L38 22Z"/></g>
+<circle id="clickRing" r="22" fill="none" stroke="#7fc4e0" stroke-width="3" opacity="0"/>
+<circle id="clickCore" r="6" fill="#cdefff" opacity="0"/>
+
+<!-- 底部 -->
+<text id="bottomLabel" x="120" y="974" class="small muted">亚托利 · Coopanion 形象包</text>
+<path id="progressBg" d="M120 1028H1800" stroke="#2c4a5b" stroke-width="2"/>
+<path id="progress" d="M120 1028H1800" stroke="#7fc4e0" stroke-width="3"/>
+
+<!-- 暗角 -->
+<rect width="1920" height="1080" fill="url(#vig)" pointer-events="none"/>
+</svg>
+<div id="reviewControls"><label>时间 <input id="reviewTime" type="number" min="0" max="29.9" step=".1" value="0"></label><button id="reviewSeek">定位画面</button><button id="reviewPlay">播放</button></div>
+<script type="module" src="./timeline.js"></script>
+</body></html>
