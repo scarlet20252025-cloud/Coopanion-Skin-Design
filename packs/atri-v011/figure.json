@@ -1,0 +1,417 @@
+{
+  "manifest": 2,
+  "api": 2,
+  "id": "gpt-atri",
+  "name": {
+    "zh": "GPT 亚托莉 · 整件生成候选"
+  },
+  "version": "1.0.0",
+  "author": "Asryto",
+  "homepage": "https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design",
+  "entry": "figure.js",
+  "export": "createLayeredBody",
+  "model": "model.json",
+  "thumb": "tex/head-clean.png",
+  "vocab": [
+    {
+      "id": "neutral",
+      "kind": "expression",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "平静"
+        ]
+      }
+    },
+    {
+      "id": "happy",
+      "kind": "expression",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "开心"
+        ]
+      }
+    },
+    {
+      "id": "wink",
+      "kind": "expression",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "眨眼"
+        ]
+      }
+    },
+    {
+      "id": "love",
+      "kind": "expression",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "喜欢"
+        ]
+      }
+    },
+    {
+      "id": "shy",
+      "kind": "expression",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "害羞"
+        ]
+      }
+    },
+    {
+      "id": "surprised",
+      "kind": "expression",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "惊讶"
+        ]
+      }
+    },
+    {
+      "id": "angry",
+      "kind": "expression",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "生气"
+        ]
+      }
+    },
+    {
+      "id": "sad",
+      "kind": "expression",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "难过"
+        ]
+      }
+    },
+    {
+      "id": "smug",
+      "kind": "expression",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "得意"
+        ]
+      }
+    },
+    {
+      "id": "worried",
+      "kind": "expression",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "担心"
+        ]
+      }
+    },
+    {
+      "id": "flustered",
+      "kind": "expression",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "慌张"
+        ]
+      }
+    },
+    {
+      "id": "scared",
+      "kind": "expression",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "害怕"
+        ]
+      }
+    },
+    {
+      "id": "excited",
+      "kind": "expression",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "期待"
+        ]
+      }
+    },
+    {
+      "id": "confused",
+      "kind": "expression",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "疑惑"
+        ]
+      }
+    },
+    {
+      "id": "stand",
+      "kind": "motion",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "站起"
+        ]
+      }
+    },
+    {
+      "id": "wave",
+      "kind": "motion",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "招手"
+        ]
+      }
+    },
+    {
+      "id": "walk",
+      "kind": "motion",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "走路"
+        ]
+      }
+    },
+    {
+      "id": "run",
+      "kind": "motion",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "跑步"
+        ]
+      }
+    },
+    {
+      "id": "jump",
+      "kind": "motion",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "跳跃"
+        ]
+      }
+    },
+    {
+      "id": "hop",
+      "kind": "motion",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "小跳"
+        ]
+      }
+    },
+    {
+      "id": "look",
+      "kind": "motion",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "张望"
+        ]
+      }
+    },
+    {
+      "id": "turn",
+      "kind": "motion",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "转身"
+        ]
+      }
+    },
+    {
+      "id": "nod",
+      "kind": "motion",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "点头"
+        ]
+      }
+    },
+    {
+      "id": "shake",
+      "kind": "motion",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "摇头"
+        ]
+      }
+    },
+    {
+      "id": "spin",
+      "kind": "motion",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "转圈"
+        ]
+      }
+    },
+    {
+      "id": "sit",
+      "kind": "motion",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "坐下"
+        ]
+      }
+    },
+    {
+      "id": "sleep",
+      "kind": "motion",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "睡眠"
+        ]
+      }
+    },
+    {
+      "id": "dizzy",
+      "kind": "motion",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "晕乎"
+        ]
+      }
+    },
+    {
+      "id": "bow",
+      "kind": "motion",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "鞠躬"
+        ]
+      }
+    },
+    {
+      "id": "shiver",
+      "kind": "motion",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "发抖"
+        ]
+      }
+    },
+    {
+      "id": "dance",
+      "kind": "motion",
+      "seconds": 4,
+      "names": {
+        "zh": [
+          "跳舞"
+        ]
+      }
+    },
+    {
+      "id": "sleepy",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "犯困",
+          "困"
+        ]
+      },
+      "about": {
+        "zh": "眯眼打哈欠",
+        "en": "squints and yawns"
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "thinking",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "思考",
+          "想想"
+        ]
+      },
+      "about": {
+        "zh": "眼睛往上看,头顶冒圈",
+        "en": "looks up, rings rise overhead"
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "pout",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "嘟嘴",
+          "哼"
+        ]
+      },
+      "about": {
+        "zh": "嘴嘟起来,脸红,扭头不看你",
+        "en": "pouts, blushes and turns away from you"
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "determined",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "认真",
+          "坚定"
+        ]
+      },
+      "about": {
+        "zh": "眼神压低,一脸认真",
+        "en": "a lowered gaze, a serious face"
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "cry",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "大哭",
+          "哭"
+        ]
+      },
+      "about": {
+        "zh": "闭眼大哭,眼泪直流",
+        "en": "eyes shut, wailing, tears streaming"
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "flap",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "扑腾",
+          "激动"
+        ]
+      },
+      "about": {
+        "zh": "开心地蹦起来,呆毛和头发一起扑腾",
+        "en": "bounces happily, ahoge and hair flapping"
+      },
+      "seconds": 1.5
+    }
+  ]
+}

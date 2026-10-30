@@ -1,0 +1,495 @@
+{
+  "version": "1.0.0",
+  "author": "Asryto",
+  "repository": "https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design",
+  "method": "Only whole imagegen component drawings. Original approved expression art is the explicit exception. No mother pixel grafts, old cutout alphas, colour blending, outline restoration or mesh patches. Detached generated alpha islands removed mechanically; uniform similarity only.",
+  "status": "diagnostic; no installation or release",
+  "parts": [
+    {
+      "id": "tail-left",
+      "file": "tex/tail-left.png",
+      "z": -2,
+      "pivot": [
+        370,
+        300
+      ],
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "source": "characters\\atri-01\\official-regeneration\\raw\\pony-pair-left-01.png",
+      "source_sha256": "fbea4fe6c6fe6aedb0cb0d016c4dec97f1082b4e9c217ab90aa5d52c8f94eff1",
+      "matrix": [
+        [
+          0.9117840746131664,
+          0.054370823037015806,
+          28.014578300170285
+        ],
+        [
+          -0.054370823037015806,
+          0.9117840746131664,
+          47.48829965532752
+        ]
+      ],
+      "clip": null,
+      "removed_detached_pixels": 72,
+      "removed_detached_after_registration": 1,
+      "art_status": "provisional diagnostic; not user accepted"
+    },
+    {
+      "id": "tail-left-front",
+      "file": "tex/tail-left-front.png",
+      "z": 6.05,
+      "pivot": [
+        370,
+        300
+      ],
+      "role": "lock-front",
+      "poses": [
+        "standing"
+      ],
+      "source": "characters\\atri-01\\official-regeneration\\raw\\pony-pair-left-01.png",
+      "source_sha256": "fbea4fe6c6fe6aedb0cb0d016c4dec97f1082b4e9c217ab90aa5d52c8f94eff1",
+      "matrix": [
+        [
+          0.9117840746131664,
+          0.054370823037015806,
+          28.014578300170285
+        ],
+        [
+          -0.054370823037015806,
+          0.9117840746131664,
+          47.48829965532752
+        ]
+      ],
+      "clip": [
+        0,
+        640
+      ],
+      "removed_detached_pixels": 25121,
+      "removed_detached_after_registration": 1,
+      "art_status": "provisional diagnostic; not user accepted"
+    },
+    {
+      "id": "tail-right",
+      "file": "tex/tail-right.png",
+      "z": -1,
+      "pivot": [
+        803,
+        300
+      ],
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "source": "characters\\atri-01\\official-regeneration\\raw\\ponytail-far-complete-06.png",
+      "source_sha256": "9360b2034e17604c10f6fd6f1d3f9f5e44bc50285804888d0d77b0875bc41e16",
+      "matrix": [
+        [
+          0.7067514474843597,
+          -0.12229355498815572,
+          370.3163041333254
+        ],
+        [
+          0.12229355498815572,
+          0.7067514474843597,
+          84.17365590978403
+        ]
+      ],
+      "clip": null,
+      "removed_detached_pixels": 351,
+      "removed_detached_after_registration": 2,
+      "art_status": "provisional diagnostic; not user accepted"
+    },
+    {
+      "id": "rear-hair",
+      "file": "tex/rear-hair.png",
+      "z": 0,
+      "pivot": [
+        592,
+        581
+      ],
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "source": "characters\\atri-01\\official-regeneration\\raw\\rear-hair-complete-04.png",
+      "source_sha256": "9853a9d3760a1305209854dadb20531e003cc6a0e6f4c48bd192bd48722359cf",
+      "matrix": [
+        [
+          0.9,
+          0.0,
+          40.0
+        ],
+        [
+          0.0,
+          0.9,
+          15.0
+        ]
+      ],
+      "clip": null,
+      "removed_detached_pixels": 2481,
+      "removed_detached_after_registration": 362,
+      "art_status": "provisional diagnostic; not user accepted"
+    },
+    {
+      "id": "leg-left",
+      "file": "tex/leg-left.png",
+      "z": 1,
+      "pivot": [
+        551,
+        1090
+      ],
+      "role": "leg",
+      "poses": [
+        "standing"
+      ],
+      "source": "characters\\atri-01\\official-regeneration\\registered\\leg-left-02.png",
+      "source_sha256": "bd0828dab411884a6b5373e32f2fddf5341822d71e85637751fcaa8b385b0562",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "clip": null,
+      "removed_detached_pixels": 18,
+      "removed_detached_after_registration": 0,
+      "art_status": "provisional diagnostic; not user accepted"
+    },
+    {
+      "id": "leg-right",
+      "file": "tex/leg-right.png",
+      "z": 2,
+      "pivot": [
+        659,
+        1090
+      ],
+      "role": "leg",
+      "poses": [
+        "standing"
+      ],
+      "source": "characters\\atri-01\\official-regeneration\\registered\\leg-right-01.png",
+      "source_sha256": "3c1b3dd6f85a091bf6aa4545fae785e411b0afa8e693871c9b5f27fe0e4dd655",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "clip": null,
+      "removed_detached_pixels": 10,
+      "removed_detached_after_registration": 0,
+      "art_status": "provisional diagnostic; not user accepted"
+    },
+    {
+      "id": "arm-right",
+      "file": "tex/arm-right.png",
+      "z": 4,
+      "pivot": [
+        691,
+        660
+      ],
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "source": "characters\\atri-01\\official-regeneration\\raw\\arm-far-complete-03.png",
+      "source_sha256": "be3251d6d4c8249fd54a06a2df5340a64d2da558f4b8cdbeefbbbc537f23c257",
+      "matrix": [
+        [
+          0.3393935164183271,
+          -0.0014307150085494068,
+          515.6019122727432
+        ],
+        [
+          0.0014307150085494068,
+          0.3393935164183271,
+          574.5317374463482
+        ]
+      ],
+      "clip": null,
+      "removed_detached_pixels": 291,
+      "removed_detached_after_registration": 0,
+      "art_status": "provisional diagnostic; not user accepted"
+    },
+    {
+      "id": "body",
+      "file": "tex/body.png",
+      "z": 5,
+      "pivot": [
+        584,
+        666
+      ],
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "source": "characters\\atri-01\\official-regeneration\\registered\\torso-complete-03.png",
+      "source_sha256": "94cdd6fa1ddf902c1ca32d223e387357d8e406caf76a1d6e8eeffc6474a7e287",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "clip": null,
+      "removed_detached_pixels": 60,
+      "removed_detached_after_registration": 0,
+      "art_status": "provisional diagnostic; not user accepted"
+    },
+    {
+      "id": "arm-left",
+      "file": "tex/arm-left.png",
+      "z": 9,
+      "pivot": [
+        520,
+        650
+      ],
+      "role": "wave-arm",
+      "poses": [
+        "standing"
+      ],
+      "source": "characters\\atri-01\\official-regeneration\\registered\\arm-near-complete-02-clean.png",
+      "source_sha256": "1c5f4e84f3364ea2e8a25622f98c0d5b027a25262d779464c7a7f5de105ade48",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "clip": null,
+      "removed_detached_pixels": 0,
+      "removed_detached_after_registration": 0,
+      "art_status": "provisional diagnostic; not user accepted"
+    },
+    {
+      "id": "head-clean",
+      "file": "tex/head-clean.png",
+      "z": 6,
+      "pivot": [
+        592,
+        581
+      ],
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "source": "characters\\atri-01\\official-regeneration\\registered\\head-blank-01.png",
+      "source_sha256": "9eb815bc4b8bf62f28c4da5a376caa60ae81d607b47f4d112a4bdce4d89a7fdb",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "clip": null,
+      "removed_detached_pixels": 488,
+      "removed_detached_after_registration": 0,
+      "art_status": "provisional diagnostic; not user accepted"
+    },
+    {
+      "id": "bow-left",
+      "file": "tex/bow-left.png",
+      "z": 6.1,
+      "pivot": [
+        370,
+        300
+      ],
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "source": "characters\\atri-01\\official-regeneration\\registered\\bow-left-01.png",
+      "source_sha256": "16262caf070d2e2d1a5c7c4c7a003aead1f2f76077105d8b90a91b965fb8b9bc",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "clip": null,
+      "removed_detached_pixels": 1,
+      "removed_detached_after_registration": 0,
+      "art_status": "provisional diagnostic; not user accepted"
+    },
+    {
+      "id": "bow-right",
+      "file": "tex/bow-right.png",
+      "z": 6.2,
+      "pivot": [
+        803,
+        300
+      ],
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "source": "characters\\atri-01\\official-regeneration\\registered\\bow-right-01.png",
+      "source_sha256": "bbe613bea92327d68cdb9adb5e1ed0358c7c6d3a74a680b08c6852116e54a61b",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "clip": null,
+      "removed_detached_pixels": 3,
+      "removed_detached_after_registration": 0,
+      "art_status": "provisional diagnostic; not user accepted"
+    },
+    {
+      "id": "ahoge",
+      "file": "tex/ahoge.png",
+      "z": 8,
+      "pivot": [
+        565,
+        169
+      ],
+      "role": "fixed",
+      "poses": [
+        "standing"
+      ],
+      "source": "characters\\atri-01\\official-regeneration\\registered\\ahoge-01.png",
+      "source_sha256": "ca271014b77fdd1dd1b4e84a934ae927110584d2d92be933b0f683c74f139b92",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "clip": null,
+      "removed_detached_pixels": 1,
+      "removed_detached_after_registration": 0,
+      "art_status": "provisional diagnostic; not user accepted"
+    },
+    {
+      "id": "seated-clean",
+      "file": "tex/seated-clean.png",
+      "z": 0,
+      "pivot": [
+        588,
+        1120
+      ],
+      "role": "fixed",
+      "poses": [
+        "seated",
+        "dizzy"
+      ],
+      "source": "characters\\atri-01\\official-regeneration\\raw\\seated-whole-01.png",
+      "source_sha256": "d32e9441798571157e2e297e6d3ccc7501b5ecf8345816cea8fd88dd9d138fec",
+      "matrix": [
+        [
+          0.9004323529620022,
+          0.002643285227231564,
+          4.522182082062541
+        ],
+        [
+          -0.002643285227231564,
+          0.9004323529620022,
+          291.2658504151299
+        ]
+      ],
+      "clip": null,
+      "removed_detached_pixels": 11388,
+      "removed_detached_after_registration": 0,
+      "art_status": "provisional diagnostic; not user accepted"
+    }
+  ],
+  "seated_registration": {
+    "matrix": [
+      [
+        0.9004323529620022,
+        0.002643285227231564,
+        4.522182082062541
+      ],
+      [
+        -0.002643285227231564,
+        0.9004323529620022,
+        291.2658504151299
+      ]
+    ],
+    "inliers": 161,
+    "rms": 1.157350490108042,
+    "max_residual": 3.421743006815214,
+    "status": "registration only; expression placement and pose art need review"
+  },
+  "expression_files": {
+    "tex/source-012.png": "df2c81ff2b81b22dd5341c028fc0e03279b52337eef6dfd73d0ddea44103faad",
+    "tex/source-013.png": "a9c593c1465140f077abeeed8300e9413f85fa4d7af5946b51d3ac8d7efd7e57",
+    "tex/source-014.png": "0400d6091dd89b444f042d8e4b58cd8fbdd3cdcc692ac40db9d23e2e6e311b7d",
+    "tex/source-015.png": "a0a72a49a15ed171a930934a72078f8cc25be59f4e635954b103be1d9238905b",
+    "tex/source-016.png": "b9a236fb7e2da248b90520209dc502694e85353766d751a709ab7abadbb33364",
+    "tex/source-017.png": "9ff4bd2a1a0cd851399185a6e01f3779177c567e8bda94167ec7197bf1cca3b4",
+    "tex/source-018.png": "b0bd1ae26f0516cbf3a79c37d8db41b994a1882f22fc08600bcc48f835a56ec9",
+    "tex/source-019.png": "2aff4142b92011dbf8d16916e999a6d80177e65bb6856e0f1f17466135b3bfc2",
+    "tex/source-020.png": "9db6ac0c6aec1a44c9f685e386d27345e241aa1e7bc933b7cdc3eac77f2921c7",
+    "tex/source-021.png": "7c48d1eded0796bcf50eab0c0c14c4dd68e5ccb85dde2437c613d378058bbbd5",
+    "tex/source-022.png": "4ed0a08ea188517fd8576dfb4238b436f832aa7468c4cb10d62ec89611c3b1c9",
+    "tex/source-023.png": "e15a3217a50d445164f0109e2332fc51e44a83903cc49e106dec201ea00c875c",
+    "tex/source-024.png": "ee3e5531ddf1503d06411746baa7da8781dc1781b9bd1ce13591ebf94bdc744b",
+    "tex/source-025.png": "2c214e304b3269e3e55280afcd68b5a61e353e07952f9b98f032d7c91dce8551",
+    "tex/source-026.png": "c8bdfb4d681cb2b91dbd2501c196b4e0781de9cc222911bf5da44437cd32ee3b",
+    "tex/source-027.png": "41fd1977c50c38048df31a9fb121e6c3ffa3662b3388b8b122b64bf1e9ba03bc",
+    "tex/source-028.png": "8f530bb69106d78c816aaa4077de030e9752879b5aa6e2336aed250545230eda",
+    "tex/source-029.png": "0737dbc2ff464eb6e93bb992e9b738e8cf68441786b8a28ed892b561486a0ea4",
+    "tex/source-030.png": "d45d0815d07b49c8ef17e76f29c4468ce5dbd37e2c25078f61728cac0aa43510",
+    "tex/source-031.png": "3aa1f2b151e0ae1073854ebf589f6e7a5922876efb95507812ebf8e4b1f5519a",
+    "tex/source-032.png": "8c844f5f52e00f8ba48541948b9ab8c03522fd224364b0e37e3c63c4e58b2546",
+    "tex/source-033.png": "99ae81cd5618606351a1c333dca7cba54742b3ce589b7d0e87d99e1326ac9764",
+    "tex/source-036.png": "46177c3afb73b7fe0012f022ff36b9225af99c977ed2f48fb3698a4d3ad74128",
+    "tex/source-037.png": "2b4e0e8c5056d38faaf2455ee3cdb5ee4a394dafe7b49a678ec9451a66a1dd2a",
+    "tex/source-038.png": "c15a4c74239a920fda1efbdbc83928450ca29056baa0aff36b7ef6a44c85894f",
+    "tex/source-039.png": "bf86a87b4db17f7b1ed2a6b301ef1bcc1510f2de9bd68a764c2f01360f821cdb"
+  },
+  "hair_registration": "two anchor initial placements / rear initial uniform placement; no exact reconstruction claim",
+  "far_arm_correction": "Earlier visible-cuff-width assumption withdrawn. Full cuff is partly occluded by torso; assembly uses complete generated source50 behind complete generated torso."
+}
