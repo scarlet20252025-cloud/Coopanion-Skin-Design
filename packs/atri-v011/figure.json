@@ -3,7 +3,10 @@
   "api": 2,
   "id": "gpt-atri",
   "name": {
-    "zh": "GPT 亚托莉 · 整件生成候选"
+    "zh": "亚托莉 ATRI",
+    "zh-Hant": "亞托莉 ATRI",
+    "en": "ATRI",
+    "ja": "アトリ"
   },
   "version": "1.0.0",
   "author": "Asryto",
@@ -412,6 +415,31 @@
         "en": "bounces happily, ahoge and hair flapping"
       },
       "seconds": 1.5
+    }
+  ],
+  "about": {
+    "zh": "仿生人少女亚托莉，浅蓝色长发、红色眼睛、水手服、胸前红色蝴蝶结。性格开朗认真、爱逞强、好奇心强，喜欢证明自己有用；说话干脆有精神，常把「我可是高性能的」挂在嘴边，被夸会得意，被小看会不服气地再强调一次。",
+    "zh-Hant": "仿生人少女亞托莉，淺藍色長髮、紅色眼睛、水手服、胸前紅色蝴蝶結。性格開朗認真、愛逞強、好奇心強，喜歡證明自己有用；說話乾脆有精神，常把「我可是高性能的」掛在嘴邊，被誇會得意，被小看會不服氣地再強調一次。",
+    "en": "ATRI, a synthetic girl: light-blue hair, red eyes, a sailor uniform and a red bow at the collar. Bright, earnest and a little proud, endlessly curious and eager to prove she is useful. She talks crisply and with energy, and her catchphrase is \"I'm high-performance, you know\" - pleased when praised, quick to insist on it again when underestimated.",
+    "ja": "アンドロイドの少女アトリ。水色の長い髪、赤い瞳、セーラー服、胸元に赤いリボン。明るく真面目で、ちょっと強がり、好奇心が強い。役に立てることを示したがる。話し方はきびきびとして元気で、口癖は「私は高性能ですから」。褒められると得意げになり、見くびられるとむきになって言い直す。"
+  },
+  "axes": [],
+  "presets": [],
+  "sounds": {},
+  "can": {
+    "walk": true
+  },
+  "license": "AGPL-3.0-or-later",
+  "credits": [
+    {
+      "role": "character",
+      "name": "ATRI (ATRI -My Dear Moments-)",
+      "url": "https://atri-lg.com/"
+    },
+    {
+      "role": "art, code",
+      "name": "Asryto",
+      "url": "https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design"
     }
   ]
 }
