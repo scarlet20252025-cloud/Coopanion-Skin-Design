@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><title>亚托利 · Asryto · 30 秒宣传片</title>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>亚托利 · Asryto · 36 秒宣传片</title>
 <style>
 html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#060d14}
 svg{font-family:'Microsoft YaHei','Segoe UI',sans-serif}
 text{fill:#eaf6fb}
 .muted{fill:#8fa8b8}
 .accent{fill:#7fc4e0}
+.warn{fill:#ffb454}
 .title{font-size:120px;font-weight:700;letter-spacing:2px}
 .large{font-size:76px;font-weight:700}
 .sub{font-size:32px}
@@ -28,6 +29,7 @@ button,input{font:16px 'Microsoft YaHei';padding:8px}
   <stop offset="0" stop-color="#cfeeff" stop-opacity=".18"/><stop offset="1" stop-color="#8ecbe6" stop-opacity="0"/>
  </linearGradient>
  <radialGradient id="glow" cx="0.5" cy="0.5"><stop offset="0" stop-color="#9fdcf5" stop-opacity=".55"/><stop offset="1" stop-color="#9fdcf5" stop-opacity="0"/></radialGradient>
+ <radialGradient id="glowRed" cx="0.5" cy="0.5"><stop offset="0" stop-color="#ff7b5c" stop-opacity=".42"/><stop offset="1" stop-color="#ff7b5c" stop-opacity="0"/></radialGradient>
  <radialGradient id="vig" cx="0.5" cy="0.46" r="0.72"><stop offset="0.55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".62"/></radialGradient>
  <pattern id="grain" width="120" height="120" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.1" fill="#bfe4f5" opacity=".16"/></pattern>
  <clipPath id="bustClip"><ellipse cx="1210" cy="470" rx="330" ry="360"/></clipPath>
@@ -45,16 +47,13 @@ button,input{font:16px 'Microsoft YaHei';padding:8px}
  <polygon id="sh2" points="1480,-40 1670,-40 1880,1120 1580,1120" fill="url(#shaft)"/>
 </g>
 
-<!-- 上升气泡层（确定性，由 timeline 驱动） -->
 <g id="bubbles" opacity=".9"></g>
-
-<!-- 水波横线 -->
 <g id="waves" fill="none" stroke="#8fc7e0" stroke-width="1.6" opacity=".14"></g>
 
-<!-- 角色身后的光晕 -->
+<!-- 角色身后光晕：蓝（常规）与红（生气）两层，按时间交叉淡入 -->
 <circle id="halo" cx="1220" cy="520" r="380" fill="url(#glow)" opacity="0"/>
+<circle id="haloRed" cx="1220" cy="520" r="380" fill="url(#glowRed)" opacity="0"/>
 
-<!-- 台标 -->
 <text x="120" y="88" class="tag muted">ASRYTO / COOPANION</text>
 <text x="1800" y="88" text-anchor="end" class="tag muted">亚托利 · ATRI</text>
 <path id="topRule" d="M120 112H1800" stroke="#7fc4e0" stroke-width="1.5" opacity=".28"/>
@@ -66,54 +65,81 @@ button,input{font:16px 'Microsoft YaHei';padding:8px}
  <text x="120" y="536" class="sub muted">住进桌面，陪你潜一小会儿。</text>
  <path id="introRule" d="M120 590H812" stroke="#7fc4e0" stroke-width="3"/>
  <text x="120" y="672" font-size="25" class="muted">银白长发 · 深海蓝 · 原创形象包</text>
- <text x="120" y="712" font-size="23" class="accent" id="introQuote">「我可是高性能的。」</text>
+ <text id="introQuote" x="120" y="712" font-size="23" class="accent">「我可是高性能的。」</text>
 </g>
 
-<!-- 场景 2：对话 -->
+<!-- 场景 2：对话（多轮） -->
 <g id="talk" opacity="0">
  <text x="120" y="300" class="tag accent">01 / 桌面陪伴</text>
- <text x="112" y="430" class="large">她就在那儿。</text>
- <text x="120" y="508" class="sub muted">一句气泡，接住你的一段话。</text>
- <g id="bubbleGroup" opacity="0" transform="translate(120 596)">
-  <path d="M0 26Q0 0 26 0H700Q726 0 726 26V178Q726 204 700 204H196L172 232L148 204H26Q0 204 0 178Z" fill="#10222e" stroke="#8fc7e0" stroke-width="2.5"/>
-  <text x="34" y="60" font-size="27" class="accent">亚托利</text>
-  <text x="34" y="112" font-size="30">别担心，这点事情我一下就做完了。</text>
-  <text x="34" y="162" font-size="30" class="accent">毕竟——我可是高性能的。</text>
+ <text id="talkTitle" x="112" y="424" class="large">她就在那儿。</text>
+ <text id="talkSub" x="120" y="500" class="sub muted">一句气泡，接住你的一段话。</text>
+ <g id="bubbleGroup" opacity="0" transform="translate(120 566)">
+  <path d="M0 26Q0 0 26 0H700Q726 0 726 26V186Q726 212 700 212H196L172 240L148 212H26Q0 212 0 186Z" fill="#10222e" stroke="#8fc7e0" stroke-width="2.5"/>
+  <text id="bubbleName" x="34" y="60" font-size="27" class="accent">亚托利</text>
+  <text id="bubbleL1" x="34" y="116" font-size="29">别担心，这点事情我一下就做完了。</text>
+  <text id="bubbleL2" x="34" y="166" font-size="29" class="accent">毕竟——我可是高性能的。</text>
+ </g>
+ <g id="turnMarks" transform="translate(120 828)" opacity="0">
+  <circle id="tm0" cx="10" cy="0" r="7" fill="#7fc4e0"/>
+  <circle id="tm1" cx="44" cy="0" r="7" fill="#2f5d73"/>
+  <circle id="tm2" cx="78" cy="0" r="7" fill="#2f5d73"/>
  </g>
 </g>
 
-<!-- 场景 3：点击 -->
+<!-- 场景 3：点击与提起 -->
 <g id="touch" opacity="0">
  <text x="120" y="300" class="tag accent">02 / 真实互动</text>
- <text id="touchTitle" x="112" y="430" class="large">戳一下，她会回应。</text>
- <text id="touchSub" x="120" y="508" class="sub muted">呆毛一晃，小情绪自己冒出来。</text>
- <g id="touchChips" transform="translate(120 604)" opacity="0">
+ <text id="touchTitle" x="112" y="424" class="large">戳一下，她会回应。</text>
+ <text id="touchSub" x="120" y="500" class="sub muted">呆毛一晃，小情绪自己冒出来。</text>
+ <g id="touchChips" transform="translate(120 590)" opacity="0">
   <g><rect width="146" height="58" rx="29" fill="#16303f" stroke="#3f7b94" stroke-width="1.5"/><text x="73" y="39" text-anchor="middle" font-size="26">点击</text></g>
   <g transform="translate(166 0)"><rect width="146" height="58" rx="29" fill="#16303f" stroke="#3f7b94" stroke-width="1.5"/><text x="73" y="39" text-anchor="middle" font-size="26">提起</text></g>
   <g transform="translate(332 0)"><rect width="146" height="58" rx="29" fill="#16303f" stroke="#3f7b94" stroke-width="1.5"/><text x="73" y="39" text-anchor="middle" font-size="26">松手</text></g>
  </g>
 </g>
 
-<!-- 场景 4：动作 -->
+<!-- 场景 4：动作与表情 -->
 <g id="actions" opacity="0">
- <text x="120" y="300" class="tag accent">03 / 表情与动作</text>
- <text x="112" y="430" class="large">表情，跟着动作走。</text>
- <text x="120" y="508" class="sub muted">48 个标签，让陪伴动起来。</text>
- <g id="actionChips" transform="translate(120 604)">
-  <g id="chip0"><rect width="158" height="62" rx="31" fill="#16303f"/><text x="79" y="42" text-anchor="middle" font-size="27">招手</text></g>
-  <g id="chip1" transform="translate(178 0)"><rect width="158" height="62" rx="31" fill="#16303f"/><text x="79" y="42" text-anchor="middle" font-size="27">开心</text></g>
-  <g id="chip2" transform="translate(356 0)"><rect width="158" height="62" rx="31" fill="#16303f"/><text x="79" y="42" text-anchor="middle" font-size="27">跳舞</text></g>
-  <g id="chip3" transform="translate(534 0)"><rect width="158" height="62" rx="31" fill="#16303f"/><text x="79" y="42" text-anchor="middle" font-size="27">害羞</text></g>
+ <text x="120" y="290" class="tag accent">03 / 表情与动作</text>
+ <text id="actTitle" x="112" y="412" class="large">表情，跟着动作走。</text>
+ <text id="actSub" x="120" y="486" class="sub muted">48 个标签，让陪伴动起来。</text>
+ <g id="actionChips" transform="translate(120 560)">
+  <g id="chip0"><rect width="158" height="58" rx="29" fill="#16303f"/><text x="79" y="39" text-anchor="middle" font-size="26">招手</text></g>
+  <g id="chip1" transform="translate(176 0)"><rect width="158" height="58" rx="29" fill="#16303f"/><text x="79" y="39" text-anchor="middle" font-size="26">开心</text></g>
+  <g id="chip2" transform="translate(352 0)"><rect width="158" height="58" rx="29" fill="#16303f"/><text x="79" y="39" text-anchor="middle" font-size="26">跳舞</text></g>
+  <g id="chip3" transform="translate(528 0)"><rect width="158" height="58" rx="29" fill="#16303f"/><text x="79" y="39" text-anchor="middle" font-size="26">害羞</text></g>
+  <g id="chip4" transform="translate(0 74)"><rect width="158" height="58" rx="29" fill="#16303f"/><text x="79" y="39" text-anchor="middle" font-size="26">惊讶</text></g>
+  <g id="chip5" transform="translate(176 74)"><rect width="158" height="58" rx="29" fill="#16303f"/><text x="79" y="39" text-anchor="middle" font-size="26">蹭蹭</text></g>
+  <g id="chip6" transform="translate(352 74)"><rect width="158" height="58" rx="29" fill="#16303f"/><text x="79" y="39" text-anchor="middle" font-size="26">晕乎</text></g>
+  <g id="chip7" transform="translate(528 74)"><rect width="158" height="58" rx="29" fill="#16303f"/><text x="79" y="39" text-anchor="middle" font-size="26">生气</text></g>
  </g>
 </g>
 
-<!-- 场景 5：坐下 -->
+<!-- 场景 5：萝卜子 —— 叫她萝卜子，她生气 -->
+<g id="radish" opacity="0">
+ <text x="120" y="286" class="tag warn">04 / 叫她萝卜子试试</text>
+ <text id="radTitle" x="112" y="404" class="large">「萝卜子？」</text>
+ <text id="radSub" x="120" y="474" class="sub muted">这个名字，她不太喜欢。</text>
+ <g id="radBubble" opacity="0" transform="translate(120 540)">
+  <path d="M0 24Q0 0 24 0H676Q700 0 700 24V164Q700 188 676 188H190L166 214L142 188H24Q0 188 0 164Z" fill="#2a1a1e" stroke="#ff8a6b" stroke-width="2.5"/>
+  <text id="radName" x="32" y="56" font-size="26" class="warn">亚托利</text>
+  <text id="radL1" x="32" y="110" font-size="29">……你刚才，叫我什么？</text>
+  <text id="radL2" x="32" y="160" font-size="29" class="warn">我才不是萝卜子！我可是高性能的！</text>
+ </g>
+ <g id="radSteps" transform="translate(120 790)" opacity="0">
+  <g id="rs0"><rect width="196" height="58" rx="14" fill="#231a1c" stroke="#7a4034" stroke-width="1.5"/><text x="98" y="39" text-anchor="middle" font-size="23">惊讶</text></g>
+  <g id="rs1" transform="translate(212 0)"><rect width="196" height="58" rx="14" fill="#231a1c" stroke="#7a4034" stroke-width="1.5"/><text x="98" y="39" text-anchor="middle" font-size="23">嘟嘴</text></g>
+  <g id="rs2" transform="translate(424 0)"><rect width="196" height="58" rx="14" fill="#231a1c" stroke="#7a4034" stroke-width="1.5"/><text x="98" y="39" text-anchor="middle" font-size="23">生气 · 青筋</text></g>
+ </g>
+</g>
+
+<!-- 场景 6：坐姿 -->
 <g id="seated" opacity="0">
- <text x="120" y="300" class="tag accent">04 / 小小日常</text>
- <text id="seatTitle" x="112" y="430" class="large">坐下，歇一会儿。</text>
- <text id="seatSub" x="120" y="508" class="sub muted">原坐姿、圈圈眼，接住小情绪。</text>
- <path id="seatRule" d="M120 556H770" stroke="#7fc4e0" stroke-width="2" opacity=".5"/>
- <g id="seatCards" transform="translate(120 600)">
+ <text x="120" y="290" class="tag accent">05 / 小小日常</text>
+ <text id="seatTitle" x="112" y="412" class="large">坐下，歇一会儿。</text>
+ <text id="seatSub" x="120" y="486" class="sub muted">原坐姿、圈圈眼，接住小情绪。</text>
+ <path id="seatRule" d="M120 534H770" stroke="#7fc4e0" stroke-width="2" opacity=".5"/>
+ <g id="seatCards" transform="translate(120 578)">
   <g id="sc0"><rect width="216" height="132" rx="16" fill="#0f2430" stroke="#2f5d73" stroke-width="1.5"/>
    <text x="22" y="44" font-size="24" class="accent">坐姿</text>
    <text x="22" y="82" font-size="21" class="muted">重心下沉</text>
@@ -127,10 +153,10 @@ button,input{font:16px 'Microsoft YaHei';padding:8px}
    <text x="22" y="82" font-size="21" class="muted">实时渲染</text>
    <text x="22" y="112" font-size="21" class="muted">不占前台</text></g>
  </g>
- <text id="seatQuote" x="120" y="790" font-size="26" class="accent" opacity="0">「休息也是高性能的一部分。」</text>
+ <g id="seatQuote" opacity="0"><text x="120" y="794" font-size="26" class="accent">「休息也是高性能的一部分。」</text></g>
 </g>
 
-<!-- 场景 6：片尾 -->
+<!-- 场景 7：片尾 -->
 <g id="outro" opacity="0">
  <text x="120" y="256" class="tag accent">把亚托利带回桌面</text>
  <text x="112" y="404" class="title">亚托利</text>
@@ -141,24 +167,28 @@ button,input{font:16px 'Microsoft YaHei';padding:8px}
  <text x="120" y="808" font-size="28" class="accent">Coopanion-Skin-Design</text>
 </g>
 
-<!-- 角色 -->
+<!-- 2026-10-31: 原来是 foreignObject + 内嵌 HTML div。Chromium 对 foreignObject 内部的跨层重绘
+     不可靠：opacity 从 0 切到 1 后截图可能还是旧图层（DOM 里 computed opacity=1、截图上却没有像素）。
+     改成 SVG 原生嵌套 <svg>，角色本来就是一株 SVG，不需要 HTML 层。 -->
+<!-- 角色挂载点：必须是 foreignObject x=960 y=96。
+     timeline.js 每帧 setAttribute('transform', matrix(...)) 会整体覆盖 transform，
+     所以不能靠一个带 translate 的 g 元素去定位——它会被冲掉，
+     而 matrix 里的 (px - 960*scale) 在 scale=1 时正好是 0，角色会跑到左上角。
+     平移由 foreignObject 的 x/y 承担，matrix 只做缩放补偿。 -->
 <foreignObject id="petFrame" x="960" y="96" width="800" height="880">
  <div xmlns="http://www.w3.org/1999/xhtml" style="position:relative;width:800px;height:880px"><div id="petMount"></div></div>
 </foreignObject>
 
-<!-- 指针与点击波纹 -->
 <g id="cursor" opacity="0" fill="#eaf6fb" stroke="#0c1a24" stroke-width="3"><path d="M0 0L5 39L15 30L25 48L34 43L24 26L38 22Z"/></g>
 <circle id="clickRing" r="22" fill="none" stroke="#7fc4e0" stroke-width="3" opacity="0"/>
 <circle id="clickCore" r="6" fill="#cdefff" opacity="0"/>
 
-<!-- 底部 -->
 <text id="bottomLabel" x="120" y="974" class="small muted">亚托利 · Coopanion 形象包</text>
 <path id="progressBg" d="M120 1028H1800" stroke="#2c4a5b" stroke-width="2"/>
 <path id="progress" d="M120 1028H1800" stroke="#7fc4e0" stroke-width="3"/>
 
-<!-- 暗角 -->
 <rect width="1920" height="1080" fill="url(#vig)" pointer-events="none"/>
 </svg>
-<div id="reviewControls"><label>时间 <input id="reviewTime" type="number" min="0" max="29.9" step=".1" value="0"></label><button id="reviewSeek">定位画面</button><button id="reviewPlay">播放</button></div>
+<div id="reviewControls"><label>时间 <input id="reviewTime" type="number" min="0" max="35.9" step=".1" value="0"></label><button id="reviewSeek">定位画面</button><button id="reviewPlay">播放</button></div>
 <script type="module" src="./timeline.js"></script>
 </body></html>

@@ -9,18 +9,22 @@ const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
 const mix = (a, b, p) => a + (b - a) * clamp(p);
 const ease = (p) => { p = clamp(p); return p * p * (3 - 2 * p); };
 const easeOut = (p) => 1 - Math.pow(1 - clamp(p), 3);
+const lerpLog = (a, b, p) => a * Math.pow(b / a, clamp(p));
 
-// 场景表：与 BRIEF 的六段分镜一一对应
+const DURATION = 36;
+
+// 七段分镜。对话段里再细分三轮（用 turnMarks 指示），这一版主打"多演示交互"。
 const scenes = [
   ['intro', 0, 4],
-  ['talk', 4, 9],
-  ['touch', 9, 14],
-  ['actions', 14, 20],
-  ['seated', 20, 25],
-  ['outro', 25, 30],
+  ['talk', 4, 13],
+  ['touch', 13, 18.5],
+  ['actions', 18.5, 23.5],
+  ['radish', 23.5, 30],
+  ['seated', 30, 33],
+  ['outro', 33, 36],
 ];
 
-// 确定性伪随机：同一时刻永远得到同一画面，渲染可复现
+// 确定性伪随机：同一时刻永远得到同一画面
 let seed = 4021;
 const rnd = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
 
@@ -29,19 +33,18 @@ const checks = [];
 let body, sim = 0, eventIndex = 0, cursorPoint = null, playing = false, lastPlay = 0;
 
 // ---------------------------------------------------------------------------
-// 背景装饰：气泡与光柱在页面初始化时一次生成，之后只按时间做线性位移
+// 背景装饰：一次生成，之后只按时间做纯函数位移
 // ---------------------------------------------------------------------------
-const BUBBLE_N = 34;
 const bubbles = [];
 {
   const host = $('bubbles');
   const NS = 'http://www.w3.org/2000/svg';
-  for (let i = 0; i < BUBBLE_N; i++) {
+  for (let i = 0; i < 34; i++) {
     const x = 60 + rnd() * 1800;
     const r = 2.5 + rnd() * 8;
-    const speed = 26 + rnd() * 70;      // px/s 上浮
-    const wob = 12 + rnd() * 26;        // 横向摆动幅度
-    const wf = 0.5 + rnd() * 1.1;       // 摆动频率
+    const speed = 26 + rnd() * 70;
+    const wob = 12 + rnd() * 26;
+    const wf = 0.5 + rnd() * 1.1;
     const phase = rnd() * Math.PI * 2;
     const y0 = 1080 + rnd() * 260;
     const op = 0.10 + rnd() * 0.30;
@@ -50,13 +53,11 @@ const bubbles = [];
     c.setAttribute('fill', 'none');
     c.setAttribute('stroke', '#bfe4f5');
     c.setAttribute('stroke-width', (0.8 + rnd() * 1.2).toFixed(2));
-    c.setAttribute('opacity', op.toFixed(3));
     host.append(c);
-    bubbles.push({ el: c, x, y0, r, speed, wob, wf, phase });
+    bubbles.push({ el: c, x, y0, r, speed, wob, wf, phase, op });
   }
 }
 
-// 水波横线：随镜头缓慢漂移，制造"水下"纵深
 {
   const host = $('waves');
   const NS = 'http://www.w3.org/2000/svg';
@@ -68,6 +69,19 @@ const bubbles = [];
     host.append(p);
   }
 }
+
+// ---------------------------------------------------------------------------
+// 对话脚本：三轮，第三轮是"叫她萝卜子"的引子
+// 每轮 = [开始, 结束, 标题, 副标题, 说话人, 第一行, 第二行]
+// ---------------------------------------------------------------------------
+const turns = [
+  [4.4, 7.2, '她就在那儿。', '一句气泡，接住你的一段话。', '亚托利',
+   '别担心，这点事情我一下就做完了。', '毕竟——我可是高性能的。'],
+  [7.4, 10.2, '也会撒娇。', '不是冷冰冰的应答，是有情绪的回应。', '亚托利',
+   '累了就靠一会儿嘛，我陪着你。', '……不过只准靠一小会儿哦。'],
+  [10.4, 13.0, '也会闹别扭。', '试试看，说一句她不爱听的话。', '亚托利',
+   '诶，你刚才嘀咕什么？', '……我好像听到一个很失礼的词。'],
+];
 
 // ---------------------------------------------------------------------------
 // 角色
@@ -100,55 +114,82 @@ function word(w) {
   return accepted;
 }
 
-// 命中区取角色第一个 hit（头部呆毛附近），指针必须落在真实 hit 上
 function hit() {
   const l = body.layout();
   return (l.hit && l.hit[0]) || { x: 400, y: 300 };
 }
 
-// 动作脚本：时间 / 行为
+// ---------------------------------------------------------------------------
+// 动作脚本
+// 关键约束：kit 的 doWord() 在 busy() 时拒收表情，所以每次发新动作前留足间隔，
+// 并且同一时刻不要连发两个会互相打断的动作。
+// ---------------------------------------------------------------------------
 const schedule = [
   // 0–4 出场
   [0, () => word('wave')],
   [0.35, () => word('neutral')],
   [1.6, () => word('happy')],
-  // 4–9 对话
-  [4.2, () => { body.place(400, -1); word('stand'); word('neutral'); }],
-  [4.6, () => { body.talk(); body.cue?.('cheer'); }],
-  [6.9, () => word('smug')],
-  // 9–14 点击与提起
-  [9.7, () => { const h = hit(); cursorPoint = { x: h.x, y: h.y - 70, t: 9700 }; body.pointer('down', cursorPoint); }],
-  [9.84, () => body.pointer('up', { ...cursorPoint, t: 9840 })],
-  // 点击后的反应由 kit 自己播放；此处不再抢发表情，否则 busy() 会拒收（真实行为）
-  [11.3, () => { const h = hit(); cursorPoint = { x: h.x, y: h.y - 40, t: 11300 }; body.pointer('down', cursorPoint); }],
-  [13.1, () => body.pointer('up', { x: 400, y: 150, t: 13100 })],
-  // 14–20 动作
-  [14.1, () => { body.place(400, -1); word('stand'); word('wave'); }],
-  [15.9, () => word('happy')],
-  [17.2, () => word('dance')],
-  [18.8, () => word('shy')],
-  // 20–25 坐下
-  [20.1, () => { body.place(400, -1); word('sit'); }],
-  [22.2, () => word('dizzy')],
-  // 25–30 片尾
-  [25.1, () => { body.place(400, -1); word('stand'); word('happy'); }],
-  [26.2, () => word('wave')],
+  [3.0, () => word('wink')],
+
+  // 4–13 三轮对话
+  [4.3, () => { body.place(400, -1); word('stand'); word('neutral'); }],
+  [4.7, () => { body.talk(); }],
+  [6.2, () => word('smug')],
+
+  [7.5, () => { body.place(400, -1); word('stand'); word('neutral'); body.talk(); }],
+  [9.0, () => word('shy')],
+
+  [10.5, () => { body.place(400, -1); word('stand'); word('neutral'); body.talk(); }],
+  [11.9, () => word('confused')],
+  [12.5, () => word('worried')],
+
+  // 13–18.5 点击 / 提起 / 松手（三次交互，最后一次是摔落）
+  [13.4, () => { body.place(400, -1); word('stand'); word('neutral'); }],
+  [14.0, () => { const h = hit(); cursorPoint = { x: h.x, y: h.y - 70, t: 14000 }; body.pointer('down', cursorPoint); }],
+  [14.14, () => body.pointer('up', { ...cursorPoint, t: 14140 })],
+  // 等点击反应播完再发下一个动作
+  [15.4, () => { const h = hit(); cursorPoint = { x: h.x, y: h.y - 40, t: 15400 }; body.pointer('down', cursorPoint); }],
+  [17.2, () => body.pointer('up', { x: 400, y: 150, t: 17200 })],
+
+  // 18.5–23.5 动作与表情轮播（八个 chip）
+  [18.8, () => { body.place(400, -1); word('stand'); word('wave'); }],
+  [19.9, () => word('happy')],
+  [21.0, () => word('dance')],
+  [22.2, () => word('shy')],
+  [23.0, () => word('surprised')],
+
+  // 23.5–30 叫她萝卜子 → 生气（本版重点）
+  [23.8, () => { body.place(400, -1); word('stand'); word('neutral'); }],
+  [24.4, () => word('surprised')],      // 「你刚才叫我什么？」
+  [25.9, () => word('pout')],           // 嘟嘴
+  [27.4, () => word('angry')],          // 生气 + 青筋
+  [28.6, () => { body.talk(); word('determined'); }],
+
+  // 30–33 坐下
+  [30.1, () => { body.place(400, -1); word('sit'); }],
+  [31.5, () => word('dizzy')],
+
+  // 33–36 片尾
+  [33.1, () => { body.place(400, -1); word('stand'); word('happy'); }],
+  [34.3, () => word('wave')],
 ];
 
 // ---------------------------------------------------------------------------
-// 场景推进：所有形变都是时间 t 的纯函数
+// 场景推进：全部是 t 的纯函数
 // ---------------------------------------------------------------------------
 function at(t) {
-  // 六段淡入 + 轻微横移
   for (const [id, start, end] of scenes) {
     const p = t - start;
     const visible = t >= start && t < end;
     const el = $(id);
-    el.setAttribute('opacity', visible ? clamp(p / 0.34).toFixed(3) : 0);
-    el.setAttribute('transform', `translate(${visible ? mix(26, 0, easeOut(p / 0.45)).toFixed(2) : 26} 0)`);
+    // 用 style 而不是属性：SVG presentation attribute 的变更在暂停动画时可能不触发重绘
+    el.style.opacity = visible ? clamp(p / 0.34).toFixed(3) : '0';
+    el.setAttribute('transform', `translate(${(visible ? mix(26, 0, easeOut(p / 0.45)) : 26).toFixed(2)} 0)`);
+    // 显示中的场景必须挡住点击测试，隐藏的让开（elementFromPoint 用来校验构图）
+    el.style.pointerEvents = visible ? 'auto' : 'none';
   }
 
-  // 水下光柱：低频横向漂移 + 呼吸
+  // 光柱漂移
   for (let i = 0; i < 3; i++) {
     const el = $('sh' + i);
     const dx = Math.sin(t * 0.42 + i * 2.1) * 34;
@@ -158,50 +199,65 @@ function at(t) {
   }
 
   // 气泡上浮
+  const span = 1080 + 320;
   for (const b of bubbles) {
     let y = b.y0 - t * b.speed;
-    const span = 1080 + 320;
     y = ((y % span) + span) % span - 220;
     const x = b.x + Math.sin(t * b.wf + b.phase) * b.wob;
     b.el.setAttribute('cx', x.toFixed(2));
     b.el.setAttribute('cy', y.toFixed(2));
-    // 靠近顶部时淡出，避免硬边
-    const fade = clamp((y - 40) / 260);
-    b.el.setAttribute('opacity', (Number(b.el.getAttribute('opacity')) * 0 + fade * 0.34).toFixed(3));
+    b.el.setAttribute('opacity', (clamp((y - 40) / 260) * b.op).toFixed(3));
   }
 
-  // 水波横线漂移
   $('waves').setAttribute('transform', `translate(${(-t * 26).toFixed(2)} ${(Math.sin(t * 0.5) * 8).toFixed(2)})`);
 
-  // 角色背后的光晕在出场和前两段渐显
-  const haloIn = clamp((t - 0.4) / 1.4) * (1 - clamp((t - 13.6) / 1.2) * 0.45);
+  // 光晕：蓝色全程，红色只在生气段（27.4–29.6）压上来
+  const haloIn = clamp((t - 0.4) / 1.4) * (1 - clamp((t - 17.6) / 1.2) * 0.35);
   $('halo').setAttribute('opacity', (haloIn * 0.9).toFixed(3));
   $('halo').setAttribute('r', (368 + Math.sin(t * 1.15) * 16).toFixed(1));
+  const angerIn = clamp((t - 27.3) / 0.8) * (1 - clamp((t - 29.2) / 1.0));
+  $('haloRed').setAttribute('opacity', (angerIn * 0.95).toFixed(3));
+  $('haloRed').setAttribute('r', (330 + Math.sin(t * 3.1) * 26 + angerIn * 40).toFixed(1));
 
-  // 顶部细线
   $('topRule').setAttribute('opacity', (0.28 * clamp((t - 0.2) / 1.0)).toFixed(3));
 
-  // 出场横线伸展
+  // 出场
   $('introRule').setAttribute('stroke-dasharray', '692');
   $('introRule').setAttribute('stroke-dashoffset', (692 * (1 - easeOut((t - 0.9) / 0.75))).toFixed(2));
-
-  // 台词：先出背景，再出引号
   $('introQuote').setAttribute('opacity', clamp((t - 2.1) / 0.7).toFixed(3));
 
-  // ---- 场景 2：对话气泡 ----
-  const talking = t >= 4 && t < 9;
-  $('bubbleGroup').setAttribute('opacity', talking ? clamp((t - 4.6) / 0.4).toFixed(3) : 0);
+  // ---- 场景 2：三轮对话 ----
+  const talking = t >= 4 && t < 13;
   if (talking) {
-    const bp = clamp((t - 4.6) / 0.5);
-    $('bubbleGroup').setAttribute('transform', `translate(${mix(120, 120, bp).toFixed(1)} ${(596 + mix(22, 0, easeOut(bp))).toFixed(1)})`);
+    let cur = 0;
+    for (let i = 0; i < turns.length; i++) if (t >= turns[i][0]) cur = i;
+    const [start, end, title, sub, name, l1, l2] = turns[cur];
+    $('talkTitle').textContent = title;
+    $('talkSub').textContent = sub;
+    $('bubbleName').textContent = name;
+    $('bubbleL1').textContent = l1;
+    $('bubbleL2').textContent = l2;
+    // 每轮进场的浮入
+    const p = clamp((t - start) / 0.45);
+    $('bubbleGroup').setAttribute('opacity', (0.15 + 0.85 * easeOut(p)).toFixed(3));
+    $('bubbleGroup').setAttribute('transform', `translate(120 ${(566 + mix(20, 0, easeOut(p))).toFixed(1)})`);
+    // 逐行出现：第一行先出，第二行延迟 0.55s
+    $('bubbleL1').setAttribute('opacity', easeOut((t - start) / 0.4).toFixed(3));
+    $('bubbleL2').setAttribute('opacity', easeOut((t - start - 0.55) / 0.45).toFixed(3));
+    // 三颗轮次指示点
+    $('turnMarks').setAttribute('opacity', clamp((t - 4.4) / 0.5).toFixed(3));
+    const cols = ['#2f5d73', '#2f5d73', '#2f5d73'];
+    cols[cur] = '#7fc4e0';
+    for (let i = 0; i < 3; i++) $('tm' + i).setAttribute('fill', cols[i]);
   }
 
-  // ---- 场景 3：点击 ----
-  $('touchTitle').textContent = t < 11.0 ? '戳一下，她会回应。' : '提起来，也会挣扎。';
-  $('touchSub').textContent = t < 11.0 ? '呆毛一晃，小情绪自己冒出来。' : '慌张的表情，配上轻轻的踢腿。';
-  $('touchChips').setAttribute('opacity', clamp((t - 9.4) / 0.5).toFixed(3));
+  // ---- 场景 3：点击与提起 ----
+  const stage2 = t >= 13.4;
+  $('touchTitle').textContent = t < 15.2 ? '戳一下，她会回应。' : '提起来，也会挣扎。';
+  $('touchSub').textContent = t < 15.2 ? '呆毛一晃，小情绪自己冒出来。' : '慌张的表情，配上轻轻的踢腿。';
+  $('touchChips').setAttribute('opacity', clamp((t - 13.6) / 0.5).toFixed(3));
   {
-    const hi = t < 11.0 ? 0 : 1;
+    const hi = t < 15.2 ? 0 : 1;
     const chips = $('touchChips').children;
     for (let i = 0; i < chips.length; i++) {
       const r = chips[i].querySelector('rect');
@@ -210,10 +266,13 @@ function at(t) {
     }
   }
 
-  // ---- 场景 4：动作 chips ----
-  for (let i = 0; i < 4; i++) {
-    const sel = t >= 14 && t < 20 && i === (t < 15.9 ? 0 : t < 17.2 ? 1 : t < 18.8 ? 2 : 3);
+  // ---- 场景 4：八个 chip 轮播 ----
+  const actIdx = t < 19.9 ? 0 : t < 21.0 ? 1 : t < 22.2 ? 2 : t < 23.0 ? 3 : 4;
+  const actTitles = ['招手，打招呼。', '开心，眼睛会弯。', '跳舞，音符跟着。', '害羞，脸红起来。', '惊讶，呆毛立起。'];
+  $('actTitle').textContent = actTitles[Math.min(actIdx, actTitles.length - 1)];
+  for (let i = 0; i < 8; i++) {
     const g = $('chip' + i);
+    const sel = t >= 18.5 && t < 23.5 && i === actIdx;
     const r = g.querySelector('rect');
     r.setAttribute('fill', sel ? '#2d6d8a' : '#16303f');
     r.setAttribute('stroke', sel ? '#9fdcf5' : '#3f7b94');
@@ -221,73 +280,108 @@ function at(t) {
     g.querySelector('text').style.fill = sel ? '#eaf6fb' : '#9db6c6';
   }
 
-  // ---- 场景 5：坐下 ----
-  $('seatTitle').textContent = t < 22.2 ? '坐下，歇一会儿。' : '晕乎乎，也有小情绪。';
-  $('seatSub').textContent = t < 22.2 ? '安安稳稳地坐着，尾巴轻轻晃。' : '圈圈眼一出来，就是想撒娇了。';
-  // 横线伸展 + 三张卡片依次浮入 + 引号最后出现，保证坐姿段左侧不空
+  // ---- 场景 5：萝卜子 → 生气 ----
+  const radOn = t >= 23.5 && t < 30;
+  if (radOn) {
+    // 三步依次点亮：惊讶 → 嘟嘴 → 生气
+    const step = t < 25.9 ? 0 : t < 27.4 ? 1 : 2;
+    $('radSteps').setAttribute('opacity', clamp((t - 23.9) / 0.5).toFixed(3));
+    for (let i = 0; i < 3; i++) {
+      const g = $('rs' + i);
+      const on = i <= step;
+      const r = g.querySelector('rect');
+      r.setAttribute('fill', i === step ? '#5a2a22' : on ? '#331f20' : '#231a1c');
+      r.setAttribute('stroke', i === step ? '#ff9b78' : on ? '#a45a45' : '#7a4034');
+      r.setAttribute('stroke-width', i === step ? 2 : 1.5);
+      g.querySelector('text').style.fill = i <= step ? '#ffe0d0' : '#8a6f68';
+    }
+    // 对话：先问，再否认
+    const p = clamp((t - 24.0) / 0.45);
+    $('radBubble').setAttribute('opacity', (0.15 + 0.85 * easeOut(p)).toFixed(3));
+    $('radBubble').setAttribute('transform', `translate(120 ${(540 + mix(20, 0, easeOut(p))).toFixed(1)})`);
+    const l1On = t < 27.4;
+    $('radL1').textContent = l1On ? '……你刚才，叫我什么？' : '说了不是萝卜子！';
+    $('radL2').textContent = l1On ? '（歪头，眉毛皱起来）' : '我可是高性能的！';
+    $('radL1').setAttribute('opacity', easeOut((t - 24.2) / 0.4).toFixed(3));
+    $('radL2').setAttribute('opacity', easeOut((t - (l1On ? 24.9 : 27.6)) / 0.4).toFixed(3));
+    $('radL1').setAttribute('class', l1On ? '' : 'warn');
+    // 生气时标题换色
+    $('radTitle').textContent = l1On ? '「萝卜子？」' : '「我才不是萝卜子！」';
+    $('radTitle').setAttribute('class', l1On ? 'large' : 'large warn');
+    $('radSub').textContent = l1On ? '这个名字，她不太喜欢。' : '生气值拉满，青筋都出来了。';
+    // 生气抖动：整块负片式的轻微位移
+    if (t >= 27.4 && t < 29.6) {
+      const sh = Math.sin(t * 46) * 3.2;
+      $('radish').setAttribute('transform', `translate(${mix(0, 0, 1).toFixed(2)} 0) translate(${sh.toFixed(2)} 0)`);
+    }
+  }
+
+  // ---- 场景 6：坐姿 ----
+  $('seatTitle').textContent = t < 31.6 ? '坐下，歇一会儿。' : '晕乎乎，也有小情绪。';
+  $('seatSub').textContent = t < 31.6 ? '安安稳稳地坐着，尾巴轻轻晃。' : '圈圈眼一出来，就是想撒娇了。';
   $('seatRule').setAttribute('stroke-dasharray', '650');
-  $('seatRule').setAttribute('stroke-dashoffset', (650 * (1 - easeOut((t - 20.2) / 0.7))).toFixed(2));
+  $('seatRule').setAttribute('stroke-dashoffset', (650 * (1 - easeOut((t - 30.2) / 0.7))).toFixed(2));
   for (let i = 0; i < 3; i++) {
     const g = $('sc' + i);
-    const p = clamp((t - (20.45 + i * 0.22)) / 0.55);
+    const p = clamp((t - (30.45 + i * 0.2)) / 0.5);
     g.setAttribute('opacity', easeOut(p).toFixed(3));
     g.setAttribute('transform', `translate(${(238 * i).toFixed(1)} ${mix(18, 0, easeOut(p)).toFixed(1)})`);
     const r = g.querySelector('rect');
-    const active = i === (t < 22.2 ? 0 : 1);
+    const active = i === (t < 31.6 ? 0 : 1);
     r.setAttribute('fill', active ? '#173847' : '#0f2430');
     r.setAttribute('stroke', active ? '#9fdcf5' : '#2f5d73');
     r.setAttribute('stroke-width', active ? 2 : 1.5);
   }
-  $('seatQuote').setAttribute('opacity', clamp((t - 22.6) / 0.7).toFixed(3));
+  $('seatQuote').setAttribute('opacity', clamp((t - 31.8) / 0.6).toFixed(3));
 
   // ---- 角色构图 ----
   let px = 960, py = 96, scale = 1;
-  if (talking) { scale = 0.66; px = 1010; py = 268; }          // 对话时缩小，给气泡让位
-  if (t >= 20 && t < 25) { py = 84; }                            // 坐姿重心上移
-  if (t >= 25) { scale = 0.94; px = 1010; py = 120; }            // 片尾略收
+  if (talking) { scale = 0.66; px = 1010; py = 250; }
+  if (t >= 30 && t < 33) { py = 84; }
+  if (t >= 33) { scale = 0.94; px = 1010; py = 120; }
   const fp = $('petFrame');
   fp.setAttribute('transform', `matrix(${scale} 0 0 ${scale} ${(px - 960 * scale).toFixed(2)} ${(py - 96 * scale).toFixed(2)})`);
 
-  // ---- 指针与点击波纹 ----
-  const curVisible = t >= 9.2 && t < 13.4;
+  // ---- 指针 ----
+  const curVisible = t >= 13.9 && t < 17.4;
   $('cursor').setAttribute('opacity', curVisible ? 1 : 0);
+  let cx = 0, cy = 0;
   if (curVisible) {
     const h = hit();
     let x = h.x, y = h.y - 70;
-    if (t < 9.7) {
-      x = mix(700, h.x, ease((t - 9.2) / 0.5));
-      y = mix(600, h.y - 70, ease((t - 9.2) / 0.5));
-    } else if (t >= 11.3) {
+    if (t < 14.0) {
+      x = mix(700, h.x, ease((t - 13.9) / 0.1));
+      y = mix(600, h.y - 70, ease((t - 13.9) / 0.1));
+    } else if (t >= 15.4) {
       x = 400;
-      y = mix(300, 150, ease((t - 11.3) / 1.8));
+      y = mix(300, 150, ease((t - 15.4) / 1.8));
     }
-    const cx = px + x * scale;
-    const cy = py + y * scale;
+    cx = px + x * scale;
+    cy = py + y * scale;
     $('cursor').setAttribute('transform', `translate(${cx.toFixed(1)} ${cy.toFixed(1)}) scale(${scale.toFixed(2)})`);
     $('clickRing').setAttribute('cx', cx.toFixed(1));
     $('clickRing').setAttribute('cy', cy.toFixed(1));
     $('clickCore').setAttribute('cx', cx.toFixed(1));
     $('clickCore').setAttribute('cy', cy.toFixed(1));
   }
-  // 两次点击各自一个扩散环
   let ringOp = 0, ringR = 20, coreOp = 0;
-  for (const c of [9.7, 11.3]) {
+  for (const c of [13.85, 15.4]) {
     const p = clamp((t - c) / 0.55);
     if (t >= c && p < 1) { ringOp = Math.max(ringOp, 1 - p); ringR = Math.max(ringR, 18 + 46 * easeOut(p)); }
-    if (t >= c && t < c + 0.18) coreOp = 1 - clamp((t - c) / 0.18);
+    if (t >= c && t < c + 0.18) coreOp = Math.max(coreOp, 1 - clamp((t - c) / 0.18));
   }
   $('clickRing').setAttribute('opacity', ringOp.toFixed(3));
   $('clickRing').setAttribute('r', ringR.toFixed(1));
   $('clickCore').setAttribute('opacity', coreOp.toFixed(3));
 
-  // ---- 底部进度与说明 ----
+  // ---- 底部 ----
   $('progress').setAttribute('stroke-dasharray', '1680');
-  $('progress').setAttribute('stroke-dashoffset', (1680 * (1 - clamp(t / 30))).toFixed(2));
+  $('progress').setAttribute('stroke-dashoffset', (1680 * (1 - clamp(t / DURATION))).toFixed(2));
   $('bottomLabel').textContent =
-    t >= 25 ? 'Asryto · 亚托利 · 2026' : '亚托利 · 基于 Coopanion 的发布动画';
+    t >= 33 ? 'Asryto · 亚托利 · 2026' : '亚托利 · 基于 Coopanion 的发布动画';
 }
 
-// 每帧先以 60 Hz 推进角色逻辑，再把 SVG 场景对齐到目标时间
+// 每帧先以 60 Hz 推进角色逻辑，再把场景对齐到目标时间
 window.renderAt = async (time) => {
   if (time < sim - 0.001) await reset();
   while (sim < time - 1e-6) {
@@ -295,9 +389,8 @@ window.renderAt = async (time) => {
     while (eventIndex < schedule.length && schedule[eventIndex][0] <= next + 1e-7) {
       schedule[eventIndex++][1]();
     }
-    // 提起阶段持续送 move 事件，真实拖拽才算成立
-    if (next >= 11.35 && next < 13.1) {
-      body.pointer('move', { x: 400, y: mix(300, 150, ease((next - 11.3) / 1.8)), t: next * 1000 });
+    if (next >= 15.45 && next < 17.2) {
+      body.pointer('move', { x: 400, y: mix(300, 150, ease((next - 15.4) / 1.8)), t: next * 1000 });
     }
     body.step(next - sim);
     sim = next;
@@ -318,7 +411,6 @@ await reset();
 await window.renderAt(0);
 window.promoReady = true;
 
-// 手动审阅模式（?review=1）
 if (new URLSearchParams(location.search).has('review')) {
   $('reviewControls').style.display = 'block';
   $('reviewSeek').onclick = () => { playing = false; window.renderAt(Number($('reviewTime').value)); };
@@ -326,7 +418,7 @@ if (new URLSearchParams(location.search).has('review')) {
   const frame = async (now) => {
     if (playing) {
       const t = sim + (now - lastPlay) / 1000;
-      if (t < 30) await window.renderAt(t); else playing = false;
+      if (t < DURATION) await window.renderAt(t); else playing = false;
     }
     lastPlay = now;
     requestAnimationFrame(frame);

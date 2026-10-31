@@ -36,15 +36,15 @@ def main():
     parser.add_argument("--ffmpeg", default=shutil.which("ffmpeg"))
     parser.add_argument("--out", default=DEFAULT_OUT)
     parser.add_argument("--music", help="Authorized optional WAV/music file")
-    parser.add_argument("--duration", type=float, default=30)
+    parser.add_argument("--duration", type=float, default=36)
     parser.add_argument("--fps", type=int, default=30)
     parser.add_argument("--samples", help="Comma-separated key-frame times; no encoding")
     args = parser.parse_args()
 
     if urlparse(args.url).hostname not in ["127.0.0.1", "localhost"]:
         parser.error("Only an isolated localhost movie page is supported")
-    if not 0 < args.duration <= 30 or not 1 <= args.fps <= 60:
-        parser.error("Use duration (0,30] and fps [1,60]")
+    if not 0 < args.duration <= 60 or not 1 <= args.fps <= 60:
+        parser.error("Use duration (0,60] and fps [1,60]")
     out = (ROOT / args.out).resolve()
     if not out.is_relative_to(ROOT):
         parser.error("Output must stay in this repository")
@@ -60,8 +60,8 @@ def main():
         if args.samples
         else [i / args.fps for i in range(round(args.duration * args.fps))]
     )
-    if not times or any(not 0 <= t < 30 for t in times):
-        parser.error("Frame times must be in [0,30)")
+    if not times or any(not 0 <= t < args.duration for t in times):
+        parser.error(f"Frame times must be in [0,{args.duration})")
 
     with tempfile.TemporaryDirectory(prefix=".render-atri-", dir=out.parent) as temporary:
         frames = Path(temporary)
@@ -80,6 +80,13 @@ def main():
                     "async t => {for(const a of document.getAnimations())a.currentTime=t*1000;"
                     "await window.renderAt(t)}",
                     t,
+                )
+                # 2026-10-31: 必须先让合成器刷两帧再截图。
+                # 只改 setAttribute 是同步的 DOM 更新，但图层（filter / foreignObject / 渐变）
+                # 要等一次 rAF 才重新合成；直接 screenshot 会拿到半合成甚至上一帧的画面，
+                # 表现为"DOM 里文字明明可见、PNG 里却几乎没有像素"(t=35s 端帧 ink 0.0003)。
+                page.evaluate(
+                    "() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)))"
                 )
                 target = qa / f"atri-sample-{t:05.2f}.png" if args.samples else frames / f"frame_{i:05d}.png"
                 page.screenshot(path=str(target))

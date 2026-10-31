@@ -1,0 +1,506 @@
+{
+  "16.00": {
+    "groups": {
+      "intro": {
+        "attrOp": null,
+        "styleOp": "0",
+        "compOp": "0",
+        "display": "inline",
+        "vis": "visible",
+        "transform": "translate(26.00 0)",
+        "bbox": [
+          112,
+          278,
+          700,
+          440
+        ],
+        "rect": [
+          138,
+          278,
+          700,
+          440
+        ],
+        "childCount": 6
+      },
+      "talk": {
+        "attrOp": "0",
+        "styleOp": "0",
+        "compOp": "0",
+        "display": "inline",
+        "vis": "visible",
+        "transform": "translate(26.00 0)",
+        "bbox": [
+          111,
+          278,
+          735,
+          557
+        ],
+        "rect": [
+          137,
+          278,
+          735,
+          557
+        ],
+        "childCount": 5
+      },
+      "touch": {
+        "attrOp": "0",
+        "styleOp": "1",
+        "compOp": "1",
+        "display": "inline",
+        "vis": "visible",
+        "transform": "translate(0.00 0)",
+        "bbox": [
+          112,
+          278,
+          684,
+          370
+        ],
+        "rect": [
+          112,
+          278,
+          684,
+          370
+        ],
+        "childCount": 4
+      },
+      "actions": {
+        "attrOp": "0",
+        "styleOp": "0",
+        "compOp": "0",
+        "display": "inline",
+        "vis": "visible",
+        "transform": "translate(26.00 0)",
+        "bbox": [
+          112,
+          268,
+          694,
+          424
+        ],
+        "rect": [
+          138,
+          268,
+          694,
+          424
+        ],
+        "childCount": 4
+      },
+      "radish": {
+        "attrOp": "0",
+        "styleOp": "0",
+        "compOp": "0",
+        "display": "inline",
+        "vis": "visible",
+        "transform": "translate(26.00 0)",
+        "bbox": [
+          112,
+          264,
+          708,
+          584
+        ],
+        "rect": [
+          138,
+          264,
+          708,
+          584
+        ],
+        "childCount": 5
+      },
+      "seated": {
+        "attrOp": "0",
+        "styleOp": "0",
+        "compOp": "0",
+        "display": "inline",
+        "vis": "visible",
+        "transform": "translate(26.00 0)",
+        "bbox": [
+          0,
+          0,
+          1920,
+          1080
+        ],
+        "rect": [
+          26,
+          0,
+          1920,
+          1080
+        ],
+        "childCount": 14
+      },
+      "outro": {
+        "attrOp": "0",
+        "styleOp": "0",
+        "compOp": "0",
+        "display": "inline",
+        "vis": "visible",
+        "transform": "translate(26.00 0)",
+        "bbox": [
+          112,
+          234,
+          634,
+          582
+        ],
+        "rect": [
+          164,
+          234,
+          634,
+          582
+        ],
+        "childCount": 7
+      }
+    },
+    "svgRect": [
+      0,
+      0,
+      1920,
+      1080
+    ],
+    "lastChildTag": "g#seated",
+    "outroTitleBox": {
+      "box": [
+        164,
+        277,
+        366,
+        158
+      ],
+      "topElement": "text#touchTitle.large",
+      "fill": "rgb(234, 246, 251)"
+    }
+  },
+  "20.00": {
+    "groups": {
+      "intro": {
+        "attrOp": null,
+        "styleOp": "0",
+        "compOp": "0",
+        "display": "inline",
+        "vis": "visible",
+        "transform": "translate(26.00 0)",
+        "bbox": [
+          112,
+          278,
+          700,
+          440
+        ],
+        "rect": [
+          138,
+          278,
+          700,
+          440
+        ],
+        "childCount": 6
+      },
+      "talk": {
+        "attrOp": "0",
+        "styleOp": "0",
+        "compOp": "0",
+        "display": "inline",
+        "vis": "visible",
+        "transform": "translate(26.00 0)",
+        "bbox": [
+          111,
+          278,
+          735,
+          557
+        ],
+        "rect": [
+          137,
+          278,
+          735,
+          557
+        ],
+        "childCount": 5
+      },
+      "touch": {
+        "attrOp": "0",
+        "styleOp": "0",
+        "compOp": "0",
+        "display": "inline",
+        "vis": "visible",
+        "transform": "translate(26.00 0)",
+        "bbox": [
+          112,
+          278,
+          684,
+          370
+        ],
+        "rect": [
+          138,
+          278,
+          684,
+          370
+        ],
+        "childCount": 4
+      },
+      "actions": {
+        "attrOp": "0",
+        "styleOp": "1",
+        "compOp": "1",
+        "display": "inline",
+        "vis": "visible",
+        "transform": "translate(0.00 0)",
+        "bbox": [
+          112,
+          268,
+          694,
+          424
+        ],
+        "rect": [
+          112,
+          268,
+          694,
+          424
+        ],
+        "childCount": 4
+      },
+      "radish": {
+        "attrOp": "0",
+        "styleOp": "0",
+        "compOp": "0",
+        "display": "inline",
+        "vis": "visible",
+        "transform": "translate(26.00 0)",
+        "bbox": [
+          112,
+          264,
+          708,
+          584
+        ],
+        "rect": [
+          138,
+          264,
+          708,
+          584
+        ],
+        "childCount": 5
+      },
+      "seated": {
+        "attrOp": "0",
+        "styleOp": "0",
+        "compOp": "0",
+        "display": "inline",
+        "vis": "visible",
+        "transform": "translate(26.00 0)",
+        "bbox": [
+          0,
+          0,
+          1920,
+          1080
+        ],
+        "rect": [
+          26,
+          0,
+          1920,
+          1080
+        ],
+        "childCount": 14
+      },
+      "outro": {
+        "attrOp": "0",
+        "styleOp": "0",
+        "compOp": "0",
+        "display": "inline",
+        "vis": "visible",
+        "transform": "translate(26.00 0)",
+        "bbox": [
+          112,
+          234,
+          634,
+          582
+        ],
+        "rect": [
+          164,
+          234,
+          634,
+          582
+        ],
+        "childCount": 7
+      }
+    },
+    "svgRect": [
+      0,
+      0,
+      1920,
+      1080
+    ],
+    "lastChildTag": "g#seated",
+    "outroTitleBox": {
+      "box": [
+        164,
+        277,
+        366,
+        158
+      ],
+      "topElement": "text#actTitle.large",
+      "fill": "rgb(234, 246, 251)"
+    }
+  },
+  "35.00": {
+    "groups": {
+      "intro": {
+        "attrOp": null,
+        "styleOp": "0",
+        "compOp": "0",
+        "display": "inline",
+        "vis": "visible",
+        "transform": "translate(26.00 0)",
+        "bbox": [
+          112,
+          278,
+          700,
+          440
+        ],
+        "rect": [
+          138,
+          278,
+          700,
+          440
+        ],
+        "childCount": 6
+      },
+      "talk": {
+        "attrOp": "0",
+        "styleOp": "0",
+        "compOp": "0",
+        "display": "inline",
+        "vis": "visible",
+        "transform": "translate(26.00 0)",
+        "bbox": [
+          111,
+          278,
+          735,
+          557
+        ],
+        "rect": [
+          137,
+          278,
+          735,
+          557
+        ],
+        "childCount": 5
+      },
+      "touch": {
+        "attrOp": "0",
+        "styleOp": "0",
+        "compOp": "0",
+        "display": "inline",
+        "vis": "visible",
+        "transform": "translate(26.00 0)",
+        "bbox": [
+          112,
+          278,
+          684,
+          370
+        ],
+        "rect": [
+          138,
+          278,
+          684,
+          370
+        ],
+        "childCount": 4
+      },
+      "actions": {
+        "attrOp": "0",
+        "styleOp": "0",
+        "compOp": "0",
+        "display": "inline",
+        "vis": "visible",
+        "transform": "translate(26.00 0)",
+        "bbox": [
+          112,
+          268,
+          694,
+          424
+        ],
+        "rect": [
+          138,
+          268,
+          694,
+          424
+        ],
+        "childCount": 4
+      },
+      "radish": {
+        "attrOp": "0",
+        "styleOp": "0",
+        "compOp": "0",
+        "display": "inline",
+        "vis": "visible",
+        "transform": "translate(26.00 0)",
+        "bbox": [
+          112,
+          264,
+          708,
+          584
+        ],
+        "rect": [
+          138,
+          264,
+          708,
+          584
+        ],
+        "childCount": 5
+      },
+      "seated": {
+        "attrOp": "0",
+        "styleOp": "0",
+        "compOp": "0",
+        "display": "inline",
+        "vis": "visible",
+        "transform": "translate(26.00 0)",
+        "bbox": [
+          0,
+          0,
+          1920,
+          1080
+        ],
+        "rect": [
+          26,
+          0,
+          1920,
+          1080
+        ],
+        "childCount": 14
+      },
+      "outro": {
+        "attrOp": "0",
+        "styleOp": "1",
+        "compOp": "1",
+        "display": "inline",
+        "vis": "visible",
+        "transform": "translate(0.00 0)",
+        "bbox": [
+          112,
+          234,
+          634,
+          582
+        ],
+        "rect": [
+          138,
+          234,
+          634,
+          582
+        ],
+        "childCount": 7
+      }
+    },
+    "svgRect": [
+      0,
+      0,
+      1920,
+      1080
+    ],
+    "lastChildTag": "g#seated",
+    "outroTitleBox": {
+      "box": [
+        138,
+        277,
+        366,
+        158
+      ],
+      "topElement": "text#.title",
+      "fill": "rgb(234, 246, 251)"
+    }
+  }
+}

@@ -26,6 +26,9 @@ qa-root-*.jpg
 promo/.venv/
 promo/assets/*.mp4
 promo/assets/*.wav
+# 第三方版权音乐（szak - 親愛なるあの日々へ）只在本机渲染时使用，绝不入库。
+# 换 BGM 时：把音频放到 promo/assets/ 下，用 render-atri.py --music 指过去即可。
+promo/assets/*.mp3
 promo/assets/src/**/.frames-*/
 promo/assets/.render-*/
 engineering/.venv/

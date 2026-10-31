@@ -79,6 +79,72 @@ uv run --project promo python promo/render.py --ffmpeg /path/to/ffmpeg --out "pr
 **5. 预览服务是前提，不是可选。**
 `npm run preview` 起的是 `scripts/serve.mjs`，监听 `127.0.0.1:4319`，根就是仓库根。`packs/atri-v011/figure.js`、`model.json`、`tex/*` 都靠它经相对路径加载；用 `file://` 打开会因 CORS 直接失败。
 
+### 2026-10-31 第二轮：36 秒版 + 指定 BGM + 多演示交互
+
+用户要求：换 BGM 为 `szak - 親愛なるあの日々へ`，并且多演示交互动作和表情反馈，
+例如"对话里说她是萝卜子，她会生气"。
+
+改动：
+
+- 时长 30 → **36 秒**（1080 帧）；`render-atri.py --duration` 默认 36、上限 60。
+- 对话从一轮扩到**三轮**（陪伴 / 撒娇 / 闹别扭），加轮次指示点，逐行出字。
+- 表情 chip 从 4 个扩到 **8 个**（招手/开心/跳舞/害羞/惊讶/嘟嘴/晕乎/生气）。
+- 新增 **23.5–30 s 的「萝卜子」桥段**：惊讶 → 嘟嘴 → 生气三级递进，
+  红色光晕 + 抖动 + 青筋，右侧三步指示条同步点亮。
+- BGM 由 `--music promo/assets/atri-bgm.mp3` 传入（裁 36 s、1.2 s 淡入、2.5 s 淡出）。
+
+#### 这一轮最贵的三个坑
+
+**坑一：一个没闭合的 `<g>` 让半个画面消失。**
+
+`seated` 组里新加的 `seatCards` 少了 `</g>`，于是 `seated` 把后面所有元素
+（outro、角色挂载点、进度条）全吞成子节点；而 `seated` 自身 opacity=0，
+从 y=240 往下整片黑。
+
+DOM 层面完全看不出来：`getComputedStyle` 说 opacity=1，`getBBox()` 正常，
+`elementFromPoint` 还能命中标题元素——因为它们只看元素自己，不看祖先。
+
+唯一暴露问题的是：`svg.lastElementChild` 是 `g#seated` 而不是暗角 `rect`，
+且 `seated` 的 bbox 是 `[0,0,1920,1080]`（一个只画左侧文案的组不该有整屏框）。
+
+**判据**：渲染后检查根节点 `lastElementChild` 是否符合预期；每个场景组的
+`getBBox()` 尺寸是否合理；标签配平用开闭计数对比（注意注释里别写带尖括号的标签名，
+会被正则数进去）。
+
+**坑二：`setAttribute('transform')` 是整体覆盖。**
+
+想把角色挂载点从 `foreignObject x/y` 改成 `<g transform="translate(960 96)">`，
+结果角色跑到左上角。因为 `timeline.js` 每帧 `setAttribute('transform', matrix(...))`
+是**替换**，HTML 里写的 translate 第一帧就被冲掉；而 matrix 的平移量是
+`px - 960*scale`，scale=1 时正好为 0（设计上是给 x/y 已定位的 foreignObject 做补偿）。
+
+**结论**：定位量要么全在元素 x/y 属性里，要么全在每帧 transform 里，不能一半一半。
+
+**坑三：「DOM 可见、截图空白」的排查顺序。**
+
+走了两条弯路：先怀疑截图时机（加双 rAF → 无效），再怀疑 foreignObject 跨层重绘
+（换嵌套 svg → 数值一点没变）。弯路本身有价值：A/B/C/D 四种截图方式
+（直接截 / 双 rAF / 双 rAF+300ms / CDP `Page.captureScreenshot`）**逐像素相同**，
+一次性排除了合成时序假设。
+
+正确顺序是**先验结构、再看像素**：结构对了再谈渲染，结构不对谈渲染全是白费。
+
+**可复用判据**：多个不相关时间点同时缺内容 → 结构问题；
+零星个别帧异常 → 才可能是合成/时序问题。
+
+#### 新增的三个诊断工具
+
+| 脚本 | 用途 |
+|---|---|
+| `promo/check-atri-frames.py` | 按区域算 ink/亮度标准差/边缘强度，代替目视验收 |
+| `promo/diagnose-atri-groups.py` | 逐场景组打印 style/计算 opacity、bbox、屏幕矩形、`lastElementChild` |
+| `promo/diagnose-atri-pet.py` | 打印角色真实 bbox 与 mount 矩形，查角色跑偏/被裁 |
+
+#### 版权提醒
+
+指定 BGM 是第三方版权曲目，已在 `.gitignore` 加 `promo/assets/*.mp3` 排除。
+公开分发成片前须自行确认授权；不能使用时改用 `generate-atri-audio.py` 的原创曲。
+
 ### 校验顺序（照抄即可）
 
 ```sh

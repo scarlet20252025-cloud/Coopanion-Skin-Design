@@ -309,6 +309,85 @@ if (KIT_EXPRESSIONS.includes(w) || words[w]?.expression) {
 
 ---
 
+### 24. 一个没闭合的 `<g>` 能让半个画面消失，而且 DOM 看不出来
+
+36 秒版改场景时，`seated` 组里新加的 `seatCards` 少了一个 `</g>`。后果不是报错，
+而是 `seated` 把后面**所有**元素都吞成了自己的子节点——`outro`、角色挂载点、
+底部进度条全成了它的孩子。而 `seated` 自身的 opacity 是 0（不在它的时间段内），
+于是从 y=240 往下整片黑掉。
+
+最坑的是 DOM 层面完全正常：
+
+```
+outro    styleOp=0 compOp=0 bbox=[112, 234, 634, 582]   ← 属性都对
+outro .title box=[138, 277, 366, 158] top=text#.title   ← 元素也在
+```
+
+`getComputedStyle`、`getBBox`、`elementFromPoint` 全都说"好着呢"，
+因为它们只看元素自己，不看**祖先有没有被隐藏**。真正暴露问题的是这一行：
+
+```
+svg lastChild=g#seated        ← 应该是 rect（暗角）！
+```
+
+`seated` 的 bbox 是 `[0,0,1920,1080]`，一个只画左侧文案的组不该有整屏的框。
+
+**判据**：渲染完检查根节点的 `lastElementChild` 是不是你以为的那一个；
+以及每个场景组的 `getBBox()` 是否符合预期尺寸。标签配平用
+`grep -c '<g[ >]'` 与 `grep -c '</g>'` 对比，两者必须相等。
+
+### 25. `setAttribute('transform')` 是整体覆盖，会冲掉你在 HTML 里写的 translate
+
+为了让角色挂载点用 SVG 原生嵌套 `<svg>`（想避开 foreignObject），把
+
+```html
+<foreignObject id="petFrame" x="960" y="96" ...>
+```
+
+改成了
+
+```html
+<g id="petFrame" transform="translate(960 96)"><svg id="petMount" .../></g>
+```
+
+结果角色跑到了左上角。原因是 `timeline.js` 每帧执行：
+
+```js
+fp.setAttribute('transform', `matrix(${scale} 0 0 ${scale} ${px - 960*scale} ${py - 96*scale})`)
+```
+
+`setAttribute` 是**替换**不是追加，HTML 里那个 `translate(960 96)` 第一帧就被冲掉了。
+而 matrix 里的平移量是 `px - 960*scale`，在 scale=1 时正好等于 0 —— 设计上就是给
+"位置已经由 x/y 属性承担"的 foreignObject 用的补偿量，换成 `<g>` 后平移就丢了。
+
+**结论**：定位量要么全放在元素自身的 x/y 属性里（foreignObject 的写法），
+要么全写进每帧计算的 transform 里，不能一半一半。这一处最终回退到 foreignObject。
+
+顺带记一个误判：我用 `<g[\s>]` 数标签时得到 38 开 / 37 闭，以为还有一处没配平，
+实际是注释里写了 `<g transform=...>` 这串文字被正则数了进去。**注释里别写带尖括号的标签名**。
+
+### 26. 「DOM 说可见、截图说没有」时，先怀疑自己改了没用，再怀疑合成器
+
+排查上面那个黑屏花了很久，中间走了两条弯路，都值得记下来：
+
+**弯路一：以为是截图时机问题。** 加了双 `requestAnimationFrame` 等待，没用。
+做了 A/B/C/D 四种截图方式对比（直接截、双 rAF、双 rAF+300ms、CDP `Page.captureScreenshot`），
+四种结果**逐像素相同**。这一步很有价值——它一次性排除了"合成分层没刷新"这个假设，
+否则会一直在错误的方向上加等待。
+
+**弯路二：以为是 foreignObject 的跨层重绘问题。** 把 foreignObject 换成嵌套 `<svg>`，
+数值一点没变。这个改动本身是错的（见第 25 条），但它的"无效"恰好证明了
+问题不在渲染机制，而在**画什么**。
+
+正确的顺序是：**先用 `getBBox()` / `lastElementChild` 验证结构，再看像素**。
+结构对了再谈渲染，结构不对谈渲染全是白费。
+
+**一个可复用的判据**：如果多个不相关的时间点同时出现"内容缺失"，
+大概率是结构问题（某个祖先被隐藏、某个元素被吞）；如果只是零星个别帧异常，
+才更可能是合成/时序问题。
+
+---
+
 ## 六、这一轮之后的功能清单（v1.1.0）
 
 ```

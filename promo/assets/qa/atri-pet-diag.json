@@ -1,0 +1,378 @@
+{
+  "6.00": {
+    "layout": {
+      "x": 400,
+      "facing": -1,
+      "mode": "idle",
+      "box": {
+        "x": 172.72722587842114,
+        "y": 198.58287600348217,
+        "w": 458.40580767622066,
+        "h": 635.3271439401472
+      }
+    },
+    "visual": {
+      "face": "neutral",
+      "pose": "standing",
+      "seatMix": 0,
+      "blink": 0,
+      "eyeArt": "open"
+    },
+    "mountRect": [
+      454,
+      304,
+      383,
+      461
+    ],
+    "frameRect": [
+      454,
+      304,
+      383,
+      461
+    ],
+    "innerBBox": [
+      118,
+      178,
+      580,
+      698
+    ],
+    "gBox": [
+      454,
+      304,
+      383,
+      461
+    ],
+    "mountOverflow": "visible",
+    "frameTransform": "matrix(0.66 0 0 0.66 376.40 186.64)",
+    "childCount": 1
+  },
+  "16.00": {
+    "layout": {
+      "x": 400,
+      "facing": -1,
+      "mode": "drag",
+      "box": {
+        "x": 174.43975665417818,
+        "y": 164.92778437779222,
+        "w": 455.9691228648999,
+        "h": 662.2622006429223
+      }
+    },
+    "visual": {
+      "face": "flustered",
+      "pose": "standing",
+      "seatMix": 0,
+      "blink": 0,
+      "eyeArt": "pinch"
+    },
+    "mountRect": [
+      102,
+      141,
+      592,
+      733
+    ],
+    "frameRect": [
+      102,
+      141,
+      592,
+      733
+    ],
+    "innerBBox": [
+      102,
+      141,
+      592,
+      733
+    ],
+    "gBox": [
+      102,
+      141,
+      592,
+      733
+    ],
+    "mountOverflow": "visible",
+    "frameTransform": "matrix(1 0 0 1 0.00 0.00)",
+    "childCount": 1
+  },
+  "20.00": {
+    "layout": {
+      "x": 400,
+      "facing": -1,
+      "mode": "idle",
+      "box": {
+        "x": 167.71294168190417,
+        "y": 222.7195334587093,
+        "w": 468.5195443782622,
+        "h": 610.9638512036739
+      }
+    },
+    "visual": {
+      "face": "happy",
+      "pose": "standing",
+      "seatMix": 0,
+      "blink": 0,
+      "eyeArt": "happy"
+    },
+    "mountRect": [
+      25,
+      146,
+      860,
+      778
+    ],
+    "frameRect": [
+      25,
+      146,
+      860,
+      778
+    ],
+    "innerBBox": [
+      25,
+      146,
+      860,
+      778
+    ],
+    "gBox": [
+      25,
+      146,
+      860,
+      778
+    ],
+    "mountOverflow": "visible",
+    "frameTransform": "matrix(1 0 0 1 0.00 0.00)",
+    "childCount": 1
+  },
+  "22.50": {
+    "layout": {
+      "x": 400,
+      "facing": -1,
+      "mode": "dance",
+      "box": {
+        "x": 126.73909200112323,
+        "y": 194.9696224958351,
+        "w": 506.29465275426537,
+        "h": 655.3453767509403
+      }
+    },
+    "visual": {
+      "face": "shy",
+      "pose": "standing",
+      "seatMix": 0,
+      "blink": 0,
+      "eyeArt": "half"
+    },
+    "mountRect": [
+      20,
+      147,
+      720,
+      778
+    ],
+    "frameRect": [
+      20,
+      147,
+      720,
+      778
+    ],
+    "innerBBox": [
+      20,
+      147,
+      720,
+      778
+    ],
+    "gBox": [
+      20,
+      147,
+      720,
+      778
+    ],
+    "mountOverflow": "visible",
+    "frameTransform": "matrix(1 0 0 1 0.00 0.00)",
+    "childCount": 1
+  },
+  "25.00": {
+    "layout": {
+      "x": 400,
+      "facing": -1,
+      "mode": "idle",
+      "box": {
+        "x": 170.5980490671671,
+        "y": 209.92958964841705,
+        "w": 462.7133201300621,
+        "h": 623.8787949098017
+      }
+    },
+    "visual": {
+      "face": "surprised",
+      "pose": "standing",
+      "seatMix": 0,
+      "blink": 0,
+      "eyeArt": "open"
+    },
+    "mountRect": [
+      118,
+      167,
+      579,
+      706
+    ],
+    "frameRect": [
+      118,
+      167,
+      579,
+      706
+    ],
+    "innerBBox": [
+      118,
+      167,
+      579,
+      706
+    ],
+    "gBox": [
+      118,
+      191,
+      579,
+      682
+    ],
+    "mountOverflow": "visible",
+    "frameTransform": "matrix(1 0 0 1 0.00 0.00)",
+    "childCount": 1
+  },
+  "28.00": {
+    "layout": {
+      "x": 400,
+      "facing": -1,
+      "mode": "idle",
+      "box": {
+        "x": 170.5932760163375,
+        "y": 215.23008644370202,
+        "w": 464.6390222595114,
+        "h": 618.5236216648169
+      }
+    },
+    "visual": {
+      "face": "angry",
+      "pose": "standing",
+      "seatMix": 0,
+      "blink": 0,
+      "eyeArt": "half"
+    },
+    "mountRect": [
+      117,
+      192,
+      593,
+      685
+    ],
+    "frameRect": [
+      117,
+      192,
+      593,
+      685
+    ],
+    "innerBBox": [
+      117,
+      192,
+      593,
+      685
+    ],
+    "gBox": [
+      117,
+      192,
+      593,
+      685
+    ],
+    "mountOverflow": "visible",
+    "frameTransform": "matrix(1 0 0 1 0.00 0.00)",
+    "childCount": 1
+  },
+  "31.50": {
+    "layout": {
+      "x": 400,
+      "facing": -1,
+      "mode": "dizzy",
+      "box": {
+        "x": 205.4025413716945,
+        "y": 357.29140602730723,
+        "w": 405.17032331668395,
+        "h": 471.6979781719751
+      }
+    },
+    "visual": {
+      "face": "dizzy",
+      "pose": "seated",
+      "seatMix": 0.5,
+      "blink": 0.23809523809522454,
+      "eyeArt": "dizzy"
+    },
+    "mountRect": [
+      123,
+      184,
+      557,
+      817
+    ],
+    "frameRect": [
+      123,
+      184,
+      557,
+      817
+    ],
+    "innerBBox": [
+      123,
+      196,
+      557,
+      817
+    ],
+    "gBox": [
+      123,
+      184,
+      557,
+      817
+    ],
+    "mountOverflow": "visible",
+    "frameTransform": "matrix(1 0 0 1 0.00 -12.00)",
+    "childCount": 1
+  },
+  "35.00": {
+    "layout": {
+      "x": 400,
+      "facing": -1,
+      "mode": "idle",
+      "box": {
+        "x": 172.34677277955012,
+        "y": 200.61495156213414,
+        "w": 459.17340010071297,
+        "h": 633.2760706133656
+      }
+    },
+    "visual": {
+      "face": "happy",
+      "pose": "standing",
+      "seatMix": 0.49,
+      "blink": 0.9978589232591836,
+      "eyeArt": "happy"
+    },
+    "mountRect": [
+      139,
+      147,
+      789,
+      753
+    ],
+    "frameRect": [
+      139,
+      147,
+      789,
+      753
+    ],
+    "innerBBox": [
+      34,
+      125,
+      839,
+      801
+    ],
+    "gBox": [
+      139,
+      147,
+      789,
+      753
+    ],
+    "mountOverflow": "visible",
+    "frameTransform": "matrix(0.94 0 0 0.94 107.60 29.76)",
+    "childCount": 1
+  }
+}
