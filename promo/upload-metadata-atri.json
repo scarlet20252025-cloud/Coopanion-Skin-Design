@@ -1,0 +1,19 @@
+{
+  "title": "亚托利｜高性能的 Coopanion 桌宠",
+  "description": "亚托利（ATRI）形象包 v1.1.0\n\n高性能的仿生人少女，住进你的桌面陪你工作。会招手、会撒娇、会跳舞、会害羞，闲下来会自己坐下发呆；戳她会回应，提起来会挣扎。\n\n还有个小脾气：别叫她「萝卜子」——她会先愣住，然后当场炸毛。\n\n形象包下载（选这个）：\nhttps://github.com/scarlet20252025-cloud/Coopanion-Skin-Design/releases/tag/v1.1.0\n\n桌宠软件主仓库（先装这个）：\nhttps://github.com/Pal-AI-Lab/Coopanion\n\n装法：先装 Coopanion，再打开「装扮 → 导入」，选刚下载的 zip。\n\n作者：Asryto\n形象包版本：v1.1.0（48 张贴图 / 37 个可演示词条）",
+  "tags": [
+    "桌宠",
+    "亚托利",
+    "ATRI",
+    "Coopanion",
+    "AI桌宠",
+    "开源",
+    "Asryto"
+  ],
+  "release_status": "published: v1.1.0",
+  "release_url": "https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design/releases/tag/v1.1.0",
+  "video": "D:/Codex/Coopanion-Skin-Design/promo/assets/亚托利宣传片.mp4",
+  "asset": "D:/Codex/Coopanion-Skin-Design/delivery/atri-v011-coopanion.zip",
+  "asset_remote": "https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design/releases/download/v1.1.0/ATRI-1.1.0.zip",
+  "notes": "配乐为第三方版权曲目（szak - 親愛なるあの日々へ），仅作演示用途；商用或再分发前请自行确认授权。"
+}
