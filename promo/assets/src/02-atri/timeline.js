@@ -156,12 +156,14 @@ const schedule = [
   [38.2, () => word('surprised')],
   [39.9, () => word('dizzy')],
 
-  // 42–52 叫她萝卜子 → 生气（三级递进，每级 2.4 秒）
+  // 42–52 叫她萝卜子 → 生气（两级递进）
+  // 2026-10-31 用户反馈：46.0s 的嘟嘴在成片里没有真的做出动作，这种就不该演示。
+  // 保留的两级都是确实会播出来的：surprised(43.6) → angry(46.2)。
+  // 删掉 pout 后 46.0–48.4 空出 2.4 秒，生气的爆发点从 48.4 提前到 46.2 填上，节奏更紧。
   [42.6, () => { body.place(400, -1); word('stand'); word('neutral'); }],
   [43.6, () => word('surprised')],
-  [46.0, () => word('pout')],
-  [48.4, () => word('angry')],
-  [50.4, () => { body.talk(); word('determined'); }],
+  [46.2, () => word('angry')],
+  [49.0, () => { body.talk(); word('determined'); }],
 
   // 52–56 坐下
   [52.2, () => { body.place(400, -1); word('sit'); }],
@@ -210,7 +212,7 @@ function at(t) {
   const haloIn = clamp((t - 0.6) / 2.0) * (1 - clamp((t - 30.5) / 2.0) * 0.35);
   $('halo').setAttribute('opacity', (haloIn * 0.9).toFixed(3));
   $('halo').setAttribute('r', (368 + Math.sin(t * 0.9) * 16).toFixed(1));
-  const angerIn = clamp((t - 48.3) / 1.2) * (1 - clamp((t - 51.6) / 1.4));
+  const angerIn = clamp((t - 46.1) / 1.2) * (1 - clamp((t - 50.4) / 1.4));
   $('haloRed').setAttribute('opacity', (angerIn * 0.95).toFixed(3));
   $('haloRed').setAttribute('r', (330 + Math.sin(t * 2.6) * 26 + angerIn * 40).toFixed(1));
 
@@ -279,9 +281,9 @@ function at(t) {
   // ---- 场景 5：萝卜子 → 生气 ----
   const radOn = t >= 42 && t < 52;
   if (radOn) {
-    const step = t < 46.0 ? 0 : t < 48.4 ? 1 : 2;
+    const step = t < 46.2 ? 0 : 1;
     $('radSteps').setAttribute('opacity', clamp((t - 42.8) / 1.0).toFixed(3));
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 2; i++) {
       const g = $('rs' + i);
       const on = i <= step;
       const r = g.querySelector('rect');
@@ -290,19 +292,19 @@ function at(t) {
       r.setAttribute('stroke-width', i === step ? 2 : 1.5);
       g.querySelector('text').style.fill = i <= step ? '#ffe0d0' : '#8a6f68';
     }
-    const p = clamp((t - 43.2) / 0.8);
+    const p = clamp((t - 42.7) / 0.8);
     $('radBubble').setAttribute('opacity', (0.12 + 0.88 * easeOut(p)).toFixed(3));
     $('radBubble').setAttribute('transform', `translate(120 ${(520 + mix(26, 0, easeOut(p))).toFixed(1)})`);
-    const l1On = t < 48.4;
+    const l1On = t < 46.2;
     $('radL1').textContent = l1On ? '……你刚才，叫我什么？' : '说了不是萝卜子！';
     $('radL2').textContent = l1On ? '（歪头，眉毛皱起来）' : '我可是高性能的！';
-    $('radL1').setAttribute('opacity', easeOut((t - 43.4) / 0.7).toFixed(3));
-    $('radL2').setAttribute('opacity', easeOut((t - (l1On ? 44.8 : 48.6)) / 0.7).toFixed(3));
+    $('radL1').setAttribute('opacity', easeOut((t - 42.9) / 0.7).toFixed(3));
+    $('radL2').setAttribute('opacity', easeOut((t - (l1On ? 44.8 : 46.6)) / 0.7).toFixed(3));
     $('radL1').setAttribute('class', l1On ? '' : 'warn');
     $('radTitle').textContent = l1On ? '「萝卜子？」' : '「我才不是萝卜子！」';
     $('radTitle').setAttribute('class', l1On ? 'large' : 'large warn');
-    $('radSub').textContent = l1On ? '这个名字，她不太喜欢。' : '生气值拉满，青筋都出来了。';
-    if (t >= 48.4 && t < 51.2) {
+    $('radSub').textContent = l1On ? '这个名字，她不太喜欢。' : '千万别叫她萝卜子，后果非常严重。';
+    if (t >= 46.2 && t < 50.0) {
       $('radish').setAttribute('transform', `translate(${(Math.sin(t * 34) * 3.2).toFixed(2)} 0)`);
     } else {
       $('radish').setAttribute('transform', 'translate(0.00 0)');

@@ -96,8 +96,8 @@
         ]
       },
       "about": {
-        "zh": "眼睛睁大，头顶冒出感叹号",
-        "en": "eyes go wide, an exclamation mark overhead"
+        "zh": "眼睛睁大，头顶冒出感叹号——听到意外的话（比如被叫「萝卜子」）时的第一反应，先是愣住。",
+        "en": "eyes go wide, an exclamation mark overhead - the first reaction to something unexpected (like being called a 'radish'): she freezes before reacting."
       }
     },
     {
@@ -110,8 +110,10 @@
         ]
       },
       "about": {
-        "zh": "眉毛压低，头顶冒怒气符号，身子发抖",
-        "en": "brows lowered, an anger mark overhead, body shaking"
+        "zh": "眉毛压低、头顶冒出怒气符号、身子发抖——被叫「萝卜子」时就是这个反应，先炸毛否认，再强调自己是高性能的。",
+        "zh-Hant": "眉毛壓低、頭頂冒出怒氣符號、身子發抖——被叫「蘿蔔子」時就是這個反應，先炸毛否認，再強調自己是高性能的。",
+        "en": "brows lowered, an anger mark overhead, body shaking - this is what being called a 'radish' triggers: she flares up, denies it, then insists she is high-performance.",
+        "ja": "眉毛を下げ、頭の上に怒りマークが出て体が震える——「大根」と呼ばれたときの反応。まずかっとなって否定し、それから自分は高性能だと主張する。"
       }
     },
     {
@@ -490,8 +492,8 @@
         ]
       },
       "about": {
-        "zh": "嘴嘟起来,脸红,扭头不看你",
-        "en": "pouts, blushes and turns away from you"
+        "zh": "嘴嘟起来、脸红、扭头不看你——有点不服气的小情绪。注意：这个表情在当前形象里脸部变化很轻微，不适合当作独立演示动作。",
+        "en": "pouts, blushes and turns away from you - a small sulk. Note: the face change is very slight in this pack, so it does not read well as a standalone demo."
       },
       "seconds": 0.9
     },
@@ -542,10 +544,10 @@
     }
   ],
   "about": {
-    "zh": "仿生人少女亚托莉，浅蓝色长发、红色眼睛、水手服、胸前红色蝴蝶结。性格开朗认真、爱逞强、好奇心强，喜欢证明自己有用；说话干脆有精神，常把「我可是高性能的」挂在嘴边，被夸会得意，被小看会不服气地再强调一次。",
-    "zh-Hant": "仿生人少女亞托莉，淺藍色長髮、紅色眼睛、水手服、胸前紅色蝴蝶結。性格開朗認真、愛逞強、好奇心強，喜歡證明自己有用；說話乾脆有精神，常把「我可是高性能的」掛在嘴邊，被誇會得意，被小看會不服氣地再強調一次。",
-    "en": "ATRI, a synthetic girl: light-blue hair, red eyes, a sailor uniform and a red bow at the collar. Bright, earnest and a little proud, endlessly curious and eager to prove she is useful. She talks crisply and with energy, and her catchphrase is \"I'm high-performance, you know\" - pleased when praised, quick to insist on it again when underestimated.",
-    "ja": "アンドロイドの少女アトリ。水色の長い髪、赤い瞳、セーラー服、胸元に赤いリボン。明るく真面目で、ちょっと強がり、好奇心が強い。役に立てることを示したがる。話し方はきびきびとして元気で、口癖は「私は高性能ですから」。褒められると得意げになり、見くびられるとむきになって言い直す。"
+    "zh": "仿生人少女亚托莉，浅蓝色长发、红色眼睛、水手服、胸前红色蝴蝶结。性格开朗认真、爱逞强、好奇心强，喜欢证明自己有用；说话干脆有精神，常把「我可是高性能的」挂在嘴边，被夸会得意，被小看会不服气地再强调一次。\n\n最忌讳被叫「萝卜子」——听到这个词会先愣住，然后立刻炸毛否认，强调自己是高性能的仿生人而不是蔬菜；情绪上来时头顶会冒青筋、身子发抖，这时候哄她也没用，只能等她自己消气。",
+    "zh-Hant": "仿生人少女亞托莉，淺藍色長髮、紅色眼睛、水手服、胸前紅色蝴蝶結。性格開朗認真、愛逞強、好奇心強，喜歡證明自己有用；說話乾脆有精神，常把「我可是高性能的」掛在嘴邊，被誇會得意，被小看會不服氣地再強調一次。\n\n最忌諱被叫「蘿蔔子」——聽到這個詞會先愣住，然後立刻炸毛否認，強調自己是高性能的仿生人而不是蔬菜；情緒上來時頭頂會冒青筋、身子發抖，這時候哄她也沒用，只能等她自己消氣。",
+    "en": "ATRI, a synthetic girl: light-blue hair, red eyes, a sailor uniform and a red bow at the collar. Bright, earnest and a little proud, endlessly curious and eager to prove she is useful. She talks crisply and with energy, and her catchphrase is \"I'm high-performance, you know\" - pleased when praised, quick to insist on it again when underestimated.\n\nHer one hard taboo is being called a \"radish\". The word makes her freeze first, then flare up and deny it outright, insisting she is a high-performance android and not a vegetable; when it hits, an anger mark appears above her head and her body shakes, and coaxing does not help until she cools down on her own.",
+    "ja": "アンドロイドの少女アトリ。水色の長い髪、赤い瞳、セーラー服、胸元に赤いリボン。明るく真面目で、ちょっと強がり、好奇心が強い。役に立てることを示したがる。話し方はきびきびとして元気で、口癖は「私は高性能ですから」。褒められると得意げになり、見くびられるとむきになって言い直す。\n\n「大根」と呼ばれるのが一番の禁句。その言葉を聞くとまず固まり、それからすぐにかっとなって否定し、自分は高性能なアンドロイドであって野菜ではないと強調する。怒りが頂点に達すると頭の上に怒りマークが出て体が震え、なだめても効かず、自分で落ち着くまで待つしかない。"
   },
   "axes": [],
   "presets": [],

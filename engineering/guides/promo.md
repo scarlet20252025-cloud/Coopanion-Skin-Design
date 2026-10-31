@@ -250,6 +250,61 @@ python promo/render-atri.py --ffmpeg <ff> --browser <exe>   --samples 3,6,10,15,
 `{wave, happy, dance, shy, surprised, dizzy}` —— **`pout` 与 `angry` 已消失**，
 确认删除生效且没有残留；像素检查 ALL OK。
 
+### 2026-10-31 第五轮：删掉看不见的嘟嘴 + 人设写进提示词
+
+用户看片后两条反馈：
+1. 「46 秒这里的嘟嘴没做动作，不要做演示」
+2. 「'生气值拉满，青筋都出来了' 改成 '千万别叫她萝卜子，后果非常严重'。对应的皮肤包环境提示词里也要有演示的效果」
+
+#### 一、演示的前提是动作真的发生
+
+`pout` 在 `model.words` 里，`doWord()` 也返回 `true`，但这个形象的脸部贴图在嘟嘴状态
+几乎没变化，观众看到的是一张没动的脸。这是自动化检查抓不到的第三类失败：
+
+| 失败类型 | 表现 | 能否自动检测 |
+|---|---|---|
+| 词不在 `model.words` | 根本没得发 | 能（grep） |
+| `busy()` 拒收 | `accepted=false` | 能（渲染器中止） |
+| **发了但看不出** | `accepted=true`，画面无变化 | **不能，只能人看** |
+
+处理：删掉这一级。删完 46.0–48.4 空出 2.4 秒，把 `angry` 从 48.4 提前到 46.2 填上。
+现在两级：`surprised`(43.6) → `angry`(46.2)。步骤条同步从 3 步减到 2 步。
+
+顺手修了两处空档：气泡淡入 43.2 → 42.7（43.0 采样时正文区是空的）；
+`angerIn` 红线 48.3 → 46.1 对齐新爆发点。
+
+#### 二、人设禁忌写进提示词，不只拍进片
+
+宣传片演一遍 ≠ 角色"有"这个设定。装进 Coopanion 后，模型靠 `figure.json` 的 `about`
+认识角色，那里没写她就不知道自己忌讳被叫萝卜子。
+
+改了 `packs/atri-v011/figure.json` 三处，四语（zh / zh-Hant / en / ja）同步：
+
+1. **`about`** 追加禁忌段（先愣住 → 炸毛否认 → 青筋发抖 → 哄也没用）
+2. **`vocab.angry.about`** 加触发语境（「被叫『萝卜子』时就是这个反应」），
+   原来只写「眉毛压低，头顶冒怒气符号，身子发抖」，模型不知道何时该用
+3. **`vocab.surprised.about`** 标为前置反应（「听到意外的话时的第一反应，先是愣住」）
+
+**规律**：`about` 是角色的世界观，`vocab[].about` 是每个动作的适用场景。
+宣传片想呈现的因果链，两处都要写，否则装进应用后模型只会随机演表情。
+
+另外在 `vocab.pout.about` 里写明「这个表情在当前形象里脸部变化很轻微，
+不适合当作独立演示动作」——把踩过的坑固化进数据，下一个人查词条就能看到。
+
+修 bug：`en` 的 about 追加后出现 `underestimated.Her one hard taboo`（缺空格）。
+
+#### 验证
+
+```sh
+python promo/render-atri.py --ffmpeg <ff> --browser <exe> --samples 43,44,46,47,49
+```
+
+5 采样 / 137 次动作校验 / 0 拒绝，萝卜子段动作集合
+`{angry, determined, neutral, stand, surprised}`——**`pout` 已消失**；像素检查 ALL OK。
+
+包侧：`package-atri-pack.py` 重新打包后读回 zip 确认
+`about` 四语均含禁忌、`angry.about` 带触发语境。
+
 ### 校验顺序（照抄即可）
 
 ```sh
