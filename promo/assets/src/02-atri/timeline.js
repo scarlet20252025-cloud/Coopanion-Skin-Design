@@ -146,15 +146,15 @@ const schedule = [
   [25.8, () => { const h = hit(); cursorPoint = { x: h.x, y: h.y - 40, t: 25800 }; body.pointer('down', cursorPoint); }],
   [28.8, () => body.pointer('up', { x: 400, y: 150, t: 28800 })],
 
-  // 31–42 八个表情，每个 1.4 秒
+  // 31–42 六个表情，每个约 1.77 秒。
+  // 2026-10-31 用户要求删掉「蹭蹭」与「生气」：前者不是可演示的独立动作，
+  // 后者留给 42–52 s 的「叫她萝卜子」桥段专门推进，不在此处重复。
   [31.4, () => { body.place(400, -1); word('stand'); word('wave'); }],
-  [32.8, () => word('happy')],
-  [34.2, () => word('dance')],
-  [35.6, () => word('shy')],
-  [37.0, () => word('surprised')],
-  [38.4, () => word('pout')],
-  [39.8, () => word('dizzy')],
-  [41.2, () => word('angry')],
+  [33.1, () => word('happy')],
+  [34.8, () => word('dance')],
+  [36.5, () => word('shy')],
+  [38.2, () => word('surprised')],
+  [39.9, () => word('dizzy')],
 
   // 42–52 叫她萝卜子 → 生气（三级递进，每级 2.4 秒）
   [42.6, () => { body.place(400, -1); word('stand'); word('neutral'); }],
@@ -259,14 +259,14 @@ function at(t) {
   }
 
   // ---- 场景 4：八个 chip，每个 1.4 秒 ----
-  const actIdx = t < 32.8 ? 0 : t < 34.2 ? 1 : t < 35.6 ? 2 : t < 37.0 ? 3
-    : t < 38.4 ? 4 : t < 39.8 ? 5 : t < 41.2 ? 6 : 7;
+  const actIdx = t < 33.1 ? 0 : t < 34.8 ? 1 : t < 36.5 ? 2
+    : t < 38.2 ? 3 : t < 39.9 ? 4 : 5;
   const actTitles = [
-    '招手，打个招呼。', '开心，眼睛会弯。', '跳舞，音符跟着。', '害羞，脸会红。',
-    '惊讶，呆毛立起。', '嘟嘴，有点不服。', '晕乎，圈圈眼转。', '生气，会瞪你。',
+    '招手，打个招呼。', '开心，眼睛会弯。', '跳舞，音符跟着。',
+    '害羞，脸会红。', '惊讶，呆毛立起。', '晕乎，圈圈眼转。',
   ];
   $('actTitle').textContent = actTitles[Math.min(actIdx, actTitles.length - 1)];
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 6; i++) {
     const g = $('chip' + i);
     const sel = t >= 31 && t < 42 && i === actIdx;
     const r = g.querySelector('rect');

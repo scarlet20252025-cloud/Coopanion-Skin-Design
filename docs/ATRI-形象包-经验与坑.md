@@ -423,6 +423,51 @@ if (KIT_EXPRESSIONS.includes(w) || words[w]?.expression) {
 
 ---
 
+### 28. UI 标签不等于可演示动作：先把 `model.words` 对一遍
+
+宣传片的表情 chip 原来写了 8 个：「招手/开心/跳舞/害羞/惊讶/嘟嘴/晕乎/生气」，
+用户要求删掉「蹭蹭」和「生气」时才发现——**「蹭蹭」根本不在 `model.words` 里**。
+
+```
+model.json words: neutral happy wink love shy surprised angry sad smug worried
+                  flustered scared excited confused stand wave walk run jump hop
+                  look turn nod shake spin sit sleep dizzy bow shiver dance bubble
+                  heart note pointer ring spiral star sweat tear drag dragged
+                  tremble sleepy thinking pout determined cry flap
+```
+
+没有「蹭蹭」。它只是一个我写进 UI 的标签，底下没有对应的真实动画。
+放进去等于演示了一个不存在的动作。
+
+「生气」则相反：`angry` 确实在 `KIT_EXPRESSIONS` 里，有青筋和抖动，是真实动作。
+删掉它是因为**位置不对**——在 chip 里 1.4 秒一闪而过，不如放到「叫她萝卜子」桥段
+当剧情结果（惊讶→嘟嘴→生气）有力。
+
+**教训**：给宣传片写动作清单前，先 `grep` 一遍 `model.words`。
+不在表里的词不是"还没做"，是"不存在"。这和 kit 的 `doWord()` 返回 false 是两种失败：
+一个是拒收，一个是**根本没得发**。
+
+改动落地（只动这两张表，萝卜子桥段一行没碰）：
+
+| 位置 | 改前 | 改后 |
+|---|---|---|
+| `#actionChips` | 8 个（4+4 两排） | 6 个（3+3 两排） |
+| schedule 表情段 | 8 动作 × 1.4 s | 6 动作 × 1.77 s |
+| `actIdx` 分档 / `actTitles` / chip 循环 | 8 | 6 |
+
+删完 6 个动作分摊原来 10.6 秒的段落，间隔从 1.4 秒变成 1.7 秒，**比原来更慢**。
+
+**验证手法**：抽帧后用 `promoState.checks` 反查该时间窗内实际发过的动作集合：
+
+```python
+words = sorted({c['word'] for s in d for c in s['checks'] if 31 <= c['time'] < 42})
+# 期望: ['dance','dizzy','happy','shy','stand','surprised','wave']  ← 没有 pout / angry
+```
+
+比"看画面有没有生气脸"可靠得多，也不依赖人眼。
+
+---
+
 ## 六、这一轮之后的功能清单（v1.1.0）
 
 ```

@@ -6,13 +6,13 @@
     1920,
     1080
   ],
-  "bytes": 20103263,
-  "sha256": "4c62d91e70279d152023e38564eeb09ae08ea3df1fc8963e49681f2db9ff30c9",
+  "bytes": 20220974,
+  "sha256": "beaecb47532f22373b421c02b09117ad7bf83937c37a395882a0fadc56d1980a",
   "full_decode": "passed",
   "page_errors": [],
   "visual_review": "required",
   "music": true,
-  "actions_checked": 37,
-  "actions_accepted": 37,
+  "actions_checked": 35,
+  "actions_accepted": 35,
   "source_pack": "packs/atri-v011"
 }

@@ -40,8 +40,8 @@
     "face": "neutral",
     "pose": "standing",
     "seatMix": 0.49,
-    "blink": 0.608761429008691,
-    "eyeArt": "half"
+    "blink": 0,
+    "eyeArt": "open"
   },
   "secondary": {
     "ahoge": -1.760724045616921,
@@ -147,38 +147,28 @@
       "accepted": true
     },
     {
-      "time": 32.78333333333238,
+      "time": 33.08333333333236,
       "word": "happy",
       "accepted": true
     },
     {
-      "time": 34.1833333333323,
+      "time": 34.783333333332266,
       "word": "dance",
       "accepted": true
     },
     {
-      "time": 35.58333333333222,
+      "time": 36.48333333333217,
       "word": "shy",
       "accepted": true
     },
     {
-      "time": 36.98333333333214,
+      "time": 38.18333333333207,
       "word": "surprised",
       "accepted": true
     },
     {
-      "time": 38.38333333333206,
-      "word": "pout",
-      "accepted": true
-    },
-    {
-      "time": 39.78333333333198,
+      "time": 39.883333333331976,
       "word": "dizzy",
-      "accepted": true
-    },
-    {
-      "time": 41.1833333333319,
-      "word": "angry",
       "accepted": true
     },
     {
@@ -239,11 +229,39 @@
   ],
   "events": [
     {
+      "kind": "mode",
+      "detail": {
+        "mode": "crouch"
+      },
+      "time": 23.583333333332902
+    },
+    {
       "kind": "touch",
       "detail": {
         "kind": "poke"
       },
       "time": 23.583333333332902
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "air"
+      },
+      "time": 23.733333333332894
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "land"
+      },
+      "time": 24.149999999999537
+    },
+    {
+      "kind": "mode",
+      "detail": {
+        "mode": "idle"
+      },
+      "time": 24.56666666666618
     },
     {
       "kind": "mode",
@@ -293,21 +311,21 @@
       "detail": {
         "mode": "dance"
       },
-      "time": 34.1833333333323
+      "time": 34.783333333332266
     },
     {
       "kind": "mode",
       "detail": {
         "mode": "idle"
       },
-      "time": 37.38333333333212
+      "time": 37.983333333332084
     },
     {
       "kind": "mode",
       "detail": {
         "mode": "dizzy"
       },
-      "time": 39.78333333333198
+      "time": 39.883333333331976
     },
     {
       "kind": "mode",
