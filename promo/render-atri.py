@@ -36,15 +36,15 @@ def main():
     parser.add_argument("--ffmpeg", default=shutil.which("ffmpeg"))
     parser.add_argument("--out", default=DEFAULT_OUT)
     parser.add_argument("--music", help="Authorized optional WAV/music file")
-    parser.add_argument("--duration", type=float, default=36)
+    parser.add_argument("--duration", type=float, default=60)
     parser.add_argument("--fps", type=int, default=30)
     parser.add_argument("--samples", help="Comma-separated key-frame times; no encoding")
     args = parser.parse_args()
 
     if urlparse(args.url).hostname not in ["127.0.0.1", "localhost"]:
         parser.error("Only an isolated localhost movie page is supported")
-    if not 0 < args.duration <= 60 or not 1 <= args.fps <= 60:
-        parser.error("Use duration (0,60] and fps [1,60]")
+    if not 0 < args.duration <= 120 or not 1 <= args.fps <= 60:
+        parser.error("Use duration (0,120] and fps [1,60]")
     out = (ROOT / args.out).resolve()
     if not out.is_relative_to(ROOT):
         parser.error("Output must stay in this repository")

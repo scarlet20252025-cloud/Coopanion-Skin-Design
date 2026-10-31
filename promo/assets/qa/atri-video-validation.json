@@ -1,18 +1,18 @@
 {
-  "duration_seconds": 36,
-  "frames": 1080,
+  "duration_seconds": 60,
+  "frames": 1800,
   "fps": 30,
   "resolution": [
     1920,
     1080
   ],
-  "bytes": 13062628,
-  "sha256": "8dde6398039247e315384996a26fdc072aabb4143f81572514f13142edc3451e",
+  "bytes": 20103263,
+  "sha256": "4c62d91e70279d152023e38564eeb09ae08ea3df1fc8963e49681f2db9ff30c9",
   "full_decode": "passed",
   "page_errors": [],
   "visual_review": "required",
   "music": true,
-  "actions_checked": 33,
-  "actions_accepted": 33,
+  "actions_checked": 37,
+  "actions_accepted": 37,
   "source_pack": "packs/atri-v011"
 }

@@ -1,39 +1,39 @@
 {
   "frames": [
     {
-      "file": "atri-sample-02.00.png",
+      "file": "atri-sample-03.00.png",
       "ok": true,
       "reason": "",
       "zones": {
         "title": {
-          "mean": 51.93,
-          "std": 60.2,
+          "mean": 51.7,
+          "std": 60.22,
           "ink": 0.112,
           "edge": 2.97
         },
         "body": {
-          "mean": 27.38,
+          "mean": 27.28,
           "std": 23.26,
           "ink": 0.0369,
-          "edge": 1.46
+          "edge": 1.5
         },
         "pet": {
-          "mean": 70.44,
-          "std": 69.84,
-          "ink": 0.313,
-          "edge": 2.89
+          "mean": 69.76,
+          "std": 70.42,
+          "ink": 0.3089,
+          "edge": 2.88
         },
         "footer": {
-          "mean": 11.2,
-          "std": 12.85,
-          "ink": 0.3993,
-          "edge": 0.98
+          "mean": 11.09,
+          "std": 12.79,
+          "ink": 0.4124,
+          "edge": 0.96
         },
         "whole": {
-          "mean": 41.12,
-          "std": 51.49,
+          "mean": 40.76,
+          "std": 51.6,
           "ink": 0.1922,
-          "edge": 1.7
+          "edge": 1.68
         }
       }
     },
@@ -43,145 +43,108 @@
       "reason": "",
       "zones": {
         "title": {
-          "mean": 42.81,
-          "std": 51.6,
-          "ink": 0.0832,
-          "edge": 3.08
+          "mean": 48.31,
+          "std": 60.57,
+          "ink": 0.1118,
+          "edge": 3.03
         },
         "body": {
-          "mean": 40.05,
-          "std": 40.42,
-          "ink": 0.0768,
-          "edge": 4.26
+          "mean": 26.6,
+          "std": 26.36,
+          "ink": 0.0487,
+          "edge": 2.2
         },
         "pet": {
-          "mean": 53.18,
-          "std": 50.55,
-          "ink": 0.1793,
-          "edge": 1.88
+          "mean": 68.41,
+          "std": 70.03,
+          "ink": 0.2812,
+          "edge": 2.95
         },
         "footer": {
-          "mean": 10.82,
-          "std": 13.48,
-          "ink": 0.4187,
-          "edge": 0.91
+          "mean": 10.67,
+          "std": 13.01,
+          "ink": 0.4474,
+          "edge": 0.92
         },
         "whole": {
-          "mean": 35.44,
-          "std": 39.99,
-          "ink": 0.151,
-          "edge": 1.68
+          "mean": 39.2,
+          "std": 51.2,
+          "ink": 0.188,
+          "edge": 1.77
         }
       }
     },
     {
-      "file": "atri-sample-09.00.png",
+      "file": "atri-sample-10.00.png",
       "ok": true,
       "reason": "",
       "zones": {
         "title": {
-          "mean": 44.32,
-          "std": 48.84,
-          "ink": 0.0819,
-          "edge": 2.71
+          "mean": 45.17,
+          "std": 51.56,
+          "ink": 0.0837,
+          "edge": 3.06
         },
         "body": {
-          "mean": 38.97,
-          "std": 38.88,
-          "ink": 0.0718,
-          "edge": 4.48
+          "mean": 40.02,
+          "std": 40.44,
+          "ink": 0.0786,
+          "edge": 4.24
         },
         "pet": {
-          "mean": 49.8,
-          "std": 51.29,
-          "ink": 0.1728,
-          "edge": 1.83
+          "mean": 52.72,
+          "std": 50.53,
+          "ink": 0.188,
+          "edge": 1.77
         },
         "footer": {
-          "mean": 11.26,
-          "std": 14.21,
-          "ink": 0.4115,
+          "mean": 11.03,
+          "std": 13.46,
+          "ink": 0.4018,
           "edge": 0.93
         },
         "whole": {
-          "mean": 34.78,
-          "std": 39.45,
-          "ink": 0.1474,
-          "edge": 1.59
-        }
-      }
-    },
-    {
-      "file": "atri-sample-11.50.png",
-      "ok": true,
-      "reason": "",
-      "zones": {
-        "title": {
-          "mean": 43.18,
-          "std": 52.69,
-          "ink": 0.0891,
-          "edge": 2.96
-        },
-        "body": {
-          "mean": 38.23,
-          "std": 36.32,
-          "ink": 0.0675,
-          "edge": 4.6
-        },
-        "pet": {
-          "mean": 51.83,
-          "std": 50.96,
-          "ink": 0.1863,
-          "edge": 1.85
-        },
-        "footer": {
-          "mean": 11.37,
-          "std": 14.91,
-          "ink": 0.4117,
-          "edge": 0.93
-        },
-        "whole": {
-          "mean": 34.51,
-          "std": 39.76,
-          "ink": 0.1526,
+          "mean": 36.15,
+          "std": 40.11,
+          "ink": 0.1514,
           "edge": 1.61
         }
       }
     },
     {
-      "file": "atri-sample-16.00.png",
+      "file": "atri-sample-15.00.png",
       "ok": true,
       "reason": "",
       "zones": {
         "title": {
-          "mean": 50.94,
-          "std": 59.91,
-          "ink": 0.1146,
-          "edge": 3.31
+          "mean": 41.35,
+          "std": 48.77,
+          "ink": 0.0817,
+          "edge": 2.71
         },
         "body": {
-          "mean": 29.93,
-          "std": 27.52,
-          "ink": 0.0662,
-          "edge": 1.35
+          "mean": 39.07,
+          "std": 38.78,
+          "ink": 0.0701,
+          "edge": 4.47
         },
         "pet": {
-          "mean": 70.65,
-          "std": 71.62,
-          "ink": 0.2983,
-          "edge": 3.06
+          "mean": 52.14,
+          "std": 50.68,
+          "ink": 0.191,
+          "edge": 1.73
         },
         "footer": {
-          "mean": 11.53,
-          "std": 16.18,
-          "ink": 0.436,
-          "edge": 0.92
+          "mean": 11.18,
+          "std": 14.24,
+          "ink": 0.414,
+          "edge": 0.93
         },
         "whole": {
-          "mean": 41.03,
-          "std": 52.44,
-          "ink": 0.1964,
-          "edge": 1.78
+          "mean": 34.45,
+          "std": 39.2,
+          "ink": 0.1537,
+          "edge": 1.53
         }
       }
     },
@@ -191,71 +154,34 @@
       "reason": "",
       "zones": {
         "title": {
-          "mean": 44.98,
-          "std": 55.64,
-          "ink": 0.0975,
-          "edge": 3.19
+          "mean": 45.95,
+          "std": 52.64,
+          "ink": 0.089,
+          "edge": 2.93
         },
         "body": {
-          "mean": 37.27,
-          "std": 31.02,
-          "ink": 0.1081,
-          "edge": 2.55
+          "mean": 37.37,
+          "std": 34.2,
+          "ink": 0.0673,
+          "edge": 4.24
         },
         "pet": {
-          "mean": 67.35,
-          "std": 70.53,
-          "ink": 0.2105,
-          "edge": 2.68
+          "mean": 51.14,
+          "std": 51.1,
+          "ink": 0.1762,
+          "edge": 1.89
         },
         "footer": {
-          "mean": 12.2,
-          "std": 17.27,
-          "ink": 0.4005,
-          "edge": 0.97
+          "mean": 11.28,
+          "std": 15.06,
+          "ink": 0.4278,
+          "edge": 0.95
         },
         "whole": {
-          "mean": 39.76,
-          "std": 50.61,
-          "ink": 0.1628,
-          "edge": 1.67
-        }
-      }
-    },
-    {
-      "file": "atri-sample-22.50.png",
-      "ok": true,
-      "reason": "",
-      "zones": {
-        "title": {
-          "mean": 49.58,
-          "std": 57.16,
-          "ink": 0.1034,
-          "edge": 2.87
-        },
-        "body": {
-          "mean": 38.51,
-          "std": 31.05,
-          "ink": 0.107,
-          "edge": 2.53
-        },
-        "pet": {
-          "mean": 65.75,
-          "std": 70.75,
-          "ink": 0.2213,
-          "edge": 2.78
-        },
-        "footer": {
-          "mean": 12.46,
-          "std": 17.96,
-          "ink": 0.4305,
-          "edge": 0.94
-        },
-        "whole": {
-          "mean": 40.54,
-          "std": 50.8,
-          "ink": 0.1682,
-          "edge": 1.72
+          "mean": 35.05,
+          "std": 39.97,
+          "ink": 0.1546,
+          "edge": 1.56
         }
       }
     },
@@ -265,218 +191,556 @@
       "reason": "",
       "zones": {
         "title": {
-          "mean": 39.04,
-          "std": 43.58,
-          "ink": 0.0628,
-          "edge": 2.28
+          "mean": 45.57,
+          "std": 57.18,
+          "ink": 0.1014,
+          "edge": 3.01
         },
         "body": {
-          "mean": 34.66,
-          "std": 31.09,
-          "ink": 0.0519,
-          "edge": 3.14
+          "mean": 28.4,
+          "std": 27.18,
+          "ink": 0.0673,
+          "edge": 1.37
         },
         "pet": {
-          "mean": 64.1,
-          "std": 70.34,
-          "ink": 0.2139,
-          "edge": 2.85
+          "mean": 70.28,
+          "std": 69.52,
+          "ink": 0.2822,
+          "edge": 2.84
         },
         "footer": {
-          "mean": 12.12,
-          "std": 18.53,
-          "ink": 0.4683,
-          "edge": 0.93
+          "mean": 11.79,
+          "std": 15.9,
+          "ink": 0.3934,
+          "edge": 0.99
         },
         "whole": {
-          "mean": 37.83,
-          "std": 48.51,
-          "ink": 0.1627,
-          "edge": 1.73
+          "mean": 39.88,
+          "std": 50.83,
+          "ink": 0.1835,
+          "edge": 1.66
         }
       }
     },
     {
-      "file": "atri-sample-28.00.png",
+      "file": "atri-sample-29.00.png",
       "ok": true,
       "reason": "",
       "zones": {
         "title": {
-          "mean": 45.09,
-          "std": 46.87,
-          "ink": 0.1106,
-          "edge": 2.91
+          "mean": 52.2,
+          "std": 59.7,
+          "ink": 0.1144,
+          "edge": 3.32
         },
         "body": {
-          "mean": 34.43,
-          "std": 29.37,
-          "ink": 0.0494,
-          "edge": 2.82
+          "mean": 30.53,
+          "std": 27.52,
+          "ink": 0.0663,
+          "edge": 1.36
         },
         "pet": {
-          "mean": 72.87,
-          "std": 68.37,
-          "ink": 0.3155,
-          "edge": 3.02
+          "mean": 70.1,
+          "std": 70.49,
+          "ink": 0.3128,
+          "edge": 3.04
         },
         "footer": {
-          "mean": 12.71,
-          "std": 19.07,
-          "ink": 0.3842,
-          "edge": 0.98
-        },
-        "whole": {
-          "mean": 42.1,
-          "std": 49.91,
-          "ink": 0.1955,
-          "edge": 1.87
-        }
-      }
-    },
-    {
-      "file": "atri-sample-31.50.png",
-      "ok": true,
-      "reason": "",
-      "zones": {
-        "title": {
-          "mean": 43.69,
-          "std": 50.98,
-          "ink": 0.0891,
-          "edge": 2.32
-        },
-        "body": {
-          "mean": 34.74,
-          "std": 28.18,
-          "ink": 0.0466,
-          "edge": 3.21
-        },
-        "pet": {
-          "mean": 58.66,
-          "std": 61.83,
-          "ink": 0.1869,
-          "edge": 2.45
-        },
-        "footer": {
-          "mean": 12.85,
-          "std": 19.62,
-          "ink": 0.4202,
+          "mean": 12.02,
+          "std": 16.63,
+          "ink": 0.4335,
           "edge": 0.95
         },
         "whole": {
-          "mean": 36.37,
-          "std": 44.64,
-          "ink": 0.1535,
+          "mean": 41.67,
+          "std": 51.75,
+          "ink": 0.1959,
+          "edge": 1.83
+        }
+      }
+    },
+    {
+      "file": "atri-sample-33.00.png",
+      "ok": true,
+      "reason": "",
+      "zones": {
+        "title": {
+          "mean": 43.77,
+          "std": 55.52,
+          "ink": 0.0939,
+          "edge": 2.86
+        },
+        "body": {
+          "mean": 36.98,
+          "std": 31.15,
+          "ink": 0.108,
+          "edge": 2.55
+        },
+        "pet": {
+          "mean": 65.01,
+          "std": 70.62,
+          "ink": 0.2093,
+          "edge": 2.81
+        },
+        "footer": {
+          "mean": 11.77,
+          "std": 17.27,
+          "ink": 0.4422,
+          "edge": 0.96
+        },
+        "whole": {
+          "mean": 38.35,
+          "std": 50.21,
+          "ink": 0.1651,
+          "edge": 1.69
+        }
+      }
+    },
+    {
+      "file": "atri-sample-36.00.png",
+      "ok": true,
+      "reason": "",
+      "zones": {
+        "title": {
+          "mean": 43.82,
+          "std": 52.47,
+          "ink": 0.0855,
+          "edge": 2.21
+        },
+        "body": {
+          "mean": 37.64,
+          "std": 31.34,
+          "ink": 0.107,
+          "edge": 2.57
+        },
+        "pet": {
+          "mean": 68.91,
+          "std": 68.7,
+          "ink": 0.2202,
+          "edge": 2.98
+        },
+        "footer": {
+          "mean": 12.28,
+          "std": 17.65,
+          "ink": 0.3786,
+          "edge": 0.94
+        },
+        "whole": {
+          "mean": 40.21,
+          "std": 49.76,
+          "ink": 0.1631,
           "edge": 1.68
         }
       }
     },
     {
-      "file": "atri-sample-35.00.png",
+      "file": "atri-sample-39.00.png",
       "ok": true,
       "reason": "",
       "zones": {
         "title": {
-          "mean": 51.11,
-          "std": 61.24,
-          "ink": 0.1177,
-          "edge": 3.47
+          "mean": 48.22,
+          "std": 56.65,
+          "ink": 0.0998,
+          "edge": 3.07
         },
         "body": {
-          "mean": 65.11,
-          "std": 69.28,
-          "ink": 0.2874,
-          "edge": 1.99
+          "mean": 38.37,
+          "std": 31.61,
+          "ink": 0.1067,
+          "edge": 2.56
         },
         "pet": {
-          "mean": 64.95,
-          "std": 67.5,
-          "ink": 0.1969,
+          "mean": 65.03,
+          "std": 70.1,
+          "ink": 0.2138,
+          "edge": 2.92
+        },
+        "footer": {
+          "mean": 12.52,
+          "std": 18.14,
+          "ink": 0.4097,
+          "edge": 0.95
+        },
+        "whole": {
+          "mean": 39.51,
+          "std": 50.38,
+          "ink": 0.167,
+          "edge": 1.76
+        }
+      }
+    },
+    {
+      "file": "atri-sample-41.00.png",
+      "ok": true,
+      "reason": "",
+      "zones": {
+        "title": {
+          "mean": 46.82,
+          "std": 58.18,
+          "ink": 0.1041,
+          "edge": 2.75
+        },
+        "body": {
+          "mean": 37.69,
+          "std": 31.42,
+          "ink": 0.1075,
+          "edge": 2.54
+        },
+        "pet": {
+          "mean": 59.12,
+          "std": 60.66,
+          "ink": 0.189,
+          "edge": 2.39
+        },
+        "footer": {
+          "mean": 12.34,
+          "std": 18.45,
+          "ink": 0.4419,
+          "edge": 0.95
+        },
+        "whole": {
+          "mean": 36.98,
+          "std": 45.48,
+          "ink": 0.1624,
+          "edge": 1.6
+        }
+      }
+    },
+    {
+      "file": "atri-sample-44.00.png",
+      "ok": true,
+      "reason": "",
+      "zones": {
+        "title": {
+          "mean": 39.77,
+          "std": 43.54,
+          "ink": 0.064,
+          "edge": 2.43
+        },
+        "body": {
+          "mean": 32.33,
+          "std": 29.4,
+          "ink": 0.0352,
+          "edge": 2.62
+        },
+        "pet": {
+          "mean": 67.57,
+          "std": 69.0,
+          "ink": 0.2081,
+          "edge": 2.9
+        },
+        "footer": {
+          "mean": 12.28,
+          "std": 18.79,
+          "ink": 0.4482,
+          "edge": 0.94
+        },
+        "whole": {
+          "mean": 39.32,
+          "std": 48.54,
+          "ink": 0.1604,
+          "edge": 1.74
+        }
+      }
+    },
+    {
+      "file": "atri-sample-47.00.png",
+      "ok": true,
+      "reason": "",
+      "zones": {
+        "title": {
+          "mean": 42.31,
+          "std": 43.71,
+          "ink": 0.0643,
+          "edge": 2.42
+        },
+        "body": {
+          "mean": 34.72,
+          "std": 33.92,
+          "ink": 0.0514,
+          "edge": 3.36
+        },
+        "pet": {
+          "mean": 64.76,
+          "std": 70.14,
+          "ink": 0.2079,
+          "edge": 2.87
+        },
+        "footer": {
+          "mean": 12.49,
+          "std": 19.12,
+          "ink": 0.4344,
+          "edge": 0.96
+        },
+        "whole": {
+          "mean": 39.38,
+          "std": 48.98,
+          "ink": 0.159,
+          "edge": 1.79
+        }
+      }
+    },
+    {
+      "file": "atri-sample-50.00.png",
+      "ok": true,
+      "reason": "",
+      "zones": {
+        "title": {
+          "mean": 45.2,
+          "std": 46.85,
+          "ink": 0.1115,
+          "edge": 2.7
+        },
+        "body": {
+          "mean": 33.29,
+          "std": 29.36,
+          "ink": 0.0476,
+          "edge": 2.28
+        },
+        "pet": {
+          "mean": 69.95,
+          "std": 70.21,
+          "ink": 0.3092,
+          "edge": 3.02
+        },
+        "footer": {
+          "mean": 12.68,
+          "std": 19.42,
+          "ink": 0.4315,
+          "edge": 0.98
+        },
+        "whole": {
+          "mean": 40.86,
+          "std": 50.05,
+          "ink": 0.1959,
+          "edge": 1.93
+        }
+      }
+    },
+    {
+      "file": "atri-sample-53.00.png",
+      "ok": true,
+      "reason": "",
+      "zones": {
+        "title": {
+          "mean": 42.83,
+          "std": 50.99,
+          "ink": 0.0886,
+          "edge": 2.32
+        },
+        "body": {
+          "mean": 29.23,
+          "std": 21.01,
+          "ink": 0.0313,
+          "edge": 1.94
+        },
+        "pet": {
+          "mean": 61.37,
+          "std": 61.16,
+          "ink": 0.1881,
+          "edge": 2.51
+        },
+        "footer": {
+          "mean": 12.88,
+          "std": 19.67,
+          "ink": 0.4208,
+          "edge": 0.97
+        },
+        "whole": {
+          "mean": 37.08,
+          "std": 44.49,
+          "ink": 0.1492,
+          "edge": 1.59
+        }
+      }
+    },
+    {
+      "file": "atri-sample-55.00.png",
+      "ok": true,
+      "reason": "",
+      "zones": {
+        "title": {
+          "mean": 52.59,
+          "std": 61.55,
+          "ink": 0.1262,
+          "edge": 3.28
+        },
+        "body": {
+          "mean": 35.31,
+          "std": 28.69,
+          "ink": 0.0469,
+          "edge": 3.2
+        },
+        "pet": {
+          "mean": 61.54,
+          "std": 60.69,
+          "ink": 0.1946,
+          "edge": 2.44
+        },
+        "footer": {
+          "mean": 12.88,
+          "std": 19.82,
+          "ink": 0.4391,
+          "edge": 0.91
+        },
+        "whole": {
+          "mean": 39.13,
+          "std": 46.64,
+          "ink": 0.1617,
+          "edge": 1.78
+        }
+      }
+    },
+    {
+      "file": "atri-sample-58.00.png",
+      "ok": true,
+      "reason": "",
+      "zones": {
+        "title": {
+          "mean": 50.66,
+          "std": 61.39,
+          "ink": 0.1175,
+          "edge": 3.4
+        },
+        "body": {
+          "mean": 65.07,
+          "std": 69.3,
+          "ink": 0.2872,
+          "edge": 1.97
+        },
+        "pet": {
+          "mean": 63.43,
+          "std": 68.37,
+          "ink": 0.2002,
           "edge": 2.52
         },
         "footer": {
-          "mean": 12.05,
+          "mean": 11.95,
           "std": 18.24,
-          "ink": 0.4446,
+          "ink": 0.4465,
           "edge": 0.58
         },
         "whole": {
-          "mean": 42.52,
-          "std": 53.37,
-          "ink": 0.1818,
-          "edge": 1.72
+          "mean": 41.25,
+          "std": 53.57,
+          "ink": 0.185,
+          "edge": 1.71
         }
       }
     }
   ],
   "scene_diffs": [
     {
-      "a": "atri-sample-02.00.png",
+      "a": "atri-sample-03.00.png",
       "b": "atri-sample-06.00.png",
-      "ink_delta": 0.1337,
-      "mean_delta": 17.26,
+      "ink_delta": 0.0277,
+      "mean_delta": 1.35,
       "changed": true
     },
     {
       "a": "atri-sample-06.00.png",
-      "b": "atri-sample-09.00.png",
-      "ink_delta": 0.0065,
-      "mean_delta": 3.38,
+      "b": "atri-sample-10.00.png",
+      "ink_delta": 0.0932,
+      "mean_delta": 15.69,
       "changed": true
     },
     {
-      "a": "atri-sample-09.00.png",
-      "b": "atri-sample-11.50.png",
-      "ink_delta": 0.0135,
-      "mean_delta": 2.03,
+      "a": "atri-sample-10.00.png",
+      "b": "atri-sample-15.00.png",
+      "ink_delta": 0.003,
+      "mean_delta": 0.58,
       "changed": true
     },
     {
-      "a": "atri-sample-11.50.png",
-      "b": "atri-sample-16.00.png",
-      "ink_delta": 0.112,
-      "mean_delta": 18.82,
-      "changed": true
-    },
-    {
-      "a": "atri-sample-16.00.png",
+      "a": "atri-sample-15.00.png",
       "b": "atri-sample-20.00.png",
-      "ink_delta": 0.0878,
-      "mean_delta": 3.3,
+      "ink_delta": 0.0148,
+      "mean_delta": 1.0,
       "changed": true
     },
     {
       "a": "atri-sample-20.00.png",
-      "b": "atri-sample-22.50.png",
-      "ink_delta": 0.0108,
-      "mean_delta": 1.6,
-      "changed": true
-    },
-    {
-      "a": "atri-sample-22.50.png",
       "b": "atri-sample-25.00.png",
-      "ink_delta": 0.0074,
-      "mean_delta": 1.65,
+      "ink_delta": 0.106,
+      "mean_delta": 19.14,
       "changed": true
     },
     {
       "a": "atri-sample-25.00.png",
-      "b": "atri-sample-28.00.png",
-      "ink_delta": 0.1016,
-      "mean_delta": 8.77,
+      "b": "atri-sample-29.00.png",
+      "ink_delta": 0.0306,
+      "mean_delta": 0.18,
       "changed": true
     },
     {
-      "a": "atri-sample-28.00.png",
-      "b": "atri-sample-31.50.png",
-      "ink_delta": 0.1286,
-      "mean_delta": 14.21,
+      "a": "atri-sample-29.00.png",
+      "b": "atri-sample-33.00.png",
+      "ink_delta": 0.1035,
+      "mean_delta": 5.09,
       "changed": true
     },
     {
-      "a": "atri-sample-31.50.png",
-      "b": "atri-sample-35.00.png",
-      "ink_delta": 0.01,
-      "mean_delta": 6.29,
+      "a": "atri-sample-33.00.png",
+      "b": "atri-sample-36.00.png",
+      "ink_delta": 0.0109,
+      "mean_delta": 3.9,
+      "changed": true
+    },
+    {
+      "a": "atri-sample-36.00.png",
+      "b": "atri-sample-39.00.png",
+      "ink_delta": 0.0064,
+      "mean_delta": 3.88,
+      "changed": true
+    },
+    {
+      "a": "atri-sample-39.00.png",
+      "b": "atri-sample-41.00.png",
+      "ink_delta": 0.0248,
+      "mean_delta": 5.91,
+      "changed": true
+    },
+    {
+      "a": "atri-sample-41.00.png",
+      "b": "atri-sample-44.00.png",
+      "ink_delta": 0.0191,
+      "mean_delta": 8.45,
+      "changed": true
+    },
+    {
+      "a": "atri-sample-44.00.png",
+      "b": "atri-sample-47.00.png",
+      "ink_delta": 0.0002,
+      "mean_delta": 2.81,
+      "changed": true
+    },
+    {
+      "a": "atri-sample-47.00.png",
+      "b": "atri-sample-50.00.png",
+      "ink_delta": 0.1013,
+      "mean_delta": 5.19,
+      "changed": true
+    },
+    {
+      "a": "atri-sample-50.00.png",
+      "b": "atri-sample-53.00.png",
+      "ink_delta": 0.1211,
+      "mean_delta": 8.58,
+      "changed": true
+    },
+    {
+      "a": "atri-sample-53.00.png",
+      "b": "atri-sample-55.00.png",
+      "ink_delta": 0.0065,
+      "mean_delta": 0.17,
+      "changed": true
+    },
+    {
+      "a": "atri-sample-55.00.png",
+      "b": "atri-sample-58.00.png",
+      "ink_delta": 0.0056,
+      "mean_delta": 1.89,
       "changed": true
     }
   ],
