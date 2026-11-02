@@ -1,0 +1,97 @@
+{
+  "manifest": 2,
+  "api": 2,
+  "id": "star-sleep-01",
+  "version": "0.1.0",
+  "name": {
+    "zh": "星眠"
+  },
+  "about": {
+    "zh": "以用户提供的透明立绘为母版制作的轻量预览形象。保留完整原画，支持官方整体移动行为；独立肢体、表情和坐姿图层仍待补绘。"
+  },
+  "author": "未注明（母版由用户提供）",
+  "entry": "figure.js",
+  "export": "createStarSleepBody",
+  "model": "model.json",
+  "thumb": "thumb.png",
+  "vocab": [
+    {
+      "id": "neutral",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "平静"
+        ]
+      },
+      "seconds": 4,
+      "about": {
+        "zh": "恢复自然状态"
+      }
+    },
+    {
+      "id": "stand",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "站立"
+        ]
+      },
+      "seconds": 1.2,
+      "about": {
+        "zh": "保持完整立绘站立"
+      }
+    },
+    {
+      "id": "walk",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "走路"
+        ]
+      },
+      "seconds": 1.2,
+      "about": {
+        "zh": "官方身体行为驱动整体移动"
+      }
+    },
+    {
+      "id": "run",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "跑步"
+        ]
+      },
+      "seconds": 1.2,
+      "about": {
+        "zh": "官方身体行为驱动整体移动"
+      }
+    },
+    {
+      "id": "jump",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "跳跃"
+        ]
+      },
+      "seconds": 1.2,
+      "about": {
+        "zh": "官方身体行为驱动整体跳跃"
+      }
+    },
+    {
+      "id": "turn",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "转身"
+        ]
+      },
+      "seconds": 1.2,
+      "about": {
+        "zh": "官方身体行为驱动整体转向"
+      }
+    }
+  ]
+}
