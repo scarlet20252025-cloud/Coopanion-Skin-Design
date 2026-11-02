@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "character_id": "star-sleep-01",
+  "name": "星眠",
+  "version": "0.1.0",
+  "master": "characters/star-sleep-01/art-source/master.png",
+  "sha256": "4b91bf6e19e9f16b1b075f0a83d26776c1bffd4eae08ebf128cfdc51754be8b1",
+  "canvas": [
+    1086,
+    1448
+  ],
+  "alpha_bounds": [
+    155,
+    129,
+    1003,
+    1364
+  ],
+  "center_x": 579,
+  "feet_y": 1363,
+  "logo_scale": 0.17813765,
+  "status": "locked-for-preview-single-sprite",
+  "note": "The source is one complete RGBA illustration. Do not infer hidden limb pixels or fabricate semantic layers from rectangular crops."
+}
