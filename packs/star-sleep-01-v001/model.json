@@ -1,0 +1,89 @@
+{
+  "canvas": [
+    1086,
+    1448
+  ],
+  "master_sha256": "4b91bf6e19e9f16b1b075f0a83d26776c1bffd4eae08ebf128cfdc51754be8b1",
+  "center_x": 579,
+  "feet_y": 1363,
+  "logo_scale": 0.17813765,
+  "bounds": [
+    155,
+    129,
+    1003,
+    1364
+  ],
+  "hits": [
+    [
+      590,
+      505,
+      285
+    ],
+    [
+      600,
+      1015,
+      170
+    ]
+  ],
+  "anchors": {
+    "gaze": [
+      675,
+      600
+    ],
+    "tear": [
+      660,
+      670
+    ],
+    "z": [
+      755,
+      315
+    ],
+    "hearts": [
+      470,
+      760,
+      525
+    ],
+    "bubble": [
+      665,
+      185
+    ]
+  },
+  "accent": "#EBC4D0",
+  "words": [
+    "neutral",
+    "stand",
+    "walk",
+    "run",
+    "jump",
+    "turn"
+  ],
+  "part_registration": {
+    "sprite": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ]
+  },
+  "parts": [
+    {
+      "id": "sprite",
+      "file": "tex/star-sleep.png",
+      "poses": [
+        "standing",
+        "seated",
+        "dizzy"
+      ],
+      "pivot": [
+        579,
+        1363
+      ],
+      "z": 1,
+      "role": "fixed",
+      "owner": "完整用户提供立绘的所有可见像素",
+      "reveals_when_moved": "none"
+    }
+  ]
+}
