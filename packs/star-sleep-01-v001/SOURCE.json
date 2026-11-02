@@ -1,0 +1,20 @@
+{
+  "character": "星眠",
+  "id": "star-sleep-01",
+  "version": "0.1.0",
+  "master_source": "User-provided transparent PNG: 03-master-d01-1086x1448.png",
+  "master_sha256": "4b91bf6e19e9f16b1b075f0a83d26776c1bffd4eae08ebf128cfdc51754be8b1",
+  "canvas": [
+    1086,
+    1448
+  ],
+  "alpha_bounds": [
+    155,
+    129,
+    1003,
+    1364
+  ],
+  "adapter": "API 2 single-sprite adapter; no Dragon pack artwork or coordinate data reused",
+  "artwork_rights": "Creator and redistribution license were not specified. This package preserves the requester-provided master for the requested task; do not assume third-party redistribution rights.",
+  "status": "preview-single-sprite; not a finished multi-layer animation pack"
+}
