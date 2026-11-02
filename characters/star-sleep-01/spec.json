@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "id": "star-sleep-01",
+  "name": "星眠",
+  "author": "未注明（母版由用户提供）",
+  "repository": "https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design",
+  "version": "0.1.0",
+  "profile": "single-sprite-preview-v1",
+  "provenance": "Requester-provided transparent master. Author and redistribution rights not specified.",
+  "master": "characters/star-sleep-01/art-source/master.png",
+  "thumbnail": "characters/star-sleep-01/thumbnail-upper.png",
+  "canvas": [
+    1086,
+    1448
+  ],
+  "center_x": 579,
+  "feet_y": 1363,
+  "logo_scale": 0.17813765,
+  "bounds": [
+    155,
+    129,
+    1003,
+    1364
+  ],
+  "hits": [
+    [
+      590,
+      505,
+      285
+    ],
+    [
+      600,
+      1015,
+      170
+    ]
+  ],
+  "anchors": {
+    "gaze": [
+      675,
+      600
+    ],
+    "tear": [
+      660,
+      670
+    ],
+    "z": [
+      755,
+      315
+    ],
+    "hearts": [
+      470,
+      760,
+      525
+    ],
+    "bubble": [
+      665,
+      185
+    ]
+  },
+  "accent": "#EBC4D0",
+  "parts": [
+    {
+      "id": "sprite",
+      "file": "packs/star-sleep-01-v001/tex/star-sleep.png",
+      "role": "fixed",
+      "poses": [
+        "standing",
+        "seated",
+        "dizzy"
+      ],
+      "pivot": [
+        579,
+        1363
+      ],
+      "z": 1,
+      "owner": "entire illustration",
+      "reveals_when_moved": "none",
+      "motion": "none; rigid whole-sprite preview"
+    }
+  ],
+  "limitations": [
+    "No independent head/arm/leg/hair/eye layers",
+    "No custom blink or facial expression artwork",
+    "No separately illustrated seated pose",
+    "No waving gesture or secondary motion"
+  ]
+}
