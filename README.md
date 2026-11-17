@@ -2,6 +2,8 @@
 
 当前工程包含朝右透明母版、生成供体、提示词、原坐标分层、模型、运行贴图、预览与验收工具。受控重建从归档供体开始，无需联网生成同一张图。以其他角色制作新稿时，可照[制作与复现手册](docs/制作与复现手册.md)重做美术并建立自己的定位点。
 
+开工与收尾先读[工程定义与验收清单](docs/工程定义与验收清单.md)。它列出从选母版到验收出包的门槛，并汇总用户已经定下的要求。[中英文环境提示词](docs/环境提示词.md)记录外观、宿主状态与动作条件。
+
 [桌宠工程通用手册](docs/桌宠工程通用手册.md)汇总此前验收的星云 v1/v2、星眠与黑金魔女做法，包含拆件铁律、拎起惯性和低位齐掌、独立坐姿、三轴头部、倾听、摆尾以及对侧步态。[案例代码与工具索引](docs/案例代码与工具索引.md)可查正式版本的实现、提示词与复现入口。
 
 当前版本 **0.1.2**。拎起沿用星云 v2 的弹性余摆；眩晕在坐下的同一帧启动圈眼与星星，随后摇头恢复；后裙底部绘制在腿后；站姿转头和抬低头有局部眼口视差。[动作回归](review/preview-qa.json) · [裙摆层序对照](review/skirt-leg-depth.jpg)
@@ -30,10 +32,11 @@ py -3.14 -m venv .venv
 .\.venv\Scripts\python.exe -X utf8 assemble_expressions.py
 .\.venv\Scripts\python.exe -X utf8 review_parts.py
 .\.venv\Scripts\python.exe -X utf8 review_portraits.py
+.\.venv\Scripts\python.exe -X utf8 package_project.py --check
 .\.venv\Scripts\python.exe -X utf8 package_project.py
 ```
 
-服务运行时可在另一个终端执行 `node .\qa_preview.mjs`。此检查使用 Edge，路径可用 `WITCH_EDGE` 指定，地址可用 `WITCH_PREVIEW` 指定。报告写入 `review/`，需配合截图和真实速度预览验收。
+服务运行时可在另一个终端执行 `node .\qa_preview.mjs`。此检查使用 Edge，路径可用 `WITCH_EDGE` 指定，地址可用 `WITCH_PREVIEW` 指定。报告写入 `review/`，需配合截图和真实速度预览验收。日常预览阶段使用 `--check` 检查文件；明确收到打包指令后，再执行上面最后一行。
 
 打包输出到 `dist/`，两份 ZIP 各有 SHA-256 校验文件。
 

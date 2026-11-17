@@ -25,6 +25,20 @@ EXAMPLE_FILES = {
     "skirt-leg-depth.jpg",
     "standing-reassembled.png", "talk-atlas-check.jpg",
 }
+REQUIRED_PROJECT = {
+    "README.md", "AGENTS.md", "LICENSE", "requirements.txt",
+    "docs/工程定义与验收清单.md", "docs/制作与复现手册.md",
+    "docs/桌宠工程通用手册.md", "docs/案例代码与工具索引.md", "docs/环境提示词.md",
+    "source/master-selected.png", "source/master-right.png", "masters/生成提示词.md",
+    "work/face-repair/mood-dizzy.png", "work/face-repair/眩晕补画提示词.md",
+    "work/face-repair/master-face-reference.png", "docs/cases/xingmian/face_dizzy.png",
+    "vendor/Coopanion-web/SOURCE.txt", "vendor/Coopanion-web/LICENSE",
+    "vendor/Coopanion-web/kit/body.js", "vendor/Coopanion-web/kit/rig.js",
+    "assemble_left_arm.py", "assemble.py", "assemble_expressions.py", "repair_eye_art.py",
+    "matched_blink.py", "dizzy_art.py", "review_parts.py", "review_portraits.py",
+    "serve.mjs", "preview.html", "preview.js", "qa_preview.mjs", "package_project.py",
+    "review/preview-qa.json", "review/standing-reassembled.png", "review/portrait-qa.json",
+}
 
 
 def local_path(folder, name):
@@ -125,6 +139,23 @@ def project_files(parts, runtime):
     return set(root_sources | inputs | current_parts | runtime | outputs)
 
 
+def verify_project_files(files):
+    names = {file.relative_to(ROOT).as_posix() for file in files if file.is_file()}
+    missing = REQUIRED_PROJECT - names
+    missing |= {file.relative_to(ROOT).as_posix() for file in files if not file.is_file()}
+    if missing:
+        raise ValueError("Incomplete engineering archive: " + ", ".join(sorted(missing)))
+    documents = (ROOT / "README.md", ROOT / "AGENTS.md", *sorted((ROOT / "docs").glob("*.md")))
+    included = {file.resolve() for file in files}
+    for document in documents:
+        for link in re.findall(r"\]\(([^)]+)\)", document.read_text(encoding="utf-8-sig")):
+            if "://" in link or link.startswith("#"):
+                continue
+            target = (document.parent / link.split("#",1)[0]).resolve()
+            if target not in included and not any(file.is_relative_to(target) for file in included):
+                raise ValueError(f"Missing archive link in {document.name}: {link}")
+
+
 def archive(path, files, base, prefix=""):
     temp = path.with_suffix(".zip.tmp")
     try:
@@ -163,10 +194,15 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--out", type=Path, default=ROOT / "dist", help="ZIP output directory")
     parser.add_argument("--stage", type=Path, help="Also stage the current source tree in an empty directory")
+    parser.add_argument("--check", action="store_true", help="Check archive inputs and links without writing a ZIP")
     args = parser.parse_args()
     verify_master()
     version, parts, runtime = runtime_files()
     source = project_files(parts, runtime)
+    verify_project_files(source)
+    if args.check:
+        print(f"Star Witch {version}: {len(source)} project files and {len(runtime)} runtime files verified")
+        return
     out = args.out.resolve()
     out.mkdir(parents=True, exist_ok=True)
     archive(out / f"star-witch-{version}.zip", runtime, RUNTIME)
