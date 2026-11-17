@@ -54,7 +54,7 @@ try{
     CanvasRenderingContext2D.prototype.drawImage=function(image,...args){
       const path=image?.src?.split('?')[0];
       const name=path?.split('/').pop();
-      if (['body.png','hat.png','legRight.png','legLeft.png','sitBody.png'].includes(name)) {
+      if (['body.png','hat.png','legRight.png','legLeft.png','leftArm.png','rightArm.png','sitBody.png'].includes(name)) {
         const {a,b,c,d,e,f}=this.getTransform();
         window.witchMotion[name]={a,b,c,d,e,f,angle:Math.atan2(b,a)*180/Math.PI};
       }
@@ -96,6 +96,7 @@ try{
   const motion=()=>read(`({
     ...witchMotion,
     x:witchPreview.body.layout().x,
+    facing:witchPreview.body.layout().facing,
     rootAngle:document.querySelector('svg.kit foreignObject').parentNode.transform.baseVal.getItem(1).angle,
   })`);
   await waitFor('Boolean(window.witchPreview)');
@@ -146,16 +147,49 @@ try{
     const angles=frames.map(frame=>frame[name].angle);
     assert.ok(Math.max(...angles)>2.5 && Math.min(...angles)<-2.5);
   }
-  // Probe the source-space sole heights through the rendered Canvas matrices.
-  const floor=frames[0]['body.png'].d*(1312-12);
-  const bottom=(matrix,points)=>Math.max(...points.map(([x,y])=>matrix.b*x+matrix.d*y+matrix.f));
-  const soleYs=frames.map(frame=>[
-    bottom(frame['legLeft.png'],[[543,1309],[559,1312],[580,1312],[594,1309]]),
-    bottom(frame['legRight.png'],[[647,1302],[668,1305],[680,1305],[700,1302]]),
-  ]);
-  assert.ok(soleYs.every(ys=>Math.abs(Math.max(...ys)-floor)<2));
-  assert.ok(soleYs.some(([a,b])=>a-b>7)&&soleYs.some(([a,b])=>b-a>7));
-  results.walkSupportSamples=soleYs.length;
+  function assertSoleSupport(samples) {
+    // Probe the source-space sole heights through the rendered Canvas matrices.
+    const floor=samples[0]['body.png'].d*(1312-12);
+    const bottom=(matrix,points)=>Math.max(...points.map(([x,y])=>matrix.b*x+matrix.d*y+matrix.f));
+    const soleYs=samples.map(frame=>[
+      bottom(frame['legLeft.png'],[[543,1309],[559,1312],[580,1312],[594,1309]]),
+      bottom(frame['legRight.png'],[[647,1302],[668,1305],[680,1305],[700,1302]]),
+    ]);
+    assert.ok(soleYs.every(ys=>Math.abs(Math.max(...ys)-floor)<2));
+    assert.ok(soleYs.some(([a,b])=>a-b>7)&&soleYs.some(([a,b])=>b-a>7));
+    return soleYs.length;
+  }
+  // Select well-separated poses where the direction of each limb is readable.
+  // Check the actual rotated sprites, including arm masks rendered offscreen.
+  function assertOppositeLimbSwing(samples) {
+    const forward = samples.filter(s=>Math.abs(s['legRight.png'].angle)>2.5 &&
+      Math.abs(s['legLeft.png'].angle)>2.5 &&
+      Math.sign(s['legRight.png'].angle)!==Math.sign(s['legLeft.png'].angle));
+    assert.deepEqual([...new Set(forward.map(s=>Math.sign(s['legRight.png'].angle)))].sort(),[-1,1]);
+    for (const sample of forward) {
+      for (const [side,opposite] of [['left','Right'],['right','Left']]) {
+        const arm = sample[side+'Arm.png'].angle;
+        assert.ok(arm*sample['leg'+opposite+'.png'].angle>0, 'Contralateral arm and leg must swing together');
+      }
+    }
+    return forward.length;
+  }
+  assert.ok(frames.at(-1).x>frames[0].x);
+  await waitFor('witchPreview.body.layout().mode==="idle"');
+  await action('walk',450);
+  assert.equal(await mode(),'walk');
+  await shot('walk-left');
+  const mirrored=[];
+  for(let i=0;i<15;i++){
+    mirrored.push(await motion());
+    await sleep(55);
+  }
+  assert.ok(mirrored.at(-1).x<mirrored[0].x);
+  assert.equal(frames.at(-1).facing,1);
+  assert.equal(mirrored.at(-1).facing,-1);
+  results.walkContralateralSamples={right:assertOppositeLimbSwing(frames),left:assertOppositeLimbSwing(mirrored)};
+  results.walkSupportSamples={right:assertSoleSupport(frames),left:assertSoleSupport(mirrored)};
+  await waitFor('witchPreview.body.layout().mode==="idle"');
   await action('run',300);
   results.run=await mode();assert.equal(results.run,'run');await shot('run');
   await action('stand',200);

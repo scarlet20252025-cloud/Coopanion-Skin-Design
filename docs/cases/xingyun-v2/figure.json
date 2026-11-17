@@ -1,0 +1,579 @@
+{
+  "manifest": 2,
+  "api": 2,
+  "id": "xingyun-v2",
+  "version": "0.1.9",
+  "name": {
+    "zh": "星云 · 新版",
+    "en": "Xingyun · New"
+  },
+  "about": {
+    "zh": "一个四分之三侧身的 Q 版旅人。银白短发上有一撮弯呆毛和一对白色毛绒尖耳，胸前垂着两束戴铜金发箍的白发。青蓝到薄荷绿的大眼睛，额前戴绿叶发冠和铜金镶浅绿宝石的坠饰。单肩披灰蓝色披肩，内穿象牙白交叠短裙，搭铜金护腕、薄荷绿宝石腰扣和绑带凉鞋。背后斜背一根顶端有浅蓝光球的短法杖，身后有蓬松白尾巴。",
+    "en": "A chibi traveler in three-quarter view, with short silver-white hair, a curled cowlick, two pointed furry white ears, and two long silver locks held by brass cuffs. Large eyes shade from aqua to mint. A green leaf crown frames a pale green jewel set in brass. A slate-blue cape drapes over one shoulder above an ivory wrap skirt, with brass bracers, a mint gem belt buckle, and strapped sandals. A short staff topped with a pale blue glowing orb is slung across the back, beside a fluffy white tail."
+  },
+  "entry": "figure.js",
+  "export": "createXingyunBody",
+  "model": "model.json",
+  "thumb": "thumb.png",
+  "vocab": [
+    {
+      "id": "neutral",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "平静"
+        ]
+      },
+      "about": {
+        "zh": "平静。",
+        "en": "Neutral."
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "happy",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "开心",
+          "高兴"
+        ]
+      },
+      "about": {
+        "zh": "弯眼笑，耳尖抬起，站着时轻快摇尾。",
+        "en": "Smiles with closed eyes and perks up its ears, wagging its tail when standing."
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "wink",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "眨一下眼"
+        ]
+      },
+      "about": {
+        "zh": "单眼眨一下。",
+        "en": "Wink with one eye."
+      },
+      "seconds": 1
+    },
+    {
+      "id": "love",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "喜欢",
+          "爱心"
+        ]
+      },
+      "about": {
+        "zh": "微笑并冒小爱心，站着时轻快摇尾。",
+        "en": "Smiles and sends hearts, wagging its tail when standing."
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "shy",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "害羞"
+        ]
+      },
+      "about": {
+        "zh": "害羞。",
+        "en": "Shy."
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "surprised",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "惊讶",
+          "吃惊"
+        ]
+      },
+      "about": {
+        "zh": "睁大眼睛，头旁冒出感叹号。",
+        "en": "Widens its eyes as an exclamation mark pops up."
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "angry",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "生气"
+        ]
+      },
+      "about": {
+        "zh": "皱眉，头旁亮起红色怒标。",
+        "en": "Furrows its brows as a red anger mark appears."
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "sad",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "难过",
+          "伤心"
+        ]
+      },
+      "about": {
+        "zh": "难过。",
+        "en": "Sad."
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "sleepy",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "犯困",
+          "困"
+        ]
+      },
+      "about": {
+        "zh": "犯困。",
+        "en": "Sleepy."
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "thinking",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "思考",
+          "想想"
+        ]
+      },
+      "about": {
+        "zh": "思考。",
+        "en": "Thinking."
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "smug",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "得意",
+          "嘚瑟"
+        ]
+      },
+      "about": {
+        "zh": "得意。",
+        "en": "Smug."
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "pout",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "嘟嘴",
+          "哼"
+        ]
+      },
+      "about": {
+        "zh": "嘟嘴。",
+        "en": "Pout."
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "worried",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "担心",
+          "着急"
+        ]
+      },
+      "about": {
+        "zh": "担心。",
+        "en": "Worried."
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "determined",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "认真",
+          "坚定"
+        ]
+      },
+      "about": {
+        "zh": "认真。",
+        "en": "Determined."
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "flustered",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "慌张",
+          "窘"
+        ]
+      },
+      "about": {
+        "zh": "露出慌张表情，头旁冒出蓝色汗滴。",
+        "en": "Looks flustered as a blue sweat drop appears."
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "scared",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "害怕",
+          "吓到"
+        ]
+      },
+      "about": {
+        "zh": "害怕。",
+        "en": "Scared."
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "excited",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "期待",
+          "星星眼"
+        ]
+      },
+      "about": {
+        "zh": "眼睛睁亮，耳尖抬起，站着时轻快摇尾。",
+        "en": "Brightens its eyes and perks up its ears, wagging its tail when standing."
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "cry",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "大哭",
+          "哭"
+        ]
+      },
+      "about": {
+        "zh": "大哭。",
+        "en": "Cry."
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "confused",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "疑惑",
+          "问号"
+        ]
+      },
+      "about": {
+        "zh": "疑惑。",
+        "en": "Confused."
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "stand",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "站好"
+        ]
+      },
+      "about": {
+        "zh": "回到站姿。",
+        "en": "Return to a standing pose."
+      },
+      "seconds": 0.4
+    },
+    {
+      "id": "jump",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "跳一下"
+        ]
+      },
+      "about": {
+        "zh": "原地起跳。",
+        "en": "Jump in place."
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "hop",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "小跳",
+          "蹦"
+        ]
+      },
+      "about": {
+        "zh": "小跳。",
+        "en": "Hop."
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "look",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "张望",
+          "看看"
+        ]
+      },
+      "about": {
+        "zh": "张望。",
+        "en": "Look."
+      },
+      "seconds": 2.7
+    },
+    {
+      "id": "turn",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "转身"
+        ]
+      },
+      "about": {
+        "zh": "转身。",
+        "en": "Turn."
+      },
+      "seconds": 0.4
+    },
+    {
+      "id": "nod",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "点头"
+        ]
+      },
+      "about": {
+        "zh": "往下点头。",
+        "en": "Nod gently."
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "shake",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "摇头"
+        ]
+      },
+      "about": {
+        "zh": "左右转头。",
+        "en": "Shake the head gently."
+      },
+      "seconds": 1.1
+    },
+    {
+      "id": "spin",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "转圈"
+        ]
+      },
+      "about": {
+        "zh": "转圈。",
+        "en": "Spin."
+      },
+      "seconds": 0.8
+    },
+    {
+      "id": "sit",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "坐下",
+          "坐"
+        ]
+      },
+      "about": {
+        "zh": "直接切换到凳上的坐姿。",
+        "en": "Switches directly to sitting on the stool."
+      },
+      "seconds": 0.8,
+      "lasting": true
+    },
+    {
+      "id": "sleep",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "睡觉",
+          "睡"
+        ]
+      },
+      "about": {
+        "zh": "坐在凳上闭眼休息。",
+        "en": "Closes its eyes and rests on the stool."
+      },
+      "seconds": 0.8,
+      "lasting": true
+    },
+    {
+      "id": "dizzy",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "晕",
+          "转晕"
+        ]
+      },
+      "about": {
+        "zh": "进入眩晕状态，三颗金色星星在头顶环绕。",
+        "en": "Looks dizzy as three gold stars circle overhead."
+      },
+      "seconds": 3.2
+    },
+    {
+      "id": "walk",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "走一走"
+        ]
+      },
+      "about": {
+        "zh": "小步走动。",
+        "en": "Take a short walk."
+      },
+      "seconds": 2
+    },
+    {
+      "id": "run",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "小跑"
+        ]
+      },
+      "about": {
+        "zh": "身子前倾小跑，双手低收在身后。",
+        "en": "Leans forward and runs with both hands held low behind its back."
+      },
+      "seconds": 1.4
+    },
+    {
+      "id": "wag",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "摇尾巴",
+          "摆尾"
+        ]
+      },
+      "about": {
+        "zh": "站着原地摇尾巴，尾尖随摆动弯曲。",
+        "en": "Stands in place and wags its tail, bending the tip as it swings."
+      },
+      "seconds": 2.6
+    },
+    {
+      "id": "wave",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "招手",
+          "打招呼"
+        ]
+      },
+      "about": {
+        "zh": "举起画面右侧的手轻轻招手。",
+        "en": "Raises the far arm for a gentle wave."
+      },
+      "seconds": 1.7
+    },
+    {
+      "id": "bow",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "鞠躬"
+        ]
+      },
+      "about": {
+        "zh": "闭眼行礼，抬头后回到站姿。",
+        "en": "Closes its eyes for a small bow and rises."
+      },
+      "seconds": 1.7
+    },
+    {
+      "id": "shiver",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "发抖",
+          "哆嗦"
+        ]
+      },
+      "about": {
+        "zh": "缩起手臂短暂发抖。",
+        "en": "Tucks in its arms and shivers briefly."
+      },
+      "seconds": 1.9
+    },
+    {
+      "id": "flap",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "扑腾",
+          "激动"
+        ]
+      },
+      "about": {
+        "zh": "小跳并摆动手臂、尾巴和呆毛。",
+        "en": "Hops while fluttering its arms, tail and cowlick."
+      },
+      "seconds": 1.5
+    },
+    {
+      "id": "dance",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "跳舞",
+          "摇摆"
+        ]
+      },
+      "about": {
+        "zh": "左右踏步，手臂与尾巴跟着摆。",
+        "en": "Steps side to side with arm and tail movement."
+      },
+      "seconds": 3.4
+    }
+  ]
+}

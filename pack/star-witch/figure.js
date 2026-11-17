@@ -37,9 +37,11 @@ export function solvePose(frame, controls={}, carried=0, walking, listening) {
   const head=clamp(look[0]*.36+look[1]*.13+nod*3.4+shake*3.65
     +Math.sin(t*1.9)*.55+(frame.swing??0)*carried*.12,-3.3,3.3)-7.2*listen;
   const swing=Math.cos(TAU*(walkPhase-.045))*walkAmount;
+  // The arm array is left/right, while the legs below are drawn right/left.
+  // Pair the near arm with the far leg, and the far arm with the near leg.
   const arms=[
-    (run?-2.4*runRamp:3.9*swing)+carried*(-3.8+1.4*Math.sin(t*8)),
-    (run?-1.8*runRamp:-3.1*swing)+carried*(3.4-1.4*Math.sin(t*8-.55)),
+    (run?-2.4*runRamp:-3.9*swing)+carried*(-3.8+1.4*Math.sin(t*8)),
+    (run?-1.8*runRamp:3.1*swing)+carried*(3.4-1.4*Math.sin(t*8-.55)),
   ];
   const legs=[0,1].map(i=>{
     const cycle=runPhase+i*Math.PI;

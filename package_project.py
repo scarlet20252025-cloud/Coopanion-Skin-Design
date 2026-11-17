@@ -19,7 +19,7 @@ EXAMPLE_FILES = {
     "full-motion-check.jpg", "left-arm-audit.json",
     "left-arm-motion.png", "left-arm-reassembled.png", "matched-blink-art.jpg",
     "portrait-qa.json", "portraits-runtime-verified.jpg", "portraits-verified.jpg",
-    "preview-listen.png", "preview-qa.json", "preview-walk.png",
+    "preview-listen.png", "preview-qa.json", "preview-walk.png", "preview-walk-left.png",
     "standing-reassembled.png", "talk-atlas-check.jpg",
 }
 
