@@ -1,0 +1,57 @@
+{
+  "canvas": [
+    1163,
+    1352
+  ],
+  "side_convention": "viewer, after mirror",
+  "master_sha256": "23d5b8d57b0d8a2fe223208705f74005b6cda357edaf6dc1bffc8b438e97e7b3",
+  "viewer_left_shoulder": {
+    "xy": [
+      518,
+      732
+    ],
+    "status": "candidate, left-arm range check only"
+  },
+  "angles_degrees": [
+    -8,
+    0,
+    8
+  ],
+  "lining_affine": [
+    [
+      0.77490234375,
+      0.0909423828125,
+      62.7001953125
+    ],
+    [
+      0.0234375,
+      0.923828125,
+      2.953125
+    ]
+  ],
+  "lining_landmark_residuals_px": [
+    0.0,
+    0.0,
+    5.4642133712768555,
+    0.0
+  ],
+  "sleeve_affine": [
+    [
+      0.5862068965517238,
+      0.03383620689655182,
+      157.39525862068984
+    ],
+    [
+      -1.1904380913258224e-15,
+      0.7625,
+      186.52500000000077
+    ]
+  ],
+  "arm_significant_alpha_components": 1,
+  "arm_other_alpha_components": 0,
+  "arm_hidden_core_pixels": 9865,
+  "assembly_changed_pixels": 11310,
+  "assembly_alpha_coverage_changed_pixels": 0,
+  "assembly_max_alpha_delta": 3,
+  "assembly_changed_pixels_outside_seam": 0
+}

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>黑金魔女 · 动作预览</title>
+<style>
+  :root{color-scheme:light;--page:#eee8ee;--stage:#e1d7e5;--ink:#2e2533;--edge:#bfb0c9;--button:#f8f3f7}
+  :root[data-theme=dark]{color-scheme:dark;--page:#211b2a;--stage:#2d2736;--ink:#eee4f0;--edge:#5c4b67;--button:#362c3c}
+  *{box-sizing:border-box} body{margin:0;background:var(--page);color:var(--ink);font:15px/1.5 "Microsoft YaHei",sans-serif}
+  main{max-width:1090px;margin:auto;padding:20px;display:grid;gap:12px}
+  h1{font-size:22px;margin:0} #stage{height:clamp(310px,68vh,735px);position:relative;overflow:hidden;
+    touch-action:none;border:1px solid var(--edge);border-radius:16px;background-color:var(--stage);
+    background-image:radial-gradient(#87658e39 .9px,transparent .9px);background-size:18px 18px}
+  #floor{position:absolute;inset:auto 0 0;height:30px;border-top:1px solid var(--edge);background:var(--button);opacity:.68}
+  .controls{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+  button{font:inherit;background:var(--button);color:var(--ink);border:1px solid var(--edge);border-radius:7px;padding:5px 9px;cursor:pointer}
+  button[aria-pressed=true]{border-color:#aa7abe;color:#a456aa} button:disabled{opacity:.55}
+  input[type=range]{vertical-align:middle;accent-color:#9773ac;max-width:130px}
+  #status{margin-left:auto;font-size:13px}
+</style>
+<main>
+  <h1>黑金魔女 · 动作预览</h1>
+  <div id="stage" aria-label="动作预览舞台"><div id="floor"></div></div>
+  <div class="controls">
+    <button data-action="stand">站立</button><button data-action="sit">坐下</button><button data-action="sleep">睡觉</button>
+    <button data-action="walk">走路</button><button data-action="run">跑步</button>
+    <button data-action="jump">跳跃</button><button data-action="nod">点头</button><button data-action="shake">摇头</button>
+    <button data-action="bow">鞠躬</button>
+    <button data-action="wink">单眼眨</button><button data-action="closed" aria-pressed="false">闭眼对照</button>
+    <button data-action="happy">开心</button><button data-action="surprised">惊讶</button>
+    <button data-action="angry">生气</button><button data-action="dizzy">眩晕</button>
+    <button data-action="listen">倾听</button><button data-action="talk">说话</button>
+    <button data-action="anchors" aria-pressed="false">锚点</button><button data-action="theme" aria-pressed="false">深色底</button>
+    <span id="status" role="status">加载中</span>
+  </div>
+  <div class="controls" aria-label="更多表情">
+    <button data-action="love">喜欢</button><button data-action="shy">害羞</button>
+    <button data-action="sad">难过</button><button data-action="confused">疑惑</button>
+    <button data-action="sleepy">犯困</button>
+  </div>
+  <div class="controls">
+    <label>左右转头 <input id="lookX" aria-label="左右转头" type="range" min="-12" max="12" value="0"></label>
+    <label>抬头低头 <input id="lookY" aria-label="抬头低头" type="range" min="-12" max="12" value="0"></label>
+    <button data-action="follow">恢复鼠标跟随</button>
+    <button data-action="compare" aria-pressed="false">原位站姿</button>
+  </div>
+</main>
+<script type="module" src="/preview.js"></script>
+</html>

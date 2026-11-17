@@ -1,34 +1,6 @@
-.venv/
-node_modules/
+/.venv/
+/dist/
 __pycache__/
 *.pyc
-tools-local/
-scratch/
-dist/
-characters/*/raw/
-characters/*/source/
-characters/*/exports/
-*.zip
-.env
-characters/original-01/rig-v005-r02/qa*/*-[0-9][0-9][0-9].png
-characters/original-01/rig-v005-r03/qa*/*-[0-9][0-9][0-9].png
-characters/original-01/rig-v005-r03/qa-initial/
-characters/original-01/rig-v005-r04/qa*/*-[0-9][0-9][0-9].png
-characters/original-01/rig-v005-r04/qa-initial/
-characters/original-01/rig-v005-r05/qa*/*-[0-9][0-9][0-9].png
-characters/original-01/rig-v005-r06/qa*/*-[0-9][0-9][0-9].png
-
-# Local installation backups and diagnostics
-backups/
-qa-root-*.jpg
-
-# Rendered deliverables are distributed separately; sources and selected QA stay tracked
-promo/.venv/
-promo/assets/*.mp4
-promo/assets/*.wav
-# 第三方版权音乐（szak - 親愛なるあの日々へ）只在本机渲染时使用，绝不入库。
-# 换 BGM 时：把音频放到 promo/assets/ 下，用 render-atri.py --music 指过去即可。
-promo/assets/*.mp3
-promo/assets/src/**/.frames-*/
-promo/assets/.render-*/
-engineering/.venv/
+*.log
+/review/edge-check-*/

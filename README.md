@@ -1,47 +1,39 @@
-# GPT 龙娘 · Coopanion 形象包
+# 黑金魔女 · Coopanion 桌宠工程
 
-作者：**Asryto**  
-仓库：[Coopanion-Skin-Design](https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design)  
-当前发布版：**1.0.2**，形象名称：**GPT 龙娘**。
+当前工程包含朝右透明母版、生成供体、提示词、原坐标分层、模型、运行贴图、预览与验收工具。受控重建从归档供体开始，无需联网生成同一张图。以其他角色制作新稿时，可照[制作与复现手册](docs/制作与复现手册.md)重做美术并建立自己的定位点。
 
-银白浅紫 Q 版龙娘桌宠，支持 39 个动作与表情标签，包含独立眉毛、点击呆毛晃动、情绪振翅、提起挣扎、招手、原坐姿及圈圈眼晕乎。封面采用上半身近景。采用 Coopanion 官方 kit 驱动行为，源素材与配准围绕锁定 v005 母版维护。
+## 直接打开预览
 
-## AI 与制作者快速上手
+安装 Node.js 24，在本文件所在目录执行下列命令。无需 `npm install`。
 
-进入 [工程库](engineering/README.md)：可运行的检查工具、部件索引、制作指南、失败案例和 [复用技能](.agents/skills/coopanion-image-pack/SKILL.md)。先读短入口，再按任务读取对应指南。
-
-## 安装与打包
-
-[形象包下载](https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design/releases/tag/v1.0.2)；[Coopanion 官方主程序](https://github.com/Pal-AI-Lab/Coopanion)。
-
-在 Coopanion「装扮 → 导入」中选择形象 ZIP，再选用「GPT 龙娘」。安装包根目录包含 `figure.json`、作者与仓库说明。
-
-从仓库生成安装包，仅需 Python 标准库：
-
-```sh
-python scripts/package-pet.py
+```powershell
+node .\serve.mjs 4334
 ```
 
-输出为 `dist/gpt-dragon-v005-r25-1.0.2.zip` 与校验文件；与交付文件 `GPT 龙娘 1.0.2.zip` 内容相同。ZIP 不随 Git 提交。当前源码在 [`packs/gpt-dragon-v005-r25`](packs/gpt-dragon-v005-r25)。
+打开 [黑金魔女本地预览](http://127.0.0.1:4334/)。单击动作按钮，也可直接用鼠标拎起并放下角色。切换深色底检查发尖、帽坠和裙边，按「原位站姿」固定头身作母版对照。改 `parts/` 内原画布的对应透明 PNG，或重建贴图后，预览会自动重新加载素材。改 `preview.js` 或 `preview.html` 后刷新页面。预览服务只监听本机。
 
-## 本地预览与检查
+站姿倾听时头部沿颈轴倾斜，身体保持直立。坐姿使用独立画稿，倾听时保留原坐姿。浏览器已跑过动作与表情回归，Coopanion 原生客户端的导入与多显示器表现仍待验证。[浏览器验收](review/preview-qa.json)
 
-```sh
-npm run preview
-npm run check
+## 重建、检查、打包
+
+以下环境验证过 Windows、Python 3.14、Node.js 24 与 Edge。安装包及工程包由 `pack/star-witch/figure.json` 中的版本号命名。先保留已验收原件的副本。重建会重新生成 `parts/`、模型和运行贴图。
+
+```powershell
+py -3.14 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -X utf8 assemble_left_arm.py
+.\.venv\Scripts\python.exe -X utf8 assemble.py
+.\.venv\Scripts\python.exe -X utf8 assemble_expressions.py
+.\.venv\Scripts\python.exe -X utf8 review_parts.py
+.\.venv\Scripts\python.exe -X utf8 review_portraits.py
+.\.venv\Scripts\python.exe -X utf8 package_project.py
 ```
 
-预览只需 Node.js，无需 npm install。打开 `http://127.0.0.1:4319/preview/dragon-r25.html`，检查动作、表情、深浅背景及采样帧。`npm run check` 校验当前母版、资源、配准、词表与工程索引；历史检查使用 `npm run check:history`；不替代视觉检查。
+服务运行时可在另一个终端执行 `node .\qa_preview.mjs`。此检查使用 Edge，路径可用 `WITCH_EDGE` 指定，地址可用 `WITCH_PREVIEW` 指定。报告写入 `review/`，需配合截图和真实速度预览验收。
 
-已验证本机 Coopanion 的安装文件一致性、装扮页渲染和当前形象选择。呆毛清理与音符检查覆盖 64 张动态采样。同版本招手修复另覆盖 48 张双朝向采样，耳后头发不再挡住手掌；Release 已替换并校验公开下载。多屏、不同 DPI 和应用进程重启尚未完整验收。
+打包输出到 `dist/`，两份 ZIP 各有 SHA-256 校验文件。
 
-## 说明与来源
+- `star-witch-<版本>.zip` 用于 Coopanion「装扮 → 导入」。ZIP 根目录包含 `figure.json`，只打包被运行时引用的文件。
+- `star-witch-<版本>-engineering.zip` 用于编辑和完整重建。解压后进入 `star-witch/` 目录，按本页命令运行。交接包内的脚本也能重新生成两个 ZIP。
 
-- [安装、更新与复核](docs/INSTALL_AND_VERIFY.md)
-- [当前版本记录](docs/RELEASE_NOTES.md)
-- [制作方法与失败复盘](docs/REUSABLE_WORKFLOW.md)
-- [分件归属与遮挡要求](docs/LAYER_OWNERSHIP_AND_OCCLUSION.md)
-- [母版锁定](characters/original-01/production-lock.json)
-- [上游来源及许可](packs/gpt-dragon-v005-r25/UPSTREAM.json)
-
-角色制作署名为 Asryto；上游代码署名与 AGPL 许可保留在包内。历史版本和失败案例用于制作记录，当前预览、打包和安装应使用 r25。
+本工程署名 Asryto，现行源文件发布在 [Coopanion-Skin-Design](https://github.com/scarlet20252025-cloud/Coopanion-Skin-Design)。预览所用 Coopanion kit 固定在上游提交 `91293b3e31b94397a8f2eb79dffec40f4c6d8817`，快照与 AGPL 许可证随工程提供。[上游项目](https://github.com/Pal-AI-Lab/Coopanion) · [快照说明](vendor/Coopanion-web/SOURCE.txt) · [许可证](LICENSE)

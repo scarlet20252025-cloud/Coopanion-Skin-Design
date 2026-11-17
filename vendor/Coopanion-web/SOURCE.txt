@@ -1,0 +1,6 @@
+Upstream: https://github.com/Pal-AI-Lab/Coopanion
+Commit: 91293b3e31b94397a8f2eb79dffec40f4c6d8817
+Original directory: packages/cortico-world-desktop-pet/web
+Snapshot includes kit/, i18n/, i18n.js, and figure-frame.js as used by the Star Witch preview.
+The files are copied from the local source checkout without edits. See LICENSE.
+This subset supports the local preview and frame smoke test, and is not the desktop application.

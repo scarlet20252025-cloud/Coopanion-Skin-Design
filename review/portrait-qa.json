@@ -1,0 +1,29 @@
+{
+  "moodPortraits": 8,
+  "speechPortraits": 36,
+  "seamSkinRgbErrorP95": 0.0,
+  "pixelsChangedOutsidePortrait": 0,
+  "rawCheeks": [
+    251.0,
+    227.0,
+    223.0
+  ],
+  "neutralCheeks": [
+    252.0,
+    222.0,
+    218.0
+  ],
+  "maxComplexionShiftByExpression": {
+    "happy": 0.0,
+    "angry": 0.0,
+    "surprised": 0.0,
+    "shy": 0.0,
+    "sad": 0.0,
+    "confused": 0.0,
+    "sleepy": 0.0,
+    "dragged": 0.0,
+    "sitBody": 0.0,
+    "sleepBody": 0.0
+  },
+  "vocabularyEntries": 18
+}

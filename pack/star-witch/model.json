@@ -1,0 +1,261 @@
+{
+  "canvas": [
+    1163,
+    1352
+  ],
+  "view": [
+    143,
+    12,
+    883,
+    1331
+  ],
+  "ground": [
+    611,
+    1313
+  ],
+  "unitsPerPixel": 0.176,
+  "joints": {
+    "neck": [
+      604,
+      650
+    ],
+    "leftShoulder": [
+      518,
+      732
+    ],
+    "rightShoulder": [
+      695,
+      726
+    ],
+    "leftLeg": [
+      561,
+      1014
+    ],
+    "rightLeg": [
+      666,
+      1018
+    ],
+    "lockLeft": [
+      502,
+      625
+    ],
+    "lockRight": [
+      747,
+      623
+    ],
+    "mouth": [
+      671,
+      616
+    ]
+  },
+  "parts": {
+    "backHair": {
+      "file": "tex/backHair.png",
+      "box": [
+        240,
+        317,
+        678,
+        748
+      ]
+    },
+    "skirtBack": {
+      "file": "tex/skirtBack.png",
+      "box": [
+        505,
+        1028,
+        234,
+        104
+      ]
+    },
+    "legLeft": {
+      "file": "tex/legLeft.png",
+      "box": [
+        513,
+        962,
+        94,
+        353
+      ]
+    },
+    "legRight": {
+      "file": "tex/legRight.png",
+      "box": [
+        613,
+        964,
+        100,
+        343
+      ]
+    },
+    "body": {
+      "file": "tex/body.png",
+      "box": [
+        314,
+        633,
+        487,
+        603
+      ]
+    },
+    "leftArm": {
+      "file": "tex/leftArm.png",
+      "box": [
+        445,
+        409,
+        111,
+        592
+      ]
+    },
+    "rightArm": {
+      "file": "tex/rightArm.png",
+      "box": [
+        659,
+        695,
+        134,
+        295
+      ]
+    },
+    "leftCover": {
+      "file": "tex/leftCover.png",
+      "box": [
+        375,
+        0,
+        211,
+        912
+      ]
+    },
+    "rightCover": {
+      "file": "tex/rightCover.png",
+      "box": [
+        631,
+        680,
+        170,
+        217
+      ]
+    },
+    "lockLeft": {
+      "file": "tex/lockLeft.png",
+      "box": [
+        476,
+        588,
+        110,
+        270
+      ]
+    },
+    "lockRight": {
+      "file": "tex/lockRight.png",
+      "box": [
+        708,
+        576,
+        64,
+        316
+      ]
+    },
+    "face": {
+      "file": "tex/face.png",
+      "box": [
+        458,
+        410,
+        312,
+        255
+      ]
+    },
+    "frontHair": {
+      "file": "tex/frontHair.png",
+      "box": [
+        379,
+        319,
+        498,
+        347
+      ]
+    },
+    "hat": {
+      "file": "tex/hat.png",
+      "box": [
+        194,
+        47,
+        779,
+        623
+      ]
+    },
+    "sitBody": {
+      "file": "tex/sitBody.png",
+      "box": [
+        193,
+        58,
+        780,
+        1259
+      ]
+    },
+    "hatRim": {
+      "file": "tex/hatRim.png",
+      "box": [
+        430,
+        280,
+        435,
+        233
+      ]
+    },
+    "moodPortrait": {
+      "box": [
+        435,
+        420,
+        364,
+        234
+      ],
+      "count": 8,
+      "columns": 4,
+      "file": "tex/moodPortrait.png"
+    },
+    "talkPortrait": {
+      "box": [
+        435,
+        420,
+        364,
+        234
+      ],
+      "count": 36,
+      "columns": 4,
+      "file": "tex/talkPortrait.png"
+    },
+    "blinkFace": {
+      "box": [
+        435,
+        420,
+        364,
+        234
+      ],
+      "count": 17,
+      "columns": 5,
+      "file": "tex/blinkFace.png"
+    },
+    "winkFace": {
+      "box": [
+        435,
+        420,
+        364,
+        234
+      ],
+      "count": 17,
+      "columns": 5,
+      "file": "tex/winkFace.png"
+    },
+    "sleepBody": {
+      "file": "tex/sleepBody.png",
+      "box": [
+        193,
+        58,
+        780,
+        1259
+      ]
+    }
+  },
+  "expressions": {
+    "happy": 0,
+    "love": 0,
+    "angry": 1,
+    "surprised": 2,
+    "shy": 3,
+    "sad": 4,
+    "confused": 5,
+    "sleepy": 6,
+    "dragged": 7
+  }
+}

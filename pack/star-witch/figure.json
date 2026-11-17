@@ -1,0 +1,35 @@
+{
+  "manifest": 2,
+  "api": 2,
+  "id": "star-witch",
+  "version": "0.1.0",
+  "name": {"zh": "黑金魔女", "en": "Star Witch"},
+  "about": {
+    "zh": "一位留深紫黑色长发的魔女，双眼分别是淡紫色和蜜金色。折尖宽檐帽有金边、象牙白蝴蝶结与四芒星坠。身穿黑金短披肩、白领衬衣与层叠裙，戴黑手套，穿白褶边袜和星扣黑鞋。",
+    "en": "A witch with long plum-black hair and lavender and honey-amber eyes. Her bent wide-brimmed hat has gold edging, an ivory bow and four-point star charms. She wears a black-and-gold capelet, a white-collared blouse, a layered skirt, black gloves, ivory ruffle socks and black shoes with star buckles."
+  },
+  "entry": "figure.js",
+  "export": "createStarWitchBody",
+  "model": "model.json",
+  "thumb": "thumb.png",
+  "vocab": [
+    {"id":"stand","kind":"motion","names":{"zh":["起身站好"]},"about":{"zh":"回到站姿。"},"seconds":0.4},
+    {"id":"walk","kind":"motion","names":{"zh":["轻步走"]},"about":{"zh":"迈小步走一段。"},"seconds":2},
+    {"id":"run","kind":"motion","names":{"zh":["轻快小跑"]},"about":{"zh":"收起胳膊轻快小跑。"},"seconds":1.5},
+    {"id":"jump","kind":"motion","names":{"zh":["原地小跳"]},"about":{"zh":"在原地跳一下。"},"seconds":0.9},
+    {"id":"nod","kind":"motion","names":{"zh":["轻点头"]},"about":{"zh":"轻点一下头。"},"seconds":0.7},
+    {"id":"shake","kind":"motion","names":{"zh":["轻摇头"]},"about":{"zh":"左右轻轻摇头。"},"seconds":0.7},
+    {"id":"bow","kind":"motion","names":{"zh":["轻轻欠身"]},"about":{"zh":"双脚着地，闭眼轻轻欠身。"},"seconds":1.6},
+    {"id":"sit","kind":"motion","names":{"zh":["坐上小凳"]},"about":{"zh":"在小凳上坐下。"},"seconds":2.2},
+    {"id":"wink","kind":"expression","names":{"zh":["单眼眨"]},"about":{"zh":"短暂眨一下单眼。"},"seconds":1},
+    {"id":"happy","kind":"expression","names":{"zh":["微微一笑"]},"about":{"zh":"睁着异色眼睛，轻轻一笑。"},"seconds":2.8},
+    {"id":"love","kind":"expression","names":{"zh":["心生喜欢"]},"about":{"zh":"露出轻笑，身旁冒出小爱心。"},"seconds":3.2},
+    {"id":"shy","kind":"expression","names":{"zh":["有些害羞"]},"about":{"zh":"垂下目光，脸颊微红。"},"seconds":3.2},
+    {"id":"sad","kind":"expression","names":{"zh":["有些难过"]},"about":{"zh":"眉尾低垂，眼角掉下泪滴。"},"seconds":3.2},
+    {"id":"confused","kind":"expression","names":{"zh":["有些疑惑"]},"about":{"zh":"微微扬眉，头旁显出问号。"},"seconds":3.2},
+    {"id":"sleepy","kind":"expression","names":{"zh":["有些犯困"]},"about":{"zh":"眼皮垂下，轻轻打哈欠。"},"seconds":4.4},
+    {"id":"surprised","kind":"expression","names":{"zh":["吃一惊"]},"about":{"zh":"睁大眼睛，微微张嘴。"},"seconds":2.8},
+    {"id":"angry","kind":"expression","names":{"zh":["有点生气"]},"about":{"zh":"压低眉毛，亮出生气符号。"},"seconds":2.8},
+    {"id":"dizzy","kind":"expression","names":{"zh":["晕乎乎"]},"about":{"zh":"显示转动的星星。"},"seconds":3}
+  ]
+}

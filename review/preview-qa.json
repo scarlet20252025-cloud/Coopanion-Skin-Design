@@ -1,0 +1,26 @@
+{
+  "listen": {
+    "head": -6.436497969441191,
+    "torso": 0,
+    "stage": 0
+  },
+  "walk": "walk",
+  "walkSupportSamples": 15,
+  "run": "run",
+  "sit": "sit",
+  "sleep": "sleep",
+  "portraits": [
+    "happy",
+    "surprised",
+    "angry",
+    "shy",
+    "sad",
+    "confused",
+    "sleepy",
+    "love"
+  ],
+  "talk": true,
+  "bow": true,
+  "drag": "drag",
+  "drop": true
+}
