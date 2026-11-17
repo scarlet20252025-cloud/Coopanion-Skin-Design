@@ -1,0 +1,589 @@
+{
+  "manifest": 2,
+  "api": 2,
+  "id": "coopanion-sheep-03",
+  "version": "2.0.4",
+  "name": {
+    "zh": "星眠",
+    "zh-Hant": "星眠",
+    "en": "Xingmian",
+    "ja": "星眠"
+  },
+  "about": {
+    "zh": "星眠,一个 Q 版羊娘,二头身,四分之三侧身朝画面右边站;戴着白色毛绒羊角兜帽,兜帽两侧有棕色羊角、垂着两只带粉色心形的白色羊耳,兜帽上缀着粉色蝴蝶结和金色小星星;金色头发、额前刘海,两条金色麻花辫从耳后垂到胸前,辫尾系粉色发圈;戴深色大圆框眼镜,粉色眼睛;穿浅蓝色短款蓬蓬连衣裙,粉色波浪荷叶边披肩,白色围裙,袖口是带金色菱形的白色毛绒饰边;白色短裤,白色毛绒袜口系粉色蝴蝶结,浅蓝色鞋子;坐下时抱膝坐",
+    "en": "Xingmian, a chibi sheep girl two heads tall, standing three-quarters on facing right; a fluffy white hood with brown ram horns on the sides, two drooping white sheep ears with pink hearts, pink bows and little gold stars on the hood; blonde hair with a fringe and two blonde braids falling from behind the ears to the chest, tied with pink bands; big dark round glasses and pink eyes; a short puffy light-blue dress with a pink frilled capelet, a white apron and white fluffy cuffs with gold diamonds; white shorts, white fluffy socks with pink bows and light-blue shoes; she sits hugging her knees"
+  },
+  "author": "scarlet20252025-cloud",
+  "credits": [
+    {
+      "role": "母版与拆件",
+      "name": "按 Pal-AI-Lab/Coopanion 官方流程制作"
+    }
+  ],
+  "entry": "figure.js",
+  "export": "createWhaleBody",
+  "model": "model.json",
+  "thumb": "thumbs/xingmian.png",
+  "axes": [
+    {
+      "id": "scheme",
+      "name": {
+        "zh": "配色",
+        "en": "Colours"
+      },
+      "options": [
+        {
+          "id": "deepseek",
+          "name": {
+            "zh": "原版",
+            "en": "Original"
+          },
+          "thumb": "thumbs/xingmian.png",
+          "accent": "#7d5bd6"
+        }
+      ]
+    },
+    {
+      "id": "outfit",
+      "name": {
+        "zh": "服装",
+        "en": "Outfit"
+      },
+      "options": [
+        {
+          "id": "maid",
+          "name": {
+            "zh": "羊绒裙",
+            "en": "Wool dress"
+          },
+          "thumb": "thumbs/xingmian.png"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "id": "deepseek",
+      "pick": {
+        "scheme": "deepseek",
+        "outfit": "maid"
+      },
+      "name": {
+        "zh": "原版",
+        "en": "Original"
+      },
+      "accent": "#7d5bd6",
+      "console": {
+        "light": {
+          "a": "#7d5bd6",
+          "a2": "#a68bf0",
+          "on": "#ffffff",
+          "t": "#5c39b0",
+          "c3": "#b9a8d8",
+          "c4": "#8a8a90"
+        },
+        "dark": {
+          "a": "#7d5bd6",
+          "a2": "#a68bf0",
+          "on": "#ffffff",
+          "t": "#6b45c4",
+          "c3": "#b9a8d8",
+          "c4": "#9a9aa0"
+        }
+      }
+    }
+  ],
+  "vocab": [
+    {
+      "id": "neutral",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "平静"
+        ]
+      },
+      "about": {
+        "zh": "默认的脸"
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "happy",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "开心",
+          "高兴"
+        ]
+      },
+      "about": {
+        "zh": "眯眼笑"
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "wink",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "眨眼"
+        ]
+      },
+      "about": {
+        "zh": "一只眼闭起来"
+      },
+      "seconds": 0.5
+    },
+    {
+      "id": "surprised",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "惊讶"
+        ]
+      },
+      "about": {
+        "zh": "睁大眼睛"
+      },
+      "seconds": 0.6
+    },
+    {
+      "id": "sad",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "难过"
+        ]
+      },
+      "about": {
+        "zh": "垂下眼睛"
+      },
+      "seconds": 0.9
+    },
+    {
+      "id": "cry",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "大哭"
+        ]
+      },
+      "about": {
+        "zh": "眼泪流下来"
+      },
+      "seconds": 1.6
+    },
+    {
+      "id": "angry",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "生气"
+        ]
+      },
+      "about": {
+        "zh": "皱眉"
+      },
+      "seconds": 1.0
+    },
+    {
+      "id": "shy",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "害羞"
+        ]
+      },
+      "about": {
+        "zh": "脸红"
+      },
+      "seconds": 1.0
+    },
+    {
+      "id": "love",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "喜欢",
+          "爱心眼"
+        ]
+      },
+      "about": {
+        "zh": "眼里冒爱心"
+      },
+      "seconds": 1.2
+    },
+    {
+      "id": "sleepy",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "犯困"
+        ]
+      },
+      "about": {
+        "zh": "眼皮下垂"
+      },
+      "seconds": 1.4
+    },
+    {
+      "id": "sleep",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "睡觉"
+        ]
+      },
+      "about": {
+        "zh": "闭眼睡着"
+      },
+      "seconds": 8.0
+    },
+    {
+      "id": "flustered",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "慌张"
+        ]
+      },
+      "about": {
+        "zh": "手忙脚乱"
+      },
+      "seconds": 1.0
+    },
+    {
+      "id": "smug",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "得意"
+        ]
+      },
+      "about": {
+        "zh": "得瑟"
+      },
+      "seconds": 1.0
+    },
+    {
+      "id": "thinking",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "思考"
+        ]
+      },
+      "about": {
+        "zh": "抬头想事情"
+      },
+      "seconds": 1.2
+    },
+    {
+      "id": "confused",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "疑惑"
+        ]
+      },
+      "about": {
+        "zh": "歪头"
+      },
+      "seconds": 1.0
+    },
+    {
+      "id": "excited",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "期待"
+        ]
+      },
+      "about": {
+        "zh": "眼睛发亮"
+      },
+      "seconds": 1.0
+    },
+    {
+      "id": "determined",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "坚定"
+        ]
+      },
+      "about": {
+        "zh": "眼神有力"
+      },
+      "seconds": 1.0
+    },
+    {
+      "id": "pout",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "嘟嘴"
+        ]
+      },
+      "about": {
+        "zh": "鼓起脸"
+      },
+      "seconds": 1.0
+    },
+    {
+      "id": "scared",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "害怕"
+        ]
+      },
+      "about": {
+        "zh": "发抖"
+      },
+      "seconds": 1.0
+    },
+    {
+      "id": "worried",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "担心"
+        ]
+      },
+      "about": {
+        "zh": "皱眉"
+      },
+      "seconds": 1.0
+    },
+    {
+      "id": "dizzy",
+      "kind": "expression",
+      "names": {
+        "zh": [
+          "晕"
+        ]
+      },
+      "about": {
+        "zh": "圈圈眼"
+      },
+      "seconds": 1.2
+    },
+    {
+      "id": "stand",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "站"
+        ]
+      },
+      "about": {
+        "zh": "站直"
+      },
+      "seconds": 0.6
+    },
+    {
+      "id": "walk",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "走",
+          "散步"
+        ]
+      },
+      "about": {
+        "zh": "走两步"
+      },
+      "seconds": 2.4
+    },
+    {
+      "id": "run",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "跑"
+        ]
+      },
+      "about": {
+        "zh": "跑起来"
+      },
+      "seconds": 1.6
+    },
+    {
+      "id": "jump",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "跳"
+        ]
+      },
+      "about": {
+        "zh": "跳一下"
+      },
+      "seconds": 1.2
+    },
+    {
+      "id": "hop",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "小跳"
+        ]
+      },
+      "about": {
+        "zh": "轻跳"
+      },
+      "seconds": 0.8
+    },
+    {
+      "id": "sit",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "坐",
+          "坐下"
+        ]
+      },
+      "about": {
+        "zh": "坐下来"
+      },
+      "seconds": 1.6
+    },
+    {
+      "id": "wave",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "招手",
+          "挥手"
+        ]
+      },
+      "about": {
+        "zh": "挥手"
+      },
+      "seconds": 1.6
+    },
+    {
+      "id": "bow",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "鞠躬"
+        ]
+      },
+      "about": {
+        "zh": "鞠躬"
+      },
+      "seconds": 1.6
+    },
+    {
+      "id": "nod",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "点头"
+        ]
+      },
+      "about": {
+        "zh": "点头"
+      },
+      "seconds": 0.7
+    },
+    {
+      "id": "shake",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "摇头"
+        ]
+      },
+      "about": {
+        "zh": "摇头"
+      },
+      "seconds": 0.7
+    },
+    {
+      "id": "spin",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "转圈"
+        ]
+      },
+      "about": {
+        "zh": "转一圈"
+      },
+      "seconds": 0.6
+    },
+    {
+      "id": "dance",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "跳舞"
+        ]
+      },
+      "about": {
+        "zh": "跳舞"
+      },
+      "seconds": 3.2
+    },
+    {
+      "id": "look",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "张望",
+          "看看"
+        ]
+      },
+      "about": {
+        "zh": "左右看"
+      },
+      "seconds": 2.0
+    },
+    {
+      "id": "flap",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "扑腾"
+        ]
+      },
+      "about": {
+        "zh": "抖一抖"
+      },
+      "seconds": 1.2
+    },
+    {
+      "id": "shiver",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "发抖"
+        ]
+      },
+      "about": {
+        "zh": "打冷战"
+      },
+      "seconds": 1.2
+    },
+    {
+      "id": "turn",
+      "kind": "motion",
+      "names": {
+        "zh": [
+          "转身"
+        ]
+      },
+      "about": {
+        "zh": "转身"
+      },
+      "seconds": 0.6
+    }
+  ],
+  "sounds": {},
+  "can": {
+    "walk": true
+  }
+}

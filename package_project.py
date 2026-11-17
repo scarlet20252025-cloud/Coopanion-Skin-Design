@@ -27,11 +27,12 @@ EXAMPLE_FILES = {
 }
 REQUIRED_PROJECT = {
     "README.md", "AGENTS.md", "LICENSE", "requirements.txt",
-    "docs/工程定义与验收清单.md", "docs/制作与复现手册.md",
+    "docs/工程定义与验收清单.md", "docs/制作与交付核对清单.md", "docs/制作与复现手册.md",
     "docs/桌宠工程通用手册.md", "docs/案例代码与工具索引.md", "docs/环境提示词.md",
     "source/master-selected.png", "source/master-right.png", "masters/生成提示词.md",
     "work/face-repair/mood-dizzy.png", "work/face-repair/眩晕补画提示词.md",
     "work/face-repair/master-face-reference.png", "docs/cases/xingmian/face_dizzy.png",
+    "docs/cases/xingmian/figure.json",
     "vendor/Coopanion-web/SOURCE.txt", "vendor/Coopanion-web/LICENSE",
     "vendor/Coopanion-web/kit/body.js", "vendor/Coopanion-web/kit/rig.js",
     "assemble_left_arm.py", "assemble.py", "assemble_expressions.py", "repair_eye_art.py",
