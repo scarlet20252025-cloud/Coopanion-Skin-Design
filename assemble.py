@@ -317,6 +317,18 @@ def main():
     lining_area = polygon([(507,1030),(584,1030),(708,1030),(736,1072),
                           (718,1092),(673,1115),(621,1129),(516,1147)], .85)
     backing = alpha_layer(rgb_cloth, alpha_cloth*lining_area)
+    # Follow the lower seams of the front ruffles, then include only the
+    # visible back-facing panels the shins can pass in front of.
+    back_hem = np.maximum.reduce([
+        polygon([(498,1087),(507,1081),(517,1075),(536,1071),(568,1064),
+                 (580,1082),(580,1172),(507,1199),(488,1210),(488,1123)],.85),
+        polygon([(581,1070),(597,1064),(613,1061),(628,1058),(639,1057),
+                 (656,1136),(571,1150)],.85),
+        polygon([(665,1065),(675,1055),(684,1052),(695,1053),(706,1054),
+                 (717,1052),(728,1048),(744,1044),(758,1045),(774,1056),
+                 (778,1120),(668,1150)],.85),
+    ])
+    skirt_depth = alpha_layer(np.full_like(master[:,:,:3],255),back_hem)
 
     face, front_hair = face_parts(master, head_mask, hat_mask)
     target,_ = expression_palette(master,load)
@@ -336,7 +348,7 @@ def main():
     sitting = remove_edge_spill(np.array(alpha_layer(seat_rgb, seat_alpha)))
     sitting = match_head_skin(sitting,complexion(sitting[t:b,l:r]),target)
     layers = {
-        "backHair": back_hair(master, occupied), "skirtBack": backing,
+        "backHair": back_hair(master, occupied), "skirtBack": backing, "skirtDepth": skirt_depth,
         "legLeft": paint_leg(master, load("work/legs-donor.png"), legs_mask[0], True),
         "legRight": paint_leg(master, load("work/legs-donor.png"), legs_mask[1], False),
         "body": body, "leftArm": left_arm, "rightArm": paint_right_arm(master, arm_mask),

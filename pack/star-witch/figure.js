@@ -14,8 +14,9 @@ const SOLES = [
   [[647,1302],[657,1304],[668,1305],[680,1305],[690,1304],[700,1302]],
   [[543,1309],[552,1311],[559,1312],[580,1312],[587,1311],[594,1309]],
 ];
+const FACE_VIEW=[365,305,525,375];
 
-export function solvePose(frame, controls={}, carried=0, walking, listening) {
+export function solvePose(frame, controls={}, walking, listening) {
   const t=frame.t??0, mode=frame.mode??'idle';
   const walk=mode==='walk', run=mode==='run';
   const look=controls.look??frame.look??[0,0];
@@ -35,17 +36,16 @@ export function solvePose(frame, controls={}, carried=0, walking, listening) {
     (1-Math.cos(TAU*(walkPhase-.05)*2))*1.05*walkAmount;
   const listen=listening??+(frame.face==='listening');
   const head=clamp(look[0]*.36+look[1]*.13+nod*3.4+shake*3.65
-    +Math.sin(t*1.9)*.55+(frame.swing??0)*carried*.12,-3.3,3.3)-7.2*listen;
+    +Math.sin(t*1.9)*.55,-3.3,3.3)-7.2*listen;
   const swing=Math.cos(TAU*(walkPhase-.045))*walkAmount;
   // The arm array is left/right, while the legs below are drawn right/left.
   // Pair the near arm with the far leg, and the far arm with the near leg.
   const arms=[
-    (run?-2.4*runRamp:-3.9*swing)+carried*(-3.8+1.4*Math.sin(t*8)),
-    (run?-1.8*runRamp:3.1*swing)+carried*(3.4-1.4*Math.sin(t*8-.55)),
+    run?-2.4*runRamp:-3.9*swing,
+    run?-1.8*runRamp:3.1*swing,
   ];
   const legs=[0,1].map(i=>{
     const cycle=runPhase+i*Math.PI;
-    const kick=Math.sin(t*12+i*Math.PI)*carried;
     const step=(walkPhase+i*.5)%1;
     const flight=clamp((step-STANCE)/(1-STANCE),0,1);
     // During support the shoe travels back at the same rate the pet moves.
@@ -54,8 +54,8 @@ export function solvePose(frame, controls={}, carried=0, walking, listening) {
     const stride=-Math.asin(travel/294)*180/Math.PI;
     const lift=13*Math.sin(Math.PI*flight)**2*walkAmount;
     return {
-      angle:stride+Math.sin(cycle)*runRamp*4.6+kick*3.8,
-      lift:lift+Math.max(0,Math.cos(cycle))*runRamp*12+Math.max(0,kick)*5,
+      angle:stride+Math.sin(cycle)*runRamp*4.6,
+      lift:lift+Math.max(0,Math.cos(cycle))*runRamp*12,
     };
   });
   const sit=['sit','sleep','dizzy','wake'].includes(mode)&&(frame.sit??0)>.5;
@@ -77,6 +77,51 @@ function turn(ctx,[x,y],angle,dy=0) {
   ctx.translate(-x,-y);
 }
 
+// The same semi-implicit spring, head and shoulder tuning as Xingyun v2 0.1.9.
+function heldSpring(k,c,limit) {
+  let x=0,v=0;
+  return (target,dt)=>{
+    v+=((target-x)*k-v*c)*dt;
+    x+=v*dt;
+    if(Math.abs(x)>limit){x=Math.sign(x)*limit;v=0;}
+    return x;
+  };
+}
+
+const RAD=Math.PI/180;
+const PALMS=[[470,973],[774,964]];
+function palmArc([sx,sy],[px,py],direction) {
+  const dx=px-sx,dy=py-sy;
+  const bias=Math.atan2(dx,dy),radius=Math.hypot(dx,dy);
+  return {
+    height:angle=>sy+radius*Math.cos(angle*RAD-bias),
+    angle:height=>(bias+direction*Math.acos(clamp((height-sy)/radius,-1,1)))/RAD,
+  };
+}
+
+function bodyDepth(doc,body,depth) {
+  const [x,y,w,h]=body.box;
+  const [mx,my]=depth.box;
+  const plane=()=>Object.assign(doc.createElement('canvas'),{width:w,height:h});
+  const front=plane(),rear=plane();
+  const near=front.getContext('2d'),back=rear.getContext('2d');
+  near.drawImage(body.image,0,0);
+  back.drawImage(depth.image,mx-x,my-y);
+  const foreground=near.getImageData(0,0,w,h),background=back.getImageData(0,0,w,h);
+  for(let i=0;i<foreground.data.length;i+=4){
+    const alpha=foreground.data[i+3];
+    const frontAlpha=Math.round(alpha*(255-background.data[i+3])/255);
+    for(let c=0;c<3;c++) background.data[i+c]=foreground.data[i+c];
+    background.data[i+3]=frontAlpha<255?Math.round(255*(alpha-frontAlpha)/(255-frontAlpha)):0;
+    foreground.data[i+3]=frontAlpha;
+  }
+  near.putImageData(foreground,0,0);
+  back.putImageData(background,0,0);
+  front.dataset.texture='body.png';
+  rear.dataset.texture='skirtRear.png';
+  return {front,rear};
+}
+
 export async function createStarWitchBody(base, options) {
   const { model, kit, host, asset, controls={} }=options;
   if (!model || model.canvas.join('x')!=='1163x1352') throw new Error('子图与 1163×1352 母版不匹配。');
@@ -93,12 +138,25 @@ export async function createStarWitchBody(base, options) {
     return [name,{ ...p,image }];
   })));
   const joints=model.joints;
+  if(parts.skirtDepth){
+    const bodyPart=parts.body;
+    const {front,rear}=bodyDepth(host.root.ownerDocument,bodyPart,parts.skirtDepth);
+    parts.skirtRear={box:bodyPart.box,image:rear};
+    bodyPart.image=front;
+  }
   const [vx,vy,vw,vh]=model.view, [gx,gy]=model.ground, unit=model.unitsPerPixel;
   const u=x=>128+(x-gx)*unit, v=y=>256+(y-gy)*unit;
   const px=.83;
   let mount, frameCanvas, context, scratch, pen, fx, fxState='';
-  let last=0, wink=0, winkAt=-Infinity, rest=0, carry=0, lock=0, previousFace='neutral';
+  let last=0, wink=0, winkAt=-Infinity, rest=0, lock=0, previousFace='neutral';
   let body, listening=0, walked=0, settleAt=0, walkAmount=0, previousX, wasWalking=false;
+  let carry=0, carryStretch=0, carryKick=0, lastHeldHead=0, lastHeldYaw=0;
+  const heldHead=heldSpring(70,10,16), heldHair=heldSpring(55,7,1.8);
+  const dizzyHead=heldSpring(70,10,16);
+  let dizzyBend=0, seatedDizzyRig, seatedDizzyCanvas;
+  let faceRig,faceRigCanvas,facePainting,foregroundHair,paintKey;
+  const heldArms=[heldSpring(60,9,125),heldSpring(60,9,95)];
+  const palms=[palmArc(joints.leftShoulder,PALMS[0],1),palmArc(joints.rightShoulder,PALMS[1],-1)];
 
   function init(group) {
     const doc=group.ownerDocument;
@@ -159,7 +217,119 @@ export async function createStarWitchBody(base, options) {
     context.restore();
   }
 
-  function expression(frame) {
+  function dizzyEyes(marks) {
+    for(const [i,name] of ['dizzyNear','dizzyFar'].entries()) {
+      const {image,box:[x,y,w,h]}=parts[name];
+      context.save();
+      context.translate(x+w/2,y+h/2);
+      context.scale(i===0?.75:.66,i===0?.72:.71);
+      context.rotate((marks?.eyes?.[i]?.rot??0)*.6);
+      context.drawImage(image,-w/2,-h/2);
+      context.restore();
+    }
+  }
+
+  function seatedDizzy(angle,recovering,marks) {
+    if(!seatedDizzyCanvas){
+      seatedDizzyCanvas=context.canvas.ownerDocument.createElement('canvas');
+      seatedDizzyCanvas.dataset.rig='seat-dizzy';
+      [seatedDizzyCanvas.width,seatedDizzyCanvas.height]=[frameCanvas.width,frameCanvas.height];
+      const names=['dizzySeat','sleepBody'];
+      if(kit.createRig) {
+        try {
+          seatedDizzyRig=kit.createRig(seatedDizzyCanvas,{
+            view:[vx,vy,vx+vw,vy+vh],
+            deformers:{head:{kind:'warp',rect:[0,0,model.canvas[0],model.canvas[1]]}},
+            parts:names.map(id=>({id,tex:id,box:parts[id].box,z:0,parent:'head',grid:[18,40]})),
+          });
+          for(const id of names) seatedDizzyRig.upload(id,parts[id].image);
+        } catch {
+          seatedDizzyRig?.dispose();
+          seatedDizzyRig=null;
+        }
+      }
+    }
+    if(seatedDizzyRig){
+      const [nx,ny]=joints.neck;
+      const c=Math.cos(angle*RAD),s=Math.sin(angle*RAD);
+      seatedDizzyRig.render({alpha:{dizzySeat:Number(!recovering),sleepBody:Number(recovering)},head:{
+        fn:(_u,_v,x,y)=>{
+          const k=smooth((752-y)/117);
+          const dx=x-nx,dy=y-ny;
+          return [k*((c-1)*dx-s*dy),k*(s*dx+(c-1)*dy)];
+        },
+      }});
+      context.drawImage(seatedDizzyCanvas,vx,vy,vw,vh);
+    }else{
+      sprite(context,recovering?'sleepBody':'dizzySeat');
+    }
+    if(!recovering){
+      context.save();
+      turn(context,joints.neck,seatedDizzyRig?angle:0);
+      context.transform(...model.dizzySeatFit);
+      dizzyEyes(marks);
+      context.restore();
+    }
+  }
+
+  function paintPortrait(ctx,selected) {
+    sprite(ctx,'face');
+    sprite(ctx,'frontHair');
+    if(selected) atlas(ctx,...selected);
+  }
+
+  function drawFaceParallax(selected,yaw,pitch) {
+    if(!kit.createRig||Math.abs(yaw)+Math.abs(pitch)<.025) return false;
+    const [x,y,w,h]=FACE_VIEW;
+    if(!faceRigCanvas){
+      const doc=context.canvas.ownerDocument;
+      facePainting=Object.assign(doc.createElement('canvas'),{width:w,height:h});
+      const paint=facePainting.getContext('2d');
+      paint.setTransform(1,0,0,1,-x,-y);
+      sprite(paint,'frontHair');
+      foregroundHair=paint.getImageData(0,0,w,h).data;
+      faceRigCanvas=Object.assign(doc.createElement('canvas'),
+        {width:Math.ceil(w*px),height:Math.ceil(h*px)});
+      faceRigCanvas.dataset.rig='face-parallax';
+      try {
+        faceRig=kit.createRig(faceRigCanvas,{
+          view:[x,y,x+w,y+h],
+          deformers:{features:{kind:'warp',rect:[x,y,x+w,y+h]}},
+          parts:[{id:'portrait',tex:'portrait',box:FACE_VIEW,z:0,parent:'features',grid:[52,38]}],
+        });
+      } catch {
+        return false;
+      }
+    }
+    if(!faceRig) return false;
+    const key=selected?.join('/')??'neutral';
+    if(paintKey!==key){
+      const paint=facePainting.getContext('2d');
+      paint.clearRect(x,y,w,h);
+      paintPortrait(paint,selected);
+      faceRig.upload('portrait',facePainting);
+      paintKey=key;
+    }
+    const ellipse=(px,py,cx,cy,rx,ry)=>smooth(1-((px-cx)/rx)**2-((py-cy)/ry)**2);
+    faceRig.render({features:{fn:(_u,_v,px,py)=>{
+      const near=ellipse(px,py,596,551,64,35);
+      const far=ellipse(px,py,738,553,27,32);
+      const mouth=ellipse(px,py,670,616,43,23);
+      if(near+far+mouth===0) return [0,0];
+      const ix=Math.round(px-x),iy=Math.round(py-y);
+      let hair=0;
+      for(const [dx,dy] of [[0,0],[-7,0],[7,0],[0,-7],[0,7]]){
+        hair=Math.max(hair,foregroundHair[4*((iy+dy)*w+ix+dx)+3]??255);
+      }
+      const visible=1-smooth(hair/255);
+      return [yaw*visible*(near*6.8+far*4.0+mouth*4.8),
+        pitch*visible*(near*4.4+far*3.2+mouth*3.6)];
+    }}});
+    context.drawImage(faceRigCanvas,x,y,w,h);
+    return true;
+  }
+
+  function expression(frame,p) {
     const face=controls.closedEyes?'sleep':frame.face??'neutral';
     const mood=model.expressions[face];
     const hasMood=mood!==undefined;
@@ -168,16 +338,18 @@ export async function createStarWitchBody(base, options) {
     const shared=clamp(Math.max(nativeBlink,smooth(rest)),0,1);
     const blinking=Math.max(shared,side)>.04;
     const speech=Math.round(3*clamp((frame.talk??0)*1.35,0,1));
-    sprite(context,'face');
-    sprite(context,'frontHair');
-    if (blinking) {
+    let selected;
+    if(face==='squeeze'&&frame.mode==='dizzy'){
+      selected=['blinkFace',16];
+    } else if (blinking) {
       const winkOnly=side>.04&&shared<=.04;
-      atlas(context,winkOnly?'winkFace':'blinkFace',Math.round((winkOnly?side:Math.max(shared,side))*16));
+      selected=[winkOnly?'winkFace':'blinkFace',Math.round((winkOnly?side:Math.max(shared,side))*16)];
     } else if(speech) {
-      atlas(context,'talkPortrait',4*(hasMood?mood+1:0)+speech);
+      selected=['talkPortrait',4*(hasMood?mood+1:0)+speech];
     } else if(hasMood) {
-      atlas(context,'moodPortrait',mood);
+      selected=['moodPortrait',mood];
     }
+    if(!drawFaceParallax(selected,p.yaw,p.pitch)) paintPortrait(context,selected);
   }
 
   function anchors() {
@@ -194,7 +366,23 @@ export async function createStarWitchBody(base, options) {
     const t=frame.t??0, dt=clamp(t-last,0,.065);
     last=t;
     const face=frame.face??'neutral';
-    carry=approach(carry,+(frame.mode==='drag'),dt,8);
+    const dizzy=frame.mode==='dizzy';
+    const grabbed=frame.mode==='drag';
+    const inFlight=frame.mode==='air'||frame.mode==='land';
+    const oldCarry=carry;
+    carry=approach(carry,+(grabbed||(carry>.01&&inFlight)),dt,10);
+    carryStretch=approach(carryStretch,+grabbed,dt,8);
+    const kickTarget=grabbed?1:(frame.mode==='air'&&carry>.01?.4:0);
+    carryKick=approach(carryKick,kickTarget,dt,grabbed?10:24);
+    const inputSwing=frame.swing??0;
+    const sway=clamp(inputSwing/26,-1.6,1.6);
+    const [lookX,lookY]=frame.look??[0,0];
+    const head=heldHead(lookX*.7+Math.sin(t*.9)*1.2+lookY*.4+(grabbed?inputSwing*.25:0),dt);
+    const yaw=clamp(lookX/5,-1,1)*.9;
+    const hair=heldHair(sway*1.1-(head-lastHeldHead)/Math.max(dt,.001)*.004
+      -(yaw-lastHeldYaw)/Math.max(dt,.001)*.02,dt);
+    lastHeldHead=head;
+    lastHeldYaw=yaw;
     const wantsWink=face==='wink'&&previousFace!==face;
     if(wantsWink) winkAt=t;
     const winkAge=t-winkAt;
@@ -223,10 +411,44 @@ export async function createStarWitchBody(base, options) {
     const canSettle=frame.mode==='idle'||walking;
     walkAmount=canSettle?approach(walkAmount,+walking,dt,walking?7:16):0;
     wasWalking=walking;
-    const p=solvePose(frame,controls,carry,{distance:walked,amount:walkAmount},listening);
+    const p=solvePose(frame,controls,{distance:walked,amount:walkAmount},listening);
+    const dizzySeated=dizzy&&p.sit&&parts.dizzySeat;
+    const orbit=Boolean(dizzySeated&&face==='dizzy'&&marks?.orbit);
+    const dizzyRock=dizzyHead(dizzySeated&&face==='dizzy'?3*Math.sin(t*4.5):0,dt);
+    dizzyBend=approach(dizzyBend,dizzySeated?clamp((frame.tilt??0)*.8,-10,12):0,dt,dizzySeated?32:16);
+    const dizzyRoll=dizzyRock+dizzyBend;
+    if(!controls.still) p.head+=dizzyRoll;
+    if (!controls.still&&carry>.005) {
+      const bend=((frame.tilt??0)+(frame.lean??0)*Math.sign(frame.facing||1))*(1-oldCarry);
+      p.head+=(head+clamp(bend*.8,-10,12)-p.head)*carry;
+      const kick=10*Math.sin(t*11)*carryKick;
+      p.legs[0].angle+=kick;
+      p.legs[1].angle-=kick;
+      // The master differs from Xingyun. Solve the same shared low palm
+      // height with these shorter sleeves and the two measured palm points.
+      const height=956-10*Math.sin(t*13);
+      let angles=heldArms.map((step,i)=>step(grabbed?palms[i].angle(height):p.arms[i],dt));
+      if(grabbed){
+        const shared=(palms[0].height(angles[0])+palms[1].height(angles[1]))*.5;
+        angles=palms.map(palm=>palm.angle(shared));
+      }
+      // The force ramps in from the actual standing pose as the host grabs.
+      p.arms=angles.map((angle,i)=>p.arms[i]+(angle-p.arms[i])*carry);
+    } else {
+      heldArms.forEach(step=>step(0,dt));
+    }
     clear(context);
-    if(p.sit) sprite(context,frame.mode==='sleep'?'sleepBody':'sitBody');
+    if(dizzySeated) seatedDizzy(controls.still?0:dizzyRoll,face!=='dizzy',marks);
+    else if(p.sit) sprite(context,frame.mode==='sleep'?'sleepBody':'sitBody');
     else {
+      if(!controls.still&&carry>.005) {
+        // Invert the kit's drag stretch about the scruff, as in Xingyun v2.
+        const scruff=gy+(36-256)/unit;
+        context.translate(gx,scruff);
+        context.scale(1/(1-.05*carryStretch),1/(1+.09*carryStretch));
+        context.translate(-gx,-scruff);
+        turn(context,joints.neck,(-sway*1.2+inputSwing*.15)*carry);
+      }
       // The skirt lining, shoulders and upper body share this transform.
       // Both leg transforms remain in the grounded stage coordinate system.
       const bowBody=()=>turn(context,[609,957],p.bow*3.5,p.bow*3.2);
@@ -234,6 +456,7 @@ export async function createStarWitchBody(base, options) {
       bowBody();
       rotateSprite('backHair','neck',p.head*.35,p.bodyY);
       rotateSprite('skirtBack','neck',0,p.bodyY);
+      if(parts.skirtRear) rotateSprite('skirtRear','neck',0,p.bodyY);
       context.restore();
       for (const [i,id] of ['right','left'].entries()) {
         const leg=p.legs[i];
@@ -257,27 +480,34 @@ export async function createStarWitchBody(base, options) {
       lock=approach(lock,clamp(-p.head*.40+Math.sin(t*3)*.42,-1.65,1.65),dt,7);
       for (const [i,name] of ['lockLeft','lockRight'].entries()) {
         context.save();
-        turn(context,joints[name],lock*(i===0?1:.7));
+        const freeSwing=lock*(i===0?1:.7);
+        const heldSwing=clamp(-head*.55+hair*5.8,-12,12)*(i===0?1:.78);
+        turn(context,joints[name],freeSwing+(heldSwing-freeSwing)*(controls.still?0:carry));
         sprite(context,name);
         context.restore();
       }
-      expression(frame);
+      expression(frame,p);
       sprite(context,'hatRim');
       context.restore();
       context.restore();
     }
     if (controls.showJoints) anchors();
-    const at=(x,y)=>[u(614)+(x-124)*.75,v(163)+(y-34)*.65];
-    const markup=officialFaceEffects(marks??{},t,at,'#ac94c3',1.12);
+    const [nx,ny]=joints.neck;
+    const crown=orbit?[nx+(614-nx)*Math.cos(dizzyRoll*RAD)-(104-ny)*Math.sin(dizzyRoll*RAD),
+      ny+(614-nx)*Math.sin(dizzyRoll*RAD)+(104-ny)*Math.cos(dizzyRoll*RAD)]:[614,163];
+    const at=(x,y)=>[u(crown[0])+(x-124)*.75,v(crown[1])+(y-34)*.65];
+    const markup=officialFaceEffects({...marks,orbit},t,at,'#ac94c3',1.12);
     if(markup!==fxState) {fx.innerHTML=markup;fxState=markup;}
   }
 
   const figure={
-    draw, dispose(){mount?.remove();fx?.remove();},
+    draw, dispose(){faceRig?.dispose();seatedDizzyRig?.dispose();mount?.remove();fx?.remove();},
     gestures:['nod','shake','bow'],
     groupTilt(mode,tilt,lean){
+      if(mode==='dizzy') return 0;
+      if(mode==='drag'||carry>.01) return (tilt+lean)*carry;
       if (['idle','walk','sit'].includes(mode)) return 0;
-      return mode==='drag'?clamp(tilt+lean*.24,-10,10):clamp(tilt+lean*.2,-4,4);
+      return clamp(tilt+lean*.2,-4,4);
     },
     anchors:{gaze:[u(655),v(557)],bubble:[u(616),v(64)],z:[u(790),v(115)],
       hearts:[u(528),u(762),v(211)],tear:[u(574),v(577)],tears:[[u(574),v(577)],[u(733),v(579)]]},

@@ -25,5 +25,6 @@
     "sitBody": 0.0,
     "sleepBody": 0.0
   },
-  "vocabularyEntries": 18
+  "vocabularyEntries": 18,
+  "dizzyKeepsSeatAndAlpha": true
 }

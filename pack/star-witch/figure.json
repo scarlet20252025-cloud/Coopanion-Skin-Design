@@ -2,7 +2,7 @@
   "manifest": 2,
   "api": 2,
   "id": "star-witch",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "name": {"zh": "黑金魔女", "en": "Star Witch"},
   "about": {
     "zh": "一位留深紫黑色长发的魔女，双眼分别是淡紫色和蜜金色。折尖宽檐帽有金边、象牙白蝴蝶结与四芒星坠。身穿黑金短披肩、白领衬衣与层叠裙，戴黑手套，穿白褶边袜和星扣黑鞋。",
@@ -30,6 +30,6 @@
     {"id":"sleepy","kind":"expression","names":{"zh":["有些犯困"]},"about":{"zh":"眼皮垂下，轻轻打哈欠。"},"seconds":4.4},
     {"id":"surprised","kind":"expression","names":{"zh":["吃一惊"]},"about":{"zh":"睁大眼睛，微微张嘴。"},"seconds":2.8},
     {"id":"angry","kind":"expression","names":{"zh":["有点生气"]},"about":{"zh":"压低眉毛，亮出生气符号。"},"seconds":2.8},
-    {"id":"dizzy","kind":"expression","names":{"zh":["晕乎乎"]},"about":{"zh":"显示转动的星星。"},"seconds":3}
+    {"id":"dizzy","kind":"expression","names":{"zh":["晕乎乎"]},"about":{"zh":"出现旋转圈眼和星星，坐稳摇晃后闭眼摇头恢复。"},"seconds":3}
   ]
 }

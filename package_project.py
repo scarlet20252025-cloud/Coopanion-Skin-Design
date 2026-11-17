@@ -20,6 +20,9 @@ EXAMPLE_FILES = {
     "left-arm-motion.png", "left-arm-reassembled.png", "matched-blink-art.jpg",
     "portrait-qa.json", "portraits-runtime-verified.jpg", "portraits-verified.jpg",
     "preview-listen.png", "preview-qa.json", "preview-walk.png", "preview-walk-left.png",
+    "preview-dizzy.png", "preview-dizzy-other-side.png", "preview-dizzy-recovery.png",
+    "preview-drag.png", "preview-drag-left.png", "preview-head-left.png", "preview-head-right.png",
+    "skirt-leg-depth.jpg",
     "standing-reassembled.png", "talk-atlas-check.jpg",
 }
 

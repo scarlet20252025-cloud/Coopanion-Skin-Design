@@ -1,12 +1,25 @@
 {
+  "parallax": {
+    "nearEyeX": 13.5999755859375,
+    "nearEyeY": 7.3333740234375,
+    "jawFixed": true,
+    "fringeFixed": true
+  },
   "listen": {
-    "head": -6.682329089985725,
+    "head": -6.338953797335394,
     "torso": 0,
     "stage": 0
   },
+  "dizzy": {
+    "onset": "seat, eyes and stars together",
+    "seatedFrames": 12,
+    "headRange": 190.4277801513672,
+    "rotatingEyes": 2,
+    "recovered": true
+  },
   "walk": "walk",
   "walkContralateralSamples": {
-    "right": 11,
+    "right": 9,
     "left": 8
   },
   "walkSupportSamples": {
@@ -29,5 +42,20 @@
   "talk": true,
   "bow": true,
   "drag": "drag",
+  "skirtDepth": true,
+  "dragMotion": {
+    "right": {
+      "peak": 22,
+      "rebound": -4.800000190734863,
+      "steady": 0.4000000059604645,
+      "palmGap": 0.002864098737063614
+    },
+    "left": {
+      "peak": 21,
+      "rebound": -5,
+      "steady": 0.5,
+      "palmGap": 4.6447837576124584e-7
+    }
+  },
   "drop": true
 }

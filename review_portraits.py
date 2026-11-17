@@ -62,6 +62,16 @@ def main():
 
     master = load("source/master-right.png")
     target,_ = expression_palette(master,load)
+    for name in ("dizzyNear","dizzyFar"):
+        mark = np.array(Image.open(PACK/parts[name]["file"]))
+        assert mark.shape[2]==4 and 0<np.count_nonzero(mark[:,:,3])<mark.shape[0]*mark.shape[1]
+        assert np.all(mark[mark[:,:,3]==0,:3]==0)
+    sx,sy,sw,sh = parts["dizzySeat"]["box"]
+    seat = load("parts/sitBody.png")[sy:sy+sh,sx:sx+sw]
+    dizzy_seat = np.array(Image.open(PACK/parts["dizzySeat"]["file"]))
+    assert np.max(np.abs(complexion(dizzy_seat[y-sy:y-sy+h,x-sx:x-sx+w])-target))<=2
+    assert np.array_equal(seat[654-sy:],dizzy_seat[654-sy:])
+    assert np.array_equal(seat[:,:,3],dizzy_seat[:,:,3])
     paint,_ = register_mood(master,load("work/face-repair/mood-annoyed.png"))
     paint = match_complexion(paint,complexion(paint),target)
     # Compare the old joins below the eyes and above/beside the mouth with
@@ -147,7 +157,7 @@ def main():
               "seamSkinRgbErrorP95":p95,"pixelsChangedOutsidePortrait":0,
               "rawCheeks":raw_cheeks.tolist(),"neutralCheeks":neutral_cheeks.tolist(),
               "maxComplexionShiftByExpression":offsets,
-              "vocabularyEntries":len(manifest["vocab"])}
+              "vocabularyEntries":len(manifest["vocab"]),"dizzyKeepsSeatAndAlpha":True}
     (REVIEW/"portrait-qa.json").write_text(json.dumps(report,indent=2),encoding="utf8")
     print(report)
 

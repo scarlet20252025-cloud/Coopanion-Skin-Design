@@ -27,7 +27,7 @@ def smooth(value):
     return k*k*(3-2*k)
 
 
-def register_mood(original, painting):
+def register_face_box(original, painting):
     l,t,r,b = FACE_BOX
     source = original[t:b,l:r,:3]
     generated = cv2.resize(painting[:,:,:3],(r-l,b-t),interpolation=cv2.INTER_AREA)
@@ -45,7 +45,12 @@ def register_mood(original, painting):
         raise ValueError(f"Expression is misregistered: {score:.4f}")
     paint = cv2.warpAffine(generated,matrix,(r-l,b-t),flags=cv2.INTER_LINEAR|cv2.WARP_INVERSE_MAP,
                            borderMode=cv2.BORDER_REPLICATE)
-    return paint,float(score)
+    return paint,float(score),cv2.invertAffineTransform(matrix)
+
+
+def register_mood(original, painting):
+    paint,score,_ = register_face_box(original,painting)
+    return paint,score
 
 
 def complexion(portrait):

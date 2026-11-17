@@ -67,6 +67,15 @@
         104
       ]
     },
+    "skirtDepth": {
+      "file": "tex/skirtDepth.png",
+      "box": [
+        486,
+        1042,
+        295,
+        171
+      ]
+    },
     "legLeft": {
       "file": "tex/legLeft.png",
       "box": [
@@ -193,6 +202,39 @@
         233
       ]
     },
+    "dizzyNear": {
+      "file": "tex/dizzyNear.png",
+      "box": [
+        572,
+        530,
+        50,
+        42
+      ],
+      "count": 1,
+      "columns": 1
+    },
+    "dizzyFar": {
+      "file": "tex/dizzyFar.png",
+      "box": [
+        712,
+        540,
+        33,
+        34
+      ],
+      "count": 1,
+      "columns": 1
+    },
+    "dizzySeat": {
+      "file": "tex/dizzySeat.png",
+      "box": [
+        193,
+        58,
+        780,
+        1259
+      ],
+      "count": 1,
+      "columns": 1
+    },
     "moodPortrait": {
       "box": [
         435,
@@ -257,5 +299,13 @@
     "confused": 5,
     "sleepy": 6,
     "dragged": 7
-  }
+  },
+  "dizzySeatFit": [
+    0.9992506504058838,
+    0.015914741903543472,
+    0.0035097848158329725,
+    0.9820550680160522,
+    -1.6680265665054321,
+    4.158917427062988
+  ]
 }

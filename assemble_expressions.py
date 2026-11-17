@@ -5,6 +5,7 @@ import numpy as np
 from PIL import Image
 
 from assemble import ROOT, load, write_part
+from dizzy_art import build_dizzy
 from matched_blink import make_blink, portrait_alpha, sleeping_plate
 from repair_eye_art import (FACE_BOX, MOODS, complexion, expression_palette, match_complexion,
                             register_mood, rgba, speech_frames)
@@ -12,7 +13,7 @@ OLD_TEXTURES = (
     "faceEyesBase","frontHairEyes","eyeLeftBed","eyeLeftNeutral","eyeRightBed",
     "eyeRightNeutral","eyeLeft","eyeRight","eyeLeftMood","eyeRightMood",
     "moodEyeLeft","moodEyeRight","moodFringeLeft","moodFringeRight","moodBrows","moodMouth",
-    "mouth","browLeft","browRight","browLeftClean","browRightClean",
+    "mouth","browLeft","browRight","browLeftClean","browRightClean","dizzyPortrait",
 )
 
 
@@ -53,7 +54,9 @@ def main():
     half_paint = load("work/face-repair/blink-half-matched.png")
     closed_paint = load("work/face-repair/blink-closed-matched.png")
     blink_frames,wink_frames,blink_fit = make_blink(master,head,face_paint,half_paint,closed_paint,target)
-    sleeping,sleep_fit = sleeping_plate(load("parts/sitBody.png"),closed_paint,target)
+    seated = load("parts/sitBody.png")
+    sleeping,sleep_fit = sleeping_plate(seated,closed_paint,target)
+    dizzy_fit = build_dizzy(parts,model,master,seated,load("work/face-repair/mood-dizzy.png"),target)
 
     out_atlas(parts,"moodPortrait",mood_frames,4)
     out_atlas(parts,"talkPortrait",speeches,4)
@@ -77,6 +80,7 @@ def main():
         "moodEcc":{name:quality for (name,_),(_,quality) in zip(MOODS,mood_paints)},
         "talkEcc":talk_fit,
         "blinkEcc":blink_fit,
+        "dizzyEcc":dizzy_fit,
         "blinkFullFaceBox":FACE_BOX,
         "complexion":{"originalCheeks":complexion(neutral_source).tolist(),"targetCheeks":target.tolist()},
         "sourceCanvas":model["canvas"],

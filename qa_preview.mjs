@@ -50,11 +50,43 @@ try{
   await cdp('Page.addScriptToEvaluateOnNewDocument',{source:`
     window.witchPaints=[];
     window.witchMotion={};
+    window.witchDizzy={draws:0};
+    window.witchStartFrames=[];
+    const clear=CanvasRenderingContext2D.prototype.clearRect;
+    CanvasRenderingContext2D.prototype.clearRect=function(...args){
+      if(this.canvas.parentNode?.localName==='foreignObject'){
+        const frame={layers:[],stars:0};
+        window.witchFrame=frame;
+        if(window.witchTraceStart){
+          window.witchStartFrames.push(frame);
+          queueMicrotask(()=>{frame.stars=document.querySelectorAll('path[fill="#ffd23f"]').length;});
+        }
+      }
+      return clear.apply(this,args);
+    };
+    for(const Gl of [window.WebGLRenderingContext,window.WebGL2RenderingContext]){
+      const upload=Gl.prototype.bufferSubData;
+      Gl.prototype.bufferSubData=function(target,offset,data,...rest){
+        if(data instanceof Float32Array&&data.length===1558){
+          window.witchDizzy.mesh={topX:data[0],toeX:data.at(-2),toeY:data.at(-1)};
+        }
+        if(data instanceof Float32Array&&data.length===4134){
+          const vertex=(row,col)=>[data[(row*53+col)*2],data[(row*53+col)*2+1]];
+          window.witchFaceMesh={eye:vertex(25,23),jaw:vertex(34,30),fringe:vertex(22,27)};
+        }
+        return upload.call(this,target,offset,data,...rest);
+      };
+    }
     const previous=CanvasRenderingContext2D.prototype.drawImage;
     CanvasRenderingContext2D.prototype.drawImage=function(image,...args){
       const path=image?.src?.split('?')[0];
-      const name=path?.split('/').pop();
-      if (['body.png','hat.png','legRight.png','legLeft.png','leftArm.png','rightArm.png','sitBody.png'].includes(name)) {
+      const name=path?.split('/').pop()??image?.dataset?.texture;
+      if(this.canvas.parentNode?.localName==='foreignObject'&&window.witchFrame){
+        const layer=name??image?.dataset?.rig;
+        if(layer) window.witchFrame.layers.push(layer);
+      }
+      if(image?.dataset?.rig==='seat-dizzy') window.witchDizzy.draws++;
+      if (['body.png','hat.png','legRight.png','legLeft.png','leftArm.png','rightArm.png','lockLeft.png','sitBody.png','dizzyNear.png','dizzyFar.png'].includes(name)) {
         const {a,b,c,d,e,f}=this.getTransform();
         window.witchMotion[name]={a,b,c,d,e,f,angle:Math.atan2(b,a)*180/Math.PI};
       }
@@ -115,9 +147,17 @@ try{
   await action('stand',170);
   await action('compare');
   await read('witchPreview.controls.look=[-12,10]');
+  await waitFor('Boolean(window.witchFaceMesh)');
   await sleep(220);await shot('head-left');
+  const faceLeft=await read('witchFaceMesh');
   await read('witchPreview.controls.look=[12,-10]');
   await sleep(220);await shot('head-right');
+  const faceRight=await read('witchFaceMesh');
+  assert.ok(faceRight.eye[0]-faceLeft.eye[0]>6&&faceLeft.eye[1]-faceRight.eye[1]>3);
+  assert.deepEqual(faceLeft.jaw,faceRight.jaw);
+  assert.deepEqual(faceLeft.fringe,faceRight.fringe);
+  results.parallax={nearEyeX:faceRight.eye[0]-faceLeft.eye[0],
+    nearEyeY:faceLeft.eye[1]-faceRight.eye[1],jawFixed:true,fringeFixed:true};
   await action('follow');
   await action('stand',250);
   const baseline=await motion();
@@ -127,10 +167,60 @@ try{
   assert.equal(listening['body.png'].angle,0);
   assert.ok(listening['hat.png'].angle<baseline['hat.png'].angle-4);
   await shot('listen');
-  await sleep(1500);
-  const listened=await motion();
-  assert.ok(Math.abs(listened['hat.png'].angle-baseline['hat.png'].angle)<2.5);
+  await waitFor(`Math.abs(witchMotion['hat.png'].angle-(${baseline['hat.png'].angle}))<2.5`);
   results.listen={head: listening['hat.png'].angle,torso:0,stage:0};
+  await read('witchTraceStart=true');
+  await action('dizzy',520);
+  assert.equal(await mode(),'dizzy');
+  const startFrames=await read('(witchTraceStart=false,witchStartFrames)');
+  const firstSeat=startFrames.findIndex(f=>f.layers.includes('seat-dizzy')||f.layers.includes('dizzySeat.png'));
+  assert.ok(firstSeat>0&&startFrames[firstSeat-1].layers.includes('body.png'));
+  assert.ok(startFrames.slice(0,firstSeat).every(f=>f.stars===0&&
+    !f.layers.some(name=>['dizzyNear.png','dizzyFar.png','dizzyPortrait.png'].includes(name))),
+    'Standing frames must not show dizzy eyes or stars');
+  assert.ok(startFrames[firstSeat].stars===3&&
+    ['dizzyNear.png','dizzyFar.png'].every(name=>startFrames[firstSeat].layers.includes(name)),
+    'First seated frame must show both spirals and orbit stars');
+  const dizzyFrames=[];
+  const swayShots=new Set();
+  for(let i=0;i<12;i++) {
+    const pose=await motion();
+    const dizzy=await read(`({
+      ...witchDizzy,
+      stars:[...document.querySelectorAll('path[fill="#ffd23f"]')].map(p=>p.getAttribute('transform'))
+    })`);
+    dizzyFrames.push({...dizzy,pose});
+    const sway=dizzy.mesh?.topX-model.parts.dizzySeat.box[0];
+    const direction=sway>40?'dizzy':sway<-40?'dizzy-other-side':null;
+    if(direction&&!swayShots.has(direction)){
+      swayShots.add(direction);
+      await shot(direction);
+    }
+    await sleep(110);
+  }
+  const span=values=>Math.max(...values)-Math.min(...values);
+  assert.ok(dizzyFrames.every(f=>f.draws>0&&f.mesh&&f.stars.length===3),'Expected seated head mesh and orbit stars');
+  assert.ok(dizzyFrames.every(f=>f.pose.rootAngle===0),'Dizzy must not rock the stage root');
+  assert.ok(span(dizzyFrames.map(f=>f.mesh.topX))>35,'Head must sway while seated');
+  assert.ok(span(dizzyFrames.map(f=>f.mesh.toeX))<.01&&span(dizzyFrames.map(f=>f.mesh.toeY))<.01,'Chair and feet must stay put');
+  for(const eye of ['dizzyNear.png','dizzyFar.png']){
+    assert.ok(span(dizzyFrames.map(f=>f.pose[eye].angle))>120,'Painted spiral must rotate through several phases');
+  }
+  assert.ok(new Set(dizzyFrames.map(f=>f.stars.join('|'))).size>8);
+  const recoveryStart=await read('witchDizzy.draws');
+  await waitFor('document.querySelectorAll(\'path[fill="#ffd23f"]\').length===0');
+  assert.equal(await mode(),'dizzy');
+  await shot('dizzy-recovery');
+  assert.ok(await read('witchDizzy.draws')>recoveryStart);
+  const recovery=[];
+  for(let i=0;i<4;i++){
+    recovery.push(await read('witchDizzy.mesh.topX'));
+    await sleep(52);
+  }
+  assert.ok(span(recovery)>8,'Closed-eye recovery must shake before settling');
+  await waitFor('witchPreview.body.layout().mode==="idle"');
+  results.dizzy={onset:'seat, eyes and stars together',seatedFrames:dizzyFrames.length,
+    headRange:span(dizzyFrames.map(f=>f.mesh.topX)),rotatingEyes:2,recovered:true};
   await action('walk',430);
   results.walk=await mode();assert.equal(results.walk,'walk');await shot('walk');
   const frames=[];
@@ -228,20 +318,69 @@ try{
   results.bow=true;
   await action('stand');
   since=await read('performance.now()');
-  await read(`(() => {
+  const grab=await read(`(() => {
     const body=witchPreview.body, p=body.layout().hit[0], t=performance.now();
-    body.pointer('down',{...p,t}); body.pointer('move',{x:p.x+18,y:p.y-85,t:t+80});
+    body.pointer('down',{...p,t});
+    return p;
   })()`);
-  await sleep(360);
-  results.drag=await mode();assert.equal(results.drag,'drag');await shot('drag');
+  const dragTo=dx=>read(`witchPreview.body.pointer('move',{
+    x:${grab.x+dx},y:${grab.y-85},t:performance.now()})`);
+  await sleep(55);
+  await dragTo(0);
+  await sleep(450);
+  results.drag=await mode();assert.equal(results.drag,'drag');
+  const layers=await read('witchFrame.layers');
+  const skirtOrder=['skirtBack.png','skirtRear.png','legRight.png','legLeft.png','body.png'].map(name=>layers.indexOf(name));
+  assert.ok(skirtOrder[0]>=0&&skirtOrder.every((index,i)=>i===0||index>skirtOrder[i-1]),
+    'Both legs must render between the rear hem and the front skirt');
+  results.skirtDepth=true;
   await painted('moodPortrait',model.expressions.dragged,since);
-  await read(`(() => {
-    const body=witchPreview.body, p=body.layout().hit[0], t=performance.now();
-    body.pointer('move',{...p,t:t-250}); body.pointer('move',{...p,t:t-120});
-    body.pointer('up',{...p,t});
-  })()`);
+  const getPalmHeight=(pose,name,[x,y])=>{
+    const arm=pose[name],body=pose['body.png'];
+    const ax=arm.a*x+arm.c*y+arm.e-body.e;
+    const ay=arm.b*x+arm.d*y+arm.f-body.f;
+    return (body.a*ay-body.b*ax)/(body.a*body.d-body.b*body.c);
+  };
+  const dragTest={};
+  for(const direction of [1,-1]) {
+    for(let i=1;i<=6;i++){
+      await dragTo(direction*(-80+40*i));
+      await sleep(34);
+    }
+    await shot(direction>0?'drag':'drag-left');
+    const sample=[];
+    for(let i=0;i<25;i++){
+      sample.push(await motion());
+      await sleep(48);
+    }
+    const roll=sample.map(p=>p.rootAngle*direction);
+    const neck=sample.map(p=>p['hat.png'].angle-p['body.png'].angle);
+    const hair=sample.map(p=>p['lockLeft.png'].angle-p['hat.png'].angle);
+    const peak=Math.max(...roll.slice(0,12));
+    const rebound=Math.min(...roll.slice(3,19));
+    const steady=Math.max(...roll.slice(-4).map(Math.abs));
+    const range=values=>Math.max(...values)-Math.min(...values);
+    const kick=sample.map(p=>p['legRight.png'].angle-p['legLeft.png'].angle);
+    const palmGap=Math.max(...sample.map(p=>Math.abs(
+      getPalmHeight(p,'leftArm.png',[470,973])-getPalmHeight(p,'rightArm.png',[774,964]))));
+    assert.ok(peak>7&&rebound<-1.2&&steady<peak*.24,
+      `Held body must rebound and settle: ${JSON.stringify({peak,rebound,steady})}`);
+    assert.ok(range(neck)>4&&range(hair)>2.4,
+      `Head and hair must keep separate motion: ${JSON.stringify({neck:range(neck),hair:range(hair)})}`);
+    assert.ok(Math.max(...kick)>8&&Math.min(...kick)<-8,'Both legs must take turns swinging from the hips');
+    assert.ok(palmGap<2.5,`Held palms must stay level relative to torso (gap ${palmGap})`);
+    dragTest[direction>0?'right':'left']={peak,rebound,steady,palmGap};
+  }
+  results.dragMotion=dragTest;
+  await dragTo(-160);
+  await sleep(130);
+  await dragTo(-160);
+  await sleep(130);
+  await read(`witchPreview.body.pointer('up',{
+    x:${grab.x-160},y:${grab.y-85},t:performance.now()})`);
   await waitFor('witchPreview.events.some(([kind,data])=>kind==="touch"&&data.kind==="drop")');
   await waitFor('witchPreview.events.some(([kind,data])=>kind==="mode"&&data.mode==="land")');
+  await waitFor('witchPreview.body.layout().mode==="idle"');
   results.drop=true;
   assert.deepEqual(messages,[]);
   await writeFile(join(review,'preview-qa.json'),JSON.stringify(results,null,2));
